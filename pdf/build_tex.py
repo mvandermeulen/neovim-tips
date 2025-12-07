@@ -6,8 +6,32 @@ from typing import List
 
 class LatexUtil:
   @staticmethod
+  def escape_special_chars(text: str) -> str:
+    """Escapes LaTeX special characters in a string."""
+    latex_special_chars = {
+      '\\': r'\textbackslash{}',
+      '{': r'\{',
+      '}': r'\}',
+      '$': r'\$',
+      '&': r'\&',
+      '%': r'\%',
+      '#': r'\#',
+      '_': r'\_',
+      '~': r'\textasciitilde{}',
+      '^': r'\textasciicircum{}'
+    }
+
+    result = []
+    for char in text:
+      if char in latex_special_chars:
+        result.append(latex_special_chars[char])
+      else:
+        result.append(char)
+    return ''.join(result)
+
+  @staticmethod
   def getLatex(text: str) -> str:
-    """Escapes LaTeX special characters outside of code blocks."""
+    """Escapes LaTeX special characters outside of code blocks and processes markdown formatting."""
     latex_special_chars = {
       '\\': r'\textbackslash{}',
       '{': r'\{',
@@ -67,6 +91,62 @@ class LatexUtil:
           i = end + 1
           continue
 
+      # Check for bold **text**
+      if text[i:i+2] == '**':
+        end = text.find('**', i + 2)
+        if end != -1:
+          content = text[i+2:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textbf{' + escaped + '}')
+          i = end + 2
+          continue
+
+      # Check for bold __text__
+      if text[i:i+2] == '__':
+        end = text.find('__', i + 2)
+        if end != -1:
+          content = text[i+2:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textbf{' + escaped + '}')
+          i = end + 2
+          continue
+
+      # Check for links [text](url)
+      if text[i] == '[':
+        bracket_end = text.find(']', i + 1)
+        if bracket_end != -1 and bracket_end + 1 < len(text) and text[bracket_end + 1] == '(':
+          paren_end = text.find(')', bracket_end + 2)
+          if paren_end != -1:
+            link_text = text[i+1:bracket_end]
+            link_url = text[bracket_end+2:paren_end]
+            escaped_text = LatexUtil.escape_special_chars(link_text)
+            # URLs should not have special chars escaped (except those that break LaTeX)
+            # For simplicity, we'll escape % and # which can break URLs in LaTeX
+            escaped_url = link_url.replace('%', r'\%').replace('#', r'\#')
+            result.append(r'\href{' + escaped_url + '}{' + escaped_text + '}')
+            i = paren_end + 1
+            continue
+
+      # Check for italic *text* (single asterisk)
+      if text[i] == '*':
+        end = text.find('*', i + 1)
+        if end != -1:
+          content = text[i+1:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textit{' + escaped + '}')
+          i = end + 1
+          continue
+
+      # Check for italic _text_ (single underscore)
+      if text[i] == '_':
+        end = text.find('_', i + 1)
+        if end != -1:
+          content = text[i+1:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textit{' + escaped + '}')
+          i = end + 1
+          continue
+
       # Escape special LaTeX characters
       if text[i] in latex_special_chars:
         result.append(latex_special_chars[text[i]])
@@ -119,6 +199,59 @@ class LatexUtil:
           for char, replacement in latex_special_chars.items():
             escaped_code = escaped_code.replace(char, replacement)
           result.append(r'\texttt{' + escaped_code + '}')
+          i = end + 1
+          continue
+
+      # Check for bold **text**
+      if text[i:i+2] == '**':
+        end = text.find('**', i + 2)
+        if end != -1:
+          content = text[i+2:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textbf{' + escaped + '}')
+          i = end + 2
+          continue
+
+      # Check for bold __text__
+      if text[i:i+2] == '__':
+        end = text.find('__', i + 2)
+        if end != -1:
+          content = text[i+2:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textbf{' + escaped + '}')
+          i = end + 2
+          continue
+
+      # Check for links [text](url) - in titles, we just show the text
+      if text[i] == '[':
+        bracket_end = text.find(']', i + 1)
+        if bracket_end != -1 and bracket_end + 1 < len(text) and text[bracket_end + 1] == '(':
+          paren_end = text.find(')', bracket_end + 2)
+          if paren_end != -1:
+            link_text = text[i+1:bracket_end]
+            # For titles, just use the link text (no hyperlink)
+            escaped_text = LatexUtil.escape_special_chars(link_text)
+            result.append(escaped_text)
+            i = paren_end + 1
+            continue
+
+      # Check for italic *text* (single asterisk)
+      if text[i] == '*':
+        end = text.find('*', i + 1)
+        if end != -1:
+          content = text[i+1:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textit{' + escaped + '}')
+          i = end + 1
+          continue
+
+      # Check for italic _text_ (single underscore)
+      if text[i] == '_':
+        end = text.find('_', i + 1)
+        if end != -1:
+          content = text[i+1:end]
+          escaped = LatexUtil.escape_special_chars(content)
+          result.append(r'\textit{' + escaped + '}')
           i = end + 1
           continue
 
