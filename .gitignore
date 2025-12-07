@@ -46,7 +46,7 @@ luac.out
 pdf/build
 pdf/Tmp
 images/raw
-pdf/__pycache__
+**/__pycache__
 
 # Environment and secrets
 .env.scripts
@@ -57,4 +57,4 @@ scripts/processed_urls.json
 scripts/vim_wiki_urls.txt
 scripts/merged_tips/
 scripts/merge_checkpoints/
-scripts/extraction.log
+scripts/*.log
