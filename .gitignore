@@ -46,3 +46,4 @@ luac.out
 pdf/build
 pdf/Tmp
 images/raw
+pdf/__pycache__
