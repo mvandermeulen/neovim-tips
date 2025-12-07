@@ -549,7 +549,7 @@ vim.api.nvim_create_autocmd('FocusLost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Adjust_Brightness_Automatically_on_Focus
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Adjust_Brightness_Automatically_on_Focus)
 ***
 # Title: Conditional Fold Handling for File Types
 # Category: autocmds
@@ -574,7 +574,7 @@ vim.api.nvim_create_autocmd('Syntax', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/All_folds_open_when_opening_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_folds_open_when_opening_a_file)
 ***
 # Title: Always Start on First Line of Git Commit
 # Category: autocmds
@@ -594,7 +594,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Always_start_on_first_line_of_git_commit_message
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Always_start_on_first_line_of_git_commit_message)
 ***
 # Title: Auto-save Buffer Periodically
 # Category: autocmds
@@ -639,7 +639,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto-save_current_buffer_periodically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto-save_current_buffer_periodically)
 ***
 # Title: Filetype-Specific Periodic Saving
 # Category: autocmds
@@ -657,7 +657,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto-save_current_buffer_periodically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto-save_current_buffer_periodically)
 ***
 # Title: Advanced HTML Tag Completion Function
 # Category: autocmds
@@ -687,7 +687,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_Closing_an_HTML_tag
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_Closing_an_HTML_tag)
 ***
 # Title: Automatic Header File Template Generation
 # Category: autocmds
@@ -730,7 +730,7 @@ vim.api.nvim_create_autocmd('BufWrite', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_commands_for_C/C%2B%2B_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_commands_for_C/C%2B%2B_editing)
 ***
 # Title: Automatic Last Modified Timestamp Update
 # Category: autocmds
@@ -767,7 +767,7 @@ end
 vim.cmd('function! ModifyTime() lua _G.ModifyTime() end')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_commands_for_C/C%2B%2B_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_commands_for_C/C%2B%2B_editing)
 ***
 # Title: Autocompile JavaScript with Closure Compiler
 # Category: autocmds
@@ -805,7 +805,7 @@ vim.api.nvim_create_autocmd('BufWriteCmd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_compile_Javascript_with_Closure
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_compile_Javascript_with_Closure)
 ***
 # Title: Automatic JavaScript Compilation with Error Handling
 # Category: autocmds
@@ -837,7 +837,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_compile_Javascript_with_Closure
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_compile_Javascript_with_Closure)
 ***
 # Title: Auto-Generate Java Class Template
 # Category: autocmds
@@ -863,7 +863,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_insert_Java_class_template_when_editing_a_new_Java_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_insert_Java_class_template_when_editing_a_new_Java_file)
 ***
 # Title: Auto-Insert Java Package Name
 # Category: autocmds
@@ -906,7 +906,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_insert_Java_class_template_when_editing_a_new_Java_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_insert_Java_class_template_when_editing_a_new_Java_file)
 ***
 # Title: Auto Save Files When Focus Is Lost
 # Category: autocmds
@@ -926,7 +926,7 @@ vim.api.nvim_create_autocmd('FocusLost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_save_files_when_focus_is_lost
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_save_files_when_focus_is_lost)
 ***
 # Title: Automatic Perforce File Checkout
 # Category: autocmds
@@ -994,7 +994,7 @@ vim.api.nvim_create_autocmd('FileChangedRO', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autocheckout_from_perforce
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autocheckout_from_perforce)
 ***
 # Title: Auto-Update ctags on File Write
 # Category: autocmds
@@ -1049,7 +1049,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autocmd_to_update_ctags_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autocmd_to_update_ctags_file)
 ***
 # Title: Autoconvert Spaces to Tabs in Makefiles
 # Category: autocmds
@@ -1087,7 +1087,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autoconvert_leading_eight_spaces_to_tab_when_type_or_paste_in_Makefile
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autoconvert_leading_eight_spaces_to_tab_when_type_or_paste_in_Makefile)
 ***
 # Title: Autocompile LaTeX on Write
 # Category: autocmds
@@ -1109,7 +1109,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_LaTeX_compile_and_XDVI_refresh
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_LaTeX_compile_and_XDVI_refresh)
 ***
 # Title: Automatic Filetype Detection for ClearCase Files
 # Category: autocmds
@@ -1140,7 +1140,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_file_type_detection_with_fully_qualified_ClearCase_names
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_file_type_detection_with_fully_qualified_ClearCase_names)
 ***
 # Title: Automatic C/C++ Header Include Guards
 # Category: autocmds
@@ -1176,7 +1176,7 @@ vim.api.nvim_create_autocmd('BufNewFile', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_insertion_of_C/C%2B%2B_header_gates
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_insertion_of_C/C%2B%2B_header_gates)
 ***
 # Title: Automatic Git Project Session Management
 # Category: autocmds
@@ -1259,7 +1259,7 @@ if vim.fn.argc() == 0 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_session_restore_in_git_directories
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_session_restore_in_git_directories)
 ***
 # Title: Auto-Update Copyright Notice in Files
 # Category: autocmds
@@ -1289,7 +1289,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_Update_Copyright_Notice_in_Files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_Update_Copyright_Notice_in_Files)
 ***
 # Title: Auto-Position Cursor for Email Editing
 # Category: autocmds
@@ -1349,7 +1349,7 @@ end
 vim.api.nvim_create_user_command('Fip', first_in_post, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_position_the_cursor_when_editing_email_messages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_position_the_cursor_when_editing_email_messages)
 ***
 # Title: Auto-Close Vim When Quickfix is Last Window
 # Category: autocmds
@@ -1377,7 +1377,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_quit_Vim_if_quickfix_window_is_the_last
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_quit_Vim_if_quickfix_window_is_the_last)
 ***
 # Title: Automatically Sort and Deduplicate Quickfix List
 # Category: autocmds
@@ -1445,7 +1445,7 @@ vim.api.nvim_create_autocmd('QuickfixCmdPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_sort_Quickfix_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_sort_Quickfix_list)
 ***
 # Title: Automatically Set Compiler by Filetype
 # Category: autocmds
@@ -1466,7 +1466,7 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autoselect_the_right_compiler_using_the_filetype
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autoselect_the_right_compiler_using_the_filetype)
 ***
 # Title: Dynamic Color Scheme Based on Buffer/Directory
 # Category: autocmds
@@ -1498,7 +1498,7 @@ vim.api.nvim_create_autocmd("BufLeave", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_colors_when_switching_to_other_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_colors_when_switching_to_other_directory)
 ***
 # Title: Change Color Scheme for Different Directories
 # Category: autocmds
@@ -1522,7 +1522,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_colors_when_switching_to_other_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_colors_when_switching_to_other_directory)
 ***
 # Title: Colorscheme for Focused Vim Instance
 # Category: autocmds
@@ -1548,7 +1548,7 @@ vim.api.nvim_create_autocmd("FocusGained", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_colors_when_switching_to_other_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_colors_when_switching_to_other_directory)
 ***
 # Title: Set Syntax for Files in Specific Directory
 # Category: autocmds
@@ -1568,7 +1568,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_filetype_based_on_directory_path
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_filetype_based_on_directory_path)
 ***
 # Title: Automatic XML Formatting
 # Category: autocmds
@@ -1590,7 +1590,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cleanup_your_HTML
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cleanup_your_HTML)
 ***
 # Title: Cursor Line Only in Active Window
 # Category: autocmds
@@ -1621,7 +1621,7 @@ vim.api.nvim_create_autocmd('WinLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Color_active_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Color_active_line)
 ***
 # Title: Filetype-Specific Commenting Function
 # Category: autocmds
@@ -1665,7 +1665,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comment_lines_in_different_filetypes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comment_lines_in_different_filetypes)
 ***
 # Title: Persistent Doxygen Comment Configuration
 # Category: autocmds
@@ -1689,7 +1689,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Continuing_doxygen_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Continuing_doxygen_comments)
 ***
 # Title: Language-Specific Tab Settings
 # Category: autocmds
@@ -1719,7 +1719,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Converting_tabs_to_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Converting_tabs_to_spaces)
 ***
 # Title: Context-Specific Menus for Different Filetypes
 # Category: autocmds
@@ -1750,7 +1750,7 @@ vim.api.nvim_create_autocmd({'BufEnter', 'BufLeave'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Current_buffer_based_menus
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Current_buffer_based_menus)
 ***
 # Title: Debug Window Autocommands Interactively
 # Category: autocmds
@@ -1767,7 +1767,7 @@ Interactively debug autocommands triggered by window actions like closing or loa
 -- Use :debug to step through autocommands when triggering specific actions
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Debugging_window_autocommands
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Debugging_window_autocommands)
 ***
 # Title: Automatically Decompile Java Class Files
 # Category: autocmds
@@ -1804,7 +1804,7 @@ vim.api.nvim_create_autocmd('BufReadCmd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Decompile_Java_.class_files_automatically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Decompile_Java_.class_files_automatically)
 ***
 # Title: Detect New Window Creation with Window-Local Variable
 # Category: autocmds
@@ -1841,7 +1841,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Detect_window_creation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Detect_window_creation)
 ***
 # Title: Detect New Window Creation Reliably
 # Category: autocmds
@@ -1878,7 +1878,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Detect_window_creation_with_WinEnter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Detect_window_creation_with_WinEnter)
 ***
 # Title: Filetype-Specific Dictionary Completion
 # Category: autocmds
@@ -1901,7 +1901,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Dictionary_completions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Dictionary_completions)
 ***
 # Title: Set Default Filetype for New Buffers
 # Category: autocmds
@@ -1939,7 +1939,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disabling_default_ftplugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disabling_default_ftplugins)
 ***
 # Title: Set UTF-8 Encoding for Mac Quicklook
 # Category: autocmds
@@ -1960,7 +1960,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_UTF-8_characters_in_Mac_Quicklook
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_UTF-8_characters_in_Mac_Quicklook)
 ***
 # Title: Dynamic Language-Specific Commenting Functions
 # Category: autocmds
@@ -1999,7 +1999,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_(un)commenting_out_of_source_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_(un)commenting_out_of_source_code)
 ***
 # Title: MoinMoin File Type Detection
 # Category: autocmds
@@ -2017,7 +2017,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_MoinMoin_wiki_files_with_folding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_MoinMoin_wiki_files_with_folding)
 ***
 # Title: Detect Perl Batch Files in Vim
 # Category: autocmds
@@ -2040,7 +2040,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_ActiveState_Perl_batch_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_ActiveState_Perl_batch_files)
 ***
 # Title: GPG File Encryption Autocommands
 # Category: autocmds
@@ -2070,7 +2070,7 @@ vim.api.nvim_create_autocmd({'BufReadPre', 'FileReadPre'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Encryption
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Encryption)
 ***
 # Title: Automate File Explorer Startup and Cleanup
 # Category: autocmds
@@ -2133,7 +2133,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Explorer_startup_and_shutdown
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Explorer_startup_and_shutdown)
 ***
 # Title: Detect and Mark Buffer as Modified When File Deleted
 # Category: autocmds
@@ -2163,7 +2163,7 @@ vim.api.nvim_create_autocmd('FileChangedShell', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/File_no_longer_available_-_mark_buffer_modified
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_no_longer_available_-_mark_buffer_modified)
 ***
 # Title: Speed Up Searches by Disabling Autocmds
 # Category: autocmds
@@ -2178,7 +2178,7 @@ Use noautocmd to significantly speed up vimgrep searches by temporarily disablin
 vim.cmd('noautocmd vimgrep /{pattern}/[flags] {file(s)}')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_in_files_within_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_in_files_within_Vim)
 ***
 # Title: Auto-Save and Highlight Unsaved Buffers on Focus Lost
 # Category: autocmds
@@ -2229,7 +2229,7 @@ vim.api.nvim_create_autocmd('FocusLost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Forgetting_to_save_changes_on_FocusLost
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Forgetting_to_save_changes_on_FocusLost)
 ***
 # Title: Automatically Check for External File Changes
 # Category: autocmds
@@ -2250,7 +2250,7 @@ vim.api.nvim_create_user_command('WatchForChanges', function(opts)
 end, { bang = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally)
 ***
 # Title: Check File Changes on Focus
 # Category: autocmds
@@ -2270,7 +2270,7 @@ vim.api.nvim_create_autocmd({'FocusGained', 'BufEnter'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_Vim_check_automatically_if_the_file_has_changed_externally)
 ***
 # Title: Conditional File Encoding Auto-Command
 # Category: autocmds
@@ -2308,7 +2308,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Helpfiles_and_avoiding_E21_error_with_fileencoding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Helpfiles_and_avoiding_E21_error_with_fileencoding)
 ***
 # Title: Automatic Binary File Hex Mode Detection
 # Category: autocmds
@@ -2372,7 +2372,7 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex)
 ***
 # Title: Dynamic Folding with Indent and Manual Override
 # Category: autocmds
@@ -2404,7 +2404,7 @@ vim.api.nvim_create_autocmd({'BufWinEnter'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hide/show_parts_of_your_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hide/show_parts_of_your_code)
 ***
 # Title: Colorscheme Cycling Autocommand
 # Category: autocmds
@@ -2423,7 +2423,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_Have_a_Vim_Rave
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_Have_a_Vim_Rave)
 ***
 # Title: Automatic Hex Mode for Binary Files
 # Category: autocmds
@@ -2482,7 +2482,7 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Improved_hex_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Improved_hex_editing)
 ***
 # Title: Automatically Update Last Modified Timestamp
 # Category: autocmds
@@ -2518,7 +2518,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_current_date_or_time
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_current_date_or_time)
 ***
 # Title: Auto-Insert Image Sizes in HTML
 # Category: autocmds
@@ -2558,7 +2558,7 @@ end
 vim.keymap.set('n', '<F4>', perl_image_size, { desc = 'Insert image sizes in HTML' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_image_size_with_vim_(when_coding_html)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_image_size_with_vim_(when_coding_html))
 ***
 # Title: Append SQL Commands to History File
 # Category: autocmds
@@ -2583,7 +2583,7 @@ vim.api.nvim_create_autocmd('BufWrite', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_SQL-PLUS_command_history_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_SQL-PLUS_command_history_under_Windows)
 ***
 # Title: Automatic Backup on File Write
 # Category: autocmds
@@ -2617,7 +2617,7 @@ vim.api.nvim_create_autocmd({'BufWritePost', 'FileWritePost'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_incremental_backups_of_edited_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_incremental_backups_of_edited_files)
 ***
 # Title: Automatically Set Listing Files as Read-Only
 # Category: autocmds
@@ -2638,7 +2638,7 @@ vim.api.nvim_create_autocmd('BufReadPre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_remote_batch_jobs_and_view_results_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_remote_batch_jobs_and_view_results_in_Vim)
 ***
 # Title: Dynamic Color Schemes Based on Context
 # Category: autocmds
@@ -2670,7 +2670,7 @@ vim.api.nvim_create_autocmd("BufLeave", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Localized_color_schemes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Localized_color_schemes)
 ***
 # Title: Auto Open Quickfix Window After Make
 # Category: autocmds
@@ -2700,7 +2700,7 @@ vim.api.nvim_create_autocmd('QuickFixCmdPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_make_more_helpful
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_make_more_helpful)
 ***
 # Title: Automatic View and Fold Persistence
 # Category: autocmds
@@ -2743,7 +2743,7 @@ vim.api.nvim_create_autocmd({'BufWritePost', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_views_automatic
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_views_automatic)
 ***
 # Title: Smart View Saving with Filters
 # Category: autocmds
@@ -2801,7 +2801,7 @@ end
 return M
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_views_automatic
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_views_automatic)
 ***
 # Title: Auto-Close Completion Preview Automatically
 # Category: autocmds
@@ -2823,7 +2823,7 @@ vim.api.nvim_create_autocmd({'CursorMovedI', 'InsertLeave'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Omnicomplete_-_Remove_Python_Pydoc_Preview_Window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omnicomplete_-_Remove_Python_Pydoc_Preview_Window)
 ***
 # Title: Automatically Open Swap Files Read-Only
 # Category: autocmds
@@ -2861,7 +2861,7 @@ vim.api.nvim_create_autocmd('BufReadPre', {
 vim.opt.shortmess:append('A')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_same_file_read-only_in_second_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_same_file_read-only_in_second_Vim)
 ***
 # Title: Automatic Tags Generation for Python Projects
 # Category: autocmds
@@ -2887,7 +2887,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Optionally_open_matching_or_selected_tag_in_full_height_vertical_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Optionally_open_matching_or_selected_tag_in_full_height_vertical_window)
 ***
 # Title: Periodic Background Command Execution
 # Category: autocmds
@@ -2911,7 +2911,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Periodic_Commands_in_Background
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Periodic_Commands_in_Background)
 ***
 # Title: Track Cursor Position in Insert Mode
 # Category: autocmds
@@ -2949,7 +2949,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_escape_from_moving_the_cursor_one_character_to_the_left
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_escape_from_moving_the_cursor_one_character_to_the_left)
 ***
 # Title: Throttle Frequent Autocommands
 # Category: autocmds
@@ -3021,7 +3021,7 @@ vim.api.nvim_create_autocmd('CursorMoved', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_frequent_commands_from_slowing_things_down
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_frequent_commands_from_slowing_things_down)
 ***
 # Title: Automatically Refresh Firefox When Saving HTML/CSS
 # Category: autocmds
@@ -3059,7 +3059,7 @@ vim.api.nvim_create_autocmd('BufWriteCmd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Refresh_Firefox_(preserving_scroll)_on_Vim_save,_using_MozRepl
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Refresh_Firefox_(preserving_scroll)_on_Vim_save,_using_MozRepl)
 ***
 # Title: Remove Trailing Whitespace on Save
 # Category: autocmds
@@ -3099,7 +3099,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_trailing_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_trailing_spaces)
 ***
 # Title: Restore Cursor to Specific Line on File Open
 # Category: autocmds
@@ -3123,7 +3123,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_state_of_edited_files_when_reopened
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_state_of_edited_files_when_reopened)
 ***
 # Title: Restore Mode When Switching Tab Pages
 # Category: autocmds
@@ -3189,7 +3189,7 @@ vim.api.nvim_create_autocmd('TabEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_the_last_used_mode_when_switching_tabpages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_the_last_used_mode_when_switching_tabpages)
 ***
 # Title: Set Fortran Source Form Manually
 # Category: autocmds
@@ -3209,7 +3209,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip449
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip449)
 ***
 # Title: Persistent Command Window Line Position
 # Category: autocmds
@@ -3234,7 +3234,7 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip45
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip45)
 ***
 # Title: Auto-Close Quickfix Window When Last Buffer
 # Category: autocmds
@@ -3262,7 +3262,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip536
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip536)
 ***
 # Title: Handle File Change Notifications Safely
 # Category: autocmds
@@ -3285,7 +3285,7 @@ vim.cmd('checktime')
 vim.cmd(string.format('au! FileChangedShell %s', vim.fn.expand('%')))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip595
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip595)
 ***
 # Title: Automated PHP Syntax Checking on Write
 # Category: autocmds
@@ -3330,5 +3330,5 @@ vim.api.nvim_create_autocmd('BufWriteCmd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip692
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip692)
 ***

@@ -196,7 +196,7 @@ vim.cmd('setlocal ff=unix')
 vim.cmd('w')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/%5EM
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%5EM)
 ***
 # Title: Batch Convert Line Endings Across Files
 # Category: file_operations
@@ -214,7 +214,7 @@ vim.cmd('args *.c *.h')
 vim.cmd('argdo set ff=unix|update')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/%5EM
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%5EM)
 ***
 # Title: Quick File Extension Manipulation
 # Category: file_operations
@@ -236,7 +236,7 @@ vim.api.nvim_create_user_command('ChgExt', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add/change_file_extension_in_current_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add/change_file_extension_in_current_buffer)
 ***
 # Title: Add Vim to Windows Send To Menu
 # Category: file_operations
@@ -256,7 +256,7 @@ Easily add Vim to Windows Send To context menu for quick file opening with custo
 vim.g.neovide_input_use_logo = true  -- Example of custom file handling
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_Vim_to_Windows_Send_To_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_Vim_to_Windows_Send_To_menu)
 ***
 # Title: Flexible Vim File Launch Options
 # Category: file_operations
@@ -281,7 +281,7 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_Vim_to_Windows_Send_To_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_Vim_to_Windows_Send_To_menu)
 ***
 # Title: Open Files in Tabs Across Multiple Instances
 # Category: file_operations
@@ -297,7 +297,7 @@ gvim.exe --remote-tab-silent "%1"
 -- Can be configured in init.lua with autocmds or external scripts
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_open-in-tabs_context_menu_for_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_open-in-tabs_context_menu_for_Windows)
 ***
 # Title: Quickly Switch Between Source and Header Files
 # Category: file_operations
@@ -317,7 +317,7 @@ vim.keymap.set('n', '<F4>', function()
 end, { desc = 'Switch between source and header' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/All_tips_for_C_family_programming
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_tips_for_C_family_programming)
 ***
 # Title: Open All Files in Tabs by Default
 # Category: file_operations
@@ -347,7 +347,7 @@ vim.api.nvim_create_autocmd('BufAdd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternative_tab_navigation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_tab_navigation)
 ***
 # Title: Associate Extensionless Files with Vim in Windows
 # Category: file_operations
@@ -364,7 +364,7 @@ assoc .=txtfile
 -- Lua equivalent would involve using vim.fn to interact with system
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Associate_files_with_no_extension_to_Vim_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Associate_files_with_no_extension_to_Vim_under_Windows)
 ***
 # Title: Launch Files with Default Application
 # Category: file_operations
@@ -381,7 +381,7 @@ vim.keymap.set('n', '<Leader>x', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Async_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Async_command)
 ***
 # Title: Set Working Directory to Current File
 # Category: file_operations
@@ -406,7 +406,7 @@ vim.keymap.set('n', '<leader>cd', function()
 end, { desc = 'Change to current file directory' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Authors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Authors)
 ***
 # Title: Automatically Create Backup and Tmp Directories
 # Category: file_operations
@@ -500,7 +500,7 @@ end
 init_backup_dir()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_create_tmp_or_backup_directories
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_create_tmp_or_backup_directories)
 ***
 # Title: Auto-Detect and Reload Mixed Line Endings
 # Category: file_operations
@@ -531,7 +531,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_reload_files_with_mixed_line-endings_in_DOS_fileformat
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_reload_files_with_mixed_line-endings_in_DOS_fileformat)
 ***
 # Title: Quick File Encoding Detection in Bash
 # Category: file_operations
@@ -554,7 +554,7 @@ function _G.detect_file_encoding(filename)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Bash_file_encoding_alias
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Bash_file_encoding_alias)
 ***
 # Title: Bulk Rename Files Using Vim
 # Category: file_operations
@@ -584,7 +584,7 @@ vim.cmd(':%s/.*/mv -i "&" \L"&"/g')
 vim.cmd(':w !sh')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Bulk_rename_files_with_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Bulk_rename_files_with_Vim)
 ***
 # Title: List Files in Current Directory Tree
 # Category: file_operations
@@ -660,7 +660,7 @@ end
 vim.keymap.set('n', '<Leader>L', _G.list_tree, { desc = 'List files in current directory tree' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Collect_filenames_of_current_subtree
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Collect_filenames_of_current_subtree)
 ***
 # Title: Customize Netrw Directory Listing Style
 # Category: file_operations
@@ -675,7 +675,7 @@ let g:netrw_liststyle=3
 vim.g.netrw_liststyle = 3
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Collect_filenames_of_current_subtree
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Collect_filenames_of_current_subtree)
 ***
 # Title: Compress Vim Documentation Files
 # Category: file_operations
@@ -696,7 +696,7 @@ vim.fn.system('gzip ' .. vim.o.runtimepath .. '/doc/*.txt')
 vim.fn.system('gunzip ' .. vim.o.runtimepath .. '/doc/help.txt')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compress_Vim_doc_files_to_save_space
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compress_Vim_doc_files_to_save_space)
 ***
 # Title: Quick File Copy Within Vim
 # Category: file_operations
@@ -715,7 +715,7 @@ vim.api.nvim_create_user_command('Cpage', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_current_file_to_another_location_from_within_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_current_file_to_another_location_from_within_vim)
 ***
 # Title: Create and Restore Vim Sessions Easily
 # Category: file_operations
@@ -740,7 +740,7 @@ require('nvim-session-manager').save_current_session()
 require('nvim-session-manager').load_session()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_Vim_sessions_that_you_can_open_with_double-click_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_Vim_sessions_that_you_can_open_with_double-click_in_Windows)
 ***
 # Title: Create a Personal Knowledge Base in Vim
 # Category: file_operations
@@ -768,7 +768,7 @@ vim.keymap.set('n', '<leader>kn', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Creating_and_maintaining_a_personal_Knowledge_Base_with_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Creating_and_maintaining_a_personal_Knowledge_Base_with_Vim)
 ***
 # Title: Bulk Create Directories from Text List
 # Category: file_operations
@@ -794,7 +794,7 @@ end
 -- Usage: Call create_dirs_from_list() in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Creating_directories_from_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Creating_directories_from_a_list)
 ***
 # Title: Sync Disk After Every Write to Prevent Data Loss
 # Category: file_operations
@@ -814,7 +814,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Decrease_chances_of_file_corruption_in_case_of_computer_crash
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Decrease_chances_of_file_corruption_in_case_of_computer_crash)
 ***
 # Title: Delete Files Directly from Vim
 # Category: file_operations
@@ -833,7 +833,7 @@ vim.api.nvim_create_user_command('Remove', function(opts)
 end, { nargs = 1, complete = 'file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command)
 ***
 # Title: Delete Current File and Close Buffer
 # Category: file_operations
@@ -848,7 +848,7 @@ call delete(expand('%')) | bdelete!
 vim.fn.delete(vim.fn.expand('%')) vim.cmd('bdelete!')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_files_with_a_Vim_command)
 ***
 # Title: Preserve Missing End-of-Line When Saving Files
 # Category: file_operations
@@ -957,7 +957,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Do_not_auto-add_a_newline_at_EOF
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Do_not_auto-add_a_newline_at_EOF)
 ***
 # Title: Drag and Drop Files into Vim Command Line
 # Category: file_operations
@@ -971,7 +971,7 @@ Easily insert file paths into Vim command line by drag and dropping from file ex
 -- Or simply drag file directly into Vim window
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Drag_and_drop_file_names_into_the_Vim_command_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Drag_and_drop_file_names_into_the_Vim_command_line)
 ***
 # Title: Modifier Keys for Drag and Drop in Vim
 # Category: file_operations
@@ -986,7 +986,7 @@ Use modifier keys to control how files are opened when drag and dropped
 -- Default: Open file in current window
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Drag_and_drop_file_names_into_the_Vim_command_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Drag_and_drop_file_names_into_the_Vim_command_line)
 ***
 # Title: Sync Vim Runtime Files with rsync
 # Category: file_operations
@@ -1003,7 +1003,7 @@ rsync -avzcP --delete --exclude='/dos/' ftp.nluug.nl::Vim/runtime/ ./runtime/
 vim.fn.system('rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_keep_runtime_files_up_to_date
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_keep_runtime_files_up_to_date)
 ***
 # Title: Quick Source/Header File Switching
 # Category: file_operations
@@ -1035,7 +1035,7 @@ end
 vim.keymap.set('n', ',s', _G.switch_source_header, { desc = 'Switch between source and header' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_switch_between_source_and_header_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_switch_between_source_and_header_file)
 ***
 # Title: Browse and Edit JAR Files Directly in Vim/Neovim
 # Category: file_operations
@@ -1067,7 +1067,7 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_Java_jar_and_other_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_Java_jar_and_other_files)
 ***
 # Title: Open or Jump to File in New Tab
 # Category: file_operations
@@ -1092,7 +1092,7 @@ vim.api.nvim_create_user_command('O', function(opts)
 end, { nargs = 1, complete = 'file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_a_file_or_jump_to_it_if_already_open
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_a_file_or_jump_to_it_if_already_open)
 ***
 # Title: Create Timestamped Temporary File Copy
 # Category: file_operations
@@ -1113,7 +1113,7 @@ vim.keymap.set('n', 'zs', function()
 end, { desc = 'Save file with timestamp in temp directory' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_a_temporary_copy_of_the_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_a_temporary_copy_of_the_current_file)
 ***
 # Title: Edit Remote Files with SCP in Vim
 # Category: file_operations
@@ -1132,7 +1132,7 @@ Easily edit configuration files across multiple remote servers using Vim's netrw
 require('plenary.nvim').curl.get('scp://server1.domain.com///opt/myapp/etc/myapprc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_and_organize_several_remote_files_easily
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_and_organize_several_remote_files_easily)
 ***
 # Title: Secure GPG File Editing in Vim/Neovim
 # Category: file_operations
@@ -1198,7 +1198,7 @@ vim.api.nvim_create_autocmd({'BufWritePost', 'FileWritePost'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_gpg_encrypted_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_gpg_encrypted_files)
 ***
 # Title: Batch Edit Multiple Files from File List
 # Category: file_operations
@@ -1221,7 +1221,7 @@ vim.fn.setreg('q', 'search_pattern_and_delete_macro')
 vim.cmd('argdo norm! @q')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_multiple_files_from_a_list_of_file_names
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_multiple_files_from_a_list_of_file_names)
 ***
 # Title: Edit Remote Files via Network Protocols
 # Category: file_operations
@@ -1242,7 +1242,7 @@ vim.cmd('edit scp://username@host//path/to/file')
 vim.api.nvim_cmd({cmd = 'edit', args = {'scp://username@host//path/to/file'}}, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_remote_files_locally_via_SCP/RCP/FTP
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_remote_files_locally_via_SCP/RCP/FTP)
 ***
 # Title: Break Hard Links When Editing Files
 # Category: file_operations
@@ -1257,7 +1257,7 @@ set backupcopy=auto,breakhardlink
 vim.opt.backupcopy = "auto,breakhardlink"
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_a_hard_link_to_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_a_hard_link_to_a_file)
 ***
 # Title: Edit Files on Non-Standard Port FTP Server
 # Category: file_operations
@@ -1273,7 +1273,7 @@ Edit remote files on an FTP server using a non-standard port by escaping the por
 vim.cmd('e ftp://ftp.server\#2121/path/to/file/filename')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_files_on_an_ftp_server_listening_on_a_non-standard_port
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_files_on_an_ftp_server_listening_on_a_non-standard_port)
 ***
 # Title: Edit Remote Files via SCP
 # Category: file_operations
@@ -1297,7 +1297,7 @@ vim.cmd('e scp://remoteuser@server.tld//absolute/path/to/document')
 vim.cmd('tabe scp://remoteuser@server.tld//absolute/path/to/document')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_remote_files_via_scp_in_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_remote_files_via_scp_in_vim)
 ***
 # Title: Encrypt Files Securely in Vim
 # Category: file_operations
@@ -1327,7 +1327,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Encrypt_a_file_without_leaving_traces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Encrypt_a_file_without_leaving_traces)
 ***
 # Title: Secure File Encryption in Vim
 # Category: file_operations
@@ -1346,7 +1346,7 @@ vim.cmd('X')  -- Prompt for encryption key
 vim.opt.cryptmethod = 'blowfish2'  -- Set strongest encryption method
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Encryption
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Encryption)
 ***
 # Title: Quick Directory Exploration in Vim
 # Category: file_operations
@@ -1371,7 +1371,7 @@ vim.cmd('e /home/user')
 vim.cmd('e ..')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/File_explorer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_explorer)
 ***
 # Title: Batch Convert Line Endings in Multiple Files
 # Category: file_operations
@@ -1389,7 +1389,7 @@ vim.cmd('args *.c *.h')
 vim.cmd('argdo set ff=unix|update')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/File_format
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_format)
 ***
 # Title: Flexible File Find Function
 # Category: file_operations
@@ -1418,7 +1418,7 @@ vim.api.nvim_create_user_command('Find', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/File_search_similar_to_cmd-t_in_TextMate
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_search_similar_to_cmd-t_in_TextMate)
 ***
 # Title: Quickly Find and Edit Files Across Large Codebases
 # Category: file_operations
@@ -1439,7 +1439,7 @@ vim.opt.tags = 'c:\\files.tags'
 -- Generate tags: ctags -R --file-tags=yes c:/
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_and_edit_any_file_in_a_directory_using_tag-like_pattern_matching
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_and_edit_any_file_in_a_directory_using_tag-like_pattern_matching)
 ***
 # Title: Recursive File Finding in Vim
 # Category: file_operations
@@ -1500,7 +1500,7 @@ vim.api.nvim_create_user_command('Find', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_files_in_subdirectories
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_files_in_subdirectories)
 ***
 # Title: Flexible Project File Search with Ignore Patterns
 # Category: file_operations
@@ -1597,7 +1597,7 @@ vim.api.nvim_create_user_command('Find', function(opts)
 end, { nargs = '*' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_files_in_subdirectories
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_files_in_subdirectories)
 ***
 # Title: Open Current Visual Studio File in Vim
 # Category: file_operations
@@ -1616,7 +1616,7 @@ Arguments: --servername gVimStudio --remote-silent +"execute 'normal! $(CurLine)
 -- This is mostly an IDE integration tip, so direct Lua translation isn't straightforward
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_Vim_open_a_file_in_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_Vim_open_a_file_in_Visual_Studio)
 ***
 # Title: Hex Dump Binary Files
 # Category: file_operations
@@ -1640,7 +1640,7 @@ vim.cmd(':%!xxd')
 vim.cmd(':%!xxd -r')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex_dump
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_dump)
 ***
 # Title: Generate C Source from Binary Files
 # Category: file_operations
@@ -1656,7 +1656,7 @@ Convert binary files into C-compatible byte arrays using xxd
 vim.cmd('r !xxd -i sample.bin')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex_dump
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_dump)
 ***
 # Title: Binary File Editing Mode
 # Category: file_operations
@@ -1676,7 +1676,7 @@ vim.o.display = 'uhex'
 vim.o.wrap = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex_dump
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_dump)
 ***
 # Title: Hex Dump Binary Files with xxd
 # Category: file_operations
@@ -1699,7 +1699,7 @@ vim.cmd(':%!xxd')
 vim.cmd(':%!xxd -r')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hexdump2C
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hexdump2C)
 ***
 # Title: Open Binary Files in Vim
 # Category: file_operations
@@ -1723,7 +1723,7 @@ vim.opt.display = 'uhex'
 vim.opt.wrap = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hexdump2C
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hexdump2C)
 ***
 # Title: Create Vim Patches Easily
 # Category: file_operations
@@ -1743,7 +1743,7 @@ vim.opt.patchmode = '.orig'
 -- diff -u src/file.orig src/file > /tmp/file.diff
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_make_and_submit_a_patch
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_make_and_submit_a_patch)
 ***
 # Title: Incremental Backups with Timestamped Files
 # Category: file_operations
@@ -1768,7 +1768,7 @@ vim.api.nvim_create_autocmd({'BufWritePre', 'FileWritePre'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Incremental_backup_in_central_backup_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Incremental_backup_in_central_backup_directory)
 ***
 # Title: Central Backup Directory with Directory Creation
 # Category: file_operations
@@ -1795,7 +1795,7 @@ end
 vim.o.backupdir = root_backup_dir
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Incremental_backup_in_central_backup_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Incremental_backup_in_central_backup_directory)
 ***
 # Title: Insert File or Command Output into Buffer
 # Category: file_operations
@@ -1818,7 +1818,7 @@ vim.cmd('r !ls')
 vim.cmd('$r !pwd')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_a_file)
 ***
 # Title: Insert Template Files into Buffer
 # Category: file_operations
@@ -1845,7 +1845,7 @@ vim.api.nvim_create_user_command('Refile', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_template_files_into_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_template_files_into_buffer)
 ***
 # Title: Quick File and Editing Commands
 # Category: file_operations
@@ -1860,7 +1860,7 @@ vim.keymap.set('n', 'ZZ', ':wq<CR>', { desc = 'Save and quit' })
 vim.keymap.set('n', ':e!', ':e!<CR>', { desc = 'Reload file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi)
 ***
 # Title: Open File at Specific Line
 # Category: file_operations
@@ -1876,7 +1876,7 @@ vim file.txt +123
 -- Launch with: nvim file.txt +123
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_a_line_number
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_a_line_number)
 ***
 # Title: Incremental File Backups with Unique Timestamps
 # Category: file_operations
@@ -1901,7 +1901,7 @@ local backup_ext = string.format("_(%s)[%s]",
 vim.opt.backupext = backup_ext
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_incremental_backups_of_edited_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_incremental_backups_of_edited_files)
 ***
 # Title: Preserve Modified Flag After Writing to File
 # Category: file_operations
@@ -1945,7 +1945,7 @@ vim.api.nvim_create_autocmd('BufWriteCmd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_the_modified_flag_after_writing_to_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_the_modified_flag_after_writing_to_a_file)
 ***
 # Title: Open Files in New Tabs Across Desktops
 # Category: file_operations
@@ -1964,7 +1964,7 @@ local function open_file_in_desktop_tab(file)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Linux
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Linux)
 ***
 # Title: Open Files in New Tabs Across Desktop
 # Category: file_operations
@@ -1981,7 +1981,7 @@ vim -p --remote-tab-silent filename
 -- vim.cmd('silent tabedit ' .. filename)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Unix
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Unix)
 ***
 # Title: Open Files in New Tabs Automatically
 # Category: file_operations
@@ -2007,7 +2007,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Windows)
 ***
 # Title: Open Files in New Tabs via Remote Command
 # Category: file_operations
@@ -2023,7 +2023,7 @@ Use remote tab silent command to open files in tabs from command line or file as
 vim.fn.system({'nvim', '--remote-tab-silent', vim.fn.expand('%')})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Windows)
 ***
 # Title: Capture Change Locations
 # Category: file_operations
@@ -2050,7 +2050,7 @@ vim.o.more = true
 vim.cmd('edit changes.txt')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_changes_to_the_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_changes_to_the_current_file)
 ***
 # Title: Bulk Open Files from Filename List
 # Category: file_operations
@@ -2088,7 +2088,7 @@ local function open_files_from_list(filename)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Load_files_from_list_of_filenames_in_a_text_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Load_files_from_list_of_filenames_in_a_text_file)
 ***
 # Title: Track File Open Dialog to Current File's Directory
 # Category: file_operations
@@ -2103,7 +2103,7 @@ set browsedir=buffer
 vim.opt.browsedir = 'buffer'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_File-Open_track_directory_of_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_File-Open_track_directory_of_current_file)
 ***
 # Title: Create Tar Archive of Open Buffers
 # Category: file_operations
@@ -2118,7 +2118,7 @@ Quickly create a tar archive of all files currently open in Vim buffers, preserv
 vim.api.nvim_command('silent bufdo !tar -rvf archive.tar ' .. vim.fn.expand('%:p'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_tar_of_all_files_in_vim_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_tar_of_all_files_in_vim_buffer)
 ***
 # Title: Zip Open Buffers Quickly
 # Category: file_operations
@@ -2133,7 +2133,7 @@ Create a zip archive of all files currently open in Vim buffers
 vim.api.nvim_command('silent bufdo !zip proj.zip ' .. vim.fn.expand('%'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_tar_of_all_files_in_vim_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_tar_of_all_files_in_vim_buffer)
 ***
 # Title: Automatically Create Directories When Editing Files
 # Category: file_operations
@@ -2153,7 +2153,7 @@ vim.api.nvim_create_autocmd('BufNewFile', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mkdir_on_edit_if_needed
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mkdir_on_edit_if_needed)
 ***
 # Title: Move Files Directly in Vim File Explorer
 # Category: file_operations
@@ -2180,7 +2180,7 @@ vim.cmd.Sex({'bang': true})
 -- Note: Use 'R' key to rename/move files in explorer
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_files_with_a_Vim_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_files_with_a_Vim_command)
 ***
 # Title: Open Files in Tabs with Path Search
 # Category: file_operations
@@ -2202,7 +2202,7 @@ vim.opt.path = '.,,**'
 -- Note: :tabfind is still a command, can be executed via vim.cmd
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_the_current_tabpage_forward_or_backward
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_the_current_tabpage_forward_or_backward)
 ***
 # Title: Convert OEM to ANSI Character Encoding
 # Category: file_operations
@@ -2222,7 +2222,7 @@ vim.opt.fileencoding = 'latin1'
 vim.cmd.wq()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/OEM_to_ANSI_conversion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/OEM_to_ANSI_conversion)
 ***
 # Title: Quick Note Taking with Vim Alias
 # Category: file_operations
@@ -2244,7 +2244,7 @@ vim.api.nvim_create_user_command('Note', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_File,_Go_To_Last_Line,_Add_Blank_Line,_Change_To_Insert_Mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_File,_Go_To_Last_Line,_Add_Blank_Line,_Change_To_Insert_Mode)
 ***
 # Title: Convert PDF to Text in Vim
 # Category: file_operations
@@ -2262,7 +2262,7 @@ vim.api.nvim_create_user_command('Rpdf', function(opts)
 end, { nargs = 1, complete = 'file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_PDF_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_PDF_files)
 ***
 # Title: Open Windows Explorer from Current Buffer
 # Category: file_operations
@@ -2290,7 +2290,7 @@ vim.keymap.set('n', '<F11>', function()
 end, { desc = 'Open Explorer and select current file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_Windows_Explorer_showing_directory_of_current_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_Windows_Explorer_showing_directory_of_current_buffer)
 ***
 # Title: Open Finder for macOS Users
 # Category: file_operations
@@ -2307,7 +2307,7 @@ vim.keymap.set('n', '<leader>f', function()
 end, { desc = 'Open Finder in current directory' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_Windows_Explorer_showing_directory_of_current_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_Windows_Explorer_showing_directory_of_current_buffer)
 ***
 # Title: Open Files in Tabs from Command Line
 # Category: file_operations
@@ -2323,7 +2323,7 @@ Use -p flag to open multiple files, each in its own tab when launching Vim
 -- nvim -p *.py
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_every_buffer_in_its_own_tabpage
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_every_buffer_in_its_own_tabpage)
 ***
 # Title: Open Files in Existing Vim Instance
 # Category: file_operations
@@ -2344,7 +2344,7 @@ function open_in_existing_nvim(file)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_file_in_already_running_vim_from_elsewhere
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_file_in_already_running_vim_from_elsewhere)
 ***
 # Title: Handle Filenames with Spaces in Path
 # Category: file_operations
@@ -2361,7 +2361,7 @@ set isfname+=32
 vim.opt.isfname:append(32)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_filenames_containing_spaces_with_gf
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_filenames_containing_spaces_with_gf)
 ***
 # Title: Open Multiple Files in Tabs Automatically
 # Category: file_operations
@@ -2378,7 +2378,7 @@ Automatically open files in new tabs when launched from Windows, using remote ta
 vim.keymap.set('n', '<leader>nt', ':tabedit ', { desc = 'Open new tab' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_files_in_multiple_tabs_using_the_Windows_Context_Menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_files_in_multiple_tabs_using_the_Windows_Context_Menu)
 ***
 # Title: Open Multiple Files in Same Vim Instance on macOS
 # Category: file_operations
@@ -2404,7 +2404,7 @@ end run
 vim.cmd('args ' .. table.concat(files, ' '))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_files_in_same_window_under_Mac_OS_X
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_files_in_same_window_under_Mac_OS_X)
 ***
 # Title: Windows File Associations with Vim/Neovim
 # Category: file_operations
@@ -2425,7 +2425,7 @@ vim.cmd('assoc .php=PHPFile')
 vim.cmd('ftype PHPFile="C:\\Program Files\\Vim\\vim82\\gvim.exe" --remote-silent "%1"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_files_with_existing_Gvim_window_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_files_with_existing_Gvim_window_in_Windows)
 ***
 # Title: Open Current File's Directory in File Explorer
 # Category: file_operations
@@ -2442,7 +2442,7 @@ vim.keymap.set('n', '<C-e>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_the_directory_for_the_current_file_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_the_directory_for_the_current_file_in_Windows)
 ***
 # Title: Cross-Platform File Directory Opener
 # Category: file_operations
@@ -2474,7 +2474,7 @@ end
 vim.api.nvim_create_user_command('OpenCWD', _G.open_current_directory, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_the_directory_for_the_current_file_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_the_directory_for_the_current_file_in_Windows)
 ***
 # Title: Open File's Directory in Vim
 # Category: file_operations
@@ -2496,7 +2496,7 @@ vim.cmd('Sexplore')   -- Split horizontally
 vim.cmd('Vexplore')   -- Split vertically
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_the_folder_containing_the_currently_open_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_the_folder_containing_the_currently_open_file)
 ***
 # Title: Open Multiple Files from List File
 # Category: file_operations
@@ -2511,7 +2511,7 @@ gvim "+gl/^/exec 'badd '.getline('.')" +bdel +nohls +"cd %:h" LISTFILE
 vim.cmd('args ' .. vim.fn.expand('mylist'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Opening_several_files_in_vim_via_ListFile
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Opening_several_files_in_vim_via_ListFile)
 ***
 # Title: Open Files with Wildcard Patterns
 # Category: file_operations
@@ -2526,7 +2526,7 @@ gvim *\2*\xx.txt
 vim.cmd('args *\2*\xx.txt')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Opening_several_files_in_vim_via_ListFile
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Opening_several_files_in_vim_via_ListFile)
 ***
 # Title: Open File with Clipboard Paste
 # Category: file_operations
@@ -2544,7 +2544,7 @@ vim.cmd('enew')
 vim.cmd('normal "*p')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Paste_from_the_clipboard_into_a_new_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Paste_from_the_clipboard_into_a_new_vim)
 ***
 # Title: Quick HTML File Preview in Browser
 # Category: file_operations
@@ -2572,7 +2572,7 @@ vim.keymap.set('n', '<F8>', function()
 end, { desc = 'Open URL under cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preview_HTML_files_quickly
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preview_HTML_files_quickly)
 ***
 # Title: Project File Search with Wildmenu
 # Category: file_operations
@@ -2589,7 +2589,7 @@ vim.opt.wildmenu = true
 vim.opt.path = vim.fn.getcwd() .. '/**'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Project_browsing_using_find
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Project_browsing_using_find)
 ***
 # Title: Protect Reference Files from Accidental Changes
 # Category: file_operations
@@ -2606,7 +2606,7 @@ vim.opt.modifiable = false
 vim.cmd.colorscheme('peachpuff')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Protecting_a_file_from_accidental_changes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Protecting_a_file_from_accidental_changes)
 ***
 # Title: Add Modeline to Permanently Protect File
 # Category: file_operations
@@ -2622,7 +2622,7 @@ Use a modeline to make a file non-modifiable across editing sessions
 -- vim:noma
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Protecting_a_file_from_accidental_changes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Protecting_a_file_from_accidental_changes)
 ***
 # Title: Quick File Backup Mapping
 # Category: file_operations
@@ -2644,7 +2644,7 @@ vim.keymap.set('n', '<Leader>b', function()
 end, { desc = 'Quick file backup' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_mapping_for_backing_up_the_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_mapping_for_backing_up_the_file)
 ***
 # Title: Quick Backup of Current File with Timestamp
 # Category: file_operations
@@ -2675,7 +2675,7 @@ vim.keymap.set('n', ';s', function()
 end, { desc = 'Create timestamped backup' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_save_to_a_temporary_file_before_more_edits
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_save_to_a_temporary_file_before_more_edits)
 ***
 # Title: Recover Overwritten File Using Swap File
 # Category: file_operations
@@ -2691,7 +2691,7 @@ Recover a file that was accidentally overwritten by using Vim's built-in recover
 vim.cmd('recover')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recover_overwritten_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recover_overwritten_file)
 ***
 # Title: Recover Files After Crash or Power Failure
 # Category: file_operations
@@ -2710,7 +2710,7 @@ vim -r  # List recoverable files
 -- Recommended to use :help recovery in Neovim for more details
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recovering_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recovering_files)
 ***
 # Title: Easy File Encoding Switching
 # Category: file_operations
@@ -2745,7 +2745,7 @@ end
 vim.keymap.set('n', '<F8>', M.change_file_encoding, { desc = 'Cycle file encodings' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reload_the_same_file_in_different_encoding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reload_the_same_file_in_different_encoding)
 ***
 # Title: Reload File with Different Encoding
 # Category: file_operations
@@ -2768,7 +2768,7 @@ vim.cmd('e ++enc=utf-8')
 vim.keymap.set('n', '<F12>', ':e ++enc=utf-8<CR>', { desc = 'Reload file as UTF-8' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reloading_a_file_using_a_different_encoding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reloading_a_file_using_a_different_encoding)
 ***
 # Title: Batch Convert Line Endings for Multiple Files
 # Category: file_operations
@@ -2786,7 +2786,7 @@ vim.cmd('args *.c *.h')
 vim.cmd('argdo set ff=unix|update')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Removing_%5EM%27s_From_A_File
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Removing_%5EM%27s_From_A_File)
 ***
 # Title: Edit Files on FTP Server with Custom Port
 # Category: file_operations
@@ -2802,7 +2802,7 @@ Open files on an FTP server using a non-standard port by escaping the # characte
 vim.cmd('e ftp://ftp.server\#2121/path/to/file/filename')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip480
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip480)
 ***
 # Title: Decompile and View Java Class Files in Vim
 # Category: file_operations
@@ -2836,7 +2836,7 @@ vim.api.nvim_create_autocmd({'BufReadPost', 'FileReadPost'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip54
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip54)
 ***
 # Title: Edit Remote Files Seamlessly with Netrw
 # Category: file_operations
@@ -2853,7 +2853,7 @@ Edit remote files locally using Vim's built-in network file transfer capabilitie
 vim.cmd('edit scp://user@hostname//path/to/file')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip542
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip542)
 ***
 # Title: Automatic Remote File Synchronization
 # Category: file_operations
@@ -2870,7 +2870,7 @@ Automatically transfer and save remote files when editing, eliminating manual up
 vim.cmd('Nwrite scp://user@hostname//path/to/file')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip542
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip542)
 ***
 # Title: Optimize Large File Loading Performance
 # Category: file_operations
@@ -2915,7 +2915,7 @@ vim.api.nvim_create_autocmd('BufReadPre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip611
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip611)
 ***
 # Title: Restore Last Edited File and Cursor Position
 # Category: file_operations
@@ -2960,7 +2960,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip613
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip613)
 ***
 # Title: Save and Restore Session Automatically
 # Category: file_operations
@@ -3004,7 +3004,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip613
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip613)
 ***
 # Title: Create and Submit Vim Patches Easily
 # Category: file_operations
@@ -3019,7 +3019,7 @@ Learn how to generate patches for Vim source files using diff and prepare them f
 vim.o.patchmode = '.orig'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip618
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip618)
 ***
 # Title: Compile LaTeX with Rubber and Make in Vim
 # Category: file_operations
@@ -3051,7 +3051,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip627
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip627)
 ***
 # Title: Transparently Edit Encrypted GPG Files in Vim
 # Category: file_operations
@@ -3092,7 +3092,7 @@ vim.api.nvim_create_autocmd({'BufWritePre'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip651
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip651)
 ***
 # Title: Quick Vim Directory Navigation
 # Category: file_operations
@@ -3108,7 +3108,7 @@ Create a Vim shortcut that opens directly to root directory for quick file acces
 vim.fn.system('nvim c:/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip676
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip676)
 ***
 # Title: Open Files via URLs in Vim
 # Category: file_operations
@@ -3130,5 +3130,5 @@ vim.api.nvim_create_autocmd('BufReadCmd', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip691
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip691)
 ***

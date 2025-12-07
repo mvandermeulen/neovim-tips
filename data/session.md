@@ -112,5 +112,5 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_the_last_edited_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_the_last_edited_file)
 ***

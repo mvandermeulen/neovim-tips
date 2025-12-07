@@ -458,7 +458,7 @@ git config --global mergetool.keepBackup false
 -- Key is to set up a three-tab layout for conflict resolution
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/A_better_Vimdiff_Git_mergetool
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_better_Vimdiff_Git_mergetool)
 ***
 # Title: Quick Number Value Inspection
 # Category: advanced_neovim
@@ -499,7 +499,7 @@ vim.keymap.set('n', 'gn', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_between_hex_and_decimal
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_between_hex_and_decimal)
 ***
 # Title: Custom Keyword Completion with Wildcards
 # Category: advanced_neovim
@@ -542,7 +542,7 @@ end
 vim.bo.completefunc = 'v:lua.MKwCompleteId'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Custom_keyword_completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Custom_keyword_completion)
 ***
 # Title: Smart Function Signature Preview
 # Category: advanced_neovim
@@ -610,7 +610,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Function_signature_previewer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Function_signature_previewer)
 ***
 # Title: Advanced Syntax Group Identification Command
 # Category: advanced_neovim
@@ -642,7 +642,7 @@ vim.api.nvim_create_user_command('CheckHighlightUnderCursor', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor)
 ***
 # Title: Automatic Desktop-Specific Vim Instances
 # Category: advanced_neovim
@@ -659,7 +659,7 @@ exec /usr/bin/vim --servername $desktop --remote-tab-silent "$@"
 -- Can use vim.fn.serverlist() and custom desktop detection logic
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Unix
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Unix)
 ***
 # Title: Use Lists for Handling Newlines in Vim Scripts
 # Category: advanced_neovim
@@ -682,7 +682,7 @@ vim.fn.setline(".", {"a", "b"})
 local lines = {"a", "b"}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Newlines_and_nulls_in_Vim_script
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Newlines_and_nulls_in_Vim_script)
 ***
 # Title: Advanced PHP Documentation Lookup Function
 # Category: advanced_neovim
@@ -717,5 +717,5 @@ vim.keymap.set('n', '<C-p>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip598
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip598)
 ***

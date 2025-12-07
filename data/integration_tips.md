@@ -519,7 +519,7 @@ gvim.exe -P "Microsoft Visual C++" --servername MDI_VIM
 vim.fn.system({'gvim', '-P', 'Microsoft Visual C++', '--servername', 'MDI_VIM'})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Calling_gvim_from_MS_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Calling_gvim_from_MS_Visual_Studio)
 ***
 # Title: Visual Studio .NET Vim Integration
 # Category: integration
@@ -535,7 +535,7 @@ gvim.exe +$(CurLine) "$(ItemPath)" --remote-tab-silent
 vim.fn.system({'gvim', '+' .. vim.fn.line('.'), vim.fn.expand('%:p'), '--remote-tab-silent'})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Calling_gvim_from_MS_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Calling_gvim_from_MS_Visual_Studio)
 ***
 # Title: Open Files in gVim from Source Navigator
 # Category: integration
@@ -550,5 +550,5 @@ gvim "+call cursor(%l,%c)" %f
 vim.fn.system('gvim "+call cursor(' .. line .. ',' .. col .. ')" ' .. filename)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_gvim_with_RedHat_Source-Navigator
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_gvim_with_RedHat_Source-Navigator)
 ***

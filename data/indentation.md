@@ -38,7 +38,7 @@ vim.cmd('normal =a{')
 vim.cmd('normal =%%')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_indent_on_finishing_a_code_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_indent_on_finishing_a_code_block)
 ***
 # Title: Increment/Decrement Block Indentation
 # Category: indentation
@@ -61,7 +61,7 @@ vim.cmd('normal >i{')
 vim.cmd('normal <i{')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_indent_on_finishing_a_code_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_indent_on_finishing_a_code_block)
 ***
 # Title: Improve PHP and HTML Indentation Support
 # Category: indentation
@@ -130,7 +130,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Better_indent_support_for_php_with_html
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Better_indent_support_for_php_with_html)
 ***
 # Title: Easy Indentation with Cursor Position Preserved
 # Category: indentation
@@ -165,7 +165,7 @@ vim.keymap.set('i', '<C-Tab>', '<C-t>', { desc = 'Indent line forward' })
 vim.keymap.set('i', '<C-S-Tab>', '<C-d>', { desc = 'Indent line backward' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_indenting_in_insert_and_normal_mode_with_no_cursor_displacement
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_indenting_in_insert_and_normal_mode_with_no_cursor_displacement)
 ***
 # Title: Flexible Indentation and Tab Settings
 # Category: indentation
@@ -186,7 +186,7 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Example_vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_vimrc)
 ***
 # Title: Preserve Indent Across Blank Lines
 # Category: indentation
@@ -268,7 +268,7 @@ end
 vim.cmd('command! -bar IndentIgnoringBlanks lua _G.setup_indent_ignoring_blanks()')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_the_correct_indent_for_new_lines_despite_blank_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_the_correct_indent_for_new_lines_despite_blank_lines)
 ***
 # Title: Disable Auto-Indentation for Specific File Types
 # Category: indentation
@@ -284,7 +284,7 @@ let b:did_indent = 1
 vim.g.did_indent = 1
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_stop_auto_indenting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_stop_auto_indenting)
 ***
 # Title: Disable Auto-Indentation for Current File
 # Category: indentation
@@ -303,7 +303,7 @@ vim.opt_local.smartindent = false
 vim.opt_local.indentexpr = ''
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_stop_auto_indenting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_stop_auto_indenting)
 ***
 # Title: Reindent Code Blocks Efficiently
 # Category: indentation
@@ -331,7 +331,7 @@ Quickly reindent code blocks using text objects and indent commands in Vim/Neovi
 -- <i{ decreases indent
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent_a_code_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent_a_code_block)
 ***
 # Title: Block Indent with Matching Brace
 # Category: indentation
@@ -355,7 +355,7 @@ Indent entire code blocks relative to matching braces quickly
 -- <% decreases block indent
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent_a_code_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent_a_code_block)
 ***
 # Title: Select and Manipulate Code Blocks by Indentation
 # Category: indentation
@@ -398,7 +398,7 @@ vim.keymap.set({'o', 'v'}, 'ai', function() ind_txt_obj(false) end, { silent = t
 vim.keymap.set({'o', 'v'}, 'ii', function() ind_txt_obj(true) end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent_text_object
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent_text_object)
 ***
 # Title: Indent with Tabs, Align with Spaces
 # Category: indentation
@@ -423,7 +423,7 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent_with_tabs,_align_with_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent_with_tabs,_align_with_spaces)
 ***
 # Title: Smart Tabs for Consistent Indentation
 # Category: indentation
@@ -447,7 +447,7 @@ vim.opt.cindent = true
 vim.opt.cinoptions = '(0,u0,U0'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent_with_tabs,_align_with_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent_with_tabs,_align_with_spaces)
 ***
 # Title: Preserve Indentation When Typing Hash
 # Category: indentation
@@ -477,7 +477,7 @@ vim.keymap.set('i', '#', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_indent_for_new_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_indent_for_new_lines)
 ***
 # Title: Use Filetype-Based Indentation
 # Category: indentation
@@ -495,7 +495,7 @@ vim.cmd('filetype indent on')
 vim.opt.autoindent = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_autoindent_from_removing_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_autoindent_from_removing_indentation)
 ***
 # Title: Quickly Reindent Entire File or Selected Text
 # Category: indentation
@@ -527,7 +527,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Reindent entire file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_align_whole_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_align_whole_file)
 ***
 # Title: Adjust Indent in Insert Mode
 # Category: indentation
@@ -545,7 +545,7 @@ vim.keymap.set('i', '<C-d>', '<C-d>', { desc = 'Decrease indent' })
 vim.keymap.set('i', '<C-t>', '<C-t>', { desc = 'Increase indent' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Removing_automatic_comment_leaders
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Removing_automatic_comment_leaders)
 ***
 # Title: Correct Indentation in Blank Lines
 # Category: indentation
@@ -561,7 +561,7 @@ Use 'cc' or 'S' to start insert mode on a new line with correct indentation, avo
 -- with correct indentation on a blank line
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restoring_indent_after_typing_hash
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restoring_indent_after_typing_hash)
 ***
 # Title: Smart Dedent to Previous Indent Level
 # Category: indentation
@@ -621,7 +621,7 @@ end
 vim.keymap.set('i', '<C-d>', '<Cmd>lua _G.smart_dedent()<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Return_to_previous_indent
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Return_to_previous_indent)
 ***
 # Title: Quick Block Indentation Commands
 # Category: indentation
@@ -647,7 +647,7 @@ Efficient ways to reindent code blocks in Vim, using text object navigation
 -- Use > or < for manual indent changes
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip597
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip597)
 ***
 # Title: Block Indentation with Brace Matching
 # Category: indentation
@@ -668,5 +668,5 @@ Use % to match braces and indent entire code blocks with single commands
 -- These commands leverage Vim's text object and matching capabilities
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip597
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip597)
 ***

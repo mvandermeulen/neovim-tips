@@ -26,7 +26,7 @@ vim.keymap.set('n', '<F7>', _G.encrypt_file, { desc = 'Encrypt file' })
 vim.keymap.set('n', '<F8>', _G.decrypt_file, { desc = 'Decrypt file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/AES256_encryption_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/AES256_encryption_in_Vim)
 ***
 # Title: Auto Highlight Current Word When Idle
 # Category: advanced_tricks
@@ -87,7 +87,7 @@ end
 vim.keymap.set('n', 'z/', auto_highlight_toggle, { desc = 'Toggle auto word highlight' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_highlight_current_word_when_idle
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_highlight_current_word_when_idle)
 ***
 # Title: Decode MIME Base64 and Quoted-Printable Encoding
 # Category: advanced_tricks
@@ -117,7 +117,7 @@ vim.api.nvim_create_user_command('DecodeQP', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Decode_MIME_text_using_Perl_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Decode_MIME_text_using_Perl_in_Vim)
 ***
 # Title: Enhanced Hex Mode Editing in Vim
 # Category: advanced_tricks
@@ -195,7 +195,7 @@ vim.api.nvim_create_user_command('Hexmode', toggle_hex, {})
 vim.keymap.set('n', '<C-H>', ':Hexmode<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Improved_hex_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Improved_hex_editing)
 ***
 # Title: Preview HTML Text in Vim Buffer
 # Category: advanced_tricks
@@ -248,5 +248,5 @@ vim.keymap.set('n', '<Leader>h', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preview_file_on_localhost
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preview_file_on_localhost)
 ***

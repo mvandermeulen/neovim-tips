@@ -81,7 +81,7 @@ local output = vim.api.nvim_exec('set all', true)
 vim.fn.setreg('a', output)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Capture_ex_command_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Capture_ex_command_output)
 ***
 # Title: Smart Visual Mode Paste without Register Overwrite
 # Category: registers
@@ -99,7 +99,7 @@ vim.keymap.set('x', 'p', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_visual_mode_paste_command_behaviour
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_visual_mode_paste_command_behaviour)
 ***
 # Title: Cycle Through Vim Registers Easily
 # Category: registers
@@ -121,7 +121,7 @@ vim.keymap.set('n', '<Leader>s', function()
 end, { desc = 'Cycle through registers' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comfortable_handling_of_registers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comfortable_handling_of_registers)
 ***
 # Title: Advanced Copy and Paste with Named Registers
 # Category: registers
@@ -145,7 +145,7 @@ vim.cmd('normal! "ap')  -- paste after cursor
 vim.cmd('normal! "aP')  -- paste before cursor
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy,_cut_and_paste
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy,_cut_and_paste)
 ***
 # Title: Reorder Lines Using Registers
 # Category: registers
@@ -165,7 +165,7 @@ Efficiently reorder up to nine lines by using numbered registers and the dot com
 -- The specific implementation would mirror the Vimscript approach
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_multiple_lines/words_to_a_specified_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_multiple_lines/words_to_a_specified_position)
 ***
 # Title: Quick Macro Recording and Playback
 # Category: registers
@@ -180,7 +180,7 @@ nnoremap Q @q
 vim.keymap.set('n', 'Q', '@q', { desc = 'Playback macro from q register' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line)
 ***
 # Title: Paste from Clipboard with Precise Cursor Placement
 # Category: registers
@@ -195,7 +195,7 @@ Paste from clipboard before cursor and set marks for the pasted text
 vim.api.nvim_put(vim.fn.getreg('+'), 'c', true, true)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2009
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know/2009)
 ***
 # Title: Record, Edit, and Reuse Vim Macros
 # Category: registers
@@ -225,7 +225,7 @@ q
 vim.cmd('normal! gv:normal @q')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_a_previously_recorded_macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_a_previously_recorded_macro)
 ***
 # Title: Append or Modify Existing Macros
 # Category: registers
@@ -245,7 +245,7 @@ qA...q
 -- Append to macro: vim.fn.setreg('A', 'additional_commands', 'a')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_a_previously_recorded_macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_a_previously_recorded_macro)
 ***
 # Title: Get Current Filename in Vim
 # Category: registers
@@ -274,7 +274,7 @@ print(vim.fn.expand('%:p'))
 print(vim.fn.expand('%:p:h'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_the_name_of_the_current_file)
 ***
 # Title: Insert Register Content Across Multiple Lines
 # Category: registers
@@ -294,7 +294,7 @@ Insert contents of a register (like clipboard) across multiple lines in visual b
 -- I Ctrl-R " to insert from unnamed register
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines)
 ***
 # Title: Advanced Text Manipulation with Registers
 # Category: registers
@@ -311,7 +311,7 @@ vim.keymap.set('n', 'P', 'P', { desc = 'Paste before cursor' })
 vim.keymap.set('n', '"ay5dd', '"ay5dd', { desc = 'Delete 5 lines to register a' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi)
 ***
 # Title: Record and Replay Macros Efficiently
 # Category: registers
@@ -340,7 +340,7 @@ vim.cmd('normal @d')
 vim.cmd('normal! gv:normal @d<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Macros
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Macros)
 ***
 # Title: Append to Existing Macros
 # Category: registers
@@ -365,7 +365,7 @@ q
 -- For more advanced macro manipulation, consider using vim.fn.setreg()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Macros
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Macros)
 ***
 # Title: Record and Replay Powerful Text Transformation Macros
 # Category: registers
@@ -389,7 +389,7 @@ vim.cmd('q')   -- Stop recording
 vim.cmd('@d')  -- Replay macro
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_a_Macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_a_Macro)
 ***
 # Title: Run Macro Across Visual Selection
 # Category: registers
@@ -405,7 +405,7 @@ Execute a macro on every line in a visual selection, enabling rapid bulk transfo
 vim.cmd('normal! @q')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_a_Macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_a_Macro)
 ***
 # Title: Record and Execute Vim Macros Efficiently
 # Category: registers
@@ -439,7 +439,7 @@ vim.keymap.set('n', '<leader>m', '@d', { desc = 'Execute macro from d register' 
 vim.keymap.set('x', '<leader>m', ':normal @q<CR>', { desc = 'Run macro on visual selection' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_for_quicker_access_to_macros
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_for_quicker_access_to_macros)
 ***
 # Title: Append Multiple Lines to a Register
 # Category: registers
@@ -458,7 +458,7 @@ Technique for collecting multiple lines into a single register by using uppercas
 vim.fn.setreg('A', vim.fn.getline('.'), 'l')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_lines_up_or_down
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_lines_up_or_down)
 ***
 # Title: Translate Null Characters in Vim Registers
 # Category: registers
@@ -475,7 +475,7 @@ Use strtrans() to visualize and understand how null characters are represented i
 print(vim.fn.strtrans(vim.fn.getreg('a')))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Newlines_and_nulls_in_Vim_script
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Newlines_and_nulls_in_Vim_script)
 ***
 # Title: Paste Registers in Command and Search Lines
 # Category: registers
@@ -494,7 +494,7 @@ Quickly insert register contents into command or search lines using Ctrl-R, avoi
 -- Example in Lua: No direct translation needed, built-in functionality
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Paste_registers_in_search_or_colon_commands_instead_of_using_the_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Paste_registers_in_search_or_colon_commands_instead_of_using_the_clipboard)
 ***
 # Title: Paste from Different Vim Registers Safely
 # Category: registers
@@ -521,7 +521,7 @@ vim.keymap.set('n', '<leader>p', '"*p', { desc = 'Paste from clipboard' })
 vim.keymap.set('i', '<C-R>+', '<C-R><C-R>+', { desc = 'Safely paste from clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Pasting_registers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pasting_registers)
 ***
 # Title: Prevent Clipboard Hijacking in Vim
 # Category: registers
@@ -542,7 +542,7 @@ vim.keymap.set('i', '<C-R>+', '<C-R><C-R>+', { desc = 'Safe clipboard paste' })
 vim.keymap.set('i', '<C-R>+', '<C-R><C-O>+', { desc = 'Alternative safe clipboard paste' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Pasting_registers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pasting_registers)
 ***
 # Title: Preload Vim Registers with Frequently Used Commands
 # Category: registers
@@ -570,7 +570,7 @@ vim.g.registers = {
 -- Execute with @m, @s, etc.
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preloading_registers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preloading_registers)
 ***
 # Title: Append to Macro Registers Safely
 # Category: registers
@@ -591,7 +591,7 @@ q     " Stop recording
 -- vim.cmd('q')    " Stop recording
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Record_a_recursive_macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Record_a_recursive_macro)
 ***
 # Title: Create Recursive Macros for Bulk Text Manipulation
 # Category: registers
@@ -617,7 +617,7 @@ q     " Stop recording
 -- Recommended to use :normal for similar tasks in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Record_a_recursive_marco
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Record_a_recursive_marco)
 ***
 # Title: Edit and Modify Recorded Macros
 # Category: registers
@@ -651,7 +651,7 @@ vim.cmd('normal! p')
 vim.fn.setreg('x', vim.fn.getline(1))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recording_keys_for_repeated_jobs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recording_keys_for_repeated_jobs)
 ***
 # Title: Recover Recently Deleted Text in Insert Mode
 # Category: registers
@@ -668,7 +668,7 @@ vim.fn.setreg('a', vim.fn.getreg('.'))
 vim.api.nvim_paste(vim.fn.getreg('a'), true, -1)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recover_from_accidental_Ctrl-U
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recover_from_accidental_Ctrl-U)
 ***
 # Title: Recover Previous Deletes Using Numbered Registers
 # Category: registers
@@ -692,7 +692,7 @@ vim.cmd('reg')
 vim.api.nvim_put(vim.fn.getreg('2'), '', true, true)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remembering_previous_deletes/yanks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remembering_previous_deletes/yanks)
 ***
 # Title: Cycle Through Numbered Registers
 # Category: registers
@@ -711,7 +711,7 @@ vim.cmd('"1p....')
 vim.cmd('u.')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remembering_previous_deletes/yanks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remembering_previous_deletes/yanks)
 ***
 # Title: Execute Macro Across Visual Block Selection
 # Category: registers
@@ -727,7 +727,7 @@ vnoremap ` :normal @a<CR>
 vim.keymap.set('v', '`', ':normal @a<CR>', { desc = 'Execute macro from register a on visual block lines' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_command_on_each_line_in_visual_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_command_on_each_line_in_visual_block)
 ***
 # Title: Paste Over Text Without Losing Register
 # Category: registers
@@ -745,7 +745,7 @@ vim.keymap.set('x', 'p', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text)
 ***
 # Title: Get Current File Name in Different Formats
 # Category: registers
@@ -769,7 +769,7 @@ print(vim.fn.expand('%:p:h'))  -- Directory containing file
 print(vim.fn.expand('%:r'))    -- Filename without extension
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip530
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip530)
 ***
 # Title: Paste Text as Separate Line with Easy Mapping
 # Category: registers
@@ -786,7 +786,7 @@ vim.keymap.set('n', ',p', ':put "<CR>', { desc = 'Paste below current line' })
 vim.keymap.set('n', ',P', ':put! "<CR>', { desc = 'Paste above current line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip586
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip586)
 ***
 # Title: Easy Word Replacement Using Registers
 # Category: registers
@@ -806,5 +806,5 @@ vim.keymap.set('x', 'p', function()
 end, { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip605
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip605)
 ***

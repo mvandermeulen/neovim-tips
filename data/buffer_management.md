@@ -783,7 +783,7 @@ vim.api.nvim_create_user_command('Pyhelp', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Access_Python_Help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Access_Python_Help)
 ***
 # Title: Automatically Open All Buffers in Tabs
 # Category: buffer_management
@@ -802,7 +802,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_open-in-tabs_context_menu_for_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_open-in-tabs_context_menu_for_Windows)
 ***
 # Title: Create a GDB Console Buffer in Vim
 # Category: buffer_management
@@ -843,7 +843,7 @@ function _G.gdb_focus_buf(nameref)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Adding_a_console_to_gdbvim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Adding_a_console_to_gdbvim)
 ***
 # Title: Customize Buffer Menu Display for Quick Navigation
 # Category: buffer_management
@@ -873,7 +873,7 @@ function BufferMenuDisplay(name, bnum)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alter_the_display_of_buffers_in_the_buffers_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alter_the_display_of_buffers_in_the_buffers_menu)
 ***
 # Title: Execute Command Across Multiple Buffers
 # Category: buffer_management
@@ -909,7 +909,7 @@ vim.api.nvim_create_user_command('Bufdo', function(opts)
 end, { nargs = '+' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Argdo
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Argdo)
 ***
 # Title: Automatic Write on Buffer Switch
 # Category: buffer_management
@@ -926,7 +926,7 @@ vim.opt.autowrite = true
 vim.opt.autowriteall = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_save_files_when_focus_is_lost
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_save_files_when_focus_is_lost)
 ***
 # Title: Preserve Window View When Switching Buffers
 # Category: buffer_management
@@ -990,7 +990,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Avoid_scrolling_when_switch_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Avoid_scrolling_when_switch_buffers)
 ***
 # Title: Restore Original Buffer After Buffer Operations
 # Category: buffer_management
@@ -1018,7 +1018,7 @@ vim.api.nvim_create_user_command('BufDo', function(opts)
 end, { nargs = '+' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Bufdo
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Bufdo)
 ***
 # Title: Efficient Buffer Navigation
 # Category: buffer_management
@@ -1046,7 +1046,7 @@ vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Jump back' })
 vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jump forward' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Buffer)
 ***
 # Title: Create Floating Buffer Menu in GVim
 # Category: buffer_management
@@ -1074,7 +1074,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 vim.g.bmenu_max_pathlen = 0
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Buffer_bar_to_list_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Buffer_bar_to_list_buffers)
 ***
 # Title: Advanced CSV File Navigation and Manipulation
 # Category: buffer_management
@@ -1118,7 +1118,7 @@ vim.api.nvim_create_user_command('Csv', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/CSV
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/CSV)
 ***
 # Title: Cycle Through Buffers Intelligently
 # Category: buffer_management
@@ -1183,7 +1183,7 @@ vim.keymap.set('n', '<C-n>', function() _G.switch_to_next_buffer(1) end, { silen
 vim.keymap.set('n', '<C-p>', function() _G.switch_to_next_buffer(-1) end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cycle_through_buffers_including_hidden_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cycle_through_buffers_including_hidden_buffers)
 ***
 # Title: Delete Buffer Without Closing Window
 # Category: buffer_management
@@ -1221,7 +1221,7 @@ end
 vim.keymap.set('n', '<leader>bd', _G.bclose, { desc = 'Close buffer without closing window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Deleting_a_buffer_without_changing_your_window_layout
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Deleting_a_buffer_without_changing_your_window_layout)
 ***
 # Title: Diff Current Buffer with Saved File
 # Category: buffer_management
@@ -1257,7 +1257,7 @@ end
 vim.api.nvim_create_user_command('DiffSaved', _G.diff_with_saved, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Diff_current_buffer_and_the_original_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Diff_current_buffer_and_the_original_file)
 ***
 # Title: Version Control Diff Functions
 # Category: buffer_management
@@ -1292,7 +1292,7 @@ end
 vim.api.nvim_create_user_command('DiffGIT', _G.diff_with_git_checkout, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Diff_current_buffer_and_the_original_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Diff_current_buffer_and_the_original_file)
 ***
 # Title: Flexible Buffer Switching with Function
 # Category: buffer_management
@@ -1366,7 +1366,7 @@ vim.api.nvim_create_user_command('Bs', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easier_buffer_switching
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easier_buffer_switching)
 ***
 # Title: Quick Buffer List and Switch Mapping
 # Category: buffer_management
@@ -1384,7 +1384,7 @@ vim.keymap.set('n', '<F5>', function()
 end, { desc = 'List and switch buffers' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easier_buffer_switching
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easier_buffer_switching)
 ***
 # Title: Automatically Switch to Existing Vim Instance
 # Category: buffer_management
@@ -1437,7 +1437,7 @@ vim.api.nvim_create_autocmd('SwapExists', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_file_in_existing_vim_automatically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_file_in_existing_vim_automatically)
 ***
 # Title: Use Temporary Files for SQL Query Results
 # Category: buffer_management
@@ -1461,7 +1461,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_sybase-sql_queries_and_see_the_result_in_a_split_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_sybase-sql_queries_and_see_the_result_in_a_split_window)
 ***
 # Title: Quick Buffer Navigation Shortcuts
 # Category: buffer_management
@@ -1492,7 +1492,7 @@ vim.keymap.set('n', '<M-Left>', ':bprev<CR>')
 vim.keymap.set('n', '<M-Right>', ':bnext<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_access_to_the_first_nine_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_access_to_the_first_nine_buffers)
 ***
 # Title: Fast Buffer Navigation with Ctrl-^
 # Category: buffer_management
@@ -1511,7 +1511,7 @@ Quickly switch to buffers by number using Ctrl-^ instead of :b command
 vim.keymap.set('n', '<C-^>', '<C-^>', { desc = 'Switch to buffer by number' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_buffer_navigation_by_buffer_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_buffer_navigation_by_buffer_numbers)
 ***
 # Title: Cycle Through Buffers Efficiently
 # Category: buffer_management
@@ -1586,7 +1586,7 @@ vim.keymap.set('n', '<C-n>', function() switch_to_next_buffer(1) end, { silent =
 vim.keymap.set('n', '<C-p>', function() switch_to_next_buffer(-1) end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_switching_between_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_switching_between_buffers)
 ***
 # Title: Handle Modified Buffers Flexibly
 # Category: buffer_management
@@ -1616,7 +1616,7 @@ vim.opt.hidden = true
 -- :bnext! or :bprevious! in command mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_switching_between_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_switching_between_buffers)
 ***
 # Title: Filter Buffer Lines by Search Pattern
 # Category: buffer_management
@@ -1679,7 +1679,7 @@ vim.keymap.set('n', '<Leader>F', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Filter_buffer_on_a_search_result
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Filter_buffer_on_a_search_result)
 ***
 # Title: Enhanced Alternate File Navigation
 # Category: buffer_management
@@ -1708,7 +1708,7 @@ end
 vim.keymap.set('n', '<C-^>', _G.enhanced_file_switch, { desc = 'Switch to alternate or next file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Go_to_alternate_file_or_next_file_if_no_alternate
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Go_to_alternate_file_or_next_file_if_no_alternate)
 ***
 # Title: Advanced Hex Editing in Vim/Neovim
 # Category: buffer_management
@@ -1786,7 +1786,7 @@ vim.api.nvim_create_user_command('Hexmode', toggle_hex, {})
 vim.keymap.set('n', '<C-H>', ':Hexmode<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex)
 ***
 # Title: Store Grep Results in a Scratch Buffer
 # Category: buffer_management
@@ -1816,7 +1816,7 @@ vim.api.nvim_create_user_command('F', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_store_grep_results_in_a_buffer_in_Vim%3F
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_store_grep_results_in_a_buffer_in_Vim%3F)
 ***
 # Title: Improved Hex Mode Editing in Vim
 # Category: buffer_management
@@ -1892,7 +1892,7 @@ vim.api.nvim_create_user_command('HexMode', toggle_hex_mode, {})
 vim.keymap.set('n', '<C-H>', ':HexMode<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Improved_Hex_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Improved_Hex_editing)
 ***
 # Title: Quick Buffer and Tab Management
 # Category: buffer_management
@@ -1912,7 +1912,7 @@ vim.keymap.set('n', '<F8>', ':sbnext<CR>', { noremap = true })
 vim.keymap.set('n', '<S-F8>', ':sbprevious<CR>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Introduction_to_using_tab_pages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduction_to_using_tab_pages)
 ***
 # Title: Toggle All Buffers in Tabs
 # Category: buffer_management
@@ -1938,7 +1938,7 @@ vim.keymap.set('n', '<F8>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Introduction_to_using_tab_pages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduction_to_using_tab_pages)
 ***
 # Title: Quick Jump to Recent Buffers
 # Category: buffer_management
@@ -2024,7 +2024,7 @@ vim.keymap.set('n', '<C-G><C-O>', '2go', { remap = true })
 vim.keymap.set('n', 'g<C-O>', 'go', { remap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_recent_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_recent_buffers)
 ***
 # Title: List Buffers Sorted Alphabetically
 # Category: buffer_management
@@ -2078,7 +2078,7 @@ end
 vim.api.nvim_create_user_command('Ls', SortBuffersByName, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_buffers_sorted_by_name
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_buffers_sorted_by_name)
 ***
 # Title: Quick Buffer List with Timed Display
 # Category: buffer_management
@@ -2096,7 +2096,7 @@ vim.keymap.set('n', '<m-:>', function()
 end, { desc = 'Display buffer list briefly' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Listing_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Listing_buffers)
 ***
 # Title: Sync Buffer Modifiability with File Readonly State
 # Category: buffer_management
@@ -2135,7 +2135,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_buffer_modifiable_state_match_file_readonly_state
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_buffer_modifiable_state_match_file_readonly_state)
 ***
 # Title: Smart Buffer Switching with Tabs
 # Category: buffer_management
@@ -2156,7 +2156,7 @@ vim.keymap.set('n', '<F8>', ':sbnext<CR>', { noremap = true })
 vim.keymap.set('n', '<S-F8>', ':sbprevious<CR>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_through_the_buffer_list_without_wrecking_your_window/tab_layout
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_through_the_buffer_list_without_wrecking_your_window/tab_layout)
 ***
 # Title: Quick Buffer Navigation with Mouse in GVim
 # Category: buffer_management
@@ -2173,7 +2173,7 @@ vim.keymap.set('i', '<RightMouse>', '<Esc>', { desc = 'Exit insert mode with rig
 vim.keymap.set('n', '<RightMouse>', 'i<LeftMouse>', { desc = 'Enter insert mode at mouse click' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_between_buffers_using_mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_between_buffers_using_mouse)
 ***
 # Title: Execute Commands Across Buffers Safely
 # Category: buffer_management
@@ -2189,7 +2189,7 @@ argdo %s/foo/bar/gc | w
 vim.cmd('argdo s/foo/bar/gc | w')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Multiple_commands_at_once
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Multiple_commands_at_once)
 ***
 # Title: Single Window Buffer Navigation
 # Category: buffer_management
@@ -2210,7 +2210,7 @@ vim.keymap.set('n', '<A-Down>', ':bn!<CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<C-F4>', ':bd!<CR>', { desc = 'Close current buffer' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/One_big_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/One_big_window)
 ***
 # Title: Quick SVN Diff in Vim Buffer
 # Category: buffer_management
@@ -2231,7 +2231,7 @@ vim.keymap.set('n', '<F9>', function()
 end, { desc = 'Open SVN diff in new buffer' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_SVN_diff_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_SVN_diff_window)
 ***
 # Title: Open Multiple Files in Separate Tabs
 # Category: buffer_management
@@ -2258,7 +2258,7 @@ vim.api.nvim_create_autocmd({'BufAdd', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_buffer_in_its_own_tabpage
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_buffer_in_its_own_tabpage)
 ***
 # Title: Prevent Tab Opening for Help and Explore
 # Category: buffer_management
@@ -2283,7 +2283,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_buffer_in_its_own_tabpage
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_buffer_in_its_own_tabpage)
 ***
 # Title: Optimize Vim for Large File Performance
 # Category: buffer_management
@@ -2324,7 +2324,7 @@ vim.api.nvim_create_autocmd('BufReadPre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_big_files_and_work_fast
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_big_files_and_work_fast)
 ***
 # Title: Efficient Buffer Switching with Tab Support
 # Category: buffer_management
@@ -2345,7 +2345,7 @@ vim.keymap.set('n', '<F8>', ':sbnext<CR>', { noremap = true })
 vim.keymap.set('n', '<S-F8>', ':sbprevious<CR>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_tab_navigation_and_opening
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tab_navigation_and_opening)
 ***
 # Title: Reload File Without Losing Undo History
 # Category: buffer_management
@@ -2365,7 +2365,7 @@ vim.api.nvim_create_user_command('Reload', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reload_file_without_losing_undo_history
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reload_file_without_losing_undo_history)
 ***
 # Title: Advanced File Reload with Cursor Position
 # Category: buffer_management
@@ -2399,7 +2399,7 @@ vim.api.nvim_create_user_command('Reload', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reload_file_without_losing_undo_history
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reload_file_without_losing_undo_history)
 ***
 # Title: Persist Buffer List Between Vim Sessions
 # Category: buffer_management
@@ -2415,7 +2415,7 @@ Automatically remember opened buffers when restarting Vim, allowing you to quick
 vim.opt.viminfo:append('%')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remember_my_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remember_my_buffers)
 ***
 # Title: Run Command Across Multiple Buffers
 # Category: buffer_management
@@ -2435,7 +2435,7 @@ for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Run_a_command_in_multiple_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Run_a_command_in_multiple_buffers)
 ***
 # Title: Restore Original Buffer After Multi-Buffer Command
 # Category: buffer_management
@@ -2463,7 +2463,7 @@ vim.api.nvim_create_user_command('Bufdo', function(opts)
 end, { nargs = '+' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Run_a_command_in_multiple_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Run_a_command_in_multiple_buffers)
 ***
 # Title: Replace Buffer List When Switching Projects
 # Category: buffer_management
@@ -2481,7 +2481,7 @@ vim.cmd('1,' .. vim.fn.bufnr('$') .. 'bdelete')
 vim.cmd('source ~/v/project2.vim')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip552
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip552)
 ***
 # Title: Suppress File Change Warnings in Buffer
 # Category: buffer_management
@@ -2504,7 +2504,7 @@ function ChangeThisBuffer()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip595
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip595)
 ***
 # Title: Save All Buffers at Once
 # Category: buffer_management
@@ -2522,7 +2522,7 @@ vim.cmd('wa')  -- Write all changed buffers
 vim.cmd('xa')  -- Save all and exit
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip652
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip652)
 ***
 # Title: Easy Buffer Switching with Tab Completion
 # Category: buffer_management
@@ -2601,7 +2601,7 @@ vim.api.nvim_create_user_command('Bs', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip686
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip686)
 ***
 # Title: Quick Buffer List and Selection Mapping
 # Category: buffer_management
@@ -2621,5 +2621,5 @@ vim.keymap.set('n', '<F5>', function()
 end, { desc = 'List and select buffers' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip686
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip686)
 ***

@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Adding_MPI_and_PVM_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Adding_MPI_and_PVM_syntax_highlighting)
 ***
 # Title: Enhanced Heredoc Highlighting for INI Files
 # Category: syntax
@@ -58,7 +58,7 @@ vim.cmd([[syn match dosinilabel "^\s\+ ="])
 vim.cmd([[syn region dosiniHereDoc matchgroup=dosiniStringStartEnd start=+<<\z(\I\i*\)+      end=+^\z1$+ contains=@dosiniInterpDQ]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Dosini_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Dosini_files)
 ***
 # Title: Highlight Duplicate Words in Text
 # Category: syntax
@@ -75,7 +75,7 @@ vim.cmd([[syn match texDoubleWord "\c\<\(\a\+\)\s\+\1\>"]])
 vim.cmd([[hi def link texDoubleWord Error]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_doubled_word_errors_in_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_doubled_word_errors_in_text)
 ***
 # Title: Highlight Python Syntax Errors
 # Category: syntax
@@ -94,7 +94,7 @@ vim.cmd([[syn match pythonError "^\s*\(if\|elif\)[^:]*$" display]])
 vim.cmd([[syn match pythonError "^\s*\(class\|def\|for\|while\|try\|except\|finally\|if\|elif\|else\)$" display]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_simple_Python_syntax_errors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_simple_Python_syntax_errors)
 ***
 # Title: Highlight C++ Method Names in Definitions
 # Category: syntax
@@ -121,7 +121,7 @@ vim.api.nvim_create_autocmd('Syntax', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlighting_of_method_names_in_the_definition_(C_PLUS_PLUS_)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlighting_of_method_names_in_the_definition_(C_PLUS_PLUS_))
 ***
 # Title: Python Triple-Quoted Comments Syntax Highlighting
 # Category: syntax
@@ -147,5 +147,5 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Python_triple-quoted_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Python_triple-quoted_comments)
 ***

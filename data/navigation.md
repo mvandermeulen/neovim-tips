@@ -325,7 +325,7 @@ vim.keymap.set('n', 'L', 'f$', { desc = 'Jump to next PHP variable' })
 vim.keymap.set('n', 'H', 'F$', { desc = 'Jump to previous PHP variable' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/$_instead_of_4
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/$_instead_of_4)
 ***
 # Title: Smart Middle of Line Movement
 # Category: navigation
@@ -357,7 +357,7 @@ vim.keymap.set('n', 'gm', gm, { silent = true })
 vim.keymap.set('o', 'gm', gm, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/A_better_gm_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_better_gm_command)
 ***
 # Title: Master Vim Movement Shortcuts
 # Category: navigation
@@ -379,7 +379,7 @@ vim.keymap.set('n', 'M', 'M', { desc = 'Move to middle of screen' })
 vim.keymap.set('n', 'L', 'L', { desc = 'Move to bottom of screen' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/All_the_right_moves
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_the_right_moves)
 ***
 # Title: Efficient Tab Navigation Shortcuts
 # Category: navigation
@@ -408,7 +408,7 @@ vim.keymap.set('n', 'H', 'gT', { noremap = true })
 vim.keymap.set('n', 'L', 'gt', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternative_tab_navigation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_tab_navigation)
 ***
 # Title: Generate and Use Custom Tag Files
 # Category: navigation
@@ -436,7 +436,7 @@ vim.opt.tags:append('jsp.tags')
 -- Use :tag as before
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Arbitrary_tags_for_file_names
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Arbitrary_tags_for_file_names)
 ***
 # Title: Recursive File Finding with Path Option
 # Category: navigation
@@ -458,7 +458,7 @@ vim.cmd('find filename.txt')
 vim.cmd('sfind filename.txt')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Arbitrary_tags_for_file_names
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Arbitrary_tags_for_file_names)
 ***
 # Title: Wrap Cursor Movement Between Lines
 # Category: navigation
@@ -473,7 +473,7 @@ set whichwrap+=<,>,h,l,[,]
 vim.opt.whichwrap:append '<,>h,l,[,]'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_wrap_left_and_right
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_wrap_left_and_right)
 ***
 # Title: Use Alt/Meta Keys in Terminal Vim
 # Category: navigation
@@ -489,7 +489,7 @@ Leverage Alt/Meta keys to quickly switch modes and perform actions without Escap
 -- Specific implementation depends on terminal settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Avoid_the_escape_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Avoid_the_escape_key)
 ***
 # Title: Navigate Lines with Same Indentation
 # Category: navigation
@@ -539,7 +539,7 @@ vim.keymap.set('n', '[L', function() next_indent(false, false, true, true) end, 
 vim.keymap.set('n', ']L', function() next_indent(false, true, true, true) end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Back_and_forth_between_indented_lines_again
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Back_and_forth_between_indented_lines_again)
 ***
 # Title: Quick Indentation Level Navigation
 # Category: navigation
@@ -565,7 +565,7 @@ vim.keymap.set('n', '<M-.>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Back_and_forth_between_indented_lines_again
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Back_and_forth_between_indented_lines_again)
 ***
 # Title: Powerful Text Editing with Vim Motions
 # Category: navigation
@@ -589,7 +589,7 @@ vim.keymap.set('n', '<leader>d2w', 'd2w', { desc = 'Delete 2 words forward' })
 vim.keymap.set('n', '<leader>c3b', 'c3b', { desc = 'Change 3 words backward' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Beginners_guide
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Beginners_guide)
 ***
 # Title: Advanced Find and Till Commands
 # Category: navigation
@@ -610,7 +610,7 @@ vim.keymap.set('n', '<leader>fx', 'fx', { desc = 'Find next x in line' })
 vim.keymap.set('n', '<leader>tc', 'tC', { desc = 'Move till just before next C' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Beginners_guide
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Beginners_guide)
 ***
 # Title: Advanced File and Buffer Navigation
 # Category: navigation
@@ -634,7 +634,7 @@ vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Navigate backward in jump histor
 vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Navigate forward in jump history' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_Vim_Tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_Vim_Tips)
 ***
 # Title: Advanced Search and Movement
 # Category: navigation
@@ -656,7 +656,7 @@ Enhanced word searching and cursor movement techniques
 -- vim.cmd('normal! `.'   -- jump to last modification
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_of_VIM_Tips_(VIM%27s_best_Features)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_of_VIM_Tips_(VIM%27s_best_Features))
 ***
 # Title: Efficient Tag Navigation in Vim/Neovim
 # Category: navigation
@@ -685,7 +685,7 @@ vim.keymap.set('n', 'g]', '<cmd>tselect<CR>', { desc = 'List tag matches' })
 vim.keymap.set('n', '<C-W>}', '<cmd>ptag<CR>', { desc = 'Preview tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Browsing_programs_with_tags
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Browsing_programs_with_tags)
 ***
 # Title: Advanced Tag Search and Browsing
 # Category: navigation
@@ -715,7 +715,7 @@ vim.keymap.set('n', '<leader>tn', '<cmd>tnext<CR>', { desc = 'Next tag' })
 vim.keymap.set('n', '<leader>tp', '<cmd>tprevious<CR>', { desc = 'Previous tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Browsing_programs_with_tags
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Browsing_programs_with_tags)
 ***
 # Title: Configure Matchit for ColdFusion Tag Jumping
 # Category: navigation
@@ -742,7 +742,7 @@ if vim.g.loaded_matchit then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/ColdFusion_and_matchit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/ColdFusion_and_matchit)
 ***
 # Title: Scroll Without Moving Cursor
 # Category: navigation
@@ -775,7 +775,7 @@ vim.keymap.set('n', '<C-K>', function() saving_scroll('1\<C-U>') end)
 vim.keymap.set('v', '<C-K>', function() saving_scroll('gv1\<C-U>') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Combining_move_and_scroll
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Combining_move_and_scroll)
 ***
 # Title: Efficient Cscope Navigation in Vim/Neovim
 # Category: navigation
@@ -820,7 +820,7 @@ if vim.fn.has('cscope') == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cscope
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cscope)
 ***
 # Title: Easy Help Navigation on AZERTY Keyboards
 # Category: navigation
@@ -839,7 +839,7 @@ vim.keymap.set('n', '<F9>', '<C-]>', { desc = 'Follow help link' })
 vim.keymap.set({'i', 'c'}, '<F9>', '<C-]>', { desc = 'Follow help link' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/De_hulp_bevaren_met_een_AZERTY_toetsenbord
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/De_hulp_bevaren_met_een_AZERTY_toetsenbord)
 ***
 # Title: Move Word Under Cursor with Alt-Arrows
 # Category: navigation
@@ -860,7 +860,7 @@ vim.keymap.set('n', '<A-Down>', 'viwjkxjzvP`[1v<Space>', { noremap = true })
 vim.keymap.set('n', '<A-Up>', 'viwkjxkzvP`[1v<Space>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Drag_words_with_Ctrl-left/right
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Drag_words_with_Ctrl-left/right)
 ***
 # Title: Advanced Movement and Modification Markers
 # Category: navigation
@@ -883,7 +883,7 @@ vim.keymap.set('n', '<leader>m', function()
 end, { desc = 'Show marks' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easter_eggs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easter_eggs)
 ***
 # Title: Open Files Under Cursor in Different Windows
 # Category: navigation
@@ -906,7 +906,7 @@ gf
 -- Can be used directly in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split)
 ***
 # Title: Use Environment Variables for Dynamic File Paths
 # Category: navigation
@@ -922,7 +922,7 @@ let $mydir = 'C:/Documents and Settings/My Name/My Documents'
 vim.env.mydir = 'C:/Documents and Settings/My Name/My Documents'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split)
 ***
 # Title: Fast Jump to PHP Variables on a Line
 # Category: navigation
@@ -939,7 +939,7 @@ vim.keymap.set('n', 'L', 'f$', { desc = 'Jump to next PHP variable' })
 vim.keymap.set('n', 'H', 'F$', { desc = 'Jump to previous PHP variable' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_jump_to_next_PHP_variable_on_current_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_jump_to_next_PHP_variable_on_current_line)
 ***
 # Title: Fast Window Scrolling with Alt Key Mappings
 # Category: navigation
@@ -962,7 +962,7 @@ vim.keymap.set('n', '<A-k>', '<C-y>', { desc = 'Scroll window up' })
 vim.keymap.set('n', '<A-j>', '<C-e>', { desc = 'Scroll window down' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_scroll_mappings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_scroll_mappings)
 ***
 # Title: Recursive File Search with Fuzzy Matching
 # Category: navigation
@@ -984,7 +984,7 @@ vim.keymap.set('n', '<leader>t', function()
 end, { desc = 'Recursive file search' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/File_search_similar_to_cmd-t_in_TextMate
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_search_similar_to_cmd-t_in_TextMate)
 ***
 # Title: Enhanced Word Search with Smart Matching
 # Category: navigation
@@ -1008,7 +1008,7 @@ vim.keymap.set('n', '#', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find)
 ***
 # Title: Create Custom Help-Style Tags in Source Code
 # Category: navigation
@@ -1036,7 +1036,7 @@ require('telescope').setup({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Follow_Help_Tags_Using_Ctags
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Follow_Help_Tags_Using_Ctags)
 ***
 # Title: Alternative Tag Navigation
 # Category: navigation
@@ -1049,7 +1049,7 @@ Use built-in Vim command to open tag in a new window
 -- This is a built-in Vim/Neovim feature
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Follow_tag_in_new_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Follow_tag_in_new_window)
 ***
 # Title: Flexible File Navigation
 # Category: navigation
@@ -1068,7 +1068,7 @@ vim.opt.isfname:append(32)
 vim.opt.suffixesadd:append({'.js', '.py'})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2008
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help/2008)
 ***
 # Title: Fuzzy Search Multiple Vim Contexts
 # Category: navigation
@@ -1099,7 +1099,7 @@ vim.keymap.set('n', '<C-a>m', function()
 end, { desc = 'Fuzzy search key mappings' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fuzzy_mappings_of_everything!
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fuzzy_mappings_of_everything!)
 ***
 # Title: Track and Search Recently Visited Directories
 # Category: navigation
@@ -1141,7 +1141,7 @@ vim.api.nvim_create_autocmd('DirChanged', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fuzzy_mappings_of_everything!
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fuzzy_mappings_of_everything!)
 ***
 # Title: Quick Change to Current File's Directory
 # Category: navigation
@@ -1156,7 +1156,7 @@ com Fcd cd %:p:h
 vim.api.nvim_create_user_command('Fcd', 'cd %:p:h', {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_a_shell_command_for_changing_to_the_current_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_a_shell_command_for_changing_to_the_current_directory)
 ***
 # Title: Quickly Get Current Function Name
 # Category: navigation
@@ -1176,7 +1176,7 @@ vim.keymap.set('n', '_F', function()
 end, { desc = 'Show current function name' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Getting_name_of_the_function
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_name_of_the_function)
 ***
 # Title: Navigate to Function Start and Back
 # Category: navigation
@@ -1194,7 +1194,7 @@ Press '' to return to previous position
 -- ''  : Return to previous mark
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Getting_name_of_the_function
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_name_of_the_function)
 ***
 # Title: Jump to Random Line in Buffer
 # Category: navigation
@@ -1224,7 +1224,7 @@ vim.api.nvim_create_user_command('RandomLine', function(opts)
 end, {range = true})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/GoTo_a_Random_Line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/GoTo_a_Random_Line)
 ***
 # Title: Use g_ to Navigate End of Line in Langmap
 # Category: navigation
@@ -1240,7 +1240,7 @@ When using a non-English keyboard layout that lacks the $ symbol, use g_ to move
 -- Works with any keyboard layout
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Go_to_end-of-line_when_using_langmap
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Go_to_end-of-line_when_using_langmap)
 ***
 # Title: Multiple Ways to Navigate to a Specific Line
 # Category: navigation
@@ -1263,7 +1263,7 @@ vim.cmd('normal! 42G')
 vim.cmd('normal! 42gg')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Go_to_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Go_to_line)
 ***
 # Title: Use Alt/Meta Keys for Quick Navigation
 # Category: navigation
@@ -1283,7 +1283,7 @@ In terminal Vim, use Alt/Meta + key combinations to quickly switch modes and nav
 vim.g.terminal_alt_key_navigation = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_and_back
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_and_back)
 ***
 # Title: Efficient Text Navigation and Manipulation
 # Category: navigation
@@ -1304,7 +1304,7 @@ vim.keymap.set('n', '{', '{')  -- Move to previous paragraph
 vim.keymap.set('n', '}', '}')  -- Move to next paragraph
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi)
 ***
 # Title: Quick Recovery When Spell Checking
 # Category: navigation
@@ -1326,7 +1326,7 @@ vim.cmd('normal! \<C-O>')
 vim.cmd('normal! zug')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_back_to_spell_checked_words
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_back_to_spell_checked_words)
 ***
 # Title: Quick Navigation Between C++ Methods
 # Category: navigation
@@ -1343,7 +1343,7 @@ vim.keymap.set('n', '<M-J>', '/\v^(\w+\s+)?\w+::\w+\(.*\)<CR>', { desc = 'Jump t
 vim.keymap.set('n', '<M-K>', '?\v^(\w+\s+)?\w+::\w+\(.*\)<CR>', { desc = 'Jump to previous C++ method' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_between_methods_in_C%2B%2B
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_between_methods_in_C%2B%2B)
 ***
 # Title: Open Files with Line Numbers
 # Category: navigation
@@ -1364,7 +1364,7 @@ vim.keymap.set('n', '<c-w>F', '<c-w>F', { desc = 'Open file at line number in sp
 vim.keymap.set('n', '<c-w>gF', '<c-w>gF', { desc = 'Open file at line number in new tab' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_a_file_to_a_certain_line_number
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_a_file_to_a_certain_line_number)
 ***
 # Title: Quick Jump to Function Definition
 # Category: navigation
@@ -1386,7 +1386,7 @@ vim.keymap.set('n', 'gx', function()
 end, { desc = 'Jump to function definition' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_a_function_from_where_it_is_called
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_a_function_from_where_it_is_called)
 ***
 # Title: Jump to a Random Line in Buffer
 # Category: navigation
@@ -1405,7 +1405,7 @@ vim.api.nvim_create_user_command('RandomLine', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_a_random_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_a_random_line)
 ***
 # Title: Random Line Selection with Range Support
 # Category: navigation
@@ -1430,7 +1430,7 @@ vim.api.nvim_create_user_command('RandomLine', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_a_random_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_a_random_line)
 ***
 # Title: Quick Entity Definition Jump in DTDs
 # Category: navigation
@@ -1450,7 +1450,7 @@ vim.keymap.set('n', '<Leader>e', function()
 end, { desc = 'Jump to Entity Definition' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_definition_of_entity_under_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_definition_of_entity_under_cursor)
 ***
 # Title: Jump to File from Diff View
 # Category: navigation
@@ -1495,7 +1495,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_file_from_CVSDiff_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_file_from_CVSDiff_output)
 ***
 # Title: Jump Between C++ Methods Quickly
 # Category: navigation
@@ -1517,7 +1517,7 @@ vim.keymap.set('n', '<M-K>', function()
 end, { desc = 'Jump to previous C++ method' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_next/previous_method_in_C%2B%2B
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_next/previous_method_in_C%2B%2B)
 ***
 # Title: Easy Help Tag Navigation for German Keyboards
 # Category: navigation
@@ -1542,7 +1542,7 @@ vim.keymap.set('n', 'ü', '<C-]>', { desc = 'Jump to help tag' })
 vim.keymap.set('n', 'Ü', '<C-O>', { desc = 'Jump back from help tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_tag_(help_topic)_with_German_keyboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_tag_(help_topic)_with_German_keyboard)
 ***
 # Title: Use g; and g, for Edit Location Navigation
 # Category: navigation
@@ -1561,7 +1561,7 @@ vim.keymap.set('n', 'g;', 'g;', { desc = 'Go to previous edit location' })
 vim.keymap.set('n', 'g,', 'g,', { desc = 'Go to next edit location' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations)
 ***
 # Title: Jump to Variable Declaration
 # Category: navigation
@@ -1582,7 +1582,7 @@ gD  " Normal mode command
 -- Use gd and gD in normal mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jumping_to_the_declaration_of_a_local/global_variable
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jumping_to_the_declaration_of_a_local/global_variable)
 ***
 # Title: Function Definition Search
 # Category: navigation
@@ -1606,7 +1606,7 @@ vim.keymap.set('n', '<F4>', _G.goto_definition, { desc = 'Go to function definit
 vim.keymap.set('i', '<F4>', '<c-o>:lua _G.goto_definition()<CR>', { desc = 'Go to function definition' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jumping_to_the_declaration_of_a_local/global_variable
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jumping_to_the_declaration_of_a_local/global_variable)
 ***
 # Title: Jump to Local and Global Definitions Easily
 # Category: navigation
@@ -1639,7 +1639,7 @@ end
 vim.keymap.set('n', '<C-]>', _G.go_definition, { desc = 'Jump to local or global definition' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jumps_to_a_local/global_definition_by_same_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jumps_to_a_local/global_definition_by_same_key)
 ***
 # Title: Center Cursor on Movement
 # Category: navigation
@@ -1658,7 +1658,7 @@ vim.keymap.set('n', 'j', 'jzz', { noremap = true })
 vim.keymap.set('n', 'k', 'kzz', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen)
 ***
 # Title: Improve Last Position Jump for Easy Vim
 # Category: navigation
@@ -1678,7 +1678,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Last_position_jump_improved_for_Easy_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Last_position_jump_improved_for_Easy_Vim)
 ***
 # Title: Navigate File Change History
 # Category: navigation
@@ -1707,7 +1707,7 @@ vim.keymap.set('n', 'g,', 'g,', { desc = 'Go to next change' })
 vim.api.nvim_command('changes')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_changes_to_the_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_changes_to_the_current_file)
 ***
 # Title: Fuzzy Search Tags with Regular Expressions
 # Category: navigation
@@ -1725,7 +1725,7 @@ vim.cmd('tj /handle.*event')
 -- Use <C-D> for command-line completion
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Look_up_tags_using_regular_expressions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Look_up_tags_using_regular_expressions)
 ***
 # Title: Center Screen on Search Navigation
 # Category: navigation
@@ -1750,7 +1750,7 @@ vim.keymap.set('n', '*', '*zz', { desc = 'Search word forward, center screen' })
 vim.keymap.set('n', '#', '#zz', { desc = 'Search word backward, center screen' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen)
 ***
 # Title: Quick Navigation in Help Buffers
 # Category: navigation
@@ -1781,7 +1781,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_to_quickly_browse_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_to_quickly_browse_help)
 ***
 # Title: Navigate Help Labels with Tab Keys
 # Category: navigation
@@ -1805,7 +1805,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_to_quickly_browse_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_to_quickly_browse_help)
 ***
 # Title: Enhanced Matching with % Key
 # Category: navigation
@@ -1827,7 +1827,7 @@ require('nvim-treesitter.configs').setup {
 }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_It_Plugin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_It_Plugin)
 ***
 # Title: Enhanced Bracket and Brace Navigation
 # Category: navigation
@@ -1844,7 +1844,7 @@ runtime macros/matchit.vim
 -- Add matchit.vim or use a Lua-based matching plugin
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_it
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_it)
 ***
 # Title: Move Cursor by Display Lines in Wrapped Text
 # Category: navigation
@@ -1875,7 +1875,7 @@ vim.keymap.set('o', 'j', 'gj', { silent = true })
 vim.keymap.set('o', 'k', 'gk', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_cursor_by_display_lines_when_wrapping
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_cursor_by_display_lines_when_wrapping)
 ***
 # Title: Efficient Tab Navigation and Management
 # Category: navigation
@@ -1902,7 +1902,7 @@ vim.keymap.set('n', '<A-Left>', ':tabm -1<CR>', { silent = true })
 vim.keymap.set('n', '<A-Right>', ':tabm +1<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_the_current_tabpage_forward_or_backward
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_the_current_tabpage_forward_or_backward)
 ***
 # Title: Efficient Tab Page Navigation
 # Category: navigation
@@ -1925,7 +1925,7 @@ vim.keymap.set('n', '<A-Left>', ':tabm -1<CR>', { noremap = true, silent = true 
 vim.keymap.set('n', '<A-Right>', ':tabm +1<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_through_the_buffer_list_without_wrecking_your_window/tab_layout
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_through_the_buffer_list_without_wrecking_your_window/tab_layout)
 ***
 # Title: Jump to Lines with Same/Lower Indentation
 # Category: navigation
@@ -1995,7 +1995,7 @@ vim.keymap.set('n', '[L', function() _G.next_indent(false, false, true, true) en
 vim.keymap.set('n', ']L', function() _G.next_indent(false, true, true, true) end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_to_next/previous_line_with_same_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_to_next/previous_line_with_same_indentation)
 ***
 # Title: Efficient Text Navigation Commands
 # Category: navigation
@@ -2019,7 +2019,7 @@ vim.keymap.set('n', '<leader>w', 'w', { desc = 'Move to next word start' })
 vim.keymap.set('n', '<leader>e', 'e', { desc = 'Move to word end' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_around
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_around)
 ***
 # Title: Advanced Cursor Jumping Techniques
 # Category: navigation
@@ -2043,7 +2043,7 @@ vim.cmd('normal! `x')
 vim.cmd('normal! \'\'') -- Two single quotes
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_around
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_around)
 ***
 # Title: Screen-Based Movement Commands
 # Category: navigation
@@ -2065,7 +2065,7 @@ vim.keymap.set('n', '<leader>M', 'M', { desc = 'Move to middle of screen' })
 vim.keymap.set('n', '<leader>L', 'L', { desc = 'Move to bottom of screen' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_around
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_around)
 ***
 # Title: Jump to Matching Braces and Syntax Elements
 # Category: navigation
@@ -2083,7 +2083,7 @@ Use % key to jump between matching syntax elements, including braces, comments, 
 -- No specific Lua configuration needed
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_to_matching_braces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_to_matching_braces)
 ***
 # Title: Move Between Words in Insert Mode
 # Category: navigation
@@ -2103,7 +2103,7 @@ Quick navigation between words while in insert mode using keyboard shortcuts
 -- Equivalent to Vim's native word movement in insert mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_to_the_next_word_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_to_the_next_word_in_insert_mode)
 ***
 # Title: Enable Caret Browsing for Vim-Like Text Navigation
 # Category: navigation
@@ -2116,7 +2116,7 @@ Firefox's caret browsing mode allows keyboard-based text cursor movement similar
 -- Enables moving through text with keyboard like in Vim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mozilla_Vim_Keybindings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mozilla_Vim_Keybindings)
 ***
 # Title: Highlight and Navigate CSV Columns Easily
 # Category: navigation
@@ -2158,7 +2158,7 @@ vim.api.nvim_create_user_command('Csv', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Navigate_large_CSV_files_more_easily
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Navigate_large_CSV_files_more_easily)
 ***
 # Title: Navigate to Next/Previous Open Fold
 # Category: navigation
@@ -2202,7 +2202,7 @@ vim.keymap.set('n', ']z', function() _G.go_to_open_fold('next') end)
 vim.keymap.set('n', '[z', function() _G.go_to_open_fold('prev') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Navigate_to_the_next_open_fold
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Navigate_to_the_next_open_fold)
 ***
 # Title: Navigate Vim Help on AZERTY Keyboards
 # Category: navigation
@@ -2221,7 +2221,7 @@ vim.keymap.set('n', '<F9>', '<C-]>', { desc = 'Follow help tag' })
 vim.keymap.set({'i', 'c'}, '<F9>', '<C-]>', { desc = 'Follow help tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Naviguer_dans_l%27aide_avec_un_clavier_AZERTY
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Naviguer_dans_l%27aide_avec_un_clavier_AZERTY)
 ***
 # Title: Alternative Help Navigation Mapping
 # Category: navigation
@@ -2235,7 +2235,7 @@ vim.keymap.set('n', '<M-left>', '<C-o>', { desc = 'Go back in help navigation' }
 vim.keymap.set('n', '<M-down>', '<C-]>', { desc = 'Follow help link' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Naviguer_dans_l%27aide_avec_un_clavier_AZERTY
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Naviguer_dans_l%27aide_avec_un_clavier_AZERTY)
 ***
 # Title: Efficient Vim Navigation and Editing Basics
 # Category: navigation
@@ -2262,7 +2262,7 @@ vim.cmd('write myfile.txt')
 vim.cmd('quit')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/New_to_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/New_to_Vim)
 ***
 # Title: Quick Open Perl Module Source
 # Category: navigation
@@ -2285,7 +2285,7 @@ vim.keymap.set('n', '<Leader>pm', function()
 end, { desc = 'Open Perl Module Source' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_Perl_module_from_its_module_name
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_Perl_module_from_its_module_name)
 ***
 # Title: Open Man Pages for Word Under Cursor
 # Category: navigation
@@ -2317,7 +2317,7 @@ end
 vim.keymap.set('n', 'K', _G.read_man, { desc = 'Open man page for word under cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_window_with_the_man_page_for_the_word_under_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_window_with_the_man_page_for_the_word_under_the_cursor)
 ***
 # Title: Open Files Using Filename Under Cursor
 # Category: navigation
@@ -2343,7 +2343,7 @@ gf
 -- <C-w>gf: Open file under cursor in new tab
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_file_under_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_file_under_cursor)
 ***
 # Title: Open Files Under Cursor with Multiple Methods
 # Category: navigation
@@ -2366,7 +2366,7 @@ vim.keymap.set('n', '<leader>sf', '<C-w>f', { desc = 'Open file in horizontal sp
 vim.keymap.set('n', '<leader>tf', '<C-w>gf', { desc = 'Open file in new tab' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_filenames_containing_spaces_with_gf
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_filenames_containing_spaces_with_gf)
 ***
 # Title: Jump to PDF Page from LaTeX File
 # Category: navigation
@@ -2402,7 +2402,7 @@ end
 vim.keymap.set('n', '<LocalLeader>e', _G.nearest_label_pdf, { buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_pdf_to_the_current_location_in_a_LaTeX_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_pdf_to_the_current_location_in_a_LaTeX_file)
 ***
 # Title: Use K to View PHP Function Help
 # Category: navigation
@@ -2419,7 +2419,7 @@ set keywordprg=:help
 vim.opt.keywordprg = ':help'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PHP_manual_in_Vim_help_format
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PHP_manual_in_Vim_help_format)
 ***
 # Title: Page Up/Down While Keeping Cursor Position
 # Category: navigation
@@ -2467,7 +2467,7 @@ vim.keymap.set('n', '<PageDown>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Page_up/down_and_keep_cursor_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Page_up/down_and_keep_cursor_position)
 ***
 # Title: Quick Man Page Lookup for Word Under Cursor
 # Category: navigation
@@ -2484,7 +2484,7 @@ set keywordprg=man\ -a
 vim.opt.keywordprg = 'man -a'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Power_K
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Power_K)
 ***
 # Title: View Multiple Man Page Chapters
 # Category: navigation
@@ -2499,7 +2499,7 @@ Prefix the chapter number before pressing K to view specific sections of a man p
 -- No direct Lua equivalent, relies on Vim's built-in man page lookup
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Power_K
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Power_K)
 ***
 # Title: Quick Navigation with Word Labels
 # Category: navigation
@@ -2552,7 +2552,7 @@ end
 goto_labeled_word()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Precise_Jumps_Without_Mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Precise_Jumps_Without_Mouse)
 ***
 # Title: Navigate Jump List Efficiently
 # Category: navigation
@@ -2574,7 +2574,7 @@ vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jump forward to next location' }
 vim.api.nvim_command('jumps')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prev_and_Next
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prev_and_Next)
 ***
 # Title: Interactive Jump List Selection
 # Category: navigation
@@ -2619,7 +2619,7 @@ end
 vim.keymap.set('n', '<Leader>j', _G.goto_jump, { desc = 'Interactive jump list navigation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prev_and_Next
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prev_and_Next)
 ***
 # Title: Recursive Project File Finding
 # Category: navigation
@@ -2634,7 +2634,7 @@ set path=$PWD/**
 vim.opt.path = vim.fn.getcwd() .. '/**'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Project_browsing_using_find
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Project_browsing_using_find)
 ***
 # Title: Quick Tab Navigation and Management
 # Category: navigation
@@ -2678,7 +2678,7 @@ vim.keymap.set('n', '<F8>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_tab_navigation_and_opening
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tab_navigation_and_opening)
 ***
 # Title: Quick Reference Documents in Tabs
 # Category: navigation
@@ -2696,7 +2696,7 @@ vim.cmd('tab help toc')
 vim.cmd('tab help ' .. topic)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages)
 ***
 # Title: Open Files Under Cursor Quickly
 # Category: navigation
@@ -2723,7 +2723,7 @@ vim.keymap.set('n', '<leader>sf', '<C-w>f', { desc = 'Open file in split' })
 vim.keymap.set('n', '<leader>tf', '<C-w>gf', { desc = 'Open file in new tab' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_Get_Files_in_your_Environment
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_Get_Files_in_your_Environment)
 ***
 # Title: Quickly Search Vim Help Topics
 # Category: navigation
@@ -2754,7 +2754,7 @@ vim.api.nvim_create_user_command('Helpt', function(opts)
 end, { nargs = '+', complete = 'tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_look_up_Vim_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_look_up_Vim_help)
 ***
 # Title: Advanced Tab Navigation Shortcuts
 # Category: navigation
@@ -2777,7 +2777,7 @@ vim.keymap.set('n', '<A-Left>', ':tabm -1<CR>', { noremap = true, silent = true 
 vim.keymap.set('n', '<A-Right>', ':tabm +1<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Read_(but_not_write)_file_in_new_tab
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_(but_not_write)_file_in_new_tab)
 ***
 # Title: Read Javadoc Directly in Vim
 # Category: navigation
@@ -2799,7 +2799,7 @@ vim.o.keywordprg = ''
 -- Requires installing Vim Doclet from vimdoclet.sourceforge.net
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Read_Javadoc_In_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_Javadoc_In_Vim)
 ***
 # Title: Dynamically Build Tags from Path
 # Category: navigation
@@ -2844,7 +2844,7 @@ vim.api.nvim_create_user_command('BuildTagsFromPath', build_tags_from_path, {})
 build_tags_from_path()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Read_tag_files_from_all_directories_in_your_path
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_tag_files_from_all_directories_in_your_path)
 ***
 # Title: Powerful Tag Navigation in Vim/Neovim
 # Category: navigation
@@ -2873,7 +2873,7 @@ vim.keymap.set('n', 'g]', '<cmd>tselect<CR>', { desc = 'List tag matches' })
 vim.keymap.set('n', '<C-w>}', '<cmd>ptag<CR>', { desc = 'Preview tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip453
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip453)
 ***
 # Title: Flexible Tag Search and Navigation
 # Category: navigation
@@ -2898,7 +2898,7 @@ vim.keymap.set('n', '<leader>tj', function()
 end, { desc = 'Conditional tag jump' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip453
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip453)
 ***
 # Title: Quickly Open Perl Module Source
 # Category: navigation
@@ -2921,7 +2921,7 @@ vim.keymap.set('n', '<Leader>pm', function()
 end, { desc = 'Open Perl Module Source' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip461
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip461)
 ***
 # Title: Quickfix Window Navigation Mappings
 # Category: navigation
@@ -2940,7 +2940,7 @@ vim.keymap.set('n', '<kMinus>', ':cprev<CR>zz', { silent = true })
 vim.keymap.set('n', '<kMultiply>', ':cc<CR>zz', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip483
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip483)
 ***
 # Title: Navigate LaTeX Sections Efficiently
 # Category: navigation
@@ -2984,7 +2984,7 @@ vim.keymap.set('n', '[[', function()
 end, { buffer = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip489
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip489)
 ***
 # Title: Find Current Verilog Module Name
 # Category: navigation
@@ -3012,7 +3012,7 @@ vim.keymap.set('n', '`', function()
 end, { desc = 'Find current Verilog module' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip534
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip534)
 ***
 # Title: Context-Sensitive H/L Movement
 # Category: navigation
@@ -3061,7 +3061,7 @@ vim.keymap.set('n', 'H', _G.hcontext)
 vim.keymap.set('n', 'L', _G.lcontext)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip548
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip548)
 ***
 # Title: Navigate Jump List with Keyboard Shortcuts
 # Category: navigation
@@ -3083,7 +3083,7 @@ vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Jump back in jump list' })
 vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jump forward in jump list' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip553
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip553)
 ***
 # Title: Quick Navigation to Current Day in Calendar
 # Category: navigation
@@ -3126,7 +3126,7 @@ end
 vim.keymap.set('n', '<S-F4>', _G.goto_today)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip560
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip560)
 ***
 # Title: Quick Jump to Keyword Occurrences
 # Category: navigation
@@ -3191,7 +3191,7 @@ vim.keymap.set('n', '<Leader>j', jump_occurrence, { desc = 'Jump to keyword occu
 vim.keymap.set('n', '<Leader>p', jump_prompt, { desc = 'Prompt and jump to keyword' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip563
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip563)
 ***
 # Title: Jump to Matching Braces and Code Blocks
 # Category: navigation
@@ -3211,7 +3211,7 @@ vim.opt.matchtime = 3
 vim.opt.showmatch = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip6
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip6)
 ***
 # Title: Create Custom Tags with Line and Column Precision
 # Category: navigation
@@ -3245,7 +3245,7 @@ function MakeTags(filespec, pattern)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip601
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip601)
 ***
 # Title: View Man Pages Directly in Vim/Neovim
 # Category: navigation
@@ -3269,7 +3269,7 @@ vim.cmd.Man('<command>')
 vim.o.keywordprg = ':Man'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip606
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip606)
 ***
 # Title: Quick Python Module-Test File Switching
 # Category: navigation
@@ -3309,7 +3309,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip658
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip658)
 ***
 # Title: Flexible Python Test File Toggle
 # Category: navigation
@@ -3355,7 +3355,7 @@ end
 vim.keymap.set('n', '<M-t>', UTestToggle, { desc = 'Toggle between source and test files' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip658
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip658)
 ***
 # Title: Highlight and Navigate CSV Columns Efficiently
 # Category: navigation
@@ -3397,7 +3397,7 @@ vim.api.nvim_create_user_command('Csv', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip667
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip667)
 ***
 # Title: Generate Tags for Current File
 # Category: navigation
@@ -3415,7 +3415,7 @@ vim.keymap.set('n', '<M-l>', function()
 end, { desc = 'Show tags for current file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip711
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip711)
 ***
 # Title: Position Line at Screen Top/Middle/Bottom
 # Category: navigation
@@ -3445,7 +3445,7 @@ vim.cmd('normal! M')  -- Middle of screen
 vim.cmd('normal! L')  -- Bottom of screen
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip751
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip751)
 ***
 # Title: Windows-like Ctrl+Left/Right Word Navigation
 # Category: navigation
@@ -3476,7 +3476,7 @@ vim.keymap.set('i', '<C-S-Left>', '<C-\><C-O>b', { noremap = true })
 vim.keymap.set('i', '<C-S-Right>', '<C-\><C-O>w', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip752
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip752)
 ***
 # Title: Inline Java Documentation Browsing
 # Category: navigation
@@ -3496,7 +3496,7 @@ vim.cmd('help String')
 vim.cmd('help java.util.List')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_Doclet
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_Doclet)
 ***
 # Title: Vim-Style Browser Navigation Extensions
 # Category: navigation
@@ -3512,7 +3512,7 @@ Several browser extensions allow Vim-like keyboard navigation, reducing mouse us
 -- Vim Vixen (Firefox)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_key_bindings_for_web_browsers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_key_bindings_for_web_browsers)
 ***
 # Title: Keyboard-Driven Web Browsers with Vim Keybindings
 # Category: navigation
@@ -3528,7 +3528,7 @@ Some specialized web browsers natively support Vim-like keyboard navigation
 -- Luakit (Lua + WebKit)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_key_bindings_for_web_browsers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_key_bindings_for_web_browsers)
 ***
 # Title: Navigate Wrapped Lines Smoothly
 # Category: navigation
@@ -3553,5 +3553,5 @@ vim.keymap.set('n', '$', 'g$', { noremap = true })
 vim.keymap.set('n', '^', 'g^', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Working_with_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Working_with_long_lines)
 ***

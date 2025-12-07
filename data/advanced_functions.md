@@ -104,7 +104,7 @@ end
 vim.keymap.set('n', '<F5>', _G.java_insert_import, { desc = 'Insert Java Import' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_Java_import_statements_automatically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_Java_import_statements_automatically)
 ***
 # Title: Flexible Heading Underline Function
 # Category: advanced_functions
@@ -142,7 +142,7 @@ vim.api.nvim_create_user_command('Underline', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_a_dashed_line_under_a_title_in_text_documents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_a_dashed_line_under_a_title_in_text_documents)
 ***
 # Title: Smart Preprocessor Directive Commenter
 # Category: advanced_functions
@@ -226,7 +226,7 @@ function SmartPreProcCommenter()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_Commenting_of_Preprocessor_Directives_in_C
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_Commenting_of_Preprocessor_Directives_in_C)
 ***
 # Title: Generate Web Forum Compatible HTML Snippet
 # Category: advanced_functions
@@ -256,7 +256,7 @@ vim.api.nvim_create_user_command('MyToHtml', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_selected_text_to_HTML
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_selected_text_to_HTML)
 ***
 # Title: Advanced CSV Column Navigation and Manipulation
 # Category: advanced_functions
@@ -298,7 +298,7 @@ vim.api.nvim_create_user_command('Csv', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Csv
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Csv)
 ***
 # Title: Dynamically Display Current Function Name
 # Category: advanced_functions
@@ -387,7 +387,7 @@ vim.api.nvim_create_user_command('ShowCurrentFunction', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_the_name_of_the_function_you_are_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_the_name_of_the_function_you_are_editing)
 ***
 # Title: Screen-Aware Command Execution
 # Category: advanced_functions
@@ -418,7 +418,7 @@ local function in_screen(command)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/GNU_Screen_integration
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/GNU_Screen_integration)
 ***
 # Title: Generate Java Bean Getters and Setters
 # Category: advanced_functions
@@ -472,7 +472,7 @@ end
 vim.keymap.set('n', 'dc', add_bean, { buffer = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/JavaBeans_helper_function
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/JavaBeans_helper_function)
 ***
 # Title: Dynamic Footnote Insertion with Vim Function
 # Category: advanced_functions
@@ -525,7 +525,7 @@ end
 vim.keymap.set('i', '<C-f>', _G.vim_footnotes, { desc = 'Insert Footnote' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_footnotes_in_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_footnotes_in_vim)
 ***
 # Title: Flexible Compilation Function
 # Category: advanced_functions
@@ -562,7 +562,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Compile current file in project directory' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_function_keys_to_compile_and_run_your_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_function_keys_to_compile_and_run_your_code)
 ***
 # Title: Move Characters to Specific Column Range
 # Category: advanced_functions
@@ -600,7 +600,7 @@ end
 -- :lua move_chars_to_column(5, 11, 1, '=', 8)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_specified_Characters_in_a_given_range_of_line_to_specified_Column
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_specified_Characters_in_a_given_range_of_line_to_specified_Column)
 ***
 # Title: Advanced PHP Function Documentation Viewer
 # Category: advanced_functions
@@ -673,7 +673,7 @@ end, {})
 vim.keymap.set('n', '<leader>pd', ':PhpDoc<CR>', { desc = 'PHP Function Documentation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PHP_online_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PHP_online_help)
 ***
 # Title: Extract Text from HTML Files
 # Category: advanced_functions
@@ -726,7 +726,7 @@ vim.keymap.set('n', '<Leader>h', function()
 end, { desc = 'Preview clipboard HTML/URL' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preview_HTML_files_quickly
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preview_HTML_files_quickly)
 ***
 # Title: Text Extraction from HTML/URL
 # Category: advanced_functions
@@ -765,7 +765,7 @@ vim.keymap.set('n', '<Leader>H', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preview_current_file_in_Mozilla_through_localhost
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preview_current_file_in_Mozilla_through_localhost)
 ***
 # Title: Custom Function to Open File in Visual Studio
 # Category: advanced_functions
@@ -791,7 +791,7 @@ end
 vim.keymap.set('n', '<leader>vs', _G.open_file_in_visual_studio, { desc = 'Open current file in Visual Studio' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip580
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip580)
 ***
 # Title: Flexible Underline Command
 # Category: advanced_functions
@@ -825,7 +825,7 @@ vim.api.nvim_create_user_command('Underline', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip724
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip724)
 ***
 # Title: Flexible Underline Function
 # Category: advanced_functions
@@ -856,5 +856,5 @@ vim.api.nvim_create_user_command('Underline', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip750
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip750)
 ***

@@ -23,7 +23,7 @@ function _G.dont_load_twice(identifier)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Load_my_script_only_once
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Load_my_script_only_once)
 ***
 # Title: Handle UTF-8 Encoding in Python Vim Scripts
 # Category: scripting
@@ -46,5 +46,5 @@ local encodedStr = vim.fn.iconv(uniStr, "utf-8", vim.o.encoding)
 print(encodedStr)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Python_script_utf8_encoding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Python_script_utf8_encoding)
 ***

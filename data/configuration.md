@@ -383,7 +383,7 @@ set go+=a
 vim.opt.clipboard = 'unnamed,unnamedplus'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/%22copy_all_to_clipboard%22_howto
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%22copy_all_to_clipboard%22_howto)
 ***
 # Title: Dynamic PHP Function Documentation Lookup
 # Category: configuration
@@ -406,7 +406,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/(PHP)_on_line_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/(PHP)_on_line_help)
 ***
 # Title: GUI-Specific Vim Configuration
 # Category: configuration
@@ -427,7 +427,7 @@ if vim.g.gui_running then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/.vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/.vimrc)
 ***
 # Title: Enable 256 Color Support in Vim/Neovim
 # Category: configuration
@@ -448,7 +448,7 @@ vim.opt.termguicolors = true
 vim.g.terminal_color_count = 256
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/256_colors_in_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/256_colors_in_vim)
 ***
 # Title: Configure 256-Color Terminal Support in Vim
 # Category: configuration
@@ -475,7 +475,7 @@ vim.o.t_Co = 256
 vim.cmd.colorscheme('jellybeans')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/256_colors_setup_for_console_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/256_colors_setup_for_console_Vim)
 ***
 # Title: Override Terminal Color Capabilities
 # Category: configuration
@@ -493,7 +493,7 @@ Use command-line flags or terminal settings to specify 256-color terminfo entrie
 -- Command-line flags or terminal GUI settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/256_colors_setup_for_console_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/256_colors_setup_for_console_Vim)
 ***
 # Title: Secure Vim Configuration for Encrypted Files
 # Category: configuration
@@ -519,7 +519,7 @@ vim.opt.history = 0
 vim.opt.shelltemp = false
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/AES256_encryption_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/AES256_encryption_in_Vim)
 ***
 # Title: Cache and Reset Vim Options Dynamically
 # Category: configuration
@@ -588,7 +588,7 @@ end, { nargs = '*' })
 return M
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/A_set_of_two_commands_and_one_function_to_provide_user-preferred_options_setting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_set_of_two_commands_and_one_function_to_provide_user-preferred_options_setting)
 ***
 # Title: Multiple Vim Instances for Different File Types
 # Category: configuration
@@ -604,7 +604,7 @@ gvim.exe --servername TXTVIM --remote-tab-silent "%1"
 -- Can configure distinct behaviors per filetype in init.lua
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_open-in-tabs_context_menu_for_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_open-in-tabs_context_menu_for_Windows)
 ***
 # Title: Convert Note Files to Vim Help Documents
 # Category: configuration
@@ -632,7 +632,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_your_note_files_to_Vim_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_your_note_files_to_Vim_help)
 ***
 # Title: Add Vim to Windows Explorer Context Menu
 # Category: configuration
@@ -656,7 +656,7 @@ Windows Registry Editor Version 5.00
 -- Recommend using vim.fn.system() to run registry import if needed
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Adding_Vim_to_MS-Windows_File_Explorer_Menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Adding_Vim_to_MS-Windows_File_Explorer_Menu)
 ***
 # Title: Fix Shell Command Issues in FreeBSD GVim
 # Category: configuration
@@ -671,7 +671,7 @@ set sh=ksh
 vim.opt.shell = 'ksh'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ampersand_in_freebsd_shell_commands_to_view_LaTeX_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ampersand_in_freebsd_shell_commands_to_view_LaTeX_files)
 ***
 # Title: Disable Vim Bells and Visual Flashes
 # Category: configuration
@@ -697,7 +697,7 @@ vim.api.nvim_create_autocmd('GUIEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Annoyed_that_some_stuff_is_reset_during_GUI_init%3F
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Annoyed_that_some_stuff_is_reset_during_GUI_init%3F)
 ***
 # Title: Auto-detect CPU cores for parallel make builds
 # Category: configuration
@@ -737,7 +737,7 @@ end
 set_makeprg()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto-detect_number_of_cores_for_parallel_build
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto-detect_number_of_cores_for_parallel_build)
 ***
 # Title: Customize Completion Sources
 # Category: configuration
@@ -756,7 +756,7 @@ vim.opt.complete:append('i')  -- Include current and included files
 vim.opt.complete:append('t')  -- Include tags
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_complete_variable_names_or_words
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_complete_variable_names_or_words)
 ***
 # Title: Quick Spelling Correction Setup
 # Category: configuration
@@ -773,7 +773,7 @@ vim.opt.dictionary = '/usr/dict/words'
 vim.opt.spell = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_spelling_correction_using_abbreviations
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_spelling_correction_using_abbreviations)
 ***
 # Title: Autoload Cscope Database Recursively
 # Category: configuration
@@ -814,7 +814,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autoloading_Cscope_Database
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autoloading_Cscope_Database)
 ***
 # Title: Flexible LaTeX Compilation with Makefiles
 # Category: configuration
@@ -845,7 +845,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_LaTeX_compile_and_XDVI_refresh
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_LaTeX_compile_and_XDVI_refresh)
 ***
 # Title: Automatically Save Global Variables to viminfo
 # Category: configuration
@@ -889,7 +889,7 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_Saving_Lists_to_File
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_Saving_Lists_to_File)
 ***
 # Title: Automatically Add Python Paths to Vim Path
 # Category: configuration
@@ -923,7 +923,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_add_Python_paths_to_Vim_path
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_add_Python_paths_to_Vim_path)
 ***
 # Title: Reduce 'Hit ENTER' Prompts in Vim/Neovim
 # Category: configuration
@@ -941,7 +941,7 @@ vim.opt.shortmess:append('a')
 vim.opt.cmdheight = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Avoid_hit_enter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Avoid_hit_enter)
 ***
 # Title: Version Control for Vim Configuration
 # Category: configuration
@@ -958,7 +958,7 @@ Use distributed version control (like Git) to manage and backup Vim/Neovim confi
 -- Allows easy sync and backup across different machines
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc)
 ***
 # Title: Commenting Configuration Files
 # Category: configuration
@@ -975,7 +975,7 @@ map zm :let @/=expand("<cword>") <BAR> split <BAR> execute 'normal n'<CR>
 -- Use comments to explain complex mappings or configurations
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc)
 ***
 # Title: OS-Specific Configuration
 # Category: configuration
@@ -1002,7 +1002,7 @@ else
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc)
 ***
 # Title: Fix Backspace Behavior in Insert Mode
 # Category: configuration
@@ -1017,7 +1017,7 @@ set backspace=indent,eol,start
 vim.opt.backspace = {'indent', 'eol', 'start'}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backspace_and_delete_problems
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backspace_and_delete_problems)
 ***
 # Title: Fix Backspace Key in PuTTY Terminal
 # Category: configuration
@@ -1036,7 +1036,7 @@ Resolve backspace key issues when connecting to Linux servers via PuTTY by chang
 -- Ensure terminal emulator is configured correctly
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backspace_key_using_puTTY_to_RH9_box
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backspace_key_using_puTTY_to_RH9_box)
 ***
 # Title: Quick Vim Configuration Editing and Reloading
 # Category: configuration
@@ -1057,7 +1057,7 @@ vim.keymap.set('n', '<leader>s', ':source $MYVIMRC<CR>', { desc = 'Reload Vim co
 vim.keymap.set('n', '<leader>v', ':e $MYVIMRC<CR>', { desc = 'Edit Vim configuration' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_Vim_Tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_Vim_Tips)
 ***
 # Title: Customize Syntax Highlighting Colors
 # Category: configuration
@@ -1077,7 +1077,7 @@ vim.cmd('hi Search guibg=LightBlue')
 vim.cmd('highlight ErrorMsg guibg=White guifg=Red')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Better_colors_for_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Better_colors_for_syntax_highlighting)
 ***
 # Title: Systematic Vim Debugging via Bisection
 # Category: configuration
@@ -1106,7 +1106,7 @@ A systematic method to isolate configuration or plugin issues by progressively e
 -- 3. Test after each restoration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Bisecting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Bisecting)
 ***
 # Title: Minimal Vim Configuration Testing
 # Category: configuration
@@ -1129,7 +1129,7 @@ Use command-line flags to test Vim behavior with progressively reduced configura
 -- gvim -U NONE      # For GUI-specific tests
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Bisecting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Bisecting)
 ***
 # Title: Toggle Editing Helpers with Function Key
 # Category: configuration
@@ -1180,7 +1180,7 @@ end
 vim.keymap.set('n', '<F9>', toggle_edit_helpers, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Brackets_and_parentheses_in_Perl
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Brackets_and_parentheses_in_Perl)
 ***
 # Title: Increase Menu Item Limit
 # Category: configuration
@@ -1196,7 +1196,7 @@ set menuitems=50
 vim.o.menuitems = 50
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Buffer_bar_to_list_buffers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Buffer_bar_to_list_buffers)
 ***
 # Title: Verifying Python Support in Vim/Neovim
 # Category: configuration
@@ -1219,7 +1219,7 @@ vim.cmd('py print(2**0.5)')
 vim.cmd('py3 print(2**0.5)')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Build_Python-enabled_Vim_on_Windows_with_MinGW
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Python-enabled_Vim_on_Windows_with_MinGW)
 ***
 # Title: Building Vim with Python Support on Windows
 # Category: configuration
@@ -1239,7 +1239,7 @@ set PYTHON_VER=27
 -- In Neovim, Python support is often handled differently via :checkhealth
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Build_Vim_in_Windows_with_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Vim_in_Windows_with_Visual_Studio)
 ***
 # Title: Managing Vim Source Code with Mercurial
 # Category: configuration
@@ -1260,7 +1260,7 @@ hg pull -u
 -- git pull origin master
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Build_Vim_in_Windows_with_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Vim_in_Windows_with_Visual_Studio)
 ***
 # Title: Build Vim with Custom Compilation Info
 # Category: configuration
@@ -1276,7 +1276,7 @@ Use --with-compiledby to set custom compilation information displayed in :versio
 -- Pass --with-compiledby flag during compilation
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Build_Vim_with_your_name_included
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Vim_with_your_name_included)
 ***
 # Title: Build Vim on Ubuntu with GUI Support
 # Category: configuration
@@ -1295,7 +1295,7 @@ sudo make install
 -- Requires installing dev packages first
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Build_Vim_with_your_name_included
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Vim_with_your_name_included)
 ***
 # Title: Windows Vim Installation After Compilation
 # Category: configuration
@@ -1315,7 +1315,7 @@ Comprehensive steps to install compiled Vim on Windows system
 -- Actual installation is a system/shell process
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Build_Vim_with_your_name_included
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Vim_with_your_name_included)
 ***
 # Title: Building Vim with Extensive Features
 # Category: configuration
@@ -1332,7 +1332,7 @@ vim.g.build_features = 'huge'
 vim.g.gui_support = 'gnome2'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Building_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Building_Vim)
 ***
 # Title: Ubuntu Development Package Dependencies
 # Category: configuration
@@ -1348,7 +1348,7 @@ sudo apt-get install libncurses5-dev libgnome2-dev libgtk2.0-dev
 vim.fn.system('sudo apt-get install libncurses5-dev libgnome2-dev libgtk2.0-dev')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Building_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Building_Vim)
 ***
 # Title: Configure Vim Color Support on HP-UX
 # Category: configuration
@@ -1365,7 +1365,7 @@ Use curses library instead of termlib to enable proper color support when buildi
 -- Note: Most modern Neovim installations won't need this
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Building_vim_with_color_on_HP-UX
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Building_vim_with_color_on_HP-UX)
 ***
 # Title: Set Terminal Type for Color Vim
 # Category: configuration
@@ -1385,7 +1385,7 @@ vim.env.TERM = 'dtterm'
 vim.cmd('syntax on')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Building_vim_with_color_on_HP-UX
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Building_vim_with_color_on_HP-UX)
 ***
 # Title: Generate Project CTags Quickly
 # Category: configuration
@@ -1402,7 +1402,7 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 vim.keymap.set('n', '<C-F12>', ':!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>', { desc = 'Generate project ctags' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/C%2B%2B_code_completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/C%2B%2B_code_completion)
 ***
 # Title: Cache and Restore Vim Option Preferences
 # Category: configuration
@@ -1465,7 +1465,7 @@ vim.api.nvim_create_user_command('SetOption', function(opts)
 end, { nargs = '+' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cache_user-preferred_option_values_for_later_reset
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cache_user-preferred_option_values_for_later_reset)
 ***
 # Title: Fix Temporary File Errors on Windows
 # Category: configuration
@@ -1482,7 +1482,7 @@ vim.env.TMP = "c:/tmp"
 vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cannot_create_temporary_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cannot_create_temporary_file)
 ***
 # Title: Fix Temporary File Issues in Windows Vim
 # Category: configuration
@@ -1499,7 +1499,7 @@ vim.env.TMP = "c:/tmp"
 vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cannot_open_temporary_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cannot_open_temporary_file)
 ***
 # Title: Configure GUI Font in Neovim
 # Category: configuration
@@ -1535,7 +1535,7 @@ if vim.g.neovide or vim.g.gui_running then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_GUI_Font
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_GUI_Font)
 ***
 # Title: Escape Spaces in Font Names
 # Category: configuration
@@ -1550,7 +1550,7 @@ set guifont=Monospace\ 10
 vim.opt.guifont = 'Monospace\ 10'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_font
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_font)
 ***
 # Title: Dynamic Color Scheme for Context Awareness
 # Category: configuration
@@ -1583,7 +1583,7 @@ vim.api.nvim_create_autocmd('BufLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_gvim_colorscheme_when_focus_changes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_gvim_colorscheme_when_focus_changes)
 ***
 # Title: Persist Color Scheme Across Vim Sessions
 # Category: configuration
@@ -1598,7 +1598,7 @@ colorscheme morning
 vim.cmd('colorscheme morning')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_the_color_scheme
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_the_color_scheme)
 ***
 # Title: Troubleshoot Color Scheme Loading Issues
 # Category: configuration
@@ -1613,7 +1613,7 @@ If color scheme isn't loading properly, try removing or commenting out highlight
 -- Remove or comment out any custom highlight configurations
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_the_color_scheme
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_the_color_scheme)
 ***
 # Title: Fix Escape Key Timing in Screen Terminal
 # Category: configuration
@@ -1630,7 +1630,7 @@ maptimeout 5
 -- Add to ~/.screenrc
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_timeout_to_detect_Esc_reliably_in_an_xterm
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_timeout_to_detect_Esc_reliably_in_an_xterm)
 ***
 # Title: Dynamically Detect and Handle Screen Terminal
 # Category: configuration
@@ -1651,7 +1651,7 @@ if vim.env.TERM:match("screen") then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_timeout_to_detect_Esc_reliably_in_an_xterm
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_timeout_to_detect_Esc_reliably_in_an_xterm)
 ***
 # Title: Auto-Reload Vimrc on Save
 # Category: configuration
@@ -1671,7 +1671,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_vimrc_with_auto_reload
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_vimrc_with_auto_reload)
 ***
 # Title: Customize Python Triple-Quoted Comments
 # Category: configuration
@@ -1690,7 +1690,7 @@ vim.cmd[[syn region pythonComment
       \ contains=pythonEscape,pythonTodo,@Spell]]
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Changing_the_default_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_the_default_syntax_highlighting)
 ***
 # Title: Custom Syntax Highlighting for File Types
 # Category: configuration
@@ -1707,7 +1707,7 @@ Easily define custom syntax highlighting for specific file types or override exi
 -- Use vim.filetype.add() to define custom file type associations
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Changing_the_default_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_the_default_syntax_highlighting)
 ***
 # Title: Toggle Vim Options Easily
 # Category: configuration
@@ -1734,7 +1734,7 @@ print(vim.opt.number:get())
 vim.opt.number:set(vim.o.number)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Check_and_set_alternate_value_for_set_options
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Check_and_set_alternate_value_for_set_options)
 ***
 # Title: Configure Syntax Highlighting Options
 # Category: configuration
@@ -1753,7 +1753,7 @@ vim.g.perl_fold = 1
 vim.g.perl_fold_blocks = 1
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Check_your_syntax_files_for_configurable_options
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Check_your_syntax_files_for_configurable_options)
 ***
 # Title: Configure COBOL Syntax Highlighting in Neovim
 # Category: configuration
@@ -1768,7 +1768,7 @@ let cobol_legacy_code=1
 vim.g.cobol_legacy_code = 1
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cobol_editing_with_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cobol_editing_with_Vim)
 ***
 # Title: Enhanced COBOL Syntax Highlighting for Modern COBOL
 # Category: configuration
@@ -1781,7 +1781,7 @@ Use an updated cobol.vim syntax file that supports modern COBOL features includi
 -- Can be found in the comments section of the original wiki page
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cobol_editing_with_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cobol_editing_with_Vim)
 ***
 # Title: Configure Terminal Color Highlighting
 # Category: configuration
@@ -1804,7 +1804,7 @@ if not vim.g.gui_running then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Color_highlighting_on_telnet
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Color_highlighting_on_telnet)
 ***
 # Title: Troubleshoot Terminal Color Issues
 # Category: configuration
@@ -1828,7 +1828,7 @@ vim.cmd('syntax on')
 -- vim.env.TERM = 'linux'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Color_highlighting_on_telnet
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Color_highlighting_on_telnet)
 ***
 # Title: Smart Language-Specific Line Commenting
 # Category: configuration
@@ -1877,7 +1877,7 @@ vim.keymap.set('v', 'co', function()
 end, { desc = "Comment lines based on filetype" })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comment_Lines_according_to_a_given_filetype
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comment_Lines_according_to_a_given_filetype)
 ***
 # Title: Quick Java Compilation in Vim/Neovim
 # Category: configuration
@@ -1901,7 +1901,7 @@ vim.opt.errorformat = '%A%f:%l: %m,%-Z%p^,%-C%.%#'
 vim.keymap.set('n', '<F9>', ':make<CR>', { desc = 'Compile Java file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compile_Java_with_Jikes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_Java_with_Jikes)
 ***
 # Title: Improved Java Compilation Error Handling
 # Category: configuration
@@ -1924,7 +1924,7 @@ vim.api.nvim_create_autocmd('QuickFixCmdPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compile_Java_with_Sun_JDK_javac
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_Java_with_Sun_JDK_javac)
 ***
 # Title: Compile Vim with Python Support Separately
 # Category: configuration
@@ -1941,7 +1941,7 @@ Create two Vim executables - one with standard options and another with Python s
 -- Set different configurations for different use cases
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compile_a_separate_copy_of_Vim_for_Python_coding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_a_separate_copy_of_Vim_for_Python_coding)
 ***
 # Title: Environment Variable Management for Custom Vim
 # Category: configuration
@@ -1962,7 +1962,7 @@ vim.env.VIMRUNTIME = '/path/to/custom/runtime'
 vim.env.PATH = vim.env.PATH .. ':/path/to/custom/bin'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compile_a_separate_copy_of_Vim_for_Python_coding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_a_separate_copy_of_Vim_for_Python_coding)
 ***
 # Title: Customize Cursor Color and Shape Across Modes
 # Category: configuration
@@ -1984,7 +1984,7 @@ vim.cmd('highlight iCursor guifg=white guibg=steelblue')
 vim.opt.guicursor = 'n-v-c:block-Cursor,i:ver100-iCursor'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Configuring_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Configuring_the_cursor)
 ***
 # Title: Cross-Terminal Cursor Shape Detection
 # Category: configuration
@@ -2005,7 +2005,7 @@ if vim.fn.match(vim.o.term, "xterm\|rxvt") ~= -1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Configuring_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Configuring_the_cursor)
 ***
 # Title: Automatically Continue Doxygen Comments
 # Category: configuration
@@ -2020,7 +2020,7 @@ set comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,bO:///,O://
 vim.opt.comments = 'sO:* -,mO:* ,exO:*/,s1:/*,mb:*,ex:*/,bO:///,O://'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Continuing_doxygen_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Continuing_doxygen_comments)
 ***
 # Title: Handle Character Encoding When Switching to UTF-8
 # Category: configuration
@@ -2046,7 +2046,7 @@ vim.o.encoding = 'utf-8'
 vim.o.fileencodings = 'iso-8859-1'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Converting_LANG_to_UTF-8
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Converting_LANG_to_UTF-8)
 ***
 # Title: Use scriptencoding for Vimrc Encoding
 # Category: configuration
@@ -2063,7 +2063,7 @@ scriptencoding latin1
 vim.o.encoding = 'latin1'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Converting_LANG_to_UTF-8
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Converting_LANG_to_UTF-8)
 ***
 # Title: Flexible Number Format Handling
 # Category: configuration
@@ -2084,7 +2084,7 @@ vim.opt.nrformats:append('alpha')
 print(vim.o.nrformats)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cool_trick_to_change_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cool_trick_to_change_numbers)
 ***
 # Title: Automatically Source Session on Startup
 # Category: configuration
@@ -2104,7 +2104,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_Vim_sessions_that_you_can_open_with_double-click_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_Vim_sessions_that_you_can_open_with_double-click_in_Windows)
 ***
 # Title: Create Custom Color Scheme Extending Existing Scheme
 # Category: configuration
@@ -2151,7 +2151,7 @@ vim.cmd('hi StatusLine guifg=black guibg=white')
 vim.cmd('hi StatusLineNC guifg=LightCyan guibg=blue gui=bold')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_a_color_scheme_based_on_another
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_a_color_scheme_based_on_another)
 ***
 # Title: Create Custom Syntax Highlighting for Files
 # Category: configuration
@@ -2195,7 +2195,7 @@ vim.treesitter.highlighter.new({
 vim.b.current_syntax = 'custom'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Creating_your_own_syntax_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Creating_your_own_syntax_files)
 ***
 # Title: Dynamic Cscope Database Generation
 # Category: configuration
@@ -2219,7 +2219,7 @@ function generate_cscope_db()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cscope
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cscope)
 ***
 # Title: Flexible CSV Delimiter Configuration
 # Category: configuration
@@ -2245,7 +2245,7 @@ vim.api.nvim_create_user_command('Delimiter', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Csv
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Csv)
 ***
 # Title: Improve XML/XSLT Attribute Completion
 # Category: configuration
@@ -2267,7 +2267,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ctrl-N_completion_for_XML/XSLT_attributes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ctrl-N_completion_for_XML/XSLT_attributes)
 ***
 # Title: Flexible LaTeX Compilation with Rubber and Make
 # Category: configuration
@@ -2292,7 +2292,7 @@ else
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Customize_ftplugin,_syntax_and_more_-_example_for_TeX
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Customize_ftplugin,_syntax_and_more_-_example_for_TeX)
 ***
 # Title: Debug Unexpected Vim Option Settings
 # Category: configuration
@@ -2322,7 +2322,7 @@ function debug_vimrc()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Debug_unexpected_option_settings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Debug_unexpected_option_settings)
 ***
 # Title: Investigate Mappings and Abbreviations
 # Category: configuration
@@ -2347,7 +2347,7 @@ vim.cmd('ab')   -- List abbreviations
 local mappings = vim.api.nvim_get_keymap('n')  -- Get normal mode mappings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Debug_unexpected_option_settings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Debug_unexpected_option_settings)
 ***
 # Title: Check and Set Buffer Filetype
 # Category: configuration
@@ -2370,7 +2370,7 @@ print(vim.o.filetype)
 vim.o.filetype = 'python'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Default_filetype
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Default_filetype)
 ***
 # Title: Diagnose Backspace Key Mapping Issues
 # Category: configuration
@@ -2395,7 +2395,7 @@ vim.cmd('verbose imap ^H')
 vim.keymap.del('i', '<BS>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_key)
 ***
 # Title: Fine-tune Terminal Color Palette
 # Category: configuration
@@ -2409,7 +2409,7 @@ vim.g.terminal_color_0 = '#4D4D4D'  -- ANSI Black
 vim.g.terminal_color_1 = '#98FB98'   -- ANSI Green
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Desert_color_scheme_with_Vim_in_PuTTY
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Desert_color_scheme_with_Vim_in_PuTTY)
 ***
 # Title: Handle Terminal Encoding for Non-Unicode Terminals
 # Category: configuration
@@ -2446,7 +2446,7 @@ if vim.fn.has('multi_byte') == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Detect_non-Unicode_Xterms
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Detect_non-Unicode_Xterms)
 ***
 # Title: Use Unix Line Endings for Cross-Platform Vim Scripts
 # Category: configuration
@@ -2462,7 +2462,7 @@ Ensure Vim scripts work across different operating systems by using Unix-style l
 vim.opt.fileformat = 'unix'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Develop_vim_modules_on_Win
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Develop_vim_modules_on_Win)
 ***
 # Title: Disable Automatic Comment Insertion
 # Category: configuration
@@ -2484,7 +2484,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_auto-comment_when_editing_C/C%2B%2B_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_auto-comment_when_editing_C/C%2B%2B_files)
 ***
 # Title: Modify C/C++ Comment Behavior
 # Category: configuration
@@ -2507,7 +2507,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_auto-comment_when_editing_C/C%2B%2B_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_auto-comment_when_editing_C/C%2B%2B_files)
 ***
 # Title: Disable Auto-Indentation for Specific Filetypes
 # Category: configuration
@@ -2524,7 +2524,7 @@ let b:did_indent = 1
 vim.g.did_indent = 1
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps)
 ***
 # Title: Disable Automatic Comment Continuation
 # Category: configuration
@@ -2544,7 +2544,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps)
 ***
 # Title: Alternative Bell Suppression Method
 # Category: configuration
@@ -2559,7 +2559,7 @@ set belloff=all
 vim.opt.belloff = 'all'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_beeping
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_beeping)
 ***
 # Title: Completely Silence Vim Bells
 # Category: configuration
@@ -2574,7 +2574,7 @@ set belloff=all
 vim.opt.belloff = 'all'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_beeping_and_flashing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_beeping_and_flashing)
 ***
 # Title: Configure Terminal Cursor for Different Modes
 # Category: configuration
@@ -2613,7 +2613,7 @@ if vim.fn.has('unix') then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_blinking_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_blinking_cursor)
 ***
 # Title: Disable IME Input Mode in Windows
 # Category: configuration
@@ -2635,7 +2635,7 @@ vim.opt.iminsert = 0
 vim.g.imdisable = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disabling_IME_input_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disabling_IME_input_in_Windows)
 ***
 # Title: Disable Default Filetype Plugins
 # Category: configuration
@@ -2654,7 +2654,7 @@ vim.api.nvim_create_autocmd({'BufReadPre', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disabling_default_ftplugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disabling_default_ftplugins)
 ***
 # Title: Always Display Status Line
 # Category: configuration
@@ -2669,7 +2669,7 @@ set laststatus=2
 vim.opt.laststatus = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Displaying_status_line_always
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Displaying_status_line_always)
 ***
 # Title: Install Full-Featured Vim on Linux
 # Category: configuration
@@ -2690,7 +2690,7 @@ Install full-featured Vim with scripting and GUI support on different Linux dist
 -- Fedora: vim.fn.system('yum install vim-enhanced vim-X11')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Download
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Download)
 ***
 # Title: Download Vim for Windows
 # Category: configuration
@@ -2709,7 +2709,7 @@ Multiple options for downloading Vim on Windows, including 32-bit and 64-bit bui
 -- Stable builds: http://sourceforge.net/projects/cream/files/Vim/
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Download
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Download)
 ***
 # Title: Windows Vim Download Options
 # Category: configuration
@@ -2728,7 +2728,7 @@ Multiple ways to download Vim for Windows, including stable and nightly builds
 -- Stable builds: http://sourceforge.net/projects/cream/files/Vim/
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Download_gvim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Download_gvim)
 ***
 # Title: Choosing the Right Vim Version
 # Category: configuration
@@ -2748,7 +2748,7 @@ Select Vim version based on stability and feature requirements - nightly builds 
 -- Verify feature support with vim.fn.has()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Downloading_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Downloading_Vim)
 ***
 # Title: Custom Syntax Highlighting for Mixed Languages
 # Category: configuration
@@ -2775,7 +2775,7 @@ require('nvim-treesitter.configs').setup({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/EP3_Syntax_File
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/EP3_Syntax_File)
 ***
 # Title: Dynamically Manage Vim Path Settings
 # Category: configuration
@@ -2830,7 +2830,7 @@ vim.api.nvim_create_user_command('FP', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_change_the_path_option
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_change_the_path_option)
 ***
 # Title: Quick Vim Configuration Management
 # Category: configuration
@@ -2853,7 +2853,7 @@ vim.keymap.set('n', '<leader>s', ':source $MYVIMRC<CR>', { desc = 'Reload Vim co
 vim.keymap.set('n', '<leader>v', ':e $MYVIMRC<CR>', { desc = 'Edit Vim config' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easter_eggs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easter_eggs)
 ***
 # Title: Customize File Path Detection with isfname
 # Category: configuration
@@ -2870,7 +2870,7 @@ set isfname+=32
 vim.opt.isfname:append(32)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split)
 ***
 # Title: Add Modeline for Perl Batch Files
 # Category: configuration
@@ -2887,7 +2887,7 @@ Add a vim modeline to specify filetype for individual Perl batch files
 -- @rem vim: set ft=perl:
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_ActiveState_Perl_batch_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_ActiveState_Perl_batch_files)
 ***
 # Title: Fix Crontab Editing in Vim/Neovim
 # Category: configuration
@@ -2919,7 +2919,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_crontab
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_crontab)
 ***
 # Title: Specify Custom SCP Port
 # Category: configuration
@@ -2935,7 +2935,7 @@ let g:netrw_scp_cmd="scp -q -P <desired_new_port>"
 vim.g.netrw_scp_cmd = 'scp -q -P 2222'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_remote_files_via_scp_in_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_remote_files_via_scp_in_vim)
 ***
 # Title: Launch Vim Inside Visual Studio MDI
 # Category: configuration
@@ -2952,7 +2952,7 @@ Arguments: -P "Microsoft Visual C++" --servername MDI_VIM
 -- This is more of an IDE-specific setup than a Neovim-specific configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Embedding_vim_in_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Embedding_vim_in_Visual_Studio)
 ***
 # Title: Enable Windows Shortcuts in gVim
 # Category: configuration
@@ -2967,7 +2967,7 @@ set winaltkeys=yes
 vim.g.winaltkeys = 'yes'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enabling_Windows_shortcuts_for_gvim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enabling_Windows_shortcuts_for_gvim)
 ***
 # Title: Configure Backspace Behavior in Insert Mode
 # Category: configuration
@@ -2984,7 +2984,7 @@ set backspace=2
 vim.opt.backspace = {'indent', 'eol', 'start'}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Erasing_previously_entered_characters_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Erasing_previously_entered_characters_in_insert_mode)
 ***
 # Title: Language-Specific Compiler and Error Handling
 # Category: configuration
@@ -3018,7 +3018,7 @@ vim.opt_local.errorformat = "%f:%l: %m"
 vim.cmd.compiler("xmllint")
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Errorformat_and_makeprg
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Errorformat_and_makeprg)
 ***
 # Title: Configure Errorformat for Intel Fortran Compiler
 # Category: configuration
@@ -3036,7 +3036,7 @@ vim.opt.errorformat:append('%E%.%#rror: %f, line %l: %m,%-C%.%#,%-Z%p^')
 vim.opt.isfname = '@,48-57,/,.,-,_,+,#,^,,$,%,~,='
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Errorformat_for_Intel_ifort
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Errorformat_for_Intel_ifort)
 ***
 # Title: Java Build Error Handling in Vim
 # Category: configuration
@@ -3070,7 +3070,7 @@ vim.keymap.set('n', '<F11>', ':cprev<CR>', { desc = 'Previous error' })
 vim.keymap.set('n', '<F12>', ':cnext<CR>', { desc = 'Next error' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Errorformat_for_java/ant/junit/cygwin/bash
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Errorformat_for_java/ant/junit/cygwin/bash)
 ***
 # Title: Customize Errorformat for Different Compilers
 # Category: configuration
@@ -3089,7 +3089,7 @@ vim.o.errorformat = vim.o.errorformat .. ',%f:line %l\,col %c\,%trror -\ %m'
 vim.o.errorformat = vim.o.errorformat .. ',%f:line %l\,col %c\,%tarning -\ %m'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Errorformats
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Errorformats)
 ***
 # Title: Flexible Error Message Parsing
 # Category: configuration
@@ -3114,7 +3114,7 @@ vim.o.errorformat = table.concat({
 }, '')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Errorformats
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Errorformats)
 ***
 # Title: Essential Vim Configuration Settings
 # Category: configuration
@@ -3147,7 +3147,7 @@ vim.opt.backspace = {'indent', 'eol', 'start'}
 vim.opt.autoindent = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Example_Vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_Vimrc)
 ***
 # Title: Enhance Vim Usability with Essential Settings
 # Category: configuration
@@ -3174,7 +3174,7 @@ vim.opt.ruler = true
 vim.opt.hlsearch = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Example_vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_vimrc)
 ***
 # Title: Flexible Tab to Spaces Conversion
 # Category: configuration
@@ -3207,7 +3207,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Expandtabs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Expandtabs)
 ***
 # Title: Safely Customize Syntax Files
 # Category: configuration
@@ -3224,7 +3224,7 @@ Create custom syntax extensions in the 'after' runtime directory to prevent losi
 -- Create language-specific syntax extension files
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Extending_keywords
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Extending_keywords)
 ***
 # Title: Speed Up Vim Startup in Remote Sessions
 # Category: configuration
@@ -3244,7 +3244,7 @@ vim.g.loaded_netrwPlugin = 1 -- Disable network plugin
 -- Additional performance optimization can be done in Neovim init config
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_start_up_in_a_telnet_session
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_start_up_in_a_telnet_session)
 ***
 # Title: Remove '=' from Filename Characters
 # Category: configuration
@@ -3259,7 +3259,7 @@ set isfname-==
 vim.opt.isfname:remove('=')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/FileName_Completion_in_Shell_Scripts
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/FileName_Completion_in_Shell_Scripts)
 ***
 # Title: Custom Filetype Detection for Unique File Extensions
 # Category: configuration
@@ -3298,7 +3298,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Filetype.vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Filetype.vim)
 ***
 # Title: Manage Filetype Detection Priorities
 # Category: configuration
@@ -3320,7 +3320,7 @@ Understand the order of filetype detection across different runtime path locatio
 -- Custom rules in ~/.config/nvim/ftdetect/ or filetype.lua take precedence
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Filetype.vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Filetype.vim)
 ***
 # Title: Fix Vim Configuration in Cygwin
 # Category: configuration
@@ -3339,7 +3339,7 @@ echo "alias vi=vim" >> ~/.bashrc
 -- Can also be managed through Neovim lua config if needed
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_.vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_.vimrc)
 ***
 # Title: Diagnose and Clear Problematic Backspace Mappings
 # Category: configuration
@@ -3360,7 +3360,7 @@ vim.cmd('verbose imap <BS>')
 vim.keymap.del('i', '<BS>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_Backspace
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_Backspace)
 ***
 # Title: Fix Broken Syntax Highlighting
 # Category: configuration
@@ -3396,7 +3396,7 @@ vim.keymap.set('i', '<F12>', '<C-o>:syntax sync fromstart<CR>', { desc = 'Fix sy
 vim.o.synmaxline = 200
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_Syntax_Highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_Syntax_Highlighting)
 ***
 # Title: Fix Arrow Keys in Remote Shell Vim
 # Category: configuration
@@ -3419,7 +3419,7 @@ vim.o.t_kr = '\x1bOC'
 vim.o.t_kl = '\x1bOD'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell)
 ***
 # Title: Ensure Vim Compatibility Mode is Off
 # Category: configuration
@@ -3434,7 +3434,7 @@ set nocompatible
 vim.o.compatible = false
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell)
 ***
 # Title: Fix Terminal Arrow Key Navigation Issues
 # Category: configuration
@@ -3456,7 +3456,7 @@ vim.o.ttimeoutlen = 100
 vim.o.timeoutlen = 5000
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_broken_arrow_key_navigation_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_broken_arrow_key_navigation_in_insert_mode)
 ***
 # Title: Resolve Remote SSH Vim Key Mapping Issues
 # Category: configuration
@@ -3472,7 +3472,7 @@ Disable Vi compatibility mode to fix broken key mappings in remote SSH sessions
 vim.o.compatible = false
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_broken_arrow_key_navigation_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_broken_arrow_key_navigation_in_insert_mode)
 ***
 # Title: Configuring External Diff Program
 # Category: configuration
@@ -3487,7 +3487,7 @@ set diffexpr=
 vim.o.diffexpr = ''
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_error_E97_Cannot_create_diffs_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_error_E97_Cannot_create_diffs_under_Windows)
 ***
 # Title: Fix Temp File Errors on Windows
 # Category: configuration
@@ -3504,7 +3504,7 @@ vim.env.TMP = "c:/tmp"
 vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_errors_that_relate_to_reading_or_creating_files_in_the_temp_or_tmp_environment_on_an_MS_Windows_PC
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_errors_that_relate_to_reading_or_creating_files_in_the_temp_or_tmp_environment_on_an_MS_Windows_PC)
 ***
 # Title: Fix Trackpoint Scrolling in Vim
 # Category: configuration
@@ -3521,7 +3521,7 @@ Modify Synaptics driver configuration to enable proper scrolling in Vim split wi
 -- Recommend editing tp4table.dat manually or using Synaptics driver settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_scrolling_when_using_Trackpoint
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_scrolling_when_using_Trackpoint)
 ***
 # Title: Fix Syntax Highlighting Globally
 # Category: configuration
@@ -3540,7 +3540,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 ***
 # Title: Dynamic Syntax Sync for Performance
 # Category: configuration
@@ -3555,7 +3555,7 @@ syntax sync minlines=200
 vim.opt.synmaxline = 200
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 ***
 # Title: Fix Syntax Highlighting with Sync Methods
 # Category: configuration
@@ -3594,7 +3594,7 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.opt.synmaxline = 200
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_syntax_highlighting_so_it_keeps_working
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_syntax_highlighting_so_it_keeps_working)
 ***
 # Title: Increase Redraw Time for Large Files
 # Category: configuration
@@ -3611,7 +3611,7 @@ set redrawtime=10000
 vim.opt.redrawtime = 10000
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_syntax_highlighting_so_it_keeps_working
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_syntax_highlighting_so_it_keeps_working)
 ***
 # Title: Fix Cygwin Executable Path in Windows Taskbar Vim
 # Category: configuration
@@ -3627,7 +3627,7 @@ Resolve issues with Cygwin executable paths when launching Vim from Windows 7 ta
 -- Modify taskbar shortcut 'Start in' property to 'C:\Users\username\Documents'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_system_path_for_Vim_launched_from_Windows_7_taskbar
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_system_path_for_Vim_launched_from_Windows_7_taskbar)
 ***
 # Title: Force Syntax Highlighting for Custom File Extensions
 # Category: configuration
@@ -3647,7 +3647,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions)
 ***
 # Title: Manually Set Syntax Highlighting
 # Category: configuration
@@ -3666,7 +3666,7 @@ vim.cmd('set syntax=perl')
 vim.cmd('set syntax=html')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions)
 ***
 # Title: Detect Filetype by File Contents
 # Category: configuration
@@ -3694,7 +3694,7 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions)
 ***
 # Title: Force File Encoding to Latin1
 # Category: configuration
@@ -3716,7 +3716,7 @@ vim.opt.fileencoding = 'latin1'
 vim.cmd('e ++enc=latin1 file.txt')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Forcing_UTF-8_Vim_to_read_Latin1_as_Latin1
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Forcing_UTF-8_Vim_to_read_Latin1_as_Latin1)
 ***
 # Title: Set Fortran Source Form for .for Files
 # Category: configuration
@@ -3736,7 +3736,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fortran_highlighting_problems
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fortran_highlighting_problems)
 ***
 # Title: Toggle Options Easily
 # Category: configuration
@@ -3751,7 +3751,7 @@ set spell!
 vim.opt.spell = not vim.opt.spell:get()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help)
 ***
 # Title: Modify Option Flags Dynamically
 # Category: configuration
@@ -3768,7 +3768,7 @@ vim.opt.listchars:append({ tab = '>-' })
 vim.opt.listchars:remove('trail:')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help)
 ***
 # Title: Fix Esc Key and Terminal Keymappings in Screen
 # Category: configuration
@@ -3797,7 +3797,7 @@ vim.keymap.set({'n', 'i'}, '<Home>', '<Home>', { noremap = true })
 vim.keymap.set({'n', 'i'}, '<End>', '<End>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/GNU_Screen_integration
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/GNU_Screen_integration)
 ***
 # Title: Extend Keyword Characters for Namespaces
 # Category: configuration
@@ -3812,7 +3812,7 @@ set iskeyword+=:
 vim.opt.iskeyword:append(':')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generic_xml_imap_to_make_an_element_of_any_word_you_type
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generic_xml_imap_to_make_an_element_of_any_word_you_type)
 ***
 # Title: Enhanced Linux Console Color Configuration
 # Category: configuration
@@ -3837,7 +3837,7 @@ if vim.env.TERM:match('linux') then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_bright_background_colors_in_Linux_console
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_bright_background_colors_in_Linux_console)
 ***
 # Title: Ignore Whitespace Differences in Diff Mode
 # Category: configuration
@@ -3852,7 +3852,7 @@ set diffopt+=iwhite
 vim.opt.diffopt:append('iwhite')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_diff_to_work_with_Windows_SFU
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_diff_to_work_with_Windows_SFU)
 ***
 # Title: Configure Terminal Colors on Solaris
 # Category: configuration
@@ -3888,7 +3888,7 @@ if vim.o.term:match("xterm") then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Getting_colors_to_work_on_solaris
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_colors_to_work_on_solaris)
 ***
 # Title: Set Terminal Type for Color Support
 # Category: configuration
@@ -3906,7 +3906,7 @@ vim.o.term = "sun-color"
 vim.cmd.syntax("on")
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Getting_colors_to_work_on_solaris
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_colors_to_work_on_solaris)
 ***
 # Title: Clone Vim Source Using Mercurial
 # Category: configuration
@@ -3924,7 +3924,7 @@ hg clone http://hg.256bit.org/vim vim
 vim.fn.system('hg clone http://hg.256bit.org/vim vim')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Getting_the_Vim_source_with_Mercurial
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_the_Vim_source_with_Mercurial)
 ***
 # Title: Update Vim Source with Mercurial
 # Category: configuration
@@ -3941,7 +3941,7 @@ hg pull -u
 vim.fn.system('cd ~/.build/hg/vim && hg pull -u')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Getting_the_Vim_source_with_Mercurial
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_the_Vim_source_with_Mercurial)
 ***
 # Title: Manually Add Missing X11 Fonts for Vim
 # Category: configuration
@@ -3961,7 +3961,7 @@ Manually copy and configure missing X11 fonts for GTK Vim when fontconfig doesn'
 -- Manually copy fonts and update font configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Gtk_gvim_and_fontconfig
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Gtk_gvim_and_fontconfig)
 ***
 # Title: Dynamic Include Path for C++ Intellisense
 # Category: configuration
@@ -3977,7 +3977,7 @@ let $INCLUDE = expand("%:p:h") . ";" . $INCLUDE
 vim.env.INCLUDE = vim.fn.expand('%:p:h') .. ';' .. (vim.env.INCLUDE or '')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_Intellisense_search_current_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_Intellisense_search_current_directory)
 ***
 # Title: Configure SSH Tunneling for SVN
 # Category: configuration
@@ -3994,7 +3994,7 @@ ssh = $SVN_SSH "C:/Program Files/tortoisesvn/bin/tortoiseplink.exe"
 -- Lua equivalent would involve configuring SSH settings externally
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_VCSCommand_work_with_an_existing_TortoiseSVN_checkout
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_VCSCommand_work_with_an_existing_TortoiseSVN_checkout)
 ***
 # Title: Automatically Reload Changed Files
 # Category: configuration
@@ -4018,7 +4018,7 @@ vim.api.nvim_create_autocmd({'FocusGained', 'BufEnter'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_Vim_open_a_file_in_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_Vim_open_a_file_in_Visual_Studio)
 ***
 # Title: Safely Manage Plugin Configurations
 # Category: configuration
@@ -4052,7 +4052,7 @@ end)
 vim.o.cpo = original_cpo
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_a_nice_and_easy_use_of_plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_a_nice_and_easy_use_of_plugins)
 ***
 # Title: Remove Specific GUI Elements
 # Category: configuration
@@ -4073,7 +4073,7 @@ vim.opt.guioptions:remove('r')  -- remove right-hand scroll bar
 vim.opt.guioptions:remove('L')  -- remove left-hand scroll bar
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hide_toolbar
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hide_toolbar)
 ***
 # Title: Custom Syntax Highlighting for Specific Filetypes
 # Category: configuration
@@ -4107,7 +4107,7 @@ api.nvim_create_autocmd('Syntax', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_special_filetype_docs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_special_filetype_docs)
 ***
 # Title: Check Vim Installation Features
 # Category: configuration
@@ -4125,7 +4125,7 @@ vim.cmd('version')
 vim.cmd('scriptnames')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_download_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_download_Vim)
 ***
 # Title: Automated Patch Backup with Patchmode
 # Category: configuration
@@ -4141,7 +4141,7 @@ Automatically create backup files when preparing patches by setting patchmode op
 vim.opt.patchmode = '.orig'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_make_and_submit_a_patch
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_make_and_submit_a_patch)
 ***
 # Title: Fix Modeline File Encoding Detection
 # Category: configuration
@@ -4179,7 +4179,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_make_fileencoding_work_in_the_modeline
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_make_fileencoding_work_in_the_modeline)
 ***
 # Title: Completely Disable Syntax Highlighting and Search Highlights
 # Category: configuration
@@ -4198,7 +4198,7 @@ vim.opt.hlsearch = false
 vim.o.t_Co = 0
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_turn_off_all_colors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_turn_off_all_colors)
 ***
 # Title: Quickly Disable Syntax Highlighting During Editing
 # Category: configuration
@@ -4213,7 +4213,7 @@ Temporary method to turn off syntax highlighting during an editing session
 vim.cmd('set syntax=')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_turn_off_all_colors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_turn_off_all_colors)
 ***
 # Title: Configure IPython Editor in Vim
 # Category: configuration
@@ -4231,7 +4231,7 @@ c.TerminalInteractiveShell.editor = 'gvim -f'
 -- But you can set external editor in IPython settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/IPython_integration
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/IPython_integration)
 ***
 # Title: Configure External Diff Tool
 # Category: configuration
@@ -4266,7 +4266,7 @@ local function MyDiff()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ignore_whitespace_in_diff_operations
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ignore_whitespace_in_diff_operations)
 ***
 # Title: Show Longest Common Completion Text
 # Category: configuration
@@ -4281,7 +4281,7 @@ set completeopt+=longest
 vim.opt.completeopt:append('longest')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Improve_completion_popup_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
 ***
 # Title: Configure Number Format Options
 # Category: configuration
@@ -4310,7 +4310,7 @@ vim.o.nrformats = vim.o.nrformats .. ',alpha'
 vim.o.nrformats = vim.o.nrformats:gsub('octal,?', '')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Increasing_or_decreasing_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Increasing_or_decreasing_numbers)
 ***
 # Title: Configure Indentation Styles in Vim/Neovim
 # Category: configuration
@@ -4347,7 +4347,7 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent)
 ***
 # Title: Understand Vim's Indentation Options
 # Category: configuration
@@ -4367,7 +4367,7 @@ Key options that control how indentation works in Vim/Neovim
 -- Use vim.opt to configure similar settings in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indent
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent)
 ***
 # Title: Optimize Java Indentation and Syntax Highlighting
 # Category: configuration
@@ -4408,7 +4408,7 @@ vim.g.java_highlight_functions = 'style'
 vim.g.java_minlines = 150
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indenting_for_Java
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indenting_for_Java)
 ***
 # Title: Flexible Indentation Strategies in Neovim
 # Category: configuration
@@ -4445,7 +4445,7 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indenting_source_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indenting_source_code)
 ***
 # Title: Configure Automatic Indentation Methods
 # Category: configuration
@@ -4474,7 +4474,7 @@ vim.opt.smartindent = true
 vim.opt.cindent = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Indenting_source_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indenting_source_code)
 ***
 # Title: Check Vim Installation Details
 # Category: configuration
@@ -4496,7 +4496,7 @@ for _, script in ipairs(vim.fn.getscriptinfo()) do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Installing_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Installing_Vim)
 ***
 # Title: Customized Vim Configuration for Productivity
 # Category: configuration
@@ -4533,7 +4533,7 @@ vim.opt.laststatus = 2
 vim.opt.statusline = '%<%F%h%m%r%h%w%y\ %{&ff}\ line:%l\ col:%c%V'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Installing_on_Solaris
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Installing_on_Solaris)
 ***
 # Title: Install Multiple Vim Versions Simultaneously
 # Category: configuration
@@ -4554,7 +4554,7 @@ vim.env.VIM = '/usr/share/vim'
 vim.opt.runtimepath:append(vim.env.VIM .. '/vim63')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Installing_several_releases_in_parallel,_even_with_matchit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Installing_several_releases_in_parallel,_even_with_matchit)
 ***
 # Title: Integrate Vim as Diff Tool for TortoiseCVS
 # Category: configuration
@@ -4573,7 +4573,7 @@ Set up Vim/GVim as an external diff tool for TortoiseCVS on Windows
 -- Use parameters: -d "%1" "%2"
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_Vim_diff_with_TortoiseCVS
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_Vim_diff_with_TortoiseCVS)
 ***
 # Title: Vim-Style Editing in Visual Studio
 # Category: configuration
@@ -4589,7 +4589,7 @@ Use VsVim or ViEmu to get Vim-like editing commands in Visual Studio
 -- No direct Neovim equivalent, as this is IDE-specific
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_gvim_with_Visual_Studio
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_gvim_with_Visual_Studio)
 ***
 # Title: J2ME Development Vim Configuration
 # Category: configuration
@@ -4623,7 +4623,7 @@ vim.keymap.set('c', '%/', function()
 end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/J2ME_development
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/J2ME_development)
 ***
 # Title: Handle Filenames with Spaces
 # Category: configuration
@@ -4640,7 +4640,7 @@ set isfname+=32
 vim.opt.isfname:append(32)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jump_to_a_file_to_a_certain_line_number
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_a_file_to_a_certain_line_number)
 ***
 # Title: Prevent Vim GUI from Forking Processes
 # Category: configuration
@@ -4655,7 +4655,7 @@ set guioptions +=f
 vim.opt.guioptions:append('f')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_SQL-PLUS_command_history_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_SQL-PLUS_command_history_under_Windows)
 ***
 # Title: Secure Password File with Encryption and Folding
 # Category: configuration
@@ -4683,7 +4683,7 @@ vim.api.nvim_create_autocmd('BufReadPre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_passwords_in_encrypted_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_passwords_in_encrypted_file)
 ***
 # Title: Organize Language-Specific Vim Settings
 # Category: configuration
@@ -4710,7 +4710,7 @@ vim.bo.shiftwidth = 4
 vim.bo.expandtab = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean)
 ***
 # Title: Enable Filetype Detection and Plugins
 # Category: configuration
@@ -4727,7 +4727,7 @@ filetype plugin indent on
 vim.cmd('filetype plugin indent on')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean)
 ***
 # Title: Create Desktop-Specific Vim Instances
 # Category: configuration
@@ -4746,7 +4746,7 @@ local function create_desktop_server()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Linux
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Linux)
 ***
 # Title: Version-Safe Script Loading
 # Category: configuration
@@ -4765,7 +4765,7 @@ if vim.fn.has('nvim-0.6') == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Loading_scripts_in_vimrc_safely
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Loading_scripts_in_vimrc_safely)
 ***
 # Title: Conditionally Source Runtime Scripts
 # Category: configuration
@@ -4785,7 +4785,7 @@ if vim.fn.filereadable(matchit_path) == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Loading_scripts_in_vimrc_safely
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Loading_scripts_in_vimrc_safely)
 ***
 # Title: Save Macros Persistently
 # Category: configuration
@@ -4805,7 +4805,7 @@ vim.g.saved_macro_a = '0fa'
 vim.fn.setreg('a', vim.g.saved_macro_a)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Macros
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Macros)
 ***
 # Title: Manage Multiple Vim Versions with Symbolic Links
 # Category: configuration
@@ -4824,7 +4824,7 @@ Create a symbolic link to easily switch between different Vim versions without c
 -- New-Item -ItemType SymbolicLink -Path 'C:\Program Files\Vim\current' -Target 'C:\Program Files\Vim\vim70c'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maintain_multiple_versions_of_gvim_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maintain_multiple_versions_of_gvim_in_Windows)
 ***
 # Title: Save and Restore Macros Across Sessions
 # Category: configuration
@@ -4841,7 +4841,7 @@ vim.g.saved_macro_a = '0fa'  -- Store in global variable
 -- Retrieve: vim.fn.setreg('a', vim.g.saved_macro_a)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_a_Macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_a_Macro)
 ***
 # Title: Fix Arrow Keys in Visual Mode on Windows
 # Category: configuration
@@ -4856,7 +4856,7 @@ set keymodel-=stopsel
 vim.o.keymodel = vim.o.keymodel:gsub('stopsel', '')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_arrow_keys_work_in_visual_mode_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_arrow_keys_work_in_visual_mode_under_Windows)
 ***
 # Title: Display Non-ASCII Characters in Console
 # Category: configuration
@@ -4871,7 +4871,7 @@ set isprint=@,128-255
 vim.opt.isprint:append({128, 255})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_non-ASCII_characters_displayed_on_console
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_non-ASCII_characters_displayed_on_console)
 ***
 # Title: Custom Make Command for Specific Compiler
 # Category: configuration
@@ -4898,7 +4898,7 @@ vim.opt.errorformat:append({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_support_for_NEC_V850_CA850_compilers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_support_for_NEC_V850_CA850_compilers)
 ***
 # Title: Create Consistent Color Scheme Between Vim and GVim
 # Category: configuration
@@ -4929,7 +4929,7 @@ vim.api.nvim_set_hl(0, 'Comment', { fg = 'Blue', bg = 'Black' })
 vim.api.nvim_set_hl(0, 'Constant', { fg = '#BB0000', bg = 'Black' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_vim_and_gvim_have_the_same_colors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_vim_and_gvim_have_the_same_colors)
 ***
 # Title: Set Vim as Default Editor for Unknown File Types
 # Category: configuration
@@ -4948,7 +4948,7 @@ Modify Windows registry to make Vim the default editor for files with unregister
 -- Note: Requires caution and system administrator privileges
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_vim_the_editor_for_files_with_unregistered_extensions_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_vim_the_editor_for_files_with_unregistered_extensions_in_Windows)
 ***
 # Title: Toggle Caps Lock in Vim with Custom Functions
 # Category: configuration
@@ -5002,7 +5002,7 @@ vim.keymap.set('n', '<F5>', ':Caps<CR>', { noremap = true })
 vim.keymap.set('n', '<F6>', ':Mixed<CR>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_CapsLock_work_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_CapsLock_work_in_Vim)
 ***
 # Title: Create TODO Tag Lists with Ctags
 # Category: configuration
@@ -5025,7 +5025,7 @@ vim.api.nvim_create_user_command('TODO', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Manage_a_tasklist_of_to-do_code_snippets
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Manage_a_tasklist_of_to-do_code_snippets)
 ***
 # Title: Toggle Boolean Options Easily
 # Category: configuration
@@ -5049,7 +5049,7 @@ vim.opt.number = not vim.opt.number:get()
 print(vim.opt.number:get())
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Managing_boolean_options
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Managing_boolean_options)
 ***
 # Title: Toggle and Manage Vim Boolean Options
 # Category: configuration
@@ -5076,7 +5076,7 @@ vim.opt.number = false  -- Turn off
 print(vim.opt.number:get())
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Managing_set_options
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Managing_set_options)
 ***
 # Title: Disable Terminal Flow Control for Vim
 # Category: configuration
@@ -5095,7 +5095,7 @@ stty -ixon  # Add to .bashrc
 vim.g.terminal_disable_flow_control = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_Ctrl-S_to_save_current_or_new_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_Ctrl-S_to_save_current_or_new_files)
 ***
 # Title: Remap Caps Lock to Escape or Ctrl
 # Category: configuration
@@ -5112,7 +5112,7 @@ Remapping Caps Lock to Escape or Ctrl can significantly improve typing efficienc
 vim.keymap.set('n', '<CapsLock>', '<Esc>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows)
 ***
 # Title: Map CapsLock to Escape in X11 Systems
 # Category: configuration
@@ -5131,7 +5131,7 @@ keysym Caps_Lock = Escape
 -- xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows)
 ***
 # Title: Quick CapsLock to Escape Command
 # Category: configuration
@@ -5149,7 +5149,7 @@ xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 vim.fn.system('xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows)
 ***
 # Title: Remap CapsLock to Escape System-Wide
 # Category: configuration
@@ -5163,7 +5163,7 @@ Remap CapsLock key to Escape system-wide, which is particularly useful for Vim/N
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_caps_lock_to_esc_in_XWindows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_caps_lock_to_esc_in_XWindows)
 ***
 # Title: Swap CapsLock and Escape Keys
 # Category: configuration
@@ -5182,7 +5182,7 @@ Completely swap the CapsLock and Escape keys using Xmodmap configuration
 -- xmodmap ~/.speedswapper
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_caps_lock_to_esc_in_XWindows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_caps_lock_to_esc_in_XWindows)
 ***
 # Title: Alternative CapsLock to Control Mapping
 # Category: configuration
@@ -5197,7 +5197,7 @@ xmodmap -e 'clear Lock'
 xmodmap -e 'add Control = Control_L'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_caps_lock_to_esc_in_XWindows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_caps_lock_to_esc_in_XWindows)
 ***
 # Title: Safely Store and Manage Key Mappings
 # Category: configuration
@@ -5216,7 +5216,7 @@ vim.keymap.set('n', '<F2>', function()
 end, { desc = 'Display current time' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial)
 ***
 # Title: Discover Special Key Names in Vim
 # Category: configuration
@@ -5236,7 +5236,7 @@ Ctrl-K + Special Key (e.g., Ctrl-Left)
 -- For programmatic key discovery, use vim.keycode() function
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mappings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings)
 ***
 # Title: Comprehensive List of Special Keys
 # Category: configuration
@@ -5257,7 +5257,7 @@ Reference for special key names in Vim, useful for creating cross-platform key m
 vim.keymap.set('n', '<Home>', ':echo "Home key pressed"', {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mappings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings)
 ***
 # Title: Show Matching Braces Instantly
 # Category: configuration
@@ -5274,7 +5274,7 @@ vim.opt.showmatch = true
 vim.opt.matchtime = 3
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_it
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_it)
 ***
 # Title: Set Initial Vim Window Size
 # Category: configuration
@@ -5304,7 +5304,7 @@ else
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maximize_or_set_initial_window_size
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maximize_or_set_initial_window_size)
 ***
 # Title: Alternative CapsLock to Escape Mapping
 # Category: configuration
@@ -5319,7 +5319,7 @@ Create a custom .Xmodmap file to permanently remap CapsLock to Escape
 -- add Lock = Caps_Lock
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Microsoft_Natural_Multimedia_Keyboard_Scancodes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Microsoft_Natural_Multimedia_Keyboard_Scancodes)
 ***
 # Title: Windows-like Behavior in Vim
 # Category: configuration
@@ -5339,7 +5339,7 @@ vim.o.selectmode = 'key'
 vim.cmd('behave mswin')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mimic_shift-arrow_to_select_text_in_terminals_without_shift-arrow
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mimic_shift-arrow_to_select_text_in_terminals_without_shift-arrow)
 ***
 # Title: Dynamic File-Specific Vim Settings with Modelines
 # Category: configuration
@@ -5359,7 +5359,7 @@ vim.o.modeline = true
 vim.o.modelines = 5  -- Check first/last 5 lines for modeline
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Modeline_magic
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Modeline_magic)
 ***
 # Title: Automatically Add Modeline to Files
 # Category: configuration
@@ -5391,7 +5391,7 @@ end
 vim.keymap.set('n', '<Leader>ml', _G.append_modeline, { desc = 'Append modeline' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Modeline_magic
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Modeline_magic)
 ***
 # Title: Toggle Wrapping with Cursor Movement Handling
 # Category: configuration
@@ -5435,7 +5435,7 @@ end
 vim.keymap.set('n', '<leader>w', _G.toggle_wrap, { desc = 'Toggle text wrapping' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_cursor_by_display_lines_when_wrapping
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_cursor_by_display_lines_when_wrapping)
 ***
 # Title: Chain Commands in Vimrc Mappings
 # Category: configuration
@@ -5454,7 +5454,7 @@ vim.keymap.set('n', '<F6>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Multiple_commands_at_once
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Multiple_commands_at_once)
 ***
 # Title: Preserve Hard Links When Editing Files
 # Category: configuration
@@ -5469,7 +5469,7 @@ set backupcopy=auto,breakhardlink
 vim.opt.backupcopy = 'auto,breakhardlink'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/New_When_Hardlinked
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/New_When_Hardlinked)
 ***
 # Title: Improve Vim Learning and Productivity
 # Category: configuration
@@ -5488,7 +5488,7 @@ vim.fn.mkdir(vim.fn.expand('~/.config/nvim'), 'p')
 -- Use :help to explore Vim capabilities
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/New_to_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/New_to_Vim)
 ***
 # Title: Configure Fonts in Neovim on macOS
 # Category: configuration
@@ -5508,7 +5508,7 @@ vim.opt.guifont = "Monaco:h14"
 -- Note: Specific antialiasing might require GUI-specific configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Nicer_looking_fonts_on_MacOSX
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Nicer_looking_fonts_on_MacOSX)
 ***
 # Title: Toggle Line Numbers Quickly
 # Category: configuration
@@ -5530,7 +5530,7 @@ vim.keymap.set('n', 'gn', function()
 end, { desc = 'Toggle line numbers' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Numbering_lines_and_interpolating_sequences
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Numbering_lines_and_interpolating_sequences)
 ***
 # Title: Shorten Long Messages in Vim
 # Category: configuration
@@ -5561,7 +5561,7 @@ function _G.short_echo(msg)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/OPENBRACKET_for_script_writers_CLOSEBRACKET_get_shortened_messages_from_using_echomsg
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/OPENBRACKET_for_script_writers_CLOSEBRACKET_get_shortened_messages_from_using_echomsg)
 ***
 # Title: Enable Omni Completion for Smart Autocompletion
 # Category: configuration
@@ -5578,7 +5578,7 @@ vim.cmd('filetype plugin on')
 vim.opt.omnifunc = 'syntaxcomplete#Complete'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Omni_Completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omni_Completion)
 ***
 # Title: Use SuperTab for Easy Omni Completion
 # Category: configuration
@@ -5595,7 +5595,7 @@ let g:SuperTabDefaultCompletionType = "context"
 vim.g.SuperTabDefaultCompletionType = "context"
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Omni_completion_popup_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omni_completion_popup_menu)
 ***
 # Title: Disable Python Omnicomplete Preview Window
 # Category: configuration
@@ -5619,7 +5619,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Omnicomplete_-_Remove_Python_Pydoc_Preview_Window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omnicomplete_-_Remove_Python_Pydoc_Preview_Window)
 ***
 # Title: Add Context Menu Option to Open Vim in Directory
 # Category: configuration
@@ -5642,7 +5642,7 @@ REGEDIT4
 -- Recommend using a cross-platform solution like creating a shell script or using file manager extensions
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_Vim_Here_by_clicking_the_context_menu_on_a_folder/directory_on_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_Vim_Here_by_clicking_the_context_menu_on_a_folder/directory_on_Windows)
 ***
 # Title: Customize Perl Documentation Lookup
 # Category: configuration
@@ -5662,7 +5662,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_Perl_module_from_its_module_name
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_Perl_module_from_its_module_name)
 ***
 # Title: Add Vim Context Menu in Nemo File Manager
 # Category: configuration
@@ -5700,7 +5700,7 @@ local nemo_action_content = {
 vim.fn.writefile(nemo_action_content, vim.fn.expand('~/.local/share/nemo/actions/vim.nemo_action'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_file_in_Linux_Mint_Cinnamon_via_a_menu_action
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_file_in_Linux_Mint_Cinnamon_via_a_menu_action)
 ***
 # Title: Disable ANSI Escape Sequences in Man Pages
 # Category: configuration
@@ -5715,7 +5715,7 @@ let $GROFF_NO_SGR=1
 vim.env.GROFF_NO_SGR = '1'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_window_with_the_man_page_for_the_word_under_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_window_with_the_man_page_for_the_word_under_the_cursor)
 ***
 # Title: Configure Path for File Searching
 # Category: configuration
@@ -5734,7 +5734,7 @@ vim.opt.path:append('src/**')
 vim.opt.path:append('/usr/include')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_file_under_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_file_under_cursor)
 ***
 # Title: User-Specific File Associations in Windows
 # Category: configuration
@@ -5752,7 +5752,7 @@ Create user-specific file associations in Windows registry without affecting oth
 -- Demonstrates principle of user-specific configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_files_with_existing_Gvim_window_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_files_with_existing_Gvim_window_in_Windows)
 ***
 # Title: Easy vimrc File Management
 # Category: configuration
@@ -5775,7 +5775,7 @@ vim.cmd.edit(vim.env.MYVIMRC)
 vim.cmd.source(vim.env.MYVIMRC)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_vimrc_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_vimrc_file)
 ***
 # Title: GUI-Specific Configuration
 # Category: configuration
@@ -5796,7 +5796,7 @@ if vim.g.gui_running then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_vimrc_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_vimrc_file)
 ***
 # Title: Profile Vim Startup Time
 # Category: configuration
@@ -5813,7 +5813,7 @@ Generate a CSV file listing scripts loaded during Vim startup to optimize launch
 vim.cmd('vim --startuptime startup_time.log')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Optimize_startup_time_by_logging_the_sourced_vimscript_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Optimize_startup_time_by_logging_the_sourced_vimscript_files)
 ***
 # Title: Override Color Scheme Colors Dynamically
 # Category: configuration
@@ -5838,7 +5838,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Override_Colors_in_a_Color_Scheme
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Override_Colors_in_a_Color_Scheme)
 ***
 # Title: Integrate PHP Manual into Vim Help
 # Category: configuration
@@ -5859,7 +5859,7 @@ vim.opt.runtimepath:append('path/to/php/doc')
 vim.cmd('helptags path/to/php/doc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PHP_manual_in_Vim_help_format
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PHP_manual_in_Vim_help_format)
 ***
 # Title: Quick PHP Function Documentation Lookup
 # Category: configuration
@@ -5903,7 +5903,7 @@ vim.keymap.set('n', '<leader>ph', function()
 end, { desc = 'Look up PHP function documentation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PHP_online_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PHP_online_help)
 ***
 # Title: Toggle Paste Mode to Preserve Indentation
 # Category: configuration
@@ -5929,7 +5929,7 @@ vim.keymap.set('n', '<F2>', function()
 end, { desc = 'Toggle paste mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Paste_Indent_Problems
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Paste_Indent_Problems)
 ***
 # Title: Prevent Multiple Vim Instances
 # Category: configuration
@@ -5950,7 +5950,7 @@ if #vim.fn.serverlist() > 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_a_second_instance_of_Vim_from_starting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_a_second_instance_of_Vim_from_starting)
 ***
 # Title: Print Files Using KDE Print Dialog
 # Category: configuration
@@ -5965,7 +5965,7 @@ set printexpr=system('kprinter '\.'\ '\.v:fname_in)\.delete(v:fname_in)\.+\.v:sh
 vim.o.printexpr = 'system("kprinter " . v:fname_in) . delete(v:fname_in) + v:shell_error'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Printing_using_kprinter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Printing_using_kprinter)
 ***
 # Title: Fix PuTTY Numeric Keypad Behavior
 # Category: configuration
@@ -5985,7 +5985,7 @@ Disable PuTTY's application keypad mode to ensure numeric keypad works correctly
 -- 4. Save session settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PuTTY_numeric_keypad_mappings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PuTTY_numeric_keypad_mappings)
 ***
 # Title: Display Indentation Level in Status Line
 # Category: configuration
@@ -6012,7 +6012,7 @@ _G.ShowTab = function()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Put_the_indentation_level_on_the_status_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Put_the_indentation_level_on_the_status_line)
 ***
 # Title: Open Qt Documentation from Vim
 # Category: configuration
@@ -6039,7 +6039,7 @@ end
 vim.keymap.set('n', '<C-t>', _G.qt_class_doc, { desc = 'Open Qt Class Documentation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/QT_Help_from_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/QT_Help_from_Vim)
 ***
 # Title: Set Vim as Default PostgreSQL Editor
 # Category: configuration
@@ -6057,7 +6057,7 @@ export PSQL_EDITOR='vim +"set syntax=sql"'
 -- Set in shell or .bashrc/.zshrc
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_and_dirty_Postgres_query
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_and_dirty_Postgres_query)
 ***
 # Title: Lightweight Project Sessions per Tab
 # Category: configuration
@@ -6078,7 +6078,7 @@ vim.cmd('mksession sub-project.vim')
 vim.cmd('source sub-project.vim')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages)
 ***
 # Title: Customize File Path Detection
 # Category: configuration
@@ -6101,7 +6101,7 @@ vim.opt.isfname:append(32)
 vim.opt.path:append('C:/DOCUME~1/MYUSER~1/MYDOCU~1')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_Get_Files_in_your_Environment
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_Get_Files_in_your_Environment)
 ***
 # Title: Advanced Syntax Sync for Large Files
 # Category: configuration
@@ -6123,7 +6123,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Refresh_out-of-sync_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Refresh_out-of-sync_syntax_highlighting)
 ***
 # Title: Prevent Multiple Plugin Loads
 # Category: configuration
@@ -6144,7 +6144,7 @@ end
 vim.g.loaded_myplugin = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reload_your_filetype/syntax_plugin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reload_your_filetype/syntax_plugin)
 ***
 # Title: Alternative Escape Key Mapping
 # Category: configuration
@@ -6160,7 +6160,7 @@ xmodmap -e 'keysym Super_L = Escape'
 -- Can be added to system startup scripts
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remap_the_Escape_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remap_the_Escape_key)
 ***
 # Title: Organize Swap and Backup Files in Dedicated Directories
 # Category: configuration
@@ -6177,7 +6177,7 @@ vim.opt.backupdir = {'./.backup', '.', '/tmp'}
 vim.opt.directory = {'.', './.backup', '/tmp'}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_swap_and_backup_files_from_your_working_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_swap_and_backup_files_from_your_working_directory)
 ***
 # Title: Unique Swap Files Across Projects
 # Category: configuration
@@ -6192,7 +6192,7 @@ set directory=~/.backup//
 vim.opt.directory = {'~/.backup//'}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_swap_and_backup_files_from_your_working_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_swap_and_backup_files_from_your_working_directory)
 ***
 # Title: Toggle GUI Elements in Neovim
 # Category: configuration
@@ -6233,7 +6233,7 @@ vim.keymap.set('n', '<C-F1>', function()
 end, { desc = 'Toggle menu bar' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_the_menu_and_tool_bar
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_the_menu_and_tool_bar)
 ***
 # Title: Restore Cursor Position Across Editing Sessions
 # Category: configuration
@@ -6277,7 +6277,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session)
 ***
 # Title: Fix Missing GVim Menu Bar in GNOME
 # Category: configuration
@@ -6297,7 +6297,7 @@ vim.o.guioptions = vim.o.guioptions:gsub('m', '')  -- Toggle menu bar
 os.execute('UBUNTU_MENUPROXY="" nvim')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_missing_gvim_menu_bar_under_GNOME
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_missing_gvim_menu_bar_under_GNOME)
 ***
 # Title: Diagnose Vim Menu Bar Placement Issues
 # Category: configuration
@@ -6317,7 +6317,7 @@ Fix menu and toolbar overlay by modifying Gnome placement settings
 vim.notify('Check ~/.gnome2/Vim configuration for menu placement issues', vim.log.levels.WARN)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_missing_gvim_menu_bar_under_GNOME
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_missing_gvim_menu_bar_under_GNOME)
 ***
 # Title: Persist Vim Window Size and Position Across Sessions
 # Category: configuration
@@ -6357,7 +6357,7 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_screen_size_and_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_screen_size_and_position)
 ***
 # Title: Automatically Save Session and Viminfo on Exit
 # Category: configuration
@@ -6385,7 +6385,7 @@ vim.api.nvim_create_autocmd('VimLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_state_of_edited_files_when_reopened
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_state_of_edited_files_when_reopened)
 ***
 # Title: Preserve Indent When Typing # in Insert Mode
 # Category: configuration
@@ -6410,7 +6410,7 @@ vim.cmd('set indentkeys-=0#')
 vim.keymap.set('i', '#', 'X<BS>#', { desc = 'Preserve indent when typing #' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restoring_indent_after_typing_hash
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restoring_indent_after_typing_hash)
 ***
 # Title: Manage Multiple Project Sessions
 # Category: configuration
@@ -6455,7 +6455,7 @@ vim.api.nvim_create_autocmd('VimLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip450
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip450)
 ***
 # Title: Fix Syntax Highlighting Reliably
 # Category: configuration
@@ -6491,7 +6491,7 @@ vim.keymap.set('n', '<F12>', ':syntax sync fromstart<CR>', { desc = 'Resync Synt
 vim.keymap.set('i', '<F12>', '<C-o>:syntax sync fromstart<CR>', { desc = 'Resync Syntax Highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip454
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip454)
 ***
 # Title: Extend iskeyword for XML Namespaces
 # Category: configuration
@@ -6506,7 +6506,7 @@ set iskeyword+=:
 vim.opt.iskeyword:append(':')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip465
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip465)
 ***
 # Title: Enable Mouse Support in Terminal Vim
 # Category: configuration
@@ -6521,7 +6521,7 @@ set mouse=a
 vim.opt.mouse = 'a'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip471
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip471)
 ***
 # Title: Toggle Vim Option Flags Dynamically
 # Category: configuration
@@ -6558,7 +6558,7 @@ vim.keymap.set('n', '<F8>', function() _G.toggle_flag('guioptions', 'm') end)
 vim.keymap.set('n', '<F9>', function() _G.toggle_flag('guioptions', 'T') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip472
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip472)
 ***
 # Title: Cycle Numeric Options with Flexible Range
 # Category: configuration
@@ -6593,7 +6593,7 @@ end
 vim.keymap.set('n', '<F7>', function() _G.cycle_num('foldcolumn', 0, 2, 6) end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip472
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip472)
 ***
 # Title: Flexible Compiler Plugin Management
 # Category: configuration
@@ -6630,7 +6630,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip476
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip476)
 ***
 # Title: Configure Man Page Viewing
 # Category: configuration
@@ -6645,7 +6645,7 @@ let $GROFF_NO_SGR=1
 vim.env.GROFF_NO_SGR = '1'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip485
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip485)
 ***
 # Title: Flexible File Path Configuration
 # Category: configuration
@@ -6666,7 +6666,7 @@ vim.opt.isfname:append(32)  -- Add space to valid filename chars
 vim.opt.path:append('C:/DOCUME~1/MYUSER~1/MYDOCU~1')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip487
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip487)
 ***
 # Title: Detect GUI Running in Vim/Neovim
 # Category: configuration
@@ -6692,7 +6692,7 @@ if vim.g.neovide or vim.fn.has('gui_running') == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip488
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip488)
 ***
 # Title: Fix Backspace in PuTTY Terminal Vim
 # Category: configuration
@@ -6711,7 +6711,7 @@ Resolve backspace key issues when connecting to Linux servers via PuTTY by adjus
 -- 2. Change Backspace Key setting to 'Control-H'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip495
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip495)
 ***
 # Title: Set Custom VIMRUNTIME Path in Config
 # Category: configuration
@@ -6726,7 +6726,7 @@ let $VIMRUNTIME='C:/usr/share/vim/vim63'
 vim.env.VIMRUNTIME = 'C:/usr/share/vim/vim63'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip510
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip510)
 ***
 # Title: Toggle Word Completion and Paste Mode
 # Category: configuration
@@ -6781,7 +6781,7 @@ vim.keymap.set('n', '<F12>', unset_complete)
 vim.keymap.set('i', '<F12>', '<Esc>' .. unset_complete .. 'a')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip526
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip526)
 ***
 # Title: Set Vim Language and Encoding for Internationalization
 # Category: configuration
@@ -6807,7 +6807,7 @@ vim.cmd('lan mes el') -- set message language
 vim.cmd('menut English Greek')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip545
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip545)
 ***
 # Title: Internationalize Vim Messages and Menus
 # Category: configuration
@@ -6824,7 +6824,7 @@ Comprehensive guide to translating Vim messages and menus using GNU gettext util
 vim.cmd('language el')  -- Set to Greek example
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip546
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip546)
 ***
 # Title: Create and Install Language Translation Files
 # Category: configuration
@@ -6844,7 +6844,7 @@ Process for generating .po and .mo files to support custom language translations
 -- Typically handled outside of Lua/Neovim configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip546
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip546)
 ***
 # Title: Fix Arrow Keys in Remote Shell Terminals
 # Category: configuration
@@ -6867,7 +6867,7 @@ vim.opt.t_kr = '^[OC'
 vim.opt.t_kl = '^[OD'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip550
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip550)
 ***
 # Title: Advanced CTags Configuration for ANT Files
 # Category: configuration
@@ -6885,7 +6885,7 @@ Create custom regex patterns to extract meaningful tags from ANT XML build files
 -- This is typically a system-wide or user-specific configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip558
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip558)
 ***
 # Title: Safely Source and Modify Vimrc
 # Category: configuration
@@ -6928,7 +6928,7 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip626
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip626)
 ***
 # Title: Quick Access to Vimrc File
 # Category: configuration
@@ -6956,7 +6956,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip626
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip626)
 ***
 # Title: Cross-Platform GUI Font Configuration
 # Category: configuration
@@ -6995,7 +6995,7 @@ if vim.g.gui_running then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip632
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip632)
 ***
 # Title: Enable Windows Shortcuts in GVim
 # Category: configuration
@@ -7018,7 +7018,7 @@ vim.g.winaltkeys = 'yes'
 -- Note: Behavior may vary slightly in Neovim compared to classic Vim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip645
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip645)
 ***
 # Title: Auto-continue Doxygen Comments in C/C++
 # Category: configuration
@@ -7038,7 +7038,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip653
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip653)
 ***
 # Title: Dynamic Doxygen Comment Configuration
 # Category: configuration
@@ -7066,7 +7066,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip653
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip653)
 ***
 # Title: Configure External Diff Program
 # Category: configuration
@@ -7098,7 +7098,7 @@ local function my_diff()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip678
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip678)
 ***
 # Title: Verbose Option Checking Without Noise
 # Category: configuration
@@ -7132,7 +7132,7 @@ if vim.o.verbose == 0 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip680
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip680)
 ***
 # Title: Disable Mouse Visual Mode Selection
 # Category: configuration
@@ -7148,7 +7148,7 @@ noremap! <LeftDrag> <LeftMouse>
 vim.keymap.set({'n', 'v', 'i', 'c'}, '<LeftDrag>', '<LeftMouse>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip696
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip696)
 ***
 # Title: Configure Mouse Behavior
 # Category: configuration
@@ -7166,7 +7166,7 @@ vim.opt.mouse = 'nicr'  -- Limit mouse interactions
 vim.opt.mouse = ''  -- Disable mouse completely
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip696
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip696)
 ***
 # Title: Optimize Java Code Indentation in Neovim
 # Category: configuration
@@ -7209,7 +7209,7 @@ vim.g.java_highlight_functions = 'style'
 vim.g.java_minlines = 150
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip700
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip700)
 ***
 # Title: Handle Encoding Transitions Safely
 # Category: configuration
@@ -7229,7 +7229,7 @@ vim.o.encoding = 'iso-8859-1'
 vim.o.encoding = 'utf-8'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip708
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip708)
 ***
 # Title: Use scriptencoding for Vimrc Character Sets
 # Category: configuration
@@ -7245,7 +7245,7 @@ scriptencoding latin1
 -- Use UTF-8 by default in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip708
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip708)
 ***
 # Title: Version-Independent Vim Installation on Windows
 # Category: configuration
@@ -7266,7 +7266,7 @@ Create a consistent Vim directory structure that separates runtime files from pe
 -- Makes upgrading Vim versions smoother
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip714
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip714)
 ***
 # Title: Configure Diff Options Flexibly
 # Category: configuration
@@ -7294,7 +7294,7 @@ function _G.MyDiff()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip715
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip715)
 ***
 # Title: Show File Encoding in Status Line
 # Category: configuration
@@ -7311,7 +7311,7 @@ endif
 vim.opt.statusline = '%<%f %h%m%r%=%{"[" .. (vim.bo.fileencoding == "" and vim.o.encoding or vim.bo.fileencoding) .. (vim.o.bomb and ",B" or "") .. "]"} %k %-14.(%l,%c%V%) %P'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip735
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip735)
 ***
 # Title: Fix Meta/Alt Keys in Terminal Vim
 # Category: configuration
@@ -7337,7 +7337,7 @@ for i = string.byte('a'), string.byte('z') do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip738
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip738)
 ***
 # Title: Terminal-Specific Cursor Shape and Color
 # Category: configuration
@@ -7359,7 +7359,7 @@ if vim.env.TERM:match("xterm") or vim.env.TERM:match("rxvt") then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip746
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip746)
 ***
 # Title: Use rsync to Sync Vim Runtime Files
 # Category: configuration
@@ -7375,7 +7375,7 @@ rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/
 vim.fn.system('rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip747
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip747)
 ***
 # Title: Bright Background Colors in Linux Console
 # Category: configuration
@@ -7402,7 +7402,7 @@ if vim.o.term:match("linux") then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip748
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip748)
 ***
 # Title: Remap CapsLock to Escape/Ctrl Systemwide
 # Category: configuration
@@ -7419,7 +7419,7 @@ Remap CapsLock key to Escape or Ctrl to improve keyboard ergonomics and efficien
 vim.keymap.set('n', '<CapsLock>', '<Esc>', { desc = 'Use CapsLock as Escape' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip75
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip75)
 ***
 # Title: Enable Windows-like Selection Mode
 # Category: configuration
@@ -7434,7 +7434,7 @@ set keymodel=startsel,stopsel
 vim.opt.keymodel = {'startsel', 'stopsel'}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip752
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip752)
 ***
 # Title: View Java Docs Directly in Vim
 # Category: configuration
@@ -7453,7 +7453,7 @@ vim.o.keywordprg = ''
 -- Recommended to use a plugin like vimdoclet for Java docs
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_Doclet
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_Doclet)
 ***
 # Title: Add 'Edit with Vim' Context Menu in Windows
 # Category: configuration
@@ -7473,7 +7473,7 @@ Manually add a context menu option to edit files with Vim in Windows Vista/7
 -- Recommended to use Windows-specific tools or installers
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_On_Vista
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_On_Vista)
 ***
 # Title: Fix Vim File Association Issues
 # Category: configuration
@@ -7493,7 +7493,7 @@ Resolve file association problems after Vim upgrade by updating registry keys
 -- vim.fn.system('reg add "HKEY_CLASSES_ROOT\\Applications\\gvim.exe\\shell\\edit\\command" /ve /d "C:\\vim\\vim82\\gvim.exe %1"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_On_Vista
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_On_Vista)
 ***
 # Title: Flexible Option Flag Management
 # Category: configuration
@@ -7518,7 +7518,7 @@ vim.opt.wildmode:remove('lastused')
 vim.opt.wildmode:prepend('full')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_Tips_Wiki
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
 ***
 # Title: Configure Vim Language and Encoding Support
 # Category: configuration
@@ -7543,7 +7543,7 @@ vim.cmd('lan mes el')
 vim.cmd('menut English Greek')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_goes_Greek_-_Greek_language_support_for_Vim_6.1
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_goes_Greek_-_Greek_language_support_for_Vim_6.1)
 ***
 # Title: Manage Language and Encoding Switches
 # Category: configuration
@@ -7562,7 +7562,7 @@ vim.env.LANG = 'gr'
 vim.cmd('lan mes gr')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_goes_Greek_-_Greek_language_support_for_Vim_6.1
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_goes_Greek_-_Greek_language_support_for_Vim_6.1)
 ***
 # Title: Create Vim Translation Files
 # Category: configuration
@@ -7579,7 +7579,7 @@ Steps to extract, translate, and install message translation files for Vim
 -- Translation process involves external GNU gettext utilities
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_goes_INTL_-_Translating_Messages,_Menus,_Encodings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_goes_INTL_-_Translating_Messages,_Menus,_Encodings)
 ***
 # Title: Choose the Right Vim Build for Your System
 # Category: configuration
@@ -7598,7 +7598,7 @@ Select the appropriate Vim build based on your Windows architecture and feature 
 -- 3. Compatibility with 64-bit systems
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Where_to_download_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Where_to_download_Vim)
 ***
 # Title: Live Word Count in Status Line
 # Category: configuration
@@ -7632,7 +7632,7 @@ vim.o.statusline = vim.o.statusline .. ' w:%{v:lua.word_count()}'
 vim.o.laststatus = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Word_count
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Word_count)
 ***
 # Title: Configure Unicode and UTF-8 Encoding
 # Category: configuration
@@ -7665,5 +7665,5 @@ if vim.fn.has('multi_byte') == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Working_with_Unicode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Working_with_Unicode)
 ***

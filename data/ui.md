@@ -102,7 +102,7 @@ Use F11 or custom KDE shortcut to toggle window maximization
 vim.keymap.set('n', '<F11>', ':set invfullscreen<CR>', { desc = 'Toggle Fullscreen' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_maximizing_gvim_in_KDE
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_maximizing_gvim_in_KDE)
 ***
 # Title: Change Cursor Color and Shape in Different Modes
 # Category: ui
@@ -142,7 +142,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_cursor_color_in_different_modes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_cursor_color_in_different_modes)
 ***
 # Title: Disable Cursor Blinking in Vim/Neovim
 # Category: ui
@@ -165,7 +165,7 @@ vim.opt.guicursor:append('a:blinkon0')
 vim.opt.guicursor = vim.o.guicursor
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_cursor_color_in_different_modes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_cursor_color_in_different_modes)
 ***
 # Title: Dynamic Cursor Shape in Different Modes
 # Category: ui
@@ -186,7 +186,7 @@ let &t_SR = "\<Esc>[4 q"  " Replace mode: underline
 let &t_EI = "\<Esc>[2 q"  " Normal mode: block]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes)
 ***
 # Title: Quickly Adjust Font Size in Neovim GUI
 # Category: ui
@@ -247,7 +247,7 @@ vim.keymap.set('n', '<C-ScrollWheelDown>', function() _G.adjust_font_size('-') e
 vim.keymap.set('n', '<C-ScrollWheelUp>', function() _G.adjust_font_size('+') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_font_size_quickly
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_font_size_quickly)
 ***
 # Title: Identify Active Vim Instance by Color
 # Category: ui
@@ -278,7 +278,7 @@ vim.api.nvim_create_autocmd('FocusGained', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_gvim_colorscheme_when_focus_changes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_gvim_colorscheme_when_focus_changes)
 ***
 # Title: Statusline Color Indicator for Vim Modes
 # Category: ui
@@ -345,7 +345,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 vim.cmd('hi statusline guibg=green')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode)
 ***
 # Title: Color Scheme for Different Directories
 # Category: ui
@@ -369,7 +369,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_the_color_scheme_to_show_where_you_are
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_the_color_scheme_to_show_where_you_are)
 ***
 # Title: Customize Mouse Cursor Shape in Vim
 # Category: ui
@@ -389,7 +389,7 @@ Change the mouse cursor shape in different Vim modes for improved visual feedbac
 -- May require external configuration or GUI settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_the_gvim_mouse_arrow_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_the_gvim_mouse_arrow_cursor)
 ***
 # Title: Customize Omni-Completion Popup Menu Colors
 # Category: ui
@@ -410,7 +410,7 @@ vim.cmd.highlight('Pmenu guibg=brown gui=bold')
 vim.cmd.highlight('Pmenu ctermbg=238 gui=bold')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_the_pink_omnicomplete_popup_to_a_readable_color
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_the_pink_omnicomplete_popup_to_a_readable_color)
 ***
 # Title: Console-Like Fonts for Neovim on Windows
 # Category: ui
@@ -426,7 +426,7 @@ vim.opt.guifont = 'FixedSys Excelsior:h10'  -- Unicode-friendly console font
 vim.opt.guifont = 'ProFont:h10'  -- Another recommended console-style font
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Console-like_fonts_for_Windows_GVim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Console-like_fonts_for_Windows_GVim)
 ***
 # Title: Mouse and UI Enhancements
 # Category: ui
@@ -455,7 +455,7 @@ vim.opt.laststatus = 2
 vim.opt.cmdheight = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Example_Vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_Vimrc)
 ***
 # Title: Toggle Line Numbers Easily
 # Category: ui
@@ -471,7 +471,7 @@ set nu!
 vim.opt.number = not vim.opt.number:get()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2008
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help/2008)
 ***
 # Title: Full Mouse Support in Console Vim
 # Category: ui
@@ -486,7 +486,7 @@ set mouse=a
 vim.opt.mouse = 'a'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse)
 ***
 # Title: Toggle GUI Elements Dynamically
 # Category: ui
@@ -524,7 +524,7 @@ vim.keymap.set('n', '<C-F3>', function()
 end, { desc = 'Toggle right scrollbar' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hide_specific_ToolBar_buttons
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hide_specific_ToolBar_buttons)
 ***
 # Title: Remove Specific Toolbar Buttons
 # Category: ui
@@ -543,7 +543,7 @@ aunmenu ToolBar.FindPrev
 -- Consult your specific GUI configuration for exact method
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hide_specific_ToolBar_buttons
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hide_specific_ToolBar_buttons)
 ***
 # Title: Highlight Inserted Text in Insert Mode
 # Category: ui
@@ -592,7 +592,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 vim.cmd('highlight Inserted ctermfg=red guifg=red')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_inserted_text_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_inserted_text_in_insert_mode)
 ***
 # Title: Use Tearoff Menus with Keyboard Shortcuts
 # Category: ui
@@ -609,7 +609,7 @@ set guioptions+=t
 vim.opt.guioptions:append('t')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_great_use_of_those_homemade_menus
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_great_use_of_those_homemade_menus)
 ***
 # Title: Prevent Mouse Drag from Entering Visual Mode
 # Category: ui
@@ -625,7 +625,7 @@ noremap! <LeftDrag> <LeftMouse>
 vim.keymap.set({'n', '!'}, '<LeftDrag>', '<LeftMouse>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode)
 ***
 # Title: Disable Mouse Interaction in Vim
 # Category: ui
@@ -640,7 +640,7 @@ set mouse=
 vim.opt.mouse = ''
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode)
 ***
 # Title: Highlight Matching Braces Instantly
 # Category: ui
@@ -657,7 +657,7 @@ vim.opt.showmatch = true
 vim.opt.matchtime = 3
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_It_Plugin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_It_Plugin)
 ***
 # Title: Show Matching Braces Briefly
 # Category: ui
@@ -674,7 +674,7 @@ vim.opt.showmatch = true
 vim.opt.matchtime = 3
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_to_matching_braces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_to_matching_braces)
 ***
 # Title: Non-Blinking Block Cursor in Linux Console
 # Category: ui
@@ -693,7 +693,7 @@ if vim.o.term == "linux" then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Non-blinking_block_cursor_in_a_Linux_console
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Non-blinking_block_cursor_in_a_Linux_console)
 ***
 # Title: Show Non-Native File Format in Statusline
 # Category: ui
@@ -733,7 +733,7 @@ end
 vim.opt.statusline:append('%1*%{v:lua.show_file_format_flag()}%*')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Non-native_fileformat_for_your_statusline
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Non-native_fileformat_for_your_statusline)
 ***
 # Title: Time-Based Color Scheme Selection
 # Category: ui
@@ -778,7 +778,7 @@ end
 vim.api.nvim_create_user_command('TimeColorScheme', hour_color, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Rotate_color_themes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Rotate_color_themes)
 ***
 # Title: Quick Font Selector Keymapping
 # Category: ui
@@ -793,7 +793,7 @@ map <F3> <Esc>:set guifont=*<CR>
 vim.keymap.set('n', '<F3>', ':set guifont=*<CR>', { desc = 'Open Font Selector' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip632
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip632)
 ***
 # Title: Hide/Toggle GUI Elements in Neovim
 # Category: ui
@@ -825,7 +825,7 @@ vim.keymap.set('n', '<C-F1>', function()
 end, { desc = 'Toggle menu bar' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip665
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip665)
 ***
 # Title: Dynamically Switch Vim Color Schemes
 # Category: ui
@@ -854,7 +854,7 @@ vim.keymap.set('n', '<A-F8>', function()
 end, { desc = 'Random color scheme' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip693
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip693)
 ***
 # Title: Customize Toolbar for Quick Launching
 # Category: ui
@@ -869,7 +869,7 @@ vnoremenu 1.140 ToolBar.New "wy:!start explorer <C-R>w<CR>
 vim.cmd('vnoremenu 1.140 ToolBar.New "wy:!start explorer <C-R>w<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip732
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip732)
 ***
 # Title: Display Non-Native File Format in Statusline
 # Category: ui
@@ -909,7 +909,7 @@ vim.cmd.highlight('User1 term=bold cterm=bold ctermfg=red ctermbg=darkblue')
 vim.o.statusline = vim.o.statusline .. '%1*%{v:lua.ShowFileFormatFlag()}%*'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip736
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip736)
 ***
 # Title: Customize Vim Statusline with Dynamic Information
 # Category: ui
@@ -930,7 +930,7 @@ vim.opt.statusline = table.concat({
 }, '')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip739
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip739)
 ***
 # Title: Always Show Statusline in Single Window
 # Category: ui
@@ -945,7 +945,7 @@ set laststatus=2
 vim.opt.laststatus = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip739
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip739)
 ***
 # Title: Dynamically Adjust Font Size in GUI
 # Category: ui
@@ -985,7 +985,7 @@ vim.keymap.set('n', '<C-Up>', function() _G.adjust_font_size(1) end)
 vim.keymap.set('n', '<C-Down>', function() _G.adjust_font_size(-1) end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip760
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip760)
 ***
 # Title: Cross-Platform Font Size Management
 # Category: ui
@@ -1026,5 +1026,5 @@ vim.keymap.set('n', '<C-ScrollWheelDown>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip760
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip760)
 ***

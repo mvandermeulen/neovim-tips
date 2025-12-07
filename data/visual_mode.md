@@ -155,7 +155,7 @@ function PadLinesTrailingBlanks(limit)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_trailing_blanks_to_lines_for_easy_visual_blocks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_trailing_blanks_to_lines_for_easy_visual_blocks)
 ***
 # Title: Use Virtual Edit for Block Selection
 # Category: visual_mode
@@ -170,7 +170,7 @@ set ve+=block  " Enable block virtual edit
 vim.opt.virtualedit:append('block')  -- Enable block virtual edit
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_trailing_blanks_to_lines_for_easy_visual_blocks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_trailing_blanks_to_lines_for_easy_visual_blocks)
 ***
 # Title: Apply Substitutions to Visual Block Selections
 # Category: visual_mode
@@ -187,7 +187,7 @@ Apply substitutions specifically to a visual block selection without affecting e
 -- :'<,'>B s/pattern/newtext/g
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Applying_substitutes_to_a_visual_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Applying_substitutes_to_a_visual_block)
 ***
 # Title: Quick Visual Block Commenting
 # Category: visual_mode
@@ -214,7 +214,7 @@ vim.keymap.set('x', '<leader>c', function()
 end, { desc = 'Comment visual block' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text)
 ***
 # Title: Powerful Visual Selection and Paste Techniques
 # Category: visual_mode
@@ -240,7 +240,7 @@ P   " paste before cursor
 vim.keymap.set('n', 'gv', '`[v`]', { desc = 'Restore previous visual selection' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cut/copy_and_paste_using_visual_selection
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cut/copy_and_paste_using_visual_selection)
 ***
 # Title: Block Replacement in Visual Mode
 # Category: visual_mode
@@ -259,7 +259,7 @@ c   " Change first line
 -- The default Vim behavior works in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cut/copy_and_paste_using_visual_selection
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cut/copy_and_paste_using_visual_selection)
 ***
 # Title: Flexible Line Selection with Visual Mode
 # Category: visual_mode
@@ -279,7 +279,7 @@ vim.cmd('normal V')
 vim.cmd('normal ay')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cut_or_copy_lines_without_counting_the_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cut_or_copy_lines_without_counting_the_lines)
 ***
 # Title: Visual Mode Block Indent Preservation
 # Category: visual_mode
@@ -296,7 +296,7 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent and reselect' })
 vim.keymap.set('v', '<', '<gv', { desc = 'Unindent and reselect' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line)
 ***
 # Title: Drag Text Using Arrow Key Mappings
 # Category: visual_mode
@@ -331,7 +331,7 @@ vim.keymap.set('v', '<C-Down>', 'jkojkxjzvP`[1v<Space>', { noremap = true })
 vim.keymap.set('v', '<C-Up>', 'kjokjxkzvP`[1v<Space>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Drag_words_with_Ctrl-left/right
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Drag_words_with_Ctrl-left/right)
 ***
 # Title: Visual Mode Text Swapping
 # Category: visual_mode
@@ -355,7 +355,7 @@ vim.keymap.set('v', '<C-X>', function()
 end, { desc = 'Swap visually selected text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Exchange_columns
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Exchange_columns)
 ***
 # Title: Select Entire Function with Visual Commands
 # Category: visual_mode
@@ -370,7 +370,7 @@ V/{<CR>%  " Select function from comment to closing brace
 vim.cmd('normal V/{<CR>%')  -- Select function from comment to closing brace
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_a_code_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_a_code_block)
 ***
 # Title: Generate Incrementing Column Numbers
 # Category: visual_mode
@@ -391,7 +391,7 @@ Easily create a column of incrementing numbers in a visual block selection
 -- :II #   - Left-pad and increment by number
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generating_a_column_of_increasing_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generating_a_column_of_increasing_numbers)
 ***
 # Title: Highlight Text Inside Matching Parentheses
 # Category: visual_mode
@@ -419,7 +419,7 @@ vim.keymap.set('i', '<C-p>', function()
 end, { desc = 'Highlight matching block in insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_text_inside_matching_parentheses
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_text_inside_matching_parentheses)
 ***
 # Title: Select Different Block Types Easily
 # Category: visual_mode
@@ -452,7 +452,7 @@ for key, block in pairs(block_types) do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_text_inside_matching_parentheses
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_text_inside_matching_parentheses)
 ***
 # Title: Insert Text Across Multiple Lines in Visual Block Mode
 # Category: visual_mode
@@ -471,7 +471,7 @@ Quickly insert or append text at the same column across multiple lines using vis
 -- I or A to insert/append text
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines)
 ***
 # Title: Visual Mode Bracket Surrounding
 # Category: visual_mode
@@ -494,7 +494,7 @@ vim.keymap.set('v', '_(',
 )
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_Parenthesis_And_Brackets_Handling_Easier
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_Parenthesis_And_Brackets_Handling_Easier)
 ***
 # Title: Increment Numbers in Visual Block Mode
 # Category: visual_mode
@@ -513,7 +513,7 @@ Easily increment numbers in a visual block selection, creating sequential lists
 -- g Ctrl-A or Ctrl-A to increment
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_a_list)
 ***
 # Title: Quick Brace Matching Visual Selection
 # Category: visual_mode
@@ -531,7 +531,7 @@ vaB  " block with braces
 -- Can be combined with other Neovim features like treesitter selection
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_It_Plugin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_It_Plugin)
 ***
 # Title: Select Blocks with % Motion
 # Category: visual_mode
@@ -551,7 +551,7 @@ Quickly select entire code blocks using % motion in visual mode
 -- vaB selects block with braces
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Matchit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Matchit)
 ***
 # Title: Handle Shift Key Mistakes in Visual Mode
 # Category: visual_mode
@@ -574,7 +574,7 @@ vim.keymap.set('x', '<S-Up>', 'k', { noremap = true })
 vim.keymap.set('x', '<S-Down>', 'j', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_the_cursor_from_jumping_around_when_pressing_%22V%22_for_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_the_cursor_from_jumping_around_when_pressing_%22V%22_for_visual_mode)
 ***
 # Title: Repeat Last Edit Across Visual Block Selection
 # Category: visual_mode
@@ -590,7 +590,7 @@ vnoremap . :normal .<CR>
 vim.keymap.set('v', '.', ':normal .<CR>', { desc = 'Repeat last edit on visual block lines' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_command_on_each_line_in_visual_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_command_on_each_line_in_visual_block)
 ***
 # Title: Repeat Visual Block Changes Across Lines
 # Category: visual_mode
@@ -607,7 +607,7 @@ vim.keymap.set('v', '.', function()
 end, { desc = 'Repeat edit across visual block lines' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_command_and_put_cursor_at_start_of_change
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_command_and_put_cursor_at_start_of_change)
 ***
 # Title: Replace Visual Block with Another Block
 # Category: visual_mode
@@ -628,7 +628,7 @@ ctrl-v move c ctrl-o "aP <Esc>
 -- Can be implemented with vim.fn.feedkeys() if needed
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_visual-block_of_text_with_another_such_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_visual-block_of_text_with_another_such_block)
 ***
 # Title: Create Rectangular Block of Exact Size
 # Category: visual_mode
@@ -643,7 +643,7 @@ Create a rectangular block selection of exactly the same size as a previous bloc
 -- Key sequence translation, use with caution in multibyte encodings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_visual-block_of_text_with_another_such_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_visual-block_of_text_with_another_such_block)
 ***
 # Title: Quickly Reselect Last Visual Selection
 # Category: visual_mode
@@ -658,7 +658,7 @@ gv
 vim.cmd('normal! gv')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reselect_Visual_Block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reselect_Visual_Block)
 ***
 # Title: Reverse Selected Text in Visual Mode
 # Category: visual_mode
@@ -682,7 +682,7 @@ vim.keymap.set('v', ';rv', function()
 end, { desc = 'Reverse selected text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reverse_selected_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reverse_selected_text)
 ***
 # Title: Blockwise Edit Multiple Lines Simultaneously
 # Category: visual_mode
@@ -699,7 +699,7 @@ Insert or modify text across multiple lines using visual block mode
 vim.cmd('normal! ^<C-v>jjjjI#<Esc>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip63
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip63)
 ***
 # Title: Easy Blockwise Mouse Selection in Vim
 # Category: visual_mode
@@ -716,7 +716,7 @@ vim.keymap.set('n', '<M-LeftMouse>', '<LeftMouse><Esc><C-V>', { noremap = true }
 vim.keymap.set('n', '<M-LeftDrag>', '<LeftDrag>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip743
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip743)
 ***
 # Title: Alternate Mouse Selection Method
 # Category: visual_mode
@@ -733,7 +733,7 @@ vim.keymap.set('n', '<S-RightMouse>', '<LeftMouse><Esc><C-V>', { noremap = true 
 vim.keymap.set('n', '<S-RightDrag>', '<LeftDrag>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip743
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip743)
 ***
 # Title: Select Recently Pasted Text Easily
 # Category: visual_mode
@@ -748,5 +748,5 @@ nnoremap gp `[v`]
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select last pasted text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip759
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip759)
 ***

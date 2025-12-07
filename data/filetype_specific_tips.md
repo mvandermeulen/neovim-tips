@@ -535,5 +535,5 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Allow_Inform_header_files_to_be_distinguished_from_C_headers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Allow_Inform_header_files_to_be_distinguished_from_C_headers)
 ***

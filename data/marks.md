@@ -33,7 +33,7 @@ end
 vim.api.nvim_create_user_command('MoshBookmark', _G.mosh_bookmark, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Bookmark_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Bookmark_files)
 ***
 # Title: Cut or Copy Lines Without Line Counting
 # Category: marks
@@ -55,7 +55,7 @@ vim.cmd('normal y`k')
 vim.cmd('normal d`k')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cut_or_copy_lines_without_counting_the_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cut_or_copy_lines_without_counting_the_lines)
 ***
 # Title: Use Marks for Quick Navigation
 # Category: marks
@@ -88,7 +88,7 @@ vim.cmd("`a")  -- Jump to exact position of mark a
 vim.cmd("`A")  -- Jump to global mark A in its file
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mark
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mark)
 ***
 # Title: Navigate Between Marks Efficiently
 # Category: marks
@@ -116,7 +116,7 @@ vim.cmd(']`')
 vim.cmd('[`')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mark
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mark)
 ***
 # Title: Useful Special Marks for Quick Navigation
 # Category: marks
@@ -140,7 +140,7 @@ vim.cmd('``')  -- Previous jump location
 vim.cmd('`^')  -- Last insertion point
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mark
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mark)
 ***
 # Title: Master Vim Marks for Quick Navigation
 # Category: marks
@@ -169,7 +169,7 @@ vim.cmd("'a")
 vim.cmd("'A")
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Marks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Marks)
 ***
 # Title: Navigate Between Marks Quickly
 # Category: marks
@@ -188,7 +188,7 @@ vim.cmd(']\'')
 vim.cmd('[\'')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Marks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Marks)
 ***
 # Title: Use Special Marks for Quick Reference
 # Category: marks
@@ -209,7 +209,7 @@ vim.cmd('`.')
 vim.cmd('`"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Marks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Marks)
 ***
 # Title: Remember Last Position in Help Files
 # Category: marks
@@ -230,5 +230,5 @@ vim.api.nvim_create_autocmd('BufLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remember_where_you_had_ended_reading_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remember_where_you_had_ended_reading_help)
 ***

@@ -630,7 +630,7 @@ end
 vim.keymap.set('n', '<leader>al', _G.add_html_link, { desc = 'Add HTML link with title' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_a_full_link-tag_with_automatic_title
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_a_full_link-tag_with_automatic_title)
 ***
 # Title: Insert Filename as Classname in Insert Mode
 # Category: clever_tricks
@@ -647,7 +647,7 @@ iab <buffer> <unique> ,f <C-r>=expand('%:t:r')<CR>
 vim.cmd('iab <buffer> <unique> ,f ' .. vim.fn.expand('%:t:r'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_classname_based_on_filename_while_in_input_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_classname_based_on_filename_while_in_input_mode)
 ***
 # Title: Quick LaTeX Environment Creation in Vim
 # Category: clever_tricks
@@ -684,7 +684,7 @@ end, {
 vim.keymap.set('i', '<C-Space>', '<Esc>:Ei<Space>', { buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auctex-style_environment_creation_in_LaTeX
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auctex-style_environment_creation_in_LaTeX)
 ***
 # Title: Calculate Math Expressions In-Editor
 # Category: clever_tricks
@@ -741,7 +741,7 @@ end
 vim.keymap.set('v', ';bc', '"ey:lua _G.calc_bc()<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Calculate_equations_from_within_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Calculate_equations_from_within_vim)
 ***
 # Title: Inline Visual Mode Calculator
 # Category: clever_tricks
@@ -795,7 +795,7 @@ vim.keymap.set({'n', 'v'}, '<leader>c', function()
 end, { desc = 'Calculator: Replace line/selection with result' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Calculator_Editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Calculator_Editing)
 ***
 # Title: Toggle File Path Slashes Quickly
 # Category: clever_tricks
@@ -844,7 +844,7 @@ end, { range = true, bang = true })
 vim.keymap.set('n', '<F8>', ':ToggleSlash<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_between_backslash_and_forward_slash
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_between_backslash_and_forward_slash)
 ***
 # Title: Convert Between Hex and Decimal Quickly
 # Category: clever_tricks
@@ -879,7 +879,7 @@ vim.api.nvim_create_user_command('Dec2hex', function(opts)
 end, { nargs = '?', range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_between_hex_and_decimal
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_between_hex_and_decimal)
 ***
 # Title: Convert Between Hex and Decimal Numbers
 # Category: clever_tricks
@@ -910,7 +910,7 @@ function _G.hex_to_dec(arg)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_decimal_to_hex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_decimal_to_hex)
 ***
 # Title: Quick Number Base Conversion
 # Category: clever_tricks
@@ -941,7 +941,7 @@ print(string.format('%x', 1234))
 vim.fn.feedkeys('i' .. string.format('0x%04x', 2475), 'n')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_numbers_hex/decimal_via_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_numbers_hex/decimal_via_menu)
 ***
 # Title: Advanced Number Increment/Decrement
 # Category: clever_tricks
@@ -974,7 +974,7 @@ vim.keymap.set('n', '<C-x>', function() add_subtract('\<C-x>', '') end, { silent
 vim.keymap.set('n', '<leader><C-x>', function() add_subtract('\<C-x>', 'b') end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cool_trick_to_change_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cool_trick_to_change_numbers)
 ***
 # Title: Quickly Create Perl Subroutines in Vim
 # Category: clever_tricks
@@ -1009,7 +1009,7 @@ vim.keymap.set('n', '<Leader>ns', function()
 end, { desc = 'Create new Perl subroutine' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_new_subroutines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_new_subroutines)
 ***
 # Title: Repeat Last Change Efficiently
 # Category: clever_tricks
@@ -1028,7 +1028,7 @@ Use the dot (.) command to repeat the last change in normal mode, which can dram
 -- Can be used with a count, e.g. '5.' to repeat 5 times
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Dot_makes_life_easier
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Dot_makes_life_easier)
 ***
 # Title: Evaluate Expressions Across Vim Modes
 # Category: clever_tricks
@@ -1048,7 +1048,7 @@ vim.keymap.set({'n', 'i', 'c'}, '<C-r>=', function()
 end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Evaluate_an_expression_in_any_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Evaluate_an_expression_in_any_mode)
 ***
 # Title: Evaluate Python Expressions in Vim
 # Category: clever_tricks
@@ -1109,7 +1109,7 @@ vim.api.nvim_create_user_command('PyEv', function(opts)
 end, { nargs = '*' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Evaluate_current_line_using_Python
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Evaluate_current_line_using_Python)
 ***
 # Title: Execute Python Code Inside Vim Buffer
 # Category: clever_tricks
@@ -1148,7 +1148,7 @@ vim.api.nvim_create_user_command('Pyer', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_Python_from_within_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_Python_from_within_current_file)
 ***
 # Title: Preserve Search Register When Running Commands
 # Category: clever_tricks
@@ -1182,7 +1182,7 @@ vim.api.nvim_create_user_command('S', function(opts)
 end, { range = true, nargs = '*' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_commands_without_changing_the_search_register
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_commands_without_changing_the_search_register)
 ***
 # Title: Extract Phone Number Under Cursor
 # Category: clever_tricks
@@ -1217,7 +1217,7 @@ function CPhone(check)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Finding_phone_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Finding_phone_numbers)
 ***
 # Title: Group Lines with Matching Column Pattern
 # Category: clever_tricks
@@ -1265,7 +1265,7 @@ end
 vim.keymap.set('n', '<F9>', _G.group_matching_lines, { desc = 'Group matching lines' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Group_matching_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Group_matching_lines)
 ***
 # Title: Quick Hex and Decimal Number Conversion
 # Category: clever_tricks
@@ -1297,7 +1297,7 @@ print(vim.fn.printf('%x', 74565))
 print(vim.fn.printf('0x%04x', 2475))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex_or_unhex_strings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_or_unhex_strings)
 ***
 # Title: Quick Number Type Detection and Conversion
 # Category: clever_tricks
@@ -1337,7 +1337,7 @@ vim.keymap.set('n', 'gn', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex_or_unhex_strings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_or_unhex_strings)
 ***
 # Title: Highlight Current Word for Easy Cursor Tracking
 # Category: clever_tricks
@@ -1369,7 +1369,7 @@ vim.keymap.set('n', '<C-K>', function()
 end, { desc = 'Toggle cursor word highlight' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_current_word_to_find_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_current_word_to_find_cursor)
 ***
 # Title: Quickly Obscure Text with Rot13 Encoding
 # Category: clever_tricks
@@ -1384,7 +1384,7 @@ map <F3> ggg?G
 vim.keymap.set('n', '<F3>', 'ggg?G', { desc = 'Obscure text with rot13 encoding' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_obscure_text_instantaneously
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_obscure_text_instantaneously)
 ***
 # Title: Rot13 Encoding for Visible Screen Only
 # Category: clever_tricks
@@ -1399,7 +1399,7 @@ map <F3> mzHVLg?`z
 vim.keymap.set('n', '<F3>', 'mzHVLg?`z', { desc = 'Rot13 encode visible screen' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_obscure_text_instantaneously
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_obscure_text_instantaneously)
 ***
 # Title: Identify Syntax Highlighting Group Under Cursor
 # Category: clever_tricks
@@ -1429,7 +1429,7 @@ vim.keymap.set('n', '<F10>', function()
 end, { desc = 'Show syntax highlighting groups' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor)
 ***
 # Title: Insert Current Directory Name Quickly
 # Category: clever_tricks
@@ -1455,7 +1455,7 @@ vim.keymap.set('i', '<leader>fp', function()
 end, { desc = 'Insert current directory path' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_current_directory_name
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_current_directory_name)
 ***
 # Title: Quickly Insert Image Size in HTML Tags
 # Category: clever_tricks
@@ -1495,7 +1495,7 @@ end
 vim.keymap.set('n', '<F4>', _G.perl_image_size, { desc = 'Insert image size in HTML tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_image_size_into_html_tag
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_image_size_into_html_tag)
 ***
 # Title: Rotate Email Signatures Dynamically
 # Category: clever_tricks
@@ -1523,7 +1523,7 @@ k"*xG$a<C-R><C-O>*')
 end, { desc = 'Rotate Email Signature' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_mail_signatures_from_a_rotating_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_mail_signatures_from_a_rotating_file)
 ***
 # Title: Obscure Vim Command Obfuscation Trick
 # Category: clever_tricks
@@ -1542,7 +1542,7 @@ vim.cmd([[%s)[[()])-)Ig]])
 vim.cmd('norm Vg?')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/JAVH_-_Just_another_Vim_Hacker
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/JAVH_-_Just_another_Vim_Hacker)
 ***
 # Title: Create Personal Memo File with Vim Help-Style Links
 # Category: clever_tricks
@@ -1582,7 +1582,7 @@ vim.api.nvim_buf_set_lines(0, 0, -1, false, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_a_to-do_memo_file_with_links_as_in_Vim_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_a_to-do_memo_file_with_links_as_in_Vim_help)
 ***
 # Title: Dynamic ZIP Code Lookup in Vim
 # Category: clever_tricks
@@ -1612,7 +1612,7 @@ end
 vim.keymap.set('n', '<leader>zl', _G.zip_lookup, { desc = 'Lookup ZIP code' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Lookup_the_city_and_state_of_a_given_US_Zip_code_using_TCL
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Lookup_the_city_and_state_of_a_given_US_Zip_code_using_TCL)
 ***
 # Title: C/C++ Macro Expansion in Vim
 # Category: clever_tricks
@@ -1711,7 +1711,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Macro_expansion_C/C%2B%2B
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Macro_expansion_C/C%2B%2B)
 ***
 # Title: Persistent Echo Messages in Vim
 # Category: clever_tricks
@@ -1746,7 +1746,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_echo_seen_when_it_would_otherwise_disappear_and_go_unseen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_echo_seen_when_it_would_otherwise_disappear_and_go_unseen)
 ***
 # Title: Insert Numbered Lists Easily
 # Category: clever_tricks
@@ -1770,7 +1770,7 @@ vim.cmd.put(vim.fn.map(vim.fn.range(1, 150), function(_, val)
 end))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_a_list_of_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_a_list_of_numbers)
 ***
 # Title: Vim-Like Browser Navigation Extensions
 # Category: clever_tricks
@@ -1784,7 +1784,7 @@ Multiple browser extensions provide Vim-style keyboard navigation, allowing user
 -- Dedicated Vim browsers: Qutebrowser, Vieb, Vimb
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mozilla_Vim_Keybindings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mozilla_Vim_Keybindings)
 ***
 # Title: Make Echo Persistent in Vim Scripts
 # Category: clever_tricks
@@ -1821,7 +1821,7 @@ vim.api.nvim_create_autocmd('CursorHold', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/OPENBRACKET_for_script_writers_CLOSEBRACKET_make_echo_seen_when_it_would_otherwise_disappear_and_go_unseen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/OPENBRACKET_for_script_writers_CLOSEBRACKET_make_echo_seen_when_it_would_otherwise_disappear_and_go_unseen)
 ***
 # Title: Open URLs from Current Line in Browser
 # Category: clever_tricks
@@ -1849,7 +1849,7 @@ end
 vim.keymap.set('n', '<Leader>w', _G.open_url_from_line, { desc = 'Open URL from current line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_web-browser_with_the_URL_in_the_current_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_web-browser_with_the_URL_in_the_current_line)
 ***
 # Title: Platform-Specific URL Opening
 # Category: clever_tricks
@@ -1885,7 +1885,7 @@ vim.keymap.set('n', '<Leader>w', function()
 end, { desc = 'Open URL under cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_a_web-browser_with_the_URL_in_the_current_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_web-browser_with_the_URL_in_the_current_line)
 ***
 # Title: Dynamic Page Count for Hardcopy Printing
 # Category: clever_tricks
@@ -1921,7 +1921,7 @@ end
 vim.opt.printheader = '%<%f%h%m%=Page %N of ' .. vim.fn.eval('PrintPageCount()')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Page_1_of_123_in_header_of_hardcopy
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Page_1_of_123_in_header_of_hardcopy)
 ***
 # Title: Confirm Before Quitting in Insert Mode
 # Category: clever_tricks
@@ -1956,7 +1956,7 @@ end
 vim.keymap.set('i', 'wq', '<BS><Esc>:lua _G.wq_helper()<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prompted_quit_in_insert-mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prompted_quit_in_insert-mode)
 ***
 # Title: Create Comment Boxes with External Utility
 # Category: clever_tricks
@@ -1973,7 +1973,7 @@ vmap <F2> !boxes -s 80 <CR>
 vim.keymap.set('v', '<F2>', '!boxes -s 80<CR>', { desc = 'Create comment box' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Put_boxes_around_comments_in_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Put_boxes_around_comments_in_code)
 ***
 # Title: Recursive Macros for Automated Text Manipulation
 # Category: clever_tricks
@@ -1999,7 +1999,7 @@ q    " Stop recording
 -- Can be executed in Lua using vim.fn.execute('@q')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Record_a_recursive_macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Record_a_recursive_macro)
 ***
 # Title: Fix Syntax Highlighting with F12 Mapping
 # Category: clever_tricks
@@ -2015,7 +2015,7 @@ inoremap <F12> <C-o>:syntax sync fromstart<CR>
 vim.keymap.set({'n', 'i'}, '<F12>', ':syntax sync fromstart<CR>', { desc = 'Resync syntax highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Refresh_out-of-sync_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Refresh_out-of-sync_syntax_highlighting)
 ***
 # Title: Preserve Cursor Position During Script Undo
 # Category: clever_tricks
@@ -2036,7 +2036,7 @@ local function preserve_cursor_on_undo()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Restore_the_cursor_position_after_undoing_text_change_made_by_a_script
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_the_cursor_position_after_undoing_text_change_made_by_a_script)
 ***
 # Title: Reverse Block Order Using Macros
 # Category: clever_tricks
@@ -2067,7 +2067,7 @@ local function reverse_blocks()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reversing_order_of_blocks_of_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reversing_order_of_blocks_of_text)
 ***
 # Title: Dynamic Mail Signature Rotation in Vim
 # Category: clever_tricks
@@ -2114,7 +2114,7 @@ end
 vim.keymap.set('n', ',r', _G.rotate_signature, { desc = 'Rotate email signature' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Rotating_mail_signatures
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Rotating_mail_signatures)
 ***
 # Title: Inspect Character Class in Vim
 # Category: clever_tricks
@@ -2155,7 +2155,7 @@ end
 vim.keymap.set('n', 'cc', _G.show_character_class, { desc = 'Show character class details' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip502
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip502)
 ***
 # Title: Use Vim as a Bookmark Manager
 # Category: clever_tricks
@@ -2190,7 +2190,7 @@ vim.api.nvim_create_autocmd('BufRead', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip555
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip555)
 ***
 # Title: Generate Unicode Character Table
 # Category: clever_tricks
@@ -2244,7 +2244,7 @@ end
 -- Usage: :lua generate_unicode(0x9900, 0x9fff)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip576
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip576)
 ***
 # Title: Create Postfix Abbreviations for Code Snippets
 # Category: clever_tricks
@@ -2260,7 +2260,7 @@ Use Vim abbreviations to quickly generate code snippets by typing a word followe
 vim.cmd('ab ff <Esc>^d$ifor(int i=0;i<<Esc>pi.length;i++){<CR><CR>}//end for loop over array <Esc>pi[i]<Esc>==k==k==ji<Tab>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip593
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip593)
 ***
 # Title: Create Text Abbreviations for Frequent Typos
 # Category: clever_tricks
@@ -2281,7 +2281,7 @@ vim.cmd('iabbrev #i #include')
 vim.cmd('iabbrev #d #define')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip610
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip610)
 ***
 # Title: Efficient Debug Print Statements in C++
 # Category: clever_tricks
@@ -2312,7 +2312,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip625
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip625)
 ***
 # Title: Execute Accidentally Inserted Normal Mode Commands
 # Category: clever_tricks
@@ -2336,7 +2336,7 @@ vim.api.nvim_create_autocmd('CursorHoldI', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip637
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip637)
 ***
 # Title: Transfer Text Between Vim Instances
 # Category: clever_tricks
@@ -2366,7 +2366,7 @@ vim.keymap.set({'n', 'v'}, '_Y', CopyToTempFile, { desc = 'Copy to temp file' })
 vim.keymap.set('n', '_P', PasteFromTempFile, { desc = 'Paste from temp file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip66
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip66)
 ***
 # Title: Launch Multiple Vim Instances in Windows
 # Category: clever_tricks
@@ -2382,7 +2382,7 @@ C:\WINDOWS\system32\rundll32.exe Shell32.dll,ShellExec_RunDLL "C:\Program Files\
 vim.fn.system('rundll32.exe Shell32.dll,ShellExec_RunDLL "nvim"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip676
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip676)
 ***
 # Title: Quick Word Count in Vim
 # Category: clever_tricks
@@ -2415,7 +2415,7 @@ end
 vim.opt.statusline:append('%{v:lua.WordCount()}')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip689
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip689)
 ***
 # Title: Quick Word Count in Vim/Neovim
 # Category: clever_tricks
@@ -2442,5 +2442,5 @@ g Ctrl-g
 vim.api.nvim_command('w !wc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Word_count
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Word_count)
 ***

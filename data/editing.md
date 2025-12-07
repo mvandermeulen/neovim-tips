@@ -419,7 +419,7 @@ vim.keymap.set('n', '<Leader>4', 'm`F4r$``', { desc = 'Replace 4 with $ in PHP v
 vim.keymap.set('i', '<Leader>4', '<Esc>m`F4r$``a', { desc = 'Replace 4 with $ in PHP variable' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/$_instead_of_4
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/$_instead_of_4)
 ***
 # Title: Quick PHP Debug Code Insertion
 # Category: editing
@@ -438,7 +438,7 @@ vim.cmd('iab phpv echo "<hr><pre>";var_dump($a);exit("debug ");')
 vim.cmd('iab phpallv print_r(get_defined_vars());')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/$_instead_of_4
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/$_instead_of_4)
 ***
 # Title: Quick Heading Underline with Dashes
 # Category: editing
@@ -472,7 +472,7 @@ vim.keymap.set('n', '<F5>', function()
 end, { desc = 'Underline with dashes' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_a_dashed_line_under_a_title_in_text_documents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_a_dashed_line_under_a_title_in_text_documents)
 ***
 # Title: Fast Print Statement Generation
 # Category: editing
@@ -488,7 +488,7 @@ imap <F3> printf("DEBUG: ");<Left><Left>
 vim.keymap.set('i', '<F3>', 'printf("DEBUG: ");<Left><Left>', { desc = 'Insert print statement' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/All_tips_for_C_family_programming
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_tips_for_C_family_programming)
 ***
 # Title: Comment Code with Flexible Delimiters
 # Category: editing
@@ -504,7 +504,7 @@ Use alternative delimiters to easily comment out code ranges with less escaping
 vim.cmd('5,8 s#^#//#')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternate_delimiters_for_the_replace_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternate_delimiters_for_the_replace_command)
 ***
 # Title: Quick Word Completion in Insert Mode
 # Category: editing
@@ -523,7 +523,7 @@ Ctrl-P  " Complete previous matching word
 -- Just use Ctrl-N and Ctrl-P in insert mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Any_word_completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Any_word_completion)
 ***
 # Title: Filter Text Using External Shell Commands
 # Category: editing
@@ -543,7 +543,7 @@ Use Vim's filter functionality to process selected text through shell commands, 
 -- Example commands remain consistent with Vim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Append_output_of_an_external_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Append_output_of_an_external_command)
 ***
 # Title: Restore Cursor Position in Previous Session
 # Category: editing
@@ -570,7 +570,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Authors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Authors)
 ***
 # Title: Quickly Insert Current Date or Time
 # Category: editing
@@ -596,7 +596,7 @@ vim.keymap.set('n', '<F6>', function()
 end, { desc = 'Insert current time' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Authors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Authors)
 ***
 # Title: Auto-Close HTML Tags with Omni Completion
 # Category: editing
@@ -623,7 +623,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_closing_an_HTML_tag
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_closing_an_HTML_tag)
 ***
 # Title: Auto Spelling Correction with Abbreviations
 # Category: editing
@@ -655,7 +655,7 @@ iabbrev reutrn return
 iabbrev reutn return]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_spelling_correction_using_abbreviations
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_spelling_correction_using_abbreviations)
 ***
 # Title: Reflow Paragraphs Quickly
 # Category: editing
@@ -672,7 +672,7 @@ gqip
 vim.cmd('normal gqip')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_formatting_of_paragraphs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_formatting_of_paragraphs)
 ***
 # Title: Efficient Undo and Redo
 # Category: editing
@@ -690,7 +690,7 @@ vim.keymap.set('n', '<leader>u', 'u', { desc = 'Undo last change' })
 vim.keymap.set('n', '<leader>r', '<C-r>', { desc = 'Redo last change' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Beginners_guide
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Beginners_guide)
 ***
 # Title: Autocomplete Words in Insert Mode
 # Category: editing
@@ -709,7 +709,7 @@ Use Ctrl-N and Ctrl-P to autocomplete words from the current file
 vim.opt.complete:append('k')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_Tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_Tips)
 ***
 # Title: Powerful Text Case Manipulation
 # Category: editing
@@ -730,7 +730,7 @@ gUU     " uppercase line
 -- vim.cmd('normal! ~')    -- invert case of current character
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_of_VIM_Tips_(VIM%27s_best_Features)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_of_VIM_Tips_(VIM%27s_best_Features))
 ***
 # Title: Convert Between CamelCase and snake_case
 # Category: editing
@@ -761,7 +761,7 @@ function convert_to_snake_case(str)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/CamelCase
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/CamelCase)
 ***
 # Title: Quickly Change Words and Lines
 # Category: editing
@@ -788,7 +788,7 @@ vim.keymap.set('n', 'p$', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_word_or_line_with_automatic_return_to_normal_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_word_or_line_with_automatic_return_to_normal_mode)
 ***
 # Title: Case Modification Techniques
 # Category: editing
@@ -810,7 +810,7 @@ vim.cmd(':s/\\(test\\)/\\U\\1\\e file/')
 vim.cmd(':s/\\(test\\)/\\u\\1/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Changing_case_with_regular_expressions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_case_with_regular_expressions)
 ***
 # Title: Easy Comment/Uncomment for Multiple Languages
 # Category: editing
@@ -856,7 +856,7 @@ vim.keymap.set('n', ',u', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text)
 ***
 # Title: Extend Word Completion with Precision
 # Category: editing
@@ -874,7 +874,7 @@ Incrementally complete words by repeatedly pressing Ctrl-X Ctrl-P to refine matc
 vim.opt.complete:append('i') -- include current and included files
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Completing_words_quickly_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Completing_words_quickly_in_insert_mode)
 ***
 # Title: Convert Enum to String Table Automatically
 # Category: editing
@@ -917,7 +917,7 @@ end
 vim.keymap.set('x', '<leader>ce', _G.enum_to_array, { desc = 'Convert Enum to String Array' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_enum_to_string_table
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_enum_to_string_table)
 ***
 # Title: Flexible Case Conversion with Visual Selection
 # Category: editing
@@ -950,7 +950,7 @@ vim.api.nvim_create_user_command('CamelCase', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Converting_variables_to_camelCase
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Converting_variables_to_camelCase)
 ***
 # Title: Convert Variable Naming Styles
 # Category: editing
@@ -973,7 +973,7 @@ vim.cmd('s#_\(\l\)#\u\1#g')
 vim.cmd('s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Converting_variables_to_or_from_camel_case
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Converting_variables_to_or_from_camel_case)
 ***
 # Title: Add Unicode Combining Characters to Text
 # Category: editing
@@ -1018,7 +1018,7 @@ end, { range = true })
 vim.keymap.set('v', 'OO', ':Overline<CR>', { desc = 'Apply overline to selected text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_underlines,_overlines,_and_strikethroughs_using_combining_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_underlines,_overlines,_and_strikethroughs_using_combining_characters)
 ***
 # Title: Delete XML/HTML Tags Efficiently
 # Category: editing
@@ -1037,7 +1037,7 @@ vim.keymap.set('n', '<leader>dt', function()
 end, { desc = 'Delete XML/HTML tag pair' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_a_pair_of_XML/HTML_tags
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_a_pair_of_XML/HTML_tags)
 ***
 # Title: Delete Lines Matching a Pattern
 # Category: editing
@@ -1066,7 +1066,7 @@ vim.cmd('g/^\s*$/d')
 vim.cmd('g!/^\s*"/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern)
 ***
 # Title: Consistent Yank to End of Line
 # Category: editing
@@ -1081,7 +1081,7 @@ nnoremap Y y$
 vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line)
 ***
 # Title: Delete to Custom Delimiter Efficiently
 # Category: editing
@@ -1102,7 +1102,7 @@ df.
 -- Can use 'df ' or 'df.' directly in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_words_in_a_different_way
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_words_in_a_different_way)
 ***
 # Title: Alternative Word Deletion Methods
 # Category: editing
@@ -1122,7 +1122,7 @@ dt<char>
 -- No specific Lua translation required
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_words_in_a_different_way
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_words_in_a_different_way)
 ***
 # Title: Quick Email Thread Cleanup
 # Category: editing
@@ -1144,7 +1144,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Deleting_nested_reply_threads_in_emails
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Deleting_nested_reply_threads_in_emails)
 ***
 # Title: Dictionary-Based Word Completion
 # Category: editing
@@ -1173,7 +1173,7 @@ vim.opt.complete:append('k')
 vim.keymap.set('i', '<F12>', '<C-X><C-K>', { desc = 'Dictionary word completion' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Dictionary_completions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Dictionary_completions)
 ***
 # Title: Block Line Sorting with Global Command
 # Category: editing
@@ -1189,7 +1189,7 @@ Sort each block of lines in a file, separating blocks by blank lines
 vim.cmd('g/^\s*$/;//-1sort')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know)
 ***
 # Title: Repeat Last Change with Dot Command
 # Category: editing
@@ -1201,7 +1201,7 @@ Press '.' to repeat the last edit or change, saving keystrokes and improving eff
 -- Simply press . in normal mode to repeat last change
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2008
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know/2008)
 ***
 # Title: Increment and Decrement Numbers Quickly
 # Category: editing
@@ -1219,7 +1219,7 @@ vim.keymap.set('n', '<C-a>', '<C-a>', { desc = 'Increment number' })
 vim.keymap.set('n', '<C-x>', '<C-x>', { desc = 'Decrement number' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2008
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know/2008)
 ***
 # Title: Remove All Blank Lines in a File
 # Category: editing
@@ -1235,7 +1235,7 @@ Use global command to delete all blank lines from a file
 vim.cmd('g/^\s*$/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2008
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know/2008)
 ***
 # Title: Temporarily Disable Auto-Indent for Pasting
 # Category: editing
@@ -1253,7 +1253,7 @@ vim.opt.paste = true  -- Enable paste mode
 vim.opt.paste = false  -- Disable paste mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps)
 ***
 # Title: Copy and Replace Lines Across Document
 # Category: editing
@@ -1276,7 +1276,7 @@ Quickly copy a line and paste it to multiple locations with minimal keystrokes
 -- S to replace line content
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Dot_makes_life_easier
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Dot_makes_life_easier)
 ***
 # Title: Duplicate Previous Line Word by Word
 # Category: editing
@@ -1308,7 +1308,7 @@ vim.keymap.set({'n', 'i'}, '<F2>', function()
 end, { desc = 'Duplicate word from previous line and create new line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Duplicate_previous_line_word_by_word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Duplicate_previous_line_word_by_word)
 ***
 # Title: Insert Special Characters with Digraphs
 # Category: editing
@@ -1331,7 +1331,7 @@ vim.opt.digraph = true
 -- e.g., a: for ä, e> for ê
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Entering_German_umlauts
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Entering_German_umlauts)
 ***
 # Title: Enter Characters by Unicode Value
 # Category: editing
@@ -1353,7 +1353,7 @@ vim.opt.encoding = 'utf-8'
 -- Requires knowing the specific Unicode code point
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Entering_German_umlauts
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Entering_German_umlauts)
 ***
 # Title: Easy Character and Word Swapping
 # Category: editing
@@ -1383,7 +1383,7 @@ vim.keymap.set('n', 'gw', function()
 end, { desc = 'Swap current word with next' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Exchange_columns
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Exchange_columns)
 ***
 # Title: Quick Email Quote Formatting Techniques
 # Category: editing
@@ -1403,7 +1403,7 @@ Multiple ways to reformat email quotations using Vim's text formatting operators
 -- Relies on formatoptions and textwidth settings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_email_quotations_with_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_email_quotations_with_long_lines)
 ***
 # Title: Quick Footnote Insertion Abbreviations
 # Category: editing
@@ -1423,7 +1423,7 @@ ab (3 [3]<Esc>:/^Footnotes\:/+3/<CR>o<insert>[3]
 vim.cmd([[cnoreabbrev (1 [1]<Esc>:/^--\s/-1/<CR>o<insert><CR>Footnotes:<CR>----------<CR>[1]]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Footnotes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Footnotes)
 ***
 # Title: Paste with Automatic Indentation
 # Category: editing
@@ -1449,7 +1449,7 @@ vim.keymap.set('n', 'p', function()
 end, { desc = 'Paste and re-indent' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_pasted_text_automatically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_pasted_text_automatically)
 ***
 # Title: Block Commenting in Lisp
 # Category: editing
@@ -1466,7 +1466,7 @@ vim.keymap.set('n', '.,', function()
 end, { desc = 'Comment out code block' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Formatting_stuff
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Formatting_stuff)
 ***
 # Title: Join Lines with Customizable Spacing
 # Category: editing
@@ -1483,7 +1483,7 @@ vim.opt.joinspaces = false
 -- Use 'J' in normal mode to join lines with custom spacing
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2009
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help/2009)
 ***
 # Title: Preserve Cursor Position When Pasting
 # Category: editing
@@ -1498,7 +1498,7 @@ map <F7> mz:-1r !xclip -o -sel clip<CR>`z
 vim.keymap.set('n', '<F7>', 'mz:-1r !xclip -o -sel clip<CR>`z', { desc = 'Paste and preserve cursor position' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip)
 ***
 # Title: Generate Numbered Lists Quickly
 # Category: editing
@@ -1522,7 +1522,7 @@ vim.cmd.put(vim.fn.map(vim.fn.range(1, 150), function(_, val)
 end))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generating_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generating_a_list)
 ***
 # Title: Increment Numbers in Visual Block
 # Category: editing
@@ -1542,7 +1542,7 @@ my_array[0] = 0;
 -- Note: Exact visual block manipulation might require additional scripting in Lua
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generating_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generating_a_list)
 ***
 # Title: Insert Current Filename
 # Category: editing
@@ -1560,7 +1560,7 @@ Insert current filename in insert or command mode using register expansion
 vim.api.nvim_feedkeys(vim.fn.expand('%'), 'i', true)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_the_name_of_the_current_file)
 ***
 # Title: HTML Entity Conversion Utility
 # Category: editing
@@ -1622,7 +1622,7 @@ vim.keymap.set('n', '<Leader>h', ':Entities 0<CR>', {silent = true})
 vim.keymap.set('n', '<Leader>H', ':Entities 1<CR>', {silent = true})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/HTML_entities
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/HTML_entities)
 ***
 # Title: Temporarily Disable Auto-Indentation for Pasting
 # Category: editing
@@ -1641,7 +1641,7 @@ vim.o.paste = true
 vim.o.paste = false
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_stop_auto_indenting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_stop_auto_indenting)
 ***
 # Title: Increment/Decrement Numbers Flexibly
 # Category: editing
@@ -1680,7 +1680,7 @@ vim.keymap.set('n', '<C-x>', function() add_subtract('\<C-x>', '') end)
 vim.keymap.set('n', '<Leader><C-x>', function() add_subtract('\<C-x>', 'b') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Increasing_or_decreasing_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Increasing_or_decreasing_numbers)
 ***
 # Title: Quickly Comment Lines in Visual Mode
 # Category: editing
@@ -1697,7 +1697,7 @@ Easily add comments to multiple lines using visual block mode and substitute com
 -- Or use blockwise visual mode and I to prepend comment
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_C%2B%2B_or_LaTeX_or_other_comments_easily
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_C%2B%2B_or_LaTeX_or_other_comments_easily)
 ***
 # Title: Quick Word Deletion in Insert Mode
 # Category: editing
@@ -1712,7 +1712,7 @@ imap <C-BS> <C-W>
 vim.keymap.set('i', '<C-BS>', '<C-W>', { desc = 'Delete previous word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_a_non_commented_line_despite_formatoptions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_a_non_commented_line_despite_formatoptions)
 ***
 # Title: Insert Filename in Neovim
 # Category: editing
@@ -1747,7 +1747,7 @@ vim.keymap.set('i', '<Leader>fn', function()
 end, { desc = 'Insert file path' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_current_filename
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_current_filename)
 ***
 # Title: Insert Line Numbers in File
 # Category: editing
@@ -1767,7 +1767,7 @@ vim.cmd(':%s/^/\=printf("%-4d", line("."))')
 vim.cmd("'<,'>s/^/\=printf('%d.\t', line('.') - line("'<") + 1)")
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_line_numbers_2
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_line_numbers_2)
 ***
 # Title: Number Lines Using External Utility
 # Category: editing
@@ -1787,7 +1787,7 @@ vim.cmd('%!nl -ba')
 vim.cmd("'<,'>!nl -s '. ' -w 2")
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_line_numbers_2
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_line_numbers_2)
 ***
 # Title: Join Lines Matching a Pattern Globally
 # Category: editing
@@ -1803,7 +1803,7 @@ g/conf/j
 vim.cmd('g/conf/j')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Joining_two_lines_of_text_based_on_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Joining_two_lines_of_text_based_on_pattern)
 ***
 # Title: Increment Numbers in Visual Selection
 # Category: editing
@@ -1823,7 +1823,7 @@ g Ctrl-A
 -- Use 'g Ctrl-A' to increment sequentially
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_of_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_of_numbers)
 ***
 # Title: Insert Numbered List with Range Function
 # Category: editing
@@ -1845,7 +1845,7 @@ vim.api.nvim_command('put =range(11,15)')
 vim.api.nvim_command('put =map(range(1,150), function(v) return string.format('%04d', v) end)')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_a_list)
 ***
 # Title: Quick Word Replacement with Stamping
 # Category: editing
@@ -1860,7 +1860,7 @@ nnoremap S diw"0P
 vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode)
 ***
 # Title: Insert Special Characters Quickly
 # Category: editing
@@ -1879,7 +1879,7 @@ vim.api.nvim_set_keymap('i', '<M-c>', '<C-R>=nr2char(169)<CR>', { noremap = true
 vim.api.nvim_set_keymap('n', '<M-c>', 'a<C-R>=nr2char(169)<CR><Esc>', { noremap = true, desc = 'Insert copyright symbol' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Menu_for_inserting_special_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Menu_for_inserting_special_characters)
 ***
 # Title: Quick Separating Line Abbreviations
 # Category: editing
@@ -1902,7 +1902,7 @@ vim.cmd('iabbrev lin -----------------------------------------------------------
 vim.cmd('iabbrev clin /*-------------------------------------------------------------------*/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Menu_for_inserting_special_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Menu_for_inserting_special_characters)
 ***
 # Title: Merge Terminal-Split Long Lines
 # Category: editing
@@ -1918,7 +1918,7 @@ g/^.\{79}\S$/normal Jx
 vim.cmd.global('/^.\{79}\S$/normal! Jx')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Merge_longs_lines_that_were_split_by_terminal_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Merge_longs_lines_that_were_split_by_terminal_window)
 ***
 # Title: Quick Minify File in Vim
 # Category: editing
@@ -1936,7 +1936,7 @@ Quickly remove line breaks and compress a file into a single line using visual m
 -- 2. Press J to join lines
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Minify_File_inside_Vim_without_plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Minify_File_inside_Vim_without_plugins)
 ***
 # Title: Move Comment to End of Line Efficiently
 # Category: editing
@@ -1954,7 +1954,7 @@ vim.keymap.set('n', '<C-S-j>', function()
 end, { desc = 'Move comment to end of previous line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_comment_line_to_end_of_next_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_comment_line_to_end_of_next_line)
 ***
 # Title: Efficient Text Completion and Navigation
 # Category: editing
@@ -1973,7 +1973,7 @@ vim.keymap.set('i', '<C-p>', '<C-x><C-p>', { desc = 'Complete previous word' })
 vim.keymap.set('i', '<C-n>', '<C-x><C-n>', { desc = 'Complete next word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/New_to_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/New_to_Vim)
 ***
 # Title: Number Lines Sequentially in Visual Selection
 # Category: editing
@@ -2012,7 +2012,7 @@ end
 -- Usage: In visual mode, call :lua _G.number_lines()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Number_a_group_of_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Number_a_group_of_lines)
 ***
 # Title: Number Lines with External Filter
 # Category: editing
@@ -2028,7 +2028,7 @@ map g# :'n,. !nl<CR>
 vim.keymap.set('n', 'g#', ":'n,.!nl<CR>", { desc = 'Number lines using nl' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Numbering_lines_and_interpolating_sequences
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Numbering_lines_and_interpolating_sequences)
 ***
 # Title: Use Omni Completion Shortcuts
 # Category: editing
@@ -2046,7 +2046,7 @@ Trigger omni completion and navigate suggestions using keyboard shortcuts
 -- <C-n> and <C-p> to navigate suggestions
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Omni_Completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omni_Completion)
 ***
 # Title: Trigger Omni Completion in Insert Mode
 # Category: editing
@@ -2063,7 +2063,7 @@ Use Ctrl-X Ctrl-O to open context-aware completion popup menu in insert mode
 -- Use built-in Vim mapping, no direct Lua equivalent needed
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Omni_completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omni_completion)
 ***
 # Title: Insert Multiple Lines Efficiently
 # Category: editing
@@ -2114,7 +2114,7 @@ vim.keymap.set('n', '<Leader>O', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_Multiple_Lines_Above/Below_and_Drop_Into_Insert_Mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_Multiple_Lines_Above/Below_and_Drop_Into_Insert_Mode)
 ***
 # Title: Fix Numeric Prefix Mistake in PHP Variables
 # Category: editing
@@ -2133,7 +2133,7 @@ end, { desc = 'Replace 4 with $ in PHP variable' })
 vim.keymap.set('i', '<Leader>4', '<Esc>m`F4r$``a', { desc = 'Replace 4 with $ in PHP variable' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PHP_editing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PHP_editing)
 ***
 # Title: Compact Multiple Blank Lines
 # Category: editing
@@ -2156,7 +2156,7 @@ vim.cmd('v/./,/./-j')
 vim.cmd('%s/^$\\n^$//g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Power_of
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Power_of)
 ***
 # Title: Quickly Add/Delete Empty Lines
 # Category: editing
@@ -2199,7 +2199,7 @@ vim.keymap.set('n', '<A-k>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_adding_and_deleting_empty_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_adding_and_deleting_empty_lines)
 ***
 # Title: Quick Word and Line Editing Commands
 # Category: editing
@@ -2227,7 +2227,7 @@ cis   " Change inner sentence
 -- c$, C, cc for line changes
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_change_word_or_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_change_word_or_line)
 ***
 # Title: Remove Diacritical Signs from Characters
 # Category: editing
@@ -2269,7 +2269,7 @@ vim.api.nvim_create_user_command('RemoveDiacritics', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_Diacritic_signs/marks_from_characters_(replace_to_regular_character)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_Diacritic_signs/marks_from_characters_(replace_to_regular_character))
 ***
 # Title: Remove Empty Lines Efficiently
 # Category: editing
@@ -2296,7 +2296,7 @@ vim.cmd('g/^\s*$/d')
 vim.cmd('v/\S/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_unwanted_empty_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_unwanted_empty_lines)
 ***
 # Title: Condense Multiple Blank Lines
 # Category: editing
@@ -2315,7 +2315,7 @@ vim.cmd('%s/\s\+$//e')
 vim.cmd('%s/\n\{3,}/\r\r/e')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_unwanted_empty_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_unwanted_empty_lines)
 ***
 # Title: Remove Automatic Comment Leaders Quickly
 # Category: editing
@@ -2334,7 +2334,7 @@ vim.keymap.set('i', '<C-u>', function()
 end, { desc = 'Remove comment leader' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Removing_automatic_comment_leaders
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Removing_automatic_comment_leaders)
 ***
 # Title: Copy and Replace Words Quickly
 # Category: editing
@@ -2354,7 +2354,7 @@ Efficiently copy a word and replace multiple words with the copied text using ya
 -- Repeat with '.'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat)
 ***
 # Title: Copy and Replace Words Efficiently
 # Category: editing
@@ -2374,7 +2374,7 @@ Quickly copy a word and replace multiple occurrences using yanking and dot comma
 -- Essentially the same key sequence works
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_changes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_changes)
 ***
 # Title: Line Replacement Across Multiple Locations
 # Category: editing
@@ -2393,7 +2393,7 @@ Copy a line and replace lines at different locations using registers and dot com
 -- Use standard vim.api.nvim_buf_set_lines() for programmatic replacements
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_changes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_changes)
 ***
 # Title: Copy and Replace Words Across Multiple Locations
 # Category: editing
@@ -2414,7 +2414,7 @@ Efficiently copy a word and replace words in multiple locations using yank and r
 -- Mostly relies on standard Vim/Neovim keybindings
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeating
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeating)
 ***
 # Title: Quick Paragraph Sorting in Normal Mode
 # Category: editing
@@ -2430,7 +2430,7 @@ Vip:
 vim.cmd('normal Vip:')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeating_an_ex_command_on_multiple_blocks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeating_an_ex_command_on_multiple_blocks)
 ***
 # Title: Smart Word Replacement Across Files
 # Category: editing
@@ -2453,7 +2453,7 @@ vim.keymap.set('x', 'p', '"_dP', { desc = 'Paste without overwriting register' }
 vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text)
 ***
 # Title: Advanced Word Replacement Techniques
 # Category: editing
@@ -2479,7 +2479,7 @@ end, { desc = 'Paste without overwriting register' })
 vim.keymap.set('n', 'S', '"_diw"0P', { desc = 'Replace word with last yank' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replacing_a_string_with_default_buffer_contents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replacing_a_string_with_default_buffer_contents)
 ***
 # Title: Reverse Lines in Buffer
 # Category: editing
@@ -2499,7 +2499,7 @@ vim.cmd('g/^/m0')
 vim.cmd('100,150g/^/m99')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reverse_all_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reverse_all_lines)
 ***
 # Title: Reverse Lines Using External Command
 # Category: editing
@@ -2519,7 +2519,7 @@ vim.cmd(':%!tac')
 vim.cmd(':100,150!tac')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reverse_all_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reverse_all_lines)
 ***
 # Title: Reverse Lines in a Specific Range
 # Category: editing
@@ -2535,7 +2535,7 @@ Reverse lines within a specific line range, useful for targeted line order manip
 vim.cmd('100,150g/^/m99')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reverse_lines_in_a_file_using_tac
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reverse_lines_in_a_file_using_tac)
 ***
 # Title: Use Text Filters to Process Line Ranges
 # Category: editing
@@ -2560,7 +2560,7 @@ function ProcessSelectedLines(cmd)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip467
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip467)
 ***
 # Title: Swap Characters and Words Easily
 # Category: editing
@@ -2581,7 +2581,7 @@ dawwP
 -- for similar character/word swapping functionality
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip47
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip47)
 ***
 # Title: Toggle Paste Mode Easily
 # Category: editing
@@ -2598,7 +2598,7 @@ vim.keymap.set('n', '<F11>', ':set invpaste<CR>', { desc = 'Toggle paste mode' }
 vim.o.pastetoggle = '<F11>'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip471
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip471)
 ***
 # Title: Flexible Case Conversion in Text
 # Category: editing
@@ -2622,7 +2622,7 @@ vim.keymap.set('n', 'gUU', 'gUU', { desc = 'Convert line to uppercase' })
 vim.keymap.set('n', 'guu', 'guu', { desc = 'Convert line to lowercase' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip49
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip49)
 ***
 # Title: Easy Word Replacement Across Files
 # Category: editing
@@ -2645,7 +2645,7 @@ vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text'
 vim.keymap.set('x', 'p', 'p<Cmd>let @"=@0<CR>', { desc = 'Paste and preserve register' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip497
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip497)
 ***
 # Title: Insert Filename in Different Modes
 # Category: editing
@@ -2665,7 +2665,7 @@ vim.keymap.set('i', '<C-x>f', function()
 end, { desc = 'Insert current filename' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip530
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip530)
 ***
 # Title: Quick Text Filtering with External Commands
 # Category: editing
@@ -2687,7 +2687,7 @@ vim.keymap.set('n', '<leader>fp', '!}fmt<CR>', { desc = 'Format paragraph' })
 vim.keymap.set('n', '<leader>bc', '!}bc<CR>', { desc = 'Calculate expression' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip535
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip535)
 ***
 # Title: Quick Paragraph Line Joining
 # Category: editing
@@ -2702,7 +2702,7 @@ Easily join lines within paragraphs, removing excess newlines in a single comman
 vim.cmd('v/^\s*$/norm vipJ')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip579
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip579)
 ***
 # Title: Expand Abbreviations Without Extra Characters
 # Category: editing
@@ -2720,7 +2720,7 @@ vim.cmd('iabbrev hh hello')
 -- Use Ctrl-] in insert mode to expand without space
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip610
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip610)
 ***
 # Title: Start Editing Blank Lines with Correct Indent
 # Category: editing
@@ -2736,7 +2736,7 @@ Use cc or S to start editing a blank line with correct indentation instead of i 
 -- These commands are built-in and work with filetype indentation
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip644
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip644)
 ***
 # Title: Copy and Replace Words Across File
 # Category: editing
@@ -2757,7 +2757,7 @@ ciw<C-R>0<Esc>  " Change word with yanked text
 -- . to repeat
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip69
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip69)
 ***
 # Title: Outline Manipulation Techniques
 # Category: editing
@@ -2782,7 +2782,7 @@ vim.keymap.set('i', '<Tab>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip74
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip74)
 ***
 # Title: Insert Unicode Characters Easily
 # Category: editing
@@ -2802,7 +2802,7 @@ Multiple methods to insert Unicode characters in Vim/Neovim: using digraphs, dir
 -- Use :lua vim.api.nvim_input('<C-v>u2023') for direct Unicode input
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Working_with_Unicode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Working_with_Unicode)
 ***
 # Title: Inspect Unicode Character Details
 # Category: editing
@@ -2824,5 +2824,5 @@ vim.keymap.set('n', '<Leader>u', function()
 end, { desc = 'Inspect Unicode character' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Working_with_Unicode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Working_with_Unicode)
 ***

@@ -169,7 +169,7 @@ vim.opt.errorformat = '%f:%l: %m'
 vim.opt.makeprg = 'perl -MVimCompile -c %'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/%22compiler%22_for_perl
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%22compiler%22_for_perl)
 ***
 # Title: Capture External Command Output Flexibly
 # Category: command_line
@@ -210,7 +210,7 @@ vim.api.nvim_create_user_command('R', function(opts)
 end, { nargs = '*', complete = 'shellcmd' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Append_output_of_an_external_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Append_output_of_an_external_command)
 ***
 # Title: Execute Commands Across Line Ranges
 # Category: command_line
@@ -227,7 +227,7 @@ Apply any command to a specific line range using global command with empty patte
 vim.cmd('5,10g/^/ echo "Processing line"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Apply_range_to_any_command_that_does_not_accept_ranges
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Apply_range_to_any_command_that_does_not_accept_ranges)
 ***
 # Title: Custom Make Command with Quickfix
 # Category: command_line
@@ -245,7 +245,7 @@ vim.api.nvim_create_user_command('Make', function(opts)
 end, { nargs = '*' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_open_the_quickfix_window_on_:make
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_open_the_quickfix_window_on_:make)
 ***
 # Title: Quick Firefox URL Navigation from Vim
 # Category: command_line
@@ -279,7 +279,7 @@ vim.keymap.set('n', '<leader>ml', ':Repl file://' .. vim.fn.expand('%:p') .. '<C
 vim.keymap.set('n', '<leader>md', ':Repl http://localhost/<CR>', { desc = 'Open localhost in Firefox' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_refresh_display_of_html_on_saving_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_refresh_display_of_html_on_saving_file)
 ***
 # Title: Silent External Command Execution
 # Category: command_line
@@ -300,7 +300,7 @@ vim.api.nvim_create_user_command('Silent', function(ctx)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Avoid_hit_enter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Avoid_hit_enter)
 ***
 # Title: Powerful Global Command for Line Matching
 # Category: command_line
@@ -317,7 +317,7 @@ Use :g command to apply actions to lines matching a pattern
 vim.cmd('g/pattern/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_Tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_Tips)
 ***
 # Title: Perl-Based Command Evaluation in Vim
 # Category: command_line
@@ -334,7 +334,7 @@ Add a custom command to evaluate Perl expressions directly in Vim, allowing quic
 -- Note: Direct Perl integration may require additional plugin or configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Calculator_and_code_evaluation_using_Perl
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Calculator_and_code_evaluation_using_Perl)
 ***
 # Title: Escape Shell Command Special Characters
 # Category: command_line
@@ -351,7 +351,7 @@ let escaped_cmd = shellescape(original_cmd)
 local escaped_cmd = vim.fn.shellescape(original_cmd)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cannot_create_temporary_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cannot_create_temporary_file)
 ***
 # Title: Capture Ex Command Output in New Tab
 # Category: command_line
@@ -393,7 +393,7 @@ vim.api.nvim_create_user_command('TabMessage', function(opts)
 end, { nargs = '+', complete = 'command' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Capture_ex_command_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Capture_ex_command_output)
 ***
 # Title: Remote Vim Session Control via Client-Server
 # Category: command_line
@@ -411,7 +411,7 @@ vim --servername GVIM --remote-send '<Esc>:wqa<CR>'
 -- vim.fn.remote_send('GVIM', '<Esc>:wqa<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Close_vim_you_left_open_remotely
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Close_vim_you_left_open_remotely)
 ***
 # Title: Check Remote Vim Session Mode and Context
 # Category: command_line
@@ -428,7 +428,7 @@ vim --servername GVIM --remote-expr 'mode()'
 -- vim.fn.remote_expr('GVIM', 'getcwd()')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Close_vim_you_left_open_remotely
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Close_vim_you_left_open_remotely)
 ***
 # Title: Combine Multiple Code Checking Tools in Quickfix
 # Category: command_line
@@ -486,7 +486,7 @@ vim.api.nvim_create_user_command('Pycheck', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Combine_quickfix_steps
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Combine_quickfix_steps)
 ***
 # Title: Remove Last Path Component in Command Line
 # Category: command_line
@@ -508,7 +508,7 @@ vim.keymap.set('c', '<C-t>', function()
 end, { expr = true, replace_keycodes = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_line_filename_autocompletion_%22undo%22:_remove_last_path_component
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_line_filename_autocompletion_%22undo%22:_remove_last_path_component)
 ***
 # Title: Source Vim Script Directly from Command Line
 # Category: command_line
@@ -523,7 +523,7 @@ vim -S foobar.vim
 vim.cmd('source foobar.vim')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_line_switch_to_source_a_script
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_line_switch_to_source_a_script)
 ***
 # Title: Quick File Opening with Shell Command Shortcuts
 # Category: command_line
@@ -547,7 +547,7 @@ function v() {
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').oldfiles, { desc = 'Recent files' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_line_tricks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_line_tricks)
 ***
 # Title: Advanced Vim/GVim Command Line Options
 # Category: command_line
@@ -572,7 +572,7 @@ vim.g.started_with_read_only = true
 vim.api.nvim_win_set_cursor(0, {10, 0})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_line_tricks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_line_tricks)
 ***
 # Title: Mass File Editing with Arguments
 # Category: command_line
@@ -595,7 +595,7 @@ for _, file in ipairs(files) do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_line_tricks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_line_tricks)
 ***
 # Title: Powerful Command-Line History Navigation
 # Category: command_line
@@ -616,7 +616,7 @@ vim.keymap.set('n', '/', function() vim.cmd('q/i') end, { desc = 'Open search co
 vim.keymap.set('n', '?', function() vim.cmd('q?i') end, { desc = 'Open reverse search command window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_window)
 ***
 # Title: Keep Command Window Open After Execution
 # Category: command_line
@@ -645,7 +645,7 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_window)
 ***
 # Title: Run Java Class from Current File
 # Category: command_line
@@ -664,7 +664,7 @@ vim.keymap.set('n', '<F6>', function()
 end, { desc = 'Run Java class' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compile_Java_with_Jikes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_Java_with_Jikes)
 ***
 # Title: Quick Compile Current File with GCC
 # Category: command_line
@@ -679,7 +679,7 @@ set makeprg=gcc\ -o\ %<\ %
 vim.opt.makeprg = 'gcc -o %< %'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compiling_the_actual_file_with_gcc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compiling_the_actual_file_with_gcc)
 ***
 # Title: Quick Number Conversion with User Commands
 # Category: command_line
@@ -707,7 +707,7 @@ vim.api.nvim_create_user_command('Hex2dec', function(opts)
 end, { nargs = '?', range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_decimal_to_hex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_decimal_to_hex)
 ***
 # Title: Create Custom Count Command
 # Category: command_line
@@ -722,7 +722,7 @@ command -nargs=1 Count :%s/<args>//gn
 vim.api.nvim_create_user_command('Count', ':%s/<args>//gn', {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern)
 ***
 # Title: Verbose Command Execution Debugging
 # Category: command_line
@@ -738,7 +738,7 @@ Set verbose levels to get more detailed information about command execution
 -- Use :9verbose before commands to get detailed debug information
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Debugging_window_autocommands
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Debugging_window_autocommands)
 ***
 # Title: Selective Line Deletion with Exceptions
 # Category: command_line
@@ -765,7 +765,7 @@ for i = vim.fn.line('$'), 1, -1 do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_some_lines_with_some_exceptions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_some_lines_with_some_exceptions)
 ***
 # Title: Quickly Describe SQL Table from Vim
 # Category: command_line
@@ -781,7 +781,7 @@ Use a custom bash script to retrieve and insert table description directly into 
 vim.api.nvim_command('r !describe ' .. table_name)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Describe_a_SQL_table_from_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Describe_a_SQL_table_from_Vim)
 ***
 # Title: Repeat Ex Commands with Single Keystroke
 # Category: command_line
@@ -798,7 +798,7 @@ Quickly repeat the last Ex (colon) command using @: and repeat again with @@
 vim.keymap.set('n', '<leader>@', '@:', { desc = 'Repeat last Ex command' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know)
 ***
 # Title: Disable Command-Line Abbreviations Temporarily
 # Category: command_line
@@ -821,7 +821,7 @@ vim.opt.paste = not vim.opt.paste:get()
 -- Press <C-V> before the expansion character
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disabling_cabbrev
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disabling_cabbrev)
 ***
 # Title: Quickly Inspect Vim Environment
 # Category: command_line
@@ -846,7 +846,7 @@ print(vim.inspect(vim.opt))  -- Inspect options
 print(vim.inspect(vim.keymap.list()))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Displaying_the_current_Vim_environment
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Displaying_the_current_Vim_environment)
 ***
 # Title: Quickly Open Files with Whereis Command
 # Category: command_line
@@ -871,7 +871,7 @@ vim.api.nvim_create_user_command('VVim', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_file_found_by_whereis
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_file_found_by_whereis)
 ***
 # Title: Enhanced Command Window Navigation
 # Category: command_line
@@ -915,7 +915,7 @@ vim.api.nvim_create_autocmd('CmdwinLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enhanced_command_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enhanced_command_window)
 ***
 # Title: Command Window Enhanced Completion
 # Category: command_line
@@ -963,7 +963,7 @@ vim.api.nvim_create_autocmd('CmdwinLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enhanced_command_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enhanced_command_window)
 ***
 # Title: Manipulate Environment Variables in Vim
 # Category: command_line
@@ -998,7 +998,7 @@ vim.env.PATH = '/foo:/bar'
 vim.env.PATH = vim.env.PATH .. ':/foo:/bar'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Environment_variables
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Environment_variables)
 ***
 # Title: Asynchronously Run External Commands in Windows
 # Category: command_line
@@ -1017,7 +1017,7 @@ vim.keymap.set('n', '<F5>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_external_programs_asynchronously_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_external_programs_asynchronously_under_Windows)
 ***
 # Title: Quick Vim Help in Full Window
 # Category: command_line
@@ -1037,7 +1037,7 @@ local function open_help(topic)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_help_in_full_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_help_in_full_window)
 ***
 # Title: Command-Line Help Search Functions
 # Category: command_line
@@ -1067,7 +1067,7 @@ local function vim_help_grep(topic)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_help_in_full_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_help_in_full_window)
 ***
 # Title: Quickly Navigate Directories from Command Line
 # Category: command_line
@@ -1118,7 +1118,7 @@ vim.keymap.set('c', '<C-q>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Faster_directory_browsing_from_command_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Faster_directory_browsing_from_command_line)
 ***
 # Title: Fuzzy File Name Completion
 # Category: command_line
@@ -1135,7 +1135,7 @@ Use tab and Ctrl-D for dynamic file name completion and listing
 -- Use in command mode with Ctrl-D or Tab
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/File_explorer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_explorer)
 ***
 # Title: Get VIMRUNTIME Path in Bash Scripts
 # Category: command_line
@@ -1156,7 +1156,7 @@ local vimruntime = handle:read('*a'):gsub('[\r\n]', '')
 handle:close()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_VIMRUNTIME_in_a_bash_script
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_VIMRUNTIME_in_a_bash_script)
 ***
 # Title: Escape Shell Commands Properly
 # Category: command_line
@@ -1173,7 +1173,7 @@ let escaped_cmd = shellescape(original_cmd)
 local escaped_cmd = vim.fn.shellescape(original_cmd)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_errors_that_relate_to_reading_or_creating_files_in_the_temp_or_tmp_environment_on_an_MS_Windows_PC
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_errors_that_relate_to_reading_or_creating_files_in_the_temp_or_tmp_environment_on_an_MS_Windows_PC)
 ***
 # Title: Get Shell Command for Current Directory
 # Category: command_line
@@ -1191,7 +1191,7 @@ vim.api.nvim_create_user_command('Scd', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_a_shell_command_for_changing_to_the_current_directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_a_shell_command_for_changing_to_the_current_directory)
 ***
 # Title: Command Line Completion List Extraction
 # Category: command_line
@@ -1232,7 +1232,7 @@ function _G.get_cmd_completion(cmd_prefix)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_ex_command_line_completion_as_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_ex_command_line_completion_as_a_list)
 ***
 # Title: Enhanced Command-Line Completion
 # Category: command_line
@@ -1249,7 +1249,7 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = 'list:longest,full'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse)
 ***
 # Title: Fix Common Command-Line Typos
 # Category: command_line
@@ -1272,7 +1272,7 @@ vim.cmd('cabbrev q!@ q!')
 vim.cmd('cabbrev wq!@ wq!')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Handle_common_command_typos
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Handle_common_command_typos)
 ***
 # Title: Insert Buffer Contents into Command Line
 # Category: command_line
@@ -1292,7 +1292,7 @@ vim.keymap.set('c', '<C-r><C-w>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_insert_the_contents_of_a_buffer_into_the_command_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_insert_the_contents_of_a_buffer_into_the_command_line)
 ***
 # Title: Find Perl Path Dynamically
 # Category: command_line
@@ -1307,7 +1307,7 @@ Quickly insert the path to perl executable using which command
 vim.cmd('r !which perl')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_a_file)
 ***
 # Title: Complex Vim Command-Line Chaining
 # Category: command_line
@@ -1328,7 +1328,7 @@ vim.cmd('hardcopy!')
 vim.cmd('q!')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/JAVH_-_Just_another_Vim_Hacker
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/JAVH_-_Just_another_Vim_Hacker)
 ***
 # Title: List and Filter Loaded Vim Scripts
 # Category: command_line
@@ -1381,7 +1381,7 @@ vim.api.nvim_create_user_command('Scriptnames', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_loaded_scripts
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_loaded_scripts)
 ***
 # Title: Compile Current Buffer with Flexible Make Command
 # Category: command_line
@@ -1404,7 +1404,7 @@ vim.o.makeprg = 'gcc -o %< %'
 vim.cmd('make %:r')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make-compile_current_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make-compile_current_buffer)
 ***
 # Title: Compile Current File with Quickfix Support
 # Category: command_line
@@ -1430,7 +1430,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Compile current file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_function_keys_to_compile_and_run_your_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_function_keys_to_compile_and_run_your_code)
 ***
 # Title: Quickly Repeat Previous Command
 # Category: command_line
@@ -1447,7 +1447,7 @@ vim.keymap.set('n', '<Leader>.', function()
 end, { desc = 'Repeat previous command' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_to_enter_colon_commands
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_to_enter_colon_commands)
 ***
 # Title: Chain Multiple Vim Commands with Pipe
 # Category: command_line
@@ -1463,7 +1463,7 @@ Execute multiple Vim commands sequentially, with each command running only if th
 vim.cmd('s/htm/html/c | s/JPEG/jpg/c | s/GIF/gif/c')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Multiple_commands_at_once
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Multiple_commands_at_once)
 ***
 # Title: Create Convenient Shell Aliases
 # Category: command_line
@@ -1484,7 +1484,7 @@ alias gvlib="gvim --servername lib --remote"
 -- alias gvlib='nvim --servername lib --remote'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_file_in_already_running_vim_from_elsewhere
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_file_in_already_running_vim_from_elsewhere)
 ***
 # Title: Quick Word/WORD Paste in Command Line
 # Category: command_line
@@ -1501,7 +1501,7 @@ Easily paste word or WORD under cursor into command line using keyboard shortcut
 -- Can be used directly in command and search modes
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Paste_registers_in_search_or_colon_commands_instead_of_using_the_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Paste_registers_in_search_or_colon_commands_instead_of_using_the_clipboard)
 ***
 # Title: Quick Postgres Query Execution in Vim
 # Category: command_line
@@ -1518,7 +1518,7 @@ vim.keymap.set('n', '<F9>', function()
 end, { desc = 'Run current file as Postgres query' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_and_dirty_Postgres_query
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_and_dirty_Postgres_query)
 ***
 # Title: Quick Launch Browser from Vim
 # Category: command_line
@@ -1533,7 +1533,7 @@ Quickly open a URL in the default browser directly from Vim using the :!start ex
 vim.fn.system('start explorer http://www.vim.org/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_launch_html_and_other_Windows_documents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_launch_html_and_other_Windows_documents)
 ***
 # Title: Quick File Peek Without Opening Buffer
 # Category: command_line
@@ -1548,7 +1548,7 @@ View file contents directly in Vim's command line without opening a new buffer, 
 vim.api.nvim_command(string.format('echo join(readfile("%s"), "\n")', 'foo.bat'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_peek_at_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_peek_at_files)
 ***
 # Title: Quick Buffer and Global Commands
 # Category: command_line
@@ -1568,7 +1568,7 @@ vim.cmd('bufdo %s/pattern/substitution/g')
 vim.cmd('g/pattern/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips)
 ***
 # Title: Configure Quickfix for Visual Studio Build Errors
 # Category: command_line
@@ -1587,7 +1587,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Run makefile for current file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickfix_and_Visual_Studio_and_cygwin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickfix_and_Visual_Studio_and_cygwin)
 ***
 # Title: Use Quickfix with Doxygen for Error Navigation
 # Category: command_line
@@ -1604,7 +1604,7 @@ vim.opt.makeprg = 'doxygen'
 vim.cmd('make Doxyfile')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickfix_and_doxygen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickfix_and_doxygen)
 ***
 # Title: Powerful Range-Based Text Editing
 # Category: command_line
@@ -1626,7 +1626,7 @@ vim.cmd(':.,$s/old/new/g')             -- Replace from current line to end
 vim.cmd(':/pattern/,/endpattern/ s/old/new/g')  -- Replace between patterns
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Range
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Range)
 ***
 # Title: Flexible Line Range Operations in Vim
 # Category: command_line
@@ -1649,7 +1649,7 @@ vim.cmd("'a,'bd")                 -- Delete lines from mark a to b
 vim.cmd('/apples/,/peaches/s/^/# /g')  -- Comment lines between patterns
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ranges
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ranges)
 ***
 # Title: Read and Modify Environment Variables in Vim
 # Category: command_line
@@ -1684,7 +1684,7 @@ vim.env.PATH = '/foo:/bar'
 vim.env.PATH = vim.env.PATH .. ':/foo:/bar'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Read_Write_System_Enviroment_Variables
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_Write_System_Enviroment_Variables)
 ***
 # Title: Base64 Decoding in Vim Using System Commands
 # Category: command_line
@@ -1707,7 +1707,7 @@ local base64 = require('base64')
 vim.api.nvim_command(string.format(':lua vim.api.nvim_set_current_line(base64.decode(vim.api.nvim_get_current_line()))'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Read_base64_raw_string/email_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_base64_raw_string/email_in_Vim)
 ***
 # Title: Advanced Command Line Recall
 # Category: command_line
@@ -1724,7 +1724,7 @@ q:
 vim.cmd('q:')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last)
 ***
 # Title: Repeat Last Ex Command Efficiently
 # Category: command_line
@@ -1749,7 +1749,7 @@ vim.cmd('normal! @@')
 vim.cmd('normal! 10@@')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_colon_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_colon_command)
 ***
 # Title: Repeat Ex Command on Multiple Blocks
 # Category: command_line
@@ -1765,7 +1765,7 @@ Use the global command to apply an Ex command (like sort) to multiple blocks of 
 vim.cmd('g/^\s*$/;//-1sort')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeating_an_ex_command_on_multiple_blocks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeating_an_ex_command_on_multiple_blocks)
 ***
 # Title: Replace Built-in Commands with Command Abbreviations
 # Category: command_line
@@ -1797,7 +1797,7 @@ end
 vim.cmd('cabbrev w1 <c-r>=(getcmdtype()==":" && getcmdpos()==1 ? "w!" : "w1")<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_built-in_command_using_cabbrev
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_built-in_command_using_cabbrev)
 ***
 # Title: Quickly Find Full Command Path in Scripts
 # Category: command_line
@@ -1821,7 +1821,7 @@ end
 -- vim.fn.setline('.', get_command_path('cat'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_selected_shell_command_with_full_path_when_editing_scripts
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_selected_shell_command_with_full_path_when_editing_scripts)
 ***
 # Title: Run Commands Within Current Function
 # Category: command_line
@@ -1837,7 +1837,7 @@ Create a mapping to restrict commands like substitution to the current function 
 vim.keymap.set('c', ';tf', '?^{??(?,/^}/', { desc = 'Select current function scope' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Run_Vim_command_on_current_C/C%2B%2B/Java_function
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Run_Vim_command_on_current_C/C%2B%2B/Java_function)
 ***
 # Title: Master Command-Line History Navigation
 # Category: command_line
@@ -1866,7 +1866,7 @@ vim.keymap.set('n', '/', function() vim.cmd('q/') end, { desc = 'Open search his
 vim.keymap.set('n', '?', function() vim.cmd('q?') end, { desc = 'Open reverse search history window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip45
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip45)
 ***
 # Title: Use Quickfix Window for Compile Errors
 # Category: command_line
@@ -1894,7 +1894,7 @@ vim.keymap.set('n', '<M-3>', ':cn<CR>', { desc = 'Next error' })
 vim.keymap.set('n', '<M-4>', ':cl<CR>', { desc = 'List errors' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip458
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip458)
 ***
 # Title: Easily Capture Shell Command Output in Buffer
 # Category: command_line
@@ -1917,7 +1917,7 @@ vim.api.nvim_create_user_command('R', function(ctx)
 end, { nargs = '*', complete = 'shellcmd' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip467
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip467)
 ***
 # Title: Quick XML Wellformedness Check
 # Category: command_line
@@ -1932,7 +1932,7 @@ Validate XML file's wellformedness directly from Vim using xmllint
 vim.cmd('!xmllint --noout %')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip583
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip583)
 ***
 # Title: Create Custom Vim Commands with Autocompletion
 # Category: command_line
@@ -1979,7 +1979,7 @@ end, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip591
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip591)
 ***
 # Title: Command Window Ctrl-D Completion
 # Category: command_line
@@ -2025,7 +2025,7 @@ end
 vim.api.nvim_create_user_command('ECWCtrlD', ecw_ctrl_d, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip681
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip681)
 ***
 # Title: Quick Copy and Paste with pbcopy/pbpaste
 # Category: command_line
@@ -2050,7 +2050,7 @@ Use macOS pbcopy and pbpaste commands directly from Vim for system clipboard ope
 -- These can typically be used directly in Neovim's command mode as well
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip687
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip687)
 ***
 # Title: Dynamically Replace Grep with Custom Search Program
 # Category: command_line
@@ -2086,7 +2086,7 @@ vim.api.nvim_create_user_command('CScope', function(opts)
 end, { nargs = '*' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip688
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip688)
 ***
 # Title: Quick PHP Syntax Checking in Vim/Neovim
 # Category: command_line
@@ -2101,7 +2101,7 @@ map <C-B> :!php -l %<CR>
 vim.keymap.set('n', '<C-b>', ':!php -l %<CR>', { desc = 'Check PHP syntax' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip692
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip692)
 ***
 # Title: Execute Shell Command in Explorer Directory
 # Category: command_line
@@ -2157,7 +2157,7 @@ end
 vim.g.explFileHandler = 'my_file_handler'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip717
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip717)
 ***
 # Title: Quick XML Validation with xmllint
 # Category: command_line
@@ -2172,5 +2172,5 @@ Quickly check XML document well-formedness directly from Vim using xmllint
 vim.cmd('!xmllint --noout %')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Vim_as_XML_Editor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_as_XML_Editor)
 ***

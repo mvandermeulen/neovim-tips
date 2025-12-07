@@ -192,7 +192,7 @@ end
 -- :lua LineBreakAt(true, 'function')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_a_newline_after_given_patterns
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_a_newline_after_given_patterns)
 ***
 # Title: Use Alternate Delimiters in Search/Replace
 # Category: search_replace
@@ -208,7 +208,7 @@ Use alternative delimiters in search and replace commands to simplify working wi
 vim.cmd('s#/usr/local/#/opt/#')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternate_delimiters_for_the_replace_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternate_delimiters_for_the_replace_command)
 ***
 # Title: Search Only Within Visually Selected Range
 # Category: search_replace
@@ -267,7 +267,7 @@ vim.keymap.set('n', '<Leader>/', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Another_%22Search_Only_In_a_Visually_Selected_Range%22
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Another_%22Search_Only_In_a_Visually_Selected_Range%22)
 ***
 # Title: Block-wise Visual Substitution Without Plugin
 # Category: search_replace
@@ -283,7 +283,7 @@ Use \%V to limit substitutions to visual selection area
 -- vim.cmd(':%s/\%V{pattern}/{string}/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Applying_substitutes_to_a_visual_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Applying_substitutes_to_a_visual_block)
 ***
 # Title: Quick Search for Word Under Cursor
 # Category: search_replace
@@ -300,7 +300,7 @@ Use * and # to search for the word under the cursor forward and backward
 -- Can use vim.fn.expand('<cword>') to get word under cursor programmatically
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Best_Tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_Tips)
 ***
 # Title: CSV Column Search and Manipulation
 # Category: search_replace
@@ -335,7 +335,7 @@ local function csv_delete_column(column)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/CSV
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/CSV)
 ***
 # Title: Convert C++ Comments to C Comments
 # Category: search_replace
@@ -353,7 +353,7 @@ vim.keymap.set('n', '<F5>', function()
 end, { desc = 'Convert C++ comments to C comments' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_C%2B%2B_comments_to_C_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_C%2B%2B_comments_to_C_comments)
 ***
 # Title: Convert HTML Tags to Lowercase
 # Category: search_replace
@@ -368,7 +368,7 @@ Efficiently convert HTML tag names to lowercase using a powerful Vim regex subst
 vim.cmd('%s/<\/\?\zs\(\a\+\)\ze[ >]/\L\1/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Changing_all_HTML_tags_to_lowercase
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_all_HTML_tags_to_lowercase)
 ***
 # Title: Convert HTML Attributes to Lowercase
 # Category: search_replace
@@ -383,7 +383,7 @@ Convert HTML tag attributes to lowercase while preserving attribute values
 vim.cmd('%s/\(<[^>]*\)\@<=\<\(\a*\)\ze=['"]*/\L\2/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Changing_all_HTML_tags_to_lowercase
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_all_HTML_tags_to_lowercase)
 ***
 # Title: Change Case Using Regex Substitutions
 # Category: search_replace
@@ -406,7 +406,7 @@ vim.cmd(':%s/.*/\L&/')
 vim.cmd(':%s/<\(\w*\)/<\U\1/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Changing_case_with_regular_expressions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_case_with_regular_expressions)
 ***
 # Title: Alternative Delimiters for Substitution
 # Category: search_replace
@@ -423,7 +423,7 @@ Use alternative delimiters in substitution commands to handle paths with multipl
 vim.cmd.substitute(',/abc/def/ghi/,,e')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command_for_searching_expressions_(paths)_wich_include_backslashes.
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command_for_searching_expressions_(paths)_wich_include_backslashes.)
 ***
 # Title: Operate on Search Matches in Vim 7.4+
 # Category: search_replace
@@ -446,7 +446,7 @@ Use `gn` to visually select and operate on search matches easily. Works great wi
 -- .         -- repeat change
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_or_change_search_hit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_or_change_search_hit)
 ***
 # Title: Copy Search Matches Efficiently
 # Category: search_replace
@@ -478,7 +478,7 @@ vim.api.nvim_create_user_command('CopyMatches', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_search_matches
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_search_matches)
 ***
 # Title: Copy Search Matches to Clipboard
 # Category: search_replace
@@ -508,7 +508,7 @@ vim.api.nvim_create_user_command('CopyMatches', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_the_search_results_into_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_the_search_results_into_clipboard)
 ***
 # Title: Delete Lines Containing Search Matches
 # Category: search_replace
@@ -555,7 +555,7 @@ vim.api.nvim_create_user_command('DeleteLines', function(opts)
 end, { nargs = '?', range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_the_search_results_into_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_the_search_results_into_clipboard)
 ***
 # Title: Convert Decimal Encoded Characters
 # Category: search_replace
@@ -572,7 +572,7 @@ vim.cmd(':%s/\\\([0-9]*\)/\=nr2char(submatch(1))/g')
 vim.cmd(':%s/&#\([0-9]*\);/\=nr2char(submatch(1))/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Correcting_accented_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Correcting_accented_characters)
 ***
 # Title: Count Pattern Matches in Buffer
 # Category: search_replace
@@ -590,7 +590,7 @@ vim.cmd(':%s/pattern//gn')  -- Count all matches
 vim.cmd(':%s/pattern//n')   -- Count lines with matches
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern)
 ***
 # Title: Quick Count of Word Under Cursor
 # Category: search_replace
@@ -605,7 +605,7 @@ map ,* *<C-O>:%s///gn<CR>
 vim.keymap.set('n', ',*', '*<C-O>:%s///gn<CR>', { desc = 'Count word occurrences' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Count_number_of_matches_of_a_pattern)
 ***
 # Title: CSV Search Within Specific Column
 # Category: search_replace
@@ -636,7 +636,7 @@ vim.api.nvim_create_user_command('SC', function(opts)
 end, { nargs = '+' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Csv
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Csv)
 ***
 # Title: Advanced Pattern Matching with Global Command
 # Category: search_replace
@@ -653,7 +653,7 @@ Use \| (or) to filter lines based on multiple patterns, keeping only specific ma
 vim.cmd('v/error\|warn\|fail/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern)
 ***
 # Title: Search and Find Lines Longer Than 80 Characters
 # Category: search_replace
@@ -668,7 +668,7 @@ Quickly locate lines that exceed 80 characters in length, useful for code style 
 vim.fn.search('\%>80v.\+')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2009
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know/2009)
 ***
 # Title: Convenient Search and Highlight Clearing
 # Category: search_replace
@@ -685,7 +685,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 vim.keymap.set('n', '<C-L>', ':nohl<CR><C-L>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Example_vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_vimrc)
 ***
 # Title: Swap Adjacent Words with Regex
 # Category: search_replace
@@ -708,7 +708,7 @@ vim.cmd('s/\v(<\k*%#\k*>)(\_.\.{-})(<\k+>)/\3\2\1/')
 vim.cmd('s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Exchanging/swapping_adjacent_words
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Exchanging/swapping_adjacent_words)
 ***
 # Title: Incremental Search with Live Preview
 # Category: search_replace
@@ -723,7 +723,7 @@ set incsearch
 vim.opt.incsearch = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find)
 ***
 # Title: Advanced Search and Replace with Confirmation
 # Category: search_replace
@@ -738,7 +738,7 @@ Perform global search and replace with interactive confirmation across entire fi
 vim.cmd('%s/foo/bar/gc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_and_Replace
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_and_Replace)
 ***
 # Title: Case-Sensitive and Insensitive Search Replace
 # Category: search_replace
@@ -755,7 +755,7 @@ vim.cmd(':%s/foo/bar/gci')    -- Case insensitive
 vim.cmd(':%s/foo/bar/gcI')    -- Case sensitive
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_and_replace
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_and_replace)
 ***
 # Title: Precise Word Replacement
 # Category: search_replace
@@ -770,7 +770,7 @@ Replace only whole word matches to prevent partial word replacements
 vim.cmd(':%s/\<foo\>/bar/gc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_and_replace
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_and_replace)
 ***
 # Title: Speed Up Recursive Searches
 # Category: search_replace
@@ -785,7 +785,7 @@ Use noautocmd to significantly speed up recursive file searches by disabling aut
 vim.cmd('noautocmd vimgrep /{pattern}/[flags] {file(s)}')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_in_files_recursively
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_in_files_recursively)
 ***
 # Title: Recursive File Search with Vim
 # Category: search_replace
@@ -801,7 +801,7 @@ Search recursively through files using `**` wildcard, which enables searching in
 vim.fn.execute('vimgrep /dostuff()/j ../**/*.c')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_in_files_within_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_in_files_within_Vim)
 ***
 # Title: Find and Remove Duplicate Words
 # Category: search_replace
@@ -818,7 +818,7 @@ Find and identify accidentally duplicated words in text
 vim.fn.search('\(\<\w\+\>\)\s*\<\1\>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_two_words_in_either_order
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_two_words_in_either_order)
 ***
 # Title: Advanced Search with Case Sensitivity
 # Category: search_replace
@@ -841,7 +841,7 @@ vim.opt.smartcase = true
 -- Note: \c and \C modifiers work the same in Lua search
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Findlast_occurrence_of_an_item
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Findlast_occurrence_of_an_item)
 ***
 # Title: Advanced Word Search Mappings
 # Category: search_replace
@@ -865,7 +865,7 @@ vim.keymap.set('n', '#', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Findlast_occurrence_of_an_item
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Findlast_occurrence_of_an_item)
 ***
 # Title: Smart Case Sensitivity in Search
 # Category: search_replace
@@ -880,7 +880,7 @@ set smartcase
 vim.opt.smartcase = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help)
 ***
 # Title: Smart Case-Sensitive Search
 # Category: search_replace
@@ -895,7 +895,7 @@ set smartcase
 vim.opt.smartcase = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2008
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help/2008)
 ***
 # Title: Remove Duplicate Lines Efficiently
 # Category: search_replace
@@ -916,7 +916,7 @@ vim.cmd('g/^\(.*\)\(\r\?\n\1\)\+$/d')
 vim.cmd('%!uniq')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/G
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/G)
 ***
 # Title: Compress Multiple Blank Lines
 # Category: search_replace
@@ -937,7 +937,7 @@ vim.cmd('v/./,/./-j')
 vim.cmd('%s/^$\n^$//g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/G
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/G)
 ***
 # Title: Flexible Word Search Under Cursor
 # Category: search_replace
@@ -955,7 +955,7 @@ Perform more flexible searches for words under the cursor, including partial mat
 -- Can be enhanced with telescope or other search plugins
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Go_to_definition_using_g
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Go_to_definition_using_g)
 ***
 # Title: Hex/Decimal Conversion Across Text
 # Category: search_replace
@@ -988,7 +988,7 @@ vim.api.nvim_create_user_command('Dec2hex', function(opts)
 end, { nargs = '?', range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hex_or_unhex_strings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_or_unhex_strings)
 ***
 # Title: Toggle Search Highlighting Easily
 # Category: search_replace
@@ -1007,7 +1007,7 @@ vim.keymap.set('n', '<Space>', function()
 end, { silent = true, desc = 'Clear search highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches)
 ***
 # Title: Highlight Current Word Without Moving
 # Category: search_replace
@@ -1026,7 +1026,7 @@ vim.keymap.set('n', '<F8>', function()
 end, { desc = 'Highlight current word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches)
 ***
 # Title: Toggle Highlighting for Current Word
 # Category: search_replace
@@ -1067,7 +1067,7 @@ end
 vim.keymap.set('n', '<CR>', toggle_highlighting, { silent = true, desc = 'Toggle word highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_all_search_pattern_matches)
 ***
 # Title: Advanced Word Highlight Search Navigation
 # Category: search_replace
@@ -1090,7 +1090,7 @@ vim.keymap.set('n', '<leader>F', function()
 end, { desc = 'Find previous highlighted word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_multiple_words
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_multiple_words)
 ***
 # Title: Highlight Only Current Search Result
 # Category: search_replace
@@ -1121,7 +1121,7 @@ vim.keymap.set('n', '*', '*gN', { silent = true })
 vim.keymap.set('v', '*', '*gN', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_only_the_current_search_result
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_only_the_current_search_result)
 ***
 # Title: Quick Text Replacement Using Command Line
 # Category: search_replace
@@ -1142,7 +1142,7 @@ vim.keymap.set('n', '<leader>s', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_insert_the_contents_of_a_buffer_into_the_command_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_insert_the_contents_of_a_buffer_into_the_command_line)
 ***
 # Title: Quick Multi-Line Text Substitution
 # Category: search_replace
@@ -1162,7 +1162,7 @@ vim.cmd('s/^/new text /')  -- Insert at start
 vim.cmd('s/$/new text/')  -- Append at end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Inserting_text_in_multiple_lines)
 ***
 # Title: Replace Word Under Cursor Quickly
 # Category: search_replace
@@ -1177,7 +1177,7 @@ Quickly replace all instances of the word under the cursor in the entire buffer
 vim.keymap.set('n', '<S-F4>', ':%s/<C-r><C-w>//gc<Left><Left><Left>', { desc = 'Replace word under cursor globally' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keystroke_Saving_Substituting_and_Searching
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keystroke_Saving_Substituting_and_Searching)
 ***
 # Title: Highlight Search Pattern in Line Listing
 # Category: search_replace
@@ -1258,7 +1258,7 @@ vim.api.nvim_create_user_command('PP', function(opts)
 end, { nargs = '?', range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_lines_with_current_search_pattern_highlighted
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_lines_with_current_search_pattern_highlighted)
 ***
 # Title: Flexible Keyword Search and Jump
 # Category: search_replace
@@ -1298,7 +1298,7 @@ end
 vim.keymap.set('n', '<Leader>p', jump_prompt, { desc = 'Prompt for keyword and jump' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_lines_with_keyword_and_prompt_for_jump
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_lines_with_keyword_and_prompt_for_jump)
 ***
 # Title: Create Outline Using Vimgrep
 # Category: search_replace
@@ -1315,7 +1315,7 @@ vim.cmd('vimgrep /{{{/j %')
 vim.cmd('copen')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_of_Scripts_for_Outlining
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_of_Scripts_for_Outlining)
 ***
 # Title: Dynamic Number Substitution
 # Category: search_replace
@@ -1340,7 +1340,7 @@ vim.cmd(':%s/abc/xyz_' .. i .. '/g')
 -- Note: More complex incremental logic would require custom Lua function
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_a_list)
 ***
 # Title: Cross-Buffer Text Replacement via Substitute
 # Category: search_replace
@@ -1355,7 +1355,7 @@ Replace all instances of last searched text with last yanked text across entire 
 vim.cmd('%%s//\\=@"/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode)
 ***
 # Title: Exclude Lines Containing Specific Pattern
 # Category: search_replace
@@ -1379,7 +1379,7 @@ vim.cmd('sav junk.log')
 vim.cmd('v/warning/d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_every_word_except_foo
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_every_word_except_foo)
 ***
 # Title: Advanced Negative Lookahead Searches
 # Category: search_replace
@@ -1400,7 +1400,7 @@ vim.fn.search('\<\(foo\>\)\@!\k\+\>', 'n')
 vim.fn.search('\(foo.*\)\@<!bar', 'n')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_every_word_except_foo
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_every_word_except_foo)
 ***
 # Title: Comment Lines Matching a Pattern
 # Category: search_replace
@@ -1416,7 +1416,7 @@ Modify lines matching a specific pattern by adding a comment character or transf
 vim.cmd('g/foo/normal I*')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Modifying_a_line_and_all_subsequent_lines_matching_a_pattern
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Modifying_a_line_and_all_subsequent_lines_matching_a_pattern)
 ***
 # Title: Dynamic Highlight Search and Navigation
 # Category: search_replace
@@ -1439,7 +1439,7 @@ vim.keymap.set('n', '<leader>F', function()
 end, { desc = 'Find previous highlighted word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Multiple_Hilighted_Search
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Multiple_Hilighted_Search)
 ***
 # Title: Use Perl-Style Regex in Vim Substitutions
 # Category: search_replace
@@ -1493,7 +1493,7 @@ vim.api.nvim_create_user_command('S', function(opts)
 end, {range = true, nargs = 1})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Perl_compatible_regular_expressions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Perl_compatible_regular_expressions)
 ***
 # Title: Use Very-Magic Regex Mode
 # Category: search_replace
@@ -1512,7 +1512,7 @@ vim.keymap.set('n', '/', '/\v', { desc = 'Search with very-magic regex' })
 vim.keymap.set('n', ',/', '/', { desc = 'Normal search' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Perl_compatible_regular_expressions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Perl_compatible_regular_expressions)
 ***
 # Title: Global Command for Powerful Text Manipulation
 # Category: search_replace
@@ -1542,7 +1542,7 @@ vim.cmd('g!/pattern/d')
 vim.cmd('g/^/pu ="\n"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Power_of
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Power_of)
 ***
 # Title: Perform Operation on Matching Lines
 # Category: search_replace
@@ -1560,7 +1560,7 @@ Run a macro on all lines matching a specific pattern
 vim.cmd('g/pattern/normal @q')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Power_of
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Power_of)
 ***
 # Title: Replace Spaces with Tabs Globally
 # Category: search_replace
@@ -1575,7 +1575,7 @@ Replace all spaces with tabs, respecting current tabstop width
 vim.cmd('%s/ /\t/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preexisting_code_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preexisting_code_indentation)
 ***
 # Title: Quick HTML Attribute Quoting
 # Category: search_replace
@@ -1590,7 +1590,7 @@ map <F9> :%s/\([^&^?]\)\(\<[[:alnum:]-]\{-}\)=\([[:alnum:]-#%]\+\)/\1\2="\3"/g<C
 vim.keymap.set('n', '<F9>', ':%s/\([^&^?]\)\(\<[[:alnum:]-]\{-}\)=\([[:alnum:]-#%]\+\)/\1\2="\3"/g<CR>', { desc = 'Quote unquoted HTML attributes' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quote_unquoted_HTML_attributes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quote_unquoted_HTML_attributes)
 ***
 # Title: Abbreviated HTML Attribute Quoting
 # Category: search_replace
@@ -1605,7 +1605,7 @@ cabbrev reg1 %s/=\([^"][^> ]\{0,40\}\)/="\1"/gc
 vim.cmd('cabbrev reg1 %s/=\([^"][^> ]\{0,40\}\)/="\1"/gc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quote_unquoted_HTML_attributes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quote_unquoted_HTML_attributes)
 ***
 # Title: Advanced Range Selection Techniques
 # Category: search_replace
@@ -1633,7 +1633,7 @@ vim.cmd('mb')   -- Mark end of range
 vim.cmd("'a,'bs/old/new/g")  -- Substitute between marks
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ranges
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ranges)
 ***
 # Title: Quickly Filter and List Search Matches
 # Category: search_replace
@@ -1659,7 +1659,7 @@ vim.api.nvim_create_user_command('Filter', function(opts)
 end, { nargs = '?' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Redirect_g_search_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Redirect_g_search_output)
 ***
 # Title: Redirect Search Results to a New Window
 # Category: search_replace
@@ -1684,7 +1684,7 @@ vim.keymap.set('n', '<F3>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Redirect_g_search_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Redirect_g_search_output)
 ***
 # Title: Find Whole Words in Search
 # Category: search_replace
@@ -1701,7 +1701,7 @@ Use \<word\> to search for exact whole word matches, avoiding partial word match
 vim.fn.search('\<i\>', 'n')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regex)
 ***
 # Title: Flexible Multi-Word Search
 # Category: search_replace
@@ -1718,7 +1718,7 @@ Use \| to search for multiple alternative whole words in a single pattern
 vim.fn.search('\v<(red|green|blue)>', 'n')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regex)
 ***
 # Title: Regex Lookahead and Lookbehind
 # Category: search_replace
@@ -1735,7 +1735,7 @@ Advanced regex techniques to match patterns with conditional context using looka
 vim.fn.search('\v(foo)@<=bar(baz)@=')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind)
 ***
 # Title: Zero-Width Matching with \zs and \ze
 # Category: search_replace
@@ -1752,7 +1752,7 @@ Most performant way to do lookaround matching, marking start/end of match withou
 vim.fn.search('foo\zsbar\ze baz')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regex_lookahead_and_lookbehind)
 ***
 # Title: Advanced Search with OR Patterns
 # Category: search_replace
@@ -1769,7 +1769,7 @@ Use \| to search for multiple whole words, with precise word boundary matching
 vim.fn.search('\<\(red\|green\|blue\)\>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regexp_to_strip_redundant_zeroes_in_decimal_fractions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regexp_to_strip_redundant_zeroes_in_decimal_fractions)
 ***
 # Title: Advanced Word Searching with Regular Expressions
 # Category: search_replace
@@ -1791,7 +1791,7 @@ Find whole words precisely using word boundary markers \< and \>
 vim.fn.search('\<i\>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regular_expression
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regular_expression)
 ***
 # Title: Flexible Multi-Word Search and Replace
 # Category: search_replace
@@ -1811,7 +1811,7 @@ Search or replace multiple whole words using OR operator
 vim.cmd(':%s/\<\(red\|green\|blue\)\>/purple/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regular_expression
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regular_expression)
 ***
 # Title: Highlight and Remove Unwanted Whitespace
 # Category: search_replace
@@ -1834,7 +1834,7 @@ vim.keymap.set('n', '<F12>', function()
 end, { desc = 'Toggle whitespace highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_unwanted_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_unwanted_spaces)
 ***
 # Title: Remove File Path Prefix with Advanced Search/Replace
 # Category: search_replace
@@ -1849,7 +1849,7 @@ Quickly remove path prefixes from file lists using a flexible regex substitution
 vim.cmd('%s/^.\\{-}\\ze///g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_up_to_the_nth_slash_to_clean_file_lists
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_up_to_the_nth_slash_to_clean_file_lists)
 ***
 # Title: Remove Multiple Path Levels in File Lists
 # Category: search_replace
@@ -1864,7 +1864,7 @@ Remove multiple directory levels from file paths by adjusting regex quantifier
 vim.cmd('%s/^\\((.\\{-}\\ze\\/\\)\\{3}//g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_up_to_the_nth_slash_to_clean_file_lists
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_up_to_the_nth_slash_to_clean_file_lists)
 ***
 # Title: Powerful Multi-File Search and Replace
 # Category: search_replace
@@ -1884,7 +1884,7 @@ vim.cmd('update')
 vim.cmd('next')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_colon_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_colon_command)
 ***
 # Title: Grep Search Across Files with Quickfix Navigation
 # Category: search_replace
@@ -1932,7 +1932,7 @@ end
 vim.keymap.set('n', 'g/', function() _G.mosh_grep() end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_search_using_grep
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_search_using_grep)
 ***
 # Title: Repeat Substitution from Cursor Position
 # Category: search_replace
@@ -1985,7 +1985,7 @@ vim.api.nvim_create_user_command('RS', function(opts)
 end, { nargs = '*', range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeating_a_substitute_from_current_cursor_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeating_a_substitute_from_current_cursor_position)
 ***
 # Title: Word Replacement with Confirmation
 # Category: search_replace
@@ -2003,7 +2003,7 @@ vim.keymap.set('n', '<Leader>s', function()
 end, { desc = 'Replace word with confirmation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip464
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip464)
 ***
 # Title: Quick Word Search in Current File
 # Category: search_replace
@@ -2022,7 +2022,7 @@ vim.api.nvim_create_user_command('GREP', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip483
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip483)
 ***
 # Title: Toggle Search Highlight with Single Keypress
 # Category: search_replace
@@ -2041,7 +2041,7 @@ vim.keymap.set('n', '<F4>', function()
 end, { desc = 'Toggle search highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip486
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip486)
 ***
 # Title: Title Case Conversion with Substitute
 # Category: search_replace
@@ -2058,7 +2058,7 @@ Advanced substitution command to convert text to title case, preserving first le
 vim.cmd('s/\v(\w)(\S*)/\u\1\L\2/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip49
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip49)
 ***
 # Title: Flexible Multiple Word Search
 # Category: search_replace
@@ -2076,7 +2076,7 @@ local pattern = '\v<(red|green|blue)>'
 vim.fn.search(pattern, 'n')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip516
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip516)
 ***
 # Title: Advanced Duplicate Line Removal
 # Category: search_replace
@@ -2091,7 +2091,7 @@ Remove duplicate lines with more complex regex-based methods, preserving line or
 vim.cmd('%s/^\(.*\)(\n\1)+$/\1/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip648
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip648)
 ***
 # Title: Advanced Substitution with Capture Groups
 # Category: search_replace
@@ -2107,7 +2107,7 @@ Use capture groups to perform complex search and replace operations by referenci
 vim.cmd('g/\(M\)\([0-9]\)\([0-9]\)/s//\1[\2][\3]/g')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip654
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip654)
 ***
 # Title: Simple Regex Substitution with Capture Groups
 # Category: search_replace
@@ -2123,7 +2123,7 @@ Easily transform patterns using capture groups and references
 vim.cmd('%s/\v(\d)(\d)/[\1][\2]')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip654
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip654)
 ***
 # Title: Flexible CSV Column Search and Manipulation
 # Category: search_replace
@@ -2167,7 +2167,7 @@ vim.api.nvim_create_user_command('SC', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip667
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip667)
 ***
 # Title: Delete Lines with Selective Filtering
 # Category: search_replace
@@ -2183,7 +2183,7 @@ Efficiently delete lines matching a pattern while preserving exceptions using Vi
 vim.api.nvim_exec([[g!/\.\/help\/de/d]], false)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip670
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip670)
 ***
 # Title: Advanced Global Command Line Filtering
 # Category: search_replace
@@ -2199,7 +2199,7 @@ g#\(^\./help/\)\(de/\)\@!#d
 vim.api.nvim_exec([[g#\(^\.\/help\/\)\(de\/\)\@!#d]], false)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip670
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip670)
 ***
 # Title: Quick Toggle to Remove Search Highlights
 # Category: search_replace
@@ -2214,7 +2214,7 @@ set nohlsearch
 vim.opt.hlsearch = false
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip675
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip675)
 ***
 # Title: Advanced Search with Case Sensitivity Controls
 # Category: search_replace
@@ -2242,7 +2242,7 @@ vim.keymap.set('n', '*', function()
 end, { desc = 'Smart word search' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip679
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip679)
 ***
 # Title: Search Paths Without Escaping Slashes
 # Category: search_replace
@@ -2260,7 +2260,7 @@ Use alternative delimiters like '?' or other characters to search file paths wit
 vim.cmd('g ?c:/tmp/x/y/z/? d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip685
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip685)
 ***
 # Title: Flexible Search and Replace Delimiters
 # Category: search_replace
@@ -2278,7 +2278,7 @@ Use different characters for search and replace operations to avoid escaping com
 vim.cmd('g#/tmp/#s//#tmp#/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip685
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip685)
 ***
 # Title: Use Expressions in Substitute Commands
 # Category: search_replace
@@ -2298,7 +2298,7 @@ vim.cmd(':%s/^/\\=line(".")."\t"/')
 vim.cmd(':10,20s/^/\\=line(".")."\t"/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip755
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip755)
 ***
 # Title: Sequential Line Numbering with Counter
 # Category: search_replace
@@ -2316,7 +2316,7 @@ vim.cmd(':10,20g/^/let counter=counter+1')
 vim.cmd(':10,20s/^/\\=g:counter."\t"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip755
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip755)
 ***
 # Title: Sort Lines by Selected Substring
 # Category: search_replace
@@ -2343,5 +2343,5 @@ vim.keymap.set('v', 'm$', function()
 end, { desc = 'Move matching lines to bottom' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip758
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip758)
 ***

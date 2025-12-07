@@ -102,7 +102,7 @@ vim.keymap.set('n', '<leader>dh', function()
 end, { desc = 'Toggle diff highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/A_better_Vimdiff_Git_mergetool
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_better_Vimdiff_Git_mergetool)
 ***
 # Title: Show ASCII/Unicode Value of Character
 # Category: display
@@ -121,7 +121,7 @@ vim.opt.statusline = '%<%f%h%m%r%=%b 0x%B  %l,%c%V %P'
 vim.opt.laststatus = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ascii_Value
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ascii_Value)
 ***
 # Title: Get Character Value in Command Mode
 # Category: display
@@ -139,7 +139,7 @@ Quickly view ASCII/Unicode value of the current character using built-in command
 -- Or use :ascii or :as in command mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ascii_Value
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ascii_Value)
 ***
 # Title: Soft Line Wrapping
 # Category: display
@@ -160,7 +160,7 @@ vim.keymap.set('n', 'j', 'gj', { noremap = true })
 vim.keymap.set('n', 'k', 'gk', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_word_wrapping
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_word_wrapping)
 ***
 # Title: Dynamic Font Size Adjustment in GUI
 # Category: display
@@ -213,7 +213,7 @@ vim.keymap.set('n', '<C-S-F11>', scale_font_down, { desc = 'Decrease font size' 
 vim.keymap.set('n', '<C-S-F12>', scale_font_up, { desc = 'Increase font size' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_guifont_to_see_more_of_your_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_guifont_to_see_more_of_your_file)
 ***
 # Title: Toggle Cursor Line and Column Highlighting
 # Category: display
@@ -237,7 +237,7 @@ vim.keymap.set('n', '<Leader>c', function()
 end, { desc = 'Toggle cursor line and column highlight' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Color_active_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Color_active_line)
 ***
 # Title: Customize PuTTY Colors for Vim Desert Scheme
 # Category: display
@@ -252,7 +252,7 @@ Detailed guide for configuring PuTTY color palette to match Vim's desert color s
 vim.cmd('colorscheme desert')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Desert_color_scheme_with_Vim_in_PuTTY
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Desert_color_scheme_with_Vim_in_PuTTY)
 ***
 # Title: Smart Line Number and Column Display
 # Category: display
@@ -269,7 +269,7 @@ vim.opt.number = true
 vim.opt.numberwidth = 4
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know)
 ***
 # Title: Display Date and Time in Status Line
 # Category: display
@@ -286,7 +286,7 @@ vim.opt.ruler = true
 vim.opt.rulerformat = '%55(%{strftime("%a %b %e %I:%M %p")} %5l,%-6(%c%V%) %P%)'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_date-and-time_on_status_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_date-and-time_on_status_line)
 ***
 # Title: Automatic Status Line Update with Timer
 # Category: display
@@ -306,7 +306,7 @@ local timer = vim.fn.timer_start(4000, function()
 end, {repeat = -1})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_date-and-time_on_status_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_date-and-time_on_status_line)
 ***
 # Title: Relative Line Numbers for Easy Navigation
 # Category: display
@@ -323,7 +323,7 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_line_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_line_numbers)
 ***
 # Title: Customize Line Number Appearance
 # Category: display
@@ -343,7 +343,7 @@ vim.api.nvim_set_hl(0, 'LineNr', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_line_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_line_numbers)
 ***
 # Title: Toggle Between Light and Dark Color Schemes
 # Category: display
@@ -384,7 +384,7 @@ end
 vim.keymap.set('n', '<F6>', switch_color_style, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_switch_between_two_styles_of_color_scheme
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_switch_between_two_styles_of_color_scheme)
 ***
 # Title: Quickly Customize Syntax Highlighting Colors
 # Category: display
@@ -401,7 +401,7 @@ vim.cmd('highlight comment ctermfg=lightblue')
 vim.cmd('highlight constant ctermfg=red')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fine_tuning_syntax_colors
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fine_tuning_syntax_colors)
 ***
 # Title: Ignore Whitespace in Diff Mode
 # Category: display
@@ -416,7 +416,7 @@ set diffopt+=iwhite
 vim.opt.diffopt:append('iwhite')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_error_E97_Cannot_create_diffs_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_error_E97_Cannot_create_diffs_under_Windows)
 ***
 # Title: Truncate Long Echoed Messages
 # Category: display
@@ -448,7 +448,7 @@ function _G.short_echo(msg)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_shortened_messages_from_using_echomsg
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_shortened_messages_from_using_echomsg)
 ***
 # Title: Screen Drawing and Color Output in Vim Scripts
 # Category: display
@@ -495,7 +495,7 @@ end
 vim.o.cmdheight = 1
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Graphics_and_Drawing_in_vimscript
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Graphics_and_Drawing_in_vimscript)
 ***
 # Title: Highlight Current Line and Column
 # Category: display
@@ -519,7 +519,7 @@ vim.keymap.set('n', '<Leader>c', function()
 end, { desc = 'Toggle cursor line and column highlight' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_current_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_current_line)
 ***
 # Title: Dynamic Cursor Line Highlighting After Jumps
 # Category: display
@@ -572,7 +572,7 @@ vim.api.nvim_create_autocmd({'CursorMoved', 'CursorMovedI'}, {
 vim.g.last_pos = 0
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_cursor_line_after_cursor_jump
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_cursor_line_after_cursor_jump)
 ***
 # Title: Highlight Debug Blocks in C/C++ Code
 # Category: display
@@ -638,7 +638,7 @@ vim.keymap.set('n', ',a', _G.add_comment_define, { desc = 'Add comment define' }
 vim.keymap.set('n', ',x', _G.clear_comment_define, { desc = 'Clear comment define' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_debug_blocks_in_programs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_debug_blocks_in_programs)
 ***
 # Title: Highlight Lines Exceeding Length Limit
 # Category: display
@@ -664,7 +664,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_long_lines)
 ***
 # Title: Highlight Multiple Words with Different Colors
 # Category: display
@@ -691,7 +691,7 @@ vim.keymap.set('n', '<k1>', function()
 end, { desc = 'Highlight current word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_multiple_words
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_multiple_words)
 ***
 # Title: Highlight Problematic Whitespace
 # Category: display
@@ -764,7 +764,7 @@ vim.keymap.set('n', '<Leader>ws', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_some_whitespace_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_some_whitespace_characters)
 ***
 # Title: Highlight Unwanted Whitespace
 # Category: display
@@ -805,7 +805,7 @@ vim.api.nvim_create_autocmd({'InsertEnter', 'InsertLeave'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_unwanted_spaces)
 ***
 # Title: Show Whitespace with List Chars
 # Category: display
@@ -828,7 +828,7 @@ vim.opt.listchars:append({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_unwanted_spaces)
 ***
 # Title: Highlight Long Lines
 # Category: display
@@ -849,7 +849,7 @@ vim.cmd('syntax match NearColLimit /\%<81v.\%>77v/')
 vim.cmd('syntax match OverColLimit /\%>80v.\+/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlighting)
 ***
 # Title: Quickly Highlight Current Line
 # Category: display
@@ -866,7 +866,7 @@ vim.cmd('highlight LineTooLong cterm=bold ctermbg=red guibg=LightYellow')
 vim.cmd('match LineTooLong /\%>80v.\+/')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlighting)
 ***
 # Title: Highlight and Manage Unwanted Whitespace
 # Category: display
@@ -910,7 +910,7 @@ end
 setup_whitespace_highlight()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlighting_whitespaces_at_end_of_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlighting_whitespaces_at_end_of_line)
 ***
 # Title: Print with Line Numbers
 # Category: display
@@ -925,7 +925,7 @@ Enable line numbers when printing without modifying the actual file
 vim.opt.printoptions = 'number:y'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_line_numbers_2
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_line_numbers_2)
 ***
 # Title: Center Cursor Vertically in Window
 # Category: display
@@ -961,7 +961,7 @@ vim.api.nvim_create_autocmd({'BufEnter', 'WinEnter', 'WinNew', 'VimResized'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen)
 ***
 # Title: Force Redraw to Prevent Message Disappearance
 # Category: display
@@ -978,7 +978,7 @@ vim.cmd('redraw')
 vim.api.nvim_echo({{'there is a new window', 'Normal'}}, false, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_echo_seen_when_it_would_otherwise_disappear_and_go_unseen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_echo_seen_when_it_would_otherwise_disappear_and_go_unseen)
 ***
 # Title: Configure Scrolloff for Context
 # Category: display
@@ -1001,7 +1001,7 @@ vim.opt.scrolloff = 5  -- 5 lines of context
 vim.opt.scrolloff = 999
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_search_results_appear_in_the_middle_of_the_screen)
 ***
 # Title: Highlight Valid IP Addresses
 # Category: display
@@ -1018,7 +1018,7 @@ vim.cmd([[syn match ipaddr /\(\(25\[0-5]\|2\[0-4]\[0-9]\|\[01]?\[0-9]\[0-9]?\)\.
 vim.cmd('hi link ipaddr Identifier')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Match_valid_IP_address
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_valid_IP_address)
 ***
 # Title: Highlight Matching Braces
 # Category: display
@@ -1035,7 +1035,7 @@ vim.opt.showmatch = true
 vim.opt.matchtime = 3
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Matchit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Matchit)
 ***
 # Title: Highlight Cursor Line in Insert Mode
 # Category: display
@@ -1067,7 +1067,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/More_visible_mode_feedback
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/More_visible_mode_feedback)
 ***
 # Title: Improve Wrapped Line Handling
 # Category: display
@@ -1086,7 +1086,7 @@ vim.opt.list = false
 vim.opt.display:append('lastline')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_through_wrapped_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_through_wrapped_lines)
 ***
 # Title: Highlight Multiple Words in Different Colors
 # Category: display
@@ -1109,7 +1109,7 @@ vim.keymap.set('n', '<leader>m', function()
 end, { desc = 'Toggle multiple word highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Multiple_Hilighted_Search
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Multiple_Hilighted_Search)
 ***
 # Title: Dynamic Color Scheme Switcher
 # Category: display
@@ -1145,7 +1145,7 @@ end, { desc = 'Random color scheme' })
 -- Use :SetColors command as in Vimscript
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/One_page_summary_of_color_schemes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/One_page_summary_of_color_schemes)
 ***
 # Title: Print Syntax Highlighted Buffer in Black and White
 # Category: display
@@ -1165,7 +1165,7 @@ vim.keymap.set('n', '<C-p>', function()
 end, { desc = 'Print buffer in black and white' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Print_syntax_highlighted_buffer_in_one_color
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Print_syntax_highlighted_buffer_in_one_color)
 ***
 # Title: Custom Syntax Highlighting for Printing
 # Category: display
@@ -1192,7 +1192,7 @@ vim.api.nvim_create_user_command('Hardcopy', function(opts)
 end, { nargs = '*' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Printing_with_syntax_highlighting_independent_of_your_normal_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Printing_with_syntax_highlighting_independent_of_your_normal_highlighting)
 ***
 # Title: Visually Highlight Unwanted Whitespace
 # Category: display
@@ -1219,7 +1219,7 @@ vim.opt.listchars:append({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remove_trailing_spaces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remove_trailing_spaces)
 ***
 # Title: Visualize Tab Characters in Vim
 # Category: display
@@ -1244,7 +1244,7 @@ vim.opt.listchars:append({ tab = '| ' })
 vim.opt.listchars:append({ tab = '>-' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip460
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip460)
 ***
 # Title: Toggle Tab Visualization Function
 # Category: display
@@ -1282,7 +1282,7 @@ end
 vim.api.nvim_create_user_command('SeeTab', see_tab, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip460
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip460)
 ***
 # Title: Customize GVim Colors to Match Console Vim
 # Category: display
@@ -1309,7 +1309,7 @@ vim.api.nvim_set_hl(0, 'Constant', { fg = 'Magenta' })
 vim.api.nvim_set_hl(0, 'Statement', { fg = 'Yellow' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip527
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip527)
 ***
 # Title: Quick Background Color Toggle
 # Category: display
@@ -1326,7 +1326,7 @@ vim.keymap.set('n', '<F11>', function()
 end, { desc = 'Toggle background color' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip53
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip53)
 ***
 # Title: Custom Syntax Highlighting Colors
 # Category: display
@@ -1345,7 +1345,7 @@ vim.cmd('hi Search guibg=LightBlue')
 vim.cmd('highlight ErrorMsg guibg=White guifg=Red')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip53
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip53)
 ***
 # Title: View and Test Available Colors in Vim/Neovim
 # Category: display
@@ -1378,7 +1378,7 @@ end
 -- Call with :lua ShowColors()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip634
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip634)
 ***
 # Title: Dynamic Color Testing Across Terminal and GUI
 # Category: display
@@ -1422,7 +1422,7 @@ end
 -- Usage: :lua color_test('colortest.txt', 16, 16)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip634
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip634)
 ***
 # Title: Display Character ASCII/Unicode Value
 # Category: display
@@ -1439,7 +1439,7 @@ vim.opt.statusline = '%<%f%h%m%r%=%b 0x%B  %l,%c%V %P'
 vim.opt.laststatus = 2
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip67
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip67)
 ***
 # Title: Get Character Information Quickly
 # Category: display
@@ -1457,7 +1457,7 @@ Use built-in commands to quickly retrieve ASCII/Unicode values of the current ch
 -- Neovim inherits these Vim commands directly
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip67
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip67)
 ***
 # Title: Conditionally Set Command Height
 # Category: display
@@ -1476,7 +1476,7 @@ if vim.o.cmdheight == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip680
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip680)
 ***
 # Title: Quick Syntax Color Customization
 # Category: display
@@ -1493,7 +1493,7 @@ vim.cmd('highlight comment ctermfg=lightblue')
 vim.cmd('highlight constant ctermfg=red')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip737
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip737)
 ***
 # Title: Highlight Code Between Matching Curly Braces
 # Category: display
@@ -1518,7 +1518,7 @@ vim.api.nvim_set_hl(0, 'ShowMatches', { bg = 'darkgrey', fg = 'white' })
 vim.o.updatetime = 30
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip754
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip754)
 ***
 # Title: Improve Long Line Readability
 # Category: display
@@ -1541,5 +1541,5 @@ vim.opt.display:append('lastline')
 vim.opt.scrolloff = 99999
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Working_with_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Working_with_long_lines)
 ***

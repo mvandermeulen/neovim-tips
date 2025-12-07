@@ -94,7 +94,7 @@ vim.api.nvim_create_autocmd('Syntax', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/All_folds_open_when_open_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_folds_open_when_open_a_file)
 ***
 # Title: Automatically Fold Perl Subroutines
 # Category: folding
@@ -109,7 +109,7 @@ let perl_fold = 1
 vim.g.perl_fold = 1
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto-fold_Perl_subs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto-fold_Perl_subs)
 ***
 # Title: Custom Perl Folding with Fold Expression
 # Category: folding
@@ -176,7 +176,7 @@ vim.wo.foldexpr = 'v:lua.get_perl_fold(v:lnum)'
 vim.wo.foldmethod = 'expr'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto-fold_Perl_subs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto-fold_Perl_subs)
 ***
 # Title: Customize Fold Text with Advanced Display
 # Category: folding
@@ -227,7 +227,7 @@ end
 vim.o.foldtext = 'v:lua.custom_fold_text()'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Customize_text_for_closed_folds
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Customize_text_for_closed_folds)
 ***
 # Title: Prevent Syntax Folding Disruptions in Insert Mode
 # Category: folding
@@ -264,7 +264,7 @@ vim.api.nvim_create_autocmd({'InsertLeave', 'WinLeave'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_folding_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_folding_in_insert_mode)
 ***
 # Title: Fold INI File Sections Automatically
 # Category: folding
@@ -283,7 +283,7 @@ vim.wo.foldmethod = 'syntax'
 vim.wo.foldlevel = 20
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Dosini_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Dosini_files)
 ***
 # Title: Double-Click to Toggle Folds
 # Category: folding
@@ -298,7 +298,7 @@ Add a convenient double-click mouse mapping to open and close code folds in Vim/
 vim.keymap.set({'n', 'v'}, '<2-LeftMouse>', 'za', { desc = 'Toggle fold with double-click' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Double-click_to_open/close_a_fold
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Double-click_to_open/close_a_fold)
 ***
 # Title: Dynamic Indent and Manual Folding
 # Category: folding
@@ -330,7 +330,7 @@ vim.api.nvim_create_autocmd({'BufWinEnter'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_add_folds_in_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_add_folds_in_code)
 ***
 # Title: Advanced Folding Techniques in Vim/Neovim
 # Category: folding
@@ -365,7 +365,7 @@ vim.api.nvim_create_autocmd({'BufWinEnter'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_open_and_close_folds
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_open_and_close_folds)
 ***
 # Title: MoinMoin Wiki Folding with Vim
 # Category: folding
@@ -401,7 +401,7 @@ _G.MoinHeadingLevel = function(lnum)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_MoinMoin_wiki_files_with_folding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_MoinMoin_wiki_files_with_folding)
 ***
 # Title: Navigate XML Project Hierarchies with Folds
 # Category: folding
@@ -452,7 +452,7 @@ end
 vim.keymap.set('n', '<leader>fp', _G.fold_move_to_parent_node, { desc = 'Find Parent Node in XML' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Finding_your_way_around_in_an_installshield_project_XML_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Finding_your_way_around_in_an_installshield_project_XML_file)
 ***
 # Title: Navigate XML Project Files with Folding
 # Category: folding
@@ -499,7 +499,7 @@ end
 vim.keymap.set('n', '<leader>fdp', _G.fold_move_to_parent_node, { desc = 'Move to parent node in XML' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Finding_your_way_around_in_an_installshiled_project_XML_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Finding_your_way_around_in_an_installshiled_project_XML_file)
 ***
 # Title: Fold C-Style Comments Automatically
 # Category: folding
@@ -519,7 +519,7 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_C-style_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_C-style_comments)
 ***
 # Title: Custom Fold Text for Comments
 # Category: folding
@@ -546,7 +546,7 @@ end
 vim.o.foldtext = 'v:lua.custom_fold_text()'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_C-style_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_C-style_comments)
 ***
 # Title: Fold C# Regions Easily
 # Category: folding
@@ -561,7 +561,7 @@ let b:match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 vim.g.match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_a_C_sharp_region
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_a_C_sharp_region)
 ***
 # Title: Fold Multiple Empty Lines in a File
 # Category: folding
@@ -580,7 +580,7 @@ vim.cmd('syn sync fromstart')
 vim.opt.foldmethod = 'syntax'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_away_empty_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_away_empty_lines)
 ***
 # Title: Custom Java Folding with Expression Function
 # Category: folding
@@ -620,7 +620,7 @@ vim.wo.foldexpr = 'v:lua.java_fold_level(v:lnum)'
 vim.wo.foldmethod = 'expr'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_braces_and_javadoc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_braces_and_javadoc)
 ***
 # Title: Fold Text by Regex Search Pattern
 # Category: folding
@@ -655,7 +655,7 @@ function _G.custom_fold_expr()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_regular_expression
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_regular_expression)
 ***
 # Title: Quick Java API Folding
 # Category: folding
@@ -672,7 +672,7 @@ vim.api.nvim_create_user_command('Japi', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fold_regular_expression
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_regular_expression)
 ***
 # Title: Dynamic Indent Folding with Manual Override
 # Category: folding
@@ -702,7 +702,7 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding)
 ***
 # Title: Smart Folding for Diff Files
 # Category: folding
@@ -744,7 +744,7 @@ function _G.DiffFold(lnum)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_for_diff_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_for_diff_files)
 ***
 # Title: Indent-Based Folding for Plain Text
 # Category: folding
@@ -776,7 +776,7 @@ function _G.custom_fold_expr()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_for_plain_text_files_based_on_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_for_plain_text_files_based_on_indentation)
 ***
 # Title: Custom Function Folding in C/C++
 # Category: folding
@@ -817,7 +817,7 @@ vim.o.foldexpr = 'v:lua.custom_fold()'
 vim.o.foldmethod = 'expr'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_functions_with_the_prototype_included
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_functions_with_the_prototype_included)
 ***
 # Title: Fold VB.NET Code with Region Markers
 # Category: folding
@@ -866,7 +866,7 @@ vim.opt_local.foldexpr = 'v:lua.vb_fold(v:lnum)'
 vim.opt_local.foldtext = 'v:lua.vb_fold_text()'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_like_in_Visual_Basic_.NET
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_like_in_Visual_Basic_.NET)
 ***
 # Title: Fold File Listings with Dynamic Hierarchy
 # Category: folding
@@ -924,7 +924,7 @@ end
 vim.opt.foldtext = 'v:lua.vim.g.FileBrowserFoldText()'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_of_find_locate_tar-tf_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_of_find_locate_tar-tf_output)
 ***
 # Title: Fold Lines Matching Search Pattern
 # Category: folding
@@ -959,7 +959,7 @@ function _G.custom_fold_expr()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_with_Regular_Expression
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_with_Regular_Expression)
 ***
 # Title: Quick Java API View via Folding
 # Category: folding
@@ -976,7 +976,7 @@ vim.api.nvim_create_user_command('Japi', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_with_regex
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_with_regex)
 ***
 # Title: Flexible Folding Methods in Neovim
 # Category: folding
@@ -999,7 +999,7 @@ vim.opt.foldmethod = 'syntax'
 vim.opt.foldnestmax = 3
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Hide_all_functions_in_your_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hide_all_functions_in_your_code)
 ***
 # Title: Advanced Syntax Folding for Java Files
 # Category: folding
@@ -1034,7 +1034,7 @@ api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Java/C/C%2B%2B_folding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Java/C/C%2B%2B_folding)
 ***
 # Title: Flexible Java Code Folding with Expression
 # Category: folding
@@ -1076,7 +1076,7 @@ vim.cmd.setlocal('foldexpr=v:lua.java_fold_level(v:lnum)')
 vim.cmd.setlocal('foldmethod=expr')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Java/C/C%2B%2B_folding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Java/C/C%2B%2B_folding)
 ***
 # Title: Dynamic Folding for Java Code Blocks
 # Category: folding
@@ -1102,7 +1102,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Java/C/Cpp_folding
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Java/C/Cpp_folding)
 ***
 # Title: Use Vim-Style Folding in Documentation
 # Category: folding
@@ -1131,7 +1131,7 @@ vim.api.nvim_buf_set_lines(0, 0, -1, false, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keep_a_to-do_memo_file_with_links_as_in_Vim_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keep_a_to-do_memo_file_with_links_as_in_Vim_help)
 ***
 # Title: Use Built-in Folding for Outlining
 # Category: folding
@@ -1150,7 +1150,7 @@ vim.opt.foldmethod = 'indent'
 -- Fold commands remain the same in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_of_Scripts_for_Outlining
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_of_Scripts_for_Outlining)
 ***
 # Title: Quick Fold Marker Wrapping
 # Category: folding
@@ -1173,7 +1173,7 @@ vim.keymap.set('v', '<Leader>fold', function()
 end, { desc = 'Wrap visual selection with fold markers' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip475
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip475)
 ***
 # Title: VB.NET Style Folding in Vim/Neovim
 # Category: folding
@@ -1222,7 +1222,7 @@ vim.wo.foldexpr = 'v:lua.vb_fold(v:lnum)'
 vim.wo.foldtext = 'v:lua.vb_fold_text()'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip519
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip519)
 ***
 # Title: Fold C/C++ Functions Including Prototypes
 # Category: folding
@@ -1263,7 +1263,7 @@ vim.opt.foldexpr = 'v:lua.custom_fold_expr(v:lnum)'
 vim.opt.foldmethod = 'expr'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip523
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip523)
 ***
 # Title: XML Syntax Folding in Vim
 # Category: folding
@@ -1285,7 +1285,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip583
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip583)
 ***
 # Title: Use Vim as a Powerful Outline Processor
 # Category: folding
@@ -1308,7 +1308,7 @@ vim.opt.foldmethod = 'indent'
 -- Promote/demote can be done with < and > in normal/visual mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip74
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip74)
 ***
 # Title: Fold Away Lines Not in Quickfix List
 # Category: folding
@@ -1362,5 +1362,5 @@ vim.api.nvim_create_user_command('FoldMisses', function(opts)
 end, { bar = true, count = 99999 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip76
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip76)
 ***

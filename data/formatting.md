@@ -107,7 +107,7 @@ vim.cmd('normal! gggqG')
 vim.keymap.set('n', 'Q', 'gqip', { desc = 'Format current paragraph' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/80_character_line_wrap_without_broken_words
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/80_character_line_wrap_without_broken_words)
 ***
 # Title: Align Numbers at Decimal Point
 # Category: formatting
@@ -129,7 +129,7 @@ Automatically align numbers with consistent decimal precision and formatting
 -- ':Tabularize /\./r0l0l0'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Align_numbers_at_decimal_point
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Align_numbers_at_decimal_point)
 ***
 # Title: Align Text into Columns
 # Category: formatting
@@ -147,7 +147,7 @@ vim.keymap.set('v', '<A-a>', function()
 end, { desc = 'Align text into columns' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Align_text_into_a_table
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Align_text_into_a_table)
 ***
 # Title: Automatic Text Wrapping for Plain Text
 # Category: formatting
@@ -165,7 +165,7 @@ Set text width to automatically break lines at a specified character length, use
 vim.opt.textwidth = 60
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatic_formatting_of_paragraphs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_formatting_of_paragraphs)
 ***
 # Title: Automatically Indent XML Files
 # Category: formatting
@@ -190,7 +190,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_indent_an_XML_file_using_XSLT
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_indent_an_XML_file_using_XSLT)
 ***
 # Title: Quick XML Indentation Without XSLT
 # Category: formatting
@@ -215,7 +215,7 @@ end
 vim.api.nvim_create_user_command('IndentXML', IndentXML, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_indent_an_XML_file_using_XSLT
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_indent_an_XML_file_using_XSLT)
 ***
 # Title: Powerful Text Formatting with Par
 # Category: formatting
@@ -235,7 +235,7 @@ vim.keymap.set({'n', 'v'}, '<A-q>', function()
 end, { desc = 'Format text with Par' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Awesome_text_formatter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Awesome_text_formatter)
 ***
 # Title: Clean Up HTML Files with Tidy
 # Category: formatting
@@ -260,7 +260,7 @@ end, { desc = 'Tidy HTML formatting' })
 vim.api.nvim_create_user_command('Thtml', '%!tidy -q -i --show-errors 0', {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Cleanup_your_HTML
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cleanup_your_HTML)
 ***
 # Title: Convert Code to Syntax-Highlighted HTML
 # Category: formatting
@@ -281,7 +281,7 @@ vim.cmd('colorscheme default')
 vim.cmd('TOhtml')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Convert_selected_text_to_HTML
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Convert_selected_text_to_HTML)
 ***
 # Title: Clean Paragraphs for Copy-Paste to Word
 # Category: formatting
@@ -307,7 +307,7 @@ vim.keymap.set('v', '<C-C>', function()
 end, { desc = 'Clean paragraphs for Word copy' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_paragraphs_without_excess_newlines_to_MS_Word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_paragraphs_without_excess_newlines_to_MS_Word)
 ***
 # Title: Collapse Multi-Line Paragraphs
 # Category: formatting
@@ -322,7 +322,7 @@ Quickly join lines within paragraphs, removing unnecessary line breaks
 vim.cmd(':%s/\v(\S+)\n(\S+)/\1 \2/ge')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_paragraphs_without_excess_newlines_to_MS_Word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_paragraphs_without_excess_newlines_to_MS_Word)
 ***
 # Title: Expand Tabs to Spaces in Entire File
 # Category: formatting
@@ -338,7 +338,7 @@ vim.opt.expandtab = true
 vim.cmd('retab!')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2009
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Did_you_know/2009)
 ***
 # Title: Reformat Email Quotations Quickly
 # Category: formatting
@@ -365,7 +365,7 @@ vim.opt.textwidth = 76
 -- Use gqip, gqap, or gq} in normal mode
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_email_quotations_with_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_email_quotations_with_long_lines)
 ***
 # Title: Reindent Entire File or Selected Text
 # Category: formatting
@@ -397,7 +397,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Reindent entire file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_indentation)
 ***
 # Title: Format Code Blocks and Functions Easily
 # Category: formatting
@@ -414,7 +414,7 @@ vim.cmd('normal =i{')  -- Format inner code block
 vim.cmd('normal gg=G')  -- Format entire buffer
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_a_code_block
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_a_code_block)
 ***
 # Title: Format Only Long Lines in Text
 # Category: formatting
@@ -436,7 +436,7 @@ vim.cmd('g/./ normal gqq')
 vim.cmd('g/\{80,\}/ .!par w70')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_only_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_only_long_lines)
 ***
 # Title: Format Paragraph Without Moving Cursor
 # Category: formatting
@@ -452,7 +452,7 @@ gwap  " Format paragraph and restore cursor
 vim.cmd('normal! gwap')  -- Format paragraph and restore cursor position
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_paragraph_without_changing_the_cursor_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_paragraph_without_changing_the_cursor_position)
 ***
 # Title: Format XML Files Using xmllint
 # Category: formatting
@@ -472,7 +472,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_your_xml_document_using_xmllint
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_your_xml_document_using_xmllint)
 ***
 # Title: Environment-Aware Paragraph Formatting in LaTeX
 # Category: formatting
@@ -493,7 +493,7 @@ vim.keymap.set('n', '<leader>gq', function()
 end, { desc = 'Format LaTeX paragraph respecting environments' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Formatting_paragraphs_in_LaTeX:_an_%22environment-aware_gqap%22
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Formatting_paragraphs_in_LaTeX:_an_%22environment-aware_gqap%22)
 ***
 # Title: Flexible Line Formatting
 # Category: formatting
@@ -512,7 +512,7 @@ vim.keymap.set('n', 'st', function()
 end, { desc = 'Format text block to 70 characters' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Formatting_stuff
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Formatting_stuff)
 ***
 # Title: Convert CSV to Readable Columns
 # Category: formatting
@@ -537,7 +537,7 @@ end
 -- Usage: :lua format_csv_columns(20)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Navigate_large_CSV_files_more_easily
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Navigate_large_CSV_files_more_easily)
 ***
 # Title: Unicode Text Formatting Workaround
 # Category: formatting
@@ -560,7 +560,7 @@ function format_unicode_text(file, from_encoding, to_encoding, par_options)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Par_text_reformatter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Par_text_reformatter)
 ***
 # Title: Convert Spaces to Tabs Efficiently
 # Category: formatting
@@ -577,7 +577,7 @@ vim.cmd('ret! 2')
 vim.cmd('x')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preexisting_code_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preexisting_code_indentation)
 ***
 # Title: Pretty Format XML with External Tools
 # Category: formatting
@@ -627,7 +627,7 @@ end
 vim.api.nvim_create_user_command('PrettyXML', _G.pretty_xml, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Pretty-formatting_XML
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pretty-formatting_XML)
 ***
 # Title: Quick XML Formatting with Python
 # Category: formatting
@@ -648,7 +648,7 @@ end, {})
 vim.keymap.set('n', '=', ':FormatXML<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Pretty-formatting_XML
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pretty-formatting_XML)
 ***
 # Title: Regex-Based Text Alignment Function
 # Category: formatting
@@ -688,7 +688,7 @@ function M.align_section(regex)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Regex-based_text_alignment
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regex-based_text_alignment)
 ***
 # Title: Quick XML/HTML Indentation Trick
 # Category: formatting
@@ -708,7 +708,7 @@ vim.api.nvim_command(':%s/></>
 vim.api.nvim_command('gg=G')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip551
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip551)
 ***
 # Title: Automatic Table Field Alignment
 # Category: formatting
@@ -729,7 +729,7 @@ end
 vim.keymap.set('n', '<Leader>ta', _G.align_table_fields)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip554
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip554)
 ***
 # Title: Add Line Numbers Using Perl Filter
 # Category: formatting
@@ -746,7 +746,7 @@ vim.keymap.set('n', '<Leader>nl', function()
 end, { desc = 'Number lines' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip569
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip569)
 ***
 # Title: Align Text into Columns Automatically
 # Category: formatting
@@ -763,7 +763,7 @@ Quickly align text with equal spacing around a delimiter (like '=') using an ext
 vim.keymap.set('v', '<A-a>', '!perl ~/perl/align -c:=', { desc = 'Align text columns' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip570
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip570)
 ***
 # Title: Chop Long Lines Using fmt Command
 # Category: formatting
@@ -789,7 +789,7 @@ vim.keymap.set('v', '<leader>f', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip575
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip575)
 ***
 # Title: Quick Line Formatting with gqq
 # Category: formatting
@@ -808,5 +808,5 @@ vim.cmd('normal gqq')
 vim.keymap.set('n', '<leader>q', 'gqq', { desc = 'Format current line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip575
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip575)
 ***

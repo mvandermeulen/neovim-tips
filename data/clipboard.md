@@ -106,7 +106,7 @@ gg"+yG
 vim.cmd(':%y+')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/%22copy_all_to_clipboard%22_howto
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%22copy_all_to_clipboard%22_howto)
 ***
 # Title: Easy System Clipboard Integration
 # Category: clipboard
@@ -127,7 +127,7 @@ vim.opt.clipboard = 'unnamed'
 vim.opt.clipboard = 'unnamedplus'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Accessing_the_system_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Accessing_the_system_clipboard)
 ***
 # Title: Auto Copy Mouse Selection to Clipboard
 # Category: clipboard
@@ -150,7 +150,7 @@ vim.keymap.set('n', '<LeftRelease>', '"+y<LeftRelease>', { noremap = true })
 vim.o.guioptions = vim.o.guioptions .. 'a'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection)
 ***
 # Title: Disable Auto Copy Clipboard Function
 # Category: clipboard
@@ -169,7 +169,7 @@ set guioptions-=aA
 vim.o.guioptions = vim.o.guioptions:gsub('[aA]', '')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection)
 ***
 # Title: Use System Clipboard in Vim
 # Category: clipboard
@@ -201,7 +201,7 @@ vim.opt.clipboard = 'unnamed' -- For Windows
 vim.opt.clipboard = 'unnamedplus' -- For X Window systems
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Clipboard)
 ***
 # Title: Swap Between Vim and System Clipboard
 # Category: clipboard
@@ -222,7 +222,7 @@ vim.keymap.set('n', '<Leader>s', function()
 end, { desc = 'Swap clipboard and unnamed register' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comfortable_handling_of_registers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comfortable_handling_of_registers)
 ***
 # Title: System Clipboard Integration
 # Category: clipboard
@@ -243,7 +243,7 @@ vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = 'Copy to system clipboar
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy,_cut_and_paste
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy,_cut_and_paste)
 ***
 # Title: Cross-Session Clipboard Sharing
 # Category: clipboard
@@ -298,7 +298,7 @@ vim.keymap.set('n', '<Leader>y', session_yank, { desc = 'Yank to session file' }
 vim.keymap.set('n', '<Leader>p', function() session_paste('p') end, { desc = 'Paste from session file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_and_paste_between_Vim_instances
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_and_paste_between_Vim_instances)
 ***
 # Title: Using System Clipboard Registers
 # Category: clipboard
@@ -321,7 +321,7 @@ vim.fn.setreg('*', vim.fn.getline('.'))
 vim.cmd('normal "*p')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_and_paste_between_Vim_instances
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_and_paste_between_Vim_instances)
 ***
 # Title: Copy Filename to Clipboard
 # Category: clipboard
@@ -347,7 +347,7 @@ vim.keymap.set('n', ',cl', function()
 end, { desc = 'Copy full file path' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_current_file_name_into_windows_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_current_file_name_into_windows_clipboard)
 ***
 # Title: Cross-Platform Filename Copying
 # Category: clipboard
@@ -384,7 +384,7 @@ else
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_filename_to_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_filename_to_clipboard)
 ***
 # Title: Copy to Windows Clipboard in Cygwin Vim
 # Category: clipboard
@@ -442,7 +442,7 @@ vim.keymap.set('v', '<leader>y', function() Putclip(vim.fn.visualmode(), 1) end)
 vim.keymap.set('n', '<leader>y', function() Putclip('n', 1) end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copying_to_the_Windows_clipboard_from_Cygwin_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copying_to_the_Windows_clipboard_from_Cygwin_vim)
 ***
 # Title: Paste from Windows Clipboard in Cygwin Vim
 # Category: clipboard
@@ -478,7 +478,7 @@ end
 vim.keymap.set('n', '<leader>p', Getclip)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copying_to_the_Windows_clipboard_from_Cygwin_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copying_to_the_Windows_clipboard_from_Cygwin_vim)
 ***
 # Title: Easy Windows Clipboard Interaction
 # Category: clipboard
@@ -493,7 +493,7 @@ set clipboard=unnamed
 vim.opt.clipboard = 'unnamed'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_pasting_to_Windows_applications
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_pasting_to_Windows_applications)
 ***
 # Title: Automatic Visual Selection Clipboard Copy
 # Category: clipboard
@@ -508,7 +508,7 @@ set go+=a
 vim.opt.guioptions:append('a')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_pasting_to_Windows_applications
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_pasting_to_Windows_applications)
 ***
 # Title: Quick External Paste Buffer Editing
 # Category: clipboard
@@ -540,7 +540,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/External_paste_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/External_paste_buffer)
 ***
 # Title: Use xclip for Efficient Linux Clipboard Operations
 # Category: clipboard
@@ -565,7 +565,7 @@ vim.keymap.set('v', '<F7>', '"*y', { desc = 'Copy selection to clipboard' })
 vim.keymap.set('n', '<S-F7>', ':r!xclip -o<CR>', { desc = 'Paste from clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip)
 ***
 # Title: Cross-Platform System Clipboard Integration
 # Category: clipboard
@@ -593,7 +593,7 @@ vim.keymap.set({'v'}, '<C-c>', function()
 end, { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/In_line_copy_and_paste_to_system_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/In_line_copy_and_paste_to_system_clipboard)
 ***
 # Title: Mac OS X Clipboard Integration
 # Category: clipboard
@@ -608,7 +608,7 @@ set clipboard=unnamed
 vim.opt.clipboard = 'unnamed'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mac_OS_X_clipboard_sharing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mac_OS_X_clipboard_sharing)
 ***
 # Title: Quick Clipboard Copy/Paste Mappings
 # Category: clipboard
@@ -633,7 +633,7 @@ vim.keymap.set('n', '<F2>', ':.w !pbcopy<CR>', { silent = true })
 vim.keymap.set('v', '<F2>', ':w !pbcopy<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mac_OS_X_clipboard_sharing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mac_OS_X_clipboard_sharing)
 ***
 # Title: Middle-Click Paste Handling
 # Category: clipboard
@@ -652,7 +652,7 @@ vim.keymap.set('n', '<MiddleMouse>', 'i<MiddleMouse>', { noremap = true })
 vim.keymap.set('v', '<MiddleMouse>', 's<MiddleMouse>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mighty_Mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mighty_Mouse)
 ***
 # Title: Paste Clipboard Contents in New Vim Window
 # Category: clipboard
@@ -670,7 +670,7 @@ vim.cmd('new')
 vim.cmd('normal "*p')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Paste_from_the_clipboard_into_a_new_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Paste_from_the_clipboard_into_a_new_vim)
 ***
 # Title: Clipboard Access in Cygwin Vim
 # Category: clipboard
@@ -722,7 +722,7 @@ vim.keymap.set('n', '<leader>y', function() _G.put_clipboard('n') end)
 vim.keymap.set('v', '<leader>y', function() _G.put_clipboard('v') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Pasting_from_the_Windows_clipboard_to_native_Cygwin_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pasting_from_the_Windows_clipboard_to_native_Cygwin_Vim)
 ***
 # Title: Paste from Windows Clipboard in Vim
 # Category: clipboard
@@ -756,7 +756,7 @@ end
 vim.keymap.set('n', '<leader>p', _G.get_clipboard)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Pasting_from_the_Windows_clipboard_to_native_Cygwin_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pasting_from_the_Windows_clipboard_to_native_Cygwin_Vim)
 ***
 # Title: Quick System Clipboard Copy and Paste
 # Category: clipboard
@@ -787,7 +787,7 @@ vim.keymap.set('n', '<C-a>', 'ggVG', { desc = 'Select all text' })
 vim.keymap.set('i', '<C-v>', '<Esc>pi', { desc = 'Paste from system clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_yank_and_paste
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_yank_and_paste)
 ***
 # Title: Quick Cross-Window Copy and Paste
 # Category: clipboard
@@ -814,7 +814,7 @@ vim.keymap.set('n', '<F5>', 'viw"+p', { desc = 'Replace word with clipboard' })
 vim.keymap.set('v', '<F5>', '"+p', { desc = 'Replace selection with clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip497
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip497)
 ***
 # Title: Transfer Text Between Vim Sessions Using Clipboard
 # Category: clipboard
@@ -843,5 +843,5 @@ vim.cmd('normal! "+p')
 vim.api.nvim_put(vim.fn.getreg('+'), 'c', true, true)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip71
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip71)
 ***

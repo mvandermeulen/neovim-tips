@@ -431,7 +431,7 @@ vim.keymap.set('n', '<F7>', '[s', { desc = 'Previous Spelling Error' })
 vim.keymap.set('n', '<F8>', 'z=', { desc = 'Spelling Suggestions' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/A_rough_mapping_to_spellcheck_the_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_rough_mapping_to_spellcheck_the_buffer)
 ***
 # Title: Visible Screen ROT13 Mapping with Cursor Preservation
 # Category: advanced_mappings
@@ -446,7 +446,7 @@ map <F3> mzHVLg?`z
 vim.keymap.set('n', '<F3>', 'mzHVLg?`z', { desc = 'ROT13 visible screen with cursor position' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/A_simple_%22boss_key%22_mapping_or_panic_button
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_simple_%22boss_key%22_mapping_or_panic_button)
 ***
 # Title: Conditional Abbreviation Expansion with Prompt
 # Category: advanced_mappings
@@ -473,7 +473,7 @@ vim.cmd.iabbrev{
 }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Abbreviation_that_prompts_whether_to_expand_it_or_not
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Abbreviation_that_prompts_whether_to_expand_it_or_not)
 ***
 # Title: Conditional Date Abbreviation Expansion
 # Category: advanced_mappings
@@ -490,7 +490,7 @@ vim.cmd('iabbrev date^A <c-r>=strftime("%F")<CR>')
 vim.keymap.set('i', '<c-b>', '<c-v><c-a><c-]>', { desc = 'Expand date abbreviation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Abbreviations_only_on_shortcut
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Abbreviations_only_on_shortcut)
 ***
 # Title: Quick Python Documentation in Vim
 # Category: advanced_mappings
@@ -513,7 +513,7 @@ vim.keymap.set('n', 'K', function()
 end, { buffer = true, desc = 'Show Python documentation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Access_Python_Help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Access_Python_Help)
 ***
 # Title: Cross-Platform Clipboard Key Mappings
 # Category: advanced_mappings
@@ -534,7 +534,7 @@ vim.keymap.set('v', '<C-c>', '"+y')
 vim.keymap.set('v', '<C-d>', '"+d')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Accessing_the_system_clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Accessing_the_system_clipboard)
 ***
 # Title: Quick HTML Anchor Creation from Two Lines
 # Category: advanced_mappings
@@ -561,7 +561,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Convert two lines to HTML anchor tag' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_a_full_link-tag_with_automatic_title
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_a_full_link-tag_with_automatic_title)
 ***
 # Title: Automatic Closing Characters with Smart Insertion
 # Category: advanced_mappings
@@ -592,7 +592,7 @@ vim.keymap.set('i', '(', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_closing_brace_automatically_on_code_blocks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_closing_brace_automatically_on_code_blocks)
 ***
 # Title: Conditional Closing Character Insertion
 # Category: advanced_mappings
@@ -629,7 +629,7 @@ vim.keymap.set('i', '(', function() return conditional_pair_map('(', ')') end, {
 vim.keymap.set('i', '{', function() return conditional_pair_map('{', '}') end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_closing_brace_automatically_on_code_blocks
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_closing_brace_automatically_on_code_blocks)
 ***
 # Title: Auto-Generate Function Headers Quickly
 # Category: advanced_mappings
@@ -658,7 +658,7 @@ vim.keymap.set('i', '#en', function()
 end, { buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Align_endif_with_corresponding_if_or_ifdef_directive
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Align_endif_with_corresponding_if_or_ifdef_directive)
 ***
 # Title: Auto-Insert Function Headers
 # Category: advanced_mappings
@@ -685,7 +685,7 @@ vim.keymap.set('n', '<F2>', function()
 end, { desc = 'Insert function header' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/All_tips_for_C_family_programming
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_tips_for_C_family_programming)
 ***
 # Title: Alternative Escape Key Mappings
 # Category: advanced_mappings
@@ -708,7 +708,7 @@ vim.keymap.set('i', 'kj', '<Esc>', { noremap = true })
 vim.keymap.set('i', ';;', '<Esc>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternative_to_hitting_Esc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_to_hitting_Esc)
 ***
 # Title: Use Ctrl-[ as Escape Alternative
 # Category: advanced_mappings
@@ -725,7 +725,7 @@ Equivalent to Escape key for quickly exiting insert mode, especially useful on d
 -- No additional configuration required
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternative_to_hitting_Esc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_to_hitting_Esc)
 ***
 # Title: Advanced HTML Tag Completion
 # Category: advanced_mappings
@@ -757,7 +757,7 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_closing_an_HTML_tag
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_closing_an_HTML_tag)
 ***
 # Title: Auto-Close Quotes in HTML/XML Attributes
 # Category: advanced_mappings
@@ -774,7 +774,7 @@ vim.keymap.set('i', '"', '""<Left>', { desc = 'Auto-close double quotes' })
 vim.keymap.set('i', "'", "''<Left>", { desc = 'Auto-close single quotes' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_end-quote_html/xml_attribute_values_as_you_type_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_end-quote_html/xml_attribute_values_as_you_type_in_insert_mode)
 ***
 # Title: Auto-Close Brackets and Braces
 # Category: advanced_mappings
@@ -795,7 +795,7 @@ vim.keymap.set('i', '{', '{}<Left>', { desc = 'Auto-close curly braces' })
 vim.keymap.set('i', '<', '<><Left>', { desc = 'Auto-close angle brackets' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_end-quote_html/xml_attribute_values_as_you_type_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_end-quote_html/xml_attribute_values_as_you_type_in_insert_mode)
 ***
 # Title: Automatic Closing Characters for Brackets and Quotes
 # Category: advanced_mappings
@@ -816,7 +816,7 @@ vim.keymap.set('i', ')', function()
 end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autoappend_closing_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autoappend_closing_characters)
 ***
 # Title: Conditional Closing Brace Insertion
 # Category: advanced_mappings
@@ -852,7 +852,7 @@ vim.keymap.set('i', '(', function() return conditional_pair_map('(', ')') end, {
 vim.keymap.set('i', '{', function() return conditional_pair_map('{', '}') end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Autoappend_closing_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autoappend_closing_characters)
 ***
 # Title: Auto-close Brackets and Braces in Insert Mode
 # Category: advanced_mappings
@@ -881,7 +881,7 @@ vim.keymap.set('i', ')', function()
 end, { expr = true, desc = 'Smart closing parenthesis' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_append_closing_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_append_closing_characters)
 ***
 # Title: Conditional Pair Mapping for Closing Characters
 # Category: advanced_mappings
@@ -919,7 +919,7 @@ vim.keymap.set('i', '{', function() return conditional_pair_map('{', '}') end, {
 vim.keymap.set('i', '[', function() return conditional_pair_map('[', ']') end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_append_closing_characters
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_append_closing_characters)
 ***
 # Title: Automatically Create and Update Cscope Database
 # Category: advanced_mappings
@@ -945,7 +945,7 @@ vim.keymap.set('n', '<F11>', function()
 end, { desc = 'Update Cscope Database' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_create_and_update_cscope_database
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_create_and_update_cscope_database)
 ***
 # Title: Quick Escape from Insert Mode
 # Category: advanced_mappings
@@ -966,7 +966,7 @@ vim.keymap.set('i', 'kj', '<Esc>', { noremap = true })
 vim.keymap.set('i', ';;', '<Esc>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Avoid_the_escape_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Avoid_the_escape_key)
 ***
 # Title: Troubleshoot Backspace Key Mappings
 # Category: advanced_mappings
@@ -985,7 +985,7 @@ vim.cmd('verbose imap <BS>')
 vim.cmd('verbose imap ^H')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backspace_and_delete_problems
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backspace_and_delete_problems)
 ***
 # Title: Custom Jump List Selection Function
 # Category: advanced_mappings
@@ -1029,7 +1029,7 @@ end
 vim.keymap.set('n', '<Leader>j', _G.goto_jump, { desc = 'Interactive jump list navigation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backtracking_your_movements_in_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backtracking_your_movements_in_a_file)
 ***
 # Title: Postfix Abbreviations for Quick Code Snippets
 # Category: advanced_mappings
@@ -1045,7 +1045,7 @@ Create dynamic code snippet expansions using postfix abbreviations, allowing qui
 vim.cmd.abbreviate('ff', '<Esc>^d$ifor(int i=0;i<<Esc>pi.length;i++){<CR><CR>}//end for loop over array <Esc>pi[i]<Esc>==k==k==ji<Tab>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Basic_postfix_abbreviations
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Basic_postfix_abbreviations)
 ***
 # Title: Quickly Launch and Edit Remote Batch Job Results
 # Category: advanced_mappings
@@ -1088,7 +1088,7 @@ vim.keymap.set('n', '<F12>', function()
 end, { desc = 'Open most recent file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Batch_jobs_launching_%26_listings_viewing_using_VIM
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Batch_jobs_launching_%26_listings_viewing_using_VIM)
 ***
 # Title: Smart Bracket and Parenthesis Insertion for Perl
 # Category: advanced_mappings
@@ -1132,7 +1132,7 @@ end
 vim.keymap.set('i', '{', '<C-R>=v:lua.insert_brackets()<CR>', { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Brackets_and_parentheses_in_Perl
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Brackets_and_parentheses_in_Perl)
 ***
 # Title: TortoiseSVN Commands from Vim
 # Category: advanced_mappings
@@ -1178,7 +1178,7 @@ vim.keymap.set('n', '<leader>tb', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Call_TortoiseSVN_commands_from_within_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Call_TortoiseSVN_commands_from_within_Vim)
 ***
 # Title: Visual Selection Case Conversion
 # Category: advanced_mappings
@@ -1215,7 +1215,7 @@ vim.api.nvim_create_user_command('CamelCase', function()
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/CamelCase
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/CamelCase)
 ***
 # Title: Flexible Case Conversion Commands
 # Category: advanced_mappings
@@ -1248,7 +1248,7 @@ vim.api.nvim_create_user_command('CamelCase', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/CamelCase_to_under_lined_and_vice_versa
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/CamelCase_to_under_lined_and_vice_versa)
 ***
 # Title: Camel/Snake Case Conversion Functions
 # Category: advanced_mappings
@@ -1281,7 +1281,7 @@ vim.api.nvim_create_user_command('CamelCase', function(opts)
 end, { range = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Camel_case
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Camel_case)
 ***
 # Title: Easily Capitalize Words and Regions
 # Category: advanced_mappings
@@ -1324,7 +1324,7 @@ vim.keymap.set('x', 'gc', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Capitalize_words_and_regions_easily
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Capitalize_words_and_regions_easily)
 ***
 # Title: Capitalize Words Without Moving Cursor
 # Category: advanced_mappings
@@ -1349,7 +1349,7 @@ vim.keymap.set('n', '<F8>', 'mzgUiw`z', { desc = 'Capitalize word' })
 vim.keymap.set('i', '<F8>', '_<Esc>mzwbgUiw`zi<Del>', { desc = 'Capitalize word in insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Capitalize_words_in_insert_and_normal_modes_without_moving_the_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Capitalize_words_in_insert_and_normal_modes_without_moving_the_cursor)
 ***
 # Title: Quick Directory Change Mapping
 # Category: advanced_mappings
@@ -1375,7 +1375,7 @@ vim.keymap.set('n', '<leader>cd', function()
 end, { desc = 'Change to current file directory and show path' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_to_directory_of_the_opened_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_to_directory_of_the_opened_file)
 ***
 # Title: Quick Word Replacement with Last Yanked Text
 # Category: advanced_mappings
@@ -1392,7 +1392,7 @@ vim.keymap.set('n', 'S', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_visual_mode_paste_command_behaviour
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_visual_mode_paste_command_behaviour)
 ***
 # Title: Quick Web Search from Vim
 # Category: advanced_mappings
@@ -1413,7 +1413,7 @@ vim.keymap.set('n', 'gF', function()
 end, { desc = 'Search Google for word under cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Check_spelling_and_phrases_using_Google_search
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Check_spelling_and_phrases_using_Google_search)
 ***
 # Title: Quick System Clipboard Keymaps
 # Category: advanced_mappings
@@ -1440,7 +1440,7 @@ vim.keymap.set('v', '<C-c>', '"+y', { noremap = true })
 vim.keymap.set('v', '<C-d>', '"+d', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Clipboard
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Clipboard)
 ***
 # Title: Toggle Clojure Comments Easily
 # Category: advanced_mappings
@@ -1473,7 +1473,7 @@ vim.keymap.set('n', '<leader>.', function()
 end, { desc = 'Toggle Clojure comment' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Clojure_Tips
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Clojure_Tips)
 ***
 # Title: SQL Command History Management in Vim
 # Category: advanced_mappings
@@ -1517,7 +1517,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Command-history_facilities_for_Oracle/sqlplus_user
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Command-history_facilities_for_Oracle/sqlplus_user)
 ***
 # Title: Quickly Comment/Uncomment Multiple Lines
 # Category: advanced_mappings
@@ -1601,7 +1601,7 @@ vim.keymap.set('v', '<C-a>', ':lua _G.comment_lines()<CR>', { noremap = true, si
 vim.keymap.set('v', '<C-b>', ':lua _G.uncomment_lines()<CR>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comment_%26_Uncomment_multiple_lines_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comment_%26_Uncomment_multiple_lines_in_Vim)
 ***
 # Title: Automatic Code Block Commenting
 # Category: advanced_mappings
@@ -1657,7 +1657,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Comment_your_code_blocks_automatically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comment_your_code_blocks_automatically)
 ***
 # Title: Dynamic Commenting Operator for Different Filetypes
 # Category: advanced_mappings
@@ -1697,7 +1697,7 @@ end
 -- This demonstrates the core concept of dynamic comment detection
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Commenting_with_opfunc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Commenting_with_opfunc)
 ***
 # Title: Quick Java Compilation and Execution Mappings
 # Category: advanced_mappings
@@ -1727,7 +1727,7 @@ end, { desc = 'Run current Java file' })
 -- Similar mappings can be added for F11 and F12 for alternate file
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compile_Java_with_Sun_JDK_javac
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_Java_with_Sun_JDK_javac)
 ***
 # Title: Compile File with F7 Keybinding
 # Category: advanced_mappings
@@ -1762,7 +1762,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { desc = 'Save and compile current file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Compiling_the_actual_file_with_gcc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compiling_the_actual_file_with_gcc)
 ***
 # Title: Quick MSDN Documentation Lookup
 # Category: advanced_mappings
@@ -1781,7 +1781,7 @@ vim.keymap.set('n', '<F1>', function()
 end, { desc = 'Quick MSDN Documentation Lookup' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Context_sensitive_access_to_MSDN_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Context_sensitive_access_to_MSDN_help)
 ***
 # Title: Auto-continue Python module omnicompletion
 # Category: advanced_mappings
@@ -1808,7 +1808,7 @@ vim.keymap.set('i', '<CR>', function()
   { expr = true, buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Continue_omnicompletion_for_python_modules
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Continue_omnicompletion_for_python_modules)
 ***
 # Title: Move Lines Up/Down with Alt Keys
 # Category: advanced_mappings
@@ -1833,7 +1833,7 @@ vim.keymap.set('v', '<A-j>', ':m ">+1<CR>gv=gv', { noremap = true, silent = true
 vim.keymap.set('v', '<A-k>', ':m "<-2<CR>gv=gv', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_multiple_lines/words_to_a_specified_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_multiple_lines/words_to_a_specified_position)
 ***
 # Title: Custom Search Text Object for Older Vim
 # Category: advanced_mappings
@@ -1856,7 +1856,7 @@ vim.keymap.set('v', 's', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Copy_or_change_search_hit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copy_or_change_search_hit)
 ***
 # Title: Flexible Mappings for GUI and Console Vim
 # Category: advanced_mappings
@@ -1888,7 +1888,7 @@ function _G.ModeMapping(guiLhs, termLhs, rhs, mapCommand)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_one_mapping_for_both_console_and_GUI
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_one_mapping_for_both_console_and_GUI)
 ***
 # Title: Create Custom Text Objects in Vim/Neovim
 # Category: advanced_mappings
@@ -1915,7 +1915,7 @@ vim.keymap.set('o', 'af', function()
 end, { desc = 'Operate on entire fold' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Creating_new_text_objects
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Creating_new_text_objects)
 ***
 # Title: Remap Help Navigation for AZERTY Keyboards
 # Category: advanced_mappings
@@ -1933,7 +1933,7 @@ map! <F9> <C-]>
 vim.keymap.set({'n', 'i', 'c'}, '<F9>', '<C-]>', { desc = 'Navigate help links' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Die_Hilfe_mit_einem_AZERTY_Klavier_durchfahren
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Die_Hilfe_mit_einem_AZERTY_Klavier_durchfahren)
 ***
 # Title: Disable Accidentally Triggered F1 Help Key
 # Category: advanced_mappings
@@ -1952,7 +1952,7 @@ vim.keymap.set('n', '<F1>', '<Nop>')
 vim.keymap.set('i', '<F1>', '<Esc>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_F1_built-in_help_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_F1_built-in_help_key)
 ***
 # Title: Contextual F1 Help with Smart Behavior
 # Category: advanced_mappings
@@ -1982,7 +1982,7 @@ end
 vim.keymap.set('n', '<F1>', _G.smart_help)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_F1_built-in_help_key
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_F1_built-in_help_key)
 ***
 # Title: Disable Unwanted Built-in Vim Commands
 # Category: advanced_mappings
@@ -1997,7 +1997,7 @@ Easily disable built-in Vim commands that you find annoying or accidentally trig
 vim.keymap.set('n', 'K', '<Nop>', { desc = 'Disable built-in command' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Disable_built-in_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_built-in_command)
 ***
 # Title: One-Key Header/Source File Toggle
 # Category: advanced_mappings
@@ -2016,7 +2016,7 @@ vim.keymap.set('n', '<F4>', function()
 end, { desc = 'Toggle between source and header' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easily_switch_between_source_and_header_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easily_switch_between_source_and_header_file)
 ***
 # Title: Multi-Language Comment/Uncomment Mappings
 # Category: advanced_mappings
@@ -2043,7 +2043,7 @@ vim.keymap.set('n', ',/', function() comment_line('//') end)
 vim.keymap.set('n', ',>', function() comment_line('> ') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_(un)commenting_out_of_source_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_(un)commenting_out_of_source_code)
 ***
 # Title: Smart Toggle Line Comment
 # Category: advanced_mappings
@@ -2086,7 +2086,7 @@ end
 vim.keymap.set('n', 'k', toggle_comment)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_(un)commenting_out_of_source_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_(un)commenting_out_of_source_code)
 ***
 # Title: Easy Block Selection with Alt+Left Mouse
 # Category: advanced_mappings
@@ -2109,7 +2109,7 @@ vim.keymap.set({'n', 'i', 'o'}, '<M-LeftMouse>', '<4-LeftMouse>', { noremap = tr
 vim.keymap.set({'n', 'i', 'o'}, '<M-LeftDrag>', '<LeftDrag>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_block_selection_with_mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_block_selection_with_mouse)
 ***
 # Title: Quick Macro Playback with Q
 # Category: advanced_mappings
@@ -2124,7 +2124,7 @@ noremap Q @q
 vim.keymap.set('n', 'Q', '@q', { desc = 'Play macro from q register' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_playback_of_recorded_keys
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_playback_of_recorded_keys)
 ***
 # Title: Macro Playback with Function Keys
 # Category: advanced_mappings
@@ -2139,7 +2139,7 @@ nmap <F2> @a
 vim.keymap.set('n', '<F2>', '@a', { desc = 'Play macro from a register' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Easy_playback_of_recorded_keys
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_playback_of_recorded_keys)
 ***
 # Title: Convenient Macro Playback Mapping
 # Category: advanced_mappings
@@ -2155,7 +2155,7 @@ Map space key to quickly replay a macro from the q register
 vim.keymap.set('n', '<Space>', '@q', { desc = 'Replay macro from q register' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Edit_a_previously_recorded_macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_a_previously_recorded_macro)
 ***
 # Title: Toggle Word Completion with F12 Key
 # Category: advanced_mappings
@@ -2212,7 +2212,7 @@ vim.keymap.set('n', '<F12>', unset_complete)
 vim.keymap.set('i', '<F12>', '<Esc>:lua unset_complete()<CR>a')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enhance_the_word_complete.vim_script
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enhance_the_word_complete.vim_script)
 ***
 # Title: Quick Escape Key Alternatives in Insert Mode
 # Category: advanced_mappings
@@ -2235,7 +2235,7 @@ vim.keymap.set('i', 'kj', '<Esc>', { noremap = true })
 vim.keymap.set('i', ';;', '<Esc>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Esc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Esc)
 ***
 # Title: Useful Vim Mappings for Productivity
 # Category: advanced_mappings
@@ -2254,7 +2254,7 @@ vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
 vim.keymap.set('n', '<C-L>', ':nohl<CR><C-L>', { desc = 'Clear search highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Example_Vimrc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_Vimrc)
 ***
 # Title: Execute Normal Mode Commands from Insert Mode
 # Category: advanced_mappings
@@ -2277,7 +2277,7 @@ vim.api.nvim_create_autocmd('CursorHoldI', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_accidentally_inserted_commands
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_accidentally_inserted_commands)
 ***
 # Title: Execute Files and URLs from Buffer Text
 # Category: advanced_mappings
@@ -2312,7 +2312,7 @@ vim.keymap.set('n', '<leader>xl', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_commands_from_buffer_text_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_commands_from_buffer_text_under_Windows)
 ***
 # Title: Expand Existing Abbreviation Quickly
 # Category: advanced_mappings
@@ -2330,7 +2330,7 @@ vim.keymap.set('n', '<C-X><C-X>', function()
 end, { desc = 'Expand existing abbreviation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Expand_existing_abbreviation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Expand_existing_abbreviation)
 ***
 # Title: Alternative Abbreviation Expansion Method
 # Category: advanced_mappings
@@ -2349,7 +2349,7 @@ vim.keymap.set('n', '<C-X><C-X>', function()
 end, { desc = 'Expand abbreviation at line end' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Expand_existing_abbreviation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Expand_existing_abbreviation)
 ***
 # Title: Smart Tab Insertion with Context
 # Category: advanced_mappings
@@ -2375,7 +2375,7 @@ vim.keymap.set('i', '<Tab>', function()
 , { expr = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Expandtabs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Expandtabs)
 ***
 # Title: Execute External Commands with Key Mapping
 # Category: advanced_mappings
@@ -2390,7 +2390,7 @@ map <F6> :!p4 edit %<CR>
 vim.keymap.set('n', '<F6>', function() vim.cmd('!p4 edit %') end, { desc = 'Run external command on current file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/External_commands_on_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/External_commands_on_Windows)
 ***
 # Title: Run Python Scripts from Vim
 # Category: advanced_mappings
@@ -2405,7 +2405,7 @@ map <F5> <Esc>:!python %<CR>
 vim.keymap.set('n', '<F5>', function() vim.cmd('!python %') end, { desc = 'Run current Python file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/External_commands_on_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/External_commands_on_Windows)
 ***
 # Title: Debug Code Abbreviations for PHP
 # Category: advanced_mappings
@@ -2424,7 +2424,7 @@ vim.cmd([[iabbrev phpv echo "<hr><pre>";var_dump($a);exit("debug ");]])
 vim.cmd([[iabbrev phpallv print_r(get_defined_vars());]])
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_jump_to_next_variable_on_the_same_line_(php_programmers_)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_jump_to_next_variable_on_the_same_line_(php_programmers_))
 ***
 # Title: Quick One-Key Session Command Mapping
 # Category: advanced_mappings
@@ -2465,7 +2465,7 @@ for i = 1, 12 do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_one_session_mapping
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_one_session_mapping)
 ***
 # Title: Quick Word Search Across Project
 # Category: advanced_mappings
@@ -2483,7 +2483,7 @@ vim.keymap.set('n', '<F4>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_in_files_recursively
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_in_files_recursively)
 ***
 # Title: Quick Word Search Across Files
 # Category: advanced_mappings
@@ -2500,7 +2500,7 @@ vim.keymap.set('n', '<F4>', function()
 end, { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Find_in_files_within_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_in_files_within_Vim)
 ***
 # Title: Custom Backspace Function for Edge Cases
 # Category: advanced_mappings
@@ -2542,7 +2542,7 @@ end
 vim.keymap.set('i', '<BS>', 'v:lua.custom_backspace()', { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_Backspace
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_Backspace)
 ***
 # Title: Diagnose and Clear Problematic Key Mappings
 # Category: advanced_mappings
@@ -2567,7 +2567,7 @@ vim.cmd('verbose imap ^H')
 vim.keymap.del('i', '<BS>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_delete_in_terminals_that_send_incorrect_delete_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_delete_in_terminals_that_send_incorrect_delete_code)
 ***
 # Title: Fix Meta-Keys in Terminal Vim
 # Category: advanced_mappings
@@ -2594,7 +2594,7 @@ for i = string.byte('a'), string.byte('z') do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_meta-keys_that_break_out_of_Insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_meta-keys_that_break_out_of_Insert_mode)
 ***
 # Title: Quick Syntax Highlighting Reset Mapping
 # Category: advanced_mappings
@@ -2611,7 +2611,7 @@ vim.keymap.set('n', '<F12>', ':syntax sync fromstart<CR>', { noremap = true })
 vim.keymap.set('i', '<F12>', '<C-o>:syntax sync fromstart<CR>', { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_syntax_highlighting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_syntax_highlighting)
 ***
 # Title: Fix x Command in Virtual Edit Mode
 # Category: advanced_mappings
@@ -2642,7 +2642,7 @@ vim.keymap.set('n', 'x', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fix_the_x_command_in_virtualedit_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_the_x_command_in_virtualedit_mode)
 ***
 # Title: Custom Folding Key Mappings
 # Category: advanced_mappings
@@ -2661,7 +2661,7 @@ vim.keymap.set({'n', 'i'}, '<S-Left>', 'zo', { desc = 'Open fold' })
 vim.keymap.set({'n', 'i'}, '<S-Right>', 'zc', { desc = 'Close fold' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Folding_for_plain_text_files_based_on_indentation
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Folding_for_plain_text_files_based_on_indentation)
 ***
 # Title: Manual XML Formatting Mapping
 # Category: advanced_mappings
@@ -2676,7 +2676,7 @@ map @@x !%xmllint --format --recover -^M
 vim.keymap.set('n', '@@x', ':%!xmllint --format --recover -<CR>', { desc = 'Format XML document' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Format_your_xml_document_using_xmllint
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Format_your_xml_document_using_xmllint)
 ***
 # Title: Easy French Character Mappings
 # Category: advanced_mappings
@@ -2704,7 +2704,7 @@ vim.keymap.set({'i', 'c'}, ';c', 'ç', { desc = 'Insert ç' })
 vim.keymap.set('i', ';q', '«  »<Esc>hi', { desc = 'Insert French quotation marks' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/French_character_maps
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/French_character_maps)
 ***
 # Title: Automate Java Getter/Setter Generation
 # Category: advanced_mappings
@@ -2732,7 +2732,7 @@ end
 vim.keymap.set('n', '<leader>jgs', generate_getter_setter, { desc = 'Generate Java Getter/Setter' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generate_Java_setters_and_getters_automatically
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generate_Java_setters_and_getters_automatically)
 ***
 # Title: Generate PHP Accessor and Setter Methods
 # Category: advanced_mappings
@@ -2767,7 +2767,7 @@ vim.keymap.set('n', '<F3>', generate_getter, { desc = 'Generate PHP Getter' })
 vim.keymap.set('n', '<S-F3>', generate_setter, { desc = 'Generate PHP Setter' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generate_accessor_and_setter_methods_from_variable_names
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generate_accessor_and_setter_methods_from_variable_names)
 ***
 # Title: Access Python Documentation in Vim
 # Category: advanced_mappings
@@ -2790,7 +2790,7 @@ vim.keymap.set('n', 'K', function()
 end, { buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_help_on_Python_libraries
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_help_on_Python_libraries)
 ***
 # Title: Quick PHP Function Inline Help
 # Category: advanced_mappings
@@ -2813,7 +2813,7 @@ vim.keymap.set('n', '<C-F1>', function()
 end, { desc = 'Get PHP function inline help' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_inline_help_for_PHP_functions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_inline_help_for_PHP_functions)
 ***
 # Title: Prevent Accidental Key Presses
 # Category: advanced_mappings
@@ -2838,7 +2838,7 @@ vim.keymap.set('n', '<S-Up>', 'V')
 vim.keymap.set('n', '<S-Down>', 'V')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Handle_common_command_typos
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Handle_common_command_typos)
 ***
 # Title: Toggle Option Flags Dynamically
 # Category: advanced_mappings
@@ -2875,7 +2875,7 @@ vim.keymap.set('n', '<F8>', function() _G.toggle_flag('guioptions', 'm') end)
 vim.keymap.set('n', '<F9>', function() _G.toggle_flag('guioptions', 'T') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Handy_option_flag_toggler
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Handy_option_flag_toggler)
 ***
 # Title: Cycle Numeric Options Intelligently
 # Category: advanced_mappings
@@ -2910,7 +2910,7 @@ end
 vim.keymap.set('n', '<M-t>s', function() _G.cycle_num('tabstop', 4, 4, 8) end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Handy_option_flag_toggler
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Handy_option_flag_toggler)
 ***
 # Title: Repeat Last Edit Without Moving Cursor
 # Category: advanced_mappings
@@ -2931,7 +2931,7 @@ vim.keymap.set('n', '.', function()
 end, { desc = 'Repeat last edit without moving cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_._restore_the_cursor_position_a_la_emacs_in_viper_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_._restore_the_cursor_position_a_la_emacs_in_viper_mode)
 ***
 # Title: Create Granular Undo Breakpoints in Insert Mode
 # Category: advanced_mappings
@@ -2946,7 +2946,7 @@ inoremap <CR> <C-G>u<CR>
 vim.keymap.set('i', '<CR>', '<C-G>u<CR>', { desc = 'Create undo breakpoint on line break' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Helps_undo_1_line_when_entered_many
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Helps_undo_1_line_when_entered_many)
 ***
 # Title: Toggle Long Line Highlighting
 # Category: advanced_mappings
@@ -2983,7 +2983,7 @@ vim.keymap.set('n', '<Leader>l', function()
 end, { desc = 'Toggle long line highlighting' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_long_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_long_lines)
 ***
 # Title: Toggle Line Length Highlighting
 # Category: advanced_mappings
@@ -3019,7 +3019,7 @@ end
 vim.keymap.set('n', '<Leader>l', toggle_line_length_highlight, { desc = 'Toggle line length highlight' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Highlight_text_beyond_80_columns
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_text_beyond_80_columns)
 ***
 # Title: Create Custom Language Keymaps
 # Category: advanced_mappings
@@ -3047,7 +3047,7 @@ vim.api.nvim_set_hl(0, 'lCursor', { bg = 'red' })
 -- with buffer-local option for specific language inputs
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_make_a_keymap
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_make_a_keymap)
 ***
 # Title: Quick Comment/Uncomment for Web Languages
 # Category: advanced_mappings
@@ -3092,7 +3092,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Html,_Javascript_and_Css_comment/uncomment_mapping
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Html,_Javascript_and_Css_comment/uncomment_mapping)
 ***
 # Title: Toggle Whitespace Ignore in Diff
 # Category: advanced_mappings
@@ -3124,7 +3124,7 @@ if vim.o.diff then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Ignore_white_space_in_vimdiff
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Ignore_white_space_in_vimdiff)
 ***
 # Title: Improve Completion Popup Menu Navigation
 # Category: advanced_mappings
@@ -3166,7 +3166,7 @@ vim.keymap.set('i', '<PageUp>', function()
 end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Improve_completion_popup_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Improve_completion_popup_menu)
 ***
 # Title: Insert-Mode Only Caps Lock Toggle
 # Category: advanced_mappings
@@ -3201,7 +3201,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert-mode_only_Caps_Lock
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert-mode_only_Caps_Lock)
 ***
 # Title: Quickly Insert Non-Commented Lines
 # Category: advanced_mappings
@@ -3218,7 +3218,7 @@ vim.keymap.set('n', 'go', 'o<Esc>S', { desc = 'Insert line below without comment
 vim.keymap.set('n', 'gO', 'O<Esc>S', { desc = 'Insert line above without comments' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_a_non_commented_line_despite_formatoptions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_a_non_commented_line_despite_formatoptions)
 ***
 # Title: Quickly Insert Single Character
 # Category: advanced_mappings
@@ -3242,7 +3242,7 @@ vim.keymap.set('n', 'S', function()
 end, { desc = 'Insert single char after cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_a_single_character
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_a_single_character)
 ***
 # Title: Repeatable Single Character Insertion
 # Category: advanced_mappings
@@ -3271,7 +3271,7 @@ vim.keymap.set('n', 'S', function()
 end, { desc = 'Insert repeatable single char after cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_a_single_character
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_a_single_character)
 ***
 # Title: Create Aligned Comment Boxes Quickly
 # Category: advanced_mappings
@@ -3290,7 +3290,7 @@ vim.keymap.set('n', ',co', function()
 end, { desc = 'Insert comment box' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_comment_boxes_in_your_code
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_comment_boxes_in_your_code)
 ***
 # Title: Insert Empty Line in Normal Mode
 # Category: advanced_mappings
@@ -3309,7 +3309,7 @@ vim.keymap.set('n', ',o', 'o<Esc>k', { desc = 'Insert line below' })
 vim.keymap.set('n', ',O', 'O<Esc>j', { desc = 'Insert line above' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_in_normal_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_in_normal_mode)
 ***
 # Title: Insert Space Without Moving Cursor
 # Category: advanced_mappings
@@ -3324,7 +3324,7 @@ nnoremap <Space> i<Space><Esc>
 vim.keymap.set('n', '<Space>', 'i<Space><Esc>', { desc = 'Insert space at cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_in_normal_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_in_normal_mode)
 ***
 # Title: Add Blank Line Without Moving Cursor
 # Category: advanced_mappings
@@ -3341,7 +3341,7 @@ vim.keymap.set('n', '<C-J>', 'm`o<Esc>``', { desc = 'Insert line below, keep cur
 vim.keymap.set('n', '<C-K>', 'm`O<Esc>``', { desc = 'Insert line above, keep cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_newline_without_entering_insert_mode)
 ***
 # Title: Advanced Single Character Insertion with Repeat
 # Category: advanced_mappings
@@ -3371,7 +3371,7 @@ vim.keymap.set('n', 'S', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_one_character_only
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_one_character_only)
 ***
 # Title: Quick Dictionary Lookup in Vim
 # Category: advanced_mappings
@@ -3400,7 +3400,7 @@ vim.keymap.set('n', '<S-F12>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_Vim_with_a_dictionary
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_Vim_with_a_dictionary)
 ***
 # Title: Custom AutoCAD MTEXT Editing Menu in Vim
 # Category: advanced_mappings
@@ -3434,7 +3434,7 @@ end
 create_autocad_menu()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_gvim_with_AutoCad_MTEXT
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_gvim_with_AutoCad_MTEXT)
 ***
 # Title: Quick File Upload with FTPeel Integration
 # Category: advanced_mappings
@@ -3461,7 +3461,7 @@ end
 vim.keymap.set('n', '<C-S>', MagicMirrorIt, { desc = 'Upload file to FTPeel' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_with_FTPeel_on_Mac_OS_X
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_with_FTPeel_on_Mac_OS_X)
 ***
 # Title: Quick Internet Search for Word Under Cursor
 # Category: advanced_mappings
@@ -3490,7 +3490,7 @@ vim.keymap.set('v', 'gF', function()
 end, { desc = 'Search Google for selected text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Internet_search_for_the_current_word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Internet_search_for_the_current_word)
 ***
 # Title: Open Web Links Under Cursor
 # Category: advanced_mappings
@@ -3521,7 +3521,7 @@ vim.keymap.set('v', 'gF', function()
 end, { desc = 'Open selected URL' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Internet_search_for_the_current_word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Internet_search_for_the_current_word)
 ***
 # Title: Quickly Introduce and Extract Variables
 # Category: advanced_mappings
@@ -3543,7 +3543,7 @@ vim.keymap.set('n', '<leader>v', function()
 end, { desc = 'Extract expression to variable' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Introduce_variable
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduce_variable)
 ***
 # Title: Invert Number Row Keys for Faster Typing
 # Category: advanced_mappings
@@ -3597,7 +3597,7 @@ end
 setup_key_inversion()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Invert_the_number_row_keys_for_faster_typing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Invert_the_number_row_keys_for_faster_typing)
 ***
 # Title: Invoke Function with Count Prefix
 # Category: advanced_mappings
@@ -3628,7 +3628,7 @@ vim.keymap.set('n', ',a', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Invoke_a_function_with_a_count_prefix
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Invoke_a_function_with_a_count_prefix)
 ***
 # Title: Write Current Key Mappings to File
 # Category: advanced_mappings
@@ -3648,7 +3648,7 @@ vim.cmd('silent verbose map')
 vim.cmd('redir END')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Is_there_any_way_to_write_currently_mapped_keys_in_Vim_to_a_file%3F
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Is_there_any_way_to_write_currently_mapped_keys_in_Vim_to_a_file%3F)
 ***
 # Title: Custom Jump List Navigation Function
 # Category: advanced_mappings
@@ -3693,7 +3693,7 @@ end
 vim.keymap.set('n', '<Leader>j', _G.goto_jump, { desc = 'Navigate jump list' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations)
 ***
 # Title: Disable Alt Key Menu Shortcuts in Vim
 # Category: advanced_mappings
@@ -3708,7 +3708,7 @@ set winaltkeys=no
 vim.o.winaltkeys = 'no'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Key_maps_using_the_Alt_modifier
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Key_maps_using_the_Alt_modifier)
 ***
 # Title: Custom Alt Key Mappings for Special Characters
 # Category: advanced_mappings
@@ -3733,7 +3733,7 @@ vim.keymap.set('n', '<M-f>', '[', { desc = 'Insert left bracket' })
 vim.keymap.set('n', '<M-g>', ']', { desc = 'Insert right bracket' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Key_maps_using_the_Alt_modifier
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Key_maps_using_the_Alt_modifier)
 ***
 # Title: Quick Global Substitution Mapping
 # Category: advanced_mappings
@@ -3748,7 +3748,7 @@ Create a fast mapping to initiate a global search and replace with confirmation
 vim.keymap.set('n', '<F4>', ':%s///gc<Left><Left><Left>', { desc = 'Global substitution with confirmation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Keystroke_Saving_Substituting_and_Searching
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Keystroke_Saving_Substituting_and_Searching)
 ***
 # Title: Launch and View Remote Batch Job Results
 # Category: advanced_mappings
@@ -3790,7 +3790,7 @@ end
 vim.keymap.set('n', '<F12>', edit_most_recent_file, { desc = 'Edit most recent file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Launch_remote_batch_jobs_and_view_results_in_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_remote_batch_jobs_and_view_results_in_Vim)
 ***
 # Title: Quick Compile Mapping with F7
 # Category: advanced_mappings
@@ -3826,7 +3826,7 @@ vim.keymap.set('n', '<F7>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make-compile_current_buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make-compile_current_buffer)
 ***
 # Title: Windows-style Word Navigation Shortcuts
 # Category: advanced_mappings
@@ -3860,7 +3860,7 @@ vim.keymap.set('n', '<C-S-Right>', 'gh<C-O>w', { desc = 'Move forward a word in 
 vim.keymap.set('i', '<C-S-Right>', '<C-\><C-O>gh<C-O>w', { desc = 'Move forward a word in insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_C-Left_C-Right_behave_as_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_C-Left_C-Right_behave_as_in_Windows)
 ***
 # Title: Handle Shift-Tab for Unindent and Completion
 # Category: advanced_mappings
@@ -3884,7 +3884,7 @@ vim.keymap.set({'n', 'i', 'v'}, '<S-Tab>', function()
 end, { desc = 'Unindent or tab completion' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_Shift-Tab_work
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_Shift-Tab_work)
 ***
 # Title: Quick Omni and User Completion
 # Category: advanced_mappings
@@ -3920,7 +3920,7 @@ vim.keymap.set('i', '<S-Space>', function()
   end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE)
 ***
 # Title: Auto-Close Brackets & Navigate Out
 # Category: advanced_mappings
@@ -3946,7 +3946,7 @@ vim.keymap.set('i', '{', '{<CR>}<Esc>O', { desc = 'Auto-close curly braces' })
 vim.keymap.set('i', '<C-j>', '<Esc>/', { desc = 'Navigate out of brackets' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Making_Parenthesis_And_Brackets_Handling_Easier
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Making_Parenthesis_And_Brackets_Handling_Easier)
 ***
 # Title: Create Custom Option Toggle Function
 # Category: advanced_mappings
@@ -3981,7 +3981,7 @@ end
 vim.keymap.set('n', '<F12>', _G.toggle_mouse, { desc = 'Toggle mouse support' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Managing_boolean_options
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Managing_boolean_options)
 ***
 # Title: Create a Function to Toggle Options
 # Category: advanced_mappings
@@ -4013,7 +4013,7 @@ vim.keymap.set('n', '<F12>', function()
 end, { desc = 'Toggle mouse usage' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Managing_set_options
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Managing_set_options)
 ***
 # Title: Remap CapsLock to Escape or Ctrl
 # Category: advanced_mappings
@@ -4030,7 +4030,7 @@ Remapping CapsLock to Escape or Ctrl can significantly improve typing efficiency
 vim.keymap.set('n', '<CapsLock>', '<Esc>', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_CapsLock_key_to_Esc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_CapsLock_key_to_Esc)
 ***
 # Title: Conditional Key Remapping with AutoHotkey
 # Category: advanced_mappings
@@ -4051,7 +4051,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_CapsLock_key_to_Esc
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_CapsLock_key_to_Esc)
 ***
 # Title: Map Ctrl-Backspace to Delete Previous Word
 # Category: advanced_mappings
@@ -4076,7 +4076,7 @@ vim.keymap.set('i', '<C-w>', '<C-\><C-o>dB', { desc = 'Delete previous WORD' })
 vim.keymap.set('i', '<C-BS>', '<C-\><C-o>db', { desc = 'Delete previous word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word)
 ***
 # Title: Ctrl-S: Smart File Saving Shortcut
 # Category: advanced_mappings
@@ -4117,7 +4117,7 @@ vim.keymap.set('n', '<C-S>', '<Cmd>Update<CR>', { silent = true })
 vim.keymap.set('i', '<C-S>', '<C-o>:Update<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_Ctrl-S_to_save_current_or_new_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_Ctrl-S_to_save_current_or_new_files)
 ***
 # Title: Flexible Caps Lock Mapping with AutoHotkey
 # Category: advanced_mappings
@@ -4134,7 +4134,7 @@ Advanced key mapping to use Caps Lock as Ctrl when held, and Escape when tapped
 -- Provides context-aware key remapping
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows)
 ***
 # Title: Remap Caps Lock to Escape on macOS
 # Category: advanced_mappings
@@ -4148,7 +4148,7 @@ Remap Caps Lock key to Escape in system settings, which is especially useful for
 -- Select 'Escape' for Caps Lock key
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_macOS
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_macOS)
 ***
 # Title: Remap Extra Keys on Non-US Keyboards
 # Category: advanced_mappings
@@ -4175,7 +4175,7 @@ vim.keymap.set('n', 'Ä', '}', { desc = 'Custom mapping for }' })
 vim.keymap.set('n', 'ß', '/', { desc = 'Custom mapping for /' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_extra_keys_on_non_US_keyboards
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_extra_keys_on_non_US_keyboards)
 ***
 # Title: Turkish Keyboard Layout Optimization
 # Category: advanced_mappings
@@ -4194,7 +4194,7 @@ vim.keymap.set('n', 'ş', '<CR>', { desc = 'Remap Enter key' })
 vim.g.mapleader = 'ğ'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_extra_keys_on_non_US_keyboards
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_extra_keys_on_non_US_keyboards)
 ***
 # Title: Map Semicolon to Command Mode
 # Category: advanced_mappings
@@ -4213,7 +4213,7 @@ vim.keymap.set('n', ';', ':', { desc = 'Enter command mode quickly' })
 vim.keymap.set('v', ';', ':', { desc = 'Enter command mode in visual mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_semicolon_to_colon
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_semicolon_to_colon)
 ***
 # Title: Preserve Original Semicolon Functionality
 # Category: advanced_mappings
@@ -4230,7 +4230,7 @@ noremap ;; ;
 vim.keymap.set('n', ';;', ';', { desc = 'Repeat last f/t motion' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Map_semicolon_to_colon
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_semicolon_to_colon)
 ***
 # Title: Fast Keycode Mapping in Terminal Vim
 # Category: advanced_mappings
@@ -4259,7 +4259,7 @@ if not vim.g.neovide and vim.fn.has('gui_running') == 0 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_fast_keycodes_in_terminal_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_fast_keycodes_in_terminal_Vim)
 ***
 # Title: Create Mode-Specific Key Mappings
 # Category: advanced_mappings
@@ -4282,7 +4282,7 @@ vim.keymap.set('n', '<F2>', ':lchdir %:p:h<CR>:pwd<CR>', { desc = 'Change to cur
 vim.keymap.set('i', '<F3>', function() return vim.fn.strftime('%c') end, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial)
 ***
 # Title: Find Unused Keys for Custom Mappings
 # Category: advanced_mappings
@@ -4305,7 +4305,7 @@ vim.cmd('map!')
 vim.cmd('verbose map ,')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2))
 ***
 # Title: Use Symbolic Key Notation for Mappings
 # Category: advanced_mappings
@@ -4324,7 +4324,7 @@ vim.keymap.set('n', '<C-R>', ':somecommand<CR>')
 vim.keymap.set('n', '<S-F2>', ':anothercommand<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2))
 ***
 # Title: Avoid Mapping Frequently Used Navigation Keys
 # Category: advanced_mappings
@@ -4344,7 +4344,7 @@ Prevent mapping keys like 'j', 'k', 'l', 'h' at the start of custom mappings to 
 vim.keymap.set('n', '<leader>jx', ':somecommand<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2))
 ***
 # Title: Use <Leader> for Plugin-Friendly Key Mappings
 # Category: advanced_mappings
@@ -4361,7 +4361,7 @@ vim.g.mapleader = '_'
 vim.keymap.set('n', '<Leader>f', function() -- implement JumpToFile function end, { desc = 'Jump to file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3))
 ***
 # Title: Create Unique Plugin Mappings with <Plug>
 # Category: advanced_mappings
@@ -4378,7 +4378,7 @@ vim.keymap.set('n', '<Plug>ScriptFunc', function() -- implement VimScriptFn end,
 vim.keymap.set('n', '_p', '<Plug>ScriptFunc')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_3))
 ***
 # Title: Create Mode-Specific Key Mappings in Vim
 # Category: advanced_mappings
@@ -4403,7 +4403,7 @@ vim.keymap.set('i', '<F3>', function()
 end, { expr = true, desc = 'Insert current timestamp' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_tutorial
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_tutorial)
 ***
 # Title: Safely List and Manage Vim Key Mappings
 # Category: advanced_mappings
@@ -4429,7 +4429,7 @@ vim.cmd('nmap')  -- List normal mode mappings
 vim.keymap.del('n', '<F2>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_keys_tutorial
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_keys_tutorial)
 ***
 # Title: Swap ; and : for Faster Command Entry
 # Category: advanced_mappings
@@ -4462,7 +4462,7 @@ vim.keymap.set('c', ';', function()
 , { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mapping_to_enter_colon_commands
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_to_enter_colon_commands)
 ***
 # Title: Visual Mode Smart Paste Without Register Overwrite
 # Category: advanced_mappings
@@ -4477,7 +4477,7 @@ xnoremap <silent> p p:let @"=@0<CR>
 vim.keymap.set('x', 'p', 'p<cmd>let @"=@0<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode)
 ***
 # Title: Insert Mode Alt Key Mappings for Quick Editing
 # Category: advanced_mappings
@@ -4508,7 +4508,7 @@ vim.keymap.set('i', '<A-o>', '<C-o>', { desc = 'Execute single normal mode comma
 vim.keymap.set('i', '<A-w>', '<C-o>:w<CR>', { desc = 'Save file from insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mappings_to_facilitate_the_creation_of_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings_to_facilitate_the_creation_of_text)
 ***
 # Title: Advanced Command and Function Mapping Techniques
 # Category: advanced_mappings
@@ -4550,7 +4550,7 @@ end, {
 vim.keymap.set('n', '\\aa', ':TestOne<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maps,_Commands,_and_Functions_-_some_examples_of_their_interplay
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maps,_Commands,_and_Functions_-_some_examples_of_their_interplay)
 ***
 # Title: Enhanced Mouse Interaction in Vim
 # Category: advanced_mappings
@@ -4590,7 +4590,7 @@ vim.keymap.set({'n', 'i', 'v'}, '<F7>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mighty_Mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mighty_Mouse)
 ***
 # Title: Simulate Shift-Arrow Text Selection in Terminals
 # Category: advanced_mappings
@@ -4622,7 +4622,7 @@ end, { desc = 'Select up in terminal' })
 -- Similar mappings for other directions can be added accordingly
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mimic_shift-arrow_to_select_text_in_terminals_without_shift-arrow
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mimic_shift-arrow_to_select_text_in_terminals_without_shift-arrow)
 ***
 # Title: Break Undo Chain with Modifier Keys
 # Category: advanced_mappings
@@ -4643,7 +4643,7 @@ vim.keymap.set('i', '<Del>', '<C-g>u<Del>', { desc = 'Undo break on delete' })
 vim.keymap.set('i', '<C-w>', '<C-g>u<C-w>', { desc = 'Undo break on word delete' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Modified_undo_behavior
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Modified_undo_behavior)
 ***
 # Title: Explicit Undo Chain Break with <End>
 # Category: advanced_mappings
@@ -4658,7 +4658,7 @@ inoremap <End> <C-g>u<End>
 vim.keymap.set('i', '<End>', '<C-g>u<End>', { desc = 'Break undo chain at end of line' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Modified_undo_behavior
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Modified_undo_behavior)
 ***
 # Title: Disable Middle Mouse Button Paste
 # Category: advanced_mappings
@@ -4685,7 +4685,7 @@ vim.keymap.set({'n', 'i', 'v', 'x', 's', 'c', 't'}, '<3-MiddleMouse>', '<Nop>')
 vim.keymap.set({'n', 'i', 'v', 'x', 's', 'c', 't'}, '<4-MiddleMouse>', '<Nop>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Mouse_wheel_for_scroll_only_-_disable_middle_button_paste
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mouse_wheel_for_scroll_only_-_disable_middle_button_paste)
 ***
 # Title: Virtual Cursor Movement in Insert Mode
 # Category: advanced_mappings
@@ -4718,7 +4718,7 @@ vim.keymap.set('i', '<S-Up>', function()
 end, { desc = 'Virtual cursor up in insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_cursor_up/down_virtually_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_cursor_up/down_virtually_in_insert_mode)
 ***
 # Title: Move Function Parameters with Macros
 # Category: advanced_mappings
@@ -4747,7 +4747,7 @@ vim.keymap.set('n', ',mp', function()
 end, { desc = 'Move parameter to end' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_function_parameters_with_macro
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_function_parameters_with_macro)
 ***
 # Title: Easily Move Lines Up or Down
 # Category: advanced_mappings
@@ -4772,7 +4772,7 @@ vim.keymap.set('v', '<A-j>', ':m ">+1<CR>gv=gv', { noremap = true, silent = true
 vim.keymap.set('v', '<A-k>', ':m "<-2<CR>gv=gv', { noremap = true, silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_lines_up_or_down_in_a_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_lines_up_or_down_in_a_file)
 ***
 # Title: Quick Toggle for Vim Options
 # Category: advanced_mappings
@@ -4823,7 +4823,7 @@ end
 vim.keymap.set('n', '<Leader>o', toggle_options, { desc = 'Toggle Vim Options' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Not_So_Quick_generic_option_toggling
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Not_So_Quick_generic_option_toggling)
 ***
 # Title: Open Online Documentation for Word Under Cursor
 # Category: advanced_mappings
@@ -4877,7 +4877,7 @@ end
 vim.keymap.set('n', '<M-d>', OnlineDoc, { desc = 'Open online documentation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Online_documentation_for_word_under_cursor
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Online_documentation_for_word_under_cursor)
 ***
 # Title: Open Windows Help Files with Vim Keymaps
 # Category: advanced_mappings
@@ -4904,7 +4904,7 @@ vim.keymap.set('v', '<C-F1>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_Windows_Help_files_on_a_specific_topic
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_Windows_Help_files_on_a_specific_topic)
 ***
 # Title: Insert Multiple Blank Lines Easily
 # Category: advanced_mappings
@@ -4961,7 +4961,7 @@ vim.keymap.set('n', '<Leader>O', function()
 end, { desc = 'Insert blank lines above' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Open_multiple_lines
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_multiple_lines)
 ***
 # Title: Quick HTML/URL Preview in Browser
 # Category: advanced_mappings
@@ -4989,7 +4989,7 @@ vim.keymap.set('n', '<F8>', function()
 end, { desc = 'Open URL under cursor in browser' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Opening_current_Vim_file_in_your_Windows_browser
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Opening_current_Vim_file_in_your_Windows_browser)
 ***
 # Title: Dynamic Key Handler with Multiple Contexts
 # Category: advanced_mappings
@@ -5048,7 +5048,7 @@ vim.keymap.set('n', '<Esc>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Overload_a_key_with_multiple_handlers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Overload_a_key_with_multiple_handlers)
 ***
 # Title: Run Macro on Matching Lines
 # Category: advanced_mappings
@@ -5065,7 +5065,7 @@ Execute a recorded macro on all lines matching a specific pattern
 vim.cmd('g/pattern/normal @q')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Power_of_g
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Power_of_g)
 ***
 # Title: Exit Insert Mode Without Moving Cursor
 # Category: advanced_mappings
@@ -5084,7 +5084,7 @@ vim.keymap.set('i', 'fj', '<Esc>l')
 vim.keymap.set('i', 'jf', '<Esc>l')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_escape_from_moving_the_cursor_one_character_to_the_left
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_escape_from_moving_the_cursor_one_character_to_the_left)
 ***
 # Title: Prevent Accidental Command Typos
 # Category: advanced_mappings
@@ -5109,7 +5109,7 @@ vim.cmd('cabbrev q!@ q!')
 vim.cmd('cabbrev wq!@ wq!')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Prevent_the_cursor_from_jumping_around_when_pressing_%22V%22_for_visual_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prevent_the_cursor_from_jumping_around_when_pressing_%22V%22_for_visual_mode)
 ***
 # Title: Run and Preview Interpreter Output in Split Window
 # Category: advanced_mappings
@@ -5171,7 +5171,7 @@ vim.keymap.set('n', '<F7>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Preview_output_from_interpreter_in_new_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Preview_output_from_interpreter_in_new_window)
 ***
 # Title: Handle Numeric Keypad Escape Sequences
 # Category: advanced_mappings
@@ -5211,7 +5211,7 @@ end
 map_keypad_sequences()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/PuTTY_numeric_keypad_mappings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/PuTTY_numeric_keypad_mappings)
 ***
 # Title: Quick Markdown Preview with External Tools
 # Category: advanced_mappings
@@ -5242,7 +5242,7 @@ vim.keymap.set('n', '<C-p>', function()
 end, { desc = 'Quick Markdown Preview' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_Markdown_Preview
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_Markdown_Preview)
 ***
 # Title: Quick Insert Mode Commands via Double Letters
 # Category: advanced_mappings
@@ -5284,7 +5284,7 @@ end
 setup_insert_mode_mappings()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_command_in_insert_mode
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_command_in_insert_mode)
 ***
 # Title: Quick Insert Character at End of Line
 # Category: advanced_mappings
@@ -5316,7 +5316,7 @@ vim.keymap.set('i', '<F2>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_insert_character_at_end-of-line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_insert_character_at_end-of-line)
 ***
 # Title: Custom Toolbar URL Launcher
 # Category: advanced_mappings
@@ -5334,7 +5334,7 @@ vim.keymap.set('v', '<ToolBar>New', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_launch_html_and_other_Windows_documents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_launch_html_and_other_Windows_documents)
 ***
 # Title: Dynamic File Preview in Index/Listing
 # Category: advanced_mappings
@@ -5353,7 +5353,7 @@ vim.keymap.set('n', '<Space>', function()
 end, { buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_peek_at_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_peek_at_files)
 ***
 # Title: Quick Braces Insertion in Insert Mode
 # Category: advanced_mappings
@@ -5370,7 +5370,7 @@ imap <C-F> {<CR>}<C-O>O
 vim.keymap.set('i', '<C-f>', '{<CR>}<C-o>O', { desc = 'Insert braces with auto-indent' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_way_to_insert_opening_and_closing_braces_for_programmers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_way_to_insert_opening_and_closing_braces_for_programmers)
 ***
 # Title: Quick Word/Line Change with Auto-Exit
 # Category: advanced_mappings
@@ -5395,7 +5395,7 @@ vim.keymap.set('n', 'p$', function()
 end, { desc = 'Change to line end and exit with Enter' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_change_word_or_line
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_change_word_or_line)
 ***
 # Title: Quick Single Word Insertion Mapping
 # Category: advanced_mappings
@@ -5418,7 +5418,7 @@ vim.keymap.set('n', ',w', function()
 end, { desc = 'Quick word insertion' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_insert_a_single_word
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_insert_a_single_word)
 ***
 # Title: Toggle Less-like Scrolling Mode
 # Category: advanced_mappings
@@ -5471,7 +5471,7 @@ vim.keymap.set('n', '<F5>', toggle_less_mode)
 vim.keymap.set('i', '<F5>', '<Esc>' .. toggle_less_mode)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quickly_switch_between_pager-like_and_editor-like_scroll
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_switch_between_pager-like_and_editor-like_scroll)
 ***
 # Title: Convert Quoted Printable Email to Plain Text
 # Category: advanced_mappings
@@ -5495,7 +5495,7 @@ vim.keymap.set('v', '<Leader>Q', function()
 end, { desc = 'Convert Selected Quoted Printable to Plain Text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quoted_Printable_to_Plain
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quoted_Printable_to_Plain)
 ***
 # Title: Simple RCS Version Control Mappings
 # Category: advanced_mappings
@@ -5520,7 +5520,7 @@ vim.keymap.set('n', '<F2>', function()
 end, { desc = 'RCS Check-out' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Really_basic_RCS_interaction_from_within_vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Really_basic_RCS_interaction_from_within_vim)
 ***
 # Title: Prevent Accidental Text Deletion in Insert Mode
 # Category: advanced_mappings
@@ -5537,7 +5537,7 @@ vim.keymap.set('i', '<C-u>', '<C-g>u<C-u>', { desc = 'Undo-breakpoint before lin
 vim.keymap.set('i', '<C-w>', '<C-g>u<C-w>', { desc = 'Undo-breakpoint before word deletion' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recover_from_accidental_Ctrl-U
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recover_from_accidental_Ctrl-U)
 ***
 # Title: Create Recursive Vim Mappings for Repetitive Editing
 # Category: advanced_mappings
@@ -5570,7 +5570,7 @@ end
 vim.keymap.set('n', 'z', RecursiveFileProcessing)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recursive_mappings
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recursive_mappings)
 ***
 # Title: Remap CapsLock to Escape or Ctrl in Neovim
 # Category: advanced_mappings
@@ -5596,7 +5596,7 @@ end
 vim.keymap.set({'i', 'n'}, '<CapsLock>', caps_escape, { expr = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remap_CapsLock_or_other_keys_without_reboot_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remap_CapsLock_or_other_keys_without_reboot_in_Windows)
 ***
 # Title: Context-Specific Key Remapping with AutoHotkey
 # Category: advanced_mappings
@@ -5613,7 +5613,7 @@ vim.keymap.set({'n', 't'}, '<CapsLock>', '<Esc>', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Remap_CapsLock_or_other_keys_without_reboot_in_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remap_CapsLock_or_other_keys_without_reboot_in_Windows)
 ***
 # Title: Copy and Replace Words or Lines Repeatedly
 # Category: advanced_mappings
@@ -5633,7 +5633,7 @@ Efficiently copy and replace text at multiple locations using yanking and dot co
 -- Leverage vim.fn.getreg() to access registers in Lua
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_change
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_change)
 ***
 # Title: Repeat Last Command at Start of Change
 # Category: advanced_mappings
@@ -5650,7 +5650,7 @@ vim.keymap.set('n', '.', function()
 end, { desc = 'Repeat last command and return to change start' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Repeat_last_command_and_put_cursor_at_start_of_change
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_command_and_put_cursor_at_start_of_change)
 ***
 # Title: Quick Word/Selection Replacement Mappings
 # Category: advanced_mappings
@@ -5677,7 +5677,7 @@ vim.keymap.set('n', '<F5>', 'viw"+p', { desc = 'Replace word with clipboard' })
 vim.keymap.set('v', '<F5>', '"+p', { desc = 'Replace selection with clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text)
 ***
 # Title: Quick Word Replacement Mapping
 # Category: advanced_mappings
@@ -5692,7 +5692,7 @@ nnoremap S diw"0P
 vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_text_to_register_content_with_visual_selection_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_text_to_register_content_with_visual_selection_help)
 ***
 # Title: Quickly Replace Words Without Typing
 # Category: advanced_mappings
@@ -5721,7 +5721,7 @@ vim.keymap.set('n', 'go', 'lb"bPldwi <Esc>hbye', { desc = 'Replace word with reg
 vim.keymap.set('n', 'gp', 'lb"bPldwhbyw', { desc = 'Replace word with register b, no space' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_with_no_typing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_with_no_typing)
 ***
 # Title: Quick Text Replacement Workflow
 # Category: advanced_mappings
@@ -5743,7 +5743,7 @@ Efficient method to replace multiple words or text objects using change and regi
 -- 4. Use . to repeat
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replacing_a_string_with_default_buffer_contents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replacing_a_string_with_default_buffer_contents)
 ***
 # Title: Quickfix-Powered Code Review Workflow
 # Category: advanced_mappings
@@ -5783,7 +5783,7 @@ vim.keymap.set('n', ',sp', _G.save_position, {})
 vim.keymap.set('n', ',ic', _G.insert_comment, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Review_code_effectively_using_quickfix
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Review_code_effectively_using_quickfix)
 ***
 # Title: Quick Number Conversion Under Cursor
 # Category: advanced_mappings
@@ -5810,7 +5810,7 @@ vim.keymap.set('n', 'gn', function()
 end, { desc = 'Convert number under cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip448
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip448)
 ***
 # Title: Use Ctrl-O for Single Normal Mode Command in Insert Mode
 # Category: advanced_mappings
@@ -5825,7 +5825,7 @@ Ctrl-O allows executing a single normal mode command while in insert mode withou
 vim.keymap.set('i', '<F5>', '<C-o>:set number!<CR>', { desc = 'Toggle line numbers in insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip459
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip459)
 ***
 # Title: Flexible Insert Mode Command Execution
 # Category: advanced_mappings
@@ -5842,7 +5842,7 @@ vim.keymap.set('n', '<F5>', ':set number!<CR>')
 vim.keymap.set('i', '<F5>', '<c-o><F5>', { desc = 'Execute normal mode F5 from insert mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip459
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip459)
 ***
 # Title: Quick XML Element Creation Mapping
 # Category: advanced_mappings
@@ -5866,7 +5866,7 @@ vim.keymap.set('i', ',,,', function()
 end, { buffer = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip465
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip465)
 ***
 # Title: Quick Single Character Insertion
 # Category: advanced_mappings
@@ -5899,7 +5899,7 @@ vim.keymap.set('n', 'S', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip466
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip466)
 ***
 # Title: Advanced Word Swapping Mapping
 # Category: advanced_mappings
@@ -5919,7 +5919,7 @@ vim.keymap.set('n', 'gw', function()
 end, { desc = 'Swap current word with next' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip47
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip47)
 ***
 # Title: Restore Cursor Position After Repeat Command
 # Category: advanced_mappings
@@ -5939,7 +5939,7 @@ vim.keymap.set('n', '.', function()
 end, { desc = 'Repeat last edit without moving cursor' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip474
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip474)
 ***
 # Title: Alternative Cursor Position Preservation Mapping
 # Category: advanced_mappings
@@ -5957,7 +5957,7 @@ vim.keymap.set('n', '.', function()
 end, { desc = 'Repeat last edit with minimal cursor movement' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip474
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip474)
 ***
 # Title: Quick Word Replacement Without Typing
 # Category: advanced_mappings
@@ -5986,7 +5986,7 @@ vim.keymap.set('n', 'go', 'lb"bPldwi <Esc>hbye', { desc = 'Replace word with reg
 vim.keymap.set('n', 'gp', 'lb"bPldwhbyw', { desc = 'Replace word with register b' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip479
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip479)
 ***
 # Title: Numeric Keypad Escape Sequence Mapping
 # Category: advanced_mappings
@@ -6021,7 +6021,7 @@ vim.keymap.set('i', '<Esc>Oy', '9')
 vim.keymap.set('i', '<Esc>Op', '0')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip503
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip503)
 ***
 # Title: Open Windows Help Files with Custom Keymapping
 # Category: advanced_mappings
@@ -6047,7 +6047,7 @@ vim.keymap.set('v', '<C-F1>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip506
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip506)
 ***
 # Title: Dynamic Search Mode Cycling
 # Category: advanced_mappings
@@ -6101,7 +6101,7 @@ end
 vim.keymap.set('n', '<F4>', search_mode)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip528
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip528)
 ***
 # Title: Configure Shift-Tab Key Behavior in Vim
 # Category: advanced_mappings
@@ -6125,7 +6125,7 @@ vim.keymap.set({'n', 'i', 'v'}, '<S-Tab>', '<C-d>', { desc = 'Unindent or naviga
 vim.o.t_kB = vim.fn.nr2char(27) .. '[Z'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip529
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip529)
 ***
 # Title: Smart Table Navigation with Custom Field Movement
 # Category: advanced_mappings
@@ -6193,7 +6193,7 @@ vim.keymap.set({'n', 'i'}, '<S-Tab>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip547
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip547)
 ***
 # Title: Smart Table Editing with Tab Navigation
 # Category: advanced_mappings
@@ -6216,7 +6216,7 @@ vim.keymap.set({'n', 'i'}, '<Tab>', _G.next_table_field)
 vim.keymap.set({'n', 'i'}, '<S-Tab>', _G.previous_table_field)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip554
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip554)
 ***
 # Title: Quick File Save Mapping
 # Category: advanced_mappings
@@ -6231,7 +6231,7 @@ noremap <Leader>s :update<CR>
 vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = 'Save file if modified' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip582
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip582)
 ***
 # Title: Enhanced Block Selection with Matchit
 # Category: advanced_mappings
@@ -6248,7 +6248,7 @@ runtime macros/matchit.vim
 -- Enables advanced % key navigation and text object selection
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip6
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip6)
 ***
 # Title: Quick Word 'Stamping' Across Document
 # Category: advanced_mappings
@@ -6267,7 +6267,7 @@ vim.keymap.set('n', 'S', function()
 end, { noremap = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip605
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip605)
 ***
 # Title: Create Custom Keymaps for Language Mapping
 # Category: advanced_mappings
@@ -6292,7 +6292,7 @@ vim.cmd.highlight("lCursor ctermbg=red guibg=red")
 -- Note: Full keymap loading requires Vim script
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip619
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip619)
 ***
 # Title: Quick C Debugging Print Statement Macro
 # Category: advanced_mappings
@@ -6311,7 +6311,7 @@ vim.keymap.set('n', '_if', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip625
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip625)
 ***
 # Title: Execute Files and URLs from Buffer Text in Windows
 # Category: advanced_mappings
@@ -6346,7 +6346,7 @@ vim.keymap.set('n', '\xl', function()
 end, { desc = 'Execute word with file path' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip628
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip628)
 ***
 # Title: Auto-Insert Closing Characters with Smart Behavior
 # Category: advanced_mappings
@@ -6378,7 +6378,7 @@ vim.keymap.set('i', ')', function()
 end, { expr = true, desc = 'Smart closing parenthesis handling' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip630
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip630)
 ***
 # Title: Run Windows Program with K Keymap
 # Category: advanced_mappings
@@ -6396,7 +6396,7 @@ vim.keymap.set('n', 'K', function()
 end, { desc = 'Run program on current word' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip642
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip642)
 ***
 # Title: Disable Unwanted Vim Key Mappings
 # Category: advanced_mappings
@@ -6411,7 +6411,7 @@ Quickly disable built-in Vim key commands that you find annoying or accidentally
 vim.keymap.set('n', 'K', '<Nop>', { desc = 'Disable built-in K command' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip643
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip643)
 ***
 # Title: Quick Abbreviation Expansion Mapping
 # Category: advanced_mappings
@@ -6431,7 +6431,7 @@ vim.keymap.set('n', '<C-X><C-X>', function()
 end, { desc = 'Expand existing abbreviation' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip649
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip649)
 ***
 # Title: Automatic Comment Mapping for Different Filetypes
 # Category: advanced_mappings
@@ -6470,7 +6470,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip660
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip660)
 ***
 # Title: Diagnose and Fix Backspace Key Mappings
 # Category: advanced_mappings
@@ -6493,7 +6493,7 @@ vim.cmd('verbose imap <BS>')
 vim.keymap.del('i', '<BS>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip68
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip68)
 ***
 # Title: Clipboard Keymappings for macOS
 # Category: advanced_mappings
@@ -6510,7 +6510,7 @@ vim.keymap.set('n', '<F2>', ':.w !pbcopy<CR><CR>', { desc = 'Copy current line' 
 vim.keymap.set('n', '<F3>', ':r !pbpaste<CR>', { desc = 'Paste from clipboard' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip687
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip687)
 ***
 # Title: Easy French Character Input Mappings
 # Category: advanced_mappings
@@ -6538,7 +6538,7 @@ vim.keymap.set({'i', 'c'}, ';c', 'ç', { desc = 'Insert ç' })
 vim.keymap.set('i', ';q', '«  »<Esc>hi', { desc = 'Insert French quotation marks' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip697
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip697)
 ***
 # Title: Generate Code Templates with Vim
 # Category: advanced_mappings
@@ -6557,7 +6557,7 @@ vim.keymap.set('v', '<F6>', function()
 end, { desc = 'Process code template' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip710
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip710)
 ***
 # Title: Create Context-Aware Mappings for GUI and Console
 # Category: advanced_mappings
@@ -6589,7 +6589,7 @@ function _G.mode_mapping(gui_lhs, term_lhs, rhs, map_command)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip713
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip713)
 ***
 # Title: Quick Uuencode/Decode Text in Vim
 # Category: advanced_mappings
@@ -6610,7 +6610,7 @@ vim.keymap.set('v', '<Leader>ue', '!uuencode -m /dev/stdout<CR>', { silent = tru
 vim.keymap.set('v', '<Leader>ud', '!uudecode -o /dev/stdout<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip749
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip749)
 ***
 # Title: Advanced CapsLock Key Behavior
 # Category: advanced_mappings
@@ -6626,7 +6626,7 @@ Create a custom CapsLock key that acts as Escape when tapped, and Ctrl when held
 -- Demonstrates advanced key remapping potential
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip75
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip75)
 ***
 # Title: Advanced Pasted Text Selection with Preserve Mode
 # Category: advanced_mappings
@@ -6643,5 +6643,5 @@ vim.keymap.set('n', 'gp', function()
 end, { expr = true, desc = 'Select pasted text with original mode' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip759
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip759)
 ***

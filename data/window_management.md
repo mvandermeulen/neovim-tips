@@ -351,7 +351,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Always_keep_quickfix_window_at_specified_height
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Always_keep_quickfix_window_at_specified_height)
 ***
 # Title: Dynamically Resize Quickfix Window Height
 # Category: window_management
@@ -376,7 +376,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_fitting_a_quickfix_window_height
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_fitting_a_quickfix_window_height)
 ***
 # Title: Maximize Vim Window Size in KDE
 # Category: window_management
@@ -392,7 +392,7 @@ vim.opt.lines = 999
 vim.opt.columns = 999
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_maximizing_gvim_in_KDE
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_maximizing_gvim_in_KDE)
 ***
 # Title: Buffer Split Management
 # Category: window_management
@@ -418,7 +418,7 @@ vim.keymap.set('n', '<C-w>k', '<C-w>k', { desc = 'Move to top split' })
 vim.keymap.set('n', '<C-w>l', '<C-w>l', { desc = 'Move to right split' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Buffer
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Buffer)
 ***
 # Title: Customize GVim Popup Menu for Window Management
 # Category: window_management
@@ -440,7 +440,7 @@ vim.cmd('amenu PopUp.Close.Window :confirm close<CR>')
 vim.cmd('amenu PopUp.Close.Other :confirm only<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Close_windows_from_gvim_popup_menu
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Close_windows_from_gvim_popup_menu)
 ***
 # Title: Control New Window Split Position
 # Category: window_management
@@ -457,7 +457,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Control_the_position_of_the_new_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Control_the_position_of_the_new_window)
 ***
 # Title: Dynamic Window Resizing Keymaps
 # Category: window_management
@@ -476,7 +476,7 @@ vim.keymap.set('n', '<C-h>', '<C-w>h<C-w>_<C-w>><C-w>>', { desc = 'Resize window
 vim.keymap.set('n', '<C-l>', '<C-w>l<C-w>_<C-w>><C-w>>', { desc = 'Resize window right' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Custom_resizing_on_the_spot
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Custom_resizing_on_the_spot)
 ***
 # Title: Use Window-Local Variables for Initialization
 # Category: window_management
@@ -502,7 +502,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Detect_window_creation_with_WinEnter
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Detect_window_creation_with_WinEnter)
 ***
 # Title: Easily Compare Two Files in Vim/Neovim
 # Category: window_management
@@ -527,7 +527,7 @@ vim.cmd('windo diffthis')
 vim.cmd('vert diffsplit ' .. filename)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Diff_the_current_buffer_with_another_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Diff_the_current_buffer_with_another_file)
 ***
 # Title: Easily Turn Off Diff Mode
 # Category: window_management
@@ -560,7 +560,7 @@ vim.api.nvim_create_user_command('DiffOff', function()
 end, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Diff_the_current_buffer_with_another_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Diff_the_current_buffer_with_another_file)
 ***
 # Title: Open Multiple Files in New Windows
 # Category: window_management
@@ -614,7 +614,7 @@ vim.api.nvim_create_user_command('Vnew', function(opts)
 end, { nargs = '*', complete = 'file' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_command_on_each_file_in_a_list
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_command_on_each_file_in_a_list)
 ***
 # Title: Execute SQL Queries in Split Window
 # Category: window_management
@@ -637,7 +637,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_sybase-sql_queries_and_see_the_result_in_a_split_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_sybase-sql_queries_and_see_the_result_in_a_split_window)
 ***
 # Title: Quick Window Resizing with Keyboard Shortcuts
 # Category: window_management
@@ -662,7 +662,7 @@ if vim.fn.bufwinnr(1) ~= -1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_window_resizing_with_plus/minus_keys
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_window_resizing_with_plus/minus_keys)
 ***
 # Title: Alt Key Window Management Shortcuts
 # Category: window_management
@@ -689,7 +689,7 @@ vim.keymap.set('n', '<A-n>', '<C-w><C-w>', { silent = true })
 vim.keymap.set('n', '<A-p>', '<C-w><S-w>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Fast_window_resizing_with_plus/minus_keys
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fast_window_resizing_with_plus/minus_keys)
 ***
 # Title: Open Tag in Split Window
 # Category: window_management
@@ -708,7 +708,7 @@ vim.keymap.set('n', '<C-\>', function()
 end, { desc = 'Open tag in new split window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Follow_tag_in_new_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Follow_tag_in_new_window)
 ***
 # Title: Window Splitting and Sizing Control
 # Category: window_management
@@ -727,7 +727,7 @@ vim.opt.eadirection = 'both'
 -- Neovim inherits local options when splitting windows
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2009
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help/2009)
 ***
 # Title: Display Python Docs in Preview Window
 # Category: window_management
@@ -752,7 +752,7 @@ vim.api.nvim_create_user_command('Pyhelp', function(opts)
 end, { nargs = 1 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_help_on_Python_libraries
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_help_on_Python_libraries)
 ***
 # Title: Go to Nth-from-Last Window
 # Category: window_management
@@ -769,7 +769,7 @@ vim.keymap.set('n', '<F12>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Going_to_the_nth-from-last_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Going_to_the_nth-from-last_window)
 ***
 # Title: Close Tab and Focus Left Tab Automatically
 # Category: window_management
@@ -796,7 +796,7 @@ vim.keymap.set('n', '<C-S-w>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_focus_on_left_tab_after_tabclose
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_focus_on_left_tab_after_tabclose)
 ***
 # Title: Enable Mouse Focus Across Splits
 # Category: window_management
@@ -811,7 +811,7 @@ set mousefocus
 vim.opt.mousefocus = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_Have_a_Vim_Rave
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_Have_a_Vim_Rave)
 ***
 # Title: Prevent Cursor Movement When Switching Windows
 # Category: window_management
@@ -851,7 +851,7 @@ end
 setup_mouse_focus()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_not_move_cursor_when_selecting_window_with_mouse
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_not_move_cursor_when_selecting_window_with_mouse)
 ***
 # Title: Open Source Navigator Files in Vim Tabs
 # Category: window_management
@@ -866,7 +866,7 @@ gvim --remote-tab-silent +"call cursor(%l,%c)" %f
 vim.fn.system('gvim --remote-tab-silent +"call cursor(' .. line .. ',' .. col .. ')" ' .. filename)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_gvim_with_RedHat_Source-Navigator
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_gvim_with_RedHat_Source-Navigator)
 ***
 # Title: Maximize Current Window Quickly
 # Category: window_management
@@ -891,7 +891,7 @@ vim.keymap.set('n', '<F5>', '<C-W>_<C-W>|', { desc = 'Maximize current window' }
 vim.keymap.set('n', '<leader>wo', ':only<CR>', { desc = 'Close other windows' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maximize_current_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maximize_current_window)
 ***
 # Title: Toggle Window Maximize/Restore
 # Category: window_management
@@ -927,7 +927,7 @@ end
 vim.keymap.set('n', '<F5>', maxRestoreWindow, { desc = 'Toggle window maximize' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maximize_or_restore_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maximize_or_restore_window)
 ***
 # Title: Maximize Vim Window on Windows
 # Category: window_management
@@ -948,7 +948,7 @@ vim.api.nvim_create_autocmd('UIEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maximize_or_set_initial_window_size
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maximize_or_set_initial_window_size)
 ***
 # Title: Toggle Window Maximization Without Losing Splits
 # Category: window_management
@@ -998,7 +998,7 @@ vim.keymap.set('n', '<C-W>o', maximize_toggle)
 vim.keymap.set('n', '<C-W><C-O>', maximize_toggle)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure)
 ***
 # Title: Quick Tab Management for Editing Multiple Files
 # Category: window_management
@@ -1015,7 +1015,7 @@ vim.keymap.set('n', 't%', ':tabedit %<CR>', { desc = 'Open current buffer in new
 vim.keymap.set('n', 'td', ':tabclose<CR>', { desc = 'Close current tab' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maximize_window_and_return_to_previous_split_structure)
 ***
 # Title: Minimize and Restore Vim Windows Quickly
 # Category: window_management
@@ -1033,7 +1033,7 @@ Use Ctrl-Z to suspend/minimize Vim in the background, with an optional system-wi
 -- Restore using fg in terminal or system shortcut
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Minimize_and_restore_gvim_under_Windows_using_shortcut_keys
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Minimize_and_restore_gvim_under_Windows_using_shortcut_keys)
 ***
 # Title: Move Window Between Tabs Dynamically
 # Category: window_management
@@ -1090,7 +1090,7 @@ end
 vim.keymap.set('n', '<A-.>', '<cmd>lua move_to_next_tab()<CR>', { desc = 'Move window to next tab' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Move_current_window_between_tabs
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Move_current_window_between_tabs)
 ***
 # Title: Dynamic Window Resizing with F1 Key
 # Category: window_management
@@ -1153,7 +1153,7 @@ end
 vim.keymap.set({'n', 'i'}, '<F1>', resizeWindow)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Nice_window_resizing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Nice_window_resizing)
 ***
 # Title: Resize Windows with Alt+Arrow Keys
 # Category: window_management
@@ -1170,7 +1170,7 @@ vim.keymap.set('n', '<M-Right>', ':resize +2<CR>', { silent = true })
 vim.keymap.set('n', '<M-Left>', ':resize -2<CR>', { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Nice_window_resizing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Nice_window_resizing)
 ***
 # Title: Open Neovim Matching Console Window Geometry
 # Category: window_management
@@ -1217,7 +1217,7 @@ local function open_matching_window()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Opening_gvim_atop_a_console_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Opening_gvim_atop_a_console_window)
 ***
 # Title: Open New Buffers Below Current Window
 # Category: window_management
@@ -1232,7 +1232,7 @@ set splitbelow
 vim.opt.splitbelow = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Opening_new_buffer_below_the_current
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Opening_new_buffer_below_the_current)
 ***
 # Title: Open New Vertical Buffers to the Right
 # Category: window_management
@@ -1247,7 +1247,7 @@ set splitright
 vim.opt.splitright = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Opening_new_buffer_below_the_current
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Opening_new_buffer_below_the_current)
 ***
 # Title: Dynamic Tag Preview with Full-Height Vertical Window
 # Category: window_management
@@ -1316,7 +1316,7 @@ vim.keymap.set('n', '<M-]>', function() _G.preview_tag(true) end)
 vim.keymap.set('n', '<M-[>', ':pc<CR>')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Optionally_open_matching_or_selected_tag_in_full_height_vertical_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Optionally_open_matching_or_selected_tag_in_full_height_vertical_window)
 ***
 # Title: Quick Window Navigation with Spacebar
 # Category: window_management
@@ -1346,7 +1346,7 @@ vim.keymap.set('n', '<Space><Space>', function()
 end, { desc = 'Maximize current window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Press_space_to_jump_between_windows_and_to_expand_them
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Press_space_to_jump_between_windows_and_to_expand_them)
 ***
 # Title: Alternative Window Navigation Shortcuts
 # Category: window_management
@@ -1363,7 +1363,7 @@ vim.keymap.set('n', '<C-J>', '<C-W>j<C-W>_', { desc = 'Move down and maximize wi
 vim.keymap.set('n', '<C-K>', '<C-W>k<C-W>_', { desc = 'Move up and maximize window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Press_space_to_jump_between_windows_and_to_expand_them
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Press_space_to_jump_between_windows_and_to_expand_them)
 ***
 # Title: Multiple Views of Same Buffer in Different Tabs
 # Category: window_management
@@ -1382,7 +1382,7 @@ vim.cmd('tab split')
 vim.wo.foldenable = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages)
 ***
 # Title: Quick Window Resizing with Keymaps
 # Category: window_management
@@ -1415,7 +1415,7 @@ vim.keymap.set('n', '<C-F9>', ':set lines=60<CR>', { desc = 'Set standard tall h
 vim.keymap.set('n', '<M-F9>', ':set lines=30<CR>', { desc = 'Set standard short height' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_window_resizing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_window_resizing)
 ***
 # Title: Resize Windows with Ctrl + Cursor Keys
 # Category: window_management
@@ -1438,7 +1438,7 @@ vim.keymap.set('n', '<C-Up>', '<C-W>><C-W>>', { desc = 'Increase vertical split 
 vim.keymap.set('n', '<C-Down>', '<C-W><<C-W><', { desc = 'Decrease vertical split size' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Quick_window_resizing
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_window_resizing)
 ***
 # Title: Quickly Resize Windows in Neovim
 # Category: window_management
@@ -1480,7 +1480,7 @@ vim.keymap.set('n', '<Leader>-', function()
 end, { desc = 'Decrease window height by 0.67x' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Resize_splits_more_quickly
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Resize_splits_more_quickly)
 ***
 # Title: Dynamic Window Resizing for Line Numbers
 # Category: window_management
@@ -1516,7 +1516,7 @@ end
 vim.keymap.set('n', '<M-n>', toggle_num, { desc = 'Toggle line numbers and adjust window' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Resize_window_when_showing/hiding_line_numbers
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Resize_window_when_showing/hiding_line_numbers)
 ***
 # Title: Resize Terminal for Diff View
 # Category: window_management
@@ -1535,7 +1535,7 @@ if vim.o.diff then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Resize_xterm_when_running_vimdiff
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Resize_xterm_when_running_vimdiff)
 ***
 # Title: Window Zooming Toggle
 # Category: window_management
@@ -1579,7 +1579,7 @@ end
 vim.keymap.set('n', '<Leader>max', toggle_max_wins, { desc = 'Toggle window maximization' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Rolodex_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Rolodex_Vim)
 ***
 # Title: Rolodex Window Mode
 # Category: window_management
@@ -1597,7 +1597,7 @@ vim.opt.winheight = 9999
 vim.opt.helpheight = 9999
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Rolodex_Vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Rolodex_Vim)
 ***
 # Title: Restore Current Window/Buffer After Global Command
 # Category: window_management
@@ -1627,7 +1627,7 @@ vim.api.nvim_create_user_command('BufDo', function(opts)
 end, { nargs = '+' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Run_a_command_in_multiple_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Run_a_command_in_multiple_files)
 ***
 # Title: Auto-Resize Window for Diff Mode
 # Category: window_management
@@ -1649,7 +1649,7 @@ if vim.o.diff then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip488
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip488)
 ***
 # Title: Synchronous Scrolling in Multiple Windows
 # Category: window_management
@@ -1669,7 +1669,7 @@ vim.wo.scrollbind = true
 vim.cmd('set scb!')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip52
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip52)
 ***
 # Title: Prevent Accidental Window Closure
 # Category: window_management
@@ -1688,7 +1688,7 @@ vim.keymap.set('n', '<C-W>O', function() vim.notify('Window closure prevented', 
 vim.keymap.set('n', '<C-W><C-O>', function() vim.notify('Window closure prevented', vim.log.levels.WARN) end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip58
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip58)
 ***
 # Title: Open GVim Matching Console Window Position
 # Category: window_management
@@ -1715,7 +1715,7 @@ function _G.open_gvim_matching_console()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip607
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip607)
 ***
 # Title: Toggle Line Numbers Across All Windows
 # Category: window_management
@@ -1741,5 +1741,5 @@ end
 vim.keymap.set('n', '<F12>', num_toggle, { desc = 'Toggle line numbers in all windows' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip757
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip757)
 ***

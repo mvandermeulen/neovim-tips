@@ -470,7 +470,7 @@ local function add_help_tags()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Add_your_note_files_to_Vim_help
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_your_note_files_to_Vim_help)
 ***
 # Title: Detect Comments Across Filetypes
 # Category: builtin_functions
@@ -498,7 +498,7 @@ local function is_special()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Check_for_comments_independent_of_filetype
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Check_for_comments_independent_of_filetype)
 ***
 # Title: Get Cursor Position as Byte Percentage
 # Category: builtin_functions
@@ -524,7 +524,7 @@ end
 vim.opt.statusline:append('%{v:lua.byte_percentage()}%')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Get_cursor_position_as_byte_percentage_instead_of_line_percentage
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Get_cursor_position_as_byte_percentage_instead_of_line_percentage)
 ***
 # Title: Print Full-Width Messages Without 'Press Enter'
 # Category: builtin_functions
@@ -554,7 +554,7 @@ function _G.WideMsg(msg)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_print_full_screen_width_messages
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_print_full_screen_width_messages)
 ***
 # Title: Insert Current Date/Time with Strftime()
 # Category: builtin_functions
@@ -584,7 +584,7 @@ end, { expr = true })
 vim.cmd.iabbrev('dts', os.date("%c"))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Insert_current_date_or_time
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Insert_current_date_or_time)
 ***
 # Title: Save and Restore Cursor Position Precisely
 # Category: builtin_functions
@@ -625,7 +625,7 @@ function _G.CurPos(action)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Maintain_cursor_and_screen_position
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Maintain_cursor_and_screen_position)
 ***
 # Title: Measure Command Execution Time
 # Category: builtin_functions
@@ -663,7 +663,7 @@ function Time(com, numberOfTimes)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Measure_time_taken_to_execute_a_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Measure_time_taken_to_execute_a_command)
 ***
 # Title: Recreate Vim Temporary File Directory
 # Category: builtin_functions
@@ -678,7 +678,7 @@ Programmatically recreate Vim's temporary file directory if it has been deleted,
 vim.fn.mkdir(vim.fn.fnamemodify(vim.fn.tempname(), ':h'), 'p', 700)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Recreate_Tempfile_Directory
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Recreate_Tempfile_Directory)
 ***
 # Title: Alternative Command Path Lookup in Vim
 # Category: builtin_functions
@@ -697,7 +697,7 @@ local function find_in_path(cmd)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Replace_selected_shell_command_with_full_path_when_editing_scripts
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_selected_shell_command_with_full_path_when_editing_scripts)
 ***
 # Title: Convert Numbers Between Hex and Decimal
 # Category: builtin_functions
@@ -729,7 +729,7 @@ function _G.hex2dec(arg)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip448
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip448)
 ***
 # Title: Flexible External Command Processing with system()
 # Category: builtin_functions
@@ -757,7 +757,7 @@ end
 vim.keymap.set('n', '<F8>', function() GetDate('') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip467
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip467)
 ***
 # Title: Generate a Customizable Calendar in Vim
 # Category: builtin_functions
@@ -793,5 +793,5 @@ vim.keymap.set('n', '<S-F7>', function()
 end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip560
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip560)
 ***

@@ -23,7 +23,7 @@ require('project_nvim').setup({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_tags_by_project.vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_tags_by_project.vim)
 ***
 # Title: Flexible Ctags Generation for Multi-Directory Projects
 # Category: plugins
@@ -65,7 +65,7 @@ end
 vim.api.nvim_create_user_command('GenerateTags', generate_ctags, {})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Auto_tags_by_project.vim
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_tags_by_project.vim)
 ***
 # Title: Automatically Generate PHPDoc Comments
 # Category: plugins
@@ -86,7 +86,7 @@ function GenerateDocComment()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Automatically_generate_PHPdoc_comments
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_generate_PHPdoc_comments)
 ***
 # Title: LaTeX Backward Search Across Platforms
 # Category: plugins
@@ -101,7 +101,7 @@ Enables syncing between LaTeX source code and PDF viewer, allowing click-to-jump
 -- Requires additional PDF viewer configuration
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backward_search_for_LaTeX_documents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backward_search_for_LaTeX_documents)
 ***
 # Title: Cross-Platform LaTeX Editing Plugins
 # Category: plugins
@@ -116,7 +116,7 @@ Recommended plugins for seamless LaTeX editing with forward and backward search 
 -- Both support cross-platform forward and backward searching
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backward_search_for_LaTeX_documents
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backward_search_for_LaTeX_documents)
 ***
 # Title: LaTeX Backward Search Setup
 # Category: plugins
@@ -133,7 +133,7 @@ Enable backward search in LaTeX workflows, allowing you to click in a PDF and ju
 -- Requires additional setup with specific PDF viewers like Evince, Okular, or PDFView
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Backward_search_for_LaTeX_documents_on_Mac_OS_X
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backward_search_for_LaTeX_documents_on_Mac_OS_X)
 ***
 # Title: C++ Code Completion with OmniCppComplete
 # Category: plugins
@@ -180,7 +180,7 @@ vim.api.nvim_create_autocmd({"CursorMovedI", "InsertLeave"}, {
 vim.opt.completeopt = {"menuone", "menu", "longest", "preview"}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/C%2B%2B_code_completion
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/C%2B%2B_code_completion)
 ***
 # Title: Simplify Omni-Completion with SuperTab
 # Category: plugins
@@ -197,7 +197,7 @@ let g:SuperTabDefaultCompletionType = "context"
 vim.g.SuperTabDefaultCompletionType = "context"
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_the_pink_omnicomplete_popup_to_a_readable_color
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_the_pink_omnicomplete_popup_to_a_readable_color)
 ***
 # Title: Easily Create LaTeX Tables with Vim
 # Category: plugins
@@ -217,7 +217,7 @@ local selected_text = vim.fn.getline(vim.fn.line("'<"), vim.fn.line("'>"))
 local latex_table = vim.fn.system('ltpretty', table.concat(selected_text, "\n"))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Create_LaTeX_Tables
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_LaTeX_Tables)
 ***
 # Title: Create Custom Calendar with Special Dates
 # Category: plugins
@@ -259,7 +259,7 @@ vim.g.calendar_sign = function(day, month, year)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enhance_the_calendar_script_with_special_dates
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enhance_the_calendar_script_with_special_dates)
 ***
 # Title: Generate Ctags for C/C++ Project with Dependencies
 # Category: plugins
@@ -286,7 +286,7 @@ end
 generate_ctags({'file1.cpp', 'file2.c', 'file3.cpp'})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Generate_ctags_file_for_a_C/C%2B%2B_source_file_with_all_of_their_dependencies_(standard_headers,_etc)
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Generate_ctags_file_for_a_C/C%2B%2B_source_file_with_all_of_their_dependencies_(standard_headers,_etc))
 ***
 # Title: Configure SVN Integration with VCSCommand
 # Category: plugins
@@ -303,7 +303,7 @@ vim.g.VCSCommandSVNExec = "C:\\Progra~1\\TortoiseSVN\\bin\\svn.exe"
 vim.g.VCSCommandVCSTypeOverride = {{"C:\\working\\*", "SVN"}}
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_VCSCommand_work_with_an_existing_TortoiseSVN_checkout
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_VCSCommand_work_with_an_existing_TortoiseSVN_checkout)
 ***
 # Title: Create Custom Commands with Autocompletion
 # Category: plugins
@@ -345,7 +345,7 @@ end, {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Have_a_nice_and_easy_use_of_plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_a_nice_and_easy_use_of_plugins)
 ***
 # Title: Initialize Plugins Using VimEnter Autocmd
 # Category: plugins
@@ -381,7 +381,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_initialize_plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_initialize_plugins)
 ***
 # Title: Plugin Initialization in After Plugin Directory
 # Category: plugins
@@ -398,7 +398,7 @@ norm \[i
 vim.cmd('norm \[i')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_initialize_plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_initialize_plugins)
 ***
 # Title: Auto-Source Plugins in Vim
 # Category: plugins
@@ -417,7 +417,7 @@ for _, plugin in ipairs(vim.fn.glob(plugin_dir, false, true)) do
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/How_to_mimic_the_vim_6.0_plugin_feature_with_older_versions
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_mimic_the_vim_6.0_plugin_feature_with_older_versions)
 ***
 # Title: Dynamic Plugin Version Selection
 # Category: plugins
@@ -437,7 +437,7 @@ if vim.version().major >= 7 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Installing_several_releases_in_parallel,_even_with_matchit
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Installing_several_releases_in_parallel,_even_with_matchit)
 ***
 # Title: Integrate Python Linters in Vim/Neovim
 # Category: plugins
@@ -492,7 +492,7 @@ vim.keymap.set('n', '<F3>', function() _G.python_lint('pylint') end)
 vim.keymap.set('n', '<F4>', function() _G.python_lint('pychecker') end)
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_Pylint_and_Pychecker_support
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_Pylint_and_Pychecker_support)
 ***
 # Title: Use External Editor with Thunderbird
 # Category: plugins
@@ -509,7 +509,7 @@ gvim.exe "+set ft=mail"
 vim.g.thunderbird_external_editor = 'gvim --nofork "+set ft=mail"'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integrate_with_Mozilla_Thunderbird
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_with_Mozilla_Thunderbird)
 ***
 # Title: Use Compiler Plugins for Linting
 # Category: plugins
@@ -539,7 +539,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- You can still use :make commands in Neovim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Linting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Linting)
 ***
 # Title: Asynchronous Linting with ALE
 # Category: plugins
@@ -562,7 +562,7 @@ vim.g.ale_linters = {
 }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Linting
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Linting)
 ***
 # Title: Advanced UI Selection Plugins for Vim/Neovim
 # Category: plugins
@@ -583,7 +583,7 @@ Several powerful plugins provide advanced item selection interfaces for improved
 -- which-key.nvim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/List_of_scripts_that_provide_advanced_UI_elements
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_of_scripts_that_provide_advanced_UI_elements)
 ***
 # Title: Advanced Matching with matchit Plugin
 # Category: plugins
@@ -600,7 +600,7 @@ runtime macros/matchit.vim
 vim.cmd('runtime macros/matchit.vim')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Moving_to_matching_braces
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Moving_to_matching_braces)
 ***
 # Title: Optimize Startup by Delaying Plugin Loading
 # Category: plugins
@@ -618,7 +618,7 @@ require('lazy').setup({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Optimize_startup_time_by_logging_the_sourced_vimscript_files
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Optimize_startup_time_by_logging_the_sourced_vimscript_files)
 ***
 # Title: Native Vim Plugin Management
 # Category: plugins
@@ -636,7 +636,7 @@ Vim now includes native package management, allowing easier plugin installation 
 -- No additional configuration required
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Plugin-manager
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Plugin-manager)
 ***
 # Title: Plugin Manager Alternatives
 # Category: plugins
@@ -650,7 +650,7 @@ Multiple modern plugin managers for Neovim, with packer.nvim and user.nvim being
 -- user.nvim: https://github.com/faerryn/user.nvim
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Plugin-manager
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Plugin-manager)
 ***
 # Title: Easily Extend Vim Functionality with Plugins
 # Category: plugins
@@ -671,7 +671,7 @@ require('lazy').setup({
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Plugins)
 ***
 # Title: Manage Plugins with Plugin Managers
 # Category: plugins
@@ -692,7 +692,7 @@ Plugin managers simplify the process of installing, updating, and managing Vim/N
 -- - nvim-pluginmanager
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Plugins)
 ***
 # Title: Advanced File and Buffer Selection Plugins
 # Category: plugins
@@ -711,7 +711,7 @@ require('telescope.builtin').find_files()
 require('telescope.builtin').buffers()
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Plugins_that_provide_advanced_UI_elements
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Plugins_that_provide_advanced_UI_elements)
 ***
 # Title: Add Version Info to Plugins
 # Category: plugins
@@ -732,7 +732,7 @@ end
 vim.g.loaded_dbext = 503
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Provide_script-accessible_version_info_in_your_plugins
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Provide_script-accessible_version_info_in_your_plugins)
 ***
 # Title: Reload Plugin During Development
 # Category: plugins
@@ -749,7 +749,7 @@ Simple method to reload buffer-specific files and test plugin changes by using :
 vim.cmd('edit')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reload_your_filetype/syntax_plugin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reload_your_filetype/syntax_plugin)
 ***
 # Title: Debug Mode for Plugin Development
 # Category: plugins
@@ -770,7 +770,7 @@ end
 vim.g.plugin_name_loaded = true
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Reload_your_filetype/syntax_plugin
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Reload_your_filetype/syntax_plugin)
 ***
 # Title: Configure TagList for ANT Build File Navigation
 # Category: plugins
@@ -785,7 +785,7 @@ let g:tlist_ant_settings = 'ant;p:Project;t:Target;r:Property'
 vim.g.tlist_ant_settings = 'ant;p:Project;t:Target;r:Property'
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip558
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip558)
 ***
 # Title: Use Vim as External Editor for Web Textareas
 # Category: plugins
@@ -808,5 +808,5 @@ local mozex_config = {
 }
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip581
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip581)
 ***

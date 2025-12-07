@@ -128,7 +128,7 @@ function OpenVimInTerminal(args)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternative_to_gvim_as_external_pop-up_editor:_vim_%2B_gnome-terminal
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_to_gvim_as_external_pop-up_editor:_vim_%2B_gnome-terminal)
 ***
 # Title: Keep Terminal Open After Vim Exit
 # Category: terminal
@@ -148,7 +148,7 @@ function OpenVimWithShell(args)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Alternative_to_gvim_as_external_pop-up_editor:_vim_%2B_gnome-terminal
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_to_gvim_as_external_pop-up_editor:_vim_%2B_gnome-terminal)
 ***
 # Title: Run External Commands Asynchronously in Windows
 # Category: terminal
@@ -167,7 +167,7 @@ vim.keymap.set('n', '<F5>', function()
 end, { silent = true })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Async_command
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Async_command)
 ***
 # Title: Capture SQL Query Output in Vim
 # Category: terminal
@@ -186,7 +186,7 @@ Pipe SQL query results directly into Vim for easy viewing and manipulation of da
 -- Then: pager vim -
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Capture_SQL_query_output
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Capture_SQL_query_output)
 ***
 # Title: tmux-Compatible Cursor Configuration
 # Category: terminal
@@ -221,7 +221,7 @@ if vim.env.TMUX then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Change_cursor_color_in_different_modes
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Change_cursor_color_in_different_modes)
 ***
 # Title: Run Shell Commands in Vim Scratch Buffer
 # Category: terminal
@@ -261,7 +261,7 @@ vim.api.nvim_create_user_command('Shell', function(opts)
 end, {nargs = '+', complete = 'shellcmd'})
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_output_of_shell_commands_in_new_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_output_of_shell_commands_in_new_window)
 ***
 # Title: Quick Version Control Commands in Vim
 # Category: terminal
@@ -288,7 +288,7 @@ run_vcs_command('svn')
 run_vcs_command('hg')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Display_shell_commands%27_output_on_Vim_window
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Display_shell_commands%27_output_on_Vim_window)
 ***
 # Title: Interactive Database Querying with Perl in Vim
 # Category: terminal
@@ -313,7 +313,7 @@ Use Vim's embedded Perl interpreter to connect to databases and manipulate data 
 vim.api.nvim_command('!psql -d my_database -c "show tables;"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_databases_with_Vim/Perl/DBI
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_databases_with_Vim/Perl/DBI)
 ***
 # Title: Quick SQL Query Execution in Vim
 # Category: terminal
@@ -329,7 +329,7 @@ Filter selected SQL through an external database command and replace text with q
 vim.api.nvim_command('!psql -d my_database -f ' .. vim.fn.expand('%:p'))
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Editing_databases_with_Vim/Perl/DBI
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_databases_with_Vim/Perl/DBI)
 ***
 # Title: Enable Vim Server in Terminal
 # Category: terminal
@@ -348,7 +348,7 @@ vim.fn.serverlist()
 vim.fn.servername('myserver')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enable_servername_capability_in_vim/xterm
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enable_servername_capability_in_vim/xterm)
 ***
 # Title: Smart Vim Server Function for Shell
 # Category: terminal
@@ -372,7 +372,7 @@ function _G.smart_vim_server()
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Enable_servername_capability_in_vim/xterm
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Enable_servername_capability_in_vim/xterm)
 ***
 # Title: Quick Python Code Execution in Vim
 # Category: terminal
@@ -396,7 +396,7 @@ end, { desc = 'Run current Python file' })
 vim.keymap.set('v', '<F5>', ':!python<CR>', { desc = 'Run selected Python code' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Execute_Python_from_within_current_file
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Execute_Python_from_within_current_file)
 ***
 # Title: Quick IPython Integration with Vim
 # Category: terminal
@@ -420,7 +420,7 @@ vim.keymap.set('n', "'", function()
 end, { desc = 'Run current file in IPython' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/IPython_integration
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/IPython_integration)
 ***
 # Title: Integrate PyUnit Testing in Vim/Neovim
 # Category: terminal
@@ -446,7 +446,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Integration_with_PyUnit_testing_framework
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integration_with_PyUnit_testing_framework)
 ***
 # Title: Dynamically Rename Konsole Tab in Vim
 # Category: terminal
@@ -476,7 +476,7 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
 })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/KDE_Konsole_renameSession_to_edited_file_name
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/KDE_Konsole_renameSession_to_edited_file_name)
 ***
 # Title: Quick Terminal Window Maximize/Restore
 # Category: terminal
@@ -499,7 +499,7 @@ vim.fn.system('echo -ne "\e[9;1t"')
 vim.fn.system('echo -ne "\e[9;0t"')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Resize_xterm_when_running_vimdiff
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Resize_xterm_when_running_vimdiff)
 ***
 # Title: Run MATLAB Scripts from Vim
 # Category: terminal
@@ -527,7 +527,7 @@ if vim.fn.has('win32') == 1 then
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/Run_Matlab_script_under_Windows
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Run_Matlab_script_under_Windows)
 ***
 # Title: Quick Shell Command Switching with Ctrl-Z
 # Category: terminal
@@ -546,7 +546,7 @@ Use Ctrl-Z to suspend Vim and return to shell, then 'fg' to resume editing. Usef
 vim.keymap.set('n', '<leader>sh', ':terminal<CR>', { desc = 'Open terminal' })
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip535
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip535)
 ***
 # Title: Screen Session Vim Integration
 # Category: terminal
@@ -567,7 +567,7 @@ local function open_vim_in_screen(file)
 end
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip581
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip581)
 ***
 # Title: Check Existing Vim Server Instances
 # Category: terminal
@@ -584,5 +584,5 @@ vim --serverlist
 vim.fn.system('vim --serverlist')
 ```
 
-**Source:** ** https://vim.fandom.com/wiki/VimTip699
+**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip699)
 ***
