@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd('FileChangedShellPost', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create directory on save
 # Category: Autocommands
@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Jump to last cursor position
 # Category: Autocommands
@@ -80,7 +80,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Set file type based on content
 # Category: Autocommands
@@ -121,7 +121,7 @@ vim.api.nvim_create_autocmd({ 'BufRead' }, {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-format code on save
 # Category: Autocommands
@@ -159,7 +159,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Highlight long lines
 # Category: Autocommands
@@ -197,7 +197,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-compile on save
 # Category: Autocommands
@@ -235,7 +235,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-resize windows on terminal resize
 # Category: Autocommands
@@ -257,7 +257,7 @@ vim.api.nvim_create_autocmd('VimResized', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Change directory to current file with autocommand
 # Category: Autocommands
@@ -282,7 +282,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 vim.opt.autochdir = true
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Template insertion for new files
 # Category: Autocommands
@@ -327,7 +327,7 @@ vim.api.nvim_create_autocmd('BufNewFile', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-toggle relative numbers
 # Category: Autocommands
@@ -356,7 +356,7 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Spell check for specific file types
 # Category: Autocommands
@@ -389,7 +389,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Highlight yanked text
 # Category: Autocommands
@@ -423,7 +423,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-backup important files
 # Category: Autocommands
@@ -449,7 +449,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-chmod executable scripts
 # Category: Autocommands
@@ -473,7 +473,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Lua autocommands with pattern matching
 # Category: Autocommands
@@ -519,7 +519,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Dynamically Adjust Screen Brightness in Vim
 # Category: autocmds

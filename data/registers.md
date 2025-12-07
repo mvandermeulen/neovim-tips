@@ -8,7 +8,7 @@ Use `:registers` to show the contents of all registers.
 :registers
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: System clipboard
 # Category: Registers
@@ -21,7 +21,7 @@ Use `"+y` to yank to the system clipboard and `"+p` to paste from the system cli
 "+p  " paste from system clipboard
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Delete without affecting register
 # Category: Registers
@@ -33,7 +33,7 @@ Use `"_d` to delete text without affecting the default register (sends to blackh
 "_d  " delete to blackhole register
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Set register manually
 # Category: Registers
@@ -45,7 +45,7 @@ Use `:let @a='text'` to manually set the contents of register a.
 :let @a='hello world'  " set register a to 'hello world'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Clear specific register
 # Category: Registers
@@ -60,7 +60,7 @@ q1q    " clear register '1'
 q:q    " clear command register
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Redirect Ex Command Output to Register
 # Category: registers

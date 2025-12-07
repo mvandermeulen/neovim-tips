@@ -9,7 +9,7 @@ Use `==` to auto-indent current line, or `{number}==` to auto-indent multiple li
 5==  " auto-indent 5 lines
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quickly Reindent Code Blocks
 # Category: indentation

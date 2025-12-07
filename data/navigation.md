@@ -8,7 +8,7 @@ Use `:jumps` to show the jump list with all stored positions.
 :jumps  " show jump list
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: LSP go to references
 # Category: Navigation
@@ -20,7 +20,7 @@ Use `gr` to go to references of symbol under cursor (requires LSP server).
 gr  " go to references
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Go to declaration
 # Category: Navigation
@@ -32,7 +32,7 @@ Use `gD` to go to declaration of symbol under cursor.
 gD  " go to declaration
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Jump to block boundaries
 # Category: Navigation
@@ -45,7 +45,7 @@ Use `[{` to jump to start of current block and `]}` to jump to end of current bl
 ]}  " jump to block end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Jump between functions
 # Category: Navigation
@@ -58,7 +58,7 @@ Use `]m` to jump to next function start and `[m` to jump to previous function st
 [m  " previous function start
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Navigate to alternate file
 # Category: Navigation
@@ -71,7 +71,7 @@ Use `:A` to switch to alternate file (e.g., .h to .c), or `Ctrl+^` to switch to 
 Ctrl+^  " previous buffer
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer switching shortcuts
 # Category: Navigation
@@ -86,7 +86,7 @@ Ctrl+^      " alternate between current and previous buffer
 :b partial  " switch to buffer matching partial name
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Fast buffer access
 # Category: Navigation
@@ -103,7 +103,7 @@ nnoremap <leader>5 :5b<CR>
 " Continue for buffers 6-9
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - unmatched brackets
 # Category: Navigation
@@ -118,7 +118,7 @@ Use `[(` and `])` to jump to unmatched parentheses, `[{` and `]}` to jump to unm
 ]}  " jump to next unmatched }
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - sections
 # Category: Navigation
@@ -133,7 +133,7 @@ Use `[[` and `]]` to jump between sections, `[]` and `][` to jump between SECTIO
 ][  " jump to next SECTION
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - C comments
 # Category: Navigation
@@ -148,7 +148,7 @@ Use `[/` and `]/` to jump to start/end of C-style comments. Use `[*` as alternat
 ]*  " same as ]/ (alternative)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - preprocessing
 # Category: Navigation
@@ -161,7 +161,7 @@ Use `[#` and `]#` to jump between #if/#else/#endif blocks.
 ]#  " jump to next #endif or #else
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - definitions and includes
 # Category: Navigation
@@ -176,7 +176,7 @@ Use `[Ctrl+d`/`]Ctrl+d` to jump to #define, `[Ctrl+i`/`]Ctrl+i` to jump to lines
 ]Ctrl+i  " jump to next line containing word
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - list definitions
 # Category: Navigation
@@ -191,7 +191,7 @@ Use `[D`/`]D` to list all #defines, `[I`/`]I` to list all lines containing word 
 ]I  " list all lines containing word under cursor
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - show definitions
 # Category: Navigation
@@ -206,7 +206,7 @@ Use `[d`/`]d` to show first #define, `[i`/`]i` to show first line containing wor
 ]i  " show first line containing word
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - changes and diffs
 # Category: Navigation
@@ -219,7 +219,7 @@ Use `[c` and `]c` to jump between changes in diff mode.
 ]c  " jump to next change
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - spelling
 # Category: Navigation
@@ -232,7 +232,7 @@ Use `[s` and `]s` to jump between misspelled words.
 ]s  " jump to next misspelled word
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - folds
 # Category: Navigation
@@ -245,7 +245,7 @@ Use `[z` and `]z` to jump to start/end of open fold.
 ]z  " jump to end of open fold
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Square bracket navigation - member functions
 # Category: Navigation
@@ -258,7 +258,7 @@ Use `[m` and `]m` to jump between member function starts.
 ]m  " jump to next start of member function
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Toggle netrw file explorer
 # Category: Navigation
@@ -273,7 +273,7 @@ Use `:Lexplore` to toggle the netrw file explorer in a vertical split on the lef
 :Explore     " open explorer in current window
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Enhanced navigation with Flash.nvim
 # Category: Navigation
@@ -308,7 +308,7 @@ Use Flash.nvim plugin to enhance native Neovim motions like `f`, `t`, `w` with m
 -- Use enhanced f/t/w motions with labels
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quick PHP Variable Navigation
 # Category: navigation

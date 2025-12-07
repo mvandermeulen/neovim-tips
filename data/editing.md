@@ -9,7 +9,7 @@ I  " insert at line start
 A  " append at line end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Open new line
 # Category: Editing
@@ -22,7 +22,7 @@ o  " open line below
 O  " open line above
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Substitute character
 # Category: Editing
@@ -35,7 +35,7 @@ s  " substitute character
 S  " substitute line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Yank (copy) operations
 # Category: Editing
@@ -49,7 +49,7 @@ yw  " yank word
 y$  " yank to end of line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Put (paste) operations
 # Category: Editing
@@ -62,7 +62,7 @@ p  " paste after cursor
 P  " paste before cursor
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Calculate expressions
 # Category: Editing
@@ -76,7 +76,7 @@ Use `<C-r>=` in insert mode to calculate mathematical expressions and insert the
 <C-r>=16*1024<CR>   " inserts '16384'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Insert single character
 # Category: Editing
@@ -98,7 +98,7 @@ vim.keymap.set('n', '<leader>i', 'i_<Esc>r', { desc = 'Insert single character' 
 -- Or use: s{char}<Esc> to substitute character under cursor
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Insert multiple lines
 # Category: Editing
@@ -113,7 +113,7 @@ Use `o<Esc>` followed by repeat count, or `{count}o` to insert multiple empty li
 o<Esc>4.    " insert line, then repeat 4 times
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Insert newline without entering insert mode
 # Category: Editing
@@ -137,7 +137,7 @@ vim.keymap.set('n', '<leader>o', 'o<Esc>', { desc = 'Insert line below' })
 vim.keymap.set('n', '<leader>O', 'O<Esc>', { desc = 'Insert line above' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - line operations
 # Category: Editing
@@ -155,7 +155,7 @@ ggdG          " same as above
 :1,5co 10     " copy lines 1-5 to after line 10
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - undo and redo
 # Category: Editing
@@ -171,7 +171,7 @@ Use `:undo` and `:redo` for undo/redo, `:earlier` and `:later` for time-based un
 :earlier 10f  " go back 10 file states
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - sorting and formatting
 # Category: Editing
@@ -188,7 +188,7 @@ Use `:sort` to sort lines, `:center` to center text, `:left` and `:right` for al
 :right 70     " right align to column 70
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Edit file at specific line
 # Category: Editing
@@ -203,7 +203,7 @@ Use `:edit +{line} {file}` to open file and jump directly to specified line numb
 vim +42 file.txt      " from command line: open at line 42
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - joining and splitting
 # Category: Editing
@@ -218,7 +218,7 @@ Use `:join` or `:j` to join lines, with count to join multiple lines.
 :join!        " join without inserting spaces
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - marks and jumps
 # Category: Editing
@@ -235,7 +235,7 @@ Use `:mark` to set mark, `:jumps` to show jump list, `:changes` for change list,
 :delmarks!    " delete all lowercase marks
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Move line to end of paragraph
 # Category: Editing
@@ -249,7 +249,7 @@ Use `:m'}-1` to move current line to end of current paragraph.
 :m'{-1        " move current line to start of paragraph
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Execute normal commands without mappings
 # Category: Editing
@@ -264,7 +264,7 @@ normal! yy       " yank line without triggering yy mapping
 execute "normal! \<C-v>j"  " block select down
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Substitute in all buffers
 # Category: Editing
@@ -278,7 +278,7 @@ Use `:bufdo %s/old/new/ge` to substitute in all open buffers, `e` flag suppresse
 :bufdo update           " save all modified buffers
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Return to last exit position
 # Category: Editing
@@ -292,7 +292,7 @@ Use mark `"0` to jump to position where Vim was last exited from current file.
 :normal `"0  " execute from script/mapping
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Wrap text in HTML tags
 # Category: Editing
@@ -307,7 +307,7 @@ Use visual selection and substitute to wrap text in HTML tags.
 :'<,'>s/\(.*\)/\<strong>\1\<\/strong>/ " wrap in <strong> tags
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Copy and move lines to marks
 # Category: Editing
@@ -323,7 +323,7 @@ ma           " set mark 'a' at current line
 :152,154t.   " copy lines 152-154 to current position
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Increment search results
 # Category: Editing
@@ -339,7 +339,7 @@ Use global command with counter to incrementally replace search results with seq
 :let n=1 | g/item/ s//\='item' . n/ | let n=n+1
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Global command with normal mode operations
 # Category: Editing
@@ -353,7 +353,7 @@ Use `:g/pattern/ normal {commands}` to execute normal mode commands on all match
 :g/function/ normal >>        " indent all lines containing 'function'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Put text above or below current line
 # Category: Editing
@@ -368,7 +368,7 @@ Use `:pu` to paste below current line, `:pu!` to paste above current line, regar
 :pu! a      " paste register 'a' above current line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Select non-uniform strings across lines
 # Category: Editing
@@ -388,7 +388,7 @@ qAq
 :'<,'>norm "Ayi{
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Move lines to marks
 # Category: Editing
@@ -402,7 +402,7 @@ ma      " mark current line as 'a'
 :5m'b   " move line 5 to mark 'b'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Fix Accidental 4 Instead of $ in PHP
 # Category: editing

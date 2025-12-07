@@ -16,7 +16,7 @@ vim.keymap.set('n', '<leader>w', '<Cmd>w<CR>', { silent = true })
 vim.keymap.set('i', 'jk', '<Esc>')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Expression mappings
 # Category: Key Mappings
@@ -43,7 +43,7 @@ vim.keymap.set('n', 'n', function()
 end, { expr = true })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Script-local mappings
 # Category: Key Mappings
@@ -68,7 +68,7 @@ end
 vim.keymap.set('n', '<F5>', compile_and_run, { silent = true })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Abbreviations vs mappings
 # Category: Key Mappings
@@ -92,7 +92,7 @@ vim.keymap.set('ia', 'dts', function()
 end, { expr = true })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Mapping special characters
 # Category: Key Mappings
@@ -113,7 +113,7 @@ vim.keymap.set('n', "<leader>'", "ciw'<C-r>\"'<Esc>")
 vim.keymap.set('n', '<leader>\\', '<Cmd>nohlsearch<CR>')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Recursive abbreviations
 # Category: Key Mappings
@@ -134,7 +134,7 @@ vim.keymap.set('ca', 'Wq', 'wq')
 vim.keymap.set('ca', 'Q', 'q')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode mappings
 # Category: Key Mappings
@@ -157,7 +157,7 @@ vim.keymap.set('v', '*', 'y/\\V<C-r>"<CR>')
 vim.keymap.set('v', '#', 'y?\\V<C-r>"<CR>')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line mappings
 # Category: Key Mappings
@@ -182,7 +182,7 @@ vim.keymap.set('c', '<C-f>', '<Right>')
 vim.keymap.set('c', '<C-d>', '<Delete>')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Operator-pending mappings
 # Category: Key Mappings
@@ -204,7 +204,7 @@ vim.keymap.set('o', 'an(', '<Cmd><C-u>normal! f(va(<CR>')
 vim.keymap.set('o', 'in{', '<Cmd><C-u>normal! f{va{<CR>')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Terminal mode mappings
 # Category: Key Mappings
@@ -229,7 +229,7 @@ vim.keymap.set('t', '<C-w>k', '<C-\\><C-n><C-w>k')
 vim.keymap.set('t', '<C-w>l', '<C-\\><C-n><C-w>l')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Multiple key mappings
 # Category: Key Mappings
@@ -254,7 +254,7 @@ vim.keymap.set('n', '<C-s>', '<Cmd>w<Space>')
 vim.keymap.set('i', '<C-s>', '<Esc><Cmd>w<CR>a')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Mapping with arguments
 # Category: Key Mappings
@@ -285,7 +285,7 @@ vim.keymap.set('n', '<leader>d' function()
 end, { silent = true })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-pair mappings
 # Category: Key Mappings
@@ -330,7 +330,7 @@ vim.keymap.set('i', '[', '[]<Left>', { expr = true })
 vim.keymap.set('i', '"', '""<Left>', { expr = true })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Context-aware mappings
 # Category: Key Mappings
@@ -366,7 +366,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer-local keymaps with Lua
 # Category: Key Mappings
@@ -403,7 +403,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quick Spellcheck Mappings
 # Category: advanced_mappings

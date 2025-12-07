@@ -8,7 +8,7 @@ Use `=ap` to format syntax-aware regions using Treesitter (when available).
 =ap  " format around paragraph with Treesitter
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Comment lines by filetype
 # Category: Formatting
@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Poor men's JSON formatter
 # Category: Formatting
@@ -79,7 +79,7 @@ end
 vim.bo.formatexpr = 'v:lua.json_formatter()'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Wrap Lines at 80 Chars Without Breaking Words
 # Category: formatting

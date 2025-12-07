@@ -9,7 +9,7 @@ y  " yank selected text
 d  " delete selected text
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Yank highlighting
 # Category: Visual
@@ -21,7 +21,7 @@ Create an autocmd to highlight yanked text briefly for visual feedback.
 :lua vim.api.nvim_create_autocmd("TextYankPost", {callback = function() vim.highlight.on_yank() end})
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual block append
 # Category: Visual
@@ -36,7 +36,7 @@ text    " type text to append
 Esc     " apply to all lines
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode - corner and edge movement
 # Category: Visual
@@ -50,7 +50,7 @@ o   " move cursor to opposite corner of selection
 O   " move to other corner (block mode only)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode - toggle and change types
 # Category: Visual
@@ -66,7 +66,7 @@ Ctrl+v  " change to block-wise or exit visual
 Ctrl+g  " toggle Visual/Select mode
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode - operators and transformations
 # Category: Visual
@@ -84,7 +84,7 @@ u   " make selection lowercase
 U   " make selection uppercase
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode - joining and substitution
 # Category: Visual
@@ -100,7 +100,7 @@ s    " substitute selected text
 rx   " replace each character with 'x'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode - paste and replace
 # Category: Visual
@@ -114,7 +114,7 @@ p   " replace selection with register contents
 P   " same as p in visual mode
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual mode - tag and keyword operations
 # Category: Visual
@@ -128,7 +128,7 @@ Ctrl+]  " jump to tag of selected text
 K       " run help/man on selected keyword
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Pad Lines for Easy Visual Block Editing
 # Category: visual_mode

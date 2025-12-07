@@ -11,7 +11,7 @@ Use `Ctrl+b` to go to beginning of line, `Ctrl+e` to end, `Ctrl+h` to delete cha
 :Ctrl+w  " delete word backward
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line cursor movement
 # Category: Command Line
@@ -27,7 +27,7 @@ Shift+Left/Right   " move by word
 Ctrl+Left/Right    " move by word (alternative)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line deletion operations
 # Category: Command Line
@@ -43,7 +43,7 @@ Ctrl+w       " delete word backward
 Ctrl+u       " clear from cursor to beginning
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line history with filtering
 # Category: Command Line
@@ -57,7 +57,7 @@ Use `Shift+Up`/`Shift+Down` or `PageUp`/`PageDown` to recall commands that start
 :ed<PageDown>    " find next commands starting with 'ed'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line completion modes
 # Category: Command Line
@@ -74,7 +74,7 @@ Use `Tab` for next completion, `Shift+Tab` for previous, `Ctrl+d` to list all, `
 :help <Ctrl+l>  " complete to longest common part
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line register insertion
 # Category: Command Line
@@ -91,7 +91,7 @@ Use `Ctrl+r` followed by register name to insert register contents into command 
 :Ctrl+r /     " insert last search pattern
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line literal insertion
 # Category: Command Line
@@ -105,7 +105,7 @@ Use `Ctrl+v` or `Ctrl+q` to insert the next character literally (useful for spec
 :s/Ctrl+v<Esc>/x/g    " search for literal Esc character
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line mode switching
 # Category: Command Line
@@ -121,7 +121,7 @@ Ctrl+\ Ctrl+n    " go to normal mode
 Ctrl+\ Ctrl+g    " go to normal mode (alternative)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line window access
 # Category: Command Line
@@ -135,7 +135,7 @@ Ctrl+f  " open command-line window for editing
 Ctrl+o  " execute one normal mode command and return
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command-line word manipulation
 # Category: Command Line
@@ -150,7 +150,7 @@ Ctrl+u  " delete from cursor to beginning
 Ctrl+k  " delete from cursor to end of line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Perl Syntax Checking in Vim
 # Category: command_line

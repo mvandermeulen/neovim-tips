@@ -8,7 +8,7 @@ Use `vim.opt.statusline` to set a custom statusline format.
 :lua vim.opt.statusline = "%f %y %m %= %l:%c"
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Check highlight groups
 # Category: UI
@@ -20,7 +20,7 @@ Use `:hi` to view all highlight groups and their current settings.
 :hi  " show all highlight groups
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Highlight groups
 # Category: UI
@@ -33,7 +33,7 @@ When run, the command creates a scratch buffer with one line per highlight group
 command! HLList lua local b=vim.api.nvim_create_buf(false,true) vim.api.nvim_set_current_buf(b) local g=vim.fn.getcompletion("","highlight") vim.api.nvim_buf_set_lines(b,0,-1,false,g) for i,n in ipairs(g) do pcall(vim.api.nvim_buf_add_highlight,b,-1,n,i-1,0,-1) end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Change highlight group on the fly
 # Category: UI
@@ -45,7 +45,7 @@ You can change the highlight group on the fly. For example, the next command cha
 :hi Comment guifg=#ffaa00 gui=italic
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Flash yanked text
 # Category: UI
@@ -57,7 +57,7 @@ Use the following command to flash yanked text using the `IncSearch` highlight f
 :au TextYankPost * lua=vim.highlight.on_yank{higroup='IncSearch',timeout=200}
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Print treesitter highlight group info
 # Category: UI
@@ -69,7 +69,7 @@ Use the following command to check the highlight info for the text under the cur
 :lua print(vim.treesitter.get_captures_at_cursor()[1] or "NONE")
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Beautiful transparent theme with background image
 # Category: UI
@@ -89,7 +89,7 @@ This creates a beautiful aesthetic where your code appears over a subtly tinted 
 }
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quick Window Maximization Shortcut
 # Category: ui

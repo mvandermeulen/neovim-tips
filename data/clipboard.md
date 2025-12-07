@@ -8,7 +8,7 @@ Use `vim.fn.setreg("+", "text")` to set system clipboard content from Lua.
 :lua vim.fn.setreg("+", "hello world")
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Mac OS clipboard sharing
 # Category: Clipboard
@@ -33,7 +33,7 @@ vim.keymap.set('n', '<C-v>', ':r !pbpaste<CR>', { desc = 'Paste from macOS clipb
 vim.opt.clipboard = 'unnamed'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: System clipboard: handling yank and delete motions differently
 # Category: Clipboard
@@ -65,7 +65,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Preserve register when pasting over selection
 # Category: Clipboard
@@ -86,7 +86,7 @@ vim.keymap.set("x", "p", '"_dP', { desc = "Paste without yanking", noremap = tru
 vim.keymap.set("x", "<leader>p", '"0p', { desc = "Paste from yank register", noremap = true })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Copy Entire Buffer to Clipboard
 # Category: clipboard

@@ -8,7 +8,7 @@ Use `xp` to swap current character with next character.
 xp  " swap characters
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-indent entire document
 # Category: Clever Tricks
@@ -20,7 +20,7 @@ Use `gg=G` to auto-indent entire document from top to bottom.
 gg=G  " auto-indent entire file
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto-indent current block
 # Category: Clever Tricks
@@ -32,7 +32,7 @@ Use `=%` when cursor is on opening brace to auto-indent entire block.
 =%  " auto-indent current block/braces
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Open file under cursor
 # Category: Clever Tricks
@@ -45,7 +45,7 @@ gf   " open file under cursor
 gF   " open file and go to line number
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Line completion in insert mode
 # Category: Clever Tricks
@@ -58,7 +58,7 @@ Use `Ctrl+X Ctrl+L` in insert mode to complete entire lines from current buffer.
 Ctrl+X Ctrl+L  " complete entire line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quick substitute word
 # Category: Clever Tricks
@@ -70,7 +70,7 @@ Use `ciw{newword}` to change inner word. Position cursor anywhere in word and ty
 ciwfoo  " change word to 'foo'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Split line at cursor
 # Category: Clever Tricks
@@ -82,7 +82,7 @@ Use `i` followed by `Enter` then `Esc`, or more efficiently `r` followed by `Ent
 i<Enter><Esc>  " split line at cursor
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quick number increment
 # Category: Clever Tricks
@@ -95,7 +95,7 @@ Ctrl+a  " increment number
 Ctrl+x  " decrement number
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Visual line selection shortcut
 # Category: Clever Tricks
@@ -107,7 +107,7 @@ Use `V` to select entire line immediately, then `j`/`k` to extend selection.
 Vjjj  " select current line + 3 below
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Change until character
 # Category: Clever Tricks
@@ -120,7 +120,7 @@ ct;  " change until semicolon
 cf;  " change including semicolon
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Center line after jump
 # Category: Clever Tricks
@@ -133,7 +133,7 @@ Append `zz` after navigation commands to center the line. Works with searches, l
 /foozz  " search for 'foo' and center
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - search variations
 # Category: Clever Tricks
@@ -146,7 +146,7 @@ g*  " search forward for word without boundaries
 g#  " search backward for word without boundaries
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - undo branches
 # Category: Clever Tricks
@@ -159,7 +159,7 @@ g-  " go to older text state
 g+  " go to newer text state
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - screen line movement
 # Category: Clever Tricks
@@ -174,7 +174,7 @@ g0  " go to start of screen line
 g$  " go to end of screen line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - middle of line
 # Category: Clever Tricks
@@ -187,7 +187,7 @@ gm  " go to middle of screen line
 gM  " go to middle of text line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - case conversion
 # Category: Clever Tricks
@@ -201,7 +201,7 @@ guu   " lowercase current line
 g~iw  " toggle case of word under cursor
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - join without space
 # Category: Clever Tricks
@@ -213,7 +213,7 @@ Use `gJ` to join lines without inserting a space between them.
 gJ  " join lines without adding space
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - search and select
 # Category: Clever Tricks
@@ -227,7 +227,7 @@ gn               " select next match
 gN               " select previous match
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - put and leave cursor
 # Category: Clever Tricks
@@ -240,7 +240,7 @@ gp  " put after and leave cursor at end
 gP  " put before and leave cursor at end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - format keeping cursor
 # Category: Clever Tricks
@@ -252,7 +252,7 @@ Use `gw{motion}` to format text while keeping cursor position unchanged.
 gwap  " format paragraph, keep cursor position
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - sleep
 # Category: Clever Tricks
@@ -265,7 +265,7 @@ Use `gs` to make Neovim sleep for specified seconds (useful in scripts).
 gs   " sleep for 1 second (default)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - execute application
 # Category: Clever Tricks
@@ -277,7 +277,7 @@ Use `gx` to execute the default application for the file/URL under cursor.
 gx  " open file/URL under cursor with default app
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - virtual replace
 # Category: Clever Tricks
@@ -290,7 +290,7 @@ gR    " enter virtual replace mode
 grx   " replace character with 'x' virtually
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - select modes
 # Category: Clever Tricks
@@ -304,7 +304,7 @@ gH       " start select line mode
 g Ctrl+h " start select block mode
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - repeat substitute
 # Category: Clever Tricks
@@ -317,7 +317,7 @@ Use `g&` to repeat the last `:substitute` command on all lines.
 g&            " repeat substitute on all lines
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - display command output
 # Category: Clever Tricks
@@ -329,7 +329,7 @@ Use `g<` to display the output of the previous command.
 g<  " display previous command output
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: G-commands - mark navigation without jumplist
 # Category: Clever Tricks
@@ -342,7 +342,7 @@ g'a  " jump to mark 'a' without affecting jumplist
 g`a  " jump to exact position of mark 'a' without jumplist
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Repeat last Ex command with @:
 # Category: Clever Tricks
@@ -355,7 +355,7 @@ Use `@:` to repeat the last Ex command, similar to how `@@` repeats macros.
 @:  " repeat the last substitute command
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Enhanced repeat with cursor positioning
 # Category: Clever Tricks
@@ -375,7 +375,7 @@ nnoremap <leader>. .`[
 vim.keymap.set('n', '<leader>.', '.`[', { desc = 'Repeat change and return to start' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: List lines matching last search
 # Category: Clever Tricks
@@ -389,7 +389,7 @@ Use `:g//` to list all lines containing the last search pattern without specifyi
 :g//p       " same as above (print is default)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Save each line to separate files
 # Category: Clever Tricks
@@ -402,7 +402,7 @@ Use `:g/^/exe` to save each line to a separate file with incremental names.
 " Saves each line to line1.txt, line2.txt, etc.
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Alternative substitute delimiters
 # Category: Clever Tricks
@@ -416,7 +416,7 @@ Use any character as delimiter in substitute commands to avoid escaping slashes 
 :s@old@new@g                    " using @ as delimiter
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Calculation with expression register
 # Category: Clever Tricks
@@ -431,7 +431,7 @@ Ctrl+r =sqrt(16)<Enter> " inserts 4.0
 Ctrl+r =strftime("%Y")<Enter>  " inserts current year
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Scroll windows together
 # Category: Clever Tricks
@@ -463,7 +463,7 @@ vim.wo.scrollbind = true
 vim.wo.scrollbind = false
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Change directory to current file
 # Category: Clever Tricks
@@ -487,7 +487,7 @@ vim.cmd('lcd ' .. vim.fn.expand('%:h'))  -- change local directory for current w
 vim.fn.chdir(vim.fn.expand('%:h'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: File encoding in status line
 # Category: Clever Tricks
@@ -506,7 +506,7 @@ vim.opt.statusline = '%f [%{&fileencoding?&fileencoding:&encoding}] %y'
 -- Shows filename, encoding, and filetype
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create word frequency table
 # Category: Clever Tricks
@@ -521,7 +521,7 @@ Create a word frequency analysis using Vim commands and external tools.
 :g/./normal 0"ay$
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search for lines NOT matching pattern
 # Category: Clever Tricks
@@ -535,7 +535,7 @@ Use `:v/pattern/` or `:g!/pattern/` to work with lines that do NOT match a patte
 :v/^$/d         " delete non-empty lines (keep only empty lines)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Swap assignment statement sides
 # Category: Clever Tricks
@@ -551,7 +551,7 @@ Use substitute with groups to swap left and right sides of assignment statements
 :'<,'>s/\(\w\+\)\s*=\s*\(\w\+\)/\2 = \1/g
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Z-commands - spelling corrections
 # Category: Clever Tricks
@@ -567,7 +567,7 @@ zG  " temporarily mark word as correct
 zW  " temporarily mark word as incorrect
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Toggle text case inside a HTML tag
 # Category: Clever Tricks
@@ -580,7 +580,7 @@ Use `g~it` to change the case of the text inside a html tag. Cursor should be be
 g~it
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create HTML Links with Automatic Title Fetch
 # Category: clever_tricks

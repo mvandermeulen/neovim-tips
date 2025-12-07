@@ -8,7 +8,7 @@ Use `vim.api.nvim_chan_send()` to send commands to terminal buffer from Lua.
 :lua vim.api.nvim_chan_send(terminal_job_id, "ls\n")
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Terminal mode - exit to normal mode
 # Category: Terminal
@@ -21,7 +21,7 @@ Use `Ctrl+\ Ctrl+n` to exit terminal mode and go to normal mode.
 Ctrl+\ Ctrl+n  " exit to normal mode
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Terminal mode - execute one command
 # Category: Terminal
@@ -34,7 +34,7 @@ Use `Ctrl+\ Ctrl+o` to execute one normal mode command and return to terminal mo
 Ctrl+\ Ctrl+o  " execute one normal mode command
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Terminal mode - key forwarding
 # Category: Terminal
@@ -49,7 +49,7 @@ Ctrl+c              " sent to terminal (interrupt)
 Ctrl+\ Ctrl+n       " Neovim command (exit to normal)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Open terminal in current window
 # Category: Terminal
@@ -63,7 +63,7 @@ Use `:terminal` or `:term` to open terminal in current window.
 :term bash    " open specific shell
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Open terminal in new window
 # Category: Terminal
@@ -77,7 +77,7 @@ Use `:sp | terminal` for horizontal split, `:vsp | terminal` for vertical split,
 :tabe | terminal " terminal in new tab
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Terminal scrollback buffer
 # Category: Terminal
@@ -92,7 +92,7 @@ G     " go to bottom
 /text " search in terminal output
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Terminal insert mode
 # Category: Terminal
@@ -107,7 +107,7 @@ a   " enter terminal mode after cursor
 A   " enter terminal mode at end of line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create Custom Terminal Vim Wrapper Script
 # Category: terminal

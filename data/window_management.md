@@ -13,7 +13,7 @@ Ctrl+w w  " cycle to next window
 Ctrl+w p  " go to previous window
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Window closing
 # Category: Window Management
@@ -27,7 +27,7 @@ Ctrl+w o  " close all other windows
 Ctrl+w q  " quit current window
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Window position navigation
 # Category: Window Management
@@ -40,7 +40,7 @@ Ctrl+w t  " go to top window
 Ctrl+w b  " go to bottom window
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Special window commands
 # Category: Window Management
@@ -54,7 +54,7 @@ Ctrl+w ]  " split and jump to tag
 Ctrl+w x  " exchange current window with another
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Move window to tab
 # Category: Window Management
@@ -66,7 +66,7 @@ Use `Ctrl+w T` to move current window to a new tab page.
 Ctrl+w T  " move current window to new tab
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Move windows
 # Category: Window Management
@@ -81,7 +81,7 @@ Ctrl+w K  " move window to top
 Ctrl+w L  " move window to far right
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Better gm command
 # Category: Window Management
@@ -115,7 +115,7 @@ vim.keymap.set('n', 'gm', better_gm, { silent = true, desc = 'Go to middle of li
 vim.keymap.set('o', 'gm', better_gm, { silent = true, desc = 'Go to middle of line' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Keep cursor centered
 # Category: Window Management
@@ -146,7 +146,7 @@ vim.keymap.set('n', 'N', 'Nzz', { desc = 'Previous search result and center' })
 vim.opt.scrolloff = 999
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Change cursor shape in modes
 # Category: Window Management
@@ -165,7 +165,7 @@ vim.opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50'
 -- Block in normal, vertical bar in insert, horizontal in replace
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Keep window when closing buffer
 # Category: Window Management
@@ -178,7 +178,7 @@ Use `:bp|bd #` to close buffer without closing the window layout.
 :enew|bd #      " create new buffer, delete previous
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Tab management
 # Category: Window Management
@@ -197,7 +197,7 @@ gT              " previous tab (normal mode)
 :tab split      " open current buffer in new tab
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Focus mode for writing
 # Category: Window Management
@@ -223,7 +223,7 @@ endfunction
 nnoremap <F12> :call ToggleFocusMode()<CR>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Quick file explorer
 # Category: Window Management
@@ -246,7 +246,7 @@ Use built-in file explorer (netrw) for quick file navigation and management.
 " % - create new file
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Close all other windows
 # Category: Window Management
@@ -260,7 +260,7 @@ Use `:only` or `:on` to close all windows except the current one, making it take
 Ctrl+w o " normal mode shortcut for :only
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Window commands from Ex mode
 # Category: Window Management
@@ -276,7 +276,7 @@ Use `:wincmd {key}` to execute window commands from Ex mode, useful in scripts a
 :wincmd s     " same as Ctrl+w s (horizontal split)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Smart window navigation keymaps
 # Category: Window Management
@@ -304,7 +304,7 @@ vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = 'Close current window' })
 vim.keymap.set('n', '<leader>wo', '<C-w>o', { desc = 'Close other windows' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Keep Quickfix Window at Fixed Height
 # Category: window_management

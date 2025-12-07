@@ -16,7 +16,7 @@ print(vim.fn.getfperm(vim.fn.expand('%')))
 print(vim.fn.getfsize(vim.fn.expand('%')))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: String manipulation functions
 # Category: Functions
@@ -36,7 +36,7 @@ print(vim.fn.matchstr("file.txt", '\\.\\w\\+$'))
 print(vim.fn.split("a,b,c", ","))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer and window information
 # Category: Functions
@@ -58,7 +58,7 @@ print(vim.fn.tabpagenr('%'))
 print(vim.fn.winnr('%'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Path manipulation functions
 # Category: Functions
@@ -80,7 +80,7 @@ print(vim.fn.resolve(vim.fn.expand('%')))
 print(vim.fn.simplify('../path/./file'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search and match functions
 # Category: Functions
@@ -102,7 +102,7 @@ print(vim.fn.match('hello world', 'wor'))
 print(vim.fn.matchend('hello world', 'wor'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Line and column functions
 # Category: Functions
@@ -124,7 +124,7 @@ print(vim.fn.getline('.'))
 vim.fn.setline('.', 'new text')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Date and time functions
 # Category: Functions
@@ -146,7 +146,7 @@ print(vim.fn.getftime('%Y-%m-%d', vim.fn.expand('%')))
 vim.api.nvim_put({os.date('%Y-%m-%d')}, 'c', true, true)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: System and environment functions
 # Category: Functions
@@ -168,7 +168,7 @@ print(vim.fn.geten('HOME'))
 print(vim.fn.exists('$EDITOR'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: List and dictionary functions
 # Category: Functions
@@ -194,7 +194,7 @@ print(mydict.a ~= nil)
 print(vim.inspect(vim.tbl_keys(mydict)))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Type checking functions
 # Category: Functions
@@ -218,7 +218,7 @@ print(vim.fn.type({}))
 print(vim.fn.exists('g:my_var'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Mathematical functions
 # Category: Functions
@@ -242,7 +242,7 @@ print(vim.fn.sin(3.14159/2))
 print(vim.fn.round(3.7))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer content functions
 # Category: Functions
@@ -264,7 +264,7 @@ vim.fn.append(vim.fn.line('.'), 'new line')
 vim.fn.delete(vim.fn.line('.'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Input and interaction functions
 # Category: Functions
@@ -286,7 +286,7 @@ local result = vim.fn.confirm('Save changes?', '&Yes\n&No\n&Cancel')
 print("You chose: " .. choice)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Window and tab functions
 # Category: Functions
@@ -310,7 +310,7 @@ vim.fn.winrestview(view)
 print(vim.fn.tabpaebuflist())
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Highlighting and syntax functions
 # Category: Functions
@@ -332,7 +332,7 @@ print(vim.fn.hlID('Comment'))
 print(vim.fn.synIDattr(vim.fn.hlID('Comment'), 'fg'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Regular expression functions
 # Category: Functions
@@ -354,7 +354,7 @@ print(vim.fn.matchlist('file.txt', '\\(.*\\)\\.\\(.*\\)'))
 print(vim.fn.matchstr('hello123world', '\\d\\+'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Fold information functions
 # Category: Functions
@@ -376,7 +376,7 @@ print(vim.fn.foldnext())
 vim.opt.foldtext = MyCustomFoldText()
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: File and directory functions
 # Category: Functions
@@ -398,7 +398,7 @@ print(vim.fn.isdirectory(vim.fn.expand('%:h')))
 print(vim.fn.readable(vim.fn.expand('%')))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Register manipulation functions
 # Category: Functions
@@ -420,7 +420,7 @@ print(vim.fn.getregtype('a'))
 vim.fn.setreg('+', "@")
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Cursor and mark functions
 # Category: Functions
@@ -442,7 +442,7 @@ vim.fn.setpos('.', pos)
 print(vim.fn.getpos("'a"))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create Custom Help Tags Programmatically
 # Category: builtin_functions

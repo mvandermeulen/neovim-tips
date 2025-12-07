@@ -11,7 +11,7 @@ Use Lua's require system to load and organize Neovim configuration modules with 
 :lua R = function(name) package.loaded[name] = nil; return require(name) end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Extmarks for persistent highlighting
 # Category: Advanced Neovim
@@ -27,7 +27,7 @@ Use extmarks to create persistent, trackable highlights that survive buffer chan
 :lua vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)  " clear all
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Virtual text annotations
 # Category: Advanced Neovim
@@ -43,7 +43,7 @@ Use virtual text to display inline annotations like diagnostics, git blame, or d
 " Adds virtual text at end of current line
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer-local variables with vim.b
 # Category: Advanced Neovim
@@ -58,7 +58,7 @@ Use `vim.b` to access buffer-local variables from Lua, providing cleaner syntax 
 " Cleaner than :let b:my_setting = 'value'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Window-local variables with vim.w
 # Category: Advanced Neovim
@@ -72,7 +72,7 @@ Use `vim.w` to manage window-local variables from Lua for window-specific settin
 :lua for winid, vars in pairs(vim.w) do print(winid, vim.inspect(vars)) end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Global variables with vim.g
 # Category: Advanced Neovim
@@ -87,7 +87,7 @@ Use `vim.g` to manage global variables from Lua, providing type-safe access to v
 " Equivalent to :let g:mapleader = ' '
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Tab-local variables with vim.t
 # Category: Advanced Neovim
@@ -101,7 +101,7 @@ Use `vim.t` to manage tab-local variables for tab-specific settings and state ma
 :lua print('Current tab project:', vim.t.project_root)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Lua heredoc syntax
 # Category: Advanced Neovim
@@ -119,7 +119,7 @@ my_function()
 EOF
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Keymap API with descriptions
 # Category: Advanced Neovim
@@ -134,7 +134,7 @@ Use `vim.keymap.set()` to create keymaps with descriptions and options, supporti
 :lua vim.keymap.del('n', '<leader>f')  " delete keymap
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: User commands with Lua
 # Category: Advanced Neovim
@@ -150,7 +150,7 @@ Use `vim.api.nvim_create_user_command()` to create custom commands with Lua func
 :Hello World  " prints 'Hello World'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Option management with vim.opt
 # Category: Advanced Neovim
@@ -165,7 +165,7 @@ Use `vim.opt` for intuitive option management from Lua with proper data types an
 :lua vim.opt.wildignore:append('*.pyc')  " add to ignore list
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Filetype detection API
 # Category: Advanced Neovim
@@ -181,7 +181,7 @@ Use `vim.filetype.add()` to register custom filetype detection patterns and func
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Highlight group API
 # Category: Advanced Neovim
@@ -197,7 +197,7 @@ Use `vim.api.nvim_set_hl()` to programmatically define and modify highlight grou
 :lua print(vim.inspect(hl))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Snippet expansion API
 # Category: Advanced Neovim
@@ -211,7 +211,7 @@ Use `vim.snippet` API for snippet expansion and navigation without external snip
 " Built-in snippet support in Neovim 0.10+
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Event loop and scheduling
 # Category: Advanced Neovim
@@ -227,7 +227,7 @@ end)
 " Useful for async operations and avoiding blocking
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ring buffer for undo history
 # Category: Advanced Neovim
@@ -242,7 +242,7 @@ Use Neovim's enhanced undo system with ring buffer capabilities for advanced und
 :undolist    " show numbered undo states
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Treesitter API access
 # Category: Advanced Neovim
@@ -257,7 +257,7 @@ Use `vim.treesitter` API to query and manipulate the abstract syntax tree progra
 :lua for id, node in query:iter_captures(tree:root(), 0) do print(node:type()) end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: RPC and job control (vim.system)
 # Category: Advanced Neovim
@@ -273,7 +273,7 @@ Use `vim.system()` for modern job control and `vim.rpcnotify()` for RPC communic
 :lua job:wait()  " wait for completion
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: UI events and hooks
 # Category: Advanced Neovim
@@ -287,7 +287,7 @@ Use UI event hooks to customize Neovim's behavior for different UI clients and f
 :lua print(vim.loop.os_uname().sysname)  " detect OS
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Namespace management
 # Category: Advanced Neovim
@@ -302,7 +302,7 @@ Use namespaces to isolate highlights, extmarks, and diagnostics from different s
 :lua vim.api.nvim_buf_clear_namespace(0, ns1, 0, -1)  " clear ns1 only
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Deep inspection with vim.inspect
 # Category: Advanced Neovim
@@ -317,7 +317,7 @@ Use `vim.inspect()` to pretty-print complex Lua data structures for debugging an
 :lua print(vim.inspect(vim.api, {depth = 1}))  " API structure
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Secure mode and restrictions
 # Category: Advanced Neovim
@@ -332,7 +332,7 @@ Use secure mode and option restrictions to safely execute untrusted vim configur
 " Restricts dangerous commands in local configs
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Runtime path manipulation
 # Category: Advanced Neovim
@@ -347,7 +347,7 @@ Use runtime path manipulation to dynamically load configurations and plugins at 
 " Runtime paths searched for configs and plugins
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Custom completion sources
 # Category: Advanced Neovim
@@ -382,7 +382,7 @@ _G.my_completion = my_completion
 vim.opt.omnifunc = 'v:lua.my_completion'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Window configuration API
 # Category: Advanced Neovim
@@ -399,7 +399,7 @@ Use window configuration API for advanced window management and layout control.
 :lua print(vim.inspect(config))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Health check system
 # Category: Advanced Neovim
@@ -414,7 +414,7 @@ Use Neovim's health check system to create custom health checks for your configu
 " with check() function for custom health checks
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Command preview and substitution
 # Category: Advanced Neovim
@@ -437,7 +437,7 @@ vim.opt.inccommand = 'nosplit'   -- preview inline
 -- Preview works with :substitute, :global, :sort, etc.
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Git Merge Conflict Resolution with Vimdiff
 # Category: advanced_neovim

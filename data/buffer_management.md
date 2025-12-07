@@ -22,7 +22,7 @@ vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {
 vim.api.nvim_win_set_buf(0, bufnr)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create listed buffer
 # Category: Buffers
@@ -50,7 +50,7 @@ vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {
 vim.api.nvim_set_current_buf(bufnr)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Set buffer type for special buffers
 # Category: Buffers
@@ -77,7 +77,7 @@ vim.bo[bufnr].swapfile = false
 vim.bo[bufnr].modifiable = false    -- Read-only
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Control buffer hiding behavior
 # Category: Buffers
@@ -100,7 +100,7 @@ vim.bo[bufnr].bufhidden = "wipe"
 vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {"Temporary content"})
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create read-only buffer
 # Category: Buffers
@@ -128,7 +128,7 @@ vim.bo[bufnr].modifiable = false
 vim.api.nvim_win_set_buf(0, bufnr)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create floating window with scratch buffer
 # Category: Buffers
@@ -177,7 +177,7 @@ vim.api.nvim_buf_set_keymap(bufnr, "n", "q",
 vim.bo[bufnr].bufhidden = "wipe"
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer-local keymaps
 # Category: Buffers
@@ -213,7 +213,7 @@ for _, map in ipairs(keymaps) do
 end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer-local autocommands
 # Category: Buffers
@@ -252,7 +252,7 @@ vim.api.nvim_create_autocmd("BufDelete", {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer-local variables
 # Category: Buffers
@@ -287,7 +287,7 @@ if vim.b[bufnr].custom_type then
 end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Get buffer by name or number
 # Category: Buffers
@@ -334,7 +334,7 @@ for _, buf in ipairs(loaded) do
 end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create custom buffer picker
 # Category: Buffers
@@ -401,7 +401,7 @@ end
 vim.api.nvim_create_user_command("Buffers", buffer_picker, {})
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Watch buffer for changes
 # Category: Buffers
@@ -464,7 +464,7 @@ local function create_auto_save_buffer()
 end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Delete buffer safely
 # Category: Buffers
@@ -519,7 +519,7 @@ vim.api.nvim_create_user_command("BufOnly", delete_other_buffers, {})
 vim.api.nvim_create_user_command("BufClean", delete_hidden_buffers, {})
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create terminal buffer programmatically
 # Category: Buffers
@@ -595,7 +595,7 @@ vim.api.nvim_create_user_command("TermFloat", function(opts)
 end, {nargs = "?"})
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Buffer namespaces for isolated state
 # Category: Buffers
@@ -640,7 +640,7 @@ local marks = vim.api.nvim_buf_get_extmarks(
 )
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Build a simple notes buffer system
 # Category: Buffers
@@ -729,7 +729,7 @@ end, {})
 return M
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Close all buffers
 # Category: Buffers
@@ -743,7 +743,7 @@ return M
 %bd!
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Close all buffers except the current one
 # Category: Buffers
@@ -758,7 +758,7 @@ vim.keymap.set("n", "<leader>X", "<cmd>%bd|e#<cr>", { desc = "Close other", nore
 :%bd|e#
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Python Help in Preview Window
 # Category: buffer_management

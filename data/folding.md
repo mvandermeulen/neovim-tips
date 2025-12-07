@@ -8,7 +8,7 @@ Use `za` to toggle fold under cursor open/closed.
 za  " toggle fold under cursor
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Open and close all folds
 # Category: Folding
@@ -21,7 +21,7 @@ zR  " open all folds
 zM  " close all folds
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Create fold from selection
 # Category: Folding
@@ -34,7 +34,7 @@ zf5j  " create fold 5 lines down
 zf    " create fold from visual selection
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Fold levels
 # Category: Folding
@@ -47,7 +47,7 @@ zm  " increase fold level
 zr  " reduce fold level
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Z-commands - create folds
 # Category: Folding
@@ -61,7 +61,7 @@ zf3j  " create fold from cursor down 3 lines
 zfip  " create fold for inner paragraph
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Open All Folds Automatically on File Open
 # Category: folding

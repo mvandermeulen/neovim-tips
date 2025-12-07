@@ -8,7 +8,7 @@ Use `:%s/old/new/g` to replace all occurrences of 'old' with 'new' in the entire
 :%s/foo/bar/g  " replace all 'foo' with 'bar'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Remove search highlighting
 # Category: Search
@@ -20,7 +20,7 @@ Use `:nohl` to remove search highlighting after performing a search.
 :nohl
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search in selection
 # Category: Search
@@ -32,7 +32,7 @@ Use `:'<,'>s/old/new/g` to replace only in visual selection.
 :'<,'>s/foo/bar/g  " replace in selection
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search backward
 # Category: Search
@@ -46,7 +46,7 @@ n       " next match (backward)
 N       " previous match (forward)
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Advanced search and replace with regex
 # Category: Search
@@ -58,7 +58,7 @@ Use `:%s/\v(foo|bar)/baz/g` to replace either 'foo' or 'bar' with 'baz' using ve
 :%s/\v(foo|bar)/baz/g  " replace foo or bar with baz
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Repeat last search in substitution
 # Category: Search
@@ -70,7 +70,7 @@ Use `:%s//replacement/g` to use the last search pattern in substitution command.
 :%s//new_text/g  " replace last searched pattern with new_text
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search word boundaries with very magic
 # Category: Search
@@ -84,7 +84,7 @@ Use `\v` for very magic mode to make regex more intuitive, or `\<word\>` for exa
 /\vd+             " search for one or more digits
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Multi-line search pattern
 # Category: Search
@@ -97,7 +97,7 @@ Use `\_s` for whitespace including newlines, `\_.*` to match across lines in sea
 /start\_.*end        " match start to end across lines
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search with offset
 # Category: Search
@@ -110,7 +110,7 @@ Use `/pattern/+n` to position cursor n lines after match, or `/pattern/-n` for n
 /end/-1          " position cursor 1 line before 'end'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Search and replace in multiple files (vimgrep+cdo)
 # Category: Search
@@ -126,7 +126,7 @@ Thanks to `c` flag you'll have a cnahce to approve every change. Note that `cfdo
 :cdo s/text-red/text-blue/gc
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Avoid escaping slashes in search and replace operations
 # Category: Search
@@ -138,7 +138,7 @@ Thanks to `c` flag you'll have a cnahce to approve every change. Note that `cfdo
 %s/http:\/\//fpt:\/\//gc
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Insert Newlines Around Patterns Flexibly
 # Category: search_replace

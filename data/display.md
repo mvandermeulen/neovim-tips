@@ -13,7 +13,7 @@ Use `:set list!` to toggle display of invisible characters (tabs, spaces, etc.).
 vim.opt.list = not vim.opt.list:get()  -- toggle invisible characters
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - folding display
 # Category: Display
@@ -34,7 +34,7 @@ vim.opt.fillchars = { fold = '.', vert = '|' }  -- customize fill characters
 vim.opt.foldtext = 'v:lua.MyFoldText()'  -- custom fold text function
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - status line and tabs
 # Category: Display
@@ -55,7 +55,7 @@ vim.opt.showtabline = 2  -- always show tab line
 vim.opt.statusline = '%f %m%r%h%w [%Y] [%{&ff}] %=%l,%c %p%%'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Conceal text with syntax highlighting
 # Category: Display
@@ -83,7 +83,7 @@ vim.keymap.set('n', '<leader>c', function()
 end, { desc = 'Toggle conceal' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Toggle Diff Highlighting in Merge Conflicts
 # Category: display

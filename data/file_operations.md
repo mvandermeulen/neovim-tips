@@ -10,7 +10,7 @@ Use `:w` to save current file, `:w {file}` to save as new file, or `:wall` to sa
 :wall          " save all files
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Save as
 # Category: File
@@ -22,7 +22,7 @@ Use `:sav[eas] filepath` to save file under a different name
 :sav ~/tmp/work.txt
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Insert current date
 # Category: File Operations
@@ -34,7 +34,7 @@ Use `:r !date` to insert current date at cursor position.
 :r !date  " insert current date
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Reload file from disk
 # Category: File Operations
@@ -46,7 +46,7 @@ Use `:e!` to reload current file from disk, discarding unsaved changes.
 :e!  " reload file from disk
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - read and write operations
 # Category: File Operations
@@ -61,7 +61,7 @@ Use `:read` or `:r` to read file into buffer, `:write` range to write part of bu
 :.,$w end.txt   " write from current line to end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - file permissions and attributes
 # Category: File Operations
@@ -84,7 +84,7 @@ vim.opt.fileformat = 'unix'  -- set Unix line endings
 vim.opt.fileformat = 'dos'   -- set DOS line endings
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Save multiple files at once
 # Category: File Operations
@@ -99,7 +99,7 @@ Use `:wa` to save all modified files, `:xa` to save all and exit, `:wqa` to save
 :qa!     " quit all without saving
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Path separator conversion
 # Category: File Operations
@@ -118,7 +118,7 @@ Use `:s` commands to easily convert between backslash and forward slash in file 
 :echo substitute(@%, '\\', '/', 'g')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Update file only if changed
 # Category: File Operations
@@ -131,7 +131,7 @@ Use `:update` to save file only if it has been modified, more efficient than `:w
 :map <F2> :update<CR>  " map F2 to conditional save
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Check file existence in scripts
 # Category: File Operations
@@ -149,7 +149,7 @@ endif
 let lines = readfile('data.txt')
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Browse for files with dialog
 # Category: File Operations
@@ -164,7 +164,7 @@ Use `:browse {command}` to open file browser dialog for commands that take filen
 :browse source    " browse to source a script file
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Write file and create all directories form the full file path
 # Category: File Operations
@@ -176,7 +176,7 @@ Use this command to write file if the full path contains non-existent directorie
 :write ++p
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Convert File Line Endings Easily
 # Category: file_operations

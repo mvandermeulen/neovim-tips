@@ -15,7 +15,7 @@ Configure Python-specific settings for proper indentation and formatting.
 :autocmd FileType python setlocal foldlevel=2
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: JavaScript/TypeScript development setup
 # Category: File Type Specific
@@ -34,7 +34,7 @@ Optimize settings for JavaScript and TypeScript development.
 :autocmd FileType typescript nnoremap <leader>cl oconsole.log();<Left><Left>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: HTML and XML tag manipulation
 # Category: File Type Specific
@@ -56,7 +56,7 @@ Use specialized commands for HTML/XML tag editing and navigation.
 :autocmd FileType html,xml nnoremap <leader>= gg=G
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: CSS and SCSS productivity shortcuts
 # Category: File Type Specific
@@ -77,7 +77,7 @@ Speed up CSS/SCSS development with smart shortcuts and settings.
 :autocmd FileType css,scss syntax match cssColor /#\x\{6\}/
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Go language specific features
 # Category: File Type Specific
@@ -99,7 +99,7 @@ Configure Go development workflow with formatting and building.
 :autocmd FileType go nnoremap <leader>gt :!go test<CR>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Rust development optimization
 # Category: File Type Specific
@@ -122,7 +122,7 @@ Set up efficient Rust development environment and shortcuts.
 :autocmd BufWritePre *.rs lua vim.lsp.buf.format()
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: C/C++ header and implementation switching
 # Category: File Type Specific
@@ -158,7 +158,7 @@ endfunction
 :autocmd FileType c,cpp nnoremap <leader>a :call SwitchSourceHeader()<CR>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Java class and package navigation
 # Category: File Type Specific
@@ -181,7 +181,7 @@ Streamline Java development with class and package utilities.
 :autocmd FileType java nnoremap <leader>jm ipublic static void main(String[] args) {<CR>}<Esc>O
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Markdown writing and formatting
 # Category: File Type Specific
@@ -206,7 +206,7 @@ Enhance Markdown writing experience with formatting and navigation.
 :autocmd FileType markdown nnoremap <leader>h3 I### <Esc>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: JSON formatting and validation
 # Category: File Type Specific
@@ -230,7 +230,7 @@ Work efficiently with JSON files using formatting and validation tools.
 :autocmd FileType json nnoremap <leader>jt i{<CR>"key": "value"<CR>}<Esc>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: YAML configuration editing
 # Category: File Type Specific
@@ -252,7 +252,7 @@ Optimize YAML editing with proper indentation and validation.
 :autocmd FileType yaml inoremap <C-l> <CR>-
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Shell script development
 # Category: File Type Specific
@@ -275,7 +275,7 @@ Streamline shell script development with proper settings and shortcuts.
 :autocmd FileType sh nnoremap <leader>sb ggO#!/bin/bash<Esc>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: SQL query formatting and execution
 # Category: File Type Specific
@@ -298,7 +298,7 @@ Enhance SQL development with formatting and execution capabilities.
 :autocmd FileType sql nnoremap <leader>si iINSERT INTO  () VALUES ();<Esc>
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Lua script configuration
 # Category: File Type Specific
@@ -322,7 +322,7 @@ Configure Lua development for Neovim scripting and general development.
 :autocmd FileType lua nnoremap <leader>lv ivim.
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: XML and configuration file handling
 # Category: File Type Specific
@@ -346,7 +346,7 @@ Handle XML and various configuration file formats effectively.
 :autocmd FileType xml nnoremap <leader>cd i<![CDATA[]]><Esc>3hi
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Configuration file syntax highlighting
 # Category: File Type Specific
@@ -367,7 +367,7 @@ Enable proper syntax highlighting for various configuration formats.
 :autocmd FileType conf,dosini setlocal tabstop=4 shiftwidth=4 expandtab
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Docker and container file editing
 # Category: File Type Specific
@@ -390,7 +390,7 @@ Optimize editing Docker-related files with proper syntax and shortcuts.
 :autocmd FileType dockerfile nnoremap <leader>df iFROM <CR>RUN <CR>COPY <CR>CMD
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Git commit message formatting
 # Category: File Type Specific
@@ -414,7 +414,7 @@ Improve git commit message writing with templates and formatting.
 :autocmd FileType gitcommit nnoremap <leader>gr irefactor:
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Log file analysis and navigation
 # Category: File Type Specific
@@ -439,7 +439,7 @@ Navigate and analyze log files efficiently with specialized commands.
 :autocmd FileType log syntax match logInfo /INFO/
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Binary and hex file editing
 # Category: File Type Specific
@@ -462,7 +462,7 @@ command! HexModeReverse :%!xxd -r
 :autocmd BufReadPost *.bin set filetype=xxd
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Template file creation
 # Category: File Type Specific
@@ -484,7 +484,7 @@ Automatically insert templates for new files based on file type.
 :autocmd BufNewFile * %s/{{AUTHOR}}/\=system('git config user.name')[:-2]/g
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Detect Inform Header Files in Vim
 # Category: filetype

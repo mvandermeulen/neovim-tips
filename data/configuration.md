@@ -10,7 +10,7 @@ Use `:sandbox` to execute commands safely without side effects like persistent u
 :sandbox source unsafe.vim    " test configuration safely
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: View runtime paths
 # Category: Configuration
@@ -22,7 +22,7 @@ Use `:echo &runtimepath` to see all runtime paths Neovim is using.
 :echo &runtimepath  " show runtime paths
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Auto tab completion
 # Category: Configuration
@@ -57,7 +57,7 @@ vim.keymap.set('i', '<Tab>', tab_or_complete, { expr = true, desc = 'Tab or comp
 vim.opt.dictionary = '/usr/dict/words'
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - autocmds and events
 # Category: Configuration
@@ -97,7 +97,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - mappings and abbreviations
 # Category: Configuration
@@ -122,7 +122,7 @@ vim.keymap.del('n', '<F2>')  -- remove mapping
 vim.cmd('unabbrev teh')  -- remove abbreviation
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - highlight and syntax
 # Category: Configuration
@@ -150,7 +150,7 @@ vim.cmd('highlight clear')  -- clear all highlighting
 vim.api.nvim_set_hl(0, 'Comment', { ctermfg = 'green' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Ex commands - runtime and sourcing
 # Category: Configuration
@@ -178,7 +178,7 @@ dofile(vim.fn.expand('~/.vimrc'))  -- load Vimscript file
 dofile(vim.fn.expand('~/.config/nvim/init.lua'))
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Home key smart mapping
 # Category: Configuration
@@ -225,7 +225,7 @@ end
 vim.keymap.set('n', '<Home>', smart_home, { silent = true, desc = 'Smart Home' })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Speed up vimgrep with noautocmd
 # Category: Configuration
@@ -238,7 +238,7 @@ Use `:noautocmd vimgrep` to speed up vimgrep by disabling autocmds during search
 :noautocmd bufdo %s/old/new/ge         " faster buffer operations
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Check plugin key mapping usage
 # Category: Configuration
@@ -252,7 +252,7 @@ Use `echo maparg("key", "mode")` to check what key mapping is assigned in specif
 :echo maparg("<C-n>", "i")  " check insert mode Ctrl+n mapping
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Environment variables in configuration
 # Category: Configuration
@@ -271,7 +271,7 @@ else
 end
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Alternate Neovim startup configuration
 # Category: Configuration
@@ -290,7 +290,7 @@ nvim -u NONE
 nvim -u ~/.vimrc.test
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Hidden buffers option
 # Category: Configuration
@@ -304,7 +304,7 @@ Use `:set hidden` to allow switching between files without saving changes, preve
 " Now you can use :edit, :next, etc. without saving first
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Remove from option value
 # Category: Configuration
@@ -317,7 +317,7 @@ Use `:set option-=value` to remove a value from an option.
 :set wildignore-=*.pyc  " stop ignoring Python bytecode
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Markdown code block syntax highlighting
 # Category: Configuration
@@ -340,7 +340,7 @@ vim.g.markdown_fenced_languages = {
 }
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Per-project configuration with .nvim.lua
 # Category: Configuration
@@ -366,7 +366,7 @@ vim.lsp.start({
 })
 ```
 
-**Source:** ** Community contributed
+**Source:** Community contributed
 ***
 # Title: Configure Clipboard Behavior
 # Category: configuration
