@@ -84,6 +84,10 @@ Use `:lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))` to list work
 ---
 Toggle inlay hints to show/hide parameter names, type annotations, and other inline information provided by LSP.
 
+```vim
+" Check if inlay hints are available:
+:lua print(vim.lsp.inlay_hint.is_enabled())
+```
 ```lua
 -- Toggle inlay hints on/off:
 vim.keymap.set('n', '<leader>th', function()
@@ -99,10 +103,5 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
-```
-
-```vim
-" Check if inlay hints are available:
-:lua print(vim.lsp.inlay_hint.is_enabled())
 ```
 ***

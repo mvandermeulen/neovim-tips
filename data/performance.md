@@ -4,9 +4,8 @@
 ---
 Use `nvim --startuptime profile.log` to profile Neovim startup time.
 
-```bash
-nvim --startuptime profile.log
-```
+
+**Source:** ** Community contributed
 ***
 # Title: Lazy load plugins
 # Category: Performance
@@ -22,6 +21,8 @@ Use lazy loading for plugins that aren't needed immediately to improve startup t
   keys = "<leader>ff" -- load only when key is pressed
 }
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Disable unused features
 # Category: Performance
@@ -38,6 +39,8 @@ vim.g.loaded_zipPlugin = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Optimize updatetime
 # Category: Performance
@@ -48,6 +51,8 @@ Set appropriate updatetime for better responsiveness (default 4000ms is often to
 ```lua
 vim.opt.updatetime = 250  -- faster completion and diagnostics
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Use swap files efficiently
 # Category: Performance
@@ -60,6 +65,8 @@ vim.opt.swapfile = true
 vim.opt.directory = vim.fn.expand('~/.local/share/nvim/swap//')
 vim.opt.updatecount = 100  -- write swap after 100 keystrokes
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Optimize line numbers
 # Category: Performance
@@ -76,6 +83,8 @@ vim.api.nvim_create_autocmd({'BufEnter', 'FocusGained', 'InsertLeave'}, {
   command = 'set relativenumber'
 })
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Reduce redraw frequency
 # Category: Performance
@@ -86,6 +95,8 @@ Use lazyredraw to improve performance during macros and complex operations.
 ```lua
 vim.opt.lazyredraw = true  -- don't redraw during macros
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Profile Lua code
 # Category: Performance
@@ -107,6 +118,8 @@ local start = vim.loop.hrtime()
 local elapsed = vim.loop.hrtime() - start
 print(string.format("Elapsed: %.2fms", elapsed / 1e6))
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Optimize file type detection
 # Category: Performance
@@ -118,6 +131,8 @@ Use efficient filetype detection and disable unnecessary patterns.
 vim.g.do_filetype_lua = 1  -- use Lua for filetype detection
 vim.g.did_load_filetypes = 0  -- don't use Vim script detection
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Memory usage monitoring
 # Category: Performance
@@ -129,6 +144,8 @@ Monitor Neovim memory usage to identify memory leaks or excessive usage.
 :lua print(collectgarbage("count") .. " KB")  " current memory usage
 :lua collectgarbage()  " force garbage collection
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Syntax highlighting limits
 # Category: Performance
@@ -140,6 +157,8 @@ Set limits for syntax highlighting to maintain performance on large files.
 vim.opt.synmaxcol = 200  -- don't highlight lines longer than 200 chars
 vim.g.syntax_timeout = 1000  -- timeout after 1 second
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Lazy-load plugins for faster startup
 # Category: Performance
@@ -185,4 +204,21 @@ Use lazy-loading strategies with lazy.nvim to defer plugin loading until needed,
 -- Check startup time:
 -- nvim --startuptime startup.log
 ```
+
+**Source:** ** Community contributed
+***
+# Title: Increase Redraw Time for Large Files
+# Category: performance
+# Tags: performance, large-files, rendering
+---
+Increase redraw time to ensure syntax highlighting works correctly on large, complex files
+
+```vim
+set redrawtime=10000
+```
+```lua
+vim.o.redrawtime = 10000
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Fix_Syntax_Highlighting
 ***

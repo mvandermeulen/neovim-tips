@@ -8,6 +8,8 @@ Use `I` to insert at beginning of line, `A` to append at end of line.
 I  " insert at line start
 A  " append at line end
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Open new line
 # Category: Editing
@@ -19,6 +21,8 @@ Use `o` to open new line below cursor, `O` to open new line above cursor.
 o  " open line below
 O  " open line above
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Substitute character
 # Category: Editing
@@ -30,6 +34,8 @@ Use `s` to substitute character (delete and enter insert mode), `S` for entire l
 s  " substitute character
 S  " substitute line
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Yank (copy) operations
 # Category: Editing
@@ -42,6 +48,8 @@ yy  " yank entire line
 yw  " yank word
 y$  " yank to end of line
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Put (paste) operations
 # Category: Editing
@@ -53,6 +61,8 @@ Use `p` to paste after cursor, `P` to paste before cursor.
 p  " paste after cursor
 P  " paste before cursor
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Calculate expressions
 # Category: Editing
@@ -65,36 +75,8 @@ Use `<C-r>=` in insert mode to calculate mathematical expressions and insert the
 <C-r>=2+2<CR>       " inserts '4'
 <C-r>=16*1024<CR>   " inserts '16384'
 ```
-***
-# Title: Substitute entire line and start insert
-# Category: Editing
-# Tags: substitute, line, insert, indentation
----
-Use `S` to delete the entire line and start insert mode with proper indentation.
 
-```vim
-S  " delete line and start insert at correct indentation
-```
-***
-# Title: Capitalize words easily
-# Category: Editing
-# Tags: capitalize, words, case, format
----
-Use `guw~` to make word lowercase then capitalize first letter, or create mapping for title case.
-
-```vim
-" Vimscript:
-guw~        " lowercase word then capitalize first letter
-" Or map for convenience:
-nnoremap <leader>tc guw~
-```
-
-```lua
--- Lua:
--- Use: guw~ (built-in vim motion)
--- Or map for convenience:
-vim.keymap.set('n', '<leader>tc', 'guw~', { desc = 'Title case word' })
-```
+**Source:** ** Community contributed
 ***
 # Title: Insert single character
 # Category: Editing
@@ -109,26 +91,14 @@ nnoremap <leader>i i_<Esc>r
 " Or use s to substitute character:
 s{char}<Esc>  " replace character under cursor
 ```
-
 ```lua
 -- Lua:
 -- Insert single character and return to normal mode
 vim.keymap.set('n', '<leader>i', 'i_<Esc>r', { desc = 'Insert single character' })
 -- Or use: s{char}<Esc> to substitute character under cursor
 ```
-***
-# Title: Delete words in different way
-# Category: Editing
-# Tags: delete, word, alternative, whitespace
----
-Use `daw` to delete word including surrounding whitespace, `diw` for word only, `dW` for WORD including punctuation.
 
-```vim
-daw  " delete a word (including spaces)
-diw  " delete inner word (no spaces)
-dW   " delete WORD (including punctuation)
-daW  " delete a WORD (including spaces)
-```
+**Source:** ** Community contributed
 ***
 # Title: Insert multiple lines
 # Category: Editing
@@ -142,6 +112,8 @@ Use `o<Esc>` followed by repeat count, or `{count}o` to insert multiple empty li
 " Or in normal mode:
 o<Esc>4.    " insert line, then repeat 4 times
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Insert newline without entering insert mode
 # Category: Editing
@@ -157,7 +129,6 @@ O<Esc>      " insert empty line above, stay in normal mode
 nnoremap <leader>o o<Esc>
 nnoremap <leader>O O<Esc>
 ```
-
 ```lua
 -- Lua:
 -- Use: o<Esc> or O<Esc> (built-in commands)
@@ -165,72 +136,8 @@ nnoremap <leader>O O<Esc>
 vim.keymap.set('n', '<leader>o', 'o<Esc>', { desc = 'Insert line below' })
 vim.keymap.set('n', '<leader>O', 'O<Esc>', { desc = 'Insert line above' })
 ```
-***
-# Title: Enhanced undo and redo
-# Category: Editing
-# Tags: undo, redo, changes, history, time
----
-Use advanced undo/redo with time-based navigation and undo tree features.
 
-```vim
-u           " undo last change
-<C-r>       " redo last undone change
-U           " restore line to original state
-:earlier 5m " undo changes from 5 minutes ago
-:later 10m  " redo changes up to 10 minutes later
-
-" Navigate undo tree
-:undolist   " show undo history
-g-          " go to older text state
-g+          " go to newer text state
-```
-***
-# Title: Omni completion setup
-# Category: Editing
-# Tags: completion, omni, smart, autocomplete
----
-Configure and use intelligent omni completion for programming languages.
-
-```vim
-" Vimscript:
-" Enable omni completion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
-" Use omni completion
-<C-x><C-o>        " trigger omni completion in insert mode
-<C-n>             " navigate completion menu down
-<C-p>             " navigate completion menu up
-
-" Enable for specific languages
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-```
-
-```lua
--- Lua:
--- Enable omni completion
-vim.cmd('filetype plugin on')
-vim.opt.omnifunc = 'syntaxcomplete#Complete'
-
--- Use omni completion with: <C-x><C-o> in insert mode
--- Navigate with: <C-n> (down) and <C-p> (up)
-
--- Enable for specific languages
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'python',
-  callback = function()
-    vim.opt_local.omnifunc = 'pythoncomplete#Complete'
-  end
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'javascript',
-  callback = function()
-    vim.opt_local.omnifunc = 'javascriptcomplete#CompleteJS'
-  end
-})
-```
+**Source:** ** Community contributed
 ***
 # Title: Ex commands - line operations
 # Category: Editing
@@ -247,6 +154,8 @@ ggdG          " same as above
 :5,10m 20     " move lines 5-10 to after line 20
 :1,5co 10     " copy lines 1-5 to after line 10
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Ex commands - undo and redo
 # Category: Editing
@@ -261,6 +170,8 @@ Use `:undo` and `:redo` for undo/redo, `:earlier` and `:later` for time-based un
 :later 5s     " go forward 5 seconds
 :earlier 10f  " go back 10 file states
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Ex commands - sorting and formatting
 # Category: Editing
@@ -276,25 +187,8 @@ Use `:sort` to sort lines, `:center` to center text, `:left` and `:right` for al
 :left 5       " left align with 5 space indent
 :right 70     " right align to column 70
 ```
-***
-# Title: Advanced sort options
-# Category: Editing
-# Tags: sort, advanced, numeric, reverse, case
----
-Use advanced `:sort` options for more complex sorting needs like numeric sorting, reverse sorting, and case-insensitive sorting.
 
-```vim
-:sort!        " reverse sort (Z to A)
-:sort i       " case-insensitive sort
-:sort n       " numeric sort (by first number in line)
-:sort u       " unique - sort and remove duplicates
-:sort! n      " reverse numeric sort
-:sort f       " float sort (for decimal numbers)
-
-" Combine options:
-:sort in      " case-insensitive numeric sort
-:sort! u      " reverse sort and remove duplicates
-```
+**Source:** ** Community contributed
 ***
 # Title: Edit file at specific line
 # Category: Editing
@@ -308,6 +202,8 @@ Use `:edit +{line} {file}` to open file and jump directly to specified line numb
 :edit +$ log.txt      " open log.txt at last line
 vim +42 file.txt      " from command line: open at line 42
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Ex commands - joining and splitting
 # Category: Editing
@@ -321,6 +217,8 @@ Use `:join` or `:j` to join lines, with count to join multiple lines.
 :5,8join      " join lines 5-8
 :join!        " join without inserting spaces
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Ex commands - marks and jumps
 # Category: Editing
@@ -336,6 +234,8 @@ Use `:mark` to set mark, `:jumps` to show jump list, `:changes` for change list,
 :delmarks a   " delete mark 'a'
 :delmarks!    " delete all lowercase marks
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Move line to end of paragraph
 # Category: Editing
@@ -348,6 +248,8 @@ Use `:m'}-1` to move current line to end of current paragraph.
 :m'}          " move current line after end of paragraph
 :m'{-1        " move current line to start of paragraph
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Execute normal commands without mappings
 # Category: Editing
@@ -361,6 +263,8 @@ normal! dd       " delete line without triggering dd mapping
 normal! yy       " yank line without triggering yy mapping
 execute "normal! \<C-v>j"  " block select down
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Substitute in all buffers
 # Category: Editing
@@ -373,18 +277,8 @@ Use `:bufdo %s/old/new/ge` to substitute in all open buffers, `e` flag suppresse
 :bufdo %s/TODO/DONE/ge  " replace TODO with DONE in all buffers
 :bufdo update           " save all modified buffers
 ```
-***
-# Title: Number lines with commands
-# Category: Editing
-# Tags: number, line, sequence, increment, script
----
-Add line numbers to text using substitute command with expression.
 
-```vim
-:%s/^/\=line('.') . '. '/  " add line numbers with dots
-:%s/^/\=printf("%3d: ", line('.'))/ " formatted line numbers
-:let i=1 | g/^/s//\=i . '. '/ | let i=i+1  " alternative method
-```
+**Source:** ** Community contributed
 ***
 # Title: Return to last exit position
 # Category: Editing
@@ -397,6 +291,8 @@ Use mark `"0` to jump to position where Vim was last exited from current file.
 '"0     " jump to last exit position (line start)
 :normal `"0  " execute from script/mapping
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Wrap text in HTML tags
 # Category: Editing
@@ -410,6 +306,8 @@ Use visual selection and substitute to wrap text in HTML tags.
 :'<,'>s/.*/\<li>&\<\/li>/ " wrap lines in <li> tags
 :'<,'>s/\(.*\)/\<strong>\1\<\/strong>/ " wrap in <strong> tags
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Copy and move lines to marks
 # Category: Editing
@@ -424,6 +322,8 @@ ma           " set mark 'a' at current line
 :'<,'>t'a    " copy visual selection to mark 'a'
 :152,154t.   " copy lines 152-154 to current position
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Increment search results
 # Category: Editing
@@ -438,6 +338,8 @@ Use global command with counter to incrementally replace search results with seq
 " Replace 'item' with numbered items:
 :let n=1 | g/item/ s//\='item' . n/ | let n=n+1
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Global command with normal mode operations
 # Category: Editing
@@ -450,6 +352,8 @@ Use `:g/pattern/ normal {commands}` to execute normal mode commands on all match
 :g/TODO/ normal dw            " delete first word on lines with 'TODO'
 :g/function/ normal >>        " indent all lines containing 'function'
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Put text above or below current line
 # Category: Editing
@@ -463,6 +367,8 @@ Use `:pu` to paste below current line, `:pu!` to paste above current line, regar
 :pu a       " paste register 'a' below current line
 :pu! a      " paste register 'a' above current line
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Select non-uniform strings across lines
 # Category: Editing
@@ -481,6 +387,8 @@ Use normal mode with append register to collect text from multiple lines into on
 qAq
 :'<,'>norm "Ayi{
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Move lines to marks
 # Category: Editing
@@ -493,4 +401,2575 @@ ma      " mark current line as 'a'
 :.m'a   " move current line to mark 'a'
 :5m'b   " move line 5 to mark 'b'
 ```
+
+**Source:** ** Community contributed
+***
+# Title: Fix Accidental 4 Instead of $ in PHP
+# Category: editing
+# Tags: php, key-mapping, error-correction
+---
+Quickly replace accidentally typed '4' with '$' in PHP variable names
+
+```vim
+nnoremap <Leader>4 m`F4r$``
+inoremap <Leader>4 <Esc>m`F4r$``a
+```
+```lua
+vim.keymap.set('n', '<Leader>4', 'm`F4r$``', { desc = 'Replace 4 with $ in PHP variable' })
+vim.keymap.set('i', '<Leader>4', '<Esc>m`F4r$``a', { desc = 'Replace 4 with $ in PHP variable' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/$_instead_of_4
+***
+# Title: Quick PHP Debug Code Insertion
+# Category: editing
+# Tags: php, abbreviations, debugging
+---
+Fast abbreviations for inserting PHP debug statements
+
+```vim
+iab phpb exit("<hr>Debug ");
+iab phpv echo "<hr><pre>";var_dump($a);exit("debug ");
+iab phpallv print_r(get_defined_vars());
+```
+```lua
+vim.cmd('iab phpb exit("<hr>Debug ");')
+vim.cmd('iab phpv echo "<hr><pre>";var_dump($a);exit("debug ");')
+vim.cmd('iab phpallv print_r(get_defined_vars());')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/$_instead_of_4
+***
+# Title: Quick Heading Underline with Dashes
+# Category: editing
+# Tags: text-formatting, markdown, key-mapping
+---
+Quickly add dashed underlines to headings using a simple mapping or function, useful for markdown and documentation
+
+```vim
+" Underline the current line with dashes in normal mode
+nnoremap <F5> yyp<c-v>$r-
+
+" Underline the current line with dashes in insert mode
+inoremap <F5> <Esc>yyp<c-v>$r-A
+```
+```lua
+-- Underline current line with dashes in normal mode
+vim.keymap.set('n', '<F5>', function()
+  -- Duplicate current line
+  vim.cmd('normal! yyp')
+  -- Select entire line and replace with dashes
+  vim.cmd('normal! V$r-')
+end, { desc = 'Underline with dashes' })
+
+-- Alternatively, with more explicit Lua commands
+vim.keymap.set('n', '<F5>', function()
+  local line = vim.api.nvim_get_current_line()
+  local line_length = #line
+  local underline = string.rep('-', line_length)
+  
+  vim.api.nvim_buf_set_lines(0, vim.fn.line('.'), vim.fn.line('.'), false, {line, underline})
+end, { desc = 'Underline with dashes' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Add_a_dashed_line_under_a_title_in_text_documents
+***
+# Title: Fast Print Statement Generation
+# Category: editing
+# Tags: debugging, code-generation, productivity
+---
+Quickly insert print/debug statements for C/C++ languages
+
+```vim
+" Shortcut to insert print statement
+imap <F3> printf("DEBUG: ");<Left><Left>
+```
+```lua
+vim.keymap.set('i', '<F3>', 'printf("DEBUG: ");<Left><Left>', { desc = 'Insert print statement' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/All_tips_for_C_family_programming
+***
+# Title: Comment Code with Flexible Delimiters
+# Category: editing
+# Tags: commenting, search-replace, code-editing
+---
+Use alternative delimiters to easily comment out code ranges with less escaping
+
+```vim
+:5,8 s#^#//#
+```
+```lua
+-- Comment lines 5-8 with // in Neovim
+vim.cmd('5,8 s#^#//#')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Alternate_delimiters_for_the_replace_command
+***
+# Title: Quick Word Completion in Insert Mode
+# Category: editing
+# Tags: completion, insert-mode, productivity
+---
+Quickly complete words by typing the first few characters and using Ctrl-N or Ctrl-P to cycle through matching completions
+
+```vim
+" In insert mode
+Ctrl-N  " Complete next matching word
+Ctrl-P  " Complete previous matching word
+```
+```lua
+-- Neovim uses the same default behavior
+-- No specific Lua configuration needed
+-- Just use Ctrl-N and Ctrl-P in insert mode
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Any_word_completion
+***
+# Title: Filter Text Using External Shell Commands
+# Category: editing
+# Tags: text-processing, shell-filter, visual-mode
+---
+Use Vim's filter functionality to process selected text through shell commands, enabling powerful text transformations
+
+```vim
+" Example filtering workflow
+" 1. Select lines in visual mode
+" 2. Press ! to filter
+" 3. Enter command like 'cut -f2-3 -d,'
+```
+```lua
+-- Lua note: Native Vim filtering works the same in Neovim
+-- Use visual mode selection + ! to filter text
+-- Example commands remain consistent with Vim
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Append_output_of_an_external_command
+***
+# Title: Restore Cursor Position in Previous Session
+# Category: editing
+# Tags: persistence, cursor-position, workflow
+---
+Automatically return to the last cursor position when reopening a file, maintaining your editing context
+
+```vim
+augroup RestoreCursor
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+augroup END
+```
+```lua
+vim.api.nvim_create_autocmd('BufReadPost', {
+  callback = function()
+    local last_pos = vim.fn.line("'\"")
+    if last_pos > 0 and last_pos <= vim.fn.line('$') then
+      vim.cmd('normal! g`"')
+    end
+  end
+})
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Authors
+***
+# Title: Quickly Insert Current Date or Time
+# Category: editing
+# Tags: shortcuts, date-time, insert-mode
+---
+Create quick mappings to insert current date or time while editing
+
+```vim
+" Insert current date
+map <F5> a<C-R>=strftime('%Y-%m-%d')<CR>
+" Insert current time
+map <F6> a<C-R>=strftime('%H:%M:%S')<CR>
+```
+```lua
+-- Insert date mapping
+vim.keymap.set('n', '<F5>', function()
+  vim.api.nvim_put({os.date('%Y-%m-%d')}, 'c', true, true)
+end, { desc = 'Insert current date' })
+
+-- Insert time mapping
+vim.keymap.set('n', '<F6>', function()
+  vim.api.nvim_put({os.date('%H:%M:%S')}, 'c', true, true)
+end, { desc = 'Insert current time' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Authors
+***
+# Title: Auto-Close HTML Tags with Omni Completion
+# Category: editing
+# Tags: html, completion, auto-insert
+---
+Automatically complete closing HTML tags using Vim's omni completion in insert mode
+
+```vim
+" Abbreviation to auto-close HTML tags
+:iabbrev <// </<C-X><C-O>
+
+" Remap Ctrl-Space for tag completion
+:imap <C-Space> <C-X><C-O>
+```
+```lua
+-- Lua equivalent for auto-closing HTML tags
+vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
+  pattern = {'*.html', '*.js', '*.xml'},
+  callback = function()
+    vim.keymap.set('i', '>', function()
+      return '>' .. '</>' .. vim.fn.complete(vim.fn.col('.'), vim.fn['compl#omnifunc']())
+    end, { buffer = true, expr = true })
+  end
+})
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Auto_closing_an_HTML_tag
+***
+# Title: Auto Spelling Correction with Abbreviations
+# Category: editing
+# Tags: spelling, autocorrect, abbreviations
+---
+Automatically correct common misspellings and typos using Vim's abbreviation feature
+
+```vim
+iabbrev mispell misspell
+iabbrev funciton function
+iabbrev functiton function
+iabbrev fucntion function
+iabbrev funtion function
+iabbrev erturn return
+iabbrev retunr return
+iabbrev reutrn return
+iabbrev reutn return
+```
+```lua
+-- Create abbreviations in Lua
+vim.cmd([[iabbrev mispell misspell
+iabbrev funciton function
+iabbrev functiton function
+iabbrev fucntion function
+iabbrev funtion function
+iabbrev erturn return
+iabbrev retunr return
+iabbrev reutrn return
+iabbrev reutn return]])
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Auto_spelling_correction_using_abbreviations
+***
+# Title: Reflow Paragraphs Quickly
+# Category: editing
+# Tags: text-editing, formatting, paragraph
+---
+Quickly reformat a paragraph to optimal line length using a single command
+
+```vim
+" Reflow the inner paragraph
+gqip
+```
+```lua
+-- Reflow the inner paragraph (works the same in Neovim)
+vim.cmd('normal gqip')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Automatic_formatting_of_paragraphs
+***
+# Title: Efficient Undo and Redo
+# Category: editing
+# Tags: undo, redo, history
+---
+Quickly undo and redo changes with simple commands
+
+```vim
+u       # Undo last change
+Ctrl-r  # Redo last undone change
+```
+```lua
+-- Set up undo/redo keymaps
+vim.keymap.set('n', '<leader>u', 'u', { desc = 'Undo last change' })
+vim.keymap.set('n', '<leader>r', '<C-r>', { desc = 'Redo last change' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Beginners_guide
+***
+# Title: Autocomplete Words in Insert Mode
+# Category: editing
+# Tags: insert-mode, completion, productivity
+---
+Use Ctrl-N and Ctrl-P to autocomplete words from the current file
+
+```vim
+" In insert mode
+<C-N>  " Complete word forward
+<C-P>  " Complete word backward
+```
+```lua
+-- Built-in completion
+-- Configure with:
+vim.opt.complete:append('k')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Best_Tips
+***
+# Title: Powerful Text Case Manipulation
+# Category: editing
+# Tags: text-case, editing, transformation
+---
+Quickly change text case in normal mode using simple commands
+
+```vim
+guu     " lowercase line
+gUU     " uppercase line
+~       " invert case of current character
+```
+```lua
+-- Lua equivalents for text case manipulation
+-- Note: These are vim commands that work similarly in Neovim
+-- vim.cmd('normal! guu')  -- lowercase line
+-- vim.cmd('normal! gUU')  -- uppercase line
+-- vim.cmd('normal! ~')    -- invert case of current character
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Best_of_VIM_Tips_(VIM%27s_best_Features)
+***
+# Title: Convert Between CamelCase and snake_case
+# Category: editing
+# Tags: text-transformation, case-conversion, regex
+---
+Provides flexible regex-based substitution commands to convert variable naming styles between CamelCase and snake_case, useful for code refactoring and consistent naming
+
+```vim
+" Convert snake_case to CamelCase
+:s#_\([a-z]\)#\u\1#g
+
+" Convert CamelCase to snake_case
+:s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
+```
+```lua
+-- Lua function to convert snake_case to CamelCase
+function convert_to_camel_case(str)
+  return str:gsub('_(%a)', function(letter)
+    return letter:upper()
+  end)
+end
+
+-- Lua function to convert CamelCase to snake_case
+function convert_to_snake_case(str)
+  return str:gsub('(%u)', function(letter)
+    return '_' .. letter:lower()
+  end):lower()
+end
+```
+
+**Source:** ** https://vim.fandom.com/wiki/CamelCase
+***
+# Title: Quickly Change Words and Lines
+# Category: editing
+# Tags: text-editing, key-mapping, productivity
+---
+Provides efficient ways to change words, lines, or text objects with simplified mappings
+
+```vim
+nmap pw :inoremap <lt>Space> <lt>Space><lt>Esc>:iunmap <lt>lt>Space><lt>CR><CR> cw
+
+nmap p$ :inoremap <lt>CR> <lt>CR><lt>Esc>:iunmap <lt>lt>CR><lt>CR><CR> c$
+```
+```lua
+-- Lua equivalent for quick word/line change
+-- Note: This can be achieved more simply with native Neovim keymaps
+vim.keymap.set('n', 'pw', function()
+  vim.cmd('normal! cw')
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Space>', true, false, true), 'n', true)
+end)
+
+vim.keymap.set('n', 'p$', function()
+  vim.cmd('normal! c$')
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<CR>', true, false, true), 'n', true)
+end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Change_word_or_line_with_automatic_return_to_normal_mode
+***
+# Title: Case Modification Techniques
+# Category: editing
+# Tags: text-case, regex-substitution
+---
+Use \U, \L, \u, and \l for comprehensive case transformation in regex substitutions
+
+```vim
+" Convert to uppercase with termination
+:s/\(test\)/\U\1\e file/
+
+" Uppercase first character
+:s/\(test\)/\u\1/
+```
+```lua
+-- Similar transformations can be done using vim.cmd()
+-- Note: Lua will require escaping backslashes
+vim.cmd(':s/\\(test\\)/\\U\\1\\e file/')
+vim.cmd(':s/\\(test\\)/\\u\\1/')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Changing_case_with_regular_expressions
+***
+# Title: Easy Comment/Uncomment for Multiple Languages
+# Category: editing
+# Tags: commenting, text-manipulation, multi-language
+---
+Dynamically set comment leaders for different file types, with easy comment/uncomment mappings
+
+```vim
+au FileType haskell,vhdl,ada let b:comment_leader = '-- '
+au FileType vim let b:comment_leader = '" '
+au FileType c,cpp,java let b:comment_leader = '// '
+au FileType sh,make let b:comment_leader = '# '
+au FileType tex let b:comment_leader = '% '
+
+noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/') <CR>/<CR>:noh<CR>
+noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/') <CR>//e<CR>:noh<CR>
+```
+```lua
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {'haskell', 'vhdl', 'ada'},
+  callback = function() vim.b.comment_leader = '-- ' end
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {'vim'},
+  callback = function() vim.b.comment_leader = '" ' end
+})
+
+-- Similar autocmds for other filetypes
+
+-- Comment mapping
+vim.keymap.set('n', ',c', function()
+  local comment_leader = vim.b.comment_leader or '// '
+  vim.cmd('silent s/^/' .. vim.fn.escape(comment_leader, '\/') .. '/')
+  vim.cmd('nohlsearch')
+end)
+
+-- Uncomment mapping
+vim.keymap.set('n', ',u', function()
+  local comment_leader = vim.b.comment_leader or '// '
+  vim.cmd('silent s/^\\V' .. vim.fn.escape(comment_leader, '\/') .. '//')
+  vim.cmd('nohlsearch')
+end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text
+***
+# Title: Extend Word Completion with Precision
+# Category: editing
+# Tags: autocomplete, insert-mode, advanced-editing
+---
+Incrementally complete words by repeatedly pressing Ctrl-X Ctrl-P to refine matches
+
+```vim
+" In insert mode, use Ctrl-X Ctrl-P to extend word matches
+```
+```lua
+-- Lua doesn't change the core Vim completion behavior
+-- Use Ctrl-X Ctrl-P in insert mode to extend matches
+-- Customize 'complete' option for broader matching
+vim.opt.complete:append('i') -- include current and included files
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Completing_words_quickly_in_insert_mode
+***
+# Title: Convert Enum to String Table Automatically
+# Category: editing
+# Tags: c-programming, code-generation, transformation
+---
+Quickly generate a string representation for enum values, useful for debugging and logging
+
+```vim
+function! Enum2Array()
+    exe "normal! :'<,'>g/^\s*$/d\n"
+    exe "normal! :'<,'>s/\(\s*\)\([[:alnum:]_]*\).*/\1[\2] = \"\2\",/\n"
+    normal `>
+    exe "normal a\n};\n"
+    normal `<
+    exe "normal iconst char *[] =\n{\n"
+    exe ":'<,'>normal ==" " try some indentation
+    normal `< " set the cursor at the top
+endfunction
+```
+```lua
+function _G.enum_to_array()
+    local start_line = vim.fn.line("'<")
+    local end_line = vim.fn.line("'>")
+    
+    -- Remove empty lines
+    vim.cmd(start_line .. ',' .. end_line .. 'g/^\s*$/d')
+    
+    -- Transform enum entries to string array
+    vim.cmd(start_line .. ',' .. end_line .. 's/\s*\(\w\+\)/[\1] = "\1",/')
+    
+    -- Add array declaration and closing brace
+    vim.cmd('normal! O const char *[] = {\<Esc>')
+    vim.cmd('normal! o};\<Esc>')
+    
+    -- Optionally reindent
+    vim.cmd(start_line .. ',' .. end_line .. 'normal! ==')
+end
+
+-- Usage: Select enum lines and call the function
+vim.keymap.set('x', '<leader>ce', _G.enum_to_array, { desc = 'Convert Enum to String Array' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Convert_enum_to_string_table
+***
+# Title: Flexible Case Conversion with Visual Selection
+# Category: editing
+# Tags: text-transformation, visual-mode, custom-commands
+---
+Create custom commands to convert case within visual selections or entire lines
+
+```vim
+function! s:Camelize(range) abort
+  if a:range == 0
+    s#\(\%\(\<\l\+\)\%\(_\)\@=\)\|_\(\l\)#\u\1\2#g
+  else
+    s#\%V\(\%\(\<\l\+\)\%\(_\)\@=\)\|_\(\l\)\%V#\u\1\2#g
+  endif
+endfunction
+
+command! -range CamelCase silent! call <SID>Camelize(<range>)
+```
+```lua
+local function camelize(range)
+  if range == 0 then
+    vim.cmd('s#\\(\\%\\(\\<\\l\\+\\)\\%\\(_\\)\\@=\\)\\|_\\(\\l\\)#\\u\1\2#g')
+  else
+    vim.cmd('s#\\%V\\(\\%\\(\\<\\l\\+\\)\\%\\(_\\)\\@=\\)\\|_\\(\\l\\)\\%V#\\u\1\2#g')
+  end
+end
+
+vim.api.nvim_create_user_command('CamelCase', function(opts)
+  camelize(opts.range)
+end, { range = true })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Converting_variables_to_camelCase
+***
+# Title: Convert Variable Naming Styles
+# Category: editing
+# Tags: text-transformation, variable-naming, refactoring
+---
+Easily convert between camelCase, snake_case, and UPPER_CASE variable naming conventions
+
+```vim
+" Convert snake_case to CamelCase
+:s#_\(\l\)#\u\1#g
+
+" Convert CamelCase to snake_case
+:s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
+```
+```lua
+-- Convert snake_case to CamelCase
+vim.cmd('s#_\(\l\)#\u\1#g')
+
+-- Convert CamelCase to snake_case
+vim.cmd('s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Converting_variables_to_or_from_camel_case
+***
+# Title: Add Unicode Combining Characters to Text
+# Category: editing
+# Tags: unicode, text-formatting, advanced-editing
+---
+Add underlines, overlines, and strikethroughs using Unicode combining characters across selected text
+
+```vim
+" Define commands for adding combining characters
+command! -range -nargs=0 Overline        call s:CombineSelection(<line1>, <line2>, '0305')
+command! -range -nargs=0 Underline       call s:CombineSelection(<line1>, <line2>, '0332')
+command! -range -nargs=0 DoubleUnderline call s:CombineSelection(<line1>, <line2>, '0333')
+command! -range -nargs=0 Strikethrough   call s:CombineSelection(<line1>, <line2>, '0336')
+
+function! s:CombineSelection(line1, line2, cp)
+  execute 'let char = "\u'.a:cp.'"'
+  execute a:line1.','.a:line2.'s/\%V[^[:cntrl:]]/&'.char.'/ge'
+endfunction
+
+" Optional mapping for quick access
+vnoremap OO :Overline<CR>
+```
+```lua
+-- Unicode combining character utility functions
+local function combine_selection(line1, line2, cp)
+  vim.cmd(string.format(
+    '%d,%ds/\%%V[^[:cntrl:]]/&\u%s/ge',
+    line1, line2, cp
+  ))
+end
+
+-- Create commands for different text decorations
+vim.api.nvim_create_user_command('Overline', function()
+  combine_selection(vim.fn.line("'<"), vim.fn.line("'>"), '0305')
+end, { range = true })
+
+vim.api.nvim_create_user_command('Underline', function()
+  combine_selection(vim.fn.line("'<"), vim.fn.line("'>"), '0332')
+end, { range = true })
+
+-- Optional keymapping
+vim.keymap.set('v', 'OO', ':Overline<CR>', { desc = 'Apply overline to selected text' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Create_underlines,_overlines,_and_strikethroughs_using_combining_characters
+***
+# Title: Delete XML/HTML Tags Efficiently
+# Category: editing
+# Tags: xml, html, text-objects, editing
+---
+Quickly delete a pair of XML or HTML tags using text objects, which works for both small and large tag blocks
+
+```vim
+vat<Esc>`<df>`>F<df>
+```
+```lua
+-- Delete around tag (at text object)
+-- Requires manual mapping in Lua
+vim.keymap.set('n', '<leader>dt', function()
+  vim.cmd('normal! vat<Esc>`<df>`>F<df>')
+end, { desc = 'Delete XML/HTML tag pair' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Delete_a_pair_of_XML/HTML_tags
+***
+# Title: Delete Lines Matching a Pattern
+# Category: editing
+# Tags: search-replace, text-manipulation, global-command
+---
+Use :g command to delete lines matching or not matching a specific pattern globally in the file
+
+```vim
+" Delete all lines containing 'profile'
+:g/profile/d
+
+" Delete empty or whitespace-only lines
+:g/^\s*$/d
+
+" Delete all lines not containing comments in Vim script
+:g!/^\s*"/d
+```
+```lua
+-- Delete lines containing 'profile'
+vim.cmd('g/profile/d')
+
+-- Delete empty or whitespace-only lines
+vim.cmd('g/^\s*$/d')
+
+-- Delete lines not containing comments in Vim script
+vim.cmd('g!/^\s*"/d')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Delete_all_lines_containing_a_pattern
+***
+# Title: Consistent Yank to End of Line
+# Category: editing
+# Tags: yank, text-objects, consistency
+---
+Makes 'Y' behave consistently with 'D' and 'C' by yanking to end of line
+
+```vim
+nnoremap Y y$
+```
+```lua
+vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Delete_to_the_end_of_the_line
+***
+# Title: Delete to Custom Delimiter Efficiently
+# Category: editing
+# Tags: text-editing, motion, deletion
+---
+Delete text up to a specific character, which is more flexible than standard word deletion
+
+```vim
+" Delete to space
+df 
+
+" Delete to period (end of sentence)
+df.
+```
+```lua
+-- Lua equivalents for custom delimiter deletion
+-- Use native Vim motions, so no specific Lua translation needed
+-- Can use 'df ' or 'df.' directly in Neovim
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Delete_words_in_a_different_way
+***
+# Title: Alternative Word Deletion Methods
+# Category: editing
+# Tags: text-editing, word-deletion
+---
+Use different word deletion commands for more precise text removal
+
+```vim
+" Delete a WORD (includes special characters)
+dW
+
+" Delete up to (not including) a character
+dt<char>
+```
+```lua
+-- These are standard Vim motions that work identically in Neovim
+-- No specific Lua translation required
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Delete_words_in_a_different_way
+***
+# Title: Quick Email Thread Cleanup
+# Category: editing
+# Tags: email, text-manipulation, autocmd
+---
+Easily remove nested reply threads in email messages by deleting lines with multiple '>' characters
+
+```vim
+autocmd FileType mail map <F8> :%g/^> >/d<CR>
+```
+```lua
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'mail',
+  callback = function()
+    vim.keymap.set('n', '<F8>', function()
+      vim.cmd('g/^> >/d')
+    end, { buffer = true })
+  end
+})
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Deleting_nested_reply_threads_in_emails
+***
+# Title: Dictionary-Based Word Completion
+# Category: editing
+# Tags: completion, insert-mode, text-editing
+---
+Enable dictionary-based word completion to quickly insert words from a predefined dictionary, useful for writing and coding
+
+```vim
+" Set dictionary location
+set dictionary+=/usr/share/dict/words
+
+" Enable dictionary completion
+set complete+=k
+
+" Optional: Map F12 for dictionary completion
+:inoremap <F12> <C-X><C-K>
+```
+```lua
+-- Set dictionary location
+vim.opt.dictionary:append('/usr/share/dict/words')
+
+-- Enable dictionary completion
+vim.opt.complete:append('k')
+
+-- Optional: Map F12 for dictionary completion
+vim.keymap.set('i', '<F12>', '<C-X><C-K>', { desc = 'Dictionary word completion' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Dictionary_completions
+***
+# Title: Block Line Sorting with Global Command
+# Category: editing
+# Tags: sorting, text-manipulation, global-command
+---
+Sort each block of lines in a file, separating blocks by blank lines
+
+```vim
+":g/^\s*$/;//-1sort"
+```
+```lua
+-- Lua equivalent using vim.cmd
+vim.cmd('g/^\s*$/;//-1sort')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Did_you_know
+***
+# Title: Repeat Last Change with Dot Command
+# Category: editing
+# Tags: editing, productivity
+---
+Press '.' to repeat the last edit or change, saving keystrokes and improving efficiency
+
+```lua
+-- Simply press . in normal mode to repeat last change
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2008
+***
+# Title: Increment and Decrement Numbers Quickly
+# Category: editing
+# Tags: editing, text-manipulation
+---
+Use Ctrl-A and Ctrl-X to quickly increment or decrement numbers under the cursor
+
+```vim
+Ctrl-A  # Increment number
+Ctrl-X  # Decrement number
+```
+```lua
+-- In normal mode
+vim.keymap.set('n', '<C-a>', '<C-a>', { desc = 'Increment number' })
+vim.keymap.set('n', '<C-x>', '<C-x>', { desc = 'Decrement number' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2008
+***
+# Title: Remove All Blank Lines in a File
+# Category: editing
+# Tags: text-manipulation, command-line
+---
+Use global command to delete all blank lines from a file
+
+```vim
+:g/^\s*$/d
+```
+```lua
+-- In command mode
+vim.cmd('g/^\s*$/d')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Did_you_know/2008
+***
+# Title: Temporarily Disable Auto-Indent for Pasting
+# Category: editing
+# Tags: paste, indentation, clipboard
+---
+Quickly disable auto-indentation when pasting pre-indented code to prevent double indentation
+
+```vim
+:set paste
+:set nopaste
+```
+```lua
+-- Lua equivalent
+vim.opt.paste = true  -- Enable paste mode
+vim.opt.paste = false  -- Disable paste mode
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps
+***
+# Title: Copy and Replace Words Quickly
+# Category: editing
+# Tags: copy, replace, registers
+---
+Efficiently copy a word and replace multiple instances using registers and dot command
+
+```vim
+# Copy current word: yiw
+# Replace word: ciw<C-R>0<Esc>
+# Repeat replacements with '.'
+```
+```lua
+-- Copy word: viw
+-- Replace: ciw
+-- Paste from default register: '<C-r>0'
+-- Repeat with '.'
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Dot_makes_life_easier
+***
+# Title: Copy and Replace Lines Across Document
+# Category: editing
+# Tags: line-manipulation, copy, paste
+---
+Quickly copy a line and paste it to multiple locations with minimal keystrokes
+
+```vim
+# Copy line: Y
+# Paste after/before: p/P
+# Alternative replace method:
+# 0y$ to copy line content
+# S<C-R>0<Esc> to replace line
+```
+```lua
+-- Copy line: yy or Y
+-- Paste after/before: p/P
+-- Complex replace:
+-- 0y$ to copy line content
+-- S to replace line content
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Dot_makes_life_easier
+***
+# Title: Duplicate Previous Line Word by Word
+# Category: editing
+# Tags: key-mapping, text-manipulation, productivity
+---
+Quickly duplicate words from the previous line, useful for coding and documentation
+
+```vim
+" Duplicate previous line word by word
+imap <F1> @<Esc>kyWjPA<BS>
+nmap <F1> @<Esc>kyWjPA<BS>
+imap <F2> <Esc>o<Esc>kyWjPA<BS><Space>
+nmap <F2> <Esc>o<Esc>kyWjPA<BS><Space>
+```
+```lua
+-- Lua equivalent for duplicating words from previous line
+vim.keymap.set({'n', 'i'}, '<F1>', function()
+  local line = vim.fn.getline(vim.fn.line('.') - 1)
+  local word = vim.fn.matchstr(line, '\k\+')
+  vim.api.nvim_put({word}, 'c', true, true)
+end, { desc = 'Duplicate word from previous line' })
+
+-- Alternative approach using built-in Neovim mapping style
+vim.keymap.set({'n', 'i'}, '<F2>', function()
+  vim.cmd('normal! o')
+  local line = vim.fn.getline(vim.fn.line('.') - 2)
+  local word = vim.fn.matchstr(line, '\k\+')
+  vim.api.nvim_put({word}, 'c', true, true)
+end, { desc = 'Duplicate word from previous line and create new line' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Duplicate_previous_line_word_by_word
+***
+# Title: Insert Special Characters with Digraphs
+# Category: editing
+# Tags: special-characters, unicode, input-methods
+---
+Easily insert special characters like umlauts, accents, and symbols using digraphs in insert mode
+
+```vim
+" Insert special characters
+:set digraph
+" In insert mode
+<C-K>a:
+<C-K>e>
+```
+```lua
+-- Enable digraphs
+vim.opt.digraph = true
+
+-- In insert mode, use Ctrl-K followed by two characters
+-- e.g., a: for ä, e> for ê
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Entering_German_umlauts
+***
+# Title: Enter Characters by Unicode Value
+# Category: editing
+# Tags: unicode, character-input, encoding
+---
+Insert characters by their decimal, octal, hex, or Unicode value in insert mode
+
+```vim
+" Insert characters by value in insert mode
+" Decimal: Ctrl-V followed by 3-digit number
+" Hex Unicode: Ctrl-V u1234
+" Full Unicode: Ctrl-V U00001234
+```
+```lua
+-- For full Unicode support, ensure encoding is set to UTF-8
+vim.opt.encoding = 'utf-8'
+
+-- Character input methods remain similar in insert mode
+-- Requires knowing the specific Unicode code point
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Entering_German_umlauts
+***
+# Title: Easy Character and Word Swapping
+# Category: editing
+# Tags: text-manipulation, quick-edit, normal-mode
+---
+Quick methods to swap characters and words in normal mode without moving the cursor
+
+```vim
+" Swap current character with next
+xp
+
+" Swap current word with next
+:nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
+```
+```lua
+-- Swap current character with next
+vim.keymap.set('n', 'gc', 'xph', { desc = 'Swap current character' })
+
+-- Swap current word with next
+vim.keymap.set('n', 'gw', function()
+  local current_word = vim.fn.expand('<cword>')
+  local next_word = vim.fn.expand('<cWORD>')
+  local line = vim.api.nvim_get_current_line()
+  local new_line = line:gsub(vim.fn.escape(current_word, '%'), next_word, 1)
+  new_line = new_line:gsub(vim.fn.escape(next_word, '%'), current_word, 1)
+  vim.api.nvim_set_current_line(new_line)
+end, { desc = 'Swap current word with next' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Exchange_columns
+***
+# Title: Quick Email Quote Formatting Techniques
+# Category: editing
+# Tags: text-editing, email, formatting
+---
+Multiple ways to reformat email quotations using Vim's text formatting operators
+
+```vim
+" Formatting techniques:
+" Visual mode: V, then gq
+" Movement-based: gq} or gq4j
+" Text object: gqip or gqap
+```
+```lua
+-- Note: These are built-in Vim/Neovim operations
+-- Use in normal mode with equivalent commands
+-- Relies on formatoptions and textwidth settings
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Fix_email_quotations_with_long_lines
+***
+# Title: Quick Footnote Insertion Abbreviations
+# Category: editing
+# Tags: abbreviations, text-editing, insertion
+---
+Provides abbreviations for quickly inserting and navigating footnotes in a document
+
+```vim
+ab (1 [1]<Esc>:/^--\s/-1/<CR>o<insert><CR>Footnotes:<CR>----------<CR>[1]
+ab (2 [2]<Esc>:/^Footnotes\:/+2/<CR>o<insert>[2]
+ab (3 [3]<Esc>:/^Footnotes\:/+3/<CR>o<insert>[3]
+```
+```lua
+-- Lua equivalents would typically be implemented using autocmds or custom functions
+-- This is more complex and would require a custom Lua function
+-- Example skeleton:
+vim.cmd([[cnoreabbrev (1 [1]<Esc>:/^--\s/-1/<CR>o<insert><CR>Footnotes:<CR>----------<CR>[1]]])
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Footnotes
+***
+# Title: Paste with Automatic Indentation
+# Category: editing
+# Tags: paste, indentation, text-formatting
+---
+Automatically adjust indentation when pasting text to match the surrounding context
+
+```vim
+" Map p to paste with correct indentation
+:nnoremap p ]p
+
+" Alternative: Paste and re-indent
+:nnoremap p p=`]
+```
+```lua
+-- Map p to paste with correct indentation
+vim.keymap.set('n', 'p', ']p', { desc = 'Paste with correct indentation' })
+
+-- Alternative: Paste and re-indent
+vim.keymap.set('n', 'p', function()
+  vim.cmd('normal! p')
+  vim.cmd('normal! =`]')
+end, { desc = 'Paste and re-indent' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Format_pasted_text_automatically
+***
+# Title: Block Commenting in Lisp
+# Category: editing
+# Tags: commenting, block-edit
+---
+Quick way to comment out an entire code block between parentheses
+
+```vim
+map .; v%:s/^/;;;/<CR>:noh<CR>
+```
+```lua
+vim.keymap.set('n', '.,', function()
+  vim.cmd('normal! v%:s/^/;;;/\<CR>:nohl\<CR>')
+end, { desc = 'Comment out code block' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Formatting_stuff
+***
+# Title: Join Lines with Customizable Spacing
+# Category: editing
+# Tags: line-manipulation, text-editing
+---
+Control how lines are joined using 'J' command and joinspaces option
+
+```vim
+set nojoinspaces
+" Use 'J' to join lines, 'gJ' to join without extra spaces
+```
+```lua
+vim.opt.joinspaces = false
+-- Use 'J' in normal mode to join lines with custom spacing
+```
+
+**Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2009
+***
+# Title: Preserve Cursor Position When Pasting
+# Category: editing
+# Tags: clipboard, cursor-preservation
+---
+Use a mark to maintain cursor position when pasting from clipboard
+
+```vim
+map <F7> mz:-1r !xclip -o -sel clip<CR>`z
+```
+```lua
+vim.keymap.set('n', '<F7>', 'mz:-1r !xclip -o -sel clip<CR>`z', { desc = 'Paste and preserve cursor position' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
+***
+# Title: Generate Numbered Lists Quickly
+# Category: editing
+# Tags: list-generation, range, formatting
+---
+Easily insert a list of incrementing numbers with Vim's range() function, which can be formatted and customized
+
+```vim
+:put =range(11,15)
+
+" Formatted example
+:put =map(range(1,150), 'printf(''%04d'', v:val)')
+```
+```lua
+-- Insert range of numbers
+vim.cmd.put(vim.fn.range(11, 15))
+
+-- Formatted numbers with leading zeros
+vim.cmd.put(vim.fn.map(vim.fn.range(1, 150), function(_, val)
+  return string.format('%04d', val)
+end))
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Generating_a_list
+***
+# Title: Increment Numbers in Visual Block
+# Category: editing
+# Tags: visual-mode, number-manipulation, increment
+---
+Quickly generate incrementing sequences in visual block mode, useful for creating arrays or sequences
+
+```vim
+" Select first column in block mode
+" Press g Ctrl-A to increment numbers
+my_array[0] = 0;
+(select block, g Ctrl-A)
+```
+```lua
+-- Vim 8+ functionality, equivalent Lua approach
+-- Use vim.cmd to simulate visual block and increment
+-- Note: Exact visual block manipulation might require additional scripting in Lua
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Generating_a_list
+***
+# Title: Insert Current Filename
+# Category: editing
+# Tags: insert-mode, filename, completion
+---
+Insert current filename in insert or command mode using register expansion
+
+```vim
+" In insert mode: Ctrl-R %
+" In command mode: Ctrl-R %
+" In normal mode: "%p to put filename after cursor
+```
+```lua
+-- In insert mode, use vim.api.nvim_feedkeys to simulate Ctrl-R %
+vim.api.nvim_feedkeys(vim.fn.expand('%'), 'i', true)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
+***
+# Title: HTML Entity Conversion Utility
+# Category: editing
+# Tags: html, text-processing, search-replace
+---
+Easily escape or unescape HTML entities like <, >, & in text, with support for whole file or specific ranges
+
+```vim
+function! HtmlEntities(line1, line2, action)
+  let search = @/
+  let range = 'silent ' . a:line1 . ',' . a:line2
+  if a:action == 0  " must convert &amp; last
+    execute range . 'sno/&lt;/</eg'
+    execute range . 'sno/&gt;/>/eg'
+    execute range . 'sno/&amp;/&/eg'
+  else              " must convert & first
+    execute range . 'sno/&/&amp;/eg'
+    execute range . 'sno/</&lt;/eg'
+    execute range . 'sno/>/&gt;/eg'
+  endif
+  nohl
+  let @/ = search
+endfunction
+
+command! -range -nargs=1 Entities call HtmlEntities(<line1>, <line2>, <args>)
+noremap <silent> <Leader>h :Entities 0<CR>
+noremap <silent> <Leader>H :Entities 1<CR>
+```
+```lua
+vim.api.nvim_create_user_command('Entities', function(opts)
+  local start_line = opts.line1
+  local end_line = opts.line2
+  local action = tonumber(opts.args)
+  
+  local function html_entities(action)
+    local view = vim.fn.winsaveview()
+    local search = vim.fn.getreg('/')
+    
+    if action == 0 then  -- Unescape
+      vim.cmd(start_line .. ',' .. end_line .. 's/&lt;/</eg')
+      vim.cmd(start_line .. ',' .. end_line .. 's/&gt;/>/eg')
+      vim.cmd(start_line .. ',' .. end_line .. 's/&amp;/&/eg')
+    else  -- Escape
+      vim.cmd(start_line .. ',' .. end_line .. 's/&/\&amp;/eg')
+      vim.cmd(start_line .. ',' .. end_line .. 's/</\&lt;/eg')
+      vim.cmd(start_line .. ',' .. end_line .. 's/>/\&gt;/eg')
+    end
+    
+    vim.fn.winrestview(view)
+    vim.fn.setreg('/', search)
+    vim.cmd.nohlsearch()
+  end
+  
+  html_entities(action)
+end', {nargs = 1, range = true})
+
+-- Keymappings
+vim.keymap.set('n', '<Leader>h', ':Entities 0<CR>', {silent = true})
+vim.keymap.set('n', '<Leader>H', ':Entities 1<CR>', {silent = true})
+```
+
+**Source:** ** https://vim.fandom.com/wiki/HTML_entities
+***
+# Title: Temporarily Disable Auto-Indentation for Pasting
+# Category: editing
+# Tags: paste, indentation, clipboard
+---
+Use paste mode to prevent auto-indentation when inserting pre-indented code
+
+```vim
+:set paste
+:set nopaste
+```
+```lua
+-- Temporarily disable auto-indentation
+vim.o.paste = true
+-- After pasting
+vim.o.paste = false
+```
+
+**Source:** ** https://vim.fandom.com/wiki/How_to_stop_auto_indenting
+***
+# Title: Increment/Decrement Numbers Flexibly
+# Category: editing
+# Tags: number-manipulation, text-editing, key-mapping
+---
+Easily increment or decrement numbers in various formats (decimal, hex, alpha) using Ctrl-A and Ctrl-X with enhanced search capabilities
+
+```vim
+function! AddSubtract(char, back)
+  let pattern = &nrformats =~ 'alpha' ? '[[:alpha:][:digit:]]' : '[[:digit:]]'
+  call search(pattern, 'cw' . a:back)
+  execute 'normal! ' . v:count1 . a:char
+  silent! call repeat#set(":\<C-u>call AddSubtract('" .a:char. "', '" .a:back. "')\<CR>")
+endfunction
+
+nnoremap <silent>         <C-a> :<C-u>call AddSubtract("\<C-a>", '')<CR>
+nnoremap <silent> <Leader><C-a> :<C-u>call AddSubtract("\<C-a>", 'b')<CR>
+nnoremap <silent>         <C-x> :<C-u>call AddSubtract("\<C-x>", '')<CR>
+nnoremap <silent> <Leader><C-x> :<C-u>call AddSubtract("\<C-x>", 'b')<CR>
+```
+```lua
+local function add_subtract(char, back)
+  local pattern = vim.o.nrformats:find('alpha') and '[%a%d]' or '[%d]'
+  vim.fn.search(pattern, 'cw' .. back)
+  vim.cmd('normal! ' .. vim.v.count1 .. char)
+  
+  -- Optional: Use repeat.vim if available
+  pcall(function()
+    require('repeat').set(string.format(':lua add_subtract("%s", "%s")<CR>', char, back))
+  end)
+end
+
+vim.keymap.set('n', '<C-a>', function() add_subtract('\<C-a>', '') end)
+vim.keymap.set('n', '<Leader><C-a>', function() add_subtract('\<C-a>', 'b') end)
+vim.keymap.set('n', '<C-x>', function() add_subtract('\<C-x>', '') end)
+vim.keymap.set('n', '<Leader><C-x>', function() add_subtract('\<C-x>', 'b') end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Increasing_or_decreasing_numbers
+***
+# Title: Quickly Comment Lines in Visual Mode
+# Category: editing
+# Tags: visual-mode, commenting, text-manipulation
+---
+Easily add comments to multiple lines using visual block mode and substitute command
+
+```vim
+:'<,'>s/^/%/  " Add comment at start of selected lines
+:'<,'>s/^/<your comment here>/
+```
+```lua
+-- In visual mode, use:'<,'>s/^/%/ to add comment
+-- Or use blockwise visual mode and I to prepend comment
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Insert_C%2B%2B_or_LaTeX_or_other_comments_easily
+***
+# Title: Quick Word Deletion in Insert Mode
+# Category: editing
+# Tags: insert-mode, text-editing, key-mapping
+---
+Map Ctrl-Backspace to delete previous word in insert mode
+
+```vim
+imap <C-BS> <C-W>
+```
+```lua
+vim.keymap.set('i', '<C-BS>', '<C-W>', { desc = 'Delete previous word' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Insert_a_non_commented_line_despite_formatoptions
+***
+# Title: Insert Filename in Neovim
+# Category: editing
+# Tags: insert-mode, filename, expansion
+---
+Quickly insert the current filename or path in insert mode using expand() function
+
+```vim
+" Insert filename without extension
+:inoremap <Leader>fn <C-R>=expand("%:t:r")<CR>
+
+" Insert full filename with extension
+:inoremap <Leader>fn <C-R>=expand("%:t")<CR>
+
+" Insert full absolute path
+:inoremap <Leader>fn <C-R>=expand("%:p:h")<CR>
+```
+```lua
+-- Insert filename without extension
+vim.keymap.set('i', '<Leader>fn', function()
+  vim.api.nvim_put({vim.fn.expand('%:t:r')}, '', true, true)
+end, { desc = 'Insert filename without extension' })
+
+-- Insert full filename with extension
+vim.keymap.set('i', '<Leader>fn', function()
+  vim.api.nvim_put({vim.fn.expand('%:t')}, '', true, true)
+end, { desc = 'Insert full filename' })
+
+-- Insert full absolute path
+vim.keymap.set('i', '<Leader>fn', function()
+  vim.api.nvim_put({vim.fn.expand('%:p:h')}, '', true, true)
+end, { desc = 'Insert file path' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Insert_current_filename
+***
+# Title: Insert Line Numbers in File
+# Category: editing
+# Tags: line-numbering, text-manipulation, search-replace
+---
+Programmatically insert sequential line numbers into a file or selected section using Vim's search and replace functionality
+
+```vim
+:%s/^/\=printf('%-4d', line('.'))
+:'<,'>s/^/\=printf('%d.\t', line('.') - line("'<") + 1)
+```
+```lua
+-- Insert line numbers for entire file
+vim.cmd(':%s/^/\=printf("%-4d", line("."))')
+
+-- Insert line numbers for selected range
+vim.cmd("'<,'>s/^/\=printf('%d.\t', line('.') - line("'<") + 1)")
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Insert_line_numbers_2
+***
+# Title: Number Lines Using External Utility
+# Category: editing
+# Tags: external-tools, line-numbering
+---
+Use Unix 'nl' utility to insert line numbers with flexible formatting options
+
+```vim
+:%!nl -ba
+:'<,'>!nl -s '. ' -w 2
+```
+```lua
+-- Number entire file
+vim.cmd('%!nl -ba')
+
+-- Number selected range with custom formatting
+vim.cmd("'<,'>!nl -s '. ' -w 2")
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Insert_line_numbers_2
+***
+# Title: Insert Multiple Blank Lines Easily
+# Category: editing
+# Tags: insert-mode, line-manipulation, productivity
+---
+Quickly insert multiple blank lines with a custom function that ensures at least one blank line before and after the inserted lines
+
+```vim
+function! OpenLines(nrlines, dir)
+  let nrlines = a:nrlines < 3 ? 3 : a:nrlines
+  let start = line('.') + a:dir
+  call append(start, repeat([''], nrlines))
+  if a:dir < 0
+    normal! 2k
+  else
+    normal! 2j
+  endif
+endfunction
+
+nnoremap <Leader>o :<C-u>call OpenLines(v:count, 0)<CR>S
+nnoremap <Leader>O :<C-u>call OpenLines(v:count, -1)<CR>S
+```
+```lua
+function OpenLines(nrlines, dir)
+  nrlines = nrlines < 3 and 3 or nrlines
+  local start = vim.fn.line('.') + dir
+  
+  local empty_lines = {}
+  for _ = 1, nrlines do
+    table.insert(empty_lines, '')
+  end
+  
+  vim.fn.append(start, empty_lines)
+  
+  if dir < 0 then
+    vim.cmd('normal! 2k')
+  else
+    vim.cmd('normal! 2j')
+  end
+end
+
+vim.keymap.set('n', '<Leader>o', function()
+  OpenLines(vim.v.count, 0)
+  vim.cmd('startinsert')
+end)
+
+vim.keymap.set('n', '<Leader>O', function()
+  OpenLines(vim.v.count, -1)
+  vim.cmd('startinsert')
+end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Insert_multiple_lines
+***
+# Title: Join Lines Matching a Pattern Globally
+# Category: editing
+# Tags: text-manipulation, global-command, line-joining
+---
+Quickly join lines that match a specific pattern using the global command with join
+
+```vim
+g/conf/j
+```
+```lua
+-- Lua equivalent (using ex command)
+vim.cmd('g/conf/j')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Joining_two_lines_of_text_based_on_pattern
+***
+# Title: Increment Numbers in Visual Selection
+# Category: editing
+# Tags: visual-mode, number-manipulation, increment
+---
+Easily increment numbers across multiple lines using block visual mode and g Ctrl-A
+
+```vim
+# In Vim 8+ visual block mode
+# Select first column of numbers
+g Ctrl-A
+```
+```lua
+-- Requires Vim 8+ functionality
+-- Use Ctrl-V to enter block visual mode
+-- Select first column of numbers
+-- Use 'g Ctrl-A' to increment sequentially
+```
+
+**Source:** ** https://vim.fandom.com/wiki/List_of_numbers
+***
+# Title: Insert Numbered List with Range Function
+# Category: editing
+# Tags: list-generation, range, text-manipulation
+---
+Easily insert a list of ascending numbers using Vim's range() function, with optional formatting
+
+```vim
+:put =range(11,15)
+
+" Formatted list with leading zeros
+:put =map(range(1,150), 'printf(''%04d'', v:val)')
+```
+```lua
+-- Insert range of numbers
+vim.api.nvim_command('put =range(11,15)')
+
+-- Formatted list with leading zeros
+vim.api.nvim_command('put =map(range(1,150), function(v) return string.format('%04d', v) end)')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Making_a_list
+***
+# Title: Quick Word Replacement with Stamping
+# Category: editing
+# Tags: text-objects, replacement, macros
+---
+Easily replace words with previously yanked text using a single key mapping
+
+```vim
+nnoremap S diw"0P
+```
+```lua
+vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Mappings_and_commands_for_visual_mode
+***
+# Title: Insert Special Characters Quickly
+# Category: editing
+# Tags: special-characters, unicode, menu-mapping
+---
+Create custom menu mappings to easily insert special Unicode characters using nr2char() function
+
+```vim
+" Insert special characters via menu
+20imenu Editieren.Sonderzeichen.copyright\ \ © <C-R>=nr2char(169)<CR>
+20nmenu Editieren.Sonderzeichen.copyright\ \ © a<C-R>=nr2char(169)<CR><Esc>
+```
+```lua
+-- Lua equivalent for special character insertion
+vim.api.nvim_set_keymap('i', '<M-c>', '<C-R>=nr2char(169)<CR>', { noremap = true, desc = 'Insert copyright symbol' })
+vim.api.nvim_set_keymap('n', '<M-c>', 'a<C-R>=nr2char(169)<CR><Esc>', { noremap = true, desc = 'Insert copyright symbol' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Menu_for_inserting_special_characters
+***
+# Title: Quick Separating Line Abbreviations
+# Category: editing
+# Tags: abbreviations, text-formatting, documentation
+---
+Create quick abbreviations for inserting different styles of separating lines in documentation or code
+
+```vim
+" Line separator abbreviations
+abb dlin =======================================================================
+abb cdlin /*===================================================================*/
+abb lin -----------------------------------------------------------------------
+abb clin /*-------------------------------------------------------------------*/
+```
+```lua
+-- Lua equivalent for line separator abbreviations
+vim.cmd('iabbrev dlin =======================================================================')
+vim.cmd('iabbrev cdlin /*===================================================================*/')
+vim.cmd('iabbrev lin -----------------------------------------------------------------------')
+vim.cmd('iabbrev clin /*-------------------------------------------------------------------*/')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Menu_for_inserting_special_characters
+***
+# Title: Merge Terminal-Split Long Lines
+# Category: editing
+# Tags: text-manipulation, terminal-output
+---
+Automatically merge long lines split by terminal windows, useful for cleaning up copied output with a consistent 80-character line length
+
+```vim
+g/^.\{79}\S$/normal Jx
+```
+```lua
+-- Merge long lines split by terminal
+vim.cmd.global('/^.\{79}\S$/normal! Jx')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Merge_longs_lines_that_were_split_by_terminal_window
+***
+# Title: Quick Minify File in Vim
+# Category: editing
+# Tags: text-manipulation, formatting
+---
+Quickly remove line breaks and compress a file into a single line using visual mode and Shift-J
+
+```vim
+# In visual mode, select entire file
+# Then press SHIFT-J
+```
+```lua
+-- In Neovim, same approach works
+-- 1. Select entire file with ggVG
+-- 2. Press J to join lines
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Minify_File_inside_Vim_without_plugins
+***
+# Title: Move Comment to End of Line Efficiently
+# Category: editing
+# Tags: line-manipulation, code-formatting, key-mapping
+---
+Quickly move a comment from a separate line to the end of the previous line of code, reducing vertical space and improving code compactness
+
+```vim
+nmap <C-S-j> mz:m-2<CR>J`z
+```
+```lua
+vim.keymap.set('n', '<C-S-j>', function()
+  -- Move line up and join with previous line
+  vim.cmd('normal! mz:m-2\<CR>J`z')
+end, { desc = 'Move comment to end of previous line' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Move_comment_line_to_end_of_next_line
+***
+# Title: Efficient Text Completion and Navigation
+# Category: editing
+# Tags: autocomplete, navigation, productivity
+---
+Use Vim's built-in word completion and home row navigation to speed up editing
+
+```vim
+# Word completion
+Ctrl-P  # Complete previous word
+Ctrl-N  # Complete next word
+```
+```lua
+-- Word completion mappings
+vim.keymap.set('i', '<C-p>', '<C-x><C-p>', { desc = 'Complete previous word' })
+vim.keymap.set('i', '<C-n>', '<C-x><C-n>', { desc = 'Complete next word' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/New_to_Vim
+***
+# Title: Number Lines Sequentially in Visual Selection
+# Category: editing
+# Tags: text-manipulation, line-numbering, visual-mode
+---
+Easily number lines in a visual selection with custom start number and optional suffix
+
+```vim
+function! Nlist(...) range
+  if 2 == a:0
+    let start = a:1
+    let append = a:2
+  elseif 1 == a:0
+    let start = a:1
+    let append = " "
+  else
+    let start = 1
+    let append = " "
+  endif
+  exe a:firstline . "," . a:lastline . 's/^/\=line(".")-a:firstline+start.append/'
+endfunction
+```
+```lua
+function _G.number_lines(start, append)
+  start = start or 1
+  append = append or " "
+  local first_line = vim.fn.line("'<")
+  local last_line = vim.fn.line("'>")
+  for i = first_line, last_line do
+    local line_text = vim.fn.getline(i)
+    local new_line = string.format("%d%s%s", i - first_line + start, append, line_text)
+    vim.fn.setline(i, new_line)
+  end
+end
+
+-- Usage: In visual mode, call :lua _G.number_lines()
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Number_a_group_of_lines
+***
+# Title: Number Lines with External Filter
+# Category: editing
+# Tags: text-manipulation, external-tools, numbering
+---
+Quickly number a range of lines using external Unix tools like 'nl'
+
+```vim
+map g# :'n,. !nl<CR>
+```
+```lua
+-- Number lines from mark 'n' to current position
+vim.keymap.set('n', 'g#', ":'n,.!nl<CR>", { desc = 'Number lines using nl' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Numbering_lines_and_interpolating_sequences
+***
+# Title: Use Omni Completion Shortcuts
+# Category: editing
+# Tags: autocomplete, insert-mode, productivity
+---
+Trigger omni completion and navigate suggestions using keyboard shortcuts
+
+```vim
+" Trigger omni completion: Ctrl-X Ctrl-O
+" Navigate suggestions: Ctrl-N (next), Ctrl-P (previous)
+```
+```lua
+-- Use built-in Vim completion mappings
+-- <C-x><C-o> to trigger
+-- <C-n> and <C-p> to navigate suggestions
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Omni_Completion
+***
+# Title: Trigger Omni Completion in Insert Mode
+# Category: editing
+# Tags: auto-completion, insert-mode, productivity
+---
+Use Ctrl-X Ctrl-O to open context-aware completion popup menu in insert mode
+
+```vim
+" In insert mode, press Ctrl-X Ctrl-O to trigger omni completion
+" Navigate popup with Ctrl-N and Ctrl-P
+```
+```lua
+-- Omni completion is triggered in insert mode with Ctrl-X Ctrl-O
+-- Use built-in Vim mapping, no direct Lua equivalent needed
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Omni_completion
+***
+# Title: Insert Multiple Lines Efficiently
+# Category: editing
+# Tags: line-insertion, key-mapping, productivity
+---
+Quickly insert multiple blank lines above or below the current line, with automatic cursor positioning and mode entry
+
+```vim
+function! OpenLines(nrlines, dir)
+  let nrlines = a:nrlines < 3 ? 3 : a:nrlines
+  let start = line('.') + a:dir
+  call append(start, repeat([''], nrlines))
+  if a:dir < 0
+    normal! 2k
+  else
+    normal! 2j
+  endif
+endfunction
+
+nnoremap <Leader>o :<C-u>call OpenLines(v:count, 0)<CR>S
+nnoremap <Leader>O :<C-u>call OpenLines(v:count, -1)<CR>S
+```
+```lua
+function OpenLines(nrlines, dir)
+  nrlines = nrlines < 3 and 3 or nrlines
+  local start = vim.fn.line('.') + dir
+  
+  local empty_lines = vim.fn.repeat({''},nrlines)
+  vim.fn.append(start, empty_lines)
+  
+  if dir < 0 then
+    vim.cmd('normal! 2k')
+  else
+    vim.cmd('normal! 2j')
+  end
+end
+
+vim.keymap.set('n', '<Leader>o', function()
+  local count = vim.v.count > 0 and vim.v.count or 3
+  OpenLines(count, 0)
+  vim.cmd('startinsert')
+end)
+
+vim.keymap.set('n', '<Leader>O', function()
+  local count = vim.v.count > 0 and vim.v.count or 3
+  OpenLines(count, -1)
+  vim.cmd('startinsert')
+end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Open_Multiple_Lines_Above/Below_and_Drop_Into_Insert_Mode
+***
+# Title: Fix Numeric Prefix Mistake in PHP Variables
+# Category: editing
+# Tags: php, error-correction, key-mapping
+---
+Quickly replace an accidental numeric prefix with $ in PHP variables
+
+```vim
+nnoremap <Leader>4 m`F4r$``
+inoremap <Leader>4 <Esc>m`F4r$``a
+```
+```lua
+vim.keymap.set('n', '<Leader>4', function()
+  vim.cmd('normal! m`F4r$``')
+end, { desc = 'Replace 4 with $ in PHP variable' })
+vim.keymap.set('i', '<Leader>4', '<Esc>m`F4r$``a', { desc = 'Replace 4 with $ in PHP variable' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/PHP_editing
+***
+# Title: Compact Multiple Blank Lines
+# Category: editing
+# Tags: text-cleanup, whitespace, file-manipulation
+---
+Remove consecutive blank lines, replacing multiple empty lines with a single blank line
+
+```vim
+" Compress multiple blank lines to single line
+:v/./,/./-j
+
+" Alternative method
+:%s/^$\n^$//g
+```
+```lua
+-- Compress blank lines
+vim.cmd('v/./,/./-j')
+
+-- Alternative substitution method
+vim.cmd('%s/^$\\n^$//g')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Power_of
+***
+# Title: Quickly Add/Delete Empty Lines
+# Category: editing
+# Tags: line-manipulation, key-mapping, productivity
+---
+Efficiently insert or remove blank lines above or below the current line without moving the cursor
+
+```vim
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts
+nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><A-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+```
+```lua
+-- Delete blank line below/above
+vim.keymap.set('n', '<C-j>', function()
+  vim.cmd('silent +g/^\s*$/d')
+  vim.cmd('noh')
+end, { silent = true })
+
+vim.keymap.set('n', '<C-k>', function()
+  vim.cmd('silent -g/^\s*$/d')
+  vim.cmd('noh')
+end, { silent = true })
+
+-- Insert blank line below/above
+vim.keymap.set('n', '<A-j>', function()
+  vim.o.paste = true
+  vim.cmd('normal! o')
+  vim.cmd('normal! `[')
+  vim.o.paste = false
+end, { silent = true })
+
+vim.keymap.set('n', '<A-k>', function()
+  vim.o.paste = true
+  vim.cmd('normal! O')
+  vim.cmd('normal! `[')
+  vim.o.paste = false
+end, { silent = true })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Quickly_adding_and_deleting_empty_lines
+***
+# Title: Quick Word and Line Editing Commands
+# Category: editing
+# Tags: text-objects, editing-shortcuts, change-command
+---
+Efficient ways to change text using Vim's change (c) commands for words, lines, and text objects
+
+```vim
+" Change word variants:
+cw    " Change word from cursor
+caw   " Change whole word
+ciw   " Change inner word
+
+" Change line variants:
+c$    " Change to end of line
+C     " Change to end of line
+cc    " Change entire line
+cis   " Change inner sentence
+```
+```lua
+-- These are built-in Vim/Neovim commands, so no direct Lua translation needed
+-- But can be used directly in Neovim
+-- Examples:
+-- cw, caw, ciw for word changes
+-- c$, C, cc for line changes
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Quickly_change_word_or_line
+***
+# Title: Advanced Range Selection Techniques
+# Category: editing
+# Tags: visual-mode, marks, search
+---
+Use marks and visual selection to define edit ranges dynamically
+
+```vim
+ma                           " Mark start line
+mb                           " Mark end line
+:'a,'bs/old/new/g           " Replace between marks
+vip:s/old/new/g              " Replace in visual inner paragraph
+```
+```lua
+-- Lua alternatives for range selection
+-- Most range operations still use command mode
+vim.cmd('ma')                          -- Mark start line
+vim.cmd('mb')                          -- Mark end line
+vim.cmd(":'a,'bs/old/new/g")           -- Replace between marks
+-- For visual selection, use normal mode commands
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Range
+***
+# Title: Remove Diacritical Signs from Characters
+# Category: editing
+# Tags: text-transformation, character-replacement, internationalization
+---
+Efficiently replace characters with diacritical marks (like á, ç) with their base characters, useful for compatibility or normalization
+
+```vim
+function! s:RemoveDiacritics(line1, line2)
+  let diacs = 'áâãàçéêíóôõüú'
+  let repls = 'aaaaceeiooouu'
+  let diacs .= toupper(diacs)
+  let repls .= toupper(repls)
+  let all = join(getline(a:line1, a:line2), "\n")
+  call setline(a:line1, split(tr(all, diacs, repls), "\n"))
+endfunction
+command! -range=% RemoveDiacritics call s:RemoveDiacritics(<line1>, <line2>)
+```
+```lua
+local function remove_diacritics(line1, line2)
+  local diacs = 'áâãàçéêíóôõüú'
+  local repls = 'aaaaceeiooouu'
+  diacs = diacs .. diacs:upper()
+  repls = repls .. repls:upper()
+  
+  local lines = vim.api.nvim_buf_get_lines(0, line1-1, line2, false)
+  local transformed_lines = vim.tbl_map(function(line)
+    return line:gsub('[' .. diacs .. ']', function(char)
+      local index = diacs:find(char, 1, true)
+      return index and repls:sub(index, index) or char
+    end)
+  end, lines)
+  
+  vim.api.nvim_buf_set_lines(0, line1-1, line2, false, transformed_lines)
+end
+
+vim.api.nvim_create_user_command('RemoveDiacritics', function(opts)
+  remove_diacritics(opts.line1, opts.line2)
+end, { range = true })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Remove_Diacritic_signs/marks_from_characters_(replace_to_regular_character)
+***
+# Title: Remove Empty Lines Efficiently
+# Category: editing
+# Tags: text-manipulation, clean-up, search-replace
+---
+Quickly remove empty or whitespace-only lines using global commands in Vim/Neovim
+
+```vim
+" Remove completely empty lines
+:g/^$/d
+:v/./d
+
+" Remove lines with only whitespace
+:g/^\s*$/d
+:v/\S/d
+```
+```lua
+-- Remove empty lines
+vim.cmd('g/^$/d')
+vim.cmd('v/./d')
+
+-- Remove lines with only whitespace
+vim.cmd('g/^\s*$/d')
+vim.cmd('v/\S/d')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Remove_unwanted_empty_lines
+***
+# Title: Condense Multiple Blank Lines
+# Category: editing
+# Tags: text-cleanup, search-replace
+---
+Reduce multiple consecutive blank lines to a single blank line while removing trailing whitespace
+
+```vim
+" Remove trailing whitespace and condense blank lines
+:%s/\s\+$//e
+:%s/\n\{3,}/\r\r/e
+```
+```lua
+-- Remove trailing whitespace and condense blank lines
+vim.cmd('%s/\s\+$//e')
+vim.cmd('%s/\n\{3,}/\r\r/e')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Remove_unwanted_empty_lines
+***
+# Title: Remove Automatic Comment Leaders Quickly
+# Category: editing
+# Tags: insert-mode, comments, text-editing
+---
+Quickly remove automatically inserted comment leaders in insert mode without affecting indentation
+
+```vim
+" In Insert mode, press Ctrl-U to remove the comment leader
+```
+```lua
+-- No direct Lua equivalent, but can be configured in autocmd
+vim.keymap.set('i', '<C-u>', function()
+  -- Remove comment leader while preserving indent
+  vim.cmd('norm! d0')
+end, { desc = 'Remove comment leader' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Removing_automatic_comment_leaders
+***
+# Title: Copy and Replace Words Quickly
+# Category: editing
+# Tags: registers, text-manipulation, copy-paste
+---
+Efficiently copy a word and replace multiple words with the copied text using yanking and register manipulation
+
+```vim
+# Copy current word: yiw
+# Replace at new location: ciw<C-R>0<Esc>
+# Repeat with '.'
+```
+```lua
+-- Lua equivalent for word copying and replacing
+-- First copy word: vim.cmd('yiw')
+-- Replace word: vim.cmd('ciw' .. vim.fn.getreg('0') .. '\<Esc>')
+-- Repeat with '.'
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Repeat
+***
+# Title: Copy and Replace Words Efficiently
+# Category: editing
+# Tags: registers, text-manipulation, copy-paste
+---
+Quickly copy a word and replace multiple occurrences using yanking and dot command repetition
+
+```vim
+" Workflow:
+" yiw - yank current word
+" ciw<C-R>0<Esc> - change word with yanked text
+" . - repeat the replacement
+```
+```lua
+-- Similar workflow in Neovim
+-- Use vim.fn.feedkeys() for complex macros if needed
+-- Essentially the same key sequence works
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Repeat_last_changes
+***
+# Title: Line Replacement Across Multiple Locations
+# Category: editing
+# Tags: line-manipulation, registers, text-replacement
+---
+Copy a line and replace lines at different locations using registers and dot command
+
+```vim
+" Workflow:
+" Y - yank current line
+" p/P - paste after/before current line
+" . - repeat paste
+```
+```lua
+-- Neovim supports the same line replacement techniques
+-- Use standard vim.api.nvim_buf_set_lines() for programmatic replacements
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Repeat_last_changes
+***
+# Title: Copy and Replace Words Across Multiple Locations
+# Category: editing
+# Tags: copy, replace, registers
+---
+Efficiently copy a word and replace words in multiple locations using yank and repeat commands
+
+```vim
+# Workflow:
+# 1. yiw - yank current word
+# 2. Move cursor
+# 3. ciw<C-R>0<Esc> - change word with yanked text
+# 4. Use '.' to repeat
+```
+```lua
+-- Similar workflow can be achieved
+-- Use vim.fn.feedkeys() for complex macros if needed
+-- Mostly relies on standard Vim/Neovim keybindings
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Repeating
+***
+# Title: Line Replacement Across Multiple Locations
+# Category: editing
+# Tags: copy, paste, registers
+---
+Copy a line and systematically replace lines in multiple locations using yank and paste commands
+
+```vim
+# 1. Y - yank current line
+# 2. Move cursor
+# 3. p - paste after current line
+# 4. Use '.' to repeat paste
+```
+```lua
+-- Similar to Vimscript, uses standard Vim/Neovim commands
+-- Can leverage vim.api for more complex line manipulation if needed
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Repeating
+***
+# Title: Quick Paragraph Sorting in Normal Mode
+# Category: editing
+# Tags: text-objects, paragraph-manipulation
+---
+Quickly sort a paragraph using a normal mode command
+
+```vim
+Vip:
+```
+```lua
+-- In normal mode, sort current paragraph
+vim.cmd('normal Vip:')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Repeating_an_ex_command_on_multiple_blocks
+***
+# Title: Smart Word Replacement Across Files
+# Category: editing
+# Tags: registers, text-manipulation, replace
+---
+Efficiently replace words with previously yanked text using different methods, including repeatable changes and register preservation
+
+```vim
+" Replace word with yanked text
+xnoremap p "_dP
+
+" Stamping technique
+nnoremap S diw"0P
+```
+```lua
+-- Replace word with yanked text
+vim.keymap.set('x', 'p', '"_dP', { desc = 'Paste without overwriting register' })
+
+-- Stamping technique
+vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text
+***
+# Title: Quick Word Replacement with Last Yanked Text
+# Category: editing
+# Tags: text-replacement, registers, key-mapping
+---
+Use a single key to quickly replace the current word with the last yanked text across multiple locations
+
+```vim
+nnoremap S diw"0P
+```
+```lua
+vim.keymap.set('n', 'S', function()
+  vim.cmd('normal! diw"0P')
+end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
+***
+# Title: Advanced Word Replacement Techniques
+# Category: editing
+# Tags: registers, replace, key-mapping
+---
+Multiple methods to replace words or text using different Vim registers and techniques, with easy repeatability
+
+```vim
+" Remap paste in visual mode to preserve original register
+xnoremap <silent> p p:let @"=@0<CR>
+
+" Stamping mapping to replace current word
+nnoremap S diw"0P
+```
+```lua
+-- Preserve register during visual paste
+vim.keymap.set('x', 'p', function()
+  vim.fn.feedkeys('p', 'n')
+  vim.fn.setreg('"', vim.fn.getreg('0'))
+end, { desc = 'Paste without overwriting register' })
+
+-- Stamp mapping to replace word with last yanked text
+vim.keymap.set('n', 'S', '"_diw"0P', { desc = 'Replace word with last yank' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Replacing_a_string_with_default_buffer_contents
+***
+# Title: Reverse Lines in Buffer
+# Category: editing
+# Tags: text-manipulation, global-command
+---
+Quickly reverse the order of lines in a Vim buffer using a global command, useful for reordering lists or log files
+
+```vim
+:g/^/m0  # Reverse all lines in buffer
+:100,150g/^/m99  # Reverse lines 100-150
+```
+```lua
+-- Reverse all lines
+vim.cmd('g/^/m0')
+
+-- Reverse specific line range
+vim.cmd('100,150g/^/m99')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Reverse_all_lines
+***
+# Title: Reverse Lines Using External Command
+# Category: editing
+# Tags: external-tools, text-manipulation
+---
+Use external 'tac' utility to reverse lines, works with specific ranges
+
+```vim
+:%!tac  # Reverse entire buffer
+:100,150!tac  # Reverse lines 100-150
+```
+```lua
+-- Reverse entire buffer
+vim.cmd(':%!tac')
+
+-- Reverse specific line range
+vim.cmd(':100,150!tac')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Reverse_all_lines
+***
+# Title: Reverse Lines in a Specific Range
+# Category: editing
+# Tags: line-manipulation, range-operations, text-editing
+---
+Reverse lines within a specific line range, useful for targeted line order manipulation
+
+```vim
+:100,150g/^/m99
+```
+```lua
+-- Reverse lines 100-150
+vim.cmd('100,150g/^/m99')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Reverse_lines_in_a_file_using_tac
+***
+# Title: Use Text Filters to Process Line Ranges
+# Category: editing
+# Tags: text-processing, shell-commands, filtering
+---
+Demonstrates using Vim's filter functionality to process selected text ranges with shell commands, enabling powerful text transformation
+
+```vim
+" Visual selection followed by ! allows filtering text through shell commands
+" Example: Select lines and use 'cut' to extract specific CSV fields
+```
+```lua
+-- While this is primarily a Vim editing technique, in Neovim you can
+-- achieve similar results with lua functions or external command processing
+-- Example filter function:
+function ProcessSelectedLines(cmd)
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local lines = vim.fn.getline(start_line, end_line)
+  local result = vim.fn.systemlist(cmd, lines)
+  vim.api.nvim_buf_set_lines(0, start_line-1, end_line, false, result)
+end
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip467
+***
+# Title: Swap Characters and Words Easily
+# Category: editing
+# Tags: text-manipulation, quick-edit
+---
+Quick normal mode commands to swap adjacent characters, words, or lines with minimal keystrokes
+
+```vim
+" Swap current character with next
+xp
+
+" Swap current word with next
+dawwP
+```
+```lua
+-- Note: These are direct normal mode commands
+-- Lua equivalents would typically use vim.api.nvim_input()
+-- for similar character/word swapping functionality
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip47
+***
+# Title: Toggle Paste Mode Easily
+# Category: editing
+# Tags: paste-mode, key-mapping, clipboard
+---
+Add a quick toggle for paste mode to prevent auto-indentation issues when pasting text
+
+```vim
+map <F11> :set invpaste<CR>
+set pastetoggle=<F11>
+```
+```lua
+vim.keymap.set('n', '<F11>', ':set invpaste<CR>', { desc = 'Toggle paste mode' })
+vim.o.pastetoggle = '<F11>'
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip471
+***
+# Title: Flexible Case Conversion in Text
+# Category: editing
+# Tags: text-manipulation, case-conversion, text-editing
+---
+Provides multiple ways to change text case, including toggling, uppercase, and lowercase conversions using movement commands or visual selection
+
+```vim
+" Toggle case of characters
+g~3w  " Toggle case of next 3 words
+g~iw  " Toggle case of current word
+gUU   " Convert current line to uppercase
+guu   " Convert current line to lowercase
+```
+```lua
+-- Toggle case of characters
+-- Lua uses same Vim commands, but can be mapped with vim.keymap
+vim.keymap.set('n', 'g~3w', 'g~3w', { desc = 'Toggle case of next 3 words' })
+vim.keymap.set('n', 'g~iw', 'g~iw', { desc = 'Toggle case of current word' })
+vim.keymap.set('n', 'gUU', 'gUU', { desc = 'Convert line to uppercase' })
+vim.keymap.set('n', 'guu', 'guu', { desc = 'Convert line to lowercase' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip49
+***
+# Title: Easy Word Replacement Across Files
+# Category: editing
+# Tags: registers, text-objects, search-replace
+---
+Replace words efficiently using registers and text objects, with repeatable operations across multiple locations
+
+```vim
+" Stamp mapping to replace words with last yanked text
+nnoremap S diw"0P
+
+" Remap paste in visual mode to preserve register
+xnoremap <silent> p p:let @"=@0<CR>
+```
+```lua
+-- Stamp mapping to replace words with last yanked text
+vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
+
+-- Remap paste in visual mode to preserve register
+vim.keymap.set('x', 'p', 'p<Cmd>let @"=@0<CR>', { desc = 'Paste and preserve register' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip497
+***
+# Title: Insert Filename in Different Modes
+# Category: editing
+# Tags: insert-mode, command-line, file-operations
+---
+Various methods to insert the current filename in different Vim modes
+
+```vim
+" In insert mode: Ctrl-R %
+" In command mode: Ctrl-R %
+" In normal mode: "%p (after cursor) or "%P (before cursor)
+```
+```lua
+-- These are mode-specific Vim commands, so equivalent Lua mapping approach:
+vim.keymap.set('i', '<C-x>f', function()
+  vim.api.nvim_put({vim.fn.expand('%')}, 'c', true, true)
+end, { desc = 'Insert current filename' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip530
+***
+# Title: Quick Text Filtering with External Commands
+# Category: editing
+# Tags: text-processing, external-commands, filtering
+---
+Use '!<motion><command>' to filter text through external commands, like formatting paragraphs or performing calculations.
+
+```vim
+# Filter paragraph through fmt
+!}fmt
+
+# Calculate expression
+!}bc
+```
+```lua
+-- Lua equivalent for external command filtering
+-- Note: Requires external commands
+vim.keymap.set('n', '<leader>fp', '!}fmt<CR>', { desc = 'Format paragraph' })
+vim.keymap.set('n', '<leader>bc', '!}bc<CR>', { desc = 'Calculate expression' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip535
+***
+# Title: Quick Paragraph Line Joining
+# Category: editing
+# Tags: text-manipulation, line-editing
+---
+Easily join lines within paragraphs, removing excess newlines in a single command
+
+```vim
+:v/^\s*$/norm vipJ
+```
+```lua
+vim.cmd('v/^\s*$/norm vipJ')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip579
+***
+# Title: Expand Abbreviations Without Extra Characters
+# Category: editing
+# Tags: insert-mode, abbreviations, text-expansion
+---
+Use Ctrl-] to expand an abbreviation without inserting an extra space
+
+```vim
+:iabbrev hh hello
+" hh<Ctrl-]> will expand to just 'hello'
+```
+```lua
+-- Use vim.cmd to set abbreviation
+vim.cmd('iabbrev hh hello')
+-- Use Ctrl-] in insert mode to expand without space
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip610
+***
+# Title: Start Editing Blank Lines with Correct Indent
+# Category: editing
+# Tags: indentation, editing, productivity
+---
+Use cc or S to start editing a blank line with correct indentation instead of i or A
+
+```vim
+" No direct vimscript needed, just use cc or S commands
+```
+```lua
+-- Tip: Use 'cc' or 'S' to start editing
+-- These commands are built-in and work with filetype indentation
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip644
+***
+# Title: Remove Duplicate Lines Efficiently
+# Category: editing
+# Tags: text-manipulation, sorting
+---
+Easily remove duplicate lines in a file, with options to keep first or last occurrence
+
+```vim
+:sort u
+```
+```lua
+vim.cmd('sort u')
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip648
+***
+# Title: Copy and Replace Words Across File
+# Category: editing
+# Tags: registers, text-manipulation, copy-paste
+---
+Efficiently copy a word and replace multiple occurrences using registers and repeat commands
+
+```vim
+" To copy and replace words:
+yiw   " Yank current word
+ciw<C-R>0<Esc>  " Change word with yanked text
+.     " Repeat the replacement
+```
+```lua
+-- Lua equivalent for copying and replacing words
+-- yiw to yank word
+-- ciw<C-R>0<Esc> to replace
+-- . to repeat
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip69
+***
+# Title: Outline Manipulation Techniques
+# Category: editing
+# Tags: outline, text-editing, indentation
+---
+Use backspace in insert mode to promote and tab to demote headlines, providing quick outline editing
+
+```vim
+" In insert mode:
+" Backspace to promote
+" Tab to demote
+```
+```lua
+-- Recommended to set up custom keymappings for outline manipulation
+-- Example:
+vim.keymap.set('i', '<S-Tab>', function()
+  -- Implement promote logic
+end)
+
+vim.keymap.set('i', '<Tab>', function()
+  -- Implement demote logic
+end)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/VimTip74
+***
+# Title: Insert Unicode Characters Easily
+# Category: editing
+# Tags: unicode, character-input, insert-mode
+---
+Multiple methods to insert Unicode characters in Vim/Neovim: using digraphs, direct Unicode code input, and keyboard input
+
+```vim
+" Insert Unicode character methods:
+" 1. Digraph: Ctrl-K followed by two characters
+" 2. Direct Unicode input: Ctrl-V u XXXX or Ctrl-V U XXXXXXXX
+" 3. Keyboard characters work directly in UTF-8 mode
+```
+```lua
+-- Unicode character input methods remain the same
+-- Use :lua vim.api.nvim_input('<C-k>') for digraphs
+-- Use :lua vim.api.nvim_input('<C-v>u2023') for direct Unicode input
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Working_with_Unicode
+***
+# Title: Inspect Unicode Character Details
+# Category: editing
+# Tags: unicode, character-info, inspection
+---
+Use built-in commands to get detailed information about Unicode characters
+
+```vim
+" Normal mode commands:
+га  " Show character details
+g8  " Show byte representation
+```
+```lua
+-- Character inspection mapping example
+vim.keymap.set('n', '<Leader>u', function()
+  local char = vim.fn.getcharstr()
+  local codepoint = vim.fn.char2nr(char)
+  print(string.format('Character: %s, Codepoint: U+%04X', char, codepoint))
+end, { desc = 'Inspect Unicode character' })
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Working_with_Unicode
 ***

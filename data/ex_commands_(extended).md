@@ -38,17 +38,16 @@ Use `:marks` to display all marks with their line numbers and text.
 ```
 ***
 # Title: Show jump list
-# Category: Navigation  
+# Category: Navigation
 # Tags: jumps, list, history, navigation, ex
 ---
 Use `:jumps` to display jump list with positions you can return to.
+Use `Ctrl+o` to go back, `Ctrl+i` to go forward in jump list.
 
 ```vim
 :jumps              " show jump list
 :ju                 " shorter version
 ```
-
-Use `Ctrl+o` to go back, `Ctrl+i` to go forward in jump list.
 ***
 # Title: Show registers content
 # Category: Registers
@@ -118,13 +117,12 @@ Use `:let` to define and assign values to variables.
 # Tags: digraphs, special, characters, unicode, ex
 ---
 Use `:digraphs` to show available two-character combinations for special characters.
+In insert mode, use `Ctrl+k` followed by two characters (e.g., `Ctrl+k a'` for á).
 
 ```vim
 :digraphs           " show all digraphs
 :dig                " shorter version
 ```
-
-In insert mode, use `Ctrl+k` followed by two characters (e.g., `Ctrl+k a'` for á).
 ***
 # Title: Runtime file loading
 # Category: Configuration
@@ -143,13 +141,12 @@ Use `:runtime` to load script files from runtime path directories.
 # Tags: checkpath, include, path, files, ex
 ---
 Use `:checkpath` to verify all files in include path can be found.
+Useful for debugging include paths in C/C++ projects.
 
 ```vim
 :checkpath          " check all included files
 :checkp!            " show files that cannot be found
 ```
-
-Useful for debugging include paths in C/C++ projects.
 ***
 # Title: Neovim health check
 # Category: Diagnostics
@@ -348,12 +345,11 @@ Use spell-related commands to manage spell checking.
 # Tags: intro, welcome, screen, startup, ex
 ---
 Use `:intro` to show the Neovim introduction/welcome screen.
+Useful after clearing the screen or when you want to see version info.
 
 ```vim
 :intro             " show introduction screen
 ```
-
-Useful after clearing the screen or when you want to see version info.
 ***
 # Title: Unlet variables
 # Category: Scripting
@@ -372,25 +368,23 @@ Use `:unlet` to delete variables and free memory.
 # Tags: badd, buffer, add, list, ex
 ---
 Use `:badd` to add file to buffer list without editing it.
+Useful for preparing a list of files to work with.
 
 ```vim
 :badd file.txt     " add file to buffer list
 :badd *.py         " add all Python files
 ```
-
-Useful for preparing a list of files to work with.
 ***
 # Title: Make and build
 # Category: Development
 # Tags: make, build, compile, external, ex
 ---
 Use `:make` to run external make command and capture errors.
+Errors appear in quickfix list. Use `:cn` to navigate.
 
 ```vim
 :make              " run make command
 :make clean        " run make with clean target
 :make -j4          " run make with 4 parallel jobs
 ```
-
-Errors appear in quickfix list. Use `:cn` to navigate.
 ***

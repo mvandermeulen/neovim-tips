@@ -165,13 +165,12 @@ Use `/` then arrow keys to navigate search history, `/<Up>` to recall previous s
 # Tags: confirm, interactive, replace, substitute
 ---
 Use the `c` flag in substitute commands for interactive confirmation.
+Prompts: `y`es, `n`o, `a`ll, `q`uit, `l`ast, `^E` scroll down, `^Y` scroll up.
 
 ```vim
 :%s/old/new/gc  " global replace with confirmation
 :g/pattern/s/old/new/c  " replace on matching lines with confirmation
 ```
-
-Prompts: `y`es, `n`o, `a`ll, `q`uit, `l`ast, `^E` scroll down, `^Y` scroll up.
 ***
 # Title: Multiline pattern matching
 # Category: Advanced Search
@@ -303,48 +302,33 @@ Use `\(` and `\)` for grouping and capturing, `\1` to `\9` for backreferences.
 # Tags: group, capture, search, replace, lua, function
 ---
 You can define your own function directly in Neovim. It won't survive Neovim restart but such functions can be useful anyway. For example, the following function capitalizes the first letter in the text:
+You can now use your own custom function to capitalize every word in the document using `%s/<pattern>/\=v:lua.your_fun(submatch(0))/`.
+You can also apply your custom function to every line that is matching the given pattern using `g/<pattern>/s//\=v:lua.your_fun(submatch(0))`
+Credits: Different-Ad-8707@Reddit
 
 ```vim
 :lua function capitalize(text) return text:sub(1,1):upper() .. text:sub(2) end
-```
 
-You can now use your own custom function to capitalize every word in the document using `%s/<pattern>/\=v:lua.your_fun(submatch(0))/`.
-
-
-```vim
 :%s/\w\+/\=v:lua.capitalize(submatch(0))/gc
-```
 
-You can also apply your custom function to every line that is matching the given pattern using `g/<pattern>/s//\=v:lua.your_fun(submatch(0))`
-
-```vim
 :g/\w\+/s//\=v:lua.capitalize(submatch(0))
 ```
-
-Credits: Different-Ad-8707@Reddit
 ***
 # Title: Change "Last, First" to "First Last"
 # Category: Advanced Search
 # Tags: search, replace, regex
 ---
 You have a list of names in this form:
+You want to change it to:
+This can be done with just one command:
 
 ```vim
 Doe, John
 Smith, Alan
-```
 
-You want to change it to:
-
-```vim
 John Doe
 Alan Smith
-```
 
-This can be done with just one command:
-
-```vim
 :%s/\([^,]*\), \(.*\)/\2 \1/
 ```
 ***
-

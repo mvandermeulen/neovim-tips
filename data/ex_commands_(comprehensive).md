@@ -3,14 +3,13 @@
 # Tags: buffer, list, navigation, ex
 ---
 Use `:ls` or `:buffers` to show all buffers with their numbers and status indicators.
+Status indicators: `%` current, `#` alternate, `+` modified, `x` read errors.
 
 ```vim
 :ls                 " list all buffers
 :buffers           " same as :ls (alternative)
 :ls!               " list all buffers including unlisted
 ```
-
-Status indicators: `%` current, `#` alternate, `+` modified, `x` read errors.
 ***
 # Title: Go to specific buffer by number
 # Category: Buffer Management
@@ -55,26 +54,24 @@ Use `:enew` to create a new empty buffer in current window.
 # Tags: recover, swap, file, crash, ex
 ---
 Use `:recover filename` or `:rec` to recover file from swap file after crash.
+Vim creates `.swp` files for crash recovery. Use this after unexpected shutdowns.
 
 ```vim
 :recover file.txt  " recover file from swap
 :rec               " recover current file
 ```
-
-Vim creates `.swp` files for crash recovery. Use this after unexpected shutdowns.
 ***
 # Title: Find file in path
 # Category: File Operations
 # Tags: find, path, file, search, ex
 ---
 Use `:find filename` to search for file in 'path' option directories and edit it.
+Set your path with `:set path+=directory` to include custom directories.
 
 ```vim
 :find config.vim   " find and edit config.vim in path
 :fin *.py          " find Python files (with tab completion)
 ```
-
-Set your path with `:set path+=directory` to include custom directories.
 ***
 # Title: Copy lines to another location
 # Category: Text Manipulation
@@ -120,39 +117,36 @@ Use `:delete` or `:d` to delete specific lines or line ranges.
 # Tags: window, close, only, layout, ex
 ---
 Use `:only` or `:on` to close all windows except the current one.
+Useful for cleaning up complex window layouts quickly.
 
 ```vim
 :only              " close all other windows
 :on                " shorter version
 ```
-
-Useful for cleaning up complex window layouts quickly.
 ***
 # Title: Show version information
 # Category: System Information
 # Tags: version, info, build, features, ex
 ---
 Use `:version` to display Neovim version, build info, and compiled features.
+Shows version number, build date, features, and compilation options.
 
 ```vim
 :version           " show full version information
 :ve                " shorter version
 ```
-
-Shows version number, build date, features, and compilation options.
 ***
 # Title: List all sourced scripts
 # Category: Configuration
 # Tags: scripts, source, debug, files, ex
 ---
 Use `:scriptnames` to list all sourced Vim script files with their script IDs.
+Useful for debugging configuration issues and seeing load order.
 
 ```vim
 :scriptnames       " list all sourced scripts
 :scr               " shorter version
 ```
-
-Useful for debugging configuration issues and seeing load order.
 ***
 # Title: Source Vim scripts
 # Category: Configuration
@@ -184,42 +178,39 @@ Use `:setlocal` to set options only for current buffer/window.
 # Tags: tag, jump, definition, ctags, ex
 ---
 Use `:tag tagname` to jump to tag definition (requires tags file).
+Generate tags with `ctags -R .` in your project root.
 
 ```vim
 :tag function_name " jump to tag definition
 :ta MyClass        " jump to MyClass tag
 :tag /pattern      " search for tags matching pattern
 ```
-
-Generate tags with `ctags -R .` in your project root.
 ***
 # Title: Previous tag in stack
 # Category: Navigation
 # Tags: tag, previous, stack, back, ex
 ---
 Use `:pop` or `:po` to go back to previous location in tag stack.
+Use after jumping to tags with `:tag` or `Ctrl+]`.
 
 ```vim
 :pop               " go back in tag stack
 :po                " shorter version
 :2pop              " go back 2 positions
 ```
-
-Use after jumping to tags with `:tag` or `Ctrl+]`.
 ***
 # Title: Next file in argument list
 # Category: File Navigation
 # Tags: next, file, argument, list, ex
 ---
 Use `:next` or `:n` to edit next file in argument list.
+See argument list with `:args`, set with `nvim file1 file2 file3`.
 
 ```vim
 :next              " edit next file
 :n                 " shorter version
 :2next             " skip 2 files forward
 ```
-
-See argument list with `:args`, set with `nvim file1 file2 file3`.
 ***
 # Title: Previous file in argument list
 # Category: File Navigation
@@ -262,28 +253,26 @@ Use `:args` to display current argument list with current file highlighted.
 # Tags: grep, search, quickfix, external, ex
 ---
 Use `:grep pattern files` to run external grep and jump to first match.
+Results appear in quickfix list. Use `:cn` and `:cp` to navigate.
 
 ```vim
 :grep TODO *.py    " search for TODO in Python files
 :grep -r "function" src/  " recursive search in src/
 :grep! pattern *   " run grep but don't jump to first match
 ```
-
-Results appear in quickfix list. Use `:cn` and `:cp` to navigate.
 ***
 # Title: Internal grep with vimgrep
 # Category: Search
 # Tags: vimgrep, search, internal, pattern, ex
 ---
 Use `:vimgrep` to search using Vim's internal grep (works with Vim patterns).
+Use `j` flag to avoid jumping to first match immediately.
 
 ```vim
 :vimgrep /pattern/j *.py   " search in Python files
 :vim /\cTODO/ **/*.js      " case-insensitive recursive search
 :vimgrep /\<word\>/ %      " search for whole word in current file
 ```
-
-Use `j` flag to avoid jumping to first match immediately.
 ***
 # Title: Location list navigation
 # Category: Search
@@ -319,31 +308,29 @@ Use `:cnext`, `:cprev` to navigate quickfix list (global error list).
 # Tags: normal, execute, mode, command, ex
 ---
 Use `:normal commands` to execute normal mode commands from Ex mode.
+Use `!` to avoid mappings: `:normal! dd`
 
 ```vim
 :normal dd         " delete current line
 :5,10normal A;     " append semicolon to lines 5-10
 :%normal I//       " comment all lines with //
 ```
-
-Use `!` to avoid mappings: `:normal! dd`
 ***
 # Title: Repeat last Ex command
 # Category: Command History
 # Tags: repeat, last, command, history, ex
 ---
 Use `@:` to repeat the last Ex command, `@@` to repeat last `@` command.
+Useful for repeating complex commands without retyping.
 
 ```vim
 @:                 " repeat last Ex command
 5@:                " repeat last Ex command 5 times
 @@                 " repeat the last @ command
 ```
-
-Useful for repeating complex commands without retyping.
 ***
 # Title: Save all modified buffers
-# Category: File Operations  
+# Category: File Operations
 # Tags: save, all, buffers, write, wa, ex
 ---
 Use `:wall` or `:wa` to save all modified buffers at once.
@@ -357,7 +344,7 @@ Use `:wall` or `:wa` to save all modified buffers at once.
 ***
 # Title: Quit all windows/buffers
 # Category: File Operations
-# Tags: quit, all, exit, buffers, ex  
+# Tags: quit, all, exit, buffers, ex
 ---
 Use `:qall` or `:qa` to quit all windows, `:qa!` to quit without saving.
 

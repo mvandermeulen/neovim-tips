@@ -147,14 +147,13 @@ Use `:retab` to convert tabs to spaces or vice versa based on current settings.
 # Tags: xit, write, exit, save, quit, ex
 ---
 Use `:xit` or `:x` to write file only if modified, then exit.
+More efficient than `:wq` since it only writes when necessary.
 
 ```vim
 :xit                " write if modified and exit
 :x                  " shorter version
 :5,10x file.txt     " write lines 5-10 to file and exit
 ```
-
-More efficient than `:wq` since it only writes when necessary.
 ***
 # Title: Write all and quit all
 # Category: File Operations
@@ -186,28 +185,26 @@ Use `:browse` to open file dialog for commands (GUI Vim only).
 # Tags: oldfiles, recent, history, files, ex
 ---
 Use `:oldfiles` to show list of recently edited files.
+Files are numbered; use `:e #< to edit by number.
 
 ```vim
 :oldfiles           " show recently edited files
 :ol                 " shorter version
 :browse oldfiles    " browse old files with dialog (GUI)
 ```
-
-Files are numbered; use `:e #< to edit by number.
 ***
 # Title: Make session file
 # Category: Session Management
 # Tags: mksession, session, save, workspace, ex
 ---
 Use `:mksession` to save current editing session to file.
+Restore with `:source Session.vim` or `nvim -S Session.vim`.
 
 ```vim
 :mksession          " create Session.vim in current dir
 :mks ~/my.vim       " save session to specific file
 :mks!               " overwrite existing session file
 ```
-
-Restore with `:source Session.vim` or `nvim -S Session.vim`.
 ***
 # Title: Save current view
 # Category: View Management
@@ -238,14 +235,13 @@ Use `:loadview` to restore previously saved window view.
 # Tags: cquit, quit, error, code, ex
 ---
 Use `:cquit` or `:cq` to quit Vim with error exit code.
+Useful in shell scripts to indicate failure.
 
 ```vim
 :cquit              " quit with error code
 :cq                 " shorter version  
 :cq 2               " quit with specific error code
 ```
-
-Useful in shell scripts to indicate failure.
 ***
 # Title: Lock marks during operation
 # Category: Marks
@@ -285,41 +281,38 @@ Use `:keepjumps` to prevent commands from adding entries to jump list.
 # Tags: vglobal, inverse, global, exclude, ex
 ---
 Use `:vglobal` or `:v` to execute commands on lines NOT matching pattern.
+Opposite of `:global` - executes on non-matching lines.
 
 ```vim
 :v/pattern/d        " delete lines NOT containing pattern
 :vglobal/TODO/p     " print lines without TODO
 :5,10v/^$/d         " delete non-empty lines in range 5-10
 ```
-
-Opposite of `:global` - executes on non-matching lines.
 ***
 # Title: Return to normal mode
 # Category: Mode Switching
 # Tags: visual, normal, mode, return, ex
 ---
 Use `:visual` or `:vi` to return to Normal mode from Ex mode.
+Historical command, rarely needed in modern Neovim.
 
 ```vim
 :visual             " return to Normal mode
 :vi                 " shorter version
 ```
-
-Historical command, rarely needed in modern Neovim.
 ***
 # Title: Substitute confirmation
 # Category: Search Replace
 # Tags: substitute, confirm, interactive, replace, ex
 ---
 Use the `c` flag with `:substitute` for interactive confirmation of each replacement.
+Prompts: `y`es, `n`o, `a`ll, `q`uit, `l`ast.
 
 ```vim
 :s/old/new/gc       " substitute with confirmation
 :%s/foo/bar/gc      " replace in whole file with prompts
 :5,10s/x/y/gc       " replace in range with confirmation
 ```
-
-Prompts: `y`es, `n`o, `a`ll, `q`uit, `l`ast.
 ***
 # Title: Advanced substitute flags
 # Category: Search Replace
@@ -364,13 +357,12 @@ Use `:global` with line ranges to limit scope of global operations.
 # Tags: global, nested, complex, pattern, ex
 ---
 Use nested `:global` commands for complex pattern operations.
+Inner global operates on lines found by outer global.
 
 ```vim
 :g/function/+1,/^}/g/TODO/p   " find TODO in function bodies
 :g/class/.,/^$/v/def/d        " delete non-def lines in classes
 ```
-
-Inner global operates on lines found by outer global.
 ***
 # Title: Command history navigation
 # Category: Command Line

@@ -3,15 +3,13 @@
 # Tags: number, increment, decrement, arithmetic
 ---
 Use `Ctrl+a` to increment number under cursor, `Ctrl+x` to decrement. Works with decimal, hex, octal, and binary.
+Works on hex (0x1F), octal (017), binary (0b1010), and decimals.
 
 ```vim
 Ctrl+a    " increment number under cursor
 Ctrl+x    " decrement number under cursor
 5Ctrl+a   " increment by 5
 ```
-
-Works on hex (0x1F), octal (017), binary (0b1010), and decimals.
-
 ***
 # Title: Repeat last command
 # Category: Normal Mode

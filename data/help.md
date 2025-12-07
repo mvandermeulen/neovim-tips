@@ -54,6 +54,5 @@ Use `:Man` to open a man-page in a read-only mode. You can navigate the page lik
 ```vim
 :Man ls   "Opens man-page for linux ls command
 gO        "Generates TOC in normal mode for the selected man-page
-
 ```
 ***

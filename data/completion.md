@@ -642,6 +642,9 @@ vim.opt.completefunc = 'v:lua.ChainedComplete'
 # Tags: completion, lsp, documentation, preview
 ---
 Create rich completion items with documentation preview like LSP.
+print("Hello", "World")
+-- Output: Hello World
+local mymod = require('mymodule')
 
 ```lua
 local completion_items = {
@@ -658,68 +661,8 @@ Print arguments to stdout.
 - `...` - Values to print
 
 **Example:**
-```lua
-print("Hello", "World")
--- Output: Hello World
-```
-      ]],
-    },
-  },
-  {
-    label = "require",
-    kind = "Function",
-    detail = "require(modname)",
-    documentation = {
-      kind = "markdown",
-      value = [[
-Load and return a module.
 
-**Parameters:**
-- `modname` (string) - Module name
-
-**Returns:**
-- Module table
-
-**Example:**
-```lua
 local mymod = require('mymodule')
-```
-      ]],
-    },
-  },
-}
-
-function LspStyleComplete(findstart, base)
-  if findstart == 1 then
-    local line = vim.api.nvim_get_current_line()
-    local col = vim.fn.col('.') - 1
-    while col > 0 and line:sub(col, col):match('[%w_]') do
-      col = col - 1
-    end
-    return col
-  else
-    local matches = {}
-
-    for _, item in ipairs(completion_items) do
-      if item.label:find('^' .. vim.pesc(base)) then
-        table.insert(matches, {
-          word = item.label,
-          abbr = item.label,
-          menu = string.format('[%s]', item.kind),
-          info = item.documentation.value,
-          kind = item.kind:sub(1, 1):lower(),
-        })
-      end
-    end
-
-    return matches
-  end
-end
-
-vim.opt.completefunc = 'v:lua.LspStyleComplete'
-
--- Enable preview window for completion
-vim.opt.completeopt = {'menu', 'menuone', 'preview'}
 ```
 ***
 # Title: Completion with external command

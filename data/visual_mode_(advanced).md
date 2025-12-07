@@ -40,7 +40,7 @@ new_text        " replacement text
 ```
 ***
 # Title: Visual block append to varying line lengths
-# Category: Visual Mode Advanced  
+# Category: Visual Mode Advanced
 # Tags: visual, block, append, variable, length
 ---
 Use `$` in visual block mode to select to end of lines, then `A` to append despite varying lengths.
@@ -125,7 +125,7 @@ Filter visual selections through external commands.
 ```
 ***
 # Title: Visual mode macro application
-# Category: Visual Mode Advanced  
+# Category: Visual Mode Advanced
 # Tags: visual, macro, apply, lines, batch
 ---
 Apply macros to each line of a visual selection.

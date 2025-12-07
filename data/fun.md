@@ -23,13 +23,12 @@ The following command will print `Neovim is great` until you stop it with `Ctrl+
 # Tags: fun
 ---
 Use the following commands:
+Highlights trailing spaces in red. Instant “why did I leave that space there?” effect.
 
 ```vim
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
 ```
-
-Highlights trailing spaces in red. Instant “why did I leave that space there?” effect.
 ***
 # Title: Reverse lines in file
 # Category: Fun
@@ -59,7 +58,6 @@ Poor man's matrix screen :)
 
 ```vim
 :!yes | awk '{print int(rand()*10)}' | pv -qL 100
-
 ```
 ***
 # Title: Sort randomly
@@ -67,24 +65,22 @@ Poor man's matrix screen :)
 # Tags: fun, sort
 ---
 Sort lines randomly by using this simple command:
+Works for small files only.
 
 ```vim
 :sort!
 ```
-
-Works for small files only.
 ***
 # Title: Shuffle lines
 # Category: Fun
 # Tags: fun, shuffle, edit
 ---
 Use the following commands to randomly rearrange all lines:
+Perfect for testing or chaos.
 
 ```vim
 :lua local lines=vim.api.nvim_buf_get_lines(0,0,-1,false); for i=#lines,2,-1 do local j=math.random(i); lines[i],lines[j]=lines[j],lines[i]; end; vim.api.nvim_buf_set_lines(0,0,-1,false,lines)
 ```
-
-Perfect for testing or chaos.
 ***
 # Title: Smile!
 # Category: Fun
@@ -134,7 +130,6 @@ If you are really, really desperate:
 
 ```vim
 :help!
-
 ```
 ***
 # Title: Funny event
@@ -142,11 +137,9 @@ If you are really, really desperate:
 # Tags: easter egg, fun
 ---
 As you already know, Neovim emits various events that you can handle with your own code. There is one particular event that is not found in any other app: `UserGettingBored`. To find out more about this event, type:
+It turns out that this event is not implemented yet, help text is there just for fun. But... if you install plugin [mikesmithgh/ugbi](https://github.com/mikesmithgh/ugbi), you can actually see this event triggered in the funniest way possible. Plugin description is also a masterpiece on its own. Definitely the best plugin ever, especially in the "Useless" category.
 
 ```vim
 :h UserGettingBored
 ```
-
-It turns out that this event is not implemented yet, help text is there just for fun. But... if you install plugin [mikesmithgh/ugbi](https://github.com/mikesmithgh/ugbi), you can actually see this event triggered in the funniest way possible. Plugin description is also a masterpiece on its own. Definitely the best plugin ever, especially in the "Useless" category.
 ***
-

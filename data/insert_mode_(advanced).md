@@ -40,20 +40,6 @@ Ctrl+Left       " alternative word movement left
 Ctrl+Right      " alternative word movement right
 ```
 ***
-# Title: Line movement in insert mode
-# Category: Insert Mode Advanced
-# Tags: line, movement, beginning, end
----
-Use `Ctrl+o` to execute one normal command, then return to insert mode at same position.
-
-```vim
-" In insert mode:
-Ctrl+o ^        " go to first non-blank character
-Ctrl+o $        " go to end of line
-Ctrl+o gg       " go to first line
-Ctrl+o G        " go to last line
-```
-***
 # Title: Delete operations in insert mode
 # Category: Insert Mode Advanced
 # Tags: delete, backspace, word, line
@@ -105,7 +91,7 @@ Ctrl+v Ctrl+m   " insert carriage return
 ```
 ***
 # Title: Insert mode register shortcuts
-# Category: Insert Mode Advanced  
+# Category: Insert Mode Advanced
 # Tags: register, shortcut, special, paste
 ---
 Use special register shortcuts for common insert operations.
@@ -227,16 +213,15 @@ Ctrl+o g~w      " toggle case of word under cursor
 # Tags: abbreviation, control, expand, prevent
 ---
 Control abbreviation expansion in insert mode.
+After setting `:iabbrev teh the`, typing "teh " expands to "the ".
 
 ```vim
 " In insert mode:
 Ctrl+v <Space>  " insert space without expanding abbreviation
 Ctrl+]          " manually expand abbreviation
 ```
-
-After setting `:iabbrev teh the`, typing "teh " expands to "the ".
 ***
-# Title: Insert mode formatting and alignment  
+# Title: Insert mode formatting and alignment
 # Category: Insert Mode Advanced
 # Tags: format, align, text, paragraph
 ---
@@ -265,7 +250,7 @@ Ctrl+r Ctrl+f   " insert filename under cursor
 ```
 ***
 # Title: Insert mode folding control
-# Category: Insert Mode Advanced  
+# Category: Insert Mode Advanced
 # Tags: fold, unfold, toggle, code
 ---
 Control code folding without leaving insert mode.
@@ -284,6 +269,7 @@ Ctrl+o zM       " close all folds
 # Tags: macro, record, replay, register
 ---
 Work with macros without leaving insert mode.
+Note: Recording typically requires exiting insert mode first.
 
 ```vim
 " In insert mode:
@@ -291,12 +277,10 @@ Ctrl+o @a       " replay macro 'a'
 Ctrl+o @@       " replay last macro
 Ctrl+o qa       " start recording macro (then exit insert)
 ```
-
-Note: Recording typically requires exiting insert mode first.
 ***
 # Title: Insert mode terminal integration
 # Category: Insert Mode Advanced
-# Tags: terminal, command, external, shell  
+# Tags: terminal, command, external, shell
 ---
 Execute external commands and insert their output.
 

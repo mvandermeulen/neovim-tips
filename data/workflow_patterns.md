@@ -122,7 +122,7 @@ Integrated testing and debugging workflow patterns.
 ```
 ***
 # Title: Documentation workflow
-# Category: Workflow Patterns  
+# Category: Workflow Patterns
 # Tags: documentation, writing, markdown, workflow, notes
 ---
 Efficient documentation and note-taking workflow patterns.
@@ -149,7 +149,7 @@ endfunction
 :nnoremap <leader>ml i[]()<Left><Left><Left>
 ```
 ***
-# Title: Git workflow integration  
+# Title: Git workflow integration
 # Category: Workflow Patterns
 # Tags: git, workflow, version, control, branch, merge
 ---

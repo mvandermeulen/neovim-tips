@@ -189,7 +189,7 @@ vim.api.nvim_create_autocmd('BufDelete', {
 ```
 ***
 # Title: LSP performance optimization
-# Category: Performance Optimization Advanced  
+# Category: Performance Optimization Advanced
 # Tags: lsp, language, server, performance, debounce
 ---
 Optimize Language Server Protocol interactions for better responsiveness.
@@ -413,7 +413,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 ```
 ***
 # Title: Diff and merge performance optimization
-# Category: Performance Optimization Advanced  
+# Category: Performance Optimization Advanced
 # Tags: diff, merge, algorithm, performance, comparison
 ---
 Optimize diff operations and merge performance for large files.

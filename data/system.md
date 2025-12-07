@@ -104,7 +104,7 @@ Use `:!mkdir`, `:!rm`, `:!mv` for file operations, or use Neovim's built-in file
 ```
 ***
 # Title: Redirect command output
-# Category: System  
+# Category: System
 # Tags: redirect, output, capture, redir
 ---
 Use `:redir` to redirect command output to variables, registers, or files for later use.

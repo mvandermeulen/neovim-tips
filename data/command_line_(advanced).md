@@ -3,21 +3,14 @@
 # Tags: expression, evaluation, calculation, register
 ---
 Use `Ctrl+r =` to evaluate expressions and insert results into command line.
+Use `<C-r><C-w>` in command-line mode to insert the word under the cursor, perfect for quick substitutions.
 
 ```vim
 " In command line:
 :echo <Ctrl+r>=2*3<CR>        " insert 6
 :edit /path/<Ctrl+r>=strftime("%Y")<CR>/file.txt  " insert current year
 :let var = <Ctrl+r>=line('.')*2<CR>  " multiply current line by 2
-```
 
-# Title: Insert word under cursor in command line
-# Category: Command Line Advanced
-# Tags: command-line, register, word, cursor, <C-r><C-w>
----
-Use `<C-r><C-w>` in command-line mode to insert the word under the cursor, perfect for quick substitutions.
-
-```vim
 " Position cursor on 'oldword' then:
 :%s//<C-r><C-w>/g     " substitute oldword with word under cursor
 :grep <C-r><C-w> **   " search for word under cursor in all files
@@ -39,7 +32,7 @@ Use different completion types for files, directories, and patterns.
 ```
 ***
 # Title: Command line history search and filtering
-# Category: Command Line Advanced  
+# Category: Command Line Advanced
 # Tags: history, search, filter, pattern
 ---
 Search and filter command history with patterns and ranges.
@@ -51,7 +44,7 @@ Search and filter command history with patterns and ranges.
 :history =                    " show expression history
 ```
 ***
-# Title: Command line range shortcuts  
+# Title: Command line range shortcuts
 # Category: Command Line Advanced
 # Tags: range, shortcut, selection, lines
 ---
@@ -176,7 +169,7 @@ Execute commands conditionally using expressions and logic.
 :try | source ~/.vimrc | catch | echo "Config error" | endtry
 ```
 ***
-# Title: Command line script execution  
+# Title: Command line script execution
 # Category: Command Line Advanced
 # Tags: script, execute, source, runtime
 ---

@@ -131,18 +131,6 @@ text    " type text to insert
 Esc     " apply to all selected lines
 ```
 ***
-# Title: Insert line numbers
-# Category: Text Manipulation  
-# Tags: numbers, lines, automatic, sequence
----
-Use `:put =range(1,10)` to insert numbers 1-10, or use visual block with `g<C-a>` to create sequences.
-
-```vim
-:put =range(1,10)        " insert numbers 1 through 10
-" Or select column with Ctrl+V, then:
-g<C-a>                   " increment each line by 1 more than previous
-```
-***
 # Title: Align numbers at decimal point
 # Category: Text Manipulation
 # Tags: align, numbers, decimal, format
@@ -236,18 +224,6 @@ j               " move down
 <C-a>           " increment number
 q               " stop recording
 @a              " execute macro to continue sequence
-```
-***
-# Title: Unique line removal
-# Category: Text Manipulation
-# Tags: unique, duplicate, remove, lines
----
-Remove duplicate lines while keeping unique entries using sort and uniq operations.
-
-```vim
-:%!sort | uniq       " sort and remove duplicates (external)
-:sort u              " sort and remove duplicates (internal)
-:%!uniq              " remove consecutive duplicates only
 ```
 ***
 # Title: Transpose characters

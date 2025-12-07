@@ -15,6 +15,8 @@ Integrate Git operations seamlessly with Neovim editing workflow.
 :terminal git log --oneline " view git log in terminal
 :terminal git commit        " interactive commit
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: System clipboard integration
 # Category: Integration
@@ -33,6 +35,8 @@ vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')  -- paste from system clipboard
 -- Check clipboard availability
 print(vim.fn.has('clipboard'))
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Terminal multiplexer integration
 # Category: Integration
@@ -52,6 +56,8 @@ Integrate with terminal multiplexers for enhanced workflow management.
 " Neovim terminal with tmux-like behavior
 vim.keymap.set('t', '<C-\\><C-n>', '<C-\\><C-n>')  -- escape terminal mode
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Browser and documentation integration
 # Category: Integration
@@ -79,6 +85,8 @@ function! OpenURL()
   endif
 endfunction
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Database integration and querying
 # Category: Integration
@@ -99,6 +107,8 @@ SELECT * FROM users;
 :let g:db = 'postgresql://localhost/mydb'
 :DB g:db SELECT COUNT(*) FROM products;
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: REST API testing integration
 # Category: Integration
@@ -123,8 +133,10 @@ Content-Type: application/json
 " Save API responses
 :r !curl -s https://api.github.com/users/octocat
 ```
+
+**Source:** ** Community contributed
 ***
-# Title: Docker and container integration  
+# Title: Docker and container integration
 # Category: Integration
 # Tags: docker, container, dockerfile, build, run
 ---
@@ -143,6 +155,8 @@ Integrate Docker operations with Neovim development workflow.
 " Edit files in running container
 :!docker exec -it container_name vi /app/config.yml
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Cloud platform integration
 # Category: Integration
@@ -164,6 +178,8 @@ Integrate with cloud platforms and infrastructure tools.
 :!terraform plan
 :!terraform apply
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Package manager integration
 # Category: Integration
@@ -186,6 +202,8 @@ Integrate with various package managers for dependency management.
 :!cargo test               " run tests
 :!cargo run                " run project
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Continuous Integration integration
 # Category: Integration
@@ -208,6 +226,8 @@ Integrate with CI/CD pipelines and automation systems.
 :!curl --header "PRIVATE-TOKEN: token" \
   "https://gitlab.com/api/v4/projects/ID/pipelines"
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Monitoring and logging integration
 # Category: Integration
@@ -230,8 +250,10 @@ function! AnalyzeLogs()
   :r !grep -c WARN logs/*.log
 endfunction
 ```
+
+**Source:** ** Community contributed
 ***
-# Title: Email and notification integration  
+# Title: Email and notification integration
 # Category: Integration
 # Tags: email, notification, alert, smtp, webhook
 ---
@@ -248,6 +270,8 @@ Send notifications and emails from Neovim for workflow automation.
 :!notify-send "Neovim" "Operation completed"  " Linux
 :!osascript -e 'display notification "Done" with title "Neovim"'  " macOS
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: SSH and remote development integration
 # Category: Integration
@@ -268,9 +292,11 @@ Integrate SSH operations for remote development workflows.
 :!ssh -L 8080:localhost:80 user@server -N -f  " create tunnel
 :!kill $(ps aux | grep 'ssh.*8080' | awk '{print $2}')  " close tunnel
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: External editor integration
-# Category: Integration  
+# Category: Integration
 # Tags: editor, external, gui, comparison, merge
 ---
 Integrate with external editors for specific tasks and workflows.
@@ -289,6 +315,8 @@ Integrate with external editors for specific tasks and workflows.
 :!libreoffice --writer %   " word processing
 :!typora %                 " markdown editor
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Build system integration
 # Category: Integration
@@ -311,6 +339,8 @@ Integrate with various build systems and compilation tools.
 :!./gradlew build         " gradle build
 :!mvn compile test        " maven compile and test
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Version control system integration
 # Category: Integration
@@ -334,6 +364,8 @@ Integrate with various version control systems beyond Git.
 :!p4 diff %               " show differences
 :!p4 submit               " submit changelist
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: API and webhook integration
 # Category: Integration
@@ -356,6 +388,8 @@ endfunction
 " Auto-update from API
 autocmd BufWritePost *.md call NotifyWebhook("Documentation updated")
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Development server integration
 # Category: Integration
@@ -376,6 +410,8 @@ autocmd BufWritePost *.py !touch /tmp/reload      " trigger reload
 " LiveReload integration
 :!livereload --wait 200 --extraExts 'vue,jsx'
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Issue tracking integration
 # Category: Integration
@@ -397,6 +433,8 @@ Integrate with issue tracking systems for development workflow.
 :r ~/.config/nvim/templates/bug-report.md
 :r ~/.config/nvim/templates/feature-request.md
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Documentation generation integration
 # Category: Integration
@@ -417,6 +455,8 @@ Integrate documentation generation tools with editing workflow.
 :!jsdoc -d docs/ src/     " generate JavaScript docs
 :!npm run docs            " run documentation build script
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Testing framework integration
 # Category: Integration
@@ -439,12 +479,15 @@ Integrate with various testing frameworks for efficient testing workflow.
 :!go test                 " run tests in current package
 :!go test -v ./...        " verbose tests for all packages
 ```
+
+**Source:** ** Community contributed
 ***
 # Title: Git integration with gitsigns plugin
 # Category: Integration
 # Tags: git, gitsigns, diff, blame, plugin
 ---
 Use Gitsigns plugin commands for advanced git integration directly in Neovim.
+**Note**: Requires gitsigns.nvim plugin to be installed.
 
 ```vim
 " Diff current buffer against previous version
@@ -460,5 +503,52 @@ Use Gitsigns plugin commands for advanced git integration directly in Neovim.
 :Gitsigns stage_hunk
 ```
 
-**Note**: Requires gitsigns.nvim plugin to be installed.
+**Source:** ** Community contributed
+***
+# Title: Launch Vim Inside Visual Studio
+# Category: integration
+# Tags: external-tools, ide-integration, windows
+---
+Use gVim's -P option to embed Vim as an MDI window in Visual Studio, allowing internal editing
+
+```vim
+gvim.exe -P "Microsoft Visual C++" --servername MDI_VIM
+```
+```lua
+-- Lua equivalent for command-line launch
+vim.fn.system({'gvim', '-P', 'Microsoft Visual C++', '--servername', 'MDI_VIM'})
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Calling_gvim_from_MS_Visual_Studio
+***
+# Title: Visual Studio .NET Vim Integration
+# Category: integration
+# Tags: external-tools, ide-integration
+---
+Enhanced Vim integration in Visual Studio .NET, with ability to launch selected files directly in Vim
+
+```vim
+gvim.exe +$(CurLine) "$(ItemPath)" --remote-tab-silent
+```
+```lua
+-- Lua equivalent for file launch
+vim.fn.system({'gvim', '+' .. vim.fn.line('.'), vim.fn.expand('%:p'), '--remote-tab-silent'})
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Calling_gvim_from_MS_Visual_Studio
+***
+# Title: Open Files in gVim from Source Navigator
+# Category: integration
+# Tags: external-tool, editor-integration, development
+---
+Configure Source-Navigator to open files directly in gVim with cursor positioning
+
+```vim
+gvim "+call cursor(%l,%c)" %f
+```
+```lua
+vim.fn.system('gvim "+call cursor(' .. line .. ',' .. col .. ')" ' .. filename)
+```
+
+**Source:** ** https://vim.fandom.com/wiki/Integrate_gvim_with_RedHat_Source-Navigator
 ***
