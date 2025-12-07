@@ -1584,28 +1584,6 @@ vim.api.nvim_buf_set_lines(0, 0, -1, false, {
 
 **Source:** ** https://vim.fandom.com/wiki/Keep_a_to-do_memo_file_with_links_as_in_Vim_help
 ***
-# Title: Generate Numbered Lists Quickly
-# Category: clever_tricks
-# Tags: list-generation, range, formatting
----
-Easily generate numbered lists or sequences with Vim's range() and put commands, with optional formatting
-
-```vim
-:put =range(11,15)
-:put =map(range(1,150), 'printf(''%04d'', v:val)')
-```
-```lua
--- Generate simple list
-vim.cmd.put(vim.fn.range(11, 15))
-
--- Generate formatted list with zero-padding
-vim.cmd.put(vim.fn.map(vim.fn.range(1, 150), function(k, v)
-  return string.format('%04d', v)
-end))
-```
-
-**Source:** ** https://vim.fandom.com/wiki/List_of_numbers
-***
 # Title: Dynamic ZIP Code Lookup in Vim
 # Category: clever_tricks
 # Tags: web-lookup, external-command, utility

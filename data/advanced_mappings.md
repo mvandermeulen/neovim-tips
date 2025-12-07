@@ -1394,38 +1394,6 @@ end)
 
 **Source:** ** https://vim.fandom.com/wiki/Change_visual_mode_paste_command_behaviour
 ***
-# Title: Create Custom Option Toggle Function
-# Category: advanced_mappings
-# Tags: key-mapping, function, toggle
----
-Demonstrates how to create a function to toggle options with user feedback
-
-```vim
-nnoremap <F12> :call ToggleMouse()<CR>
-function! ToggleMouse()
-  if &mouse == 'a'
-    set mouse=
-    echo "Mouse usage disabled"
-  else
-    set mouse=a
-    echo "Mouse usage enabled"
-  endif
-endfunction
-```
-```lua
-vim.keymap.set('n', '<F12>', function()
-  if vim.o.mouse == 'a' then
-    vim.o.mouse = ''
-    print('Mouse usage disabled')
-  else
-    vim.o.mouse = 'a'
-    print('Mouse usage enabled')
-  end
-end, { desc = 'Toggle mouse support' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Check_and_set_alternate_value_for_set_options
-***
 # Title: Quick Web Search from Vim
 # Category: advanced_mappings
 # Tags: search, web-integration, key-mapping
@@ -2801,25 +2769,6 @@ vim.keymap.set('n', '<S-F3>', generate_setter, { desc = 'Generate PHP Setter' })
 
 **Source:** ** https://vim.fandom.com/wiki/Generate_accessor_and_setter_methods_from_variable_names
 ***
-# Title: Quick XML Element Creation Mapping
-# Category: advanced_mappings
-# Tags: xml, text-expansion, insert-mode
----
-Quickly create XML elements from typed words using a custom insert mode mapping
-
-```vim
-imap ,,, <Esc>bdwa<<Esc>pa><CR></<Esc>pa><Esc>kA
-```
-```lua
-vim.keymap.set('i', ',,,', function()
-  local word = vim.fn.expand('<cword>')
-  vim.cmd('normal! diw')
-  vim.fn.feedkeys('<' .. word .. '>' .. '\n</' .. word .. '>', 'n')
-end, { buffer = true })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Generic_xml_imap_to_make_an_element_of_any_word_you_type
-***
 # Title: Access Python Documentation in Vim
 # Category: advanced_mappings
 # Tags: python, documentation, key-mapping
@@ -3746,21 +3695,6 @@ vim.keymap.set('n', '<Leader>j', _G.goto_jump, { desc = 'Navigate jump list' })
 
 **Source:** ** https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations
 ***
-# Title: Quick Macro Recording and Playback
-# Category: advanced_mappings
-# Tags: macros, productivity, key-mapping
----
-Simplify macro recording by using 'q' register and remap Q to play back the macro
-
-```vim
-nnoremap Q @q
-```
-```lua
-vim.keymap.set('n', 'Q', '@q', { desc = 'Play macro from q register' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Key_mappings
-***
 # Title: Disable Alt Key Menu Shortcuts in Vim
 # Category: advanced_mappings
 # Tags: key-mapping, configuration, input-handling
@@ -4618,40 +4552,6 @@ vim.keymap.set('n', '\\aa', ':TestOne<CR>')
 
 **Source:** ** https://vim.fandom.com/wiki/Maps,_Commands,_and_Functions_-_some_examples_of_their_interplay
 ***
-# Title: Toggle Long Line Highlighting
-# Category: advanced_mappings
-# Tags: line-length, mapping, toggle
----
-Create a toggle mapping to highlight lines exceeding textwidth dynamically
-
-```vim
-nnoremap <silent> <Leader>l
-      \ :if exists('w:long_line_match') <Bar>
-      \   silent! call matchdelete(w:long_line_match) <Bar>
-      \   unlet w:long_line_match <Bar>
-      \ elseif &textwidth > 0 <Bar>
-      \   let w:long_line_match = matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1) <Bar>
-      \ else <Bar>
-      \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
-      \ endif<CR>
-```
-```lua
-vim.keymap.set('n', '<Leader>l', function()
-  local match_exists = vim.w.long_line_match ~= nil
-  
-  if match_exists then
-    vim.fn.matchdelete(vim.w.long_line_match)
-    vim.w.long_line_match = nil
-  elseif vim.o.textwidth > 0 then
-    vim.w.long_line_match = vim.fn.matchadd('ErrorMsg', '\%>' .. vim.o.textwidth .. 'v.\+', -1)
-  else
-    vim.w.long_line_match = vim.fn.matchadd('ErrorMsg', '\%>80v.\+', -1)
-  end
-end, { desc = 'Toggle long line highlighting' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Match_long_lines
-***
 # Title: Enhanced Mouse Interaction in Vim
 # Category: advanced_mappings
 # Tags: mouse, visual-mode, key-mapping
@@ -5454,21 +5354,6 @@ end, { buffer = true })
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Quick_peek_at_files
-***
-# Title: Quick File Save Mapping
-# Category: advanced_mappings
-# Tags: key-mapping, file-operations, productivity
----
-Create a quick mapping to save the current file only if modified, reducing keystrokes for saving
-
-```vim
-noremap <Leader>s :update<CR>
-```
-```lua
-vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = 'Save file if modified' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Quick_save
 ***
 # Title: Quick Braces Insertion in Insert Mode
 # Category: advanced_mappings
@@ -6495,26 +6380,6 @@ end, { expr = true, desc = 'Smart closing parenthesis handling' })
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip630
 ***
-# Title: Quick Directory Change Mapping
-# Category: advanced_mappings
-# Tags: key-mapping, navigation, file-management
----
-Add a convenient mapping to change the working directory to the current file's directory
-
-```vim
-" Change directory to current file and show path
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-```
-```lua
--- Change directory to current file and show path
-vim.keymap.set('n', '<leader>cd', function()
-  vim.cmd.cd(vim.fn.expand('%:p:h'))
-  print(vim.fn.getcwd())
-end, { desc = 'Change directory to current file' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip64
-***
 # Title: Run Windows Program with K Keymap
 # Category: advanced_mappings
 # Tags: key-mapping, command-execution, windows
@@ -6725,26 +6590,6 @@ end
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip713
-***
-# Title: Quick File Backup Mapping
-# Category: advanced_mappings
-# Tags: file-operations, backup, key-mapping
----
-Creates a quick mapping to backup the current file without interrupting workflow
-
-```vim
-nnoremap <Leader>b :let x=&backup<Bar>set backup<Bar>write<Bar>let &backup=x<Bar>unlet x<Cr>
-```
-```lua
-vim.keymap.set('n', '<Leader>b', function()
-  local original_backup = vim.o.backup
-  vim.o.backup = true
-  vim.cmd.write()
-  vim.o.backup = original_backup
-end, { desc = 'Quick file backup' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip725
 ***
 # Title: Quick Uuencode/Decode Text in Vim
 # Category: advanced_mappings

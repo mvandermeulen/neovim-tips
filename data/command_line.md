@@ -302,26 +302,6 @@ end, { nargs = 1 })
 
 **Source:** ** https://vim.fandom.com/wiki/Avoid_hit_enter
 ***
-# Title: Silent External Command Execution
-# Category: command_line
-# Tags: shell, external-commands, ui
----
-Run external commands silently without interrupting the Vim interface
-
-```vim
-command! -nargs=1 Silent
-    \ execute 'silent !' . <q-args>
-    \ | execute 'redraw!'
-```
-```lua
-vim.api.nvim_create_user_command('Silent', function(opts)
-    vim.cmd('silent !' .. opts.args)
-    vim.cmd('redraw!')
-end, { nargs = 1 })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Avoiding_the_%22Hit_ENTER_to_continue%22_prompts
-***
 # Title: Powerful Global Command for Line Matching
 # Category: command_line
 # Tags: search, pattern-matching, editing
@@ -372,21 +352,6 @@ local escaped_cmd = vim.fn.shellescape(original_cmd)
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Cannot_create_temporary_file
-***
-# Title: Escape Shell Commands Properly
-# Category: command_line
-# Tags: shell-commands, escaping, security
----
-Properly escape shell commands with special characters to prevent errors, especially in Vim 7.3.845+
-
-```vim
-let escaped_command = shellescape(original_command)
-```
-```lua
-local escaped_command = vim.fn.shellescape(original_command)
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Cannot_open_temporary_file
 ***
 # Title: Capture Ex Command Output in New Tab
 # Category: command_line
@@ -522,67 +487,6 @@ end, {})
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Combine_quickfix_steps
-***
-# Title: Master Command-Line History Navigation
-# Category: command_line
-# Tags: history, productivity, navigation
----
-Efficiently navigate and edit previous commands using the command-line window, which allows full Vim editing capabilities for command recall
-
-```vim
-" Open command-line window for commands
-nnoremap : q:i
-
-" Open command-line window for searches
-nnoremap / q/i
-
-" Open command-line window for reverse searches
-nnoremap ? q?i
-```
-```lua
--- Open command-line windows with enhanced navigation
-vim.keymap.set('n', ':', function()
-  vim.cmd('q:i')
-end, { desc = 'Open command history window' })
-
-vim.keymap.set('n', '/', function()
-  vim.cmd('q/i')
-end, { desc = 'Open search history window' })
-
-vim.keymap.set('n', '?', function()
-  vim.cmd('q?i')
-end, { desc = 'Open reverse search history window' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Command-line_window
-***
-# Title: Keep Command Window Open After Execution
-# Category: command_line
-# Tags: workflow, automation, productivity
----
-Automatically reopen command window at the same line after executing a command, useful for repeating a series of commands
-
-```vim
-" Autocmd to keep command window open and track current line
-autocmd CmdwinEnter * nnoremap <buffer> <F5> :let g:CmdWindowLineMark=line(".")<CR><CR>q::execute "normal ".g:CmdWindowLineMark."G"<CR>
-```
-```lua
-vim.api.nvim_create_autocmd('CmdwinEnter', {
-  callback = function()
-    vim.keymap.set('n', '<F5>', function()
-      -- Store current line number
-      vim.g.CmdWindowLineMark = vim.fn.line('.')
-      -- Execute current line
-      vim.cmd('normal! \<CR>')
-      -- Reopen command window and go to stored line
-      vim.cmd('q:')
-      vim.cmd(string.format('normal! %dG', vim.g.CmdWindowLineMark))
-    end, { buffer = true })
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Command-line_window
 ***
 # Title: Remove Last Path Component in Command Line
 # Category: command_line
@@ -1502,24 +1406,6 @@ vim.cmd('make %:r')
 
 **Source:** ** https://vim.fandom.com/wiki/Make-compile_current_buffer
 ***
-# Title: Custom Make Command with Quickfix
-# Category: command_line
-# Tags: make, custom-commands, build-tools
----
-Create a custom Make command that automatically opens quickfix window with a specified height
-
-```vim
-command! -nargs=* Make make <args> | cwindow 3
-```
-```lua
-vim.api.nvim_create_user_command('Make', function(opts)
-  vim.cmd('make ' .. opts.args)
-  vim.cmd('cwindow 3')
-end, { nargs = '*' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Make_make_more_helpful
-***
 # Title: Compile Current File with Quickfix Support
 # Category: command_line
 # Tags: compilation, quickfix, make
@@ -2094,25 +1980,6 @@ end, {
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip591
-***
-# Title: Quick Python Code Execution in Vim
-# Category: command_line
-# Tags: python, execution, mapping
----
-Simple mappings to quickly run Python code or the current file
-
-```vim
-" Save and run current Python file
-noremap <F5> <ESC>:w<CR>:silent execute "!python %"<CR><CR>
-```
-```lua
-vim.keymap.set('n', '<F5>', function()
-  vim.cmd('write')  -- Save current file
-  vim.cmd('!python %')  -- Execute current file
-end, { desc = 'Run current Python file' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip609
 ***
 # Title: Command Window Ctrl-D Completion
 # Category: command_line

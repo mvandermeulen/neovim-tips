@@ -582,27 +582,6 @@ vim.opt.foldmethod = 'syntax'
 
 **Source:** ** https://vim.fandom.com/wiki/Fold_away_empty_lines
 ***
-# Title: Advanced Syntax Folding for Java Files
-# Category: folding
-# Tags: syntax-folding, code-organization, java
----
-Custom syntax regions for folding Java methods, constructors, enums, and comments with intelligent fold creation
-
-```vim
-" Fold Java code sections
-syn region javaFuncDef start="^\z(\s*\)\%(@[A-Z]\k*\%((\_.\{-}\))\?\s*\)*\%(.*)\s*{" end="^\z1}\s*$" keepend transparent fold
-
-syn region javaConstructorDef start="^\z(\s*\)\(public\|protected\|private\)\?[ \n]\+[A-Z][A-Za-z0-9_$]*[ \n]*(.*)" end="^\z1}$" keepend transparent fold
-```
-```lua
--- Advanced Java syntax folding
-vim.cmd[[syn region javaFuncDef start="^\z(\s*\)\%(@[A-Z]\k*\%((\_.\{-}\))\?\s*\)*\%(.*)\s*{" end="^\z1}\s*$" keepend transparent fold]]
-
-vim.cmd[[syn region javaConstructorDef start="^\z(\s*\)\(public\|protected\|private\)\?[ \n]\+[A-Z][A-Za-z0-9_$]*[ \n]*(.*)" end="^\z1}$" keepend transparent fold]]
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Fold_braces_and_javadoc
-***
 # Title: Custom Java Folding with Expression Function
 # Category: folding
 # Tags: custom-folding, java, code-organization
@@ -998,23 +977,6 @@ end, {})
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Folding_with_regex
-***
-# Title: Flexible Folding Methods in Neovim
-# Category: folding
-# Tags: code-navigation, productivity, fold-management
----
-Neovim supports multiple folding methods to help organize and navigate code, allowing users to collapse code sections based on syntax, indent, markers, or manual selection
-
-```vim
-set foldmethod=indent
-set foldnestmax=3
-```
-```lua
-vim.opt.foldmethod = 'indent'
-vim.opt.foldnestmax = 3
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Hide/show_parts_of_your_code
 ***
 # Title: Flexible Folding Methods in Neovim
 # Category: folding

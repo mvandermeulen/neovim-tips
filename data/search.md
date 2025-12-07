@@ -710,30 +710,6 @@ vim.cmd('s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/')
 
 **Source:** ** https://vim.fandom.com/wiki/Exchanging/swapping_adjacent_words
 ***
-# Title: Advanced Search with Case Sensitivity Controls
-# Category: search_replace
-# Tags: search, case-sensitivity, configuration
----
-Configure search behavior to handle case sensitivity intelligently, with smart case matching and per-pattern case control
-
-```vim
-set ignorecase
-set smartcase
-
-" Force case sensitivity per search
-/the\c   " case insensitive
-/the\C   " case sensitive
-```
-```lua
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
--- Note: In Lua, use vim.fn.search() for more complex regex searches
--- \c and \C work the same in both Vim and Neovim
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Find
-***
 # Title: Incremental Search with Live Preview
 # Category: search_replace
 # Tags: search, ui, productivity
@@ -795,21 +771,6 @@ vim.cmd(':%s/\<foo\>/bar/gc')
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Find_and_replace
-***
-# Title: Recursive File Search with Vim
-# Category: search_replace
-# Tags: search, files, recursive
----
-Search for patterns recursively across multiple files using Vim's built-in search commands
-
-```vim
-:vimgrep /dostuff()/j ../**/*.c
-```
-```lua
-vim.cmd('noautocmd vimgrep /dostuff()/j ../**/*.c')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Find_in_files_recursively
 ***
 # Title: Speed Up Recursive Searches
 # Category: search_replace
@@ -935,35 +896,6 @@ vim.opt.smartcase = true
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/From_Vim_Help/2008
-***
-# Title: Global Command for Powerful Text Manipulation
-# Category: search_replace
-# Tags: ex-commands, text-processing, global-command
----
-The :g command allows executing Ex commands on lines matching a pattern, enabling complex text transformations in a single operation
-
-```vim
-# Delete all lines containing 'pattern'
-:g/pattern/d
-# Delete all lines NOT containing 'pattern'
-:g!/pattern/d
-# Copy all matching lines to end of file
-:g/pattern/t$
-# Increment numbers at line start
-:.,$g/^\d/exe "normal! \<C-A>"
-```
-```lua
--- Delete lines containing 'pattern'
-vim.cmd('g/pattern/d')
--- Delete lines NOT containing 'pattern'
-vim.cmd('g!/pattern/d')
--- Copy matching lines to end of file
-vim.cmd('g/pattern/t$')
--- Increment numbers at line start
-vim.cmd(':.,$g/^\d/exe "normal! \<C-A>"')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/G
 ***
 # Title: Remove Duplicate Lines Efficiently
 # Category: search_replace
@@ -2192,23 +2124,6 @@ vim.cmd('%s/\v(\d)(\d)/[\1][\2]')
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip654
-***
-# Title: Quick HTML Attribute Quoting
-# Category: search_replace
-# Tags: html, regex, text-transformation
----
-Automatically add quotes to unquoted HTML attributes in a file
-
-```vim
-map <F9> :%s/\([^&^?]\)\(\<[[:alnum:]-]\{-}\)=\([[:alnum:]-#%]\+\)/\1\2="\3"/g<CR>
-```
-```lua
-vim.keymap.set('n', '<F9>', function()
-  vim.cmd('%s/\v([^&^?])(\w+)=(\w+)/\1\2="\3"/g')
-end, { desc = 'Quote unquoted HTML attributes' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip662
 ***
 # Title: Flexible CSV Column Search and Manipulation
 # Category: search_replace

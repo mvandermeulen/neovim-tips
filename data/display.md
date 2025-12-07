@@ -912,21 +912,6 @@ setup_whitespace_highlight()
 
 **Source:** ** https://vim.fandom.com/wiki/Highlighting_whitespaces_at_end_of_line
 ***
-# Title: Ignore Whitespace in Diff Mode
-# Category: display
-# Tags: diff, whitespace, comparison
----
-Ignore trivial whitespace changes when comparing files in diff mode, reducing visual noise
-
-```vim
-set diffopt+=iwhite
-```
-```lua
-vim.opt.diffopt:append('iwhite')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Ignore_whitespace_in_diff_operations
-***
 # Title: Print with Line Numbers
 # Category: display
 # Tags: printing, configuration
@@ -977,36 +962,6 @@ vim.api.nvim_create_autocmd({'BufEnter', 'WinEnter', 'WinNew', 'VimResized'}, {
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
-***
-# Title: Auto Highlight Current Word When Idle
-# Category: display
-# Tags: highlight, search, productivity
----
-Automatically highlight the word under cursor when editor is idle
-
-```vim
-autocmd CursorHold * set cursorline
-autocmd CursorMoved * set nocursorline
-```
-```lua
-vim.api.nvim_create_augroup('AutoHighlight', { clear = true })
-vim.api.nvim_create_autocmd('CursorHold', {
-  group = 'AutoHighlight',
-  pattern = '*',
-  callback = function()
-    vim.opt.cursorline = true
-  end
-})
-vim.api.nvim_create_autocmd('CursorMoved', {
-  group = 'AutoHighlight',
-  pattern = '*',
-  callback = function()
-    vim.opt.cursorline = false
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Local_Sitemap
 ***
 # Title: Force Redraw to Prevent Message Disappearance
 # Category: display
@@ -1188,29 +1143,6 @@ vim.keymap.set('n', '<A-F8>', function()
 end, { desc = 'Random color scheme' })
 
 -- Use :SetColors command as in Vimscript
-```
-
-**Source:** ** https://vim.fandom.com/wiki/One_page_summary_of_color_schemes
-***
-# Title: Time-Based Color Scheme Selection
-# Category: display
-# Tags: color-schemes, ui, time-based
----
-Automatically change color scheme based on time of day, providing visual variety and reducing eye strain
-
-```vim
-" Set color scheme based on time of day
-:SetColors now
-
-" Customize time-based color schemes
-let nowcolors = 'breeze earth less aqua gothic'
-```
-```lua
--- Lua equivalent for time-based color schemes
-vim.cmd('SetColors now')
-
--- Customize time-based color schemes
-vim.g.nowcolors = 'breeze earth less aqua gothic'
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/One_page_summary_of_color_schemes

@@ -237,24 +237,6 @@ end, { desc = 'Format text with Par' })
 
 **Source:** ** https://vim.fandom.com/wiki/Awesome_text_formatter
 ***
-# Title: Unicode Text Formatting Workaround
-# Category: formatting
-# Tags: unicode, text-processing, encoding
----
-Handle Unicode text formatting by using iconv for encoding conversion
-
-```vim
-" Use iconv to handle Unicode formatting
-" cat <file> | iconv -f utf-8 -t <encoding> | par <options> | iconv -f <encoding> -t utf-8
-```
-```lua
--- Unicode formatting workaround
--- Requires external shell command
--- vim.fn.system('cat file | iconv -f utf-8 -t encoding | par options | iconv -f encoding -t utf-8')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Awesome_text_formatter
-***
 # Title: Clean Up HTML Files with Tidy
 # Category: formatting
 # Tags: html, formatting, external-tool
@@ -707,30 +689,6 @@ end
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Regex-based_text_alignment
-***
-# Title: Automatically Indent XML Files
-# Category: formatting
-# Tags: xml, indentation, autocmd
----
-Automatically indent XML files using XSLT when loaded in Vim/Neovim
-
-```vim
-if version >= 540
-  augroup filetype
-    autocmd FileType xml '[,']!xsltproc indent.xsl %
-  augroup END
-endif
-```
-```lua
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'xml',
-  callback = function()
-    vim.cmd(':%!xsltproc indent.xsl %')
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip551
 ***
 # Title: Quick XML/HTML Indentation Trick
 # Category: formatting

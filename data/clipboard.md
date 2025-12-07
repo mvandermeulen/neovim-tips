@@ -480,29 +480,6 @@ vim.keymap.set('n', '<leader>p', Getclip)
 
 **Source:** ** https://vim.fandom.com/wiki/Copying_to_the_Windows_clipboard_from_Cygwin_vim
 ***
-# Title: Cross-Platform System Clipboard Integration
-# Category: clipboard
-# Tags: system-clipboard, cross-platform, copy
----
-Easily copy and paste using system clipboard registers with simple commands
-
-```vim
-" Copy to system clipboard
-"*y  " yank to clipboard
-"*p  " paste from clipboard
-```
-```lua
--- System clipboard integration in Neovim
--- Requires clipboard support
-vim.opt.clipboard = 'unnamedplus'
-
--- Optional mapping for easier clipboard access
-vim.keymap.set({'n', 'v'}, '<leader>y', '"*y', { desc = 'Yank to system clipboard' })
-vim.keymap.set({'n', 'v'}, '<leader>p', '"*p', { desc = 'Paste from system clipboard' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Cut/copy_and_paste_using_visual_selection
-***
 # Title: Easy Windows Clipboard Interaction
 # Category: clipboard
 # Tags: clipboard, register, cross-platform

@@ -537,25 +537,3 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 
 **Source:** ** https://vim.fandom.com/wiki/Allow_Inform_header_files_to_be_distinguished_from_C_headers
 ***
-# Title: Detect Perl Batch Files in Vim
-# Category: filetype
-# Tags: file-detection, syntax-detection, filetype
----
-Automatically detect and set filetype for Perl batch files using a custom filetype detection rule
-
-```vim
-au BufRead,BufNewFile *.bat 	if getline(1) =~ '--*-Perl-*--' | setf perl | endif
-```
-```lua
-vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
-  pattern = '*.bat',
-  callback = function()
-    if vim.fn.getline(1):match('--*-Perl-*--') then
-      vim.bo.filetype = 'perl'
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip638
-***

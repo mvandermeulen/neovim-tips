@@ -460,26 +460,6 @@ vim.fn.setreg('A', vim.fn.getline('.'), 'l')
 
 **Source:** ** https://vim.fandom.com/wiki/Moving_lines_up_or_down
 ***
-# Title: Append Multiple Lines to a Register
-# Category: registers
-# Tags: editing, advanced-editing, text-manipulation
----
-Technique for collecting multiple lines into a single register by using uppercase register names for appending
-
-```vim
-" Move to first line: "add
-" Move to next line: "Add
-" Continue appending: "Add
-" Paste with "ap
-```
-```lua
--- Note: This is a Vim editing technique, Lua equivalent would use similar Vim commands
--- vim.cmd('norm "add')
--- vim.cmd('norm "Add')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Moving_lines_up_or_down_in_a_file
-***
 # Title: Translate Null Characters in Vim Registers
 # Category: registers
 # Tags: debugging, register-manipulation, string-translation
@@ -635,26 +615,6 @@ q     " Stop recording
 -- Lua equivalent requires manual implementation
 -- Use vim.fn.execute() for macro playback
 -- Recommended to use :normal for similar tasks in Neovim
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Record_a_recursive_marco
-***
-# Title: Append to Macro Registers Safely
-# Category: registers
-# Tags: macro, register-manipulation
----
-Technique to safely append to an existing macro by using uppercase register name, which allows adding recursive call without overwriting
-
-```vim
-qQ    " Append to register q
-@q    " Execute current macro contents
-q     " Stop recording
-```
-```lua
--- Use vim.fn.setreg() to append to registers
--- Example:
-local current_macro = vim.fn.getreg('q')
-vim.fn.setreg('q', current_macro .. '@q')
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Record_a_recursive_marco

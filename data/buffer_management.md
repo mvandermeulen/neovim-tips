@@ -1185,37 +1185,6 @@ vim.keymap.set('n', '<C-p>', function() _G.switch_to_next_buffer(-1) end, { sile
 
 **Source:** ** https://vim.fandom.com/wiki/Cycle_through_buffers_including_hidden_buffers
 ***
-# Title: Handle Modified Buffers Flexibly
-# Category: buffer_management
-# Tags: buffer-settings, workflow, modification-handling
----
-Three strategies for handling modified buffers when switching: force switch, keep changes hidden, or auto-save
-
-```vim
-" Option 1: Force switch with ! (discard changes)
-:bnext!
-
-" Option 2: Keep changes hidden
-:set hidden
-
-" Option 3: Auto-save changes
-:set autowrite
-:set autowriteall
-```
-```lua
--- Option 1: Force switch (discard changes)
--- Use :bnext! directly
-
--- Option 2: Keep changes hidden
-vim.opt.hidden = true
-
--- Option 3: Auto-save changes
-vim.opt.autowrite = true
-vim.opt.autowriteall = true
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Cycle_through_buffers_including_hidden_buffers
-***
 # Title: Delete Buffer Without Closing Window
 # Category: buffer_management
 # Tags: buffer, window-layout, workflow
@@ -1253,33 +1222,6 @@ vim.keymap.set('n', '<leader>bd', _G.bclose, { desc = 'Close buffer without clos
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Deleting_a_buffer_without_changing_your_window_layout
-***
-# Title: Delete Buffer Without Closing Window
-# Category: buffer_management
-# Tags: buffer, window, workflow
----
-A custom command to delete a buffer while preserving window layout, with flexible handling of alternate buffers
-
-```vim
-" Delete buffer while keeping window layout
-command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
-
-" Optional mapping
-nnoremap <silent> <Leader>bd :Bclose<CR>
-```
-```lua
--- Lua equivalent requires more custom function implementation
-local function bclose(bang, buffer)
-  -- Similar logic to Vimscript implementation
-  vim.api.nvim_create_user_command('Bclose', function(opts)
-    -- Implement buffer deletion logic
-  end, { bang = true, nargs = '?', complete = 'buffer' })
-
-  vim.keymap.set('n', '<Leader>bd', ':Bclose<CR>', { silent = true })
-end
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
 ***
 # Title: Diff Current Buffer with Saved File
 # Category: buffer_management
@@ -1443,71 +1385,6 @@ end, { desc = 'List and switch buffers' })
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Easier_buffer_switching
-***
-# Title: Cycle Through Buffers Efficiently
-# Category: buffer_management
-# Tags: buffer-navigation, key-mapping, cycling
----
-Advanced buffer cycling that handles unlisted buffers and maintains buffer type context
-
-```vim
-function! SwitchToNextBuffer(incr)
-  let help_buffer = (&filetype == 'help')
-  let current = bufnr("%")
-  let last = bufnr("$")
-  let new = current + a:incr
-  while 1
-    if new != 0 && bufexists(new) && ((getbufvar(new, "&filetype") == 'help') == help_buffer)
-      execute ":buffer ".new
-      break
-    else
-      let new = new + a:incr
-      if new < 1
-        let new = last
-      elseif new > last
-        let new = 1
-      endif
-      if new == current
-        break
-      endif
-    endif
-  endwhile
-endfunction
-nnoremap <silent> <C-n> :call SwitchToNextBuffer(1)<CR>
-nnoremap <silent> <C-p> :call SwitchToNextBuffer(-1)<CR>
-```
-```lua
-function _G.switch_to_next_buffer(incr)
-  local help_buffer = vim.bo.filetype == 'help'
-  local current = vim.fn.bufnr('%')
-  local last = vim.fn.bufnr('$')
-  local new = current + incr
-  
-  while true do
-    if new ~= 0 and vim.fn.bufexists(new) and 
-       (vim.fn.getbufvar(new, '&filetype') == 'help') == help_buffer then
-      vim.cmd('buffer ' .. new)
-      break
-    else
-      new = new + incr
-      if new < 1 then
-        new = last
-      elseif new > last then
-        new = 1
-      end
-      
-      if new == current then
-        break
-      end
-    end
-  end
-end
-
-vim.keymap.set('n', '<C-n>', function() _G.switch_to_next_buffer(1) end, { silent = true })
-vim.keymap.set('n', '<C-p>', function() _G.switch_to_next_buffer(-1) end, { silent = true })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Easier_buffer_switching_with_buffer_listing
 ***
 # Title: Automatically Switch to Existing Vim Instance
 # Category: buffer_management

@@ -381,22 +381,6 @@ vim.keymap.set('n', 'L', 'L', { desc = 'Move to bottom of screen' })
 
 **Source:** ** https://vim.fandom.com/wiki/All_the_right_moves
 ***
-# Title: Advanced Cursor Jumping Techniques
-# Category: navigation
-# Tags: search, jump, cursor-movement
----
-Powerful cursor jumping methods for quick navigation within and between files
-
-```lua
--- Advanced jumping techniques
-vim.keymap.set('n', '*', '*', { desc = 'Next whole word under cursor' })
-vim.keymap.set('n', '#', '#', { desc = 'Previous whole word under cursor' })
-vim.keymap.set('n', 'gd', 'gd', { desc = 'Go to definition/first occurrence' })
-vim.keymap.set('n', '%', '%', { desc = 'Jump to matching bracket' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/All_the_right_moves
-***
 # Title: Efficient Tab Navigation Shortcuts
 # Category: navigation
 # Tags: key-mapping, tab-management, productivity
@@ -940,26 +924,6 @@ vim.env.mydir = 'C:/Documents and Settings/My Name/My Documents'
 
 **Source:** ** https://vim.fandom.com/wiki/Edit_file_under_cursor_after_a_horizontal_split
 ***
-# Title: Use Alt/Meta Keys for Quick Navigation
-# Category: navigation
-# Tags: terminal, navigation, shortcuts
----
-In terminal Vim, use Alt/Meta key combinations to quickly navigate and perform actions without leaving insert mode
-
-```vim
-" No direct Vimscript mapping needed - terminal-dependent"
-```
-```lua
--- Terminal-specific: Alt+key combinations work in most terminals
--- Examples:
--- Alt+h moves left
--- Alt+j moves down
--- Alt+k moves up
--- Alt+l moves right
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Esc
-***
 # Title: Fast Jump to PHP Variables on a Line
 # Category: navigation
 # Tags: php, movement, key-mapping
@@ -1342,29 +1306,6 @@ vim.keymap.set('n', '}', '}')  -- Move to next paragraph
 
 **Source:** ** https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi
 ***
-# Title: Efficient Tab Page Navigation
-# Category: navigation
-# Tags: tabs, window-management, key-mapping
----
-Provides quick and intuitive navigation between tab pages using keyboard shortcuts
-
-```vim
-" Tab navigation shortcuts
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :tabm -1<CR>
-nnoremap <silent> <A-Right> :tabm +1<CR>
-```
-```lua
--- Tab navigation shortcuts
-vim.keymap.set('n', '<C-Left>', ':tabprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-Right>', ':tabnext<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-Left>', ':tabm -1<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-Right>', ':tabm +1<CR>', { noremap = true, silent = true })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Introduction_to_using_tab_pages
-***
 # Title: Quick Recovery When Spell Checking
 # Category: navigation
 # Tags: spell-checking, text-editing, navigation
@@ -1602,26 +1543,6 @@ vim.keymap.set('n', 'Ü', '<C-O>', { desc = 'Jump back from help tag' })
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Jump_to_tag_(help_topic)_with_German_keyboard
-***
-# Title: Navigate Jump List Efficiently
-# Category: navigation
-# Tags: jump-list, navigation, movement
----
-Quickly navigate through previously visited locations in Vim using jump list commands
-
-```vim
-" Jump back: Ctrl-O
-" Jump forward: Ctrl-I (Tab)
-" Show jump list: :jumps
-```
-```lua
--- Vim keybindings work the same in Neovim
--- Lua equivalent would be to keep existing mappings
-vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Jump back in jump list' })
-vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jump forward in jump list' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Jumping_to_previously_visited_locations
 ***
 # Title: Use g; and g, for Edit Location Navigation
 # Category: navigation
@@ -1924,27 +1845,6 @@ runtime macros/matchit.vim
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Match_it
-***
-# Title: Enhanced Matching with % Key
-# Category: navigation
-# Tags: movement, text-objects, advanced-navigation
----
-Use % key to jump between matching brackets, comments, and language-specific keywords beyond simple brace matching
-
-```vim
-" Enable matchit.vim for extended % matching
-runtime macros/matchit.vim
-```
-```lua
--- In Neovim, can use built-in matchit or treesitter for enhanced matching
-require('nvim-treesitter.configs').setup({
-  matchup = {
-    enable = true,
-  }
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Matchit
 ***
 # Title: Move Cursor by Display Lines in Wrapped Text
 # Category: navigation
@@ -2999,21 +2899,6 @@ end, { desc = 'Conditional tag jump' })
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip453
-***
-# Title: Open Tag in Split Window
-# Category: navigation
-# Tags: tag-navigation, window-management
----
-Quickly open a tag definition in a new split window while keeping the original window intact
-
-```vim
-:map <C-\> :sp<CR><C-]><C-w>_
-```
-```lua
-vim.keymap.set('n', '<C-\>', ':sp<CR><C-]><C-w>_', { desc = 'Open tag in new split window' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip457
 ***
 # Title: Quickly Open Perl Module Source
 # Category: navigation

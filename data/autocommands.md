@@ -1379,46 +1379,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
 
 **Source:** ** https://vim.fandom.com/wiki/Automatically_quit_Vim_if_quickfix_window_is_the_last
 ***
-# Title: Automatically Refresh Firefox When Saving HTML/CSS
-# Category: autocmds
-# Tags: web-development, automation, browser-integration
----
-Automatically reload Firefox and preserve scroll position when saving HTML/CSS files, eliminating manual browser refresh
-
-```vim
-autocmd BufWriteCmd *.html,*.css,*.gtpl :call Refresh_firefox()
-function! Refresh_firefox()
-  if &modified
-    write
-    silent !echo  'vimYo = content.window.pageYOffset;
-          \ vimXo = content.window.pageXOffset;
-          \ BrowserReload();
-          \ content.window.scrollTo(vimXo,vimYo);
-          \ repl.quit();'  |
-          \ nc -w 1 localhost 4242 2>&1 > /dev/null
-  endif
-endfunction
-```
-```lua
-vim.api.nvim_create_autocmd('BufWriteCmd', {
-  pattern = {'*.html', '*.css', '*.gtpl'},
-  callback = function()
-    if vim.bo.modified then
-      vim.cmd.write()
-      vim.fn.system(
-        'echo "vimYo = content.window.pageYOffset; ' ..
-        'vimXo = content.window.pageXOffset; ' ..
-        'BrowserReload(); ' ..
-        'content.window.scrollTo(vimXo,vimYo); ' ..
-        'repl.quit();" | nc -w 1 localhost 4242 2>&1 > /dev/null'
-      )
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Automatically_refresh_display_of_html_on_saving_file
-***
 # Title: Automatically Sort and Deduplicate Quickfix List
 # Category: autocmds
 # Tags: quickfix, sorting, deduplication
@@ -2465,66 +2425,6 @@ vim.api.nvim_create_autocmd('WinEnter', {
 
 **Source:** ** https://vim.fandom.com/wiki/How_to_Have_a_Vim_Rave
 ***
-# Title: Automatic Binary File Hex Mode Detection
-# Category: autocmds
-# Tags: file-detection, binary-files, autocmd
----
-Automatically detect and convert binary files to hex mode on read, with proper handling of file writes and conversions
-
-```vim
-augroup Binary
-  au!
-  au BufReadPre *.bin,*.hex setlocal binary
-  au BufReadPost *
-        \ if &binary | Hexmode | endif
-  au BufWritePre *
-        \ if exists("b:editHex") && b:editHex && &binary |
-        \  let oldro=&ro | let &ro=0 |
-        \  let oldma=&ma | let &ma=1 |
-        \  silent exe "%!xxd -r" |
-        \  let &ma=oldma | let &ro=oldro |
-        \ endif
-augroup END
-```
-```lua
--- Automatic Binary File Hex Mode Detection
-vim.api.nvim_create_augroup('BinaryFileHandler', { clear = true })
-
-vim.api.nvim_create_autocmd({'BufReadPre'}, {
-  pattern = {'*.bin', '*.hex'},
-  group = 'BinaryFileHandler',
-  callback = function()
-    vim.bo.binary = true
-  end
-})
-
-vim.api.nvim_create_autocmd({'BufReadPost'}, {
-  group = 'BinaryFileHandler',
-  callback = function()
-    if vim.bo.binary then
-      vim.cmd('HexMode')
-    end
-  end
-})
-
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
-  group = 'BinaryFileHandler',
-  callback = function()
-    if vim.b.edit_hex and vim.bo.binary then
-      local readonly = vim.bo.readonly
-      local modifiable = vim.bo.modifiable
-      vim.bo.readonly = false
-      vim.bo.modifiable = true
-      vim.cmd('%!xxd -r')
-      vim.bo.readonly = readonly
-      vim.bo.modifiable = modifiable
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Improved_Hex_editing
-***
 # Title: Automatic Hex Mode for Binary Files
 # Category: autocmds
 # Tags: binary-files, file-detection, auto-conversion
@@ -2963,51 +2863,6 @@ vim.opt.shortmess:append('A')
 
 **Source:** ** https://vim.fandom.com/wiki/Open_same_file_read-only_in_second_Vim
 ***
-# Title: Restore Last Edited File and Cursor Position
-# Category: autocmds
-# Tags: session-management, cursor-position, file-history
----
-Automatically open the last edited file and restore cursor position when launching Vim without arguments
-
-```vim
-" Go to last file if invoked without arguments
-autocmd VimEnter * nested if
-  \ argc() == 0 &&
-  \ bufname("%") == "" &&
-  \ bufname(2) != "" |
-  \   exe "normal! `0" |
-  \ endif
-
-" Restore cursor position
-autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
-```
-```lua
-vim.api.nvim_create_autocmd('VimEnter', {
-  nested = true,
-  callback = function()
-    if vim.fn.argc() == 0 and
-       vim.fn.bufname('%') == '' and
-       vim.fn.bufname(2) ~= '' then
-      vim.cmd('normal! `0')
-    end
-  end
-})
-
-vim.api.nvim_create_autocmd('BufReadPost', {
-  callback = function()
-    local last_pos = vim.fn.line("'\"")
-    if last_pos > 1 and last_pos <= vim.fn.line('$') then
-      vim.cmd('normal! g`"')
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Open_the_last_edited_file
-***
 # Title: Automatic Tags Generation for Python Projects
 # Category: autocmds
 # Tags: tags, python, file-management
@@ -3381,32 +3236,6 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip45
 ***
-# Title: Dynamically Rename Konsole Tab in Vim
-# Category: autocmds
-# Tags: terminal, integration, session-management
----
-Automatically rename Konsole tab to current file name or working directory when editing files or exiting Vim
-
-```vim
-autocmd BufReadPost * :silent !dcop $KONSOLE_DCOP_SESSION renameSession %
-autocmd VimLeavePre * :silent !dcop $KONSOLE_DCOP_SESSION renameSession $PWD
-```
-```lua
-vim.api.nvim_create_autocmd('BufReadPost', {
-  callback = function()
-    os.execute('dcop $KONSOLE_DCOP_SESSION renameSession ' .. vim.fn.expand('%'))
-  end
-})
-
-vim.api.nvim_create_autocmd('VimLeavePre', {
-  callback = function()
-    os.execute('dcop $KONSOLE_DCOP_SESSION renameSession ' .. os.getenv('PWD'))
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip451
-***
 # Title: Auto-Close Quickfix Window When Last Buffer
 # Category: autocmds
 # Tags: window-management, quickfix, buffer-cleanup
@@ -3502,40 +3331,4 @@ vim.api.nvim_create_autocmd('BufWriteCmd', {
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip692
-***
-# Title: Conditional File Encoding Auto-Command
-# Category: autocmds
-# Tags: file-encoding, buffer-management, error-handling
----
-Safely set file encoding for specific file types while avoiding 'nomodifiable' buffer errors
-
-```vim
-function! Noma_workaround()
-  if &modifiable
-    set tw=77 ai nocindent fileencoding=iso-8859-1
-  else
-    set tw=77 ai nocindent
-  endif
-endfunction
-au BufNewFile,BufRead mutt*,*.txt,*/.followup call Noma_workaround()
-```
-```lua
-vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
-  pattern = {'mutt*', '*.txt', '*/.followup'},
-  callback = function()
-    if vim.bo.modifiable then
-      vim.opt.textwidth = 77
-      vim.opt.autoindent = true
-      vim.opt.cindent = false
-      vim.opt.fileencoding = 'iso-8859-1'
-    else
-      vim.opt.textwidth = 77
-      vim.opt.autoindent = true
-      vim.opt.cindent = false
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip727
 ***

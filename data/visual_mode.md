@@ -216,39 +216,6 @@ end, { desc = 'Comment visual block' })
 
 **Source:** ** https://vim.fandom.com/wiki/Comment/UnComment_visually_selected_text
 ***
-# Title: Visual Selection Case Conversion
-# Category: visual_mode
-# Tags: text-transformation, case-conversion, visual-mode
----
-Convert case styles within visual selections or entire lines
-
-```vim
-function! s:Camelize(range) abort
-  if a:range == 0
-    s#\(\%\(\<\l\+\)\%\(_\)\@=\)\|_\(\l\)#\u\1\2#g
-  else
-    s#\%V\(\%\(\<\l\+\)\%\(_\)\@=\)\|_\(\l\)\%V#\u\1\2#g
-  endif
-endfunction
-
-command! -range CamelCase silent! call <SID>Camelize(<range>)
-```
-```lua
-local function camelize(range)
-  if range == 0 then
-    vim.cmd('s#\(\%\(\<\l\+\)\%\(_\)\@=\)\|_\(\l\)#\u\1\2#g')
-  else
-    vim.cmd('s#\%V\(\%\(\<\l\+\)\%\(_\)\@=\)\|_\(\l\)\%V#\u\1\2#g')
-  end
-end
-
-vim.api.nvim_create_user_command('CamelCase', function(opts)
-  camelize(opts.range)
-end, { range = true })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Converting_variables_to_or_from_camel_case
-***
 # Title: Powerful Visual Selection and Paste Techniques
 # Category: visual_mode
 # Tags: visual-selection, copy-paste, editing

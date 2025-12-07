@@ -1,43 +1,3 @@
-# Title: Advanced PHP Function Documentation Viewer
-# Category: advanced_functions
-# Tags: documentation, function-lookup, split-window
----
-Create a custom function to open PHP function documentation in a preview window with clean formatting
-
-```vim
-function! OpenPhpFunction (keyword)
-  let proc_keyword = substitute(a:keyword , '_', '-', 'g')
-  exe 'pedit'
-  exe 'wincmd P'
-  exe 'enew'
-  exe "set buftype=nofile"
-  exe 'silent r!lynx -dump -nolist http://php.net/'.proc_keyword
-  " Additional formatting commands...
-endfunction
-```
-```lua
-function _G.open_php_function(keyword)
-  local proc_keyword = keyword:gsub('_', '-')
-  vim.cmd('pedit')
-  vim.cmd('wincmd P')
-  vim.cmd('enew')
-  vim.bo.buftype = 'nofile'
-  vim.fn.system('lynx -dump -nolist http://php.net/' .. proc_keyword)
-end
-
--- Map to a key in PHP files
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'php',
-  callback = function()
-    vim.keymap.set('n', 'K', function()
-      _G.open_php_function(vim.fn.expand('<cword>'))
-    end, { buffer = true })
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/(PHP)_on_line_help
-***
 # Title: Automatic Java Import Generation
 # Category: advanced_functions
 # Tags: java, import-management, productivity
@@ -641,48 +601,6 @@ end
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Moving_specified_Characters_in_a_given_range_of_line_to_specified_Column
-***
-# Title: Extract Text from HTML Files
-# Category: advanced_functions
-# Tags: html-parsing, text-extraction, utility-function
----
-Create a function to extract and view plain text from HTML files or URLs using a text-based browser like elinks
-
-```vim
-function! ViewHtmlText(url)
-  if !empty(a:url)
-    new
-    setlocal buftype=nofile bufhidden=hide noswapfile
-    execute 'r !elinks ' . a:url . ' -dump -dump-width ' . winwidth(0)
-    1d
-  endif
-endfunction
-
-" Map to preview HTML file or URL
-nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
-```
-```lua
-local function view_html_text(url)
-  if url and url ~= '' then
-    vim.cmd('new')
-    vim.api.nvim_buf_set_option(0, 'buftype', 'nofile')
-    vim.api.nvim_buf_set_option(0, 'bufhidden', 'hide')
-    vim.api.nvim_buf_set_option(0, 'swapfile', false)
-    
-    local output = vim.fn.systemlist('elinks ' .. url .. ' -dump -dump-width ' .. vim.fn.winwidth(0))
-    vim.api.nvim_buf_set_lines(0, 0, -1, false, output)
-    vim.cmd('normal! gg')
-  end
-end
-
--- Map to preview HTML file or URL
-vim.keymap.set('n', '<Leader>H', function()
-  vim.cmd.update()
-  view_html_text(vim.fn.expand('%:p'))
-end, { desc = 'Preview HTML file text' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Opening_current_Vim_file_in_your_Windows_browser
 ***
 # Title: Advanced PHP Function Documentation Viewer
 # Category: advanced_functions

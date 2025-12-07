@@ -1651,43 +1651,6 @@ end
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip488
 ***
-# Title: Toggle Window Maximize/Restore
-# Category: window_management
-# Tags: window, toggle, mapping
----
-Create a function to toggle maximizing and restoring a Vim window with a single keypress
-
-```vim
-let g:WindowMaximized = 0
-function! MaxRestoreWindow()
-  if g:WindowMaximized == 1
-    let g:WindowMaximized = 0
-    :simalt ~r
-  else
-    let g:WindowMaximized = 1
-    :simalt ~x
-  endif
-endfunction
-map <F5> :call MaxRestoreWindow()<CR>
-```
-```lua
-vim.g.WindowMaximized = 0
-
-function _G.MaxRestoreWindow()
-  if vim.g.WindowMaximized == 1 then
-    vim.g.WindowMaximized = 0
-    vim.cmd('simalt ~r')
-  else
-    vim.g.WindowMaximized = 1
-    vim.cmd('simalt ~x')
-  end
-end
-
-vim.keymap.set('n', '<F5>', _G.MaxRestoreWindow)
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip494
-***
 # Title: Synchronous Scrolling in Multiple Windows
 # Category: window_management
 # Tags: split-windows, scrolling, window-navigation
@@ -1753,69 +1716,6 @@ end
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip607
-***
-# Title: Dynamic Window Resizing with F1 Key
-# Category: window_management
-# Tags: window-resize, key-mapping, gui-settings
----
-Cycle through predefined window sizes and toggle line numbers using F1 key in GUI Vim
-
-```vim
-nmap <F1> :call ResizeWindow()<CR>
-imap <F1> <Esc><F1>a
-
-function! ResizeWindow()
-  if (has("gui_running"))
-    if s:selectedsize == 1
-      let s:selectedsize = 2
-      set number
-      set columns=88
-      set lines=35
-    elseif s:selectedsize == 2
-      set number
-      let s:selectedsize = 3
-      set columns=98
-      set lines=45
-    else
-      let s:selectedsize = 1
-      set nonumber
-      set columns=80
-      set lines=25
-    endif
-  endif
-endfunction
-
-let s:selectedsize=1
-call ResizeWindow()
-```
-```lua
-local selectedsize = 1
-
-local function resize_window()
-  if vim.fn.has('gui_running') == 1 then
-    if selectedsize == 1 then
-      selectedsize = 2
-      vim.o.number = true
-      vim.o.columns = 88
-      vim.o.lines = 35
-    elseif selectedsize == 2 then
-      selectedsize = 3
-      vim.o.number = true
-      vim.o.columns = 98
-      vim.o.lines = 45
-    else
-      selectedsize = 1
-      vim.o.number = false
-      vim.o.columns = 80
-      vim.o.lines = 25
-    end
-  end
-end
-
-vim.keymap.set({'n', 'i'}, '<F1>', resize_window, { desc = 'Cycle window sizes' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip669
 ***
 # Title: Toggle Line Numbers Across All Windows
 # Category: window_management

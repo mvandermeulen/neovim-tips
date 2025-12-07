@@ -408,43 +408,6 @@ vim.api.nvim_create_autocmd('FileType', {
 
 **Source:** ** https://vim.fandom.com/wiki/(PHP)_on_line_help
 ***
-# Title: Safely Source and Modify Vimrc
-# Category: configuration
-# Tags: vimrc, startup, configuration
----
-Provides best practices for defining commands, functions, and autocmds to avoid errors when re-sourcing vimrc
-
-```vim
-" Redefine commands and functions safely
-command! Mycommand echo "Hello!"
-function! Myfunc()
-  echo "Hello!"
-endfunction
-
-" Clear and reset autocmds in a group
-augroup vimrc_autocmds
-  au!
-  autocmd BufRead * echo "File read!"
-augroup END
-```
-```lua
--- Lua equivalent approach
-vim.api.nvim_create_user_command('Mycommand', function()
-  print('Hello!')
-end, {})
-
--- Using an augroup for autocmds
-vim.api.nvim_create_augroup('vimrc_autocmds', { clear = true })
-vim.api.nvim_create_autocmd('BufRead', {
-  group = 'vimrc_autocmds',
-  callback = function()
-    print('File read!')
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/.vimrc
-***
 # Title: GUI-Specific Vim Configuration
 # Category: configuration
 # Tags: gui, colorscheme, ui
@@ -1235,21 +1198,6 @@ vim.o.menuitems = 50
 
 **Source:** ** https://vim.fandom.com/wiki/Buffer_bar_to_list_buffers
 ***
-# Title: Building Vim with Python Support on Windows
-# Category: configuration
-# Tags: python, build, windows
----
-Guide for compiling Vim with Python 2.7 and Python 3.3 support using MinGW on Windows, enabling dynamic Python scripting
-
-```lua
--- Key Neovim configuration for Python support
--- Ensure Python paths are correctly set in your init.lua
-vim.g.python_host_prog = '/path/to/python2/executable'
-vim.g.python3_host_prog = '/path/to/python3/executable'
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Build_Python-enabled_Vim_on_Windows_with_MinGW
-***
 # Title: Verifying Python Support in Vim/Neovim
 # Category: configuration
 # Tags: python, debugging
@@ -1553,23 +1501,6 @@ vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
 
 **Source:** ** https://vim.fandom.com/wiki/Cannot_open_temporary_file
 ***
-# Title: Fix Temporary File Errors on Windows
-# Category: configuration
-# Tags: windows, file-operations, environment
----
-Resolve temporary file access issues in Vim by explicitly setting the temp directory
-
-```vim
-let $TMP="c:/tmp"
-set directory=.,$TMP,$TEMP
-```
-```lua
-vim.env.TMP = "c:/tmp"
-vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Cannot_read_temporary_file
-***
 # Title: Configure GUI Font in Neovim
 # Category: configuration
 # Tags: gui, font, setup
@@ -1605,32 +1536,6 @@ end
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Change_GUI_Font
-***
-# Title: Configure GUI Font in Neovim
-# Category: configuration
-# Tags: gui, font, neovim-config
----
-Set and persist GUI font across different operating systems with conditional configuration
-
-```vim
-if has('gui_running')
-  set guifont=DejaVu_Sans_Mono:h10:cANSI
-  set guioptions-=T  " no toolbar
-  colorscheme elflord
-  set lines=60 columns=108
-endif
-```
-```lua
-if vim.g.neovide or vim.g.gui_running then
-  vim.opt.guifont = 'DejaVu Sans Mono:h10'
-  vim.opt.guioptions:remove('T')  -- no toolbar
-  vim.cmd.colorscheme('elflord')
-  vim.opt.lines = 60
-  vim.opt.columns = 108
-end
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Change_font
 ***
 # Title: Escape Spaces in Font Names
 # Category: configuration
@@ -2059,37 +1964,6 @@ vim.env.PATH = vim.env.PATH .. ':/path/to/custom/bin'
 
 **Source:** ** https://vim.fandom.com/wiki/Compile_a_separate_copy_of_Vim_for_Python_coding
 ***
-# Title: Compile LaTeX with Rubber and Make in Vim
-# Category: configuration
-# Tags: latex, compilation, quickfix
----
-Set up a flexible LaTeX compilation workflow using Rubber and Make, integrating with Vim's quickfix feature for error handling
-
-```vim
-setlocal errorformat=%f:%l:\ %m,%f:%l-%\d%\+:\ %m
-if filereadable('Makefile')
-  setlocal makeprg=make
-else
-  exec "setlocal makeprg=make\ -f\ ~/academic/tools/latex.mk\ " . substitute(bufname("%"),"tex$","pdf", "")
-endif
-```
-```lua
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'tex',
-  callback = function()
-    vim.opt_local.errorformat = '%f:%l: %m,%f:%l-%d+: %m'
-    if vim.fn.filereadable('Makefile') == 1 then
-      vim.opt_local.makeprg = 'make'
-    else
-      vim.opt_local.makeprg = string.format('make -f ~/academic/tools/latex.mk %s', 
-        vim.fn.expand('%:r') .. '.pdf')
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Compiling_LaTeX_from_Vim
-***
 # Title: Customize Cursor Color and Shape Across Modes
 # Category: configuration
 # Tags: ui, cursor, terminal-config
@@ -2474,41 +2348,6 @@ local mappings = vim.api.nvim_get_keymap('n')  -- Get normal mode mappings
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Debug_unexpected_option_settings
-***
-# Title: Set Default Filetype for New Buffers
-# Category: configuration
-# Tags: filetype, autocmd, buffer-management
----
-Automatically set a default filetype for new, empty buffers to enable syntax highlighting and filetype-specific plugins
-
-```vim
-" default filetype
-let g:do_filetype = 0
-au BufWinEnter,BufAdd * if expand('<afile>') == "" | let g:do_filetype = 1 | endif
-au BufEnter * if g:do_filetype | setf python | let g:do_filetype = 0 | endif
-```
-```lua
-vim.g.do_filetype = 0
-
-vim.api.nvim_create_autocmd({'BufWinEnter', 'BufAdd'}, {
-  callback = function()
-    if vim.fn.expand('<afile>') == "" then
-      vim.g.do_filetype = 1
-    end
-  end
-})
-
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function()
-    if vim.g.do_filetype == 1 then
-      vim.cmd('setf python')
-      vim.g.do_filetype = 0
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Default_filetype
 ***
 # Title: Check and Set Buffer Filetype
 # Category: configuration
@@ -3407,47 +3246,6 @@ vim.g.loaded_netrwPlugin = 1 -- Disable network plugin
 
 **Source:** ** https://vim.fandom.com/wiki/Fast_start_up_in_a_telnet_session
 ***
-# Title: Optimize Vim for Large File Performance
-# Category: configuration
-# Tags: performance, file-handling, optimization
----
-Automatically adjust Vim settings for files larger than 10MB to improve loading speed and reduce memory usage
-
-```vim
-" Protect large files from overhead
-let g:LargeFile = 1024 * 1024 * 10
-augroup LargeFile
-  au!
-  autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
-augroup END
-
-function! LargeFile()
-  set eventignore+=FileType
-  setlocal bufhidden=unload
-  setlocal buftype=nowrite
-  setlocal undolevels=-1
-endfunction
-```
-```lua
-vim.g.LargeFile = 1024 * 1024 * 10
-
-vim.api.nvim_create_augroup('LargeFile', { clear = true })
-vim.api.nvim_create_autocmd('BufReadPre', {
-  group = 'LargeFile',
-  callback = function()
-    local file_size = vim.fn.getfsize(vim.fn.expand('<afile>'))
-    if file_size > vim.g.LargeFile or file_size == -2 then
-      vim.opt.eventignore:append('FileType')
-      vim.bo.bufhidden = 'unload'
-      vim.bo.buftype = 'nowrite'
-      vim.bo.undolevels = -1
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Faster_loading_of_large_files
-***
 # Title: Remove '=' from Filename Characters
 # Category: configuration
 # Tags: filename-completion, shell-scripts, file-editing
@@ -3462,25 +3260,6 @@ vim.opt.isfname:remove('=')
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/FileName_Completion_in_Shell_Scripts
-***
-# Title: Disable Default Filetype Plugins
-# Category: configuration
-# Tags: plugins, customization
----
-Method to disable all default filetype plugins or specific plugins, giving more control over editor behavior
-
-```vim
-:autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
-```
-```lua
-vim.api.nvim_create_autocmd({'BufReadPre', 'BufNewFile'}, {
-  callback = function()
-    vim.b.did_ftplugin = 1
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/File_type_plugins
 ***
 # Title: Custom Filetype Detection for Unique File Extensions
 # Category: configuration
@@ -4696,27 +4475,6 @@ vim.opt.cindent = true
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Indenting_source_code
-***
-# Title: Install Full-Featured Vim on Linux
-# Category: configuration
-# Tags: linux, installation, package-management
----
-Install full-featured Vim with scripting support on different Linux distributions
-
-```vim
-# Debian/Ubuntu
-# apt-get install vim-gtk
-
-# Fedora
-# yum install vim-enhanced vim-X11
-```
-```lua
--- Note: Use package managers directly
--- For Debian/Ubuntu: sudo apt-get install vim-gtk
--- For Fedora: sudo yum install vim-enhanced vim-X11
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Installing_Vim
 ***
 # Title: Check Vim Installation Details
 # Category: configuration
@@ -7129,32 +6887,6 @@ Create custom regex patterns to extract meaningful tags from ANT XML build files
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip558
 ***
-# Title: Quick PHP Function Documentation Lookup
-# Category: configuration
-# Tags: documentation, external-tools, php
----
-Create a custom keywordprg to quickly look up PHP function documentation directly from Vim/Neovim
-
-```vim
-set keywordprg=~/.vim/php_doc.sh
-
-# php_doc.sh script
-#!/bin/bash
-FUNCTION=`echo $1 | sed 's/_/-/g'`
-lynx -dump http://www.php.net/manual/en/print/function.$FUNCTION.php
-```
-```lua
--- In init.lua
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'php',
-  callback = function()
-    vim.opt.keywordprg = '~/.config/nvim/php_doc.sh'
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip598
-***
 # Title: Safely Source and Modify Vimrc
 # Category: configuration
 # Tags: vimrc, configuration, startup
@@ -7402,29 +7134,6 @@ end
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip680
 ***
-# Title: Time-Based Color Scheme Selection
-# Category: configuration
-# Tags: color-scheme, dynamic-config, time-based
----
-Automatically change color schemes based on time of day, providing visual variety and potentially reducing eye strain
-
-```vim
-function! s:HourColor()
-  let hr = str2nr(strftime('%H'))
-  let nowcolors = 'elflord morning desert evening pablo'
-  execute 'colorscheme '.split(nowcolors)[hr/5]
-endfunction
-```
-```lua
-local function hour_color()
-  local hour = tonumber(os.date('%H'))
-  local nowcolors = {'elflord', 'morning', 'desert', 'evening', 'pablo'}
-  vim.cmd.colorscheme(nowcolors[math.floor(hour/5) + 1])
-end
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip693
-***
 # Title: Disable Mouse Visual Mode Selection
 # Category: configuration
 # Tags: mouse, ui, interaction
@@ -7558,21 +7267,6 @@ Create a consistent Vim directory structure that separates runtime files from pe
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip714
-***
-# Title: Ignore Whitespace in Diff Mode
-# Category: configuration
-# Tags: diff, whitespace, comparison
----
-Ignore whitespace changes when performing a diff, which helps focus on meaningful code differences
-
-```vim
-set diffopt+=iwhite
-```
-```lua
-vim.opt.diffopt:append('iwhite')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip715
 ***
 # Title: Configure Diff Options Flexibly
 # Category: configuration
@@ -7800,23 +7494,6 @@ Resolve file association problems after Vim upgrade by updating registry keys
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Vim_On_Vista
-***
-# Title: Toggle Vim Options Easily
-# Category: configuration
-# Tags: options, toggle, configuration
----
-Quick way to toggle boolean options by adding ! to the set command
-
-```vim
-set spell!  " Toggle spell checking
-set number!  " Toggle line numbers
-```
-```lua
-vim.opt.spell = not vim.opt.spell:get()
-vim.opt.number = not vim.opt.number:get()
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Vim_Tips_Wiki
 ***
 # Title: Flexible Option Flag Management
 # Category: configuration

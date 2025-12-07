@@ -347,38 +347,6 @@ vim.cmd('hi statusline guibg=green')
 
 **Source:** ** https://vim.fandom.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
 ***
-# Title: Dynamic Color Scheme for Context Awareness
-# Category: ui
-# Tags: color-scheme, autocmd, context-switching
----
-Automatically change color schemes to visually distinguish different files, directories, or Vim instances, reducing accidental edits
-
-```vim
-au BufEnter * if (exists("b:colors_name")) | let b:current_colors=colors_name
-  \ | execute "colorscheme " . b:colors_name | endif
-au BufLeave * if (exists("b:current_colors")) | execute "colorscheme " . b:current_colors | endif
-```
-```lua
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = function()
-    if vim.b.colors_name then
-      vim.g.current_colors = vim.g.colors_name
-      vim.cmd('colorscheme ' .. vim.b.colors_name)
-    end
-  end
-})
-
-vim.api.nvim_create_autocmd('BufLeave', {
-  callback = function()
-    if vim.g.current_colors then
-      vim.cmd('colorscheme ' .. vim.g.current_colors)
-    end
-  end
-})
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Change_the_color_scheme_to_show_where_you_are
-***
 # Title: Color Scheme for Different Directories
 # Category: ui
 # Tags: color-scheme, autocmd, file-context
@@ -577,36 +545,6 @@ aunmenu ToolBar.FindPrev
 
 **Source:** ** https://vim.fandom.com/wiki/Hide_specific_ToolBar_buttons
 ***
-# Title: Toggle GUI Elements Dynamically
-# Category: ui
-# Tags: gui, configuration, key-mapping
----
-Add key mappings to dynamically toggle menu bar, toolbar, and scrollbars in Neovim GUI
-
-```vim
-nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
-nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
-nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
-```
-```lua
-vim.keymap.set('n', '<C-F1>', function()
-  local go = vim.o.guioptions
-  vim.o.guioptions = go:match('m') and go:gsub('m', '') or go .. 'm'
-end, { desc = 'Toggle menu bar' })
-
-vim.keymap.set('n', '<C-F2>', function()
-  local go = vim.o.guioptions
-  vim.o.guioptions = go:match('T') and go:gsub('T', '') or go .. 'T'
-end, { desc = 'Toggle toolbar' })
-
-vim.keymap.set('n', '<C-F3>', function()
-  local go = vim.o.guioptions
-  vim.o.guioptions = go:match('r') and go:gsub('r', '') or go .. 'r'
-end, { desc = 'Toggle right scrollbar' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Hide_toolbar
-***
 # Title: Highlight Inserted Text in Insert Mode
 # Category: ui
 # Tags: highlight, insert-mode, visual-feedback
@@ -796,35 +734,6 @@ vim.opt.statusline:append('%1*%{v:lua.show_file_format_flag()}%*')
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Non-native_fileformat_for_your_statusline
-***
-# Title: Dynamic Color Scheme Switcher
-# Category: ui
-# Tags: color-scheme, theme, key-mapping
----
-Easily cycle through Vim color schemes using function keys, with support for random and time-based color scheme selection
-
-```vim
-" Vim color scheme switching script
-nnoremap <F8> :call NextColor(1)<CR>
-nnoremap <S-F8> :call NextColor(-1)<CR>
-nnoremap <A-F8> :call NextColor(0)<CR>
-```
-```lua
--- Lua equivalent for color scheme switching
-vim.keymap.set('n', '<F8>', function() 
-  vim.cmd('call NextColor(1)')
-end, { desc = 'Next color scheme' })
-
-vim.keymap.set('n', '<S-F8>', function()
-  vim.cmd('call NextColor(-1)')
-end, { desc = 'Previous color scheme' })
-
-vim.keymap.set('n', '<A-F8>', function()
-  vim.cmd('call NextColor(0)')
-end, { desc = 'Random color scheme' })
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Rotate_color_themes
 ***
 # Title: Time-Based Color Scheme Selection
 # Category: ui

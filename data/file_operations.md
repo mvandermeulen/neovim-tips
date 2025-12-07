@@ -1599,23 +1599,6 @@ end, { nargs = '*' })
 
 **Source:** ** https://vim.fandom.com/wiki/Find_files_in_subdirectories
 ***
-# Title: Sync Vim Runtime Files with rsync
-# Category: file_operations
-# Tags: sync, runtime-files, update
----
-Synchronize Vim runtime files efficiently using rsync, ensuring you have the latest syntax, colors, and plugins
-
-```vim
-# Example rsync command to update runtime files
-rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/
-```
-```lua
--- In Lua, you would typically use vim.fn.system() to execute the rsync command
-vim.fn.system('rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Get_latest_releases_for_syntax_highlighting,_runtime,_plugins_etc
-***
 # Title: Open Current Visual Studio File in Vim
 # Category: file_operations
 # Tags: external-tools, workflow, integration

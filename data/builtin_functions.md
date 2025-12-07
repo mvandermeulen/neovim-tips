@@ -500,60 +500,6 @@ end
 
 **Source:** ** https://vim.fandom.com/wiki/Check_for_comments_independent_of_filetype
 ***
-# Title: Generate Unicode Character Table
-# Category: builtin_functions
-# Tags: unicode, character-display, internationalization
----
-Create a function to generate and display a table of Unicode characters within a specified range, useful for exploring character sets and font support
-
-```vim
-function! GenerateUnicode(first, last)
-  let i = a:first
-  while i <= a:last
-    if (i%256 == 0)
-      $put ='----------------------------------------------------'
-      $put ='     0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F '
-      $put ='----------------------------------------------------'
-    endif
-    let c = printf('%04X ', i)
-    for j in range(16)
-      let c = c . nr2char(i) . ' '
-      let i += 1
-    endfor
-    $put =c
-  endwhile
-endfunction
-```
-```lua
-function _G.generate_unicode(first, last)
-  local buffer = vim.api.nvim_create_buf(true, true)
-  vim.api.nvim_set_current_buf(buffer)
-  
-  local i = first
-  while i <= last do
-    if i % 256 == 0 then
-      vim.api.nvim_buf_set_lines(buffer, -1, -1, false, {
-        '----------------------------------------------------',
-        '     0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F ',
-        '----------------------------------------------------'
-      })
-    end
-    
-    local line = string.format('%04X ', i)
-    for j = 1, 16 do
-      line = line .. vim.fn.nr2char(i) .. ' '
-      i = i + 1
-    end
-    
-    vim.api.nvim_buf_set_lines(buffer, -1, -1, false, {line})
-  end
-end
-
--- Usage: :lua generate_unicode(0x9900, 0x9fff)
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Generate_all_Unicode_characters
-***
 # Title: Get Cursor Position as Byte Percentage
 # Category: builtin_functions
 # Tags: status-line, cursor-position, file-metadata

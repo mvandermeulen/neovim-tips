@@ -483,24 +483,6 @@ end)
 # Category: indentation
 # Tags: filetype, configuration, best-practices
 ---
-Prefer filetype-based indentation over manual indent settings for more accurate and language-specific indentation
-
-```vim
-filetype indent on
-set autoindent
-```
-```lua
--- Enable filetype-specific indentation
-vim.cmd('filetype indent on')
-vim.opt.autoindent = true
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Keep_indent_for_new_lines
-***
-# Title: Use Filetype-Based Indentation
-# Category: indentation
-# Tags: filetype, configuration, best-practices
----
 Prefer filetype-based indentation over generic smartindent, which provides more accurate and language-specific indentation rules
 
 ```vim

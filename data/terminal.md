@@ -398,55 +398,6 @@ vim.keymap.set('v', '<F5>', ':!python<CR>', { desc = 'Run selected Python code' 
 
 **Source:** ** https://vim.fandom.com/wiki/Execute_Python_from_within_current_file
 ***
-# Title: Execute Shell Command in Explorer Directory
-# Category: terminal
-# Tags: shell-command, file-explorer, custom-function
----
-Execute a shell command in the directory currently shown in the file explorer without changing the current working directory
-
-```vim
-function! MyFileHandler(filename)
-  let oldpath = getcwd()
-  let currentdirectory = ""
-  if(isdirectory(a:filename))
-    let currentdirectory = strpart(a:filename, 0, strlen(a:filename) - 1)
-  else
-    let currentdirectory = a:filename
-  endif
-  let lastslash = strridx(currentdirectory, "/")
-  let currentdirectory = strpart(currentdirectory, 0, lastslash)
-  let usercommand = input(currentdirectory . "# ")
-  if(strlen(usercommand) > 0)
-    execute "cd " . currentdirectory
-    execute "!" . usercommand
-    execute "cd " . oldpath
-  endif
-endfunction
-
-let g:explFileHandler = "MyFileHandler"
-```
-```lua
-function _G.my_file_handler(filename)
-  local oldpath = vim.fn.getcwd()
-  local currentdirectory = vim.fn.isdirectory(filename) and 
-    filename:sub(1, -2) or filename
-  
-  local lastslash = currentdirectory:match("(.*)/.+$")
-  
-  local usercommand = vim.fn.input(lastslash .. "# ")
-  
-  if #usercommand > 0 then
-    vim.cmd('cd ' .. lastslash)
-    vim.cmd('!' .. usercommand)
-    vim.cmd('cd ' .. oldpath)
-  end
-end
-
-vim.g.explFileHandler = "my_file_handler"
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Execute_a_shell_command_in_the_directory_shown_in_file_explorer
-***
 # Title: Quick IPython Integration with Vim
 # Category: terminal
 # Tags: python, integration, terminal-commands

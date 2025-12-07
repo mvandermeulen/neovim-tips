@@ -207,18 +207,3 @@ Use lazy-loading strategies with lazy.nvim to defer plugin loading until needed,
 
 **Source:** ** Community contributed
 ***
-# Title: Increase Redraw Time for Large Files
-# Category: performance
-# Tags: performance, large-files, rendering
----
-Increase redraw time to ensure syntax highlighting works correctly on large, complex files
-
-```vim
-set redrawtime=10000
-```
-```lua
-vim.o.redrawtime = 10000
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Fix_Syntax_Highlighting
-***

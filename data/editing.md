@@ -1255,26 +1255,6 @@ vim.opt.paste = false  -- Disable paste mode
 
 **Source:** ** https://vim.fandom.com/wiki/Disable_auto_indenting_yet_keep_imaps
 ***
-# Title: Copy and Replace Words Quickly
-# Category: editing
-# Tags: copy, replace, registers
----
-Efficiently copy a word and replace multiple instances using registers and dot command
-
-```vim
-# Copy current word: yiw
-# Replace word: ciw<C-R>0<Esc>
-# Repeat replacements with '.'
-```
-```lua
--- Copy word: viw
--- Replace: ciw
--- Paste from default register: '<C-r>0'
--- Repeat with '.'
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Dot_makes_life_easier
-***
 # Title: Copy and Replace Lines Across Document
 # Category: editing
 # Tags: line-manipulation, copy, paste
@@ -1809,59 +1789,6 @@ vim.cmd("'<,'>!nl -s '. ' -w 2")
 
 **Source:** ** https://vim.fandom.com/wiki/Insert_line_numbers_2
 ***
-# Title: Insert Multiple Blank Lines Easily
-# Category: editing
-# Tags: insert-mode, line-manipulation, productivity
----
-Quickly insert multiple blank lines with a custom function that ensures at least one blank line before and after the inserted lines
-
-```vim
-function! OpenLines(nrlines, dir)
-  let nrlines = a:nrlines < 3 ? 3 : a:nrlines
-  let start = line('.') + a:dir
-  call append(start, repeat([''], nrlines))
-  if a:dir < 0
-    normal! 2k
-  else
-    normal! 2j
-  endif
-endfunction
-
-nnoremap <Leader>o :<C-u>call OpenLines(v:count, 0)<CR>S
-nnoremap <Leader>O :<C-u>call OpenLines(v:count, -1)<CR>S
-```
-```lua
-function OpenLines(nrlines, dir)
-  nrlines = nrlines < 3 and 3 or nrlines
-  local start = vim.fn.line('.') + dir
-  
-  local empty_lines = {}
-  for _ = 1, nrlines do
-    table.insert(empty_lines, '')
-  end
-  
-  vim.fn.append(start, empty_lines)
-  
-  if dir < 0 then
-    vim.cmd('normal! 2k')
-  else
-    vim.cmd('normal! 2j')
-  end
-end
-
-vim.keymap.set('n', '<Leader>o', function()
-  OpenLines(vim.v.count, 0)
-  vim.cmd('startinsert')
-end)
-
-vim.keymap.set('n', '<Leader>O', function()
-  OpenLines(vim.v.count, -1)
-  vim.cmd('startinsert')
-end)
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Insert_multiple_lines
-***
 # Title: Join Lines Matching a Pattern Globally
 # Category: editing
 # Tags: text-manipulation, global-command, line-joining
@@ -2302,29 +2229,6 @@ cis   " Change inner sentence
 
 **Source:** ** https://vim.fandom.com/wiki/Quickly_change_word_or_line
 ***
-# Title: Advanced Range Selection Techniques
-# Category: editing
-# Tags: visual-mode, marks, search
----
-Use marks and visual selection to define edit ranges dynamically
-
-```vim
-ma                           " Mark start line
-mb                           " Mark end line
-:'a,'bs/old/new/g           " Replace between marks
-vip:s/old/new/g              " Replace in visual inner paragraph
-```
-```lua
--- Lua alternatives for range selection
--- Most range operations still use command mode
-vim.cmd('ma')                          -- Mark start line
-vim.cmd('mb')                          -- Mark end line
-vim.cmd(":'a,'bs/old/new/g")           -- Replace between marks
--- For visual selection, use normal mode commands
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Range
-***
 # Title: Remove Diacritical Signs from Characters
 # Category: editing
 # Tags: text-transformation, character-replacement, internationalization
@@ -2512,25 +2416,6 @@ Efficiently copy a word and replace words in multiple locations using yank and r
 
 **Source:** ** https://vim.fandom.com/wiki/Repeating
 ***
-# Title: Line Replacement Across Multiple Locations
-# Category: editing
-# Tags: copy, paste, registers
----
-Copy a line and systematically replace lines in multiple locations using yank and paste commands
-
-```vim
-# 1. Y - yank current line
-# 2. Move cursor
-# 3. p - paste after current line
-# 4. Use '.' to repeat paste
-```
-```lua
--- Similar to Vimscript, uses standard Vim/Neovim commands
--- Can leverage vim.api for more complex line manipulation if needed
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Repeating
-***
 # Title: Quick Paragraph Sorting in Normal Mode
 # Category: editing
 # Tags: text-objects, paragraph-manipulation
@@ -2569,23 +2454,6 @@ vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text'
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text
-***
-# Title: Quick Word Replacement with Last Yanked Text
-# Category: editing
-# Tags: text-replacement, registers, key-mapping
----
-Use a single key to quickly replace the current word with the last yanked text across multiple locations
-
-```vim
-nnoremap S diw"0P
-```
-```lua
-vim.keymap.set('n', 'S', function()
-  vim.cmd('normal! diw"0P')
-end)
-```
-
-**Source:** ** https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
 ***
 # Title: Advanced Word Replacement Techniques
 # Category: editing
@@ -2869,21 +2737,6 @@ Use cc or S to start editing a blank line with correct indentation instead of i 
 ```
 
 **Source:** ** https://vim.fandom.com/wiki/VimTip644
-***
-# Title: Remove Duplicate Lines Efficiently
-# Category: editing
-# Tags: text-manipulation, sorting
----
-Easily remove duplicate lines in a file, with options to keep first or last occurrence
-
-```vim
-:sort u
-```
-```lua
-vim.cmd('sort u')
-```
-
-**Source:** ** https://vim.fandom.com/wiki/VimTip648
 ***
 # Title: Copy and Replace Words Across File
 # Category: editing
