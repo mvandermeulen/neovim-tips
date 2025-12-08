@@ -1,8 +1,8 @@
-<img src="images/book.png">
+<img src="images/book-02.png">
 
 # Neovim Tips Plugin
 
-> *"I've been using Vim for about 2 years now, mostly because I can't figure out how to exit it."* ([I Am Developer](https://x.com/iamdevloper/status/435555976687923200))
+> _"I've been using Vim for about 2 years now, mostly because I can't figure out how to exit it."_ ([I Am Developer](https://x.com/iamdevloper/status/435555976687923200))
 
 **This Lua plugin for Neovim brings together hundreds of helpful tips, tricks, and shortcuts, all available through a custom picker. It's easy to expand with your own entries, so the collection grows with you and your workflow.**
 
@@ -166,6 +166,7 @@ opts = {}
 ```
 
 ...even if you don't want to customize anything.
+
 ### packer.nvim
 
 ```lua
@@ -386,18 +387,18 @@ return {
 }
 ```
 
-
-
 ## 💡 Daily Tip Feature
 
 The plugin can show you a random tip in a beautiful popup when you start Neovim. This helps you discover new tips and improve your workflow naturally.
 
 ### Configuration Options:
+
 - `daily_tip = 0`: Disabled (no popup)
 - `daily_tip = 1`: Once per day (default)
 - `daily_tip = 2`: Every Neovim startup
 
 ### Daily Tip Popup Features:
+
 - **"Did you know?" popup**: Centered layout with main tip content and footer
 - **Smart persistence**: Once daily mode uses `~/.local/share/nvim/neovim_tips/persistent.json`
 - **Full markdown rendering**: Rich formatting with render-markdown.nvim
@@ -411,7 +412,7 @@ The plugin can show you a random tip in a beautiful popup when you start Neovim.
 
 All tips have been compiled into a beautifully formatted PDF book with almost 400 pages that you can read offline or print for reference.
 
-<img src="images/book.png" width="400">
+<img src="images/book-02.png" width="400">
 
 ### Opening the PDF Book
 
@@ -422,6 +423,7 @@ Use the `:NeovimTipsPdf` command to open the PDF book in your system's default P
 ```
 
 The command automatically detects your operating system and uses the appropriate command:
+
 - **macOS**: `open`
 - **Linux**: `xdg-open` (with fallbacks to `gnome-open` or `kde-open`)
 - **Windows**: `start`
@@ -462,6 +464,7 @@ The plugin automatically detects and uses available markdown renderers for enhan
 ### 🔄 Automatic Detection
 
 The plugin automatically:
+
 - Detects which renderer is available
 - Uses markview.nvim if present (highest priority)
 - Falls back to render-markdown.nvim if markview not found
@@ -491,6 +494,7 @@ The plugin provides comprehensive built-in documentation accessible via Neovim's
 ### Quick Access
 
 The help system includes:
+
 - **Detailed examples** for all search modes (`t:tag`, `c:category`, etc.)
 - **Configuration templates** you can copy and customize
 - **Troubleshooting guide** for common issues
@@ -505,6 +509,7 @@ The tips picker features powerful search capabilities that let you find tips by 
 ### Basic Search
 
 Simply start typing to search tip titles:
+
 ```
 vim motion          → finds tips with both "vim" and "motion" in title
 insert character    → finds tips about inserting characters
@@ -514,6 +519,7 @@ delete word         → finds tips about deleting words
 ### Tag Search
 
 Use `t:` prefix to search by tags:
+
 ```
 t:motion           → finds all tips tagged with "motion"
 t:delete           → finds all tips tagged with "delete"
@@ -523,6 +529,7 @@ t:operator         → finds all tips tagged with "operator"
 ### Category Search
 
 Use `c:` prefix to search by categories:
+
 ```
 c:editing          → finds all tips in "Editing" category
 c:search           → finds all tips in "Search" category
@@ -532,6 +539,7 @@ c:"Key Mappings"   → finds tips in "Key Mappings" category (quoted for spaces)
 ### Bookmark Search
 
 Use `b:` prefix to search your bookmarked tips:
+
 ```
 b:                 → shows all your bookmarked tips
 b:delete           → shows bookmarked tips with "delete" in title
@@ -539,6 +547,7 @@ b:motion           → shows bookmarked tips with "motion" in title
 ```
 
 **Bookmarking Tips:**
+
 - Press **`Ctrl+b`** in the picker or daily tip to bookmark/unbookmark
 - Bookmarked tips display with your configured symbol (default: 🌟)
 - Works from any pane (search bar, tips list, or preview)
@@ -546,6 +555,7 @@ b:motion           → shows bookmarked tips with "motion" in title
 ### Combined Search
 
 Mix different search types with spaces (all must match):
+
 ```
 motion c:editing t:operator    → tips with "motion" in title, "Editing" category, and "operator" tag
 insert file t:save             → tips with "insert file" in title and "save" tag
@@ -561,6 +571,7 @@ Don't know what tags or categories are available? Use the help feature:
 - **`c:?`** — Shows popup with all available categories (70+ categories)
 
 #### Help Picker Navigation:
+
 - **Arrow keys** or **j/k** — Navigate up/down
 - **Press any letter** — Jump to first item starting with that letter (e.g., press 'm' to jump to "motion")
 - **Enter** — Select the item
@@ -577,6 +588,7 @@ Don't know what tags or categories are available? Use the help feature:
 ### Examples
 
 Try these searches to see the power of the system:
+
 ```
 t:motion                       → 5 tips about motion commands
 c:editing t:delete             → editing tips that involve deletion
@@ -670,6 +682,7 @@ The plugin currently includes tips organized into **69+ categories**. Here's the
 </details>
 
 ### Usage Examples:
+
 ```
 c:editing                → All editing tips
 c:"Key Mappings"         → All key mapping tips (quoted for spaces)
@@ -696,7 +709,7 @@ Some additional text here.
 ***
 ````
 
-Alternatively, use can use === (3 equal signs) instead of *** (3 asterisks) to finish the tip.
+Alternatively, use can use === (3 equal signs) instead of \*\*\* (3 asterisks) to finish the tip.
 This format is used for all tips, built-in or created by you and stored separately.
 
 Each tip has to start with the `# Title:` line, followed by `# Category:` and a list of `# Tags`.
@@ -851,6 +864,7 @@ require("neovim_tips").setup({
 ### 💡 Cache Location
 
 Cache files are stored in your Neovim cache directory:
+
 - **Linux/macOS**: `~/.cache/nvim/neovim_tips/`
 - **Windows**: `%LOCALAPPDATA%\nvim-data\neovim_tips\`
 
@@ -861,6 +875,7 @@ The cache is safe to delete - it will be automatically regenerated on next load.
 If you're using completion engines like `blink.cmp` or `nvim-cmp` and want to disable autocompletion suggestions in the picker's search bar, you can use the custom filetype `neovim-tips-search`. For more troubleshooting help, see `:help neovim-tips-troubleshooting`:
 
 ### For blink.cmp:
+
 ```lua
 require('blink.cmp').setup({
   enabled = function()
@@ -871,6 +886,7 @@ require('blink.cmp').setup({
 ```
 
 ### For nvim-cmp:
+
 ```lua
 require('cmp').setup({
   enabled = function()
@@ -888,6 +904,7 @@ require('cmp').setup({
 ## 🔄 Roadmap Ideas
 
 ### ✅ Completed Features
+
 - ~~Category/Tag filtering~~ ✅ **Completed** - Advanced search with `t:tag` and `c:category` syntax
 - ~~Help system for discovering tags/categories~~ ✅ **Completed** - Interactive help picker with `t:?` and `c:?`
 - ~~Support for markview and render-markdown plugins~~ ✅ **Completed** - Automatic renderer detection with fallback
@@ -895,6 +912,7 @@ require('cmp').setup({
 - ~~Faster startup - Optimize daily tip timing to avoid conflicts with fzf/telescope file searches~~ ✅ **Completed** - Slashed one second
 
 ### 🚀 Planned Features
+
 - **Performance improvements** - Markdown files with tips are parsed on every plugin startup. Can we keep the parsed results between sessions?
 - **Search descriptions** - Extend search to include tip content, not just titles, tags and categories
 - **Multiple tip sources** - Support loading tips from multiple directories/files
@@ -914,4 +932,3 @@ For comprehensive documentation with examples, troubleshooting, and detailed con
 ```
 
 All plugin features are fully documented with cross-references and copy-friendly examples!
-
