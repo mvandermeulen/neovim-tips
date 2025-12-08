@@ -437,12 +437,12 @@ function! InitBackupDir()
   endif
   let l:missing_dir = 0
   if isdirectory(l:tmp)
-    execute 'set backupdir=' . escape(l:backup, ' ') . '/,.' 
+    execute 'set backupdir=' . escape(l:backup, ' ') . '/,.'
   else
     let l:missing_dir = 1
   endif
   if isdirectory(l:backup)
-    execute 'set directory=' . escape(l:tmp, ' ') . '/,.' 
+    execute 'set directory=' . escape(l:tmp, ' ') . '/,.'
   else
     let l:missing_dir = 1
   endif
@@ -462,7 +462,7 @@ local function init_backup_dir()
   local parent = vim.fn.expand('$HOME') .. '/' .. separator .. 'vim/'
   local backup = parent .. 'backup/'
   local tmp = parent .. 'tmp/'
-  
+
   if vim.fn.exists('*mkdir') then
     if not vim.fn.isdirectory(parent) then
       vim.fn.mkdir(parent, 'p')
@@ -474,20 +474,20 @@ local function init_backup_dir()
       vim.fn.mkdir(tmp, 'p')
     end
   end
-  
+
   local missing_dir = false
   if vim.fn.isdirectory(tmp) then
-    vim.opt.backupdir = backup .. ',.' 
+    vim.opt.backupdir = backup .. ',.'
   else
     missing_dir = true
   end
-  
+
   if vim.fn.isdirectory(backup) then
-    vim.opt.directory = tmp .. ',.' 
+    vim.opt.directory = tmp .. ',.'
   else
     missing_dir = true
   end
-  
+
   if missing_dir then
     print('Warning: Unable to create backup directories: ' .. backup .. ' and ' .. tmp)
     print('Try: mkdir -p ' .. backup)
@@ -631,22 +631,22 @@ function _G.list_tree(dir)
   vim.bo.buftype = 'nofile'
   vim.bo.bufhidden = 'hide'
   vim.bo.swapfile = false
-  
+
   vim.fn.append(0, '.')
   vim.cmd('normal! dd')
-  
+
   local function process_file(file)
     if vim.fn.isdirectory(file) == 1 then
       local files = vim.fn.glob(file .. '/*')
       local hidden_files = vim.fn.glob(file .. '/.[^.]*')
-      
+
       vim.fn.append('$', vim.split(files, '\n'))
       if hidden_files ~= '' then
         vim.fn.append('$', vim.split(hidden_files, '\n'))
       end
     end
   end
-  
+
   local current_line = 1
   while current_line <= vim.fn.line('$') do
     local file = vim.fn.getline(current_line)
@@ -901,19 +901,19 @@ local function temp_set_binary_for_noeol()
     local save_view = vim.fn.winsaveview()
     vim.o.binary = true
     local fileformat = vim.o.ff
-    
+
     if fileformat == 'dos' or fileformat == 'mac' then
       if vim.fn.line('$') > 1 then
         vim.cmd('undojoin')
         vim.cmd('silent 1,$-1normal! A\<C-V>\<C-M>')
       end
     end
-    
+
     if fileformat == 'mac' then
       vim.cmd('undojoin')
       vim.cmd('%join!')
     end
-    
+
     return save_view, save_binary
   end
   return nil, save_binary
@@ -922,7 +922,7 @@ end
 local function temp_restore_binary_for_noeol(save_view, save_binary)
   if save_view and not vim.o.eol and not save_binary then
     local fileformat = vim.o.ff
-    
+
     if fileformat == 'dos' then
       if vim.fn.line('$') > 1 then
         vim.cmd('silent! undojoin')
@@ -932,7 +932,7 @@ local function temp_restore_binary_for_noeol(save_view, save_binary)
       vim.cmd('silent! undojoin')
       vim.cmd('silent %s/\r/\r/ge')
     end
-    
+
     vim.o.binary = false
     vim.fn.winrestview(save_view)
   end
@@ -1104,7 +1104,7 @@ Quickly create a timestamped copy of the current file in a temporary directory f
 :map zs :exe "sav $TMP/" . expand("%:t") . strftime("-%Y-%m-%d_%H%M%S")<CR>
 ```
 ```lua
-vim.keymap.set('n', 'zs', function() 
+vim.keymap.set('n', 'zs', function()
   local filename = vim.fn.expand('%:t')
   local timestamp = os.date('%Y-%m-%d_%H%M%S')
   local tmp_dir = os.getenv('TMP') or '/tmp'
@@ -1474,20 +1474,20 @@ command! -nargs=1 Find :call Find("<args>")
 function _G.find_file(name)
   local list = vim.fn.system('find . -name "' .. name .. '" | perl -ne "print qq{$.\t$_}"')
   local num = #vim.split(list, '\n')
-  
+
   if num < 1 then
     print("'" .. name .. "' not found")
     return
   end
-  
+
   if num > 1 then
     print(list)
     local input = vim.fn.input('Which ? (CR=nothing)\n')
-    
+
     if input == '' then
       return
     end
-    
+
     local selected_line = vim.split(list, '\n')[tonumber(input)]
     vim.cmd('edit ' .. selected_line:gsub('^%d+\	%./', ''))
   else
@@ -1560,7 +1560,7 @@ command! -nargs=* Find :call Find(<f-args>)
 function _G.flexible_file_search(...)
     local path = './'
     local query
-    
+
     if select('#', ...) == 2 then
         path = select(1, ...)
         query = select(2, ...)
@@ -1569,7 +1569,7 @@ function _G.flexible_file_search(...)
     end
 
     local ignore_patterns = vim.g.FindIgnore or {}
-    local ignore_cmd = ignore_patterns and #ignore_patterns > 0 
+    local ignore_cmd = ignore_patterns and #ignore_patterns > 0
         and ' | egrep -v "' .. table.concat(ignore_patterns, '|') .. '"' or ''
 
     local find_cmd = string.format('find %s -type f -iname "*%s*"%s', path, query, ignore_cmd)
@@ -1833,7 +1833,7 @@ command! -range=% Refile <line1>,<line2>g/^#refile=/exe ":r " . strpart(getline(
 vim.api.nvim_create_user_command('Refile', function(opts)
   local current_line = vim.fn.line('.')
   local last_line = opts.line2
-  
+
   for line = current_line, last_line do
     local line_text = vim.fn.getline(line)
     if line_text:match('^#refile=') then
@@ -1894,8 +1894,8 @@ execute myvar
 vim.opt.backupdir = '/tmp/vim_backup'
 
 -- Create backup with timestamp
-local backup_ext = string.format("_(%s)[%s]", 
-  os.date("%y%m%d"), 
+local backup_ext = string.format("_(%s)[%s]",
+  os.date("%y%m%d"),
   os.date("%Hh%M"))
 
 vim.opt.backupext = backup_ext
@@ -1926,14 +1926,14 @@ endfunction
 local function buf_write()
   local file_name = vim.fn.expand('<afile>')
   local protocol_pattern = 'ftp://\|rcp://\|scp://\|dav://\|rync://\|sftp://'
-  
+
   if file_name:match(protocol_pattern) then
     return
   end
-  
+
   local was_modified = vim.o.modified
   vim.cmd('write' .. (vim.v.cmdbang and '!' or '') .. ' ' .. vim.v.cmdarg .. ' ' .. file_name)
-  
+
   if vim.fn.expand('%') ~= file_name then
     vim.o.modified = was_modified
   end
@@ -2437,8 +2437,8 @@ Quickly open the directory of the current file in Windows file explorer from Vim
 map <C-e> :silent !explorer %:p:h:gs?/?\\\?<CR>
 ```
 ```lua
-vim.keymap.set('n', '<C-e>', function() 
-  vim.fn.system('explorer ' .. vim.fn.expand('%:p:h'):gsub('/', '\\')) 
+vim.keymap.set('n', '<C-e>', function()
+  vim.fn.system('explorer ' .. vim.fn.expand('%:p:h'):gsub('/', '\\'))
 end, { silent = true })
 ```
 
@@ -2659,15 +2659,15 @@ map ;s :up | saveas! %:p:r-<C-R>=strftime("%y%m%d-%H:%M")<CR>-bak.<C-R>=expand("
 vim.keymap.set('n', ';s', function()
   -- Update current file
   vim.cmd('update')
-  
+
   -- Create timestamped backup with original extension
   local original_file = vim.fn.expand('%:p')
   local timestamp = os.date('%y%m%d-%H:%M')
-  local backup_file = string.format('%s-%s-bak.%s', 
-    vim.fn.fnamemodify(original_file, ':r'), 
-    timestamp, 
+  local backup_file = string.format('%s-%s-bak.%s',
+    vim.fn.fnamemodify(original_file, ':r'),
+    timestamp,
     vim.fn.expand('%:e'))
-  
+
   -- Save backup and return to original file
   vim.cmd('saveas! ' .. backup_file)
   vim.cmd('sleep 3')
@@ -2738,7 +2738,7 @@ M.enc_index = 0
 function M.change_file_encoding()
   local encodings = {'cp1251', 'koi8-u', 'cp866'}
   vim.cmd('e ++enc=' .. encodings[M.enc_index + 1] .. ' %:p')
-  
+
   M.enc_index = (M.enc_index >= 2) and 0 or M.enc_index + 1
 end
 
@@ -2881,7 +2881,7 @@ Automatically adjust Vim settings for large files to improve loading speed and r
 ```vim
 " file is large from 10mb
 let g:LargeFile = 1024 * 1024 * 10
-augroup LargeFile 
+augroup LargeFile
   au!
   autocmd BufReadPre * let f=getfsize(expand("<afile>")) | if f > g:LargeFile || f == -2 | call LargeFile() | endif
 augroup END
@@ -2908,7 +2908,7 @@ vim.api.nvim_create_autocmd('BufReadPre', {
       vim.bo.bufhidden = 'unload'
       vim.bo.buftype = 'nowrite'
       vim.bo.undolevels = -1
-      
+
       vim.notify(string.format('The file is larger than %d MB, so some options are changed', vim.g.LargeFile / 1024 / 1024))
     end
   end
@@ -3043,7 +3043,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
     if vim.fn.filereadable('Makefile') == 1 then
       vim.opt_local.makeprg = 'make'
     else
-      vim.opt_local.makeprg = string.format('make -f ~/academic/tools/latex.mk %s', 
+      vim.opt_local.makeprg = string.format('make -f ~/academic/tools/latex.mk %s',
         vim.fn.expand('%:r') .. '.pdf')
     end
     vim.opt_local.errorformat = '%f:%l: %m,%f:%l-%d: %m'
@@ -3131,4 +3131,40 @@ vim.api.nvim_create_autocmd('BufReadCmd', {
 ```
 
 **Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip691)
+***
+# Title: Preserve Cursor Position on Save
+# Category: file_operations
+# Tags: autocmd, file, save, whitespace
+---
+Suppose that you want to trim trailing white space on file save. That's easy (and already explained elsewhere): just create auto-command that will do the job before writing the file. But after the file is saved, you will often notice that the cursor jumps wildly accros the screen. The situation is even worse if you have some plugins that also interfere with file save operation (like `prettier`, popular javascript formatter). You need some way to remember the cursor position before the save and restore it afterwards. The simplest approach would be to put mark at cursor position before the save and move to the mark after the save. However, such mark often gets lost in the process. Here is the right approach:
+
+```lua
+-- Remove trailing whitespace on save
+-- Save and restore cursor position across write operations
+local cursor_position = {}
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    -- Save the current window view (cursor position, topline, etc.)
+    cursor_position[vim.api.nvim_get_current_buf()] = vim.fn.winsaveview()
+    -- trim whitespace
+    vim.cmd([[%s/\s\+$//e]])
+  end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  callback = function()
+    -- Restore the saved window view
+    local bufnr = vim.api.nvim_get_current_buf()
+    if cursor_position[bufnr] then
+      vim.fn.winrestview(cursor_position[bufnr])
+      cursor_position[bufnr] = nil -- Clean up
+    end
+  end,
+})
+```
+
+Just put the code into your `init.lua` file.
+
+**Source:** [Claude](https://claude.ai/new)
 ***
