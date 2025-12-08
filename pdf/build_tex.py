@@ -60,11 +60,11 @@ class LatexUtil:
 
         # Determine label based on language
         if language in ['vim', 'viml', 'vimscript']:
-          label = 'Example (Vim)'
+          label = 'Vim'
         elif language in ['lua', 'neovim']:
-          label = 'Example (Neovim)'
+          label = 'Neovim'
         else:
-          label = 'Example'
+          label = ''
 
         # Find the closing ```
         end = text.find('```', i + 3)
