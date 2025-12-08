@@ -85,7 +85,7 @@ I have provided a solid initial batch of tips and if you have your favorite one 
 - **Smart caching**: Automatic serialization of parsed tips for 10-20x faster loading (optional, enabled by default)
 - Support for categories, tags, and rich text
 - Lazy loading for optimal startup performance
-- The plugin comes with a starting set of 1000+ curated tips
+- Easily navigate between 2,700 tips (as of December 2025)
 - You can add/edit unlimited number of personal tips stored in a configurable file
 - User tips with configurable prefixes to prevent conflicts with builtin tips
 - Automatic title conflict detection and warnings
