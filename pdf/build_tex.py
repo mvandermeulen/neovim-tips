@@ -55,6 +55,17 @@ class LatexUtil:
         if first_line_end == -1:
           first_line_end = i + 3
 
+        # Extract language identifier
+        language = text[i+3:first_line_end].strip().lower()
+
+        # Determine label based on language
+        if language in ['vim', 'viml', 'vimscript']:
+          label = 'Example (Vim)'
+        elif language in ['lua', 'neovim']:
+          label = 'Example (Neovim)'
+        else:
+          label = 'Example'
+
         # Find the closing ```
         end = text.find('```', i + 3)
         if end != -1:
@@ -63,7 +74,7 @@ class LatexUtil:
           code_content = text[code_start:end].rstrip('\n')
 
           # Replace with LaTeX verbatim environment (using Verbatim from fvextra)
-          result.append(r'\begin{Exa*}{}' + '\n')
+          result.append(r'\begin{Exa*}{' + label + '}' + '\n')
           result.append(r'\begin{Verbatim}[fontsize=\footnotesize, breaklines, breakanywhere]' + '\n')
           result.append(code_content + '\n')
           result.append(r'\end{Verbatim}' + '\n')
