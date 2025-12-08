@@ -128,24 +128,47 @@ class LatexUtil:
             continue
 
       # Check for italic *text* (single asterisk)
+      # Only treat as italic if preceded by space/start and followed by space/punctuation
       if text[i] == '*':
-        end = text.find('*', i + 1)
-        if end != -1:
-          content = text[i+1:end]
-          escaped = LatexUtil.escape_special_chars(content)
-          result.append(r'\textit{' + escaped + '}')
-          i = end + 1
-          continue
+        # Check if this looks like markdown italic (word boundary before)
+        is_markdown_italic = (i == 0 or text[i-1] in ' \t\n.,;:!?-')
+
+        if is_markdown_italic:
+          end = text.find('*', i + 1)
+          if end != -1:
+            # Check if closing asterisk is followed by word boundary
+            is_valid_close = (end + 1 >= len(text) or text[end + 1] in ' \t\n.,;:!?-')
+            content = text[i+1:end]
+            # Check that content doesn't have nested asterisks and is reasonable length
+            has_no_internal_asterisks = '*' not in content
+            is_reasonable_length = len(content) > 0 and len(content) < 100
+
+            if is_valid_close and has_no_internal_asterisks and is_reasonable_length:
+              escaped = LatexUtil.escape_special_chars(content)
+              result.append(r'\textit{' + escaped + '}')
+              i = end + 1
+              continue
 
       # Check for italic _text_ (single underscore)
+      # Only treat as italic if preceded by space/start and followed by space/punctuation
       if text[i] == '_':
-        end = text.find('_', i + 1)
-        if end != -1:
-          content = text[i+1:end]
-          escaped = LatexUtil.escape_special_chars(content)
-          result.append(r'\textit{' + escaped + '}')
-          i = end + 1
-          continue
+        # Check if this looks like markdown italic (word boundary before)
+        is_markdown_italic = (i == 0 or text[i-1] in ' \t\n.,;:!?-')
+
+        if is_markdown_italic:
+          end = text.find('_', i + 1)
+          if end != -1:
+            # Check if closing underscore is followed by word boundary
+            is_valid_close = (end + 1 >= len(text) or text[end + 1] in ' \t\n.,;:!?-')
+            # Also check that content doesn't contain spaces (markdown italic is usually one word)
+            content = text[i+1:end]
+            has_no_internal_underscores = '_' not in content
+
+            if is_valid_close and has_no_internal_underscores:
+              escaped = LatexUtil.escape_special_chars(content)
+              result.append(r'\textit{' + escaped + '}')
+              i = end + 1
+              continue
 
       # Escape special LaTeX characters
       if text[i] in latex_special_chars:
@@ -236,24 +259,47 @@ class LatexUtil:
             continue
 
       # Check for italic *text* (single asterisk)
+      # Only treat as italic if preceded by space/start and followed by space/punctuation
       if text[i] == '*':
-        end = text.find('*', i + 1)
-        if end != -1:
-          content = text[i+1:end]
-          escaped = LatexUtil.escape_special_chars(content)
-          result.append(r'\textit{' + escaped + '}')
-          i = end + 1
-          continue
+        # Check if this looks like markdown italic (word boundary before)
+        is_markdown_italic = (i == 0 or text[i-1] in ' \t\n.,;:!?-')
+
+        if is_markdown_italic:
+          end = text.find('*', i + 1)
+          if end != -1:
+            # Check if closing asterisk is followed by word boundary
+            is_valid_close = (end + 1 >= len(text) or text[end + 1] in ' \t\n.,;:!?-')
+            content = text[i+1:end]
+            # Check that content doesn't have nested asterisks and is reasonable length
+            has_no_internal_asterisks = '*' not in content
+            is_reasonable_length = len(content) > 0 and len(content) < 100
+
+            if is_valid_close and has_no_internal_asterisks and is_reasonable_length:
+              escaped = LatexUtil.escape_special_chars(content)
+              result.append(r'\textit{' + escaped + '}')
+              i = end + 1
+              continue
 
       # Check for italic _text_ (single underscore)
+      # Only treat as italic if preceded by space/start and followed by space/punctuation
       if text[i] == '_':
-        end = text.find('_', i + 1)
-        if end != -1:
-          content = text[i+1:end]
-          escaped = LatexUtil.escape_special_chars(content)
-          result.append(r'\textit{' + escaped + '}')
-          i = end + 1
-          continue
+        # Check if this looks like markdown italic (word boundary before)
+        is_markdown_italic = (i == 0 or text[i-1] in ' \t\n.,;:!?-')
+
+        if is_markdown_italic:
+          end = text.find('_', i + 1)
+          if end != -1:
+            # Check if closing underscore is followed by word boundary
+            is_valid_close = (end + 1 >= len(text) or text[end + 1] in ' \t\n.,;:!?-')
+            # Also check that content doesn't contain spaces (markdown italic is usually one word)
+            content = text[i+1:end]
+            has_no_internal_underscores = '_' not in content
+
+            if is_valid_close and has_no_internal_underscores:
+              escaped = LatexUtil.escape_special_chars(content)
+              result.append(r'\textit{' + escaped + '}')
+              i = end + 1
+              continue
 
       # Escape special LaTeX characters
       if text[i] in latex_special_chars:

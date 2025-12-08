@@ -185,7 +185,7 @@ Use `:browse` to open file dialog for commands (GUI Vim only).
 # Tags: oldfiles, recent, history, files, ex
 ---
 Use `:oldfiles` to show list of recently edited files.
-Files are numbered; use `:e #< to edit by number.
+Files are numbered; use `:e #<` to edit by number.
 
 ```vim
 :oldfiles           " show recently edited files

@@ -289,7 +289,7 @@ Use \%V to limit substitutions to visual selection area
 # Category: search_replace
 # Tags: search, navigation, cursor
 ---
-Use * and # to search for the word under the cursor forward and backward
+Use `*` and `#` to search for the word under the cursor forward and backward
 
 ```vim
 * searches forward
