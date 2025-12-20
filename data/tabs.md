@@ -2,17 +2,6 @@
 # Category: Tabs
 # Tags: tab, new, open
 ---
-Use `:tabnew` or `:tabedit {file}` to open a new tab, optionally with a file.
-
-```vim
-:tabnew
-:tabedit file.txt
-```
-***
-# Title: Navigate tabs
-# Category: Tabs
-# Tags: tab, navigate, switch
----
 Use `gt` to go to next tab, `gT` to go to previous tab, or `{number}gt` to go to specific tab.
 
 ```vim

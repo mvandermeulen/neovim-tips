@@ -61,21 +61,6 @@ Use `:args` to set argument list, `:argadd` to add files, `:next`/`:prev` to nav
 # Category: Session
 # Tags: ex, multiple, files, bufdo, windo, tabdo
 ---
-Use `:bufdo` for all buffers, `:windo` for all windows, `:tabdo` for all tabs to execute commands across multiple contexts.
-
-```vim
-:bufdo %s/old/new/ge  " substitute in all buffers
-:windo set number     " set line numbers in all windows
-:tabdo close          " close all tabs
-:argdo write          " save all files in arglist
-```
-
-**Source:** Community contributed
-***
-# Title: Save and Restore Vim Session
-# Category: session-management
-# Tags: session, file-history, persistence
----
 Automatically save and restore Vim session when opening and closing without arguments
 
 ```vim
@@ -89,6 +74,7 @@ autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
 autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
     \ execute "source " . $HOME . "/.vim/Session.vim"
 ```
+
 ```lua
 local session_file = vim.fn.expand('$HOME') .. '/.vim/Session.vim'
 

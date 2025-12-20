@@ -2,16 +2,6 @@
 # Category: Diagnostics
 # Tags: health, check, diagnostics
 ---
-Use `:checkhealth` to run health diagnostics for your Neovim setup.
-
-```vim
-:checkhealth  " run health diagnostics
-```
-***
-# Title: View messages
-# Category: Diagnostics
-# Tags: messages, log, history
----
 Use `:messages` to view past messages and notifications.
 
 ```vim

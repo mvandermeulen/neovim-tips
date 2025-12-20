@@ -14,6 +14,7 @@ syn keyword cType MPI_Info MPI_Op MPI_Datatype MPI_Comm
 
 HiLink cCommunicator Communicator
 ```
+
 ```lua
 -- In Neovim, use vim.treesitter or nvim-highlight for more advanced highlighting
 local function setup_mpi_highlighting()
@@ -50,6 +51,7 @@ syn match dosinilabel "^\s\+ ="
 " Heredoc syntax handling
 syn region dosiniHereDoc matchgroup=dosiniStringStartEnd start=+<<\z(\I\i*\)+      end=+^\z1$+ contains=@dosiniInterpDQ
 ```
+
 ```lua
 vim.cmd([[syn match dosinicomment "^;.*$\|^#.*$"])
 vim.cmd([[syn match dosinilabel "^\s\+ ="])
@@ -70,6 +72,7 @@ Automatically highlight repeated words across lines to catch editing mistakes
 syn match texDoubleWord "\c\<\(\a\+\)\s\+\1\>"
 hi def link texDoubleWord Error
 ```
+
 ```lua
 vim.cmd([[syn match texDoubleWord "\c\<\(\a\+\)\s\+\1\>"]])
 vim.cmd([[hi def link texDoubleWord Error]])
@@ -88,6 +91,7 @@ Add custom syntax highlighting to detect common Python syntax mistakes like miss
 syn match pythonError "^\s*\(if\|elif\)[^:]*$" display
 syn match pythonError "^\s*\(class\|def\|for\|while\|try\|except\|finally\|if\|elif\|else\)$" display
 ```
+
 ```lua
 -- Lua equivalent for syntax highlighting
 vim.cmd([[syn match pythonError "^\s*\(if\|elif\)[^:]*$" display]])
@@ -111,6 +115,7 @@ endfunction
 
 autocmd Syntax cpp call EnhanceCppSyntax()
 ```
+
 ```lua
 -- Highlight C++ method names
 vim.api.nvim_create_autocmd('Syntax', {
@@ -134,6 +139,7 @@ syn region pythonComment
       \ start=+\%(:\n\s*\)\@<=\z('''\|"""\)+ end=+\z1+ keepend
       \ contains=pythonEscape,pythonTodo,@Spell
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'python',

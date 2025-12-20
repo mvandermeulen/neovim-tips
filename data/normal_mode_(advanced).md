@@ -1,20 +1,3 @@
-# Title: Increment and decrement numbers
-# Category: Normal Mode
-# Tags: number, increment, decrement, arithmetic
----
-Use `Ctrl+a` to increment number under cursor, `Ctrl+x` to decrement. Works with decimal, hex, octal, and binary.
-Works on hex (0x1F), octal (017), binary (0b1010), and decimals.
-
-```vim
-Ctrl+a    " increment number under cursor
-Ctrl+x    " decrement number under cursor
-5Ctrl+a   " increment by 5
-```
-***
-# Title: Repeat last command
-# Category: Normal Mode
-# Tags: repeat, command, dot, redo
----
 Use `.` to repeat the last change command. One of Vim's most powerful features for efficient editing.
 
 ```vim
@@ -41,20 +24,6 @@ q         " stop recording
 # Title: Case conversion commands
 # Category: Normal Mode
 # Tags: case, upper, lower, toggle, conversion
----
-Use `~` to toggle case of character, `g~` with motion for range case toggle, `gu` for lowercase, `gU` for uppercase.
-
-```vim
-~         " toggle case of character under cursor
-g~w       " toggle case of word
-guw       " lowercase word
-gUw       " uppercase word
-g~~       " toggle case of entire line
-```
-***
-# Title: Join lines with space control
-# Category: Normal Mode
-# Tags: join, lines, space, merge
 ---
 Use `J` to join current line with next (adds space), `gJ` to join without adding space.
 
@@ -93,18 +62,6 @@ g~ap      " toggle case of paragraph
 # Category: Normal Mode
 # Tags: insert, line, beginning, end, multiple
 ---
-Use `I` to insert at beginning of line, `A` to append at end of line.
-
-```vim
-I         " insert at beginning of line (first non-blank)
-A         " append at end of line
-gI        " insert at column 1 (absolute beginning)
-```
-***
-# Title: Open new lines
-# Category: Normal Mode
-# Tags: open, line, above, below, insert
----
 Use `o` to open line below cursor, `O` to open line above cursor (both enter insert mode).
 
 ```vim
@@ -131,59 +88,6 @@ D         " delete from cursor to end of line
 # Category: Normal Mode
 # Tags: yank, copy, line, word, clipboard
 ---
-Use `y` with motion to yank (copy), `yy` to yank line, `Y` to yank to end of line.
-
-```vim
-yy        " yank entire line
-yw        " yank word
-y$        " yank from cursor to end of line
-Y         " yank from cursor to end of line (same as y$)
-yap       " yank around paragraph
-```
-***
-# Title: Put operations
-# Category: Normal Mode
-# Tags: put, paste, register, before, after
----
-Use `p` to put (paste) after cursor, `P` to put before cursor. Works with any register content.
-
-```vim
-p         " put after cursor/line
-P         " put before cursor/line
-"ap       " put from register 'a' after cursor
-"0p       " put from yank register (register 0)
-```
-***
-# Title: Undo and redo
-# Category: Normal Mode
-# Tags: undo, redo, history, changes
----
-Use `u` to undo last change, `Ctrl+r` to redo, `U` to undo all changes on current line.
-
-```vim
-u         " undo last change
-Ctrl+r    " redo last undone change
-U         " undo all changes on current line
-```
-***
-# Title: Change operations
-# Category: Normal Mode
-# Tags: change, replace, word, line, text
----
-Use `c` with motion to change (delete and enter insert mode), `cc` to change line, `C` to change to end.
-
-```vim
-cw        " change word
-cc        " change entire line
-C         " change from cursor to end of line
-ciw       " change inner word
-cip       " change inner paragraph
-```
-***
-# Title: Visual selection commands
-# Category: Normal Mode
-# Tags: visual, select, line, block, character
----
 Use `v` for character-wise visual, `V` for line-wise visual, `Ctrl+v` for block-wise visual.
 
 ```vim
@@ -196,18 +100,6 @@ gv        " reselect last visual selection
 # Title: Go to column
 # Category: Normal Mode
 # Tags: column, position, horizontal, goto
----
-Use `{number}|` to go to specific column number on current line.
-
-```vim
-10|       " go to column 10
-1|        " go to column 1 (beginning of line)
-$         " go to end of line (last column)
-```
-***
-# Title: Search under cursor
-# Category: Normal Mode
-# Tags: search, word, cursor, find, highlight
 ---
 Use `*` to search forward for word under cursor, `#` to search backward.
 
@@ -356,18 +248,6 @@ Ctrl+k >>  " insert » (right guillemet)
 # Title: Tag navigation
 # Category: Normal Mode
 # Tags: tag, definition, ctags, jump
----
-Use `Ctrl+]` to jump to tag under cursor, `Ctrl+t` to return from tag jump.
-
-```vim
-Ctrl+]    " jump to tag definition
-Ctrl+t    " return from tag jump
-g Ctrl+]  " show list of matching tags
-```
-***
-# Title: File under cursor operations
-# Category: Normal Mode
-# Tags: file, cursor, edit, goto
 ---
 Use `gf` to open file under cursor, `gF` to open file with line number.
 

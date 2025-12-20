@@ -28,19 +28,6 @@ Use `:abbreviate` or `:abbr` to create text shortcuts that expand automatically.
 # Category: Navigation
 # Tags: marks, list, show, position, ex
 ---
-Use `:marks` to display all marks with their line numbers and text.
-
-```vim
-:marks              " show all marks
-:marks aB           " show only marks 'a' and 'B'
-:delmarks a-z       " delete lowercase marks
-:delmarks!          " delete all marks for current buffer
-```
-***
-# Title: Show jump list
-# Category: Navigation
-# Tags: jumps, list, history, navigation, ex
----
 Use `:jumps` to display jump list with positions you can return to.
 Use `Ctrl+o` to go back, `Ctrl+i` to go forward in jump list.
 
@@ -103,19 +90,6 @@ Use `:call` to execute functions and discard their return value.
 # Category: Scripting
 # Tags: let, variable, assign, define, ex
 ---
-Use `:let` to define and assign values to variables.
-
-```vim
-:let g:my_var = 'value'    " global variable
-:let b:buffer_var = 123    " buffer-local variable
-:let &tabstop = 4          " set option value
-:unlet g:my_var            " delete variable
-```
-***
-# Title: Show digraphs
-# Category: Text Input
-# Tags: digraphs, special, characters, unicode, ex
----
 Use `:digraphs` to show available two-character combinations for special characters.
 In insert mode, use `Ctrl+k` followed by two characters (e.g., `Ctrl+k a'` for á).
 
@@ -176,21 +150,6 @@ Use `:augroup` to group autocommands and manage them collectively.
 # Title: Function definition
 # Category: Scripting
 # Tags: function, define, script, procedure, ex
----
-Use `:function` to define custom functions in Vim script.
-
-```vim
-:function! MyFunc()
-  echo "Hello from function"
-endfunction
-
-:call MyFunc()      " call the function
-:delfunc MyFunc     " delete function
-```
-***
-# Title: Match highlighting
-# Category: Display
-# Tags: match, highlight, pattern, visual, ex
 ---
 Use `:match` to highlight patterns with specific colors in current window.
 
@@ -305,19 +264,6 @@ Use `:language` to set language for messages and time.
 # Category: Display
 # Tags: print, lines, show, output, ex
 ---
-Use `:print` or `:p` to print lines to command area.
-
-```vim
-:print             " print current line
-:1,5p              " print lines 1 through 5
-:.,$p              " print from current line to end
-:p #               " print with line numbers
-```
-***
-# Title: File information
-# Category: Information
-# Tags: file, info, status, buffer, ex
----
 Use `:file` to show file information and optionally rename buffer.
 
 ```vim
@@ -354,18 +300,6 @@ Useful after clearing the screen or when you want to see version info.
 # Title: Unlet variables
 # Category: Scripting
 # Tags: unlet, variable, delete, remove, ex
----
-Use `:unlet` to delete variables and free memory.
-
-```vim
-:unlet g:my_var    " delete global variable
-:unlet! b:temp     " delete if exists (no error)
-:unlet $HOME       " delete environment variable
-```
-***
-# Title: Add buffer to list
-# Category: Buffer Management
-# Tags: badd, buffer, add, list, ex
 ---
 Use `:badd` to add file to buffer list without editing it.
 Useful for preparing a list of files to work with.

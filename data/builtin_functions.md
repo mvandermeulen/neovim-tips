@@ -10,6 +10,7 @@ Or:
 :echo getfperm(expand('%'))     " file permissions (rwxrwxrwx)
 :echo getfsize(expand('%'))     " file size in bytes
 ```
+
 ```lua
 print(vim.fn.getftype(vim.fn.expand('%')))
 print(vim.fn.getfperm(vim.fn.expand('%')))
@@ -30,6 +31,7 @@ Or:
 :echo matchstr("file.txt", '\\.\\w\\+$')             " .txt
 :echo split("a,b,c", ",")                            " ['a', 'b', 'c']
 ```
+
 ```lua
 print(vim.fn.substitute("hello world", "world", "vim", "g"))
 print(vim.fn.matchstr("file.txt", '\\.\\w\\+$'))
@@ -51,6 +53,7 @@ Or:
 :echo tabpagenr()       " current tab number
 :echo winnr('$')        " total number of windows
 ```
+
 ```lua
 print(vim.fn.bufnr('%'))
 print(vim.fn.winnr('%'))
@@ -73,6 +76,7 @@ Or:
 :echo resolve(expand('%'))                 " resolve symlinks
 :echo simplify('../path/./file')           " normalize path
 ```
+
 ```lua
 print(vim.fn.fnamemodify(vim.fn.expand('%'), ':p:h'))
 print(vim.fn.fnamemodify(vim.fn.expand('%'), ':t:r'))
@@ -95,6 +99,7 @@ Or:
 :echo match('hello world', 'wor')          " find position in string (6)
 :echo matchend('hello world', 'wor')       " end position (9)
 ```
+
 ```lua
 print(vim.fn.search('pattern'))
 print(vim.fn.searchpos('pattern'))
@@ -117,6 +122,7 @@ Or:
 :echo getline('.')      " current line text
 :call setline('.', 'new text')  " replace current line
 ```
+
 ```lua
 print(vim.fn.line('.'))
 print(vim.fn.col('.'))
@@ -139,6 +145,7 @@ Or:
 :echo getftime(expand('%'))               " file modification time
 :put =strftime('%Y-%m-%d')                " insert current date
 ```
+
 ```lua
 print(vim.fn.strftime('%Y-%m-%d %H:%M:%S'))
 print(vim.fn.strftime('%Y-%m-%d', vim.fn.localtime()))
@@ -161,6 +168,7 @@ Or:
 :echo getenv('HOME')                      " get environment variable
 :echo exists('$EDITOR')                  " check if env var exists
 ```
+
 ```lua
 print(vim.fn.system('date'))
 print(vim.fn.systemlist('ls -la'))
@@ -185,6 +193,7 @@ Or:
 :echo has_key(mydict, 'a')               " true (1)
 :echo keys(mydict)                        " ['a', 'b']
 ```
+
 ```lua
 local mylist = {1, 2, 3}
 print(#mylist)
@@ -210,6 +219,7 @@ Or:
 :echo type({})                   " 4 (Dictionary)
 :echo exists('g:my_var')         " check if variable exists
 ```
+
 ```lua
 print(vim.fn.type(42))
 print(vim.fn.type("string"))
@@ -234,6 +244,7 @@ Or:
 :echo sin(3.14159/2)             " sine: ~1.0
 :echo round(3.7)                 " round: 4
 ```
+
 ```lua
 print(vim.fn.abs(-5))
 print(vim.fn.pow(2, 3))
@@ -257,6 +268,7 @@ Or:
 :call append(line('.'), 'new line')      " append after current line
 :call delete(line('.'))                  " delete current line
 ```
+
 ```lua
 print(vim.fn.getbufline(1, 1, 10))
 vim.fn.setbufline(2, 1, 'new first line')
@@ -279,6 +291,7 @@ Or:
 :let result = confirm('Save changes?', "&Yes\n&No\n&Cancel")
 :echo "You chose: " . choice
 ```
+
 ```lua
 local name = vim.fn.input('Enter name: ')
 local choice = vim.fn.inputlist(['1.Red', '2. Blue', '3. Green'])
@@ -302,6 +315,7 @@ Or:
 :call winrestview(view)          " restore saved view
 :echo tabpagebuflist()           " list buffers in current tab
 ```
+
 ```lua
 print(vim.fn.winheight(0))
 print(vim.fn.winwidth(0))
@@ -325,6 +339,7 @@ Or:
 :echo hlID('Comment')                    " highlight group ID
 :echo synIDattr(hlID('Comment'), 'fg')   " foreground color
 ```
+
 ```lua
 print(vim.fn.synID(vim.fn.line('.'), vim.fn.col('.'), 1))
 print(vim.fn.synIDattr(vim.fn.synId(vim.fn.line('.'), vim.fn.col('.'), 1), 'name'))
@@ -347,6 +362,7 @@ Or:
 :echo matchlist('file.txt', '\\(.*\\)\\.\\(.*\\)')  " capture groups
 :echo matchstr('hello123world', '\\d\\+') " extract digits: 123
 ```
+
 ```lua
 local m = vim.fn.matchadd('Search', 'TODO')
 vim.fn.matchdelete(m)
@@ -369,6 +385,7 @@ Or:
 :echo foldtext()                 " default fold text
 :set foldtext=MyCustomFoldText() " custom fold text function
 ```
+
 ```lua
 print(vim.fn.foldclosed(vim.fn.line('.')))
 print(vim.fn.foldlevel(vim.fn.line('.')))
@@ -391,6 +408,7 @@ Or:
 :echo isdirectory(expand('%:h')) " check if directory exists
 :echo readable(expand('%'))      " check if file is readable
 ```
+
 ```lua
 print(vim.fn.glob('*.txt'))
 print(vim.fn.globpath(&rtp, 'plugin/*.vim'))
@@ -413,6 +431,7 @@ Or:
 :echo getregtype('a')            " get register type (v, V, or Ctrl-V)
 :call setreg('+', "@")            " copy default register to clipboard
 ```
+
 ```lua
 print(vim.fn.getreg('"'))
 vim.fn.setreg('a', 'hello world')
@@ -435,6 +454,7 @@ Or:
 :call setpos('.', pos)           " restore cursor position
 :echo getpos("'a")               " get position of mark 'a'
 ```
+
 ```lua
 vim.fn.cursor(10, 5)
 local pos = vim.fn.getpos('.')
@@ -457,6 +477,7 @@ function! AddMyHelpTags()
   exe 'mv -f /tmp/foo.vim.tags ~/.vim/doc/tags'
 endfunction
 ```
+
 ```lua
 local function add_help_tags()
   local tags_path = vim.fn.expand('~/.vim/doc/tags')
@@ -485,6 +506,7 @@ let is_comment = synIDattr(synIDtrans(synID(line('.'), col('.'), 0)), 'name') ==
 " Check if cursor is in comment, string, or preprocessor
 let is_special = synIDattr(synIDtrans(synID(line('.'), col('.'), 0)), 'name') =~ 'Comment\|Constant\|PreProc'
 ```
+
 ```lua
 -- Check if cursor is in a comment
 local function is_comment()
@@ -513,6 +535,7 @@ function! Percent()
   return (byte * 100) / size
 endfunction
 ```
+
 ```lua
 function _G.byte_percentage()
   local byte = vim.fn.line2byte(vim.fn.line('.')) + vim.fn.col('.') - 1
@@ -541,6 +564,7 @@ function! WideMsg(msg)
   let &ruler=x | let &showcmd=y
 endfun
 ```
+
 ```lua
 function _G.WideMsg(msg)
   local ruler = vim.o.ruler
@@ -570,6 +594,7 @@ Easily insert current date and time using Vim's built-in strftime() function wit
 " Abbreviation for quick timestamp
 :iab <expr> dts strftime("%c")
 ```
+
 ```lua
 -- Insert current date/time on F5
 vim.keymap.set('n', '<F5>', function()
@@ -608,6 +633,7 @@ function CurPos(action)
   endif
 endfunction
 ```
+
 ```lua
 function _G.CurPos(action)
   if action == "save" then
@@ -647,6 +673,7 @@ function! Time(com, ...)
   echo 'Average time: '.string(numberOfTimes / i)
 endfunction
 ```
+
 ```lua
 function Time(com, numberOfTimes)
   numberOfTimes = numberOfTimes or 50000
@@ -674,6 +701,7 @@ Programmatically recreate Vim's temporary file directory if it has been deleted,
 ```vim
 :call mkdir(fnamemodify(tempname(),':h'),'p',0700)
 ```
+
 ```lua
 vim.fn.mkdir(vim.fn.fnamemodify(vim.fn.tempname(), ':h'), 'p', 700)
 ```
@@ -689,6 +717,7 @@ Search for command in system PATH using Vim's globpath function, works across di
 ```vim
 :echo globpath(substitute($PATH, ':', ',', 'g'), 'cat')
 ```
+
 ```lua
 -- Lua implementation of PATH search
 local function find_in_path(cmd)
@@ -716,6 +745,7 @@ function! Hex2dec(arg)
   return (a:arg =~? '^0x') ? a:arg + 0 : ('0x'.a:arg) + 0
 endfunction
 ```
+
 ```lua
 -- Convert decimal to hex
 function _G.dec2hex(arg)
@@ -745,6 +775,7 @@ function! GetDate(format)
   call setline(line('.'), getline('.') . ' ' . result)
 endfunction
 ```
+
 ```lua
 function GetDate(format)
   local fmt = format == '' and '+%A %Y-%m-%d %H:%M UTC' or format
@@ -776,6 +807,7 @@ endfunction
 " Map to generate calendar for 1000 days
 map <S-F7> :call Calendar(2002, 12, 30, 1, 1, 1000)<CR><CR>
 ```
+
 ```lua
 function _G.generate_calendar(year, month, day, weekday, week, daycount)
   vim.cmd('new')

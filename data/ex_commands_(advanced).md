@@ -28,19 +28,6 @@ New text here
 # Category: Text Editing
 # Tags: change, replace, lines, text, ex
 ---
-Use `:change` or `:c` to replace line range with new text.
-
-```vim
-:5c                 " change line 5
-:1,3c               " change lines 1-3
-New replacement text
-.                   " end with dot on empty line
-```
-***
-# Title: Put register contents
-# Category: Registers
-# Tags: put, paste, register, insert, ex
----
 Use `:put` to insert register contents after current line.
 
 ```vim
@@ -146,31 +133,6 @@ Use `:retab` to convert tabs to spaces or vice versa based on current settings.
 # Category: File Operations
 # Tags: xit, write, exit, save, quit, ex
 ---
-Use `:xit` or `:x` to write file only if modified, then exit.
-More efficient than `:wq` since it only writes when necessary.
-
-```vim
-:xit                " write if modified and exit
-:x                  " shorter version
-:5,10x file.txt     " write lines 5-10 to file and exit
-```
-***
-# Title: Write all and quit all
-# Category: File Operations
-# Tags: wqall, write, quit, all, buffers, ex
----
-Use `:wqall` to write all modified buffers and quit all windows.
-
-```vim
-:wqall              " write all modified and quit all
-:wqa                " shorter version
-:xa                 " write all modified and exit (alternative)
-```
-***
-# Title: Browse with file dialog
-# Category: File Operations
-# Tags: browse, dialog, file, gui, ex
----
 Use `:browse` to open file dialog for commands (GUI Vim only).
 
 ```vim
@@ -183,19 +145,6 @@ Use `:browse` to open file dialog for commands (GUI Vim only).
 # Title: List old files
 # Category: File History
 # Tags: oldfiles, recent, history, files, ex
----
-Use `:oldfiles` to show list of recently edited files.
-Files are numbered; use `:e #<` to edit by number.
-
-```vim
-:oldfiles           " show recently edited files
-:ol                 " shorter version
-:browse oldfiles    " browse old files with dialog (GUI)
-```
-***
-# Title: Make session file
-# Category: Session Management
-# Tags: mksession, session, save, workspace, ex
 ---
 Use `:mksession` to save current editing session to file.
 Restore with `:source Session.vim` or `nvim -S Session.vim`.
@@ -269,17 +218,6 @@ Use `:keepmarks` to preserve mark positions during range operations.
 # Category: Navigation
 # Tags: keepjumps, jumps, preserve, navigation, ex
 ---
-Use `:keepjumps` to prevent commands from adding entries to jump list.
-
-```vim
-:keepjumps normal! G     " go to end without jump entry
-:keepjumps /pattern      " search without jump entry
-```
-***
-# Title: Execute on non-matching lines
-# Category: Text Manipulation
-# Tags: vglobal, inverse, global, exclude, ex
----
 Use `:vglobal` or `:v` to execute commands on lines NOT matching pattern.
 Opposite of `:global` - executes on non-matching lines.
 
@@ -292,18 +230,6 @@ Opposite of `:global` - executes on non-matching lines.
 # Title: Return to normal mode
 # Category: Mode Switching
 # Tags: visual, normal, mode, return, ex
----
-Use `:visual` or `:vi` to return to Normal mode from Ex mode.
-Historical command, rarely needed in modern Neovim.
-
-```vim
-:visual             " return to Normal mode
-:vi                 " shorter version
-```
-***
-# Title: Substitute confirmation
-# Category: Search Replace
-# Tags: substitute, confirm, interactive, replace, ex
 ---
 Use the `c` flag with `:substitute` for interactive confirmation of each replacement.
 Prompts: `y`es, `n`o, `a`ll, `q`uit, `l`ast.
@@ -355,18 +281,6 @@ Use `:global` with line ranges to limit scope of global operations.
 # Title: Nested global commands
 # Category: Text Manipulation
 # Tags: global, nested, complex, pattern, ex
----
-Use nested `:global` commands for complex pattern operations.
-Inner global operates on lines found by outer global.
-
-```vim
-:g/function/+1,/^}/g/TODO/p   " find TODO in function bodies
-:g/class/.,/^$/v/def/d        " delete non-def lines in classes
-```
-***
-# Title: Command history navigation
-# Category: Command Line
-# Tags: history, navigate, command, previous, ex
 ---
 Use history navigation to recall and modify previous Ex commands.
 

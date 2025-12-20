@@ -167,6 +167,7 @@ function! LineBreakAt(bang, ...) range
   let @/ = save_search
 endfunction
 ```
+
 ```lua
 function LineBreakAt(bang, ...)
   local save_search = vim.fn.getreg('/')
@@ -203,6 +204,7 @@ Use alternative delimiters in search and replace commands to simplify working wi
 ```vim
 :s#/usr/local/#/opt/#
 ```
+
 ```lua
 -- Example of using alternative delimiter in Neovim
 vim.cmd('s#/usr/local/#/opt/#')
@@ -234,6 +236,7 @@ function FindNextRegionWork()
   endwhile
 endfunction
 ```
+
 ```lua
 function _G.find_next_region_work()
   local flags = vim.g.sdir == 'f' and 'w' or 'wb'
@@ -278,6 +281,7 @@ Use \%V to limit substitutions to visual selection area
 ```vim
 :%s/\%V{pattern}/{string}/g
 ```
+
 ```lua
 -- Limit substitution to visual selection area
 -- vim.cmd(':%s/\%V{pattern}/{string}/g')
@@ -295,6 +299,7 @@ Use `*` and `#` to search for the word under the cursor forward and backward
 * searches forward
 # searches backward
 ```
+
 ```lua
 -- Built-in Vim behavior, no specific Lua conversion needed
 -- Can use vim.fn.expand('<cword>') to get word under cursor programmatically
@@ -319,6 +324,7 @@ Advanced searching within specific columns and ability to copy or delete columns
 " Delete a column
 :DC n       " Delete nth column
 ```
+
 ```lua
 -- Note: This would typically require a custom Lua function or plugin
 -- Example skeleton for column operations
@@ -346,6 +352,7 @@ Quickly convert single-line C++ comments (//) to multi-line C comments (/* */), 
 ```vim
 :map <F5> %s,//\(.*\),/*\1 */,
 ```
+
 ```lua
 -- Lua equivalent for converting C++ comments to C comments
 vim.keymap.set('n', '<F5>', function()
@@ -364,6 +371,7 @@ Efficiently convert HTML tag names to lowercase using a powerful Vim regex subst
 ```vim
 :%s/<\/\?\zs\(\a\+\)\ze[ >]/\L\1/g
 ```
+
 ```lua
 vim.cmd('%s/<\/\?\zs\(\a\+\)\ze[ >]/\L\1/g')
 ```
@@ -379,6 +387,7 @@ Convert HTML tag attributes to lowercase while preserving attribute values
 ```vim
 :%s/\(<[^>]*\)\@<=\<\(\a*\)\ze=['"]*/\L\2/g
 ```
+
 ```lua
 vim.cmd('%s/\(<[^>]*\)\@<=\<\(\a*\)\ze=['"]*/\L\2/g')
 ```
@@ -398,6 +407,7 @@ Powerful way to change text case using Vim's regex substitution with case modifi
 " Uppercase words after HTML tags
 :%s/<\(\w*\)/<\U\1/g
 ```
+
 ```lua
 -- Lowercase entire file
 vim.cmd(':%s/.*/\L&/')
@@ -418,6 +428,7 @@ Use alternative delimiters in substitution commands to handle paths with multipl
 " Substitute using different delimiters
 :s,/abc/def/ghi/,,en
 ```
+
 ```lua
 -- Lua equivalent (directly use vim command)
 vim.cmd.substitute(',/abc/def/ghi/,,e')
@@ -437,6 +448,7 @@ Use `gn` to visually select and operate on search matches easily. Works great wi
 " cgn - change next match
 " Repeat with .
 ```
+
 ```lua
 -- Lua doesn't require special configuration for gn
 -- It's a built-in Vim/Neovim feature
@@ -463,6 +475,7 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 ```
+
 ```lua
 function _G.copy_matches(reg)
   local hits = {}
@@ -495,6 +508,7 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 ```
+
 ```lua
 function CopyMatches(reg)
   local hits = {}
@@ -531,6 +545,7 @@ function! DeleteLines(pattern) range
 endfunction
 command! -nargs=? -range=% DeleteLines k'|<line1>,<line2>call DeleteLines(<q-args>)
 ```
+
 ```lua
 function DeleteLines(pattern, line1, line2)
   local delid = '<!DELETE!LINE!ID!>'
@@ -567,6 +582,7 @@ Quickly convert decimal-encoded characters (like \nnn or &#nnn;) to their actual
 :%s/\\\([0-9]*\)/\=nr2char(submatch(1))/g
 :%s/&#\([0-9]*\);/\=nr2char(submatch(1))/g
 ```
+
 ```lua
 vim.cmd(':%s/\\\([0-9]*\)/\=nr2char(submatch(1))/g')
 vim.cmd(':%s/&#\([0-9]*\);/\=nr2char(submatch(1))/g')
@@ -584,6 +600,7 @@ Quickly count the number of occurrences of a pattern in the current buffer using
 :%s/pattern//gn  " Count all matches
 :%s/pattern//n   " Count lines with matches
 ```
+
 ```lua
 -- Use ex command from Lua
 vim.cmd(':%s/pattern//gn')  -- Count all matches
@@ -601,6 +618,7 @@ Create a quick mapping to count occurrences of the word under the cursor
 ```vim
 map ,* *<C-O>:%s///gn<CR>
 ```
+
 ```lua
 vim.keymap.set('n', ',*', '*<C-O>:%s///gn<CR>', { desc = 'Count word occurrences' })
 ```
@@ -618,6 +636,7 @@ Search for a specific value within a designated column in a CSV file
 " :SC 2=john  " search for john in the 2nd column
 " :SC john    " search in currently highlighted column
 ```
+
 ```lua
 -- Note: Full implementation would require a custom Lua function
 -- This is a conceptual representation
@@ -648,6 +667,7 @@ Use \| (or) to filter lines based on multiple patterns, keeping only specific ma
 " Keep only lines with error, warn, or fail
 :v/error\|warn\|fail/d
 ```
+
 ```lua
 -- Keep only lines with error, warn, or fail
 vim.cmd('v/error\|warn\|fail/d')
@@ -664,6 +684,7 @@ Quickly locate lines that exceed 80 characters in length, useful for code style 
 ```vim
 /\%>80v.\+
 ```
+
 ```lua
 vim.fn.search('\%>80v.\+')
 ```
@@ -680,6 +701,7 @@ Map Ctrl-L to clear search highlighting, making it easy to temporarily remove hi
 " Clear search highlighting with Ctrl-L
 nnoremap <C-L> :nohl<CR><C-L>
 ```
+
 ```lua
 -- Clear search highlighting
 vim.keymap.set('n', '<C-L>', ':nohl<CR><C-L>', { noremap = true, silent = true })
@@ -700,6 +722,7 @@ s/\v(<\k*%#\k*>)(\_.\.{-})(<\k+>)/\3\2\1/
 " Swap previous word
 s/\v(<\k+>)(.{-})(<\k*%#\k*>)/\3\2\1/
 ```
+
 ```lua
 -- Swap next word with cursor position
 vim.cmd('s/\v(<\k*%#\k*>)(\_.\.{-})(<\k+>)/\3\2\1/')
@@ -719,6 +742,7 @@ Enable live search preview that moves cursor while typing search pattern, helpin
 ```vim
 set incsearch
 ```
+
 ```lua
 vim.opt.incsearch = true
 ```
@@ -734,6 +758,7 @@ Perform global search and replace with interactive confirmation across entire fi
 ```vim
 :%s/foo/bar/gc
 ```
+
 ```lua
 vim.cmd('%s/foo/bar/gc')
 ```
@@ -750,6 +775,7 @@ Control case sensitivity during search and replace operations
 :%s/foo/bar/gci   # Case insensitive
 :%s/foo/bar/gcI   # Case sensitive
 ```
+
 ```lua
 vim.cmd(':%s/foo/bar/gci')    -- Case insensitive
 vim.cmd(':%s/foo/bar/gcI')    -- Case sensitive
@@ -761,26 +787,12 @@ vim.cmd(':%s/foo/bar/gcI')    -- Case sensitive
 # Category: search_replace
 # Tags: search, replace, word-boundary
 ---
-Replace only whole word matches to prevent partial word replacements
-
-```vim
-:%s/\<foo\>/bar/gc
-```
-```lua
-vim.cmd(':%s/\<foo\>/bar/gc')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_and_replace)
-***
-# Title: Speed Up Recursive Searches
-# Category: search_replace
-# Tags: performance, search, optimization
----
 Use noautocmd to significantly speed up recursive file searches by disabling autocommands
 
 ```vim
 :noautocmd vimgrep /{pattern}/[flags] {file(s)}
 ```
+
 ```lua
 vim.cmd('noautocmd vimgrep /{pattern}/[flags] {file(s)}')
 ```
@@ -796,6 +808,7 @@ Search recursively through files using `**` wildcard, which enables searching in
 ```vim
 :vimgrep /dostuff()/j ../**/*.c
 ```
+
 ```lua
 -- Lua equivalent (using vim.fn.execute)
 vim.fn.execute('vimgrep /dostuff()/j ../**/*.c')
@@ -813,6 +826,7 @@ Find and identify accidentally duplicated words in text
 " Find duplicated words
 /\(\<\w\+\>\)\s*\<\1\>
 ```
+
 ```lua
 -- Find duplicated words
 vim.fn.search('\(\<\w\+\>\)\s*\<\1\>')
@@ -834,6 +848,7 @@ set smartcase
 " /the\c (always case-insensitive)
 " /the\C (always case-sensitive)
 ```
+
 ```lua
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -853,6 +868,7 @@ Custom mappings for word search that respect smartcase behavior
 nnoremap * /\<<C-R>=expand('<cword>')\>\><CR>
 nnoremap # ?\<<C-R>=expand('<cword>')\>\><CR>
 ```
+
 ```lua
 vim.keymap.set('n', '*', function()
   local word = vim.fn.expand('<cword>')
@@ -871,26 +887,12 @@ end)
 # Category: search_replace
 # Tags: search, case-sensitivity, configuration
 ---
-Automatically detect whether to ignore case during searches based on query
-
-```vim
-set smartcase
-```
-```lua
-vim.opt.smartcase = true
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help)
-***
-# Title: Smart Case-Sensitive Search
-# Category: search_replace
-# Tags: search, case-sensitivity, intelligent-search
----
 Automatically detect case sensitivity in searches for more flexible searching
 
 ```vim
 set smartcase
 ```
+
 ```lua
 vim.opt.smartcase = true
 ```
@@ -909,6 +911,7 @@ Remove consecutive duplicate lines from a file using global command or unique fi
 # Alternative method using uniq
 :%!uniq
 ```
+
 ```lua
 -- Remove duplicate consecutive lines
 vim.cmd('g/^\(.*\)\(\r\?\n\1\)\+$/d')
@@ -930,6 +933,7 @@ Reduce multiple consecutive blank lines to a single blank line
 # Alternative substitution method
 :%s/^$\n^$//g
 ```
+
 ```lua
 -- Collapse multiple blank lines
 vim.cmd('v/./,/./-j')
@@ -949,6 +953,7 @@ Perform more flexible searches for words under the cursor, including partial mat
 " g* - search for word (including partial matches)
 " g# - search backwards for word
 ```
+
 ```lua
 -- These default Vim search commands work in Neovim
 -- Useful for finding related words or partial matches
@@ -961,45 +966,13 @@ Perform more flexible searches for words under the cursor, including partial mat
 # Category: search_replace
 # Tags: number-conversion, text-manipulation, search-replace
 ---
-User commands to convert decimal and hexadecimal numbers across text ranges, supporting visual selections
-
-```vim
-command! -nargs=? -range Dec2hex call s:Dec2hex(<line1>, <line2>, '<args>')
-function! s:Dec2hex(line1, line2, arg) range
-  if empty(a:arg)
-    let cmd = 's/\<\d\+\>/\=printf("0x%x",submatch(0)+0)/g'
-    execute a:line1 . ',' . a:line2 . cmd
-  else
-    echo printf('%x', a:arg + 0)
-  endif
-endfunction
-```
-```lua
-vim.api.nvim_create_user_command('Dec2hex', function(opts)
-  local line1, line2 = opts.line1, opts.line2
-  local arg = opts.args
-  
-  if arg == '' then
-    local cmd = 's/\d\+/\=printf("0x%x", submatch(0) + 0)/g'
-    vim.cmd(line1 .. ',' .. line2 .. cmd)
-  else
-    print(string.format('%x', tonumber(arg)))
-  end
-end, { nargs = '?', range = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hex_or_unhex_strings)
-***
-# Title: Toggle Search Highlighting Easily
-# Category: search_replace
-# Tags: search, highlight, key-mapping
----
 Add a quick way to toggle search highlighting and clear messages
 
 ```vim
 " Press Space to turn off highlighting and clear messages
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Space>', function()
   vim.cmd.nohlsearch()
@@ -1018,6 +991,7 @@ Highlight all occurrences of the current word without jumping to next match
 ```vim
 nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F8>', function()
   local cword = vim.fn.expand('<cword>')
@@ -1047,6 +1021,7 @@ function! Highlighting()
 endfunction
 nnoremap <silent> <expr> <CR> Highlighting()
 ```
+
 ```lua
 vim.g.highlighting = false
 
@@ -1080,6 +1055,7 @@ Navigate between highlighted words with custom forward and backward search comma
 map <leader>f :call FindNextHighlight()<CR>
 map <leader>F :call FindPrevHighlight()<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>f', function()
   -- Find next highlighted word
@@ -1109,6 +1085,7 @@ set nohlsearch
 :nnoremap <silent> <nowait> * <Esc>*gN
 :vnoremap <silent> <nowait> * <Esc>*gN
 ```
+
 ```lua
 -- Disable default highlight search
 vim.opt.hlsearch = false
@@ -1134,6 +1111,7 @@ Efficiently replace long strings by inserting text from buffer into substitute c
 " 2. Highlight text
 " 3. Use Ctrl-R Ctrl-W to insert current word
 ```
+
 ```lua
 -- Example of inserting current word in substitute command
 vim.keymap.set('n', '<leader>s', function()
@@ -1155,6 +1133,7 @@ Use substitute commands to insert or modify text across multiple lines
 ":s/$/new text/  " Append at line end
 ":s/old/new/g  " Replace all occurrences
 ```
+
 ```lua
 -- Similar substitution can be done in Neovim
 -- Can use vim.cmd for Ex commands
@@ -1173,6 +1152,7 @@ Quickly replace all instances of the word under the cursor in the entire buffer
 ```vim
 :map <S-F4> :%s/<C-r><C-w>//gc<Left><Left><Left>
 ```
+
 ```lua
 vim.keymap.set('n', '<S-F4>', ':%s/<C-r><C-w>//gc<Left><Left><Left>', { desc = 'Replace word under cursor globally' })
 ```
@@ -1216,6 +1196,7 @@ function! PrintWithSearchHighlighted(line1,line2,arg)
   endw
 endfunction
 ```
+
 ```lua
 -- Lua equivalent for highlighting search pattern in line listing
 function _G.print_with_search_highlighted(line1, line2, arg)
@@ -1283,6 +1264,7 @@ endfunction
 
 nnoremap <Leader>p :call <SID>JumpPrompt()<CR>
 ```
+
 ```lua
 local function jump_prompt()
   local keyword = vim.fn.input('Keyword to find: ')
@@ -1310,6 +1292,7 @@ Quick way to generate an outline of a file using vimgrep, especially useful for 
 :vimgrep /{{{/j %
 :copen
 ```
+
 ```lua
 vim.cmd('vimgrep /{{{/j %')
 vim.cmd('copen')
@@ -1333,6 +1316,7 @@ endfunction
 " Replace 'abc' with 'xyz_N'
 :let i = 1 | %s/abc/\='xyz_' . Inc()/g
 ```
+
 ```lua
 -- Lua equivalent
 local i = 1
@@ -1351,6 +1335,7 @@ Replace all instances of last searched text with last yanked text across entire 
 ```vim
 :%s//\=@"/g
 ```
+
 ```lua
 vim.cmd('%%s//\\=@"/g')
 ```
@@ -1369,6 +1354,7 @@ Use :v command to filter out lines matching a pattern, useful for log file analy
 :sav junk.log
 :v/warning/d
 ```
+
 ```lua
 -- Filter out lines not matching a pattern
 -- Print lines not containing 'Warning'
@@ -1392,6 +1378,7 @@ Use regex with negative lookahead to find words or lines excluding specific patt
 
 /\(foo.*\)\@<!bar
 ```
+
 ```lua
 -- Find words excluding 'foo'
 vim.fn.search('\<\(foo\>\)\@!\k\+\>', 'n')
@@ -1411,6 +1398,7 @@ Modify lines matching a specific pattern by adding a comment character or transf
 ```vim
 :'a,.g/foo/normal I*
 ```
+
 ```lua
 -- Lua equivalent for commenting lines matching 'foo'
 vim.cmd('g/foo/normal I*')
@@ -1429,6 +1417,7 @@ Add custom search commands to find next/previous highlighted words across the bu
 map <leader>f :call FindNextHighlight()<CR>
 map <leader>F :call FindPrevHighlight()<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>f', function()
   -- Find next highlighted word
@@ -1464,6 +1453,7 @@ endfunction
 
 command -range -nargs=1 S call s:Substitute(<line1>, <line2>, <q-args>)
 ```
+
 ```lua
 -- Lua equivalent of Perl substitution function
 local function perl_substitute(line1, line2, sstring)
@@ -1506,6 +1496,7 @@ Enable Perl-like regex behavior with \v, making regular expressions more intuiti
 nnoremap / /\v
 nnoremap ,/ /
 ```
+
 ```lua
 -- Set up very-magic mode mapping
 vim.keymap.set('n', '/', '/\v', { desc = 'Search with very-magic regex' })
@@ -1530,6 +1521,7 @@ Use :g to perform complex operations on lines matching a pattern, such as deleti
 " Double space the entire file
 :g/^/pu ="\n"
 ```
+
 ```lua
 -- Lua equivalents require using vim.cmd for Ex commands
 -- Delete lines containing pattern
@@ -1554,6 +1546,7 @@ Run a macro on all lines matching a specific pattern
 " Run macro 'q' on all lines matching 'pattern'
 :g/pattern/normal @q
 ```
+
 ```lua
 -- Run macro on matching lines
 -- Note: Requires recording macro first
@@ -1571,6 +1564,7 @@ Replace all spaces with tabs, respecting current tabstop width
 ```vim
 :%s/ /\t/g
 ```
+
 ```lua
 vim.cmd('%s/ /\t/g')
 ```
@@ -1586,6 +1580,7 @@ Automatically add quotes to unquoted HTML attributes using a regex search and re
 ```vim
 map <F9> :%s/\([^&^?]\)\(\<[[:alnum:]-]\{-}\)=\([[:alnum:]-#%]\+\)/\1\2="\3"/g<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F9>', ':%s/\([^&^?]\)\(\<[[:alnum:]-]\{-}\)=\([[:alnum:]-#%]\+\)/\1\2="\3"/g<CR>', { desc = 'Quote unquoted HTML attributes' })
 ```
@@ -1601,6 +1596,7 @@ Create a command-line abbreviation for quoting HTML attributes with confirmation
 ```vim
 cabbrev reg1 %s/=\([^"][^> ]\{0,40\}\)/="\1"/gc
 ```
+
 ```lua
 vim.cmd('cabbrev reg1 %s/=\([^"][^> ]\{0,40\}\)/="\1"/gc')
 ```
@@ -1622,6 +1618,7 @@ ma  " Mark start of range
 mb  " Mark end of range
 :'a,'bs/old/new/g  " Substitute between marks
 ```
+
 ```lua
 -- Similar approaches in Neovim
 -- Visual paragraph selection and substitution
@@ -1644,6 +1641,7 @@ Create a custom command to filter and display lines matching a search pattern in
 ```vim
 command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile | put! a
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Filter', function(opts)
   -- Clear register a
@@ -1665,54 +1663,13 @@ end, { nargs = '?' })
 # Category: search_replace
 # Tags: search, mapping, output-redirection
 ---
-Create a mapping to redirect global search results to a new window using register redirection
-
-```vim
-nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
-```
-```lua
-vim.keymap.set('n', '<F3>', function()
-  -- Redirect output to register a
-  vim.cmd('redir @a')
-  -- Repeat last global command
-  vim.cmd('g//')
-  -- End redirection
-  vim.cmd('redir END')
-  -- Create new window and paste register contents
-  vim.cmd('new')
-  vim.cmd('put! a')
-end, { silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Redirect_g_search_output)
-***
-# Title: Find Whole Words in Search
-# Category: search_replace
-# Tags: regex, search, text-navigation
----
-Use \<word\> to search for exact whole word matches, avoiding partial word matches
-
-```vim
-# Search for whole word 'i'
-/\<i\>
-```
-```lua
--- In Neovim, can use same regex pattern
-vim.fn.search('\<i\>', 'n')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Regex)
-***
-# Title: Flexible Multi-Word Search
-# Category: search_replace
-# Tags: regex, search, text-navigation
----
 Use \| to search for multiple alternative whole words in a single pattern
 
 ```vim
 # Search for whole words 'red', 'green', or 'blue'
 /\<\(red\|green\|blue\)\>
 ```
+
 ```lua
 -- Lua regex search for whole words
 vim.fn.search('\v<(red|green|blue)>', 'n')
@@ -1730,6 +1687,7 @@ Advanced regex techniques to match patterns with conditional context using looka
 " Positive lookahead: match 'bar' only if preceded by 'foo'
 /\(foo\)\@<=bar\(baz\)\@=
 ```
+
 ```lua
 -- In Neovim, use vim.fn.search() with magic regex
 vim.fn.search('\v(foo)@<=bar(baz)@=')
@@ -1747,6 +1705,7 @@ Most performant way to do lookaround matching, marking start/end of match withou
 " Match 'bar' between 'foo' and 'baz'
 /foo\zsbar\ze baz
 ```
+
 ```lua
 -- Use similar regex pattern with Lua search functions
 vim.fn.search('foo\zsbar\ze baz')
@@ -1764,6 +1723,7 @@ Use \| to search for multiple whole words, with precise word boundary matching
 " Search for whole words 'red', 'green', 'blue'
 /\<\(red\|green\|blue\)\>
 ```
+
 ```lua
 -- Neovim search with multiple whole word options
 vim.fn.search('\<\(red\|green\|blue\)\>')
@@ -1785,6 +1745,7 @@ Find whole words precisely using word boundary markers \< and \>
 /\<i
 /i\>
 ```
+
 ```lua
 -- Lua doesn't change regex syntax, use same patterns
 -- Can use vim.fn.search() for programmatic searches
@@ -1806,6 +1767,7 @@ Search or replace multiple whole words using OR operator
 " Replace multiple words
 :%s/\<\(red\|green\|blue\)\>/purple/g
 ```
+
 ```lua
 -- Use vim.cmd for ex commands
 vim.cmd(':%s/\<\(red\|green\|blue\)\>/purple/g')
@@ -1827,6 +1789,7 @@ endfunction
 
 nnoremap <F12> :call ShowSpaces()<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F12>', function()
   vim.o.hlsearch = not vim.o.hlsearch
@@ -1845,6 +1808,7 @@ Quickly remove path prefixes from file lists using a flexible regex substitution
 ```vim
 :%s/^.\{-}\ze///
 ```
+
 ```lua
 vim.cmd('%s/^.\\{-}\\ze///g')
 ```
@@ -1860,6 +1824,7 @@ Remove multiple directory levels from file paths by adjusting regex quantifier
 ```vim
 :%s/^\((.\{-}\ze\/\)\{3}//
 ```
+
 ```lua
 vim.cmd('%s/^\\((.\\{-}\\ze\\/\\)\\{3}//g')
 ```
@@ -1876,6 +1841,7 @@ Perform a search and replace across multiple files with additional flags for com
 " Search and replace with global, ignore case, and error-tolerant flags
 :%s/\<pig\>/cow/gie|:update|:next
 ```
+
 ```lua
 -- Equivalent multi-file search and replace
 -- Note: This would typically be done with more modern Neovim methods like telescope or quickfix
@@ -1912,6 +1878,7 @@ endfunction
 " Map g/ to trigger grep search
 :map g/ :call Mosh_grep()<CR>
 ```
+
 ```lua
 -- Set grep program
 vim.opt.grepprg = 'grep -rinsE'
@@ -1959,6 +1926,7 @@ fun! RepeatSubst(subexpr)
   exe 'norm! '.curcol.'|'
 endfun
 ```
+
 ```lua
 -- Lua implementation of repeat substitution
 function RepeatSubst(subexpr)
@@ -1996,6 +1964,7 @@ Replace all occurrences of the word under the cursor with global confirmation
 ```vim
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>s', function()
   local word = vim.fn.expand('<cword>')
@@ -2014,6 +1983,7 @@ Define a command to search for the current word under the cursor in the current 
 ```vim
 command GREP :execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc
 ```
+
 ```lua
 vim.api.nvim_create_user_command('GREP', function()
   vim.cmd('vimgrep ' .. vim.fn.expand('<cword>') .. ' ' .. vim.fn.expand('%'))
@@ -2034,6 +2004,7 @@ Add a quick way to toggle search highlighting on and off, improving code readabi
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F4>', function()
   vim.o.hlsearch = not vim.o.hlsearch
@@ -2047,29 +2018,13 @@ end, { desc = 'Toggle search highlighting' })
 # Category: search_replace
 # Tags: text-transformation, regex, substitution
 ---
-Advanced substitution command to convert text to title case, preserving first letter of each word as uppercase
-
-```vim
-" Convert line to Title Case
-:s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g
-```
-```lua
--- Lua equivalent using vim.cmd for Ex command
-vim.cmd('s/\v(\w)(\S*)/\u\1\L\2/g')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip49)
-***
-# Title: Flexible Multiple Word Search
-# Category: search_replace
-# Tags: regex, search, text-processing
----
 Search for multiple whole words using the \| (or) operator with word boundaries
 
 ```vim
 " Search for 'red', 'green', or 'blue' as whole words
 /\<\(red\|green\|blue\)\>
 ```
+
 ```lua
 -- Lua equivalent for multiple whole word search
 local pattern = '\v<(red|green|blue)>'
@@ -2087,6 +2042,7 @@ Remove duplicate lines with more complex regex-based methods, preserving line or
 ```vim
 %s/^\(.*\)\(\n\1\)\+$/\1/
 ```
+
 ```lua
 vim.cmd('%s/^\(.*\)(\n\1)+$/\1/')
 ```
@@ -2102,6 +2058,7 @@ Use capture groups to perform complex search and replace operations by referenci
 ```vim
 :g/\(M\)\([0-9]\)\([0-9]\)/s//\1[\2][\3]/g
 ```
+
 ```lua
 -- In Lua, use vim.cmd for complex substitution
 vim.cmd('g/\(M\)\([0-9]\)\([0-9]\)/s//\1[\2][\3]/g')
@@ -2118,6 +2075,7 @@ Easily transform patterns using capture groups and references
 ```vim
 %s/\v(\d)(\d)/[\1][\2]
 ```
+
 ```lua
 -- Use very magic mode for simplified regex
 vim.cmd('%s/\v(\d)(\d)/[\1][\2]')
@@ -2141,6 +2099,7 @@ Advanced CSV column search, allowing searching within specific columns and perfo
 " Delete a specific column
 :DC n       " delete nth column
 ```
+
 ```lua
 -- Implemented via custom Lua functions
 -- Example search within column
@@ -2178,6 +2137,7 @@ Efficiently delete lines matching a pattern while preserving exceptions using Vi
 ```vim
 :global:^./help/:if (match(getline(line(".")), '^./help/de/') == -1) | delete | endif
 ```
+
 ```lua
 -- Delete help files except German ones
 vim.api.nvim_exec([[g!/\.\/help\/de/d]], false)
@@ -2194,6 +2154,7 @@ Use lookahead-like global command to selectively delete lines based on complex p
 ```vim
 g#\(^\./help/\)\(de/\)\@!#d
 ```
+
 ```lua
 -- Delete help lines not starting with './help/de/'
 vim.api.nvim_exec([[g#\(^\.\/help\/\)\(de\/\)\@!#d]], false)
@@ -2210,6 +2171,7 @@ Easily turn off search highlighting during editing sessions
 ```vim
 set nohlsearch
 ```
+
 ```lua
 vim.opt.hlsearch = false
 ```
@@ -2230,6 +2192,7 @@ set smartcase
 " Custom * search with smart case behavior
 :nnoremap * /\<<C-R>=expand('<cword>')\>\><CR>
 ```
+
 ```lua
 -- Enable case-insensitive and smart case searching
 vim.opt.ignorecase = true
@@ -2254,6 +2217,7 @@ Use alternative delimiters like '?' or other characters to search file paths wit
 " Search with alternative delimiters
 :g ?c:/tmp/x/y/z/? d
 ```
+
 ```lua
 -- Lua equivalent for alternative search delimiters
 -- Note: Use vim.cmd for Ex commands
@@ -2272,6 +2236,7 @@ Use different characters for search and replace operations to avoid escaping com
 " Use different delimiters for search and replace
 :g#/tmp/#s//#tmp#/
 ```
+
 ```lua
 -- Lua equivalent for flexible search/replace
 -- Note: Use vim.cmd for Ex commands
@@ -2290,6 +2255,7 @@ Use \'=' in substitute commands to evaluate expressions dynamically, enabling po
 :%s/^/\=line('.')."\t"/
 :10,20s/^/\=line('.')."\t"/
 ```
+
 ```lua
 -- Number all lines with line number
 vim.cmd(':%s/^/\\=line(".")."\t"/')
@@ -2309,6 +2275,7 @@ Sequentially number lines in a range starting from 1 using a counter variable
 ```vim
 :let counter=0|10,20g/^/let counter=counter+1|s/^/\=counter."\t"
 ```
+
 ```lua
 -- Initialize counter and number lines sequentially
 vim.g.counter = 0
@@ -2330,6 +2297,7 @@ Quickly sort log files or text by a selected substring using visual mode mapping
 :vmap $ :<BS><BS><BS><BS><BS>g<M-x>\M<S-Insert><M-x>m$<CR>
 :vmap p :<BS><BS><BS><BS><BS>g<M-x>\M<S-Insert><M-x>p<CR>
 ```
+
 ```lua
 -- Sort lines by selected text to top/bottom
 vim.keymap.set('v', 'm0', function()

@@ -49,6 +49,7 @@ endfunction
 
 noremap <F5> :call JavaInsertImport()<CR>
 ```
+
 ```lua
 function _G.java_insert_import()
   local cur_class = vim.fn.expand('<cword>')
@@ -121,6 +122,7 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 ```
+
 ```lua
 -- Flexible underline function in Lua
 local function underline(chars)
@@ -184,6 +186,7 @@ function! SmartPreProcCommenter()
   normal `y
 endfunc
 ```
+
 ```lua
 function SmartPreProcCommenter()
   vim.cmd('mark y')
@@ -244,6 +247,7 @@ function! MyToHtml(line1, line2)
 endfunction
 command! -range=% MyToHtml :call MyToHtml(<line1>,<line2>)
 ```
+
 ```lua
 function _G.my_to_html(line1, line2)
   vim.g.html_use_css = 0
@@ -279,6 +283,7 @@ function! CSVH(colnr)
 endfunction
 command! -nargs=1 Csv :call CSVH(<args>)
 ```
+
 ```lua
 function _G.highlight_csv_column(colnr)
   if colnr > 1 then
@@ -341,6 +346,7 @@ function WhatFunctionAreWeIn()
   return tempstring.position
 endfunction
 ```
+
 ```lua
 function _G.WhatFunctionAreWeIn()
   local strList = {"while", "foreach", "ifelse", "if else", "for", "if", "else", "try", "catch", "case", "switch"}
@@ -406,6 +412,7 @@ function InScreen(command)
   return g:GNU_Screen_used ? 'screen '.a:command : a:command
 endfunction
 ```
+
 ```lua
 local function is_screen_running()
   return vim.env.TERM:match("screen") ~= nil
@@ -448,6 +455,7 @@ endfunction
 
 nnoremap <buffer> <silent>dc :call <SID>AddBean()<CR>
 ```
+
 ```lua
 local function add_bean()
   local line = vim.fn.line('.')
@@ -499,6 +507,7 @@ function! VimFootnotes()
   startinsert!
 endfunction
 ```
+
 ```lua
 function _G.vim_footnotes()
   local footnote_number = vim.b.vimfootnotenumber or 0
@@ -546,6 +555,7 @@ endfunction
 
 nnoremap <F7> :update<CR>:call Make()<CR>
 ```
+
 ```lua
 function _G.compile_current_file()
   local curr_dir = vim.fn.expand('%:h')
@@ -585,6 +595,7 @@ function! MCCB (num_occr, mv_char, col_num) range
     endif
 endfunction
 ```
+
 ```lua
 function _G.move_chars_to_column(first_line, last_line, occurrence, move_char, col_num)
     if first_line <= last_line then
@@ -623,6 +634,7 @@ function! OpenPhpFunction (keyword)
   exe 'norm dGgg'
 endfunction
 ```
+
 ```lua
 local function open_php_function(keyword)
   -- Replace underscores with hyphens
@@ -696,6 +708,7 @@ nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
 vnoremap <Leader>h y:call ViewHtmlText(@@)<CR>
 nnoremap <Leader>h :call ViewHtmlText(@+)<CR>
 ```
+
 ```lua
 function _G.view_html_text(url)
   if url and url ~= '' then
@@ -746,6 +759,7 @@ endfunction
 
 nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
 ```
+
 ```lua
 function _G.view_html_text(url)
   if url ~= '' then
@@ -779,6 +793,7 @@ function! DevEnvDDE()
   silent execute cmd
 endfunction
 ```
+
 ```lua
 function _G.open_file_in_visual_studio()
   local file_path = vim.fn.expand('%:p')
@@ -797,40 +812,6 @@ vim.keymap.set('n', '<leader>vs', _G.open_file_in_visual_studio, { desc = 'Open 
 # Category: advanced_functions
 # Tags: text-formatting, user-command, customization
 ---
-Create a flexible user command to underline text with custom characters
-
-```vim
-function! s:Underline(chars)
-  let chars = empty(a:chars) ? '-' : a:chars
-  let nr_columns = virtcol('$') - 1
-  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-  put =strpart(uline, 0, nr_columns)
-endfunction
-command! -nargs=? Underline call s:Underline(<q-args>)
-```
-```lua
-local function underline(chars)
-  chars = chars == '' and '-' or chars
-  local columns = vim.fn.virtcol('$') - 1
-  local uline = chars:rep(math.floor(columns / #chars) + 1)
-  uline = uline:sub(1, columns)
-  
-  -- Insert the underline
-  vim.api.nvim_put({uline}, 'l', true, false)
-end
-
--- Create user command
-vim.api.nvim_create_user_command('Underline', function(opts)
-  underline(opts.args)
-end, { nargs = '?' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip724)
-***
-# Title: Flexible Underline Function
-# Category: advanced_functions
-# Tags: text-formatting, user-command, customization
----
 Create a custom command to underline text with various characters, adapting to the current line's length
 
 ```vim
@@ -842,6 +823,7 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 ```
+
 ```lua
 function _G.underline_text(chars)
   chars = chars or '-'

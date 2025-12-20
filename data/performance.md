@@ -2,15 +2,6 @@
 # Category: Performance
 # Tags: profile, startup, performance
 ---
-Use `nvim --startuptime profile.log` to profile Neovim startup time.
-
-
-**Source:** Community contributed
-***
-# Title: Lazy load plugins
-# Category: Performance
-# Tags: lazy, loading, plugins, optimization
----
 Use lazy loading for plugins that aren't needed immediately to improve startup time.
 
 ```lua

@@ -46,20 +46,6 @@ Ctrl+w b  " go to bottom window
 # Category: Window Management
 # Tags: window, special, file, tag
 ---
-Use `Ctrl+w f` to split and open file under cursor, `Ctrl+w ]` to split and jump to tag, `Ctrl+w x` to exchange windows.
-
-```vim
-Ctrl+w f  " split and open file under cursor
-Ctrl+w ]  " split and jump to tag
-Ctrl+w x  " exchange current window with another
-```
-
-**Source:** Community contributed
-***
-# Title: Move window to tab
-# Category: Window Management
-# Tags: window, tab, move
----
 Use `Ctrl+w T` to move current window to a new tab page.
 
 ```vim
@@ -101,6 +87,7 @@ endfunction
 nnoremap <silent> gm :call <SID>Gm()<CR>
 onoremap <silent> gm :call <SID>Gm()<CR>
 ```
+
 ```lua
 -- Lua:
 local function better_gm()
@@ -134,6 +121,7 @@ nnoremap N Nzz
 " Or automatic centering
 set scrolloff=999
 ```
+
 ```lua
 -- Lua:
 -- Keep cursor centered when scrolling
@@ -159,6 +147,7 @@ Configure different cursor shapes for different modes to provide visual feedback
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 " Block in normal, vertical bar in insert, horizontal in replace
 ```
+
 ```lua
 -- Lua:
 vim.opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50'
@@ -170,19 +159,6 @@ vim.opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50'
 # Title: Keep window when closing buffer
 # Category: Window Management
 # Tags: buffer, close, window, preserve
----
-Use `:bp|bd #` to close buffer without closing the window layout.
-
-```vim
-:bp|bd #        " go to previous buffer, delete current
-:enew|bd #      " create new buffer, delete previous
-```
-
-**Source:** Community contributed
-***
-# Title: Tab management
-# Category: Window Management
-# Tags: tabs, navigation, workspace, organize
 ---
 Use tabs as workspaces to organize different projects or contexts.
 
@@ -228,29 +204,6 @@ nnoremap <F12> :call ToggleFocusMode()<CR>
 # Title: Quick file explorer
 # Category: Window Management
 # Tags: explorer, netrw, files, browse
----
-Use built-in file explorer (netrw) for quick file navigation and management.
-
-```vim
-:Explore            " open file explorer in current window
-:Sexplore           " open file explorer in horizontal split
-:Vexplore           " open file explorer in vertical split
-:Texplore           " open file explorer in new tab
-:e.                 " edit current directory
-
-" In netrw:
-" <Enter> - open file/directory
-" - - go up one directory
-" D - delete file
-" R - rename file
-" % - create new file
-```
-
-**Source:** Community contributed
-***
-# Title: Close all other windows
-# Category: Window Management
-# Tags: window, close, only, single
 ---
 Use `:only` or `:on` to close all windows except the current one, making it take up the full screen.
 
@@ -329,6 +282,7 @@ endfunction
 
 au WinEnter * call MaximizeAndResizeQuickfix(8)
 ```
+
 ```lua
 local function maximize_and_resize_quickfix(quickfix_height)
   vim.o.lazyredraw = true
@@ -365,6 +319,7 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'qf',
@@ -387,6 +342,7 @@ Set exact window lines and columns to achieve maximization in KDE using .gvimrc
 ```vim
 set lines=999 columns=999
 ```
+
 ```lua
 vim.opt.lines = 999
 vim.opt.columns = 999
@@ -406,6 +362,7 @@ Create and navigate buffer splits with flexible positioning
 :vertical sb 3
 Ctrl-W hjkl
 ```
+
 ```lua
 -- Create splits
 vim.cmd('split')  -- Horizontal split
@@ -431,6 +388,7 @@ Add custom menu options to close windows directly from the right-click popup men
 :amenu PopUp.Close.Window :confirm close<CR>
 :amenu PopUp.Close.Other :confirm only<CR>
 ```
+
 ```lua
 -- Set mouse model for popup menu
 vim.opt.mousemodel = 'popup'
@@ -446,23 +404,6 @@ vim.cmd('amenu PopUp.Close.Other :confirm only<CR>')
 # Category: window_management
 # Tags: splits, window-layout, configuration
 ---
-Customize default window split behavior by controlling where new windows appear when splitting horizontally or vertically
-
-```vim
-set splitbelow
-set splitright
-```
-```lua
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Control_the_position_of_the_new_window)
-***
-# Title: Dynamic Window Resizing Keymaps
-# Category: window_management
-# Tags: key-mapping, window-resize, navigation
----
 Quickly resize vertical windows by moving focus and expanding width with custom keymaps
 
 ```vim
@@ -470,6 +411,7 @@ Quickly resize vertical windows by moving focus and expanding width with custom 
 nmap <c-h> <c-w>h<c-w>_<c-w>><c-w>>
 nmap <c-l> <c-w>l<c-w>_<c-w>><c-w>>
 ```
+
 ```lua
 -- Resize vertical windows dynamically
 vim.keymap.set('n', '<C-h>', '<C-w>h<C-w>_<C-w>><C-w>>', { desc = 'Resize window left' })
@@ -491,6 +433,7 @@ augroup WindowInit
   autocmd VimEnter * let w:created=1
 augroup END
 ```
+
 ```lua
 -- Create an augroup for window initialization
 local window_init_group = vim.api.nvim_create_augroup('WindowInit', { clear = true })
@@ -518,6 +461,7 @@ Quick methods to compare two files side by side using built-in diff commands
 " Method 2: Vertical split with diff
 :vert diffsplit <filename>
 ```
+
 ```lua
 -- Method 1: Split and diff two files
 vim.cmd('sp ' .. filename)
@@ -546,6 +490,7 @@ function! DiffOff()
   windo unlet! b:did_ftplugin | let &filetype = &filetype
 endfunction
 ```
+
 ```lua
 -- Switch off diff mode for all windows
 vim.api.nvim_create_user_command('DiffOff', function()
@@ -588,6 +533,7 @@ function! Foreach( ... )
   endfor
 endfunction
 ```
+
 ```lua
 local function foreach(cmd, ...)
   local fnames = {}
@@ -625,6 +571,7 @@ Execute SQL queries from Vim and display results in a split window, allowing sea
 ```vim
 au FileType sql map <F12> <C-W><C-O>:silent w !isql -SYourServerName -DYourDatabaseName -UYourUserName -PYourPassword > tmpsqlresult.txt<CR>:split tmpsqlresult.txt<CR>
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'sql',
@@ -653,6 +600,7 @@ if bufwinnr(1)
   map <kMultiply> <c-w>>
 endif
 ```
+
 ```lua
 if vim.fn.bufwinnr(1) ~= -1 then
   vim.keymap.set('n', '<kPlus>', '<C-W>+', { noremap = true, silent = true })
@@ -679,6 +627,7 @@ map <silent> <A-l> <C-w>>
 map <silent> <A-n> <C-w><C-w>
 map <silent> <A-p> <C-w><S-w>
 ```
+
 ```lua
 vim.keymap.set('n', '<A-h>', '<C-w><', { silent = true })
 vim.keymap.set('n', '<A-j>', '<C-W>-', { silent = true })
@@ -700,6 +649,7 @@ Quickly open a tag definition in a new split window without losing the current c
 ```vim
 :map <C-\> :sp<CR><C-]><C-w>_
 ```
+
 ```lua
 vim.keymap.set('n', '<C-\>', function()
   vim.cmd('sp')
@@ -721,6 +671,7 @@ set equalalways
 set eadirection=both
 " Local options are copied to new windows
 ```
+
 ```lua
 vim.opt.equalalways = true
 vim.opt.eadirection = 'both'
@@ -743,6 +694,7 @@ function! ShowPydoc(what)
   execute "pedit" fnameescape(path)
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Pyhelp', function(opts)
   local what = opts.args
@@ -763,6 +715,7 @@ Efficiently navigate to the nth window from the last window using winnr() functi
 ```vim
 :map <F12> :exe winnr('$') - 1 'wincmd w'<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F12>', function()
   vim.cmd.wincmd(tostring(vim.fn.winnr('$') - 1))
@@ -780,6 +733,7 @@ Provides a custom mapping to close a tab and automatically focus on the left tab
 ```vim
 noremap <silent><C-S-w> :if tabpagenr() != tabpagenr('$')<CR>:tabclose<CR>:if tabpagenr() > 1<CR>:tabprev<CR>:endif<CR>:else<CR>:tabclose<CR>:endif<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-S-w>', function()
   local current_tab = vim.fn.tabpagenr()
@@ -807,6 +761,7 @@ Enable mouse focus to easily interact with multiple window splits
 ```vim
 set mousefocus
 ```
+
 ```lua
 vim.opt.mousefocus = true
 ```
@@ -825,6 +780,7 @@ au!
   au FocusGained * if exists('g:oldmouse') | let &mouse=g:oldmouse | unlet g:oldmouse | endif
 augroup END
 ```
+
 ```lua
 local function setup_mouse_focus()
   local augroup = vim.api.nvim_create_augroup('MouseFocusPreserve', { clear = true })
@@ -857,21 +813,6 @@ setup_mouse_focus()
 # Category: window_management
 # Tags: tab-management, external-tool, integration
 ---
-Use --remote-tab-silent to open files in tabs of the same Vim window
-
-```vim
-gvim --remote-tab-silent +"call cursor(%l,%c)" %f
-```
-```lua
-vim.fn.system('gvim --remote-tab-silent +"call cursor(' .. line .. ',' .. col .. ')" ' .. filename)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Integrate_gvim_with_RedHat_Source-Navigator)
-***
-# Title: Maximize Current Window Quickly
-# Category: window_management
-# Tags: window, mapping, productivity
----
 Provides a quick way to maximize the current window without closing other windows or with full screen
 
 ```vim
@@ -883,6 +824,7 @@ map <F5> <C-W>_<C-W><Bar>
 " or
 CTRL-W o
 ```
+
 ```lua
 -- Maximize current window while keeping others
 vim.keymap.set('n', '<F5>', '<C-W>_<C-W>|', { desc = 'Maximize current window' })
@@ -912,6 +854,7 @@ function! MaxRestoreWindow()
 endfunction
 map <F5> :call MaxRestoreWindow()<CR>
 ```
+
 ```lua
 local windowMaximized = false
 
@@ -938,6 +881,7 @@ Automatically maximize Vim window when launching on Windows systems
 ```vim
 au GUIEnter * simalt ~x
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('UIEnter', {
   callback = function()
@@ -977,6 +921,7 @@ nnoremap <C-W>O :call MaximizeToggle()<CR>
 nnoremap <C-W>o :call MaximizeToggle()<CR>
 nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
 ```
+
 ```lua
 local function maximize_toggle()
   if vim.g.maximize_session then
@@ -1010,6 +955,7 @@ Simple mappings to open current buffer in a new tab and quickly close it, improv
 nmap t% :tabedit %<CR>
 nmap td :tabclose<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 't%', ':tabedit %<CR>', { desc = 'Open current buffer in new tab' })
 vim.keymap.set('n', 'td', ':tabclose<CR>', { desc = 'Close current tab' })
@@ -1027,6 +973,7 @@ Use Ctrl-Z to suspend/minimize Vim in the background, with an optional system-wi
 " Built-in Vim suspend functionality
 " Ctrl-Z suspends Vim in normal/visual mode
 ```
+
 ```lua
 -- Neovim uses the same built-in suspend functionality
 -- Use Ctrl-Z to suspend the current Vim instance
@@ -1064,6 +1011,7 @@ function MoveToNextTab()
   exe "b".l:cur_buf
 endfunc
 ```
+
 ```lua
 function _G.move_to_next_tab()
   local total_tabs = vim.fn.tabpagenr('$')
@@ -1126,6 +1074,7 @@ endfunction
 let s:selectedsize=1
 call ResizeWindow()
 ```
+
 ```lua
 local selectedSize = 1
 
@@ -1165,6 +1114,7 @@ Quickly resize windows vertically using Alt+Left/Right arrow keys
 map <M-right> <Esc>:resize +2 <CR>
 map <M-left> <Esc>:resize -2 <CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<M-Right>', ':resize +2<CR>', { silent = true })
 vim.keymap.set('n', '<M-Left>', ':resize -2<CR>', { silent = true })
@@ -1198,6 +1148,7 @@ function gv
   gvim -geometry "${w}x${h}+${x}+${y}" "$@"
 }
 ```
+
 ```lua
 -- Lua function to get window geometry and open Neovim
 local function open_matching_window()
@@ -1228,6 +1179,7 @@ Configure Vim/Neovim to open new split windows below the current window by defau
 ```vim
 set splitbelow
 ```
+
 ```lua
 vim.opt.splitbelow = true
 ```
@@ -1243,6 +1195,7 @@ Configure Vim/Neovim to open new vertical split windows to the right of the curr
 ```vim
 set splitright
 ```
+
 ```lua
 vim.opt.splitright = true
 ```
@@ -1280,6 +1233,7 @@ function PreviewTag(top)
   endif
 endfunction
 ```
+
 ```lua
 function _G.preview_tag(top)
   vim.o.previewheight = 25
@@ -1335,6 +1289,7 @@ function OpenSplittedWindowWide()
   normal ^W20+
 endfunction
 ```
+
 ```lua
 -- Jump between windows
 vim.keymap.set('n', '<Space>', '<C-W>w', { desc = 'Switch to next window' })
@@ -1358,6 +1313,7 @@ Use Ctrl-J/K to move between horizontal splits and maximize them quickly
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 ```
+
 ```lua
 vim.keymap.set('n', '<C-J>', '<C-W>j<C-W>_', { desc = 'Move down and maximize window' })
 vim.keymap.set('n', '<C-K>', '<C-W>k<C-W>_', { desc = 'Move up and maximize window' })
@@ -1368,25 +1324,6 @@ vim.keymap.set('n', '<C-K>', '<C-W>k<C-W>_', { desc = 'Move up and maximize wind
 # Title: Multiple Views of Same Buffer in Different Tabs
 # Category: window_management
 # Tags: tabs, buffer-management, workflow
----
-Create alternate views of the same file in different tabs, such as a folded summary view and a detailed view with additional settings
-
-```vim
-" Open a new tab with folded view
-:tab split
-:setlocal foldenable
-```
-```lua
--- Open a new tab with folded view
-vim.cmd('tab split')
-vim.wo.foldenable = true
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages)
-***
-# Title: Quick Window Resizing with Keymaps
-# Category: window_management
-# Tags: window-resize, key-mapping, ui
 ---
 Easily resize Vim/Neovim windows using function keys with different modifier behaviors
 
@@ -1402,6 +1339,7 @@ Easily resize Vim/Neovim windows using function keys with different modifier beh
 :map <C-F9> :set lines=60<CR>
 :map <M-F9> :set lines=30<CR>
 ```
+
 ```lua
 -- Resize windows using function keys
 vim.keymap.set('n', '<F8>', ':set columns+=10<CR>', { desc = 'Increase window width' })
@@ -1430,6 +1368,7 @@ nmap <C-Right> <C-W>+<C-W>+
 nmap <C-Up> <C-W>><C-W>>
 nmap <C-Down> <C-W><<C-W><
 ```
+
 ```lua
 -- Resize split windows
 vim.keymap.set('n', '<C-Left>', '<C-W>-<C-W>-', { desc = 'Decrease horizontal split size' })
@@ -1461,6 +1400,7 @@ Ctrl-w |   " Maximize window width
 nnoremap <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 ```
+
 ```lua
 -- Resize window functions
 vim.keymap.set('n', '<C-w>+', '<C-w>+', { desc = 'Increase window height' })
@@ -1502,6 +1442,7 @@ function! Toggle_num()
 endfunction
 map <M-n> :call Toggle_num()<CR>
 ```
+
 ```lua
 local function toggle_num()
   local grow = vim.o.numberwidth
@@ -1529,6 +1470,7 @@ if &diff
   set columns=140
 endif
 ```
+
 ```lua
 if vim.o.diff then
   vim.o.columns = 140
@@ -1559,6 +1501,7 @@ function! ToggleMaxWins()
 endfunction
 nnoremap <Leader>max :call ToggleMaxWins()<CR>
 ```
+
 ```lua
 local function toggle_max_wins()
   if vim.g.window_max then
@@ -1590,6 +1533,7 @@ Create a dynamic window layout where the current window is full height and other
 ```vim
 set noequalalways winminheight=0 winheight=9999 helpheight=9999
 ```
+
 ```lua
 vim.opt.equalalways = false
 vim.opt.winminheight = 0
@@ -1613,6 +1557,7 @@ function! BufDo(command)
 endfunction
 com! -nargs=+ -complete=command Bufdo call BufDo(<q-args>)
 ```
+
 ```lua
 function _G.buf_do(command)
   local current_buf = vim.api.nvim_get_current_buf()
@@ -1641,6 +1586,7 @@ if &diff
   let &columns = ((&columns*2 > 172)? 172: &columns*2)
 endif
 ```
+
 ```lua
 -- Lua equivalent for diff mode window resizing
 if vim.o.diff then
@@ -1661,6 +1607,7 @@ Enable synchronized scrolling across multiple Vim/Neovim windows, allowing simul
 :set scrollbind
 :set scb! (to toggle)
 ```
+
 ```lua
 -- Set scrollbind for current window
 vim.wo.scrollbind = true
@@ -1682,6 +1629,7 @@ nnoremap <C-W>O :echo "sucker"<CR>
 nnoremap <C-W>o :echo "sucker"<CR>
 nnoremap <C-W><C-O> :echo "sucker"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-W>o', function() vim.notify('Window closure prevented', vim.log.levels.WARN) end)
 vim.keymap.set('n', '<C-W>O', function() vim.notify('Window closure prevented', vim.log.levels.WARN) end)
@@ -1704,6 +1652,7 @@ function gv
   gvim -geometry "${w}x${h}+${x}+${y}" "$@"
 endfunction
 ```
+
 ```lua
 function _G.open_gvim_matching_console()
   local windowid = vim.env.WINDOWID
@@ -1731,6 +1680,7 @@ func! s:NumToggle()
 endfunc
 map <F12> :call <SID>NumToggle()<CR>
 ```
+
 ```lua
 local function num_toggle()
   local current_win = vim.api.nvim_get_current_win()

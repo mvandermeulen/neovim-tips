@@ -22,18 +22,6 @@ The following command will print `Neovim is great` until you stop it with `Ctrl+
 # Category: Fun
 # Tags: fun
 ---
-Use the following commands:
-Highlights trailing spaces in red. Instant “why did I leave that space there?” effect.
-
-```vim
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
-```
-***
-# Title: Reverse lines in file
-# Category: Fun
-# Tags: fun, edit, reverse
----
 Moves every line to the top — effectively reversing the buffer. Great for experimenting or trolling your own file.
 
 ```vim

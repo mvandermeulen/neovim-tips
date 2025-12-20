@@ -150,20 +150,6 @@ Combine multiple regex features for sophisticated pattern matching.
 # Category: Advanced Search
 # Tags: history, repeat, search, previous
 ---
-Use `/` then arrow keys to navigate search history, `/<Up>` to recall previous searches.
-
-```vim
-/<Up>           " previous search in history
-/<Down>         " next search in history
-/<C-p>          " previous search (alternative)
-/<C-n>          " next search (alternative)
-//              " repeat last search
-```
-***
-# Title: Search with confirmation
-# Category: Advanced Search
-# Tags: confirm, interactive, replace, substitute
----
 Use the `c` flag in substitute commands for interactive confirmation.
 Prompts: `y`es, `n`o, `a`ll, `q`uit, `l`ast, `^E` scroll down, `^Y` scroll up.
 

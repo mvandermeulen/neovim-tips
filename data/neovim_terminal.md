@@ -28,19 +28,6 @@ Use terminal mode mappings to customize key behavior inside built-in terminal em
 # Category: Terminal
 # Tags: terminal, scrollback, history, buffer
 ---
-Use `scrollback` option to control terminal history and access previous output in terminal buffers.
-
-```vim
-:set termguicolors        " enable 24-bit colors
-:let g:terminal_scrollback_buffer_size = 10000
-:terminal                 " open terminal
-" In terminal: <C-\><C-n> then /pattern to search history
-```
-***
-# Title: Split terminal workflows
-# Category: Terminal
-# Tags: terminal, split, workflow, development
----
 Use terminal splits for integrated development workflows without leaving Neovim.
 
 ```vim
@@ -205,21 +192,6 @@ Use terminal output parsing to populate quickfix list with build errors and navi
 # Title: Terminal session persistence
 # Category: Terminal
 # Tags: terminal, session, persistence, restore
----
-Use terminal session restoration to maintain terminal state across Neovim sessions.
-
-```vim
-" In session file, terminals are saved as:
-:terminal ++restore
-" Or create custom session saving:
-:lua function save_terminals()
-  -- Custom logic to save terminal commands/state
-end
-```
-***
-# Title: Terminal window management
-# Category: Terminal
-# Tags: terminal, window, management, layout
 ---
 Use advanced window management for terminal-focused layouts and workflows.
 

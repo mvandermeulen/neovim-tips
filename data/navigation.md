@@ -1,7 +1,3 @@
-# Title: View jump list
-# Category: Navigation
-# Tags: jump, list, view
----
 Use `:jumps` to show the jump list with all stored positions.
 
 ```vim
@@ -13,18 +9,6 @@ Use `:jumps` to show the jump list with all stored positions.
 # Title: LSP go to references
 # Category: Navigation
 # Tags: lsp, references, goto
----
-Use `gr` to go to references of symbol under cursor (requires LSP server).
-
-```vim
-gr  " go to references
-```
-
-**Source:** Community contributed
-***
-# Title: Go to declaration
-# Category: Navigation
-# Tags: lsp, declaration, goto
 ---
 Use `gD` to go to declaration of symbol under cursor.
 
@@ -38,19 +22,6 @@ gD  " go to declaration
 # Category: Navigation
 # Tags: block, boundaries, jump
 ---
-Use `[{` to jump to start of current block and `]}` to jump to end of current block.
-
-```vim
-[{  " jump to block start
-]}  " jump to block end
-```
-
-**Source:** Community contributed
-***
-# Title: Jump between functions
-# Category: Navigation
-# Tags: function, jump, treesitter
----
 Use `]m` to jump to next function start and `[m` to jump to previous function start.
 
 ```vim
@@ -63,19 +34,6 @@ Use `]m` to jump to next function start and `[m` to jump to previous function st
 # Title: Navigate to alternate file
 # Category: Navigation
 # Tags: alternate, file, header, source
----
-Use `:A` to switch to alternate file (e.g., .h to .c), or `Ctrl+^` to switch to previous buffer.
-
-```vim
-:A      " alternate file
-Ctrl+^  " previous buffer
-```
-
-**Source:** Community contributed
-***
-# Title: Buffer switching shortcuts
-# Category: Navigation
-# Tags: buffer, switching, shortcuts, quick
 ---
 Use `:ls` to list buffers, `:b#` for previous buffer, or create mappings for quick buffer navigation.
 
@@ -279,47 +237,13 @@ Use `:Lexplore` to toggle the netrw file explorer in a vertical split on the lef
 # Category: Navigation
 # Tags: plugin, flash, leap, jump, motion, search
 ---
-Use Flash.nvim plugin to enhance native Neovim motions like `f`, `t`, `w` with multi-line, labeled jumping.
-
-```lua
--- Install with lazy.nvim:
-{
-  "folke/flash.nvim",
-  event = "VeryLazy",
-  opts = {
-    modes = {
-      char = {
-        enabled = true,  -- Enable for f, F, t, T motions
-        jump_labels = true
-      }
-    }
-  },
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-  },
-}
-
--- Usage:
--- Press 's' followed by characters to search
--- Press 'S' for treesitter-aware selection
--- Use enhanced f/t/w motions with labels
-```
-
-**Source:** Community contributed
-***
-# Title: Quick PHP Variable Navigation
-# Category: navigation
-# Tags: php, key-mapping, text-objects
----
 Easily jump between PHP variables on the same line using custom key mappings
 
 ```vim
 noremap L f$
 noremap H F$
 ```
+
 ```lua
 vim.keymap.set('n', 'L', 'f$', { desc = 'Jump to next PHP variable' })
 vim.keymap.set('n', 'H', 'F$', { desc = 'Jump to previous PHP variable' })
@@ -330,38 +254,6 @@ vim.keymap.set('n', 'H', 'F$', { desc = 'Jump to previous PHP variable' })
 # Title: Smart Middle of Line Movement
 # Category: navigation
 # Tags: cursor-movement, text-editing
----
-Move cursor to the middle of the physical line, ignoring leading/trailing whitespace
-
-```vim
-function! s:Gm()
-  execute 'normal! ^'
-  let first_col = virtcol('.')
-  execute 'normal! g_'
-  let last_col  = virtcol('.')
-  execute 'normal! ' . (first_col + last_col) / 2 . '|'
-endfunction
-nnoremap <silent> gm :call <SID>Gm()<CR>
-onoremap <silent> gm :call <SID>Gm()<CR>
-```
-```lua
-local function gm()
-  vim.cmd('normal! ^')
-  local first_col = vim.fn.virtcol('.')
-  vim.cmd('normal! g_')
-  local last_col = vim.fn.virtcol('.')
-  vim.cmd('normal! ' .. math.floor((first_col + last_col) / 2) .. '|')
-end
-
-vim.keymap.set('n', 'gm', gm, { silent = true })
-vim.keymap.set('o', 'gm', gm, { silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/A_better_gm_command)
-***
-# Title: Master Vim Movement Shortcuts
-# Category: navigation
-# Tags: movement, cursor-navigation, efficiency
 ---
 Comprehensive collection of efficient cursor movement commands in Vim/Neovim, enabling faster text navigation
 
@@ -397,6 +289,7 @@ nnoremap <C-t>     :tabnew<CR>
 nnoremap H gT
 nnoremap L gt
 ```
+
 ```lua
 -- Tab navigation shortcuts
 vim.keymap.set('n', '<C-S-Tab>', ':tabprevious<CR>', { noremap = true, silent = true })
@@ -425,6 +318,7 @@ find -name '*.jsp' -printf '%f\t%P\t1\n' |sort > jsp.tags
 :set tags+=jsp.tags
 :tag file.jsp  # Quick file navigation
 ```
+
 ```lua
 -- Lua doesn't change the core functionality, but you can use vim.fn to run shell commands
 -- Generate tags file
@@ -449,6 +343,7 @@ Easily search and open files across multiple directories using Vim's path option
 :find filename.txt  # Find file in current and subdirectories
 :sfind filename.txt  # Open in split window
 ```
+
 ```lua
 -- Set recursive path
 vim.opt.path:append('./**')
@@ -469,6 +364,7 @@ Allows left/right cursor keys and h/l to wrap to previous/next line when reachin
 ```vim
 set whichwrap+=<,>,h,l,[,]
 ```
+
 ```lua
 vim.opt.whichwrap:append '<,>h,l,[,]'
 ```
@@ -484,6 +380,7 @@ Leverage Alt/Meta keys to quickly switch modes and perform actions without Escap
 ```vim
 " No direct Vimscript implementation - depends on terminal configuration
 ```
+
 ```lua
 -- Configure terminal to send Alt/Meta key events
 -- Specific implementation depends on terminal settings
@@ -504,6 +401,7 @@ nnoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
 nnoremap <silent> [L :call NextIndent(0, 0, 1, 1)<CR>
 nnoremap <silent> ]L :call NextIndent(0, 1, 1, 1)<CR>
 ```
+
 ```lua
 -- Create a Lua function to replicate NextIndent behavior
 local function next_indent(exclusive, fwd, lower_level, skip_blanks)
@@ -551,6 +449,7 @@ Simple Alt-key mappings to quickly move between lines with the same indentation
 nnoremap <M-,> :call search('^'. matchstr(getline('.'), '(^\s*)').'\%<' . line('.') . 'l\S', 'be')<CR>
 nnoremap <M-.> :call search('^'. matchstr(getline('.'), '(^\s*)').'\%>' . line('.') . 'l\S', 'e')<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<M-,>', function()
   local current_line = vim.fn.getline('.')
@@ -582,6 +481,7 @@ c3b
 # Yank everything to next parenthesis
 y/)
 ```
+
 ```lua
 -- While Lua doesn't directly implement these, you can use vim.api to create similar mappings
 -- Example of creating a wrapper for text object manipulation
@@ -603,6 +503,7 @@ fx   # Find next 'x' in line
 tC   # Move till just before next 'C'
 ctx  # Change till next 'x'
 ```
+
 ```lua
 -- Vim's built-in find commands work the same in Neovim
 -- You can create custom keymaps to enhance these motions
@@ -616,30 +517,6 @@ vim.keymap.set('n', '<leader>tc', 'tC', { desc = 'Move till just before next C' 
 # Category: navigation
 # Tags: buffer-management, file-navigation, marks
 ---
-Powerful navigation techniques using marks and movement history
-
-```vim
-'.       " jump to last modification line
-`.       " jump to exact spot in last modification line
-<C-O>    " retrace movements backward
-<C-I>    " retrace movements forward
-:ju(mps) " list of your movements
-```
-```lua
--- Lua equivalents for advanced navigation
--- These are primarily Vim native commands, so use vim.cmd
-vim.keymap.set('n', "'.", "'.", { desc = 'Jump to last modification line' })
-vim.keymap.set('n', '`.', '`.', { desc = 'Jump to exact modification spot' })
-vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Navigate backward in jump history' })
-vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Navigate forward in jump history' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Best_Vim_Tips)
-***
-# Title: Advanced Search and Movement
-# Category: navigation
-# Tags: search, movement, cursor
----
 Enhanced word searching and cursor movement techniques
 
 ```vim
@@ -647,6 +524,7 @@ Enhanced word searching and cursor movement techniques
 %             " match brackets {}[]()
 '. `. " jump to last modification line
 ```
+
 ```lua
 -- Lua alternatives for advanced search and movement
 -- Most of these are vim commands that work in Neovim
@@ -674,6 +552,7 @@ g]
 " Preview tag without leaving current window
 Ctrl-W }
 ```
+
 ```lua
 -- Jump to tag definition
 vim.keymap.set('n', '<C-]>', '<cmd>tag<CR>', { desc = 'Jump to tag definition' })
@@ -702,6 +581,7 @@ Use pattern matching and flexible tag browsing techniques to explore code effici
 :tnext     " Go to next tag
 :tprevious " Go to previous tag
 ```
+
 ```lua
 -- Search tags with pattern
 -- Note: Requires setting up a tags file first
@@ -731,6 +611,7 @@ if exists("loaded_matchit")
                     \ . '<cfoutput\>:\</cfoutput>'
 endif
 ```
+
 ```lua
 -- In ~/.config/nvim/ftplugin/cf.lua
 if vim.g.loaded_matchit then
@@ -762,6 +643,7 @@ vnoremap <C-J> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-D>")<CR>
 nnoremap <C-K> :call <SID>Saving_scroll("1<C-V><C-U>")<CR>
 vnoremap <C-K> <Esc>:call <SID>Saving_scroll("gv1<C-V><C-U>")<CR>
 ```
+
 ```lua
 local function saving_scroll(cmd)
   local save_scroll = vim.o.scroll
@@ -781,51 +663,6 @@ vim.keymap.set('v', '<C-K>', function() saving_scroll('gv1\<C-U>') end)
 # Category: navigation
 # Tags: code-navigation, c-development, project-management
 ---
-Configure Vim/Neovim to use Cscope for advanced code navigation, allowing quick symbol, definition, and reference searches across large codebases
-
-```vim
-if has('cscope')
-  set cscopetag cscopeverbose
-
-  if has('quickfix')
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-  endif
-
-  cnoreabbrev csa cs add
-  cnoreabbrev csf cs find
-  cnoreabbrev csk cs kill
-  cnoreabbrev csr cs reset
-  cnoreabbrev css cs show
-  cnoreabbrev csh cs help
-endif
-```
-```lua
-if vim.fn.has('cscope') == 1 then
-  vim.opt.cscopetag = true
-  vim.opt.cscopeverbose = true
-
-  if vim.fn.has('quickfix') == 1 then
-    vim.opt.cscopequickfix = 's-,c-,d-,i-,t-,e-'
-  end
-
-  -- Create commands/abbreviations using Neovim command creation
-  vim.cmd[[
-    cnoreabbrev csa cs add
-    cnoreabbrev csf cs find
-    cnoreabbrev csk cs kill
-    cnoreabbrev csr cs reset
-    cnoreabbrev css cs show
-    cnoreabbrev csh cs help
-  ]]
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cscope)
-***
-# Title: Easy Help Navigation on AZERTY Keyboards
-# Category: navigation
-# Tags: help, keyboard-mapping, key-navigation
----
 Alternative key mapping for following help links on AZERTY keyboards, where Ctrl-] doesn't work
 
 ```vim
@@ -833,6 +670,7 @@ Alternative key mapping for following help links on AZERTY keyboards, where Ctrl
 nmap <F9> <C-]>
 map! <F9> <C-]>
 ```
+
 ```lua
 -- Remap help navigation for AZERTY keyboards
 vim.keymap.set('n', '<F9>', '<C-]>', { desc = 'Follow help link' })
@@ -853,6 +691,7 @@ nnoremap <A-Left> viwm`bb``xbzvP`[1v<Space>
 nnoremap <A-Down> viwjkxjzvP`[1v<Space>
 nnoremap <A-Up> viwkjxkzvP`[1v<Space>
 ```
+
 ```lua
 vim.keymap.set('n', '<A-Right>', 'viwm`w``xwzvP`[1v<Space>', { noremap = true })
 vim.keymap.set('n', '<A-Left>', 'viwm`bb``xbzvP`[1v<Space>', { noremap = true })
@@ -875,6 +714,7 @@ Jump to last modification and retrace movement history
 <C-I>  " retrace movements forward
 :ju(mps)  " list of your movements
 ```
+
 ```lua
 -- Most of these are built-in Vim commands
 -- For more advanced mark management in Neovim
@@ -901,6 +741,7 @@ gf
 " Open file in new tab
 <c-w>gf
 ```
+
 ```lua
 -- Lua doesn't need explicit mapping, these are built-in Vim commands
 -- Can be used directly in Neovim
@@ -917,6 +758,7 @@ Define environment variables to simplify file path references across different s
 ```vim
 let $mydir = 'C:/Documents and Settings/My Name/My Documents'
 ```
+
 ```lua
 -- Set environment variable for file paths
 vim.env.mydir = 'C:/Documents and Settings/My Name/My Documents'
@@ -934,6 +776,7 @@ Quickly jump between PHP variables on the same line using custom mappings
 noremap L f$
 noremap H F$
 ```
+
 ```lua
 vim.keymap.set('n', 'L', 'f$', { desc = 'Jump to next PHP variable' })
 vim.keymap.set('n', 'H', 'F$', { desc = 'Jump to previous PHP variable' })
@@ -954,6 +797,7 @@ nmap <A-h> 4zh
 nmap <A-k> <C-y>
 nmap <A-j> <C-e>
 ```
+
 ```lua
 -- Scroll window horizontally and vertically
 vim.keymap.set('n', '<A-l>', '4zl', { desc = 'Scroll window right' })
@@ -974,6 +818,7 @@ Quickly search and open files recursively in the current directory tree using fu
 nmap <F5> :FuzzyFinderFile **/<CR>
 map <Leader>t :FufFile **/<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F5>', function()
   require('fzf-lua').files({ cwd = vim.fn.getcwd() })
@@ -996,6 +841,7 @@ Custom mappings for word search that respect smartcase and whole word boundaries
 nnoremap * /\<<C-R>=expand('<cword>')\>\><CR>
 nnoremap # ?\<<C-R>=expand('<cword>')\>\><CR>
 ```
+
 ```lua
 vim.keymap.set('n', '*', function()
   local word = vim.fn.expand('<cword>')
@@ -1024,6 +870,7 @@ Use Ctags to create custom help-style tag navigation in non-help files by defini
 let tlist_java_settings = 'java;p:package;c:class;i:interface;' .
                              \ 'f:field;m:method;h:htag'
 ```
+
 ```lua
 -- Equivalent configuration would typically be done in ctags config
 -- For Neovim, you can use telescope or LSP for advanced navigation
@@ -1062,6 +909,7 @@ set path+=**
 set isfname+=32
 set suffixesadd+=.js,.py
 ```
+
 ```lua
 vim.opt.path:append('**')
 vim.opt.isfname:append(32)
@@ -1082,6 +930,7 @@ nnoremap <silent> <C-a>b :call FZFOpen(':Buffers')<CR>
 nnoremap <silent> <C-a>c :call fzf#run({'source': GetCommands(), 'sink': function('HandleCommand'), 'options': '-m'})<CR>
 nnoremap <silent> <C-a>m :call fzf#run({'source': GetMappings(), 'options': '-m -n 2'})<CR>
 ```
+
 ```lua
 -- Lua equivalent requires fzf.vim plugin setup
 local fzf = require('fzf-lua')
@@ -1124,6 +973,7 @@ function! SaveLastDir()
   call add(g:dirs, reg)
 endfunction
 ```
+
 ```lua
 -- Lua implementation of directory tracking
 vim.api.nvim_create_autocmd('DirChanged', {
@@ -1152,6 +1002,7 @@ Quickly change Vim's current directory to the directory of the active file
 ```vim
 com Fcd cd %:p:h
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Fcd', 'cd %:p:h', {})
 ```
@@ -1167,6 +1018,7 @@ Easily retrieve the name of the current function you're in using a custom mappin
 ```vim
 map _F ma[[k"xy$`a:echo @x<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '_F', function()
   -- Move to previous '{' in first column
@@ -1182,24 +1034,6 @@ end, { desc = 'Show current function name' })
 # Category: navigation
 # Tags: function-navigation, marks
 ---
-Use built-in Vim commands to navigate to function start and return to original position
-
-```vim
-Press [[ to go to function start
-Press '' to return to previous position
-```
-```lua
--- Built-in Vim commands, no specific Lua implementation needed
--- [[  : Go to previous function start
--- ''  : Return to previous mark
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_name_of_the_function)
-***
-# Title: Jump to Random Line in Buffer
-# Category: navigation
-# Tags: random, line-jumping, utility
----
 Create a command to jump to a random line in the current buffer, useful for testing or exploring large files
 
 ```vim
@@ -1210,6 +1044,7 @@ function! RandomLine() range
 endfunction
 command! -range=% RandomLine <line1>,<line2>call RandomLine()
 ```
+
 ```lua
 function _G.random_line(first_line, last_line)
   local total_lines = last_line - first_line + 1
@@ -1235,6 +1070,7 @@ When using a non-English keyboard layout that lacks the $ symbol, use g_ to move
 ```vim
 " No specific code needed, just use g_ motion
 ```
+
 ```lua
 -- Use g_ motion to navigate to end of line
 -- Works with any keyboard layout
@@ -1254,6 +1090,7 @@ Multiple methods to quickly jump to a specific line number in Vim/Neovim
 :42<CR>
 exe 42
 ```
+
 ```lua
 -- Jump to line 42
 vim.cmd('42')
@@ -1277,6 +1114,7 @@ In terminal Vim, use Alt/Meta + key combinations to quickly switch modes and nav
 " Alt+o to open line below
 " Alt+A to append to end of line
 ```
+
 ```lua
 -- Terminal Vim navigation (configurable in init.lua)
 -- Requires terminal to send appropriate escape sequences
@@ -1318,6 +1156,7 @@ Ctrl-O
 " Mark word as not found
 zug
 ```
+
 ```lua
 -- Vim's built-in navigation and spell checking works similarly in Neovim
 -- Ctrl-O to jump back
@@ -1338,6 +1177,7 @@ Easily jump to next or previous method in C++ files using Alt+J/K key mappings w
 nnoremap <M-J> /\v^(\w+\s+)?\w+::\w+\(.*\)
 nnoremap <M-K> ?\v^(\w+\s+)?\w+::\w+\(.*\)
 ```
+
 ```lua
 vim.keymap.set('n', '<M-J>', '/\v^(\w+\s+)?\w+::\w+\(.*\)<CR>', { desc = 'Jump to next C++ method' })
 vim.keymap.set('n', '<M-K>', '?\v^(\w+\s+)?\w+::\w+\(.*\)<CR>', { desc = 'Jump to previous C++ method' })
@@ -1357,6 +1197,7 @@ gF  " Same window
 <c-w>F  " New window
 <c-w>gF  " New tab
 ```
+
 ```lua
 -- Open file and go to line number
 vim.keymap.set('n', 'gF', 'gF', { desc = 'Open file at line number' })
@@ -1375,6 +1216,7 @@ Quickly jump to a function definition by placing cursor on function name and usi
 ```vim
 nmap gx yiw/^\(sub\<Bar>function\)\s\+<C-R>"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 'gx', function()
   -- Yank current word
@@ -1397,6 +1239,7 @@ Provides multiple methods to jump to a random line in the current buffer using d
 ```vim
 command! RandomLine execute 'normal! '.(system('/bin/bash -c "echo -n $RANDOM"') % line('$')).'G'
 ```
+
 ```lua
 vim.api.nvim_create_user_command('RandomLine', function()
   local total_lines = vim.fn.line('$')
@@ -1421,6 +1264,7 @@ function! RandomLine() range
 endfunction
 command! -range=% RandomLine <line1>,<line2>call RandomLine()
 ```
+
 ```lua
 vim.api.nvim_create_user_command('RandomLine', function(opts)
   local first_line = opts.line1
@@ -1441,6 +1285,7 @@ Quickly jump to entity definitions in DTD files by searching backwards for the e
 ```vim
 :map <Leader>e yiw ?<!ENTITY % <C-R>"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>e', function()
   -- Yank word under cursor
@@ -1456,57 +1301,13 @@ end, { desc = 'Jump to Entity Definition' })
 # Category: navigation
 # Tags: diff, file-navigation, key-mapping
 ---
-Adds a mapping to jump from a diff view to the original file at the corresponding line, making code review and comparison easier
-
-```vim
-function! DiffJumpToFile()
-  let a=line(".")
-  let b=search("^\(---\|\*\*\*\) ", "b")
-  let c=getline(b)
-  let d=strpart(c, 4, match(c, ",")-4)
-  let f=search("^\(---\|\*\*\*\) .*\t", "b")
-  let g=getline(f)
-  let h=match(g, "\t", 4)
-  let i=strpart(g, 4, h-4)
-  execute ":b " . i
-  execute "normal " . (d+a-b-1) . "G"
-endfunction
-nmap <buffer> <CR> :call DiffJumpToFile()<CR>
-```
-```lua
-function _G.diff_jump_to_file()
-  local current_line = vim.fn.line('.')
-  local header_line = vim.fn.search('^(---|\*\*\*) ', 'b')
-  local header_text = vim.fn.getline(header_line)
-  local first_line_num = tonumber(header_text:match('(%d+),'))
-  local file_header_line = vim.fn.search('^(---|\*\*\*) .*	', 'b')
-  local file_header_text = vim.fn.getline(file_header_line)
-  local filename = file_header_text:match('(.-)	')
-  
-  vim.cmd('buffer ' .. filename)
-  vim.cmd(tostring(first_line_num + current_line - header_line - 1) .. 'G')
-end
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'diff',
-  callback = function()
-    vim.keymap.set('n', '<CR>', _G.diff_jump_to_file, { buffer = true })
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Jump_to_file_from_CVSDiff_output)
-***
-# Title: Jump Between C++ Methods Quickly
-# Category: navigation
-# Tags: c++, search, key-mapping
----
 Easily navigate between methods in C++ files using Alt-Shift-J/K key mappings with a regex-based search
 
 ```vim
 nnoremap <M-J> /\v^(\w+\s+)?\w+::\w+\(.*\)
 nnoremap <M-K> ?\v^(\w+\s+)?\w+::\w+\(.*\)
 ```
+
 ```lua
 vim.keymap.set('n', '<M-J>', function()
   vim.fn.search('\v^(\w+\s+)?\w+::\w+\(.*\)')
@@ -1533,6 +1334,7 @@ nnoremap t <C-]>
 nnoremap ü <C-]>
 nnoremap Ü <C-O>
 ```
+
 ```lua
 -- Option 1: Map to 't' key
 vim.keymap.set('n', 't', '<C-]>', { desc = 'Jump to help tag' })
@@ -1554,6 +1356,7 @@ Move backward and forward through edit locations within a file
 " g; - go to previous edit location
 " g, - go to next edit location
 ```
+
 ```lua
 -- Built-in Vim/Neovim commands work as-is
 -- Recommended mapping for clarity
@@ -1576,6 +1379,7 @@ gd  " Normal mode command
 " Jump to global variable declaration
 gD  " Normal mode command
 ```
+
 ```lua
 -- These Vim commands work natively in Neovim
 -- No specific Lua conversion needed
@@ -1597,6 +1401,7 @@ endfunction
 map <F4> :call GotoDefinition()<CR>
 imap <F4> <c-o>:call GotoDefinition()<CR>
 ```
+
 ```lua
 function _G.goto_definition()
   vim.fn.search(vim.fn.expand('<cword>') .. '[^(]*([^)]*)\s*\n*\s*{')
@@ -1624,6 +1429,7 @@ function! GoDefinition()
 endfunction
 nnoremap <C-]> :<C-U>call GoDefinition()<CR>
 ```
+
 ```lua
 function _G.go_definition()
   local original_pos = vim.fn.getpos('.')
@@ -1652,6 +1458,7 @@ Automatically center the screen whenever moving up or down with j/k keys
 nnoremap j jzz
 nnoremap k kzz
 ```
+
 ```lua
 -- Center cursor on movement
 vim.keymap.set('n', 'j', 'jzz', { noremap = true })
@@ -1696,6 +1503,7 @@ g,
 " View change list
 :changes
 ```
+
 ```lua
 -- Jump to previous change
 vim.keymap.set('n', 'g;', 'g;', { desc = 'Go to previous change' })
@@ -1718,6 +1526,7 @@ Use regular expressions to flexibly search and find tags when you're not sure of
 ```vim
 :tj /handle.*event<C-D>
 ```
+
 ```lua
 -- Lua equivalent for tag searching
 -- Note: Requires having tags file generated
@@ -1742,6 +1551,7 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 ```
+
 ```lua
 -- Center screen on search navigation
 vim.keymap.set('n', 'n', 'nzz', { desc = 'Next search result, center screen' })
@@ -1770,6 +1580,7 @@ nnoremap <buffer><CR> <c-]>
 " Map Backspace to go back
 nnoremap <buffer><BS> <c-T>
 ```
+
 ```lua
 -- Lua equivalent for help buffer navigation
 vim.api.nvim_create_autocmd('FileType', {
@@ -1787,58 +1598,13 @@ vim.api.nvim_create_autocmd('FileType', {
 # Category: navigation
 # Tags: help-buffer, key-mapping, search
 ---
-Add Tab/Shift-Tab mappings to quickly jump between |labels| in help documentation
-
-```vim
-" Navigate between help labels
-nnoremap <buffer> <Tab> /<Bar>\zs\k*\ze<Bar><CR>
-nnoremap <buffer> <S-Tab> ?<Bar>\zs\k*\ze<Bar><CR>
-```
-```lua
--- Lua equivalent for navigating help labels
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'help',
-  callback = function()
-    vim.keymap.set('n', '<Tab>', '/<Bar>\zs\k*\ze<Bar><CR>', { buffer = true })
-    vim.keymap.set('n', '<S-Tab>', '?<Bar>\zs\k*\ze<Bar><CR>', { buffer = true })
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_to_quickly_browse_help)
-***
-# Title: Enhanced Matching with % Key
-# Category: navigation
-# Tags: motion, text-objects, programming
----
-Expand the % key functionality to jump between matching elements beyond just brackets, including code blocks, comments, and preprocessor conditionals
-
-```vim
-" Enable matchit plugin
-runtime macros/matchit.vim
-```
-```lua
--- In Neovim, can use built-in matchit or treesitter for enhanced matching
--- Recommend installing nvim-treesitter for advanced language-aware matching
-require('nvim-treesitter.configs').setup {
-  matchup = {
-    enable = true,
-  }
-}
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_It_Plugin)
-***
-# Title: Enhanced Bracket and Brace Navigation
-# Category: navigation
-# Tags: movement, text-objects, matching
----
 Use % key to jump between matching braces, brackets, and more advanced language constructs
 
 ```vim
 " Enable extended matching with matchit.vim
 runtime macros/matchit.vim
 ```
+
 ```lua
 -- For Neovim, you can use built-in matchit or a Lua equivalent plugin
 -- Add matchit.vim or use a Lua-based matching plugin
@@ -1863,6 +1629,7 @@ noremap <silent> $ g$
 onoremap <silent> j gj
 onoremap <silent> k gk
 ```
+
 ```lua
 -- Remap movement keys to navigate by display lines
 vim.keymap.set('n', 'k', 'gk', { silent = true })
@@ -1892,6 +1659,7 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :tabm -1<CR>
 nnoremap <silent> <A-Right> :tabm +1<CR>
 ```
+
 ```lua
 -- Navigate tabs
 vim.keymap.set('n', '<C-Left>', ':tabprevious<CR>', { silent = true })
@@ -1917,6 +1685,7 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :tabm -1<CR>
 nnoremap <silent> <A-Right> :tabm +1<CR>
 ```
+
 ```lua
 -- Tab navigation shortcuts
 vim.keymap.set('n', '<C-Left>', ':tabprevious<CR>', { noremap = true, silent = true })
@@ -1962,6 +1731,7 @@ nnoremap <silent> ]l :call NextIndent(0, 1, 0, 1)<CR>
 nnoremap <silent> [L :call NextIndent(0, 0, 1, 1)<CR>
 nnoremap <silent> ]L :call NextIndent(0, 1, 1, 1)<CR>
 ```
+
 ```lua
 function _G.next_indent(exclusive, fwd, lowerlevel, skipblanks)
   local line = vim.fn.line('.')
@@ -2011,6 +1781,7 @@ Powerful movement commands to quickly navigate through text without using arrow 
 " ) - next sentence
 " } - next paragraph
 ```
+
 ```lua
 -- Neovim movement commands are built-in
 -- Use native Vim movement keys
@@ -2032,6 +1803,7 @@ Use marks and jump list to quickly navigate between different locations in a fil
 " Jump to mark with 'x
 " Return to previous jump with ''
 ```
+
 ```lua
 -- Set a mark
 vim.cmd('normal! mx')
@@ -2057,6 +1829,7 @@ Quick ways to move through the viewport without using mouse or scrollbar
 " L - bottom of screen
 " 10<PageUp> - move 10 pages up
 ```
+
 ```lua
 -- Screen movement is native in Neovim
 -- Can wrap with custom mappings for enhanced control
@@ -2077,6 +1850,7 @@ Use % key to jump between matching syntax elements, including braces, comments, 
 " Built-in % navigation
 " Works with (), [], {}, comments, preprocessor blocks
 ```
+
 ```lua
 -- Recommend using built-in % key
 -- Can be enhanced with matchit plugin
@@ -2097,6 +1871,7 @@ Quick navigation between words while in insert mode using keyboard shortcuts
 " Shift + Left Arrow: Move to previous word
 " Ctrl + Right/Left Arrow also work across different vim behaviors
 ```
+
 ```lua
 -- These are built-in Neovim behaviors
 -- No specific Lua configuration needed
@@ -2139,6 +1914,7 @@ function! CSVH(colnr)
 endfunction
 command! -nargs=1 Csv :call CSVH(<args>)
 ```
+
 ```lua
 local function csv_highlight(colnr)
   if colnr > 1 then
@@ -2164,50 +1940,6 @@ end, { nargs = 1 })
 # Category: navigation
 # Tags: folding, key-mapping, navigation
 ---
-Custom function to move between open folds more intuitively, using ]z and [z mappings
-
-```vim
-function! GoToOpenFold(direction)
-  let start = line('.')
-  if (a:direction == "next")
-    while (foldclosed(start) != -1)
-      let start = start + 1
-    endwhile
-  else
-    while (foldclosed(start) != -1)
-      let start = start - 1
-    endwhile
-  endif
-  call cursor(start, 0)
-endfunction
-nmap ]z :cal GoToOpenFold("next")
-nmap [z :cal GoToOpenFold("prev")
-```
-```lua
-function _G.go_to_open_fold(direction)
-  local start = vim.fn.line('.')
-  if direction == 'next' then
-    while vim.fn.foldclosed(start) ~= -1 do
-      start = start + 1
-    end
-  else
-    while vim.fn.foldclosed(start) ~= -1 do
-      start = start - 1
-    end
-  end
-  vim.fn.cursor(start, 0)
-end
-
-vim.keymap.set('n', ']z', function() _G.go_to_open_fold('next') end)
-vim.keymap.set('n', '[z', function() _G.go_to_open_fold('prev') end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Navigate_to_the_next_open_fold)
-***
-# Title: Navigate Vim Help on AZERTY Keyboards
-# Category: navigation
-# Tags: help, keyboard-mapping, azerty
----
 Alternative key mapping for navigating Vim help on AZERTY keyboards where Ctrl+] doesn't work
 
 ```vim
@@ -2215,6 +1947,7 @@ Alternative key mapping for navigating Vim help on AZERTY keyboards where Ctrl+]
 nmap <F9> <C-]>
 map! <F9> <C-]>
 ```
+
 ```lua
 -- Map F9 to follow help tags and links in Neovim
 vim.keymap.set('n', '<F9>', '<C-]>', { desc = 'Follow help tag' })
@@ -2241,33 +1974,6 @@ vim.keymap.set('n', '<M-down>', '<C-]>', { desc = 'Follow help link' })
 # Category: navigation
 # Tags: beginner, key-mapping, text-editing
 ---
-Key tips for new Vim users to get started with basic navigation and editing
-
-```vim
-# Basic Vim navigation and editing
-# Enter insert mode
-i
-# Exit and save
-:w myfile.txt
-# Exit without saving
-:q
-```
-```lua
--- Lua equivalents (conceptual)
--- Enter insert mode
-vim.cmd('startinsert')
--- Save file
-vim.cmd('write myfile.txt')
--- Exit without saving
-vim.cmd('quit')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/New_to_Vim)
-***
-# Title: Quick Open Perl Module Source
-# Category: navigation
-# Tags: perl, file-operations, key-mapping
----
 Quickly open the source file for a Perl module by placing cursor on module name and using a custom mapping
 
 ```vim
@@ -2277,6 +1983,7 @@ function! LoadPerlModule()
   execute 'e `perldoc -l ' . expand("<cWORD>") . '`'
 endfunction
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>pm', function()
   local module = vim.fn.expand('<cWORD>')
@@ -2291,38 +1998,6 @@ end, { desc = 'Open Perl Module Source' })
 # Category: navigation
 # Tags: man-pages, documentation, key-mapping
 ---
-Quickly open man pages for the word under the cursor using the K key in Vim/Neovim
-
-```vim
-fun! ReadMan()
-  let s:man_word = expand('<cword>')
-  :exe ":wincmd n"
-  :exe ":r!man " . s:man_word . " | col -b"
-  :exe ":goto"
-  :exe ":delete"
-  :exe ":set filetype=man"
-endfun
-map K :call ReadMan()<CR>
-```
-```lua
-function _G.read_man()
-  local man_word = vim.fn.expand('<cword>')
-  vim.cmd('new')
-  vim.cmd('read !man ' .. man_word .. ' | col -b')
-  vim.cmd('norm! gg')
-  vim.cmd('delete')
-  vim.bo.filetype = 'man'
-end
-
-vim.keymap.set('n', 'K', _G.read_man, { desc = 'Open man page for word under cursor' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_a_window_with_the_man_page_for_the_word_under_the_cursor)
-***
-# Title: Open Files Using Filename Under Cursor
-# Category: navigation
-# Tags: file-operations, navigation, productivity
----
 Quickly open files by placing cursor on filename and using built-in commands
 
 ```vim
@@ -2335,6 +2010,7 @@ gf
 " Open file in new tab
 <c-w>gf
 ```
+
 ```lua
 -- These are built-in Vim/Neovim commands, no specific Lua translation needed
 -- Use as-is in normal mode
@@ -2357,6 +2033,7 @@ gf             " Open in current window
 <c-w>f         " Open in new horizontal split
 <c-w>gf        " Open in new tab
 ```
+
 ```lua
 -- Open file under cursor
 -- Vim's default gf, <C-w>f, and <C-w>gf work in Neovim
@@ -2387,6 +2064,7 @@ endfunction
 
 nnoremap <buffer> <LocalLeader>e :call EvinceNearestLabel()<CR>
 ```
+
 ```lua
 function _G.nearest_label_pdf()
   local line_nr = vim.fn.search('\\label{', 'bnW')
@@ -2414,6 +2092,7 @@ Configure Vim to show PHP function documentation when pressing K on a function n
 " In ftplugin/php.vim
 set keywordprg=:help
 ```
+
 ```lua
 -- In lua/ftplugin/php.lua
 vim.opt.keywordprg = ':help'
@@ -2425,60 +2104,13 @@ vim.opt.keywordprg = ':help'
 # Category: navigation
 # Tags: scrolling, cursor-position, key-mapping
 ---
-Scroll page up/down while maintaining the cursor's relative screen position, similar to Borland-style scrolling
-
-```vim
-function! MyPageUp()
-  let visible_lines = GetNumberOfVisibleLines()
-  execute "normal " . visible_lines . "\<C-U>:set scroll=0\r"
-endfunction
-
-function! MyPageDown()
-  let visible_lines = GetNumberOfVisibleLines()
-  execute "normal " . visible_lines . "\<C-D>:set scroll=0\r"
-endfunction
-
-noremap <PageUp> :call MyPageUp()<CR>
-noremap <PageDown> :call MyPageDown()<CR>
-```
-```lua
-local function get_visible_lines()
-  local cur_line = vim.fn.line('.')
-  local cur_col = vim.fn.virtcol('.')
-  vim.cmd('normal H')
-  local top_line = vim.fn.line('.')
-  vim.cmd('normal L')
-  local bot_line = vim.fn.line('.')
-  vim.cmd('normal ' .. cur_line .. 'G')
-  vim.cmd('normal ' .. cur_col .. '|')
-  return bot_line - top_line
-end
-
-vim.keymap.set('n', '<PageUp>', function()
-  local visible_lines = get_visible_lines()
-  vim.cmd('normal ' .. visible_lines .. '\<C-U>')
-  vim.o.scroll = 0
-end)
-
-vim.keymap.set('n', '<PageDown>', function()
-  local visible_lines = get_visible_lines()
-  vim.cmd('normal ' .. visible_lines .. '\<C-D>')
-  vim.o.scroll = 0
-end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Page_up/down_and_keep_cursor_position)
-***
-# Title: Quick Man Page Lookup for Word Under Cursor
-# Category: navigation
-# Tags: man-pages, documentation, quick-lookup
----
 Press K in normal mode to instantly view the man page for the word under the cursor, providing quick documentation access
 
 ```vim
 " Optional: Configure man page lookup
 set keywordprg=man\ -a
 ```
+
 ```lua
 -- Configure man page lookup
 vim.opt.keywordprg = 'man -a'
@@ -2495,6 +2127,7 @@ Prefix the chapter number before pressing K to view specific sections of a man p
 ```vim
 " Example: 3 K would look up chapter 3 man pages
 ```
+
 ```lua
 -- No direct Lua equivalent, relies on Vim's built-in man page lookup
 ```
@@ -2505,131 +2138,12 @@ Prefix the chapter number before pressing K to view specific sections of a man p
 # Category: navigation
 # Tags: motion, jump, labeling
 ---
-Dynamically label words on screen for rapid, precise navigation without using a mouse
-
-```vim
-let LABEL = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",
-"t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I",
-"J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y",
-"Z","1","2","3","4","5","6","7","8","9","0"]
-
-function! GoTo(range)
-    normal! Hmt
-    for i in range(0,a:range)
-        exe 'normal! Wr' . g:LABEL[i%len(g:LABEL)]
-    endfor
-    normal! 'tzt
-    echo "Index?"
-    redraw
-    let label=nr2char(getchar())
-    normal! u'tzt
-    for i in range(0,a:range)
-        exe 'normal! Wr' . (1+i/len(g:LABEL))
-    endfor
-    normal! 'tzt
-    echo "Number?"
-    redraw
-    let offset=getchar()
-    let offset=(49 <= offset && offset <= 57) ? offset-48 : 1
-    normal! u'tzt
-    let index=index(g:LABEL,label)
-    exe 'normal! ' . ((offset-1)*len(g:LABEL)+index+1) . 'W'
-endfu
-nnoremap <TAB> :call GoTo(248)<CR>
-```
-```lua
--- Lua implementation of word labeling navigation
-local function goto_labeled_word(range)
-    range = range or 248
-    -- Implement similar logic using Neovim Lua APIs
-    -- Note: This is a complex translation and would require more detailed implementation
-    vim.keymap.set('n', '<Tab>', function()
-        -- Placeholder for dynamic word labeling navigation
-        vim.notify('Word labeling navigation', vim.log.levels.INFO)
-    end)
-end
-
-goto_labeled_word()
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Precise_Jumps_Without_Mouse)
-***
-# Title: Navigate Jump List Efficiently
-# Category: navigation
-# Tags: jump-list, navigation, cursor-movement
----
-Quickly move between previous and next jump locations in Vim/Neovim, similar to browser navigation
-
-```vim
-" Jump navigation
-noremap <C-o> Jump back to previous location
-noremap <C-i> Jump forward to next location
-:jumps  " Display jump list
-```
-```lua
--- Jump navigation
-vim.keymap.set('n', '<C-o>', '<C-o>', { desc = 'Jump back to previous location' })
-vim.keymap.set('n', '<C-i>', '<C-i>', { desc = 'Jump forward to next location' })
--- Display jump list
-vim.api.nvim_command('jumps')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prev_and_Next)
-***
-# Title: Interactive Jump List Selection
-# Category: navigation
-# Tags: jump-list, custom-function, interactive
----
-Create a custom function to interactively select and navigate jump list locations
-
-```vim
-function! GotoJump()
-  jumps
-  let j = input('Please select your jump: ')
-  if j != ''
-    let pattern = '\v\c^\+'
-    if j =~ pattern
-      let j = substitute(j, pattern, '', 'g')
-      execute "normal " . j . "\<c-i>"
-    else
-      execute "normal " . j . "\<c-o>"
-    endif
-  endif
-endfunction
-
-" Optional mapping
-nmap <Leader>j :call GotoJump()<CR>
-```
-```lua
-function _G.goto_jump()
-  vim.cmd('jumps')
-  local jump = vim.fn.input('Please select your jump: ')
-  if jump ~= '' then
-    local pattern = '^+'
-    if jump:match(pattern) then
-      jump = jump:gsub(pattern, '')
-      vim.api.nvim_feedkeys(jump .. '\<C-i>', 'n', true)
-    else
-      vim.api.nvim_feedkeys(jump .. '\<C-o>', 'n', true)
-    end
-  end
-end
-
--- Optional mapping
-vim.keymap.set('n', '<Leader>j', _G.goto_jump, { desc = 'Interactive jump list navigation' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Prev_and_Next)
-***
-# Title: Recursive Project File Finding
-# Category: navigation
-# Tags: project-management, file-search, productivity
----
 Quickly find files in a project by setting recursive path search, enabling fast file navigation across deep directory structures
 
 ```vim
 set path=$PWD/**
 ```
+
 ```lua
 vim.opt.path = vim.fn.getcwd() .. '/**'
 ```
@@ -2655,6 +2169,7 @@ nnoremap <silent> <A-Right> :tabm +1<CR>
 let notabs = 0
 nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
 ```
+
 ```lua
 -- Navigate tabs
 vim.keymap.set('n', '<C-Left>', ':tabprevious<CR>', { noremap = true, silent = true })
@@ -2684,24 +2199,6 @@ end, { silent = true })
 # Category: navigation
 # Tags: help, documentation, tabs
 ---
-Open help pages and reference documents in separate tabs for easy access without disrupting current workspace
-
-```vim
-:tab help toc
-:tab help <topic>
-```
-```lua
--- Open help in a new tab
-vim.cmd('tab help toc')
-vim.cmd('tab help ' .. topic)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages)
-***
-# Title: Open Files Under Cursor Quickly
-# Category: navigation
-# Tags: file-operations, navigation, productivity
----
 Provides multiple ways to open files referenced under the cursor, including opening in same window, split, or tab
 
 ```vim
@@ -2714,6 +2211,7 @@ gf
 " Open file in new tab
 <c-w>gf
 ```
+
 ```lua
 -- These are built-in Vim/Neovim commands, so no direct Lua translation needed
 -- Can be used directly in Neovim
@@ -2729,60 +2227,6 @@ vim.keymap.set('n', '<leader>tf', '<C-w>gf', { desc = 'Open file in new tab' })
 # Category: navigation
 # Tags: help, search, documentation
 ---
-Multiple efficient methods to search and navigate Vim help topics, including using wildcard completion and built-in search commands
-
-```vim
-" Search help topics with partial match
-:he shell<c-d>
-
-" Use helpgrep to search help files
-:helpgrep shell
-:copen
-
-" Create a custom help search command
-:command! -nargs=+ -complete=tag Helpt :Tselect /.*<args>.*
-```
-```lua
--- Built-in help search
--- Use vim.cmd to run help commands in Lua
-vim.cmd('helpgrep shell')
-vim.cmd('copen')
-
--- Create a custom help search function
-vim.api.nvim_create_user_command('Helpt', function(opts)
-  vim.cmd('Tselect /.*' .. opts.args .. '.*')
-end, { nargs = '+', complete = 'tag' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_look_up_Vim_help)
-***
-# Title: Advanced Tab Navigation Shortcuts
-# Category: navigation
-# Tags: tabs, key-mapping, window-management
----
-Powerful tab navigation mappings to quickly move between and manage tabs
-
-```vim
-" Tab navigation mappings
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
-nnoremap <silent> <A-Left> :tabm -1<CR>
-nnoremap <silent> <A-Right> :tabm +1<CR>
-```
-```lua
--- Tab navigation mappings
-vim.keymap.set('n', '<C-Left>', ':tabprevious<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-Right>', ':tabnext<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-Left>', ':tabm -1<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-Right>', ':tabm +1<CR>', { noremap = true, silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_(but_not_write)_file_in_new_tab)
-***
-# Title: Read Javadoc Directly in Vim
-# Category: navigation
-# Tags: documentation, java, help
----
 Use a custom doclet to generate Vim help files for Java documentation, allowing quick access to Javadoc within Vim
 
 ```vim
@@ -2792,6 +2236,7 @@ set keywordprg=
 :help String
 :help java.util.List
 ```
+
 ```lua
 -- Configure keywordprg for quick Javadoc lookup
 vim.o.keywordprg = ''
@@ -2805,51 +2250,6 @@ vim.o.keywordprg = ''
 # Category: navigation
 # Tags: tags, development, path-management
 ---
-Automatically build tag files from all directories in your path, making it easier to navigate large codebases with multiple include directories
-
-```vim
-function! BuildTagsFromPath()
-python << EOF
-import sys
-import vim
-paths = vim.eval("&path")
-pathsSplit = paths.split(",")
-
-tags = vim.eval("&tags")
-for path in pathsSplit:
-  tags += "%s/tags," % (path)
-cmdSetTags = "set tags=%s" % tags
-vim.command(cmdSetTags)
-EOF
-endfunction
-
-call BuildTagsFromPath()
-```
-```lua
-local function build_tags_from_path()
-  local paths = vim.o.path
-  local path_list = vim.split(paths, ",")
-  
-  local tags = vim.o.tags
-  for _, path in ipairs(path_list) do
-    tags = tags .. path .. "/tags,"
-  end
-  
-  vim.o.tags = tags
-end
-
-vim.api.nvim_create_user_command('BuildTagsFromPath', build_tags_from_path, {})
-
--- Call the function when setting up
-build_tags_from_path()
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Read_tag_files_from_all_directories_in_your_path)
-***
-# Title: Powerful Tag Navigation in Vim/Neovim
-# Category: navigation
-# Tags: tags, code-browsing, jump-to-definition
----
 Efficiently navigate code by jumping to tag definitions using multiple methods
 
 ```vim
@@ -2862,6 +2262,7 @@ g]
 " Preview tag without leaving current window
 Ctrl-W }
 ```
+
 ```lua
 -- Jump to tag definition
 vim.keymap.set('n', '<C-]>', '<cmd>tag<CR>', { desc = 'Jump to tag' })
@@ -2888,6 +2289,7 @@ Advanced tag searching with pattern matching and browsing multiple matches
 " Jump to tag only if single match, otherwise list
 :tjump <tagname>
 ```
+
 ```lua
 -- Search tags with a pattern
 vim.cmd.tag('/' .. pattern)
@@ -2913,6 +2315,7 @@ function! LoadPerlModule()
   execute 'e `perldoc -l ' . expand("<cWORD>") . '`'
 endfunction
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>pm', function()
   local module = vim.fn.expand('<cWORD>')
@@ -2934,6 +2337,7 @@ nnoremap <kPlus>     :cnext<CR> :norm! zz<CR>
 nnoremap <kMinus>    :cprev<CR> :norm! zz<CR>
 nnoremap <kMultiply> :cc<CR> :norm! zz<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<kPlus>', ':cnext<CR>zz', { silent = true })
 vim.keymap.set('n', '<kMinus>', ':cprev<CR>zz', { silent = true })
@@ -2963,6 +2367,7 @@ function! TexJump2Section( cnt, dir )
   let @/ = pat
 endfunction
 ```
+
 ```lua
 local function tex_jump_to_section(count, direction)
   local pattern = '^\s*\\(part\|chapter\|(sub)*section\|paragraph)\>\|\%$\|\%^'
@@ -2995,6 +2400,7 @@ Quickly identify the current Verilog module by searching backwards and echoing t
 ```vim
 map ` ma?module<CR>Wyiw'a:echo "module -->" @0<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '`', function()
   -- Save current position
@@ -3040,6 +2446,7 @@ endfunc
 noremap H :call Hcontext()<CR>
 noremap L :call Lcontext()<CR>
 ```
+
 ```lua
 function _G.hcontext()
   if (vim.fn.winline() == 1 and vim.fn.line('.') ~= 1) then
@@ -3075,6 +2482,7 @@ Ctrl-O  " Jump back to previous location
 Ctrl-I  " Jump forward to newer location
 :jumps  " Display jump list
 ```
+
 ```lua
 -- Jump list navigation can be used directly in Neovim
 -- Ctrl-O and Ctrl-I work the same way
@@ -3105,6 +2513,7 @@ endfunction
 
 map <S-F4> :call Today()<CR>
 ```
+
 ```lua
 function _G.goto_today()
   local calfile = vim.g.cal
@@ -3167,6 +2576,7 @@ endfunction
 nnoremap <Leader>j :call <SID>JumpOccurrence()<CR>
 nnoremap <Leader>p :call <SID>JumpPrompt()<CR>
 ```
+
 ```lua
 local function jump_occurrence()
   vim.cmd('normal! [I')
@@ -3205,6 +2615,7 @@ Use the % key to quickly jump between matching braces, brackets, and other code 
 set matchtime=3
 set showmatch
 ```
+
 ```lua
 -- Configure matching brace highlighting
 vim.opt.matchtime = 3
@@ -3230,6 +2641,7 @@ function! MakeTags(filespec, pattern)
   return sort(tags)
 endfunction
 ```
+
 ```lua
 function MakeTags(filespec, pattern)
   local tags = {}
@@ -3258,6 +2670,7 @@ runtime ftplugin/man.vim
 :Man <command>
 set keywordprg=:Man
 ```
+
 ```lua
 -- Enable man page viewer
 vim.cmd.runtime('ftplugin/man.vim')
@@ -3290,6 +2703,7 @@ endfun
 
 nmap <buffer> <F5> :call JumpToTestFile()<CR>
 ```
+
 ```lua
 function JumpToTestFile()
   local last_line = vim.fn.getline('$')
@@ -3336,6 +2750,7 @@ endfunction
 
 nnoremap <M-t> :call UTestToggle()<CR>
 ```
+
 ```lua
 function UTestToggle()
   local UTEST_PREFIX = 'test/utest_'
@@ -3378,6 +2793,7 @@ function! CSVH(colnr)
 endfunction
 command! -nargs=1 Csv :call CSVH(<args>)
 ```
+
 ```lua
 function _G.highlight_csv_column(colnr)
   if colnr > 1 then
@@ -3408,6 +2824,7 @@ Use ctags to generate and display tags for the current file, helping quickly nav
 ```vim
 map <M-l> <Esc>:!/usr/local/bin/vimlocals.sh % <CR>:
 ```
+
 ```lua
 vim.keymap.set('n', '<M-l>', function()
   local current_file = vim.fn.expand('%')
@@ -3433,6 +2850,7 @@ H   " Move to top of screen
 M   " Move to middle of screen
 L   " Move to bottom of screen
 ```
+
 ```lua
 -- Screen positioning methods
 vim.cmd('42 normal! zt')  -- Line 42 at top
@@ -3464,6 +2882,7 @@ vnoremap <C-S-Right> w
 inoremap <C-S-Left> <C-\><C-O>b
 inoremap <C-S-Right> <C-\><C-O>w
 ```
+
 ```lua
 -- Word navigation like Windows
 vim.keymap.set('n', '<C-Left>', 'b', { noremap = true })
@@ -3489,6 +2908,7 @@ Quickly view Java class and method documentation without leaving Vim, using gene
 :help String
 :help java.util.List
 ```
+
 ```lua
 -- Similar navigation in Neovim
 -- After setting up doclet help files
@@ -3544,6 +2964,7 @@ nnoremap 0 g0
 nnoremap $ g$
 nnoremap ^ g^
 ```
+
 ```lua
 -- Movement commands for wrapped lines
 vim.keymap.set('n', 'j', 'gj', { noremap = true })

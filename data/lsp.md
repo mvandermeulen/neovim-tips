@@ -88,6 +88,7 @@ Toggle inlay hints to show/hide parameter names, type annotations, and other inl
 " Check if inlay hints are available:
 :lua print(vim.lsp.inlay_hint.is_enabled())
 ```
+
 ```lua
 -- Toggle inlay hints on/off:
 vim.keymap.set('n', '<leader>th', function()

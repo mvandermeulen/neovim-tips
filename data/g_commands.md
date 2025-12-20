@@ -1,22 +1,3 @@
-# Title: Edit file under cursor with gf
-# Category: Navigation
-# Tags: g-commands, file, navigation, cursor
----
-Use `gf` to edit the file whose path is under the cursor. Useful for navigating to files in code.
-
-```vim
-" Place cursor on a file path and press:
-gf  " open file in current window
-
-" Related commands:
-CTRL-W f  " open file in new window
-CTRL-W gf " open file in new tab
-```
-***
-# Title: Open URL or file with gx
-# Category: Navigation
-# Tags: g-commands, url, file, open, external
----
 Use `gx` to open the file or URL under the cursor with the system's default application.
 
 ```vim
@@ -27,16 +8,6 @@ gx  " open with default application (browser for URLs, etc.)
 # Title: Return to last insert position with gi
 # Category: Navigation
 # Tags: g-commands, insert, navigation, jump
----
-Use `gi` to jump to the last position where you were in INSERT mode and enter INSERT mode.
-
-```vim
-gi  " jump to last insertion point and enter INSERT mode
-```
-***
-# Title: Reselect last visual selection with gv
-# Category: Visual
-# Tags: g-commands, visual, selection, reselect
 ---
 Use `gv` to reselect the last visual selection. Useful for reapplying operations.
 
@@ -84,24 +55,6 @@ ga  " shows decimal, hex, and octal values
 # Category: Text
 # Tags: g-commands, case, uppercase, lowercase
 ---
-Use `gu` and `gU` to change the case of text with motion or in visual mode.
-
-```vim
-" In normal mode:
-guw   " lowercase word
-gUw   " uppercase word
-guiw  " lowercase inner word
-gU$   " uppercase to end of line
-
-" In visual mode:
-gu    " lowercase selection
-gU    " uppercase selection
-```
-***
-# Title: Join lines without spaces with gJ
-# Category: Text
-# Tags: g-commands, join, lines
----
 Use `gJ` to join lines without inserting spaces between them.
 
 ```vim
@@ -138,23 +91,6 @@ k   " move up one actual line
 # Category: Navigation
 # Tags: g-commands, navigation, screen-lines, position
 ---
-Use `g0`, `g^`, and `g$` to move to positions within screen lines (for wrapped text).
-
-```vim
-g0  " move to first character of screen line
-g^  " move to first non-blank of screen line
-g$  " move to last character of screen line
-
-" Compare with regular commands:
-0   " first character of actual line
-^   " first non-blank of actual line
-$   " last character of actual line
-```
-***
-# Title: Go to previous/next tab with gT and gt
-# Category: Tabs
-# Tags: g-commands, tabs, navigation
----
 Use `gt` and `gT` to navigate between tabs.
 
 ```vim
@@ -166,21 +102,6 @@ gT   " go to previous tab
 # Title: Format text with gq
 # Category: Formatting
 # Tags: g-commands, format, text, wrap
----
-Use `gq` to format text according to 'textwidth' and other formatting options.
-
-```vim
-gqap  " format around paragraph
-gqq   " format current line
-gq}   " format until end of paragraph
-
-" In visual mode:
-gq    " format selection
-```
-***
-# Title: Format without moving cursor with gw
-# Category: Formatting
-# Tags: g-commands, format, cursor, text
 ---
 Use `gw` to format text like `gq` but keep the cursor position.
 

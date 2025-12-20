@@ -2,26 +2,6 @@
 # Category: Integration
 # Tags: git, version, control, fugitive, workflow
 ---
-Integrate Git operations seamlessly with Neovim editing workflow.
-
-```vim
-" Git status and operations
-:!git status                 " check git status
-:!git add %                 " add current file
-:!git commit -m "message"   " commit with message
-:!git diff %                " diff current file
-
-" Using terminal integration
-:terminal git log --oneline " view git log in terminal
-:terminal git commit        " interactive commit
-```
-
-**Source:** Community contributed
-***
-# Title: System clipboard integration
-# Category: Integration
-# Tags: clipboard, system, copy, paste, register
----
 Seamlessly integrate with system clipboard for cross-application workflows.
 
 ```lua
@@ -486,34 +466,12 @@ Integrate with various testing frameworks for efficient testing workflow.
 # Category: Integration
 # Tags: git, gitsigns, diff, blame, plugin
 ---
-Use Gitsigns plugin commands for advanced git integration directly in Neovim.
-**Note**: Requires gitsigns.nvim plugin to be installed.
-
-```vim
-" Diff current buffer against previous version
-:Gitsigns diffthis ~1
-
-" Toggle git blame for current line
-:Gitsigns toggle_current_line_blame
-
-" Preview hunk under cursor
-:Gitsigns preview_hunk
-
-" Stage current hunk
-:Gitsigns stage_hunk
-```
-
-**Source:** Community contributed
-***
-# Title: Launch Vim Inside Visual Studio
-# Category: integration
-# Tags: external-tools, ide-integration, windows
----
 Use gVim's -P option to embed Vim as an MDI window in Visual Studio, allowing internal editing
 
 ```vim
 gvim.exe -P "Microsoft Visual C++" --servername MDI_VIM
 ```
+
 ```lua
 -- Lua equivalent for command-line launch
 vim.fn.system({'gvim', '-P', 'Microsoft Visual C++', '--servername', 'MDI_VIM'})
@@ -530,6 +488,7 @@ Enhanced Vim integration in Visual Studio .NET, with ability to launch selected 
 ```vim
 gvim.exe +$(CurLine) "$(ItemPath)" --remote-tab-silent
 ```
+
 ```lua
 -- Lua equivalent for file launch
 vim.fn.system({'gvim', '+' .. vim.fn.line('.'), vim.fn.expand('%:p'), '--remote-tab-silent'})
@@ -546,6 +505,7 @@ Configure Source-Navigator to open files directly in gVim with cursor positionin
 ```vim
 gvim "+call cursor(%l,%c)" %f
 ```
+
 ```lua
 vim.fn.system('gvim "+call cursor(' .. line .. ',' .. col .. ')" ' .. filename)
 ```

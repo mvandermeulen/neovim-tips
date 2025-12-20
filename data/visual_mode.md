@@ -2,19 +2,6 @@
 # Category: Visual
 # Tags: yank, delete, visual
 ---
-Use `y` to yank (copy) selected text and `d` to delete selected text in visual mode.
-
-```vim
-y  " yank selected text
-d  " delete selected text
-```
-
-**Source:** Community contributed
-***
-# Title: Yank highlighting
-# Category: Visual
-# Tags: yank, highlight, autocmd
----
 Create an autocmd to highlight yanked text briefly for visual feedback.
 
 ```vim
@@ -146,6 +133,7 @@ function! AtOnce( limit )
   norm 'm
 endfunc
 ```
+
 ```lua
 function PadLinesTrailingBlanks(limit)
   local current_pos = vim.fn.getcurpos()
@@ -166,6 +154,7 @@ Enable virtual edit mode to allow block selection beyond line endings, making co
 ```vim
 set ve+=block  " Enable block virtual edit
 ```
+
 ```lua
 vim.opt.virtualedit:append('block')  -- Enable block virtual edit
 ```
@@ -181,6 +170,7 @@ Apply substitutions specifically to a visual block selection without affecting e
 ```vim
 :'<,'>B s/pattern/newtext/g
 ```
+
 ```lua
 -- Using command-line mode for visual block substitution
 -- Select block with <C-v>, then use:
@@ -204,6 +194,7 @@ I (insert)
 // (comment character)
 <Esc>
 ```
+
 ```lua
 -- In Lua, this is typically done via key mapping
 vim.keymap.set('x', '<leader>c', function()
@@ -232,6 +223,7 @@ Ctrl-v " block visual selection
 p   " paste after cursor
 P   " paste before cursor
 ```
+
 ```lua
 -- Lua equivalents are built-in with Neovim's default keymappings
 -- No additional configuration needed
@@ -253,6 +245,7 @@ Efficiently replace text in a visual block by changing the first line and applyi
 c   " Change first line
 <Esc><Esc>  " Apply changes to entire block
 ```
+
 ```lua
 -- Block replacement can be done directly in Neovim
 -- No specific Lua configuration needed
@@ -272,6 +265,7 @@ V       " Enter visual line mode
         " Select range of lines
 ay      " Yank selected lines
 ```
+
 ```lua
 -- Enter visual line mode
 vim.cmd('normal V')
@@ -291,6 +285,7 @@ Keeps visual block selection active after indenting, allowing multiple indents
 vmap > >gv
 vmap < <gv
 ```
+
 ```lua
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent and reselect' })
 vim.keymap.set('v', '<', '<gv', { desc = 'Unindent and reselect' })
@@ -317,6 +312,7 @@ vnoremap <C-Left> hlohlxhP`[1v<Space>
 vnoremap <C-Down> jkojkxjzvP`[1v<Space>
 vnoremap <C-Up> kjokjxkzvP`[1v<Space>
 ```
+
 ```lua
 -- Arrow key movements in visual mode
 vim.keymap.set('v', '<Left>', 'h', { noremap = true })
@@ -343,6 +339,7 @@ Easily swap two pieces of text using visual mode and Ctrl-X
 " Swap visually selected text
 :vnoremap <C-X> <Esc>`.``gvP``P
 ```
+
 ```lua
 -- Swap visually selected text
 vim.keymap.set('v', '<C-X>', function()
@@ -366,6 +363,7 @@ Quickly select an entire function, including comments and body, using visual mod
 ```vim
 V/{<CR>%  " Select function from comment to closing brace
 ```
+
 ```lua
 vim.cmd('normal V/{<CR>%')  -- Select function from comment to closing brace
 ```
@@ -382,6 +380,7 @@ Easily create a column of incrementing numbers in a visual block selection
 # In visual block mode (Ctrl-v), select column
 :I   # Increments numbers starting from first line
 ```
+
 ```lua
 -- Note: Requires visincr.vim plugin
 -- In visual block mode, use :I to increment numbers
@@ -404,6 +403,7 @@ Quickly highlight text inside matching parentheses or other block delimiters wit
 nmap <C-p> m[vab:sleep 350m<CR>`[
 imap <C-p> <Esc>m[vab:sleep 350m<CR>`[a
 ```
+
 ```lua
 -- Highlight block and pause briefly in Neovim
 vim.keymap.set('n', '<C-p>', function()
@@ -434,6 +434,7 @@ nmap <C-P>[ m[va[:sleep 350m<CR>`[
 nmap <C-P>] m[va{:sleep 350m<CR>`[
 nmap <C-P>, m[va<:sleep 350m<CR>`[
 ```
+
 ```lua
 -- Mappings for selecting various block types in Neovim
 local block_types = {
@@ -465,6 +466,7 @@ Quickly insert or append text at the same column across multiple lines using vis
 " I - Insert at start of block
 " A - Append at end of block
 ```
+
 ```lua
 -- In Neovim, same key bindings work in visual block mode
 -- Ctrl-V to enter visual block
@@ -483,6 +485,7 @@ Quickly surround visually selected text with brackets or quotes
 " Surround visually selected text with parentheses
 :vnoremap _( <Esc>`>a)<Esc>`<i(<Esc>
 ```
+
 ```lua
 -- Surround visual selection with brackets
 vim.keymap.set('v', '_(',
@@ -506,6 +509,7 @@ Easily increment numbers in a visual block selection, creating sequential lists
 " Normal mode: g Ctrl-A to create sequential numbers
 " Vim 8+ supports Ctrl-A to increment first number
 ```
+
 ```lua
 -- In Neovim, use same Vim keybindings
 -- Ctrl-V to enter visual block mode
@@ -526,6 +530,7 @@ Efficient ways to select code blocks delimited by braces using different methods
 viB  " inner block
 vaB  " block with braces
 ```
+
 ```lua
 -- Lua uses same Vim text objects
 -- Can be combined with other Neovim features like treesitter selection
@@ -544,6 +549,7 @@ Quickly select entire code blocks using % motion in visual mode
 " Use viB for inner block
 " Use vaB for block with braces
 ```
+
 ```lua
 -- These motions work the same in Neovim
 -- v% selects to matching brace
@@ -566,6 +572,7 @@ nnoremap <S-Down> V
 xnoremap <S-Up> k
 xnoremap <S-Down> j
 ```
+
 ```lua
 -- Lua mappings to handle Shift key in visual mode
 vim.keymap.set('n', '<S-Up>', 'V', { noremap = true })
@@ -580,27 +587,12 @@ vim.keymap.set('x', '<S-Down>', 'j', { noremap = true })
 # Category: visual_mode
 # Tags: editing, visual-block, productivity
 ---
-Allows repeating the last edit (.) across all lines in a visual block selection, making multi-line editing faster and more efficient
-
-```vim
-" allow the . to execute once for each line of a visual selection
-vnoremap . :normal .<CR>
-```
-```lua
-vim.keymap.set('v', '.', ':normal .<CR>', { desc = 'Repeat last edit on visual block lines' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_command_on_each_line_in_visual_block)
-***
-# Title: Repeat Visual Block Changes Across Lines
-# Category: visual_mode
-# Tags: visual-mode, editing, productivity
----
 Apply the same edit across multiple lines in a visual block selection
 
 ```vim
 vnoremap <silent> . :normal .<CR>
 ```
+
 ```lua
 vim.keymap.set('v', '.', function()
   vim.cmd('normal! .')
@@ -622,6 +614,7 @@ ctrl-v move "ay
 " Step 2: Select and replace second block
 ctrl-v move c ctrl-o "aP <Esc>
 ```
+
 ```lua
 -- Note: These are key sequences, so direct Lua translation isn't straightforward
 -- But the concept involves visual block mode and register manipulation
@@ -639,6 +632,7 @@ Create a rectangular block selection of exactly the same size as a previous bloc
 ```vim
 " Use 1<Ctrl-V> instead of <Ctrl-V> move
 ```
+
 ```lua
 -- Key sequence translation, use with caution in multibyte encodings
 ```
@@ -654,6 +648,7 @@ Allows you to quickly reselect the last visual selection without having to manua
 ```vim
 gv
 ```
+
 ```lua
 vim.cmd('normal! gv')
 ```
@@ -669,6 +664,7 @@ Quickly reverse the characters in a visually selected text on a single line
 ```vim
 vnoremap ;rv c<C-O>:set revins<CR><C-R>"<Esc>:set norevins<CR>
 ```
+
 ```lua
 vim.keymap.set('v', ';rv', function()
   -- Save the current register content
@@ -693,6 +689,7 @@ Insert or modify text across multiple lines using visual block mode
 ```vim
 ^<Ctrl-v>jjjjI#<ESC>  # Add comment at start of multiple lines
 ```
+
 ```lua
 -- Similar approach in Lua
 -- Use vim.cmd to execute visual block commands
@@ -711,6 +708,7 @@ Simplify blockwise visual selection using Alt-Mouse or alternative modifier keys
 noremap <M-LeftMouse> <LeftMouse><Esc><C-V>
 noremap <M-LeftDrag> <LeftDrag>
 ```
+
 ```lua
 vim.keymap.set('n', '<M-LeftMouse>', '<LeftMouse><Esc><C-V>', { noremap = true })
 vim.keymap.set('n', '<M-LeftDrag>', '<LeftDrag>', { noremap = true })
@@ -728,6 +726,7 @@ Alternative method for blockwise selection using different modifiers
 noremap <S-RightMouse> <LeftMouse><Esc><C-V>
 noremap <S-RightDrag> <LeftDrag>
 ```
+
 ```lua
 vim.keymap.set('n', '<S-RightMouse>', '<LeftMouse><Esc><C-V>', { noremap = true })
 vim.keymap.set('n', '<S-RightDrag>', '<LeftDrag>', { noremap = true })
@@ -744,6 +743,7 @@ Create a quick mapping to select text just pasted, which is useful for further m
 ```vim
 nnoremap gp `[v`]
 ```
+
 ```lua
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select last pasted text' })
 ```

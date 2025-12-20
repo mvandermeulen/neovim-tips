@@ -1,19 +1,3 @@
-# Title: View registers
-# Category: Registers
-# Tags: registers, clipboard, view
----
-Use `:registers` to show the contents of all registers.
-
-```vim
-:registers
-```
-
-**Source:** Community contributed
-***
-# Title: System clipboard
-# Category: Registers
-# Tags: clipboard, system, yank
----
 Use `"+y` to yank to the system clipboard and `"+p` to paste from the system clipboard.
 
 ```vim
@@ -74,6 +58,7 @@ Capture command output directly to a register for later use or pasting
 :redir END
 " now paste with "ap
 ```
+
 ```lua
 -- Lua doesn't have direct :redir equivalent
 -- Use vim.api.nvim_exec() instead
@@ -92,6 +77,7 @@ A mapping that allows pasting over selected text without overwriting the current
 ```vim
 xnoremap <silent> p p:let @"=@0<CR>
 ```
+
 ```lua
 vim.keymap.set('x', 'p', function()
   vim.fn.feedkeys('p', 'n')
@@ -111,6 +97,7 @@ Create a mapping to easily swap and cycle through different registers, making re
 " Cycle registers: unnamed, a, b
 nnoremap <Leader>s :let @x=@" | let @"=@a | let @a=@b | let @b=@x<CR>
 ```
+
 ```lua
 -- Cycle registers in Neovim
 vim.keymap.set('n', '<Leader>s', function()
@@ -135,6 +122,7 @@ Use named registers to store and recall multiple pieces of text across different
 "ap  " paste from register a after cursor
 "bP  " paste from register b before cursor
 ```
+
 ```lua
 -- Lua equivalents use vim.fn.setreg() and vim.fn.getreg()
 -- Copy to register a
@@ -159,6 +147,7 @@ Efficiently reorder up to nine lines by using numbered registers and the dot com
 "1P
 ........
 ```
+
 ```lua
 -- Note: This technique relies on Vim's register mechanism
 -- Equivalent in Lua would be to use vim.fn.setreg() and vim.fn.getreg()
@@ -176,6 +165,7 @@ Simplifies macro recording by using 'q' register and mapping 'Q' to playback
 ```vim
 nnoremap Q @q
 ```
+
 ```lua
 vim.keymap.set('n', 'Q', '@q', { desc = 'Playback macro from q register' })
 ```
@@ -191,6 +181,7 @@ Paste from clipboard before cursor and set marks for the pasted text
 ```vim
 "+P
 ```
+
 ```lua
 vim.api.nvim_put(vim.fn.getreg('+'), 'c', true, true)
 ```
@@ -215,6 +206,7 @@ q
 " Replay on multiple lines
 :normal @q
 ```
+
 ```lua
 -- Note: Macro recording is largely the same in Neovim
 -- Record macro: qq (start recording to q register)
@@ -239,6 +231,7 @@ qa...q
 " Append to macro using uppercase register
 qA...q
 ```
+
 ```lua
 -- Same approach works in Neovim
 -- First macro: vim.fn.setreg('a', 'original_macro_commands')
@@ -263,6 +256,7 @@ Multiple ways to extract and manipulate the current filename using registers and
 " Get directory of current file
 :echo expand('%:p:h')
 ```
+
 ```lua
 -- Get filename relative to current directory
 print(vim.fn.expand('%'))
@@ -287,6 +281,7 @@ Insert contents of a register (like clipboard) across multiple lines in visual b
 " I Ctrl-R + - Insert clipboard content
 " I Ctrl-R " - Insert unnamed register
 ```
+
 ```lua
 -- Same approach works in Neovim
 -- Use Ctrl-V to select block
@@ -299,52 +294,6 @@ Insert contents of a register (like clipboard) across multiple lines in visual b
 # Title: Advanced Text Manipulation with Registers
 # Category: registers
 # Tags: copy-paste, text-manipulation, buffers
----
-Use named registers for more flexible text copying and pasting
-
-```lua
--- Register manipulation
-vim.keymap.set('n', 'y', 'y', { desc = 'Yank (copy) text' })
-vim.keymap.set('n', 'p', 'p', { desc = 'Paste after cursor' })
-vim.keymap.set('n', 'P', 'P', { desc = 'Paste before cursor' })
--- Named register example
-vim.keymap.set('n', '"ay5dd', '"ay5dd', { desc = 'Delete 5 lines to register a' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Introduction_to_display_editing_using_vi)
-***
-# Title: Record and Replay Macros Efficiently
-# Category: registers
-# Tags: macro, automation, recording
----
-Quickly record a sequence of commands to a register and replay them across multiple lines or the entire file
-
-```vim
-" Record macro to register d
-qd
-... commands ...
-q
-
-" Replay macro
-@d
-" Replay on multiple lines
-:normal @d
-```
-```lua
--- Record macro to register d
--- Use vim.fn.feedkeys() to simulate recording
--- Replay macro
-vim.cmd('normal @d')
-
--- Replay on visual selection
-vim.cmd('normal! gv:normal @d<CR>')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Macros)
-***
-# Title: Append to Existing Macros
-# Category: registers
-# Tags: macro, editing, productivity
 ---
 Easily extend an existing macro without re-recording the entire sequence
 
@@ -359,6 +308,7 @@ qA
 ... additional commands ...
 q
 ```
+
 ```lua
 -- Note: In Neovim, you can still use vim command mode for macro recording
 -- Use uppercase register letter to append to existing macro
@@ -380,6 +330,7 @@ q   # Stop recording
 @d  # Replay macro
 2@@ # Replay macro twice
 ```
+
 ```lua
 -- Macro recording in Lua is same as Vim
 -- Use vim.fn.feedkeys() to simulate macro recording if needed
@@ -400,6 +351,7 @@ Execute a macro on every line in a visual selection, enabling rapid bulk transfo
 ```vim
 :normal @q  # Run macro from register q on each selected line
 ```
+
 ```lua
 -- Run macro on visual selection
 vim.cmd('normal! @q')
@@ -427,6 +379,7 @@ q
 " Run macro on visual selection
 :normal @q
 ```
+
 ```lua
 -- Recording macro to register d
 -- Use normal mode mapping to simulate qd
@@ -452,6 +405,7 @@ Technique for collecting multiple lines into a single register by using uppercas
 "Add    " Append next line to register a
 "ap     " Paste contents of register a
 ```
+
 ```lua
 -- Manual register manipulation can be done in Lua via vim.fn.setreg()
 -- Example of appending to a register
@@ -470,6 +424,7 @@ Use strtrans() to visualize and understand how null characters are represented i
 " Translate register contents
 :echo strtrans(@a)
 ```
+
 ```lua
 -- Lua equivalent for translating register contents
 print(vim.fn.strtrans(vim.fn.getreg('a')))
@@ -488,6 +443,7 @@ Quickly insert register contents into command or search lines using Ctrl-R, avoi
 " Example: Ctrl-R a to paste contents of register a
 " Ctrl-R " to paste unnamed register
 ```
+
 ```lua
 -- In Neovim, this works the same way in command and search modes
 -- Use <C-r> followed by register name in command or search prompt
@@ -513,6 +469,7 @@ Safely paste contents from various Vim registers in different modes, with specia
 " Safely paste in insert mode
 inoremap <C-R>+ <C-R><C-R>+
 ```
+
 ```lua
 -- Paste from clipboard in normal mode
 vim.keymap.set('n', '<leader>p', '"*p', { desc = 'Paste from clipboard' })
@@ -535,6 +492,7 @@ inoremap <C-R>+ <C-R><C-R>+
 " Alternative safe paste methods
 inoremap <C-R>+ <C-R><C-O>+
 ```
+
 ```lua
 -- Prevent clipboard hijacking
 vim.keymap.set('i', '<C-R>+', '<C-R><C-R>+', { desc = 'Safe clipboard paste' })
@@ -558,6 +516,7 @@ let @s=":%!sort -u"
 " Interesting recursive yank macro
 let @y='yy@"'
 ```
+
 ```lua
 -- Preload registers with common commands
 vim.g.registers = {
@@ -584,6 +543,7 @@ qQ    " Start appending to register q
 @q    " Execute existing macro
 q     " Stop recording
 ```
+
 ```lua
 -- Lua macro appending (still uses Vim commands)
 -- vim.cmd('qQ')   " Start appending
@@ -611,6 +571,7 @@ j     " Move to next line
 @q    " Execute macro recursively
 q     " Stop recording
 ```
+
 ```lua
 -- Lua equivalent requires manual implementation
 -- Use vim.fn.execute() for macro playback
@@ -635,6 +596,7 @@ qxq     # Clear register x
 [edit]
 0"xy$   # Yank modified macro back
 ```
+
 ```lua
 -- Clear a register
 vim.fn.setreg('x', '')
@@ -663,6 +625,7 @@ Use the '.' register to recover text deleted by Ctrl-U or Ctrl-W
 :let @a = @.
 "aP
 ```
+
 ```lua
 vim.fn.setreg('a', vim.fn.getreg('.'))
 vim.api.nvim_paste(vim.fn.getreg('a'), true, -1)
@@ -684,6 +647,7 @@ Vim keeps previous deletes/yanks in numbered registers, allowing you to recover 
 "2p  " Paste after cursor
 "2P  " Paste before cursor
 ```
+
 ```lua
 -- List all registers
 vim.cmd('reg')
@@ -704,6 +668,7 @@ Quickly cycle through previous yanks/deletes using repeat and undo commands
 "1p....  " Paste and cycle through registers
 u.     " Undo last paste and paste next register
 ```
+
 ```lua
 -- Note: Direct Lua equivalent requires more complex implementation
 -- Recommended to use Vim commands or create a custom function
@@ -723,6 +688,7 @@ Executes a macro stored in register 'a' across all lines in a visual block selec
 " make ` execute the contents of the a register across visual selection
 vnoremap ` :normal @a<CR>
 ```
+
 ```lua
 vim.keymap.set('v', '`', ':normal @a<CR>', { desc = 'Execute macro from register a on visual block lines' })
 ```
@@ -738,6 +704,7 @@ Create a mapping to paste over text while preserving the original yank register,
 ```vim
 xnoremap <silent> p p:let @"=@0<CR>
 ```
+
 ```lua
 vim.keymap.set('x', 'p', function()
   vim.cmd('normal! p')
@@ -760,6 +727,7 @@ Multiple ways to extract and display the current file's name, path, or component
 :echo expand('%:p:h') " Directory containing file
 :echo expand('%:r')  " Filename without extension
 ```
+
 ```lua
 -- Get current file details
 print(vim.fn.expand('%'))      -- Relative file path
@@ -781,6 +749,7 @@ Easily paste text from the default register as a separate line above or below th
 nnoremap ,p :put "<CR>
 nnoremap ,P :put! "<CR>
 ```
+
 ```lua
 vim.keymap.set('n', ',p', ':put "<CR>', { desc = 'Paste below current line' })
 vim.keymap.set('n', ',P', ':put! "<CR>', { desc = 'Paste above current line' })
@@ -798,6 +767,7 @@ Efficiently replace words using Vim registers without losing the original copied
 " Remap visual mode paste to preserve original register
 xnoremap <silent> p p:let @"=@0<CR>
 ```
+
 ```lua
 -- Lua equivalent for preserving register during paste
 vim.keymap.set('x', 'p', function()

@@ -307,32 +307,6 @@ Use `:cnext`, `:cprev` to navigate quickfix list (global error list).
 # Category: Command Execution
 # Tags: normal, execute, mode, command, ex
 ---
-Use `:normal commands` to execute normal mode commands from Ex mode.
-Use `!` to avoid mappings: `:normal! dd`
-
-```vim
-:normal dd         " delete current line
-:5,10normal A;     " append semicolon to lines 5-10
-:%normal I//       " comment all lines with //
-```
-***
-# Title: Repeat last Ex command
-# Category: Command History
-# Tags: repeat, last, command, history, ex
----
-Use `@:` to repeat the last Ex command, `@@` to repeat last `@` command.
-Useful for repeating complex commands without retyping.
-
-```vim
-@:                 " repeat last Ex command
-5@:                " repeat last Ex command 5 times
-@@                 " repeat the last @ command
-```
-***
-# Title: Save all modified buffers
-# Category: File Operations
-# Tags: save, all, buffers, write, wa, ex
----
 Use `:wall` or `:wa` to save all modified buffers at once.
 
 ```vim

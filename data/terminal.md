@@ -69,20 +69,6 @@ Use `:terminal` or `:term` to open terminal in current window.
 # Category: Terminal
 # Tags: terminal, window, split, tab
 ---
-Use `:sp | terminal` for horizontal split, `:vsp | terminal` for vertical split, `:tabe | terminal` for new tab.
-
-```vim
-:sp | terminal   " horizontal split terminal
-:vsp | terminal  " vertical split terminal  
-:tabe | terminal " terminal in new tab
-```
-
-**Source:** Community contributed
-***
-# Title: Terminal scrollback buffer
-# Category: Terminal
-# Tags: terminal, scrollback, buffer, history
----
 In normal mode, you can navigate terminal scrollback buffer like any other buffer using standard movement commands.
 
 ```vim
@@ -120,6 +106,7 @@ Create a wrapper script to open Vim in a terminal with support for command-line 
 ARGS="$@"
 gnome-terminal "vim $ARGS"
 ```
+
 ```lua
 -- Lua equivalent would typically be a shell script or can be implemented using vim.fn.system()
 -- Example Lua wrapper function:
@@ -134,32 +121,13 @@ end
 # Category: terminal
 # Tags: terminal-integration, workflow
 ---
-Modify terminal wrapper to keep the terminal window open after exiting Vim
-
-```vim
-#!/bin/sh
-ARGS="$@"
-gnome-terminal "vim $ARGS; $SHELL"
-```
-```lua
--- Lua equivalent for shell script behavior
-function OpenVimWithShell(args)
-  vim.fn.system(string.format('gnome-terminal "vim %s; $SHELL"', args))
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alternative_to_gvim_as_external_pop-up_editor:_vim_%2B_gnome-terminal)
-***
-# Title: Run External Commands Asynchronously in Windows
-# Category: terminal
-# Tags: external-commands, async, windows
----
 Run console or GUI applications asynchronously without blocking Vim, with options to pause or keep the window open
 
 ```vim
 " Run compiled program for current source file
 nnoremap <silent> <F5> :!start cmd /c "%:p:r:s,$,.exe," & pause<CR>
 ```
+
 ```lua
 -- Run compiled program asynchronously
 vim.keymap.set('n', '<F5>', function()
@@ -179,6 +147,7 @@ Pipe SQL query results directly into Vim for easy viewing and manipulation of da
 " MySQL CLI: Use pager to send query results to Vim
 :pager vim -
 ```
+
 ```lua
 -- Equivalent approach would be to use vim.fn.system() or terminal buffer
 -- Example with MySQL CLI
@@ -205,6 +174,7 @@ if exists('$TMUX')
   let &t_EI .= "\<esc>Ptmux;\<esc>\<esc>]12;green\x7\<esc>\\"
 endif
 ```
+
 ```lua
 if vim.env.TMUX then
   local function tmux_cursor_style()
@@ -241,6 +211,7 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Shell', function(opts)
   local cmdline = opts.args
@@ -274,6 +245,7 @@ command! -complete=file -nargs=* Git call s:RunShellCommand('git '.<q-args>)
 command! -complete=file -nargs=* Svn call s:RunShellCommand('svn '.<q-args>)
 command! -complete=file -nargs=* Hg call s:RunShellCommand('hg '.<q-args>)
 ```
+
 ```lua
 local function run_vcs_command(vcs, args)
   vim.api.nvim_create_user_command(vcs:upper(), function(opts)
@@ -307,6 +279,7 @@ Use Vim's embedded Perl interpreter to connect to databases and manipulate data 
 " insert the list of tables into the current buffer's top:
 :perl $curbuf->Append(0, map($_->[0], @{$result}));
 ```
+
 ```lua
 -- Note: Requires Vim to be compiled with Perl support
 -- Use :terminal and external psql/mysql commands in Neovim
@@ -324,6 +297,7 @@ Filter selected SQL through an external database command and replace text with q
 ```vim
 :!psql -d my_database -f %
 ```
+
 ```lua
 -- Execute SQL file through psql
 vim.api.nvim_command('!psql -d my_database -f ' .. vim.fn.expand('%:p'))
@@ -340,6 +314,7 @@ Add servername capability to Vim in terminal, allowing remote file editing and s
 ```vim
 vim --servername vim
 ```
+
 ```lua
 -- Check if server is running
 vim.fn.serverlist()
@@ -363,6 +338,7 @@ function! VimServerWrapper()
   endif
 endfunction
 ```
+
 ```lua
 function _G.smart_vim_server()
   local servers = vim.fn.serverlist()
@@ -387,6 +363,7 @@ noremap <F5> <ESC>:w<CR>:silent execute "!python %"<CR><CR>
 " Run selected lines in Python
 vnoremap <f5> :!python<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F5>', function()
   vim.cmd.write()
@@ -412,6 +389,7 @@ nnoremap ' :wa<CR>:!screen -x ipython_vim -X stuff $'%run "%:p"
 " Open a new terminal with IPython in screen
 com OpenIPython :!konsole -e screen -S ipython_vim ipython
 ```
+
 ```lua
 -- Lua equivalent for IPython integration
 vim.keymap.set('n', "'", function()
@@ -435,6 +413,7 @@ Configure Vim/Neovim to run Python unit tests and navigate test results using qu
 " Set test runner script
 :setlocal makeprg=./alltests.py
 ```
+
 ```lua
 -- Set PyUnit compiler for Python files
 vim.api.nvim_create_autocmd('FileType', {
@@ -461,6 +440,7 @@ autocmd BufReadPost * :silent !dcop $KONSOLE_DCOP_SESSION renameSession %
 " Rename to working directory when leaving Vim
 autocmd VimLeavePre * :silent !dcop $KONSOLE_DCOP_SESSION renameSession $PWD
 ```
+
 ```lua
 -- KDE4/5 Konsole tab renaming
 vim.api.nvim_create_autocmd('BufReadPost', {
@@ -491,6 +471,7 @@ echo -ne '\e[9;1t'
 " Restore window
 echo -ne '\e[9;0t'
 ```
+
 ```lua
 -- Maximize window
 vim.fn.system('echo -ne "\e[9;1t"')
@@ -515,6 +496,7 @@ if has("win32")
   map <buffer> ,r :w<CR>:py print h.Execute(vim.eval('expand("%:t:r")'))<CR>
 endif
 ```
+
 ```lua
 if vim.fn.has('win32') == 1 then
   local dispatch = require('pythonx.win32com.client').Dispatch
@@ -540,6 +522,7 @@ Use Ctrl-Z to suspend Vim and return to shell, then 'fg' to resume editing. Usef
 # Ctrl-Z to suspend
 # fg to return to Vim
 ```
+
 ```lua
 -- Lua can't directly implement shell suspend, but demonstrates shell interaction
 -- Use :terminal or external shell commands
@@ -559,6 +542,7 @@ Open Vim inside a screen session with a small delay to prevent file deletion iss
 screen -X screen /usr/bin/vim $@
 sleep .2 # Prevent file deletion
 ```
+
 ```lua
 -- Lua equivalent using vim.fn and os.execute
 local function open_vim_in_screen(file)
@@ -578,6 +562,7 @@ List active Vim server instances to check if a server is already running
 ```vim
 vim --serverlist
 ```
+
 ```lua
 -- Check server list
 -- Note: May require external command execution

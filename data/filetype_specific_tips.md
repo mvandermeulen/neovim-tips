@@ -512,6 +512,7 @@ fun! FTCheck_inform()
   endif
 endfun
 ```
+
 ```lua
 -- In init.lua or filetype detection
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {

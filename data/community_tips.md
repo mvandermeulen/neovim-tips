@@ -219,21 +219,6 @@ gt / gT                       " navigate between tabs
 # Category: Windows
 # Tags: split, windows, mastery, layout
 ---
-Use advanced window splitting and management for efficient multi-file editing and reference workflows.
-
-```vim
-:vsplit file.txt              " vertical split
-:split +/pattern file.txt     " split and search
-<C-w>r                        " rotate windows
-<C-w>H                        " move window to left
-<C-w>=                        " equalize window sizes
-<C-w>_                        " maximize window height
-```
-***
-# Title: Command abbreviations
-# Category: Command Line
-# Tags: abbreviations, shortcuts, efficiency, typos
----
 Use command abbreviations for frequently used commands and common typo corrections.
 
 ```vim

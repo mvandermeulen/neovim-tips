@@ -13,16 +13,6 @@ Use `@{letter}` to execute macro stored in register {letter}, or `@@` to repeat 
 # Category: Macros
 # Tags: macro, visual, selection
 ---
-Use `:'<,'>normal @q` to run macro q over visual selection.
-
-```vim
-:'<,'>normal @q  " run macro q on selection
-```
-***
-# Title: View macro contents
-# Category: Macros
-# Tags: macro, view, register, debug
----
 Use `:reg` to view all registers including macros, or `:reg a` to view specific macro in register 'a'.
 
 ```vim
