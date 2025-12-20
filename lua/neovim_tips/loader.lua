@@ -119,6 +119,10 @@ function M.load()
         end
 
         tips.set_tips(all_tips)
+
+        -- Validate bookmarks after loading tips
+        M.validate_bookmarks_after_load()
+
         return true
       end
     end
@@ -136,6 +140,10 @@ function M.load()
     end
 
     tips.set_tips(all_tips)
+
+    -- Validate bookmarks after loading tips
+    M.validate_bookmarks_after_load()
+
     return true
   else
     return false
@@ -155,6 +163,50 @@ end
 ---@return table info Cache information and statistics
 function M.cache_info()
   return cache.info()
+end
+
+---Validate bookmarks after tips are loaded
+---Checks for orphaned bookmarks and tries to redirect them to similar tips
+---@return nil
+function M.validate_bookmarks_after_load()
+  local bookmarks = require("neovim_tips.bookmarks")
+  local available_titles = tips.get_titles()
+
+  -- Only validate if there are bookmarks
+  if bookmarks.get_bookmark_count() == 0 then
+    return
+  end
+
+  local result = bookmarks.validate_bookmarks(available_titles)
+
+  -- Notify user if any bookmarks were updated or removed
+  if result.redirected_bookmarks > 0 or result.removed_bookmarks > 0 then
+    local messages = {}
+
+    if result.redirected_bookmarks > 0 then
+      table.insert(messages, string.format("%d bookmark(s) redirected to similar tips", result.redirected_bookmarks))
+    end
+
+    if result.removed_bookmarks > 0 then
+      table.insert(messages, string.format("%d orphaned bookmark(s) removed", result.removed_bookmarks))
+    end
+
+    -- Show notification
+    if #messages > 0 then
+      utils.info("Bookmarks updated: " .. table.concat(messages, ", "))
+    end
+
+    -- Log detailed updates if debug is enabled
+    if config.options.debug and #result.updates > 0 then
+      for _, update in ipairs(result.updates) do
+        if update.action == "redirected" then
+          utils.info(string.format("Redirected: '%s' → '%s'", update.old_title, update.new_title))
+        elseif update.action == "removed" then
+          utils.warn(string.format("Removed orphaned bookmark: '%s'", update.old_title))
+        end
+      end
+    end
+  end
 end
 
 return M
