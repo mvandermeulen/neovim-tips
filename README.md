@@ -51,6 +51,7 @@
 - [🔧 Commands](#-commands)
 - [📖 Help System](#-help-system)
 - [🔍 Smart Search](#-smart-search)
+- [🔖 Bookmark Validation](#-bookmark-validation)
 - [📂 Available Categories](#-available-categories)
 - [📝 Tips](#-tips)
 - [✅ Example](#-example)
@@ -82,10 +83,11 @@ I have provided a solid initial batch of tips and if you have your favorite one 
 - **Copy-friendly**: Easy copying of tip content and code snippets from both picker and daily tip
 - **Cursor preservation**: Returns to your exact cursor position and mode after closing
 - **Bookmark system**: Save favorite tips with customizable visual indicators (🌟 ⭐ ✨ 💫 🔥 💎 etc.)
+- **Bookmark validation**: Automatic validation and updating of bookmarks when tips change
 - **Smart caching**: Automatic serialization of parsed tips for 10-20x faster loading (optional, enabled by default)
 - Support for categories, tags, and rich text
 - Lazy loading for optimal startup performance
-- Easily navigate between 2,700 tips (as of December 2025)
+- Easily navigate between 2,400 tips (as of December 2025)
 - You can add/edit unlimited number of personal tips stored in a configurable file
 - User tips with configurable prefixes to prevent conflicts with builtin tips
 - Automatic title conflict detection and warnings
@@ -596,6 +598,91 @@ motion c:editing t:operator    → 1 specific tip about motion + editing + opera
 insert file                    → tips about inserting files
 c:"Key Mappings" leader        → leader key mapping tips
 ```
+
+## 🔖 Bookmark Validation
+
+The plugin automatically validates your bookmarks when tips are loaded, ensuring they remain functional even after tips are removed during updates or deduplication.
+
+### How It Works
+
+Every time tips are loaded (when you run `:NeovimTips`), the plugin automatically:
+
+1. **Checks all bookmarks** against currently available tips
+2. **Identifies orphaned bookmarks** - bookmarks pointing to tips that no longer exist
+3. **Attempts to redirect** orphaned bookmarks to similar tips
+4. **Removes bookmarks** that have no similar match
+5. **Notifies you** of any changes
+
+### Similarity Matching
+
+The plugin uses a word-overlap algorithm to find similar tips:
+
+- **Exact match (100%)**: Title matches exactly → bookmark stays valid
+- **Contains match (80%)**: One title contains the other → high similarity
+- **Word overlap (0-100%)**: Compares common words between titles → calculated score
+- **Threshold (70%)**: Minimum similarity required for redirection
+
+### Examples
+
+#### Example 1: Tip Removed as Duplicate
+
+**Before deduplication:**
+- You bookmarked: "Alternative Escape Key Mappings"
+
+**After deduplication:**
+- That tip was removed (duplicate)
+- Similar tip exists: "Quick Escape Key Alternatives in Insert Mode"
+- Similarity score: 75%
+
+**Result:**
+- Bookmark automatically redirected to the similar tip
+- Notification: `Bookmarks updated: 1 bookmark(s) redirected to similar tips`
+
+#### Example 2: No Similar Tip Found
+
+**Before:**
+- You bookmarked: "Some Very Specific Tip"
+
+**After:**
+- Tip was removed
+- No similar tips found (< 70% similarity)
+
+**Result:**
+- Bookmark removed automatically
+- Notification: `Bookmarks updated: 1 orphaned bookmark(s) removed`
+
+### User Experience
+
+**Silent Success:**
+If all bookmarks are valid, no notification is shown - completely seamless.
+
+**Notification on Changes:**
+You're only notified when changes occur:
+```
+Bookmarks updated: 3 bookmark(s) redirected to similar tips, 1 orphaned bookmark(s) removed
+```
+
+**Debug Mode:**
+Enable debug mode to see detailed updates:
+```lua
+require('neovim_tips').setup({
+  debug = true
+})
+```
+
+With debug enabled, you'll see:
+```
+Redirected: 'Alternative Escape Key Mappings' → 'Quick Escape Key Alternatives in Insert Mode'
+Removed orphaned bookmark: 'Some Old Tip That No Longer Exists'
+```
+
+### Benefits
+
+✅ **No broken bookmarks** - automatically redirects to similar tips
+✅ **No manual cleanup** - orphaned bookmarks are auto-removed
+✅ **Seamless updates** - works across plugin updates and deduplication
+✅ **Smart matching** - finds best available alternative
+✅ **User-friendly** - minimal notifications, maximum automation
 
 ## 📂 Available Categories
 

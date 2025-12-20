@@ -14,11 +14,12 @@ CONTENTS                                                *neovim-tips-contents*
 5. Configuration................................|neovim-tips-configuration|
 6. Commands.....................................|neovim-tips-commands|
 7. Search.......................................|neovim-tips-search|
-8. Categories...................................|neovim-tips-categories|
-9. User Tips....................................|neovim-tips-user-tips|
-10. Performance & Caching.......................|neovim-tips-cache|
-11. Daily Tips..................................|neovim-tips-daily|
-12. Troubleshooting.............................|neovim-tips-troubleshooting|
+8. Bookmark Validation..........................|neovim-tips-bookmark-validation|
+9. Categories...................................|neovim-tips-categories|
+10. User Tips...................................|neovim-tips-user-tips|
+11. Performance & Caching.......................|neovim-tips-cache|
+12. Daily Tips..................................|neovim-tips-daily|
+13. Troubleshooting.............................|neovim-tips-troubleshooting|
 
 ==============================================================================
 1. INTRODUCTION                                     *neovim-tips-introduction*
@@ -44,6 +45,7 @@ Repository: https://github.com/saxon1964/neovim-tips
 • Simple navigation with mouse and keyboard
 • Copy-friendly interface for tips and code snippets
 • Cursor preservation after closing
+• Bookmark system with automatic validation and updating
 • Support for categories, tags, and rich text
 • Lazy loading for optimal startup performance
 • 900+ curated built-in tips
@@ -294,6 +296,8 @@ Use `b:` prefix to search your bookmarked tips:
 • Press `Ctrl+b` in the picker or daily tip to bookmark/unbookmark
 • Bookmarked tips display with your configured symbol (default: 🌟)
 • Works from any pane (search bar, tips list, or preview)
+• Bookmarks are automatically validated and updated when tips change
+• See |neovim-tips-bookmark-validation| for details
 
 6.5 Combined Search ~
                                                      *neovim-tips-search-combined*
@@ -329,7 +333,83 @@ Help picker navigation:
 • No results handling (clears display when no matches)
 
 ==============================================================================
-7. CATEGORIES                                         *neovim-tips-categories*
+8. BOOKMARK VALIDATION                         *neovim-tips-bookmark-validation*
+
+The plugin automatically validates bookmarks when tips are loaded, ensuring
+that your bookmarks remain functional even after tips are removed during
+updates or deduplication.
+
+8.1 How It Works ~
+                                            *neovim-tips-bookmark-validation-how*
+
+Every time tips are loaded (via |:NeovimTips| command), the plugin:
+
+1. Checks all bookmarks against currently available tips
+2. Identifies orphaned bookmarks (bookmarks pointing to removed tips)
+3. Attempts to redirect orphaned bookmarks to similar tips
+4. Removes bookmarks that have no similar match
+5. Notifies the user of any changes
+
+8.2 Similarity Matching ~
+                                      *neovim-tips-bookmark-validation-similarity*
+
+The plugin uses a word-overlap algorithm to find similar tips:
+
+• Exact match (100%):      Title matches exactly → bookmark stays valid
+• Contains match (80%):    One title contains the other → high similarity
+• Word overlap (0-100%):   Compares common words → calculated score
+• Threshold (70%):         Minimum similarity required for redirection
+
+8.3 User Experience ~
+                                             *neovim-tips-bookmark-validation-ux*
+
+Silent Success:
+If all bookmarks are valid, no notification is shown for a seamless experience.
+
+Notification on Changes:
+Users are notified only when changes occur:
+>
+    Bookmarks updated: 3 bookmark(s) redirected to similar tips,
+                      1 orphaned bookmark(s) removed
+<
+
+Debug Mode:
+Enable debug mode in config to see detailed updates:
+>lua
+    require('neovim_tips').setup({
+      debug = true
+    })
+<
+
+With debug enabled, you'll see:
+>
+    Redirected: 'Alternative Escape Key Mappings'
+             → 'Quick Escape Key Alternatives in Insert Mode'
+    Removed orphaned bookmark: 'Some Old Tip That No Longer Exists'
+<
+
+8.4 Benefits ~
+                                       *neovim-tips-bookmark-validation-benefits*
+
+✓ No broken bookmarks - redirects to similar tips automatically
+✓ No manual cleanup - orphaned bookmarks are auto-removed
+✓ Seamless updates - works across plugin updates and deduplication
+✓ Smart matching - finds best available alternative
+✓ User-friendly - minimal notifications, maximum automation
+
+8.5 Edge Cases ~
+                                     *neovim-tips-bookmark-validation-edge-cases*
+
+The validation handles these edge cases:
+
+• No bookmarks: Validation skips entirely for performance
+• All valid bookmarks: No notifications shown
+• Multiple similar tips: Chooses best match (highest similarity)
+• Duplicate redirects: Multiple bookmarks can redirect to same tip
+• Case insensitive: Matching is case-insensitive for reliability
+
+==============================================================================
+9. CATEGORIES                                         *neovim-tips-categories*
 
 The plugin includes 70+ categories. Here are the main ones:
 
