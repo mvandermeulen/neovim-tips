@@ -222,6 +222,11 @@ use_cache                  Enable automatic caching of parsed tips
 *:NeovimTips*              Open the searchable tips picker with three-pane
                            interface (search, tips list, markdown preview)
 
+*:NeovimTipsBookmarks*     Open the tips picker with bookmarks pre-filtered
+                           Same as running :NeovimTips and typing "b:"
+                           Shows only your bookmarked tips for quick access
+                           Suggested keybinding: <leader>ntb
+
 *:NeovimTipsEdit*          Open your personal tips file for editing
                            Creates the file if it doesn't exist
 
