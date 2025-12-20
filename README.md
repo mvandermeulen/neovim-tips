@@ -120,6 +120,7 @@ I have provided a solid initial batch of tips and if you have your favorite one 
   },
   keys = {
     { "<leader>nto", ":NeovimTips<CR>", desc = "Neovim tips" },
+    { "<leader>ntb", ":NeovimTipsBookmarks<CR>", desc = "Bookmarked tips" },
     { "<leader>ntr", ":NeovimTipsRandom<CR>", desc = "Show random tip" },
     { "<leader>nte", ":NeovimTipsEdit<CR>", desc = "Edit your tips" },
     { "<leader>nta", ":NeovimTipsAdd<CR>", desc = "Add your tip" },
@@ -152,6 +153,7 @@ I have provided a solid initial batch of tips and if you have your favorite one 
     -- The plugin does not provide default key mappings, only commands
     local map = vim.keymap.set
     map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+    map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
     map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
     map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
     map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -190,6 +192,7 @@ use {
 
     local map = vim.keymap.set
     map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+    map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
     map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
     map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
     map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -214,6 +217,7 @@ require("neovim_tips").setup {
 
 local map = vim.keymap.set
 map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
 map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
 map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
 map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -238,6 +242,7 @@ require("neovim_tips").setup {
 
 local map = vim.keymap.set
 map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
 map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
 map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
 map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -262,10 +267,12 @@ require("neovim_tips").setup {
 
 local map = vim.keymap.set
 map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
 map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
 map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
 map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
 map("n", "<leader>ntr", ":NeovimTipsRandom<CR>", { desc = "Show random tip", silent = true })
+map("n", "<leader>ntp", ":NeovimTipsPdf<CR>", { desc = "Open Neovim tips PDF", silent = true })
 ```
 
 ### dein.vim
@@ -287,6 +294,7 @@ require("neovim_tips").setup {
 
 local map = vim.keymap.set
 map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
 map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
 map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
 map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -322,6 +330,7 @@ require("neovim_tips").setup({
 
 local map = vim.keymap.set
 map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
 map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
 map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
 map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -345,6 +354,7 @@ require("lazy").setup({
     init = function()
       local map = vim.keymap.set
       map("n", "<leader>nto", ":NeovimTips<CR>", { desc = "Neovim tips", silent = true })
+      map("n", "<leader>ntb", ":NeovimTipsBookmarks<CR>", { desc = "Bookmarked tips", silent = true })
       map("n", "<leader>nte", ":NeovimTipsEdit<CR>", { desc = "Edit your Neovim tips", silent = true })
       map("n", "<leader>nta", ":NeovimTipsAdd<CR>", { desc = "Add your Neovim tip", silent = true })
       map("n", "<leader>nth", ":help neovim-tips<CR>", { desc = "Neovim tips help", silent = true })
@@ -380,6 +390,7 @@ File `lua/user/mappings.lua`
 return {
   n = {
     ["<leader>nto"] = { "<cmd>NeovimTips<cr>", desc = "Neovim tips" },
+    ["<leader>ntb"] = { "<cmd>NeovimTipsBookmarks<cr>", desc = "Bookmarked tips" },
     ["<leader>nte"] = { "<cmd>NeovimTipsEdit<cr>", desc = "Edit your Neovim tips" },
     ["<leader>nta"] = { "<cmd>NeovimTipsAdd<cr>", desc = "Add your Neovim tip" },
     ["<leader>nth"] = { "<cmd>help neovim-tips<cr>", desc = "Neovim tips help" },
@@ -435,6 +446,7 @@ The PDF is located at `pdf/book/NeovimTips.pdf` within the plugin directory and 
 ## 🔧 Commands
 
 - `:NeovimTips` — Open searchable list of tips with beautiful three-pane interface
+- `:NeovimTipsBookmarks` — Open tips picker with bookmarks pre-filtered (shows only bookmarked tips)
 - `:NeovimTipsEdit` — Edit your personal tips file
 - `:NeovimTipsAdd` — Insert a new tip template into your personal file and start editing
 - `:NeovimTipsRandom` — Displays random tip upon user request

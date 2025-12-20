@@ -354,7 +354,7 @@ end
 
 ---Show the picker and preserve current state
 ---@return nil
-function NuiPicker:show()
+function NuiPicker:show(initial_query)
   if not self.all_titles or #self.all_titles == 0 then
     utils.warn("No titles available")
     return
@@ -376,8 +376,14 @@ function NuiPicker:show()
   -- Mount the layout
   layout.mount_layout(self.layout)
 
-  -- Initial display
-  self.search_text = ""
+  -- Initial display with optional query
+  self.search_text = initial_query or ""
+
+  -- If initial query provided, set it in the search buffer
+  if initial_query and initial_query ~= "" then
+    vim.api.nvim_buf_set_lines(self.layout.search_popup.bufnr, 0, -1, false, { initial_query })
+  end
+
   self:filter_titles()
   self:update_titles_display()
   self:update_preview(true)
@@ -433,8 +439,9 @@ end
 ---Show the tips picker interface
 ---Creates and displays a picker with all available tips
 ---Uses the tips module for data and handles tip selection
+---@param initial_query string|nil Optional initial search query to pre-fill the search bar
 ---@return nil
-function M.show()
+function M.show(initial_query)
   local titles = tips.get_titles()
 
   if not titles or vim.tbl_isempty(titles) then
@@ -454,7 +461,7 @@ function M.show()
   })
 
   picker:set_titles(titles)
-  picker:show()
+  picker:show(initial_query)
 end
 
 return M

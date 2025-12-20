@@ -43,6 +43,28 @@ function M.setup(opts)
     { desc = "Open Neovim tips" }
   )
 
+  vim.api.nvim_create_user_command("NeovimTipsBookmarks",
+    function()
+      -- Close any plugin windows first to prevent layering issues
+      utils.close_plugin_windows()
+
+      utils.run_async(loader.load,
+        function(ok, result)
+          if ok then
+            if result then
+              utils.info("Neovim tips loaded")
+            end
+            -- Show picker with bookmark search pre-filled
+            picker.show("b:")
+          else
+            utils.error("Failed to load Neovim tips: " .. result)
+          end
+        end
+      )
+    end,
+    { desc = "Open Neovim tips bookmarks" }
+  )
+
   vim.api.nvim_create_user_command("NeovimTipsEdit",
     function()
       vim.cmd("edit " .. user_file)
