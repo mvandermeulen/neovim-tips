@@ -1,144 +1,169 @@
-# Release Notes v0.8.0
+# Release Notes v0.8.2
 
 ## 🎉 Major Updates
 
-### Massive Content Expansion
-- **Added 2,000+ new tips** from vim.fandom.com (extracted from 3,397 pages)
-- Merged with existing 1,038 tips for a total of **2,770 unique tips**
-- **167% growth** - increased from 1,038 to 2,770 tips (1,732 new unique tips)
-- All new tips include both Vimscript and Lua code examples
+### Quality Over Quantity - Global Deduplication
+- **Removed 299 duplicate tips** through comprehensive global deduplication
+- Reduced from 2,696 to **2,397 high-quality unique tips** (11% reduction)
+- **100% coverage** - all tips compared globally across all categories
+- Uses hybrid approach: embeddings + AI verification (70% similarity threshold)
+- Kept the **longest (most detailed) tip** in each duplicate cluster
+- User feedback driven: "too many duplicates" → cleaner, more focused collection
 
-### Revolutionary Hybrid Deduplication
-- Developed breakthrough cost-effective deduplication approach
-- Uses sentence-transformers embeddings + cosine similarity pre-filtering
-- Only AI-verifies high-similarity pairs (>0.75 threshold)
-- **99.82% cost savings** ($0.20 vs $112 for full AI comparison)
-- Removed 484 duplicate tips (409 cross-file + 75 within-file duplicates)
+### Smart Bookmark Validation 🔖
+New intelligent bookmark management that handles tip changes gracefully:
+- **Automatic validation** when tips are loaded
+- **Smart redirection** - orphaned bookmarks redirect to similar tips (70% similarity)
+- **Auto-cleanup** - removes bookmarks with no similar match
+- **Silent success** - no notifications when all bookmarks are valid
+- **Word-overlap algorithm** for fuzzy matching
+- User-friendly notifications only when changes occur
 
-### PDF Book Improvements
-- **Language labels**: Code examples now labeled as "Example (Vim)" or "Example (Neovim)"
-  - 2,500 Vimscript examples
-  - 1,944 Neovim Lua examples
-- **Blue hyperlinks**: All links now display in standard blue color (RGB 0,102,204)
-- **Fixed PDF generation**: Resolved LaTeX compilation errors
-  - Smart markdown parsing for underscores and asterisks
-  - Fixed code fence handling
-- **Enhanced formatting**: Support for bold, italic, and hyperlinks
-- **Removed ligatures** from code blocks for better readability
-- Updated book cover design
-- Final PDF: **1,604 pages, 6.5 MB**
+### Improved Code Readability
+- **Added 1,565 empty lines** between Vim and Lua code blocks
+- Better visual separation in markdown files
+- Enhanced readability across 33 files
+- Improved user experience when reading tips
 
 ## ✨ New Features
 
-- Language-specific labels for code examples in PDF book (#0f96638)
-- Bulk buffer closing tips (#d499215)
-- File operation tips (#f506e99)
-- UI, exit, and marks tips (#70157bb)
-- Option to remove footer from daily tip (#118af52)
-- Community contribution from Julian Frenzel (#7318eb4, #29)
+### `:NeovimTipsBookmarks` Command
+- **Direct bookmark access** - jump straight to bookmarked tips
+- Pre-fills search with `b:` filter automatically
+- Suggested keybinding: `<leader>ntb`
+- No more manual typing or hacky workarounds
+- Community requested feature
+
+### Enhanced Documentation
+- **New section**: Bookmark Validation in README
+- **Updated help files**: Full documentation in `:help neovim-tips-bookmark-validation`
+- **Examples and use cases** for bookmark validation
+- **All installation examples** updated with new keybinding
+- Comprehensive coverage across 8 package managers
 
 ## 🐛 Bug Fixes
 
-### PDF Generation
-- Fixed LaTeX compilation errors that halted at various pages (#8cf870d)
-- Improved markdown-to-LaTeX conversion for special characters
-- Fixed handling of `snake_case`, `* registers`, and other edge cases
-- Resolved unclosed backtick issues in code examples
-
-### Tips Quality
-- Removed 75 duplicate titles across different files (#3efa5f3)
-- Fixed duplicate titles (#347c45b, #061a468)
-- Improved yank+delete+clipboard interaction tip (#bedbc45)
-- Fixed extmark conceal property documentation (#63aa4f9)
-- Fixed extmarks tips errors (#2383b5a)
-
-### Source Formatting
-- Formatted 1,686 source links as proper markdown links (#8e0875f)
-- Cleaned up 355 community contributed source lines (#0c13a90)
-- Removed trailing whitespace (#a640b8f)
-
-### Plugin Functionality
-- Fixed lazy loading issue: `:NeovimTipsRandom` now works immediately (#655408a)
+### Bookmark Management
+- Orphaned bookmarks now handled gracefully after tip removal
+- No more broken bookmarks pointing to non-existent tips
+- Seamless experience during plugin updates
 
 ## 📚 Documentation Improvements
 
-- Added missing Lua examples in:
-  - `builtin_functions.md` (#ca9c36a)
-  - `autocommands.md` (#88ac590)
-  - `advanced_options.md` (#c10f6b6)
-  - `advanced_mappings.md` (#12d8228)
-- Added Lua snippets where only Vimscript was present (#b2cb106)
-- Clarified lazy loading configuration (#a60ba91, #84d044b)
-- Added note about empty `opts` table requirement (#001de6b)
-- Fixed `vim.keymap.set` documentation (noremap by default) (#2e84efa)
-- Fixed typos in UI chapter (#81b6173)
-- Style fixes (#2802088)
+### README Updates
+- Updated tip count: **2,700 → 2,400 tips**
+- Added bookmark validation section with examples
+- Updated all package manager installation examples
+- Added `<leader>ntb` keybinding across all examples
+- New table of contents entry for Bookmark Validation
+
+### Help System
+- New section: *neovim-tips-bookmark-validation*
+- Added `:NeovimTipsBookmarks` command documentation
+- Updated bookmarking tips section with validation reference
+- Cross-references between related help topics
+
+### Standalone Documentation
+- Created `docs/BOOKMARK_VALIDATION.md` with detailed explanations
+- Technical details on similarity matching algorithm
+- Edge cases and performance considerations
+- Debug mode instructions
 
 ## 🛠️ Development & Infrastructure
 
-### Reusable Scripts
-Added powerful, reusable scripts for tip management:
-- **`dedup_hybrid.py`**: Cost-effective hybrid deduplication (99.82% savings)
-- **`apply_deduplication.py`**: Apply dedup results (conservative/merge modes)
-- **`complete_merge.py`**: Intelligent tip merging with file renaming
-- **`cleanup_and_finalize.sh`**: Automated deployment workflow
-- **`dedup_across_files.py`**: Remove duplicate titles across files
-- **`fix_source_links.py`**: Convert URLs to markdown format
-- **`fix_community_sources.py`**: Clean up source formatting
+### Deduplication Scripts
+Enhanced global deduplication tooling:
+- **`dedup_global.py`**: Global cross-category comparison
+- **`dedup_retry_failed.py`**: Retry timed-out verification pairs
+- **`apply_deduplication.py`**: Remove duplicates keeping longest tip
+- **`add_spacing_between_code_blocks.py`**: Format code blocks with spacing
 
-### Build System
-- Updated PDF build script with improved LaTeX generation (#build_tex.py)
-- Added Python dependencies tracking (#7498224)
-- Improved `.gitignore` for log files and build artifacts (#3d9c5ce, #a6d85a0)
+### Quality Improvements
+- All scripts support progress tracking
+- Conservative duplicate removal (only verified duplicates)
+- Cluster-based deduplication using DFS algorithm
+- Cost-effective AI verification (only 0.75+ similarity)
 
 ## 📊 Statistics
 
-### Content Growth
-- **Before**: 1,038 tips across 64 files
-- **After**: 2,770 tips across 69 files
-- **Growth**: 167% increase (1,732 new unique tips)
+### Content Optimization
+- **Before**: 2,696 tips
+- **After**: 2,397 tips
+- **Removed**: 299 duplicates across 210 clusters
+- **Quality focus**: Kept most detailed versions
 
-### Sources
-- 1,686 tips from [vim.fandom.com](https://vim.fandom.com)
-- 355 community contributed tips
-- 729 curated original tips
+### Code Formatting
+- **Files updated**: 33 markdown files
+- **Empty lines added**: 1,565 lines
+- **Improved readability**: Better separation between Vim/Lua examples
+
+### Deduplication Coverage
+- **Total comparisons**: ~3.6 million tip pairs
+- **High-similarity pairs**: 2,674 (filtered by embeddings)
+- **AI verified**: 3,568 pairs (including retries)
+- **Final duplicates**: 330 duplicate tips found
+- **Coverage**: 100% of all tips
 
 ### Cost Efficiency
-Total project cost for extraction and deduplication: **$4.36**
-- Extraction from 3,397 pages: $3.56
-- Merging tips: $0.60
-- Hybrid deduplication: $0.20 (saved $107.64!)
-
-### PDF Book
-- **Pages**: 1,604 pages
-- **Size**: 6.5 MB
-- **Chapters**: 69
-- **Code Examples**: 4,444 total (2,500 Vim + 1,944 Neovim)
+- **Global deduplication cost**: ~$0.50
+- **Hybrid approach savings**: 99.82% vs full AI comparison
+- **Total validation**: 3,568 pairs verified
+- **Optimal threshold**: 0.75 cosine similarity
 
 ## 🙏 Contributors
 
-- **saxon** - Core development, tip extraction, deduplication
-- **Nicolas Battisti** (@NickP-Devops) - Documentation improvements, Lua examples
-- **qiine** - Bug fixes, typo corrections
-- **AndyG** - Documentation fixes
-- **Julian Frenzel** - Community tip contribution
-- **Claude Code** - AI-assisted development and extraction
+- **saxon** - Global deduplication, bookmark validation, code formatting
+- **Community** - Feature request for direct bookmark access
+- **Claude Code** - AI-assisted development and verification
 
 ## 🔧 Breaking Changes
 
 None. All changes are backward compatible.
 
+### Migration Notes
+- Existing bookmarks will be automatically validated on first load
+- Users may see one-time notification about redirected/removed bookmarks
+- No action required - validation happens automatically
+
 ## 📝 Notes
 
-- The hybrid deduplication approach can be reused for future tip additions from other sources
-- All scripts are documented in `scripts/README.md`
-- PDF book generation is now stable and tested with 2,770 tips
-- Recommended to use lazy loading with key bindings for optimal performance
+### Bookmark Validation
+- Runs automatically every time tips are loaded
+- Performance optimized - only validates if bookmarks exist
+- Similarity threshold: 70% (configurable in future releases)
+- Debug mode available: `debug = true` in setup
+
+### Global Deduplication
+- Compared all tips globally (not per-category like v0.8.0)
+- Found cross-category duplicates that category-based dedup missed
+- Kept longest tip in each duplicate cluster (most detailed)
+- User-driven improvement based on feedback
+
+### Code Formatting
+- Empty lines improve visual scanning
+- Consistent spacing across all tip files
+- Better distinction between Vim and Lua examples
+- No functional changes - purely visual improvement
 
 ## 🚀 What's Next
 
-This release significantly expands the Neovim tips collection, making it one of the most comprehensive resources available. The hybrid deduplication approach and reusable scripts make it easy to continue growing the collection in the future.
+Future enhancements being considered:
+- Configurable bookmark similarity threshold
+- Manual bookmark repair command
+- Bookmark history/undo functionality
+- User confirmation before auto-redirecting bookmarks
+
+## 📈 Impact
+
+This release focuses on **quality over quantity**:
+- ✅ **Cleaner collection** - removed duplicate content
+- ✅ **Smarter bookmarks** - no more broken bookmarks
+- ✅ **Better UX** - direct bookmark access command
+- ✅ **Improved readability** - better code block formatting
+- ✅ **User-driven** - addressing community feedback
+
+The combination of global deduplication and bookmark validation ensures users have a curated, high-quality tip collection with robust bookmark management.
 
 ---
 
-**Full Changelog**: v0.7.4...v0.8.0
+**Full Changelog**: v0.8.1...v0.8.2
