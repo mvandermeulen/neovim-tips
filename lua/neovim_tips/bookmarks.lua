@@ -154,4 +154,141 @@ function M.get_bookmark_count()
   return count
 end
 
+---Calculate similarity between two strings using Levenshtein-like approach
+---@param str1 string First string
+---@param str2 string Second string
+---@return number similarity Similarity score (0-1, higher is more similar)
+local function calculate_similarity(str1, str2)
+  str1 = str1:lower()
+  str2 = str2:lower()
+
+  if str1 == str2 then
+    return 1.0
+  end
+
+  -- Check if one contains the other
+  if str1:find(str2, 1, true) or str2:find(str1, 1, true) then
+    return 0.8
+  end
+
+  -- Simple word overlap scoring
+  local words1 = {}
+  for word in str1:gmatch("%w+") do
+    words1[word] = true
+  end
+
+  local words2 = {}
+  for word in str2:gmatch("%w+") do
+    words2[word] = true
+  end
+
+  local common = 0
+  local total = 0
+  for word in pairs(words1) do
+    total = total + 1
+    if words2[word] then
+      common = common + 1
+    end
+  end
+  for word in pairs(words2) do
+    if not words1[word] then
+      total = total + 1
+    end
+  end
+
+  if total == 0 then
+    return 0
+  end
+
+  return common / total
+end
+
+---Find the most similar tip title from available titles
+---@param target_title string Title to find similar match for
+---@param available_titles string[] List of available tip titles
+---@param min_similarity number Minimum similarity threshold (0-1)
+---@return string|nil best_match Most similar title, or nil if none above threshold
+local function find_similar_title(target_title, available_titles, min_similarity)
+  local best_match = nil
+  local best_score = min_similarity or 0.7
+
+  for _, title in ipairs(available_titles) do
+    local score = calculate_similarity(target_title, title)
+    if score > best_score then
+      best_score = score
+      best_match = title
+    end
+  end
+
+  return best_match
+end
+
+---Validate bookmarks against currently loaded tips and fix orphaned bookmarks
+---Tries to find similar tips for bookmarks that no longer exist
+---@param available_titles string[] List of currently available tip titles
+---@return table validation_result Information about validation and updates
+function M.validate_bookmarks(available_titles)
+  load_bookmarks_cache()
+
+  -- Build set of available titles for fast lookup
+  local available_set = {}
+  for _, title in ipairs(available_titles) do
+    available_set[title] = true
+  end
+
+  local result = {
+    total_bookmarks = 0,
+    valid_bookmarks = 0,
+    orphaned_bookmarks = 0,
+    redirected_bookmarks = 0,
+    removed_bookmarks = 0,
+    updates = {}  -- List of {old_title, new_title, action}
+  }
+
+  local updated_cache = {}
+
+  for old_title, _ in pairs(bookmarks_cache) do
+    result.total_bookmarks = result.total_bookmarks + 1
+
+    if available_set[old_title] then
+      -- Bookmark is still valid
+      updated_cache[old_title] = true
+      result.valid_bookmarks = result.valid_bookmarks + 1
+    else
+      -- Bookmark points to non-existent tip
+      result.orphaned_bookmarks = result.orphaned_bookmarks + 1
+
+      -- Try to find a similar tip
+      local similar_title = find_similar_title(old_title, available_titles, 0.7)
+
+      if similar_title then
+        -- Found a similar tip - redirect bookmark
+        updated_cache[similar_title] = true
+        result.redirected_bookmarks = result.redirected_bookmarks + 1
+        table.insert(result.updates, {
+          old_title = old_title,
+          new_title = similar_title,
+          action = "redirected"
+        })
+      else
+        -- No similar tip found - remove bookmark
+        result.removed_bookmarks = result.removed_bookmarks + 1
+        table.insert(result.updates, {
+          old_title = old_title,
+          new_title = nil,
+          action = "removed"
+        })
+      end
+    end
+  end
+
+  -- Update bookmarks cache if changes were made
+  if result.redirected_bookmarks > 0 or result.removed_bookmarks > 0 then
+    bookmarks_cache = updated_cache
+    save_bookmarks_cache()
+  end
+
+  return result
+end
+
 return M
