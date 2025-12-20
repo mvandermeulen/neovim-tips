@@ -25,17 +25,6 @@ yy   " yank current line
 # Category: Cut and Paste
 # Tags: yank, copy, word
 ---
-Use `yw` to yank from cursor to start of next word, `ye` to yank to end of current word.
-
-```vim
-yw  " yank to next word
-ye  " yank to end of word
-```
-***
-# Title: Paste text
-# Category: Cut and Paste
-# Tags: paste, put, text
----
 Use `p` to paste after cursor/line and `P` to paste before cursor/line.
 
 ```vim

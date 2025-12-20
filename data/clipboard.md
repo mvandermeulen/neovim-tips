@@ -2,18 +2,6 @@
 # Category: Clipboard
 # Tags: clipboard, lua, register
 ---
-Use `vim.fn.setreg("+", "text")` to set system clipboard content from Lua.
-
-```vim
-:lua vim.fn.setreg("+", "hello world")
-```
-
-**Source:** Community contributed
-***
-# Title: Mac OS clipboard sharing
-# Category: Clipboard
-# Tags: macos, clipboard, pbcopy, pbpaste
----
 Integrate Vim with macOS clipboard using pbcopy and pbpaste utilities.
 
 ```vim
@@ -24,6 +12,7 @@ nnoremap <C-v> :r !pbpaste<CR>
 " Use system clipboard by default
 set clipboard=unnamed
 ```
+
 ```lua
 -- Lua - macOS clipboard integration
 vim.keymap.set('v', '<C-c>', ':w !pbcopy<CR><CR>', { desc = 'Copy to macOS clipboard' })
@@ -78,6 +67,7 @@ When pasting over a visual selection, the deleted text normally replaces the unn
 xnoremap p "_dP
 " This deletes to black hole register (_) then pastes
 ```
+
 ```lua
 -- Paste without losing the yanked content
 vim.keymap.set("x", "p", '"_dP', { desc = "Paste without yanking", noremap = true })
@@ -92,47 +82,6 @@ vim.keymap.set("x", "<leader>p", '"0p', { desc = "Paste from yank register", nor
 # Category: clipboard
 # Tags: registers, copy, clipboard
 ---
-Multiple methods to copy entire buffer contents to system clipboard across different modes
-
-```vim
-" Normal mode copy
-gg"+yG
-
-" Ex mode copy
-:%y+
-```
-```lua
--- Lua equivalent for copying entire buffer
-vim.cmd(':%y+')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%22copy_all_to_clipboard%22_howto)
-***
-# Title: Easy System Clipboard Integration
-# Category: clipboard
-# Tags: clipboard, registers, cross-platform
----
-Configure Vim/Neovim to use system clipboard by default, making copy/paste across applications seamless
-
-```vim
-" Use system clipboard as default register
-set clipboard=unnamed
-" For X11 systems, use unnamedplus
-set clipboard=unnamedplus
-```
-```lua
--- Use system clipboard as default register
-vim.opt.clipboard = 'unnamed'
--- For X11 systems
-vim.opt.clipboard = 'unnamedplus'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Accessing_the_system_clipboard)
-***
-# Title: Auto Copy Mouse Selection to Clipboard
-# Category: clipboard
-# Tags: mouse, clipboard, cross-platform
----
 Automatically copy mouse-selected text to system clipboard in Vim/Neovim
 
 ```vim
@@ -142,6 +91,7 @@ Automatically copy mouse-selected text to system clipboard in Vim/Neovim
 " Method 2 (Windows only)
 :set guioptions+=a
 ```
+
 ```lua
 -- Method 1: Map mouse release to copy
 vim.keymap.set('n', '<LeftRelease>', '"+y<LeftRelease>', { noremap = true })
@@ -155,25 +105,6 @@ vim.o.guioptions = vim.o.guioptions .. 'a'
 # Title: Disable Auto Copy Clipboard Function
 # Category: clipboard
 # Tags: configuration, clipboard, settings
----
-Remove automatic clipboard copying to prevent overwriting clipboard buffer
-
-```vim
-" Disable auto copy function
-set guioptions-=a
-set guioptions-=A
-set guioptions-=aA
-```
-```lua
--- Disable auto copy in Neovim
-vim.o.guioptions = vim.o.guioptions:gsub('[aA]', '')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Auto_copy_the_mouse_selection)
-***
-# Title: Use System Clipboard in Vim
-# Category: clipboard
-# Tags: clipboard, register, cross-platform
 ---
 Use '+' and '*' registers to interact with system clipboard across different platforms
 
@@ -189,6 +120,7 @@ set clipboard=unnamed
 " For X Window systems
 set clipboard=unnamedplus
 ```
+
 ```lua
 -- Copy entire buffer to system clipboard
 vim.api.nvim_command('normal! gg"+yG')
@@ -207,33 +139,13 @@ vim.opt.clipboard = 'unnamedplus' -- For X Window systems
 # Category: clipboard
 # Tags: register-management, clipboard, cross-system
 ---
-Easily transfer text between Vim's unnamed register and system clipboard (x11 clipboard)
-
-```vim
-" Transfer between Vim register and system clipboard
-nnoremap <Leader>s :let @a=@" | let @"=@+ | let @+=@a<CR>
-```
-```lua
--- Transfer between Vim register and system clipboard
-vim.keymap.set('n', '<Leader>s', function()
-  local unnamed = vim.fn.getreg('"')
-  vim.fn.setreg('"', vim.fn.getreg('+'))
-  vim.fn.setreg('+', unnamed)
-end, { desc = 'Swap clipboard and unnamed register' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Comfortable_handling_of_registers)
-***
-# Title: System Clipboard Integration
-# Category: clipboard
-# Tags: system-clipboard, cross-platform, copy-paste
----
 Access system clipboard using + and * registers in Vim/Neovim
 
 ```vim
 "+y  " copy to system clipboard
 "+p  " paste from system clipboard
 ```
+
 ```lua
 -- Ensure clipboard support is compiled in
 vim.opt.clipboard = 'unnamedplus'  -- Use system clipboard
@@ -273,6 +185,7 @@ function Session_paste(command)
   exec 'normal ' . a:command
 endfunction
 ```
+
 ```lua
 local session_yank_file = vim.fn.expand('~/.vim_yank')
 
@@ -313,6 +226,7 @@ Use system clipboard registers to copy and paste between Vim instances
 " Paste from clipboard
 "*p
 ```
+
 ```lua
 -- Copy current line to clipboard
 vim.fn.setreg('*', vim.fn.getline('.'))
@@ -336,6 +250,7 @@ nmap ,cs :let @*=expand("%")<CR>
 " Full path
 nmap ,cl :let @*=expand("%:p")<CR>
 ```
+
 ```lua
 -- Copy filename to clipboard
 vim.keymap.set('n', ',cs', function()
@@ -364,6 +279,7 @@ else
   nmap ,cl :let @*=expand("%:p")<CR>
 endif
 ```
+
 ```lua
 if vim.fn.has('win32') == 1 then
   vim.keymap.set('n', ',cs', function()
@@ -390,64 +306,6 @@ end
 # Category: clipboard
 # Tags: cross-platform, system-clipboard, utilities
 ---
-Function to copy text from Vim to Windows clipboard using /dev/clipboard device, supporting UTF-8 characters
-
-```vim
-function! Putclip(type, ...) range
-  let sel_save = &selection
-  let &selection = "inclusive"
-  let reg_save = @@
-  if a:type == 'n'
-    silent exe a:firstline . "," . a:lastline . "y"
-  elseif a:type == 'c'
-    silent exe a:1 . "," . a:2 . "y"
-  else
-    silent exe "normal! `<" . a:type . "`>y"
-  endif
-  
-  call writefile(split(@@,"\n"), '/dev/clipboard')
-  
-  let &selection = sel_save
-  let @@ = reg_save
-endfunction
-
-" Mappings
-vnoremap <silent> <leader>y :call Putclip(visualmode(), 1)<CR>
-nnoremap <silent> <leader>y :call Putclip('n', 1)<CR>
-```
-```lua
-function Putclip(type, ...)
-  local sel_save = vim.o.selection
-  vim.o.selection = 'inclusive'
-  
-  local reg_save = vim.fn.getreg('@')
-  
-  if type == 'n' then
-    vim.cmd(string.format('%d,%dy', vim.fn.line("'""), vim.fn.line("'")))
-  elseif type == 'c' then
-    vim.cmd(string.format('%d,%dy', ...[1], ...[2]))
-  else
-    vim.cmd('normal! `<' .. type .. '`>y')
-  end
-  
-  local clipboard_content = vim.fn.getreg('@')
-  vim.fn.writefile(vim.split(clipboard_content, "\n"), '/dev/clipboard')
-  
-  vim.o.selection = sel_save
-  vim.fn.setreg('@', reg_save)
-end
-
--- Mappings
-vim.keymap.set('v', '<leader>y', function() Putclip(vim.fn.visualmode(), 1) end)
-vim.keymap.set('n', '<leader>y', function() Putclip('n', 1) end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Copying_to_the_Windows_clipboard_from_Cygwin_vim)
-***
-# Title: Paste from Windows Clipboard in Cygwin Vim
-# Category: clipboard
-# Tags: cross-platform, system-clipboard, utilities
----
 Function to paste text from Windows clipboard into Vim using /dev/clipboard device
 
 ```vim
@@ -462,6 +320,7 @@ endfunction
 
 nnoremap <silent> <leader>p :call Getclip()<CR>
 ```
+
 ```lua
 function Getclip()
   local reg_save = vim.fn.getreg('@')
@@ -489,6 +348,7 @@ Simplify clipboard operations between Vim and Windows applications by automatica
 ```vim
 set clipboard=unnamed
 ```
+
 ```lua
 vim.opt.clipboard = 'unnamed'
 ```
@@ -504,6 +364,7 @@ Automatically copy visual selections to clipboard, allowing easy pasting in othe
 ```vim
 set go+=a
 ```
+
 ```lua
 vim.opt.guioptions:append('a')
 ```
@@ -525,6 +386,7 @@ endfunction
 # In vimrc
 autocmd bufWritePost c:/aaa/xp normal ggVG"*y
 ```
+
 ```lua
 function _G.edit_paste_buffer()
   -- Open a new buffer with clipboard contents
@@ -556,6 +418,7 @@ Easily copy and paste between Vim and system clipboard using xclip, which is par
 " Mapping to paste from clipboard
 :map <S-F7> :r!xclip -o<CR>
 ```
+
 ```lua
 -- Copy entire buffer to clipboard
 vim.keymap.set('n', '<F7>', ':w !xclip<CR>', { desc = 'Copy buffer to clipboard' })
@@ -571,39 +434,12 @@ vim.keymap.set('n', '<S-F7>', ':r!xclip -o<CR>', { desc = 'Paste from clipboard'
 # Category: clipboard
 # Tags: clipboard, cross-platform, system-copy
 ---
-Provides universal system clipboard copy/paste methods for Mac, Linux, and Ubuntu using external utilities
-
-```vim
-" Mac OS X Clipboard
-vmap <C-c> y:call system("pbcopy", getreg(""))<CR>
-nmap <C-v> :call setreg("",system("pbpaste"))<CR>p
-
-" Ubuntu Clipboard
-vmap <C-c> y:call system("xclip -i -selection clipboard", getreg(""))<CR>
-```
-```lua
--- Mac OS X Clipboard
-vim.keymap.set({'v'}, '<C-c>', function()
-  vim.fn.system('pbcopy', vim.fn.getreg('"'))
-end, { noremap = true, silent = true })
-
--- Ubuntu Clipboard
-vim.keymap.set({'v'}, '<C-c>', function()
-  vim.fn.system('xclip -i -selection clipboard', vim.fn.getreg('"'))
-end, { noremap = true, silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/In_line_copy_and_paste_to_system_clipboard)
-***
-# Title: Mac OS X Clipboard Integration
-# Category: clipboard
-# Tags: macos, clipboard, system-integration
----
 Enable seamless clipboard sharing between Vim and macOS system clipboard
 
 ```vim
 set clipboard=unnamed
 ```
+
 ```lua
 vim.opt.clipboard = 'unnamed'
 ```
@@ -622,6 +458,7 @@ imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
 nmap <F2> :.w !pbcopy<CR><CR>
 vmap <F2> :w !pbcopy<CR><CR>
 ```
+
 ```lua
 vim.keymap.set({'n', 'i'}, '<F1>', function()
   vim.o.paste = true
@@ -646,6 +483,7 @@ Improve middle-click paste behavior across different Vim modes, with special han
 nnoremap <MiddleMouse> i<MiddleMouse>
 vnoremap <MiddleMouse> s<MiddleMouse>
 ```
+
 ```lua
 -- Improved middle-click paste handling
 vim.keymap.set('n', '<MiddleMouse>', 'i<MiddleMouse>', { noremap = true })
@@ -664,6 +502,7 @@ Quickly open a new Vim buffer with clipboard contents using built-in register
 :new
 "*p
 ```
+
 ```lua
 -- Open new buffer and paste from clipboard register
 vim.cmd('new')
@@ -675,92 +514,6 @@ vim.cmd('normal "*p')
 # Title: Clipboard Access in Cygwin Vim
 # Category: clipboard
 # Tags: cross-platform, windows, clipboard
----
-Provides robust methods for copying and pasting between Vim and Windows clipboard using /dev/clipboard
-
-```vim
-function! Putclip(type, ...) range
-  let sel_save = &selection
-  let &selection = "inclusive"
-  let reg_save = @@
-  if a:type == 'n'
-    silent exe a:firstline . "," . a:lastline . "y"
-  elseif a:type == 'c'
-    silent exe a:1 . "," . a:2 . "y"
-  else
-    silent exe "normal! `<" . a:type . "`>y"
-  endif
-  
-  call writefile(split(@@,"\n"), '/dev/clipboard')
-  
-  let &selection = sel_save
-  let @@ = reg_save
-endfunction
-```
-```lua
-function _G.put_clipboard(type)
-  local sel_save = vim.o.selection
-  vim.o.selection = 'inclusive'
-  
-  local reg_save = vim.fn.getreg('@')
-  local lines
-  
-  if type == 'n' then
-    lines = vim.api.nvim_buf_get_lines(0, vim.fn.line('.')-1, vim.fn.line('.'), false)
-  elseif type == 'v' then
-    lines = vim.fn.getline(vim.fn.line("'<"), vim.fn.line("'>"))
-  end
-  
-  vim.fn.writefile(lines, '/dev/clipboard')
-  
-  vim.o.selection = sel_save
-  vim.fn.setreg('@', reg_save)
-end
-
--- Mappings
-vim.keymap.set('n', '<leader>y', function() _G.put_clipboard('n') end)
-vim.keymap.set('v', '<leader>y', function() _G.put_clipboard('v') end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pasting_from_the_Windows_clipboard_to_native_Cygwin_Vim)
-***
-# Title: Paste from Windows Clipboard in Vim
-# Category: clipboard
-# Tags: clipboard, cross-platform, paste
----
-Easy method to paste from Windows clipboard in Cygwin Vim, supporting UTF-8
-
-```vim
-function! Getclip()
-  let reg_save = @@
-  let @@ = join(readfile('/dev/clipboard'), "\n")
-  setlocal paste
-  exe 'normal p'
-  setlocal nopaste
-  let @@ = reg_save
-endfunction
-```
-```lua
-function _G.get_clipboard()
-  local reg_save = vim.fn.getreg('@')
-  local clipboard_content = table.concat(vim.fn.readfile('/dev/clipboard'), '\n')
-  
-  vim.o.paste = true
-  vim.api.nvim_put({clipboard_content}, '', true, true)
-  vim.o.paste = false
-  
-  vim.fn.setreg('@', reg_save)
-end
-
--- Mapping
-vim.keymap.set('n', '<leader>p', _G.get_clipboard)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Pasting_from_the_Windows_clipboard_to_native_Cygwin_Vim)
-***
-# Title: Quick System Clipboard Copy and Paste
-# Category: clipboard
-# Tags: system-clipboard, key-mapping, cross-platform
 ---
 Convenient mappings for copying, cutting, and pasting using system clipboard across different modes
 
@@ -776,6 +529,7 @@ vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
 imap <C-v> <Esc>pi
 ```
+
 ```lua
 -- Copy to system clipboard in visual mode
 vim.keymap.set('v', '<C-c>', '"*y', { desc = 'Copy to system clipboard' })
@@ -804,6 +558,7 @@ vnoremap <F4> "+y
 nnoremap <F5> viw"+p
 vnoremap <F5> "+p
 ```
+
 ```lua
 -- Copy current word or selection to clipboard
 vim.keymap.set('n', '<F4>', '"+yiw', { desc = 'Copy word to clipboard' })
@@ -832,6 +587,7 @@ Easily copy text between different Vim/Neovim sessions using the '+' register, w
 " Paste from clipboard register in insert mode
 <Ctrl-R>+
 ```
+
 ```lua
 -- Yank two lines to clipboard register
 vim.cmd('normal! "+2yy')

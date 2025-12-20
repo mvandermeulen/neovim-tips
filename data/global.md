@@ -23,20 +23,6 @@ K
 # Category: Global
 # Tags: global, command, pattern, ex
 ---
-Use `:g/pattern/command` to execute a command on all lines matching a pattern. One of Vim's most powerful features.
-
-```vim
-:g/TODO/d           " delete all lines containing TODO
-:g/function/p       " print all lines with 'function'
-:g/error/norm gUU   " uppercase lines containing 'error'
-:g!/pattern/d       " delete lines NOT matching pattern (inverse)
-:v/pattern/d        " same as :g! (v for inVerse)
-```
-***
-# Title: Global command with normal mode commands
-# Category: Global
-# Tags: global, normal, command, pattern
----
 Use `:g/pattern/norm <commands>` to execute normal mode commands on matching lines.
 
 ```vim

@@ -1,19 +1,3 @@
-# Title: Incremental number sequences with g<C-a>
-# Category: Visual Mode Advanced
-# Tags: visual, block, numbers, increment, sequence
----
-Use visual block mode with `g<C-a>` to create incremental number sequences. Perfect for creating numbered lists or incrementing multiple values.
-
-```vim
-Ctrl+v          " start visual block mode
-jjj             " select column of numbers (like 1,1,1,1)
-g<Ctrl+a>       " increment sequentially (becomes 1,2,3,4)
-```
-***
-# Title: Visual block column insertion
-# Category: Visual Mode Advanced
-# Tags: visual, block, column, insert, prepend
----
 Use visual block mode with `I` to insert text at the beginning of each selected line.
 
 ```vim
@@ -217,20 +201,6 @@ Work with specific registers in visual mode.
 # Title: Visual mode pattern matching
 # Category: Visual Mode Advanced
 # Tags: visual, pattern, select, match, extend
----
-Select text based on patterns and extend selections intelligently.
-
-```vim
-/pattern        " search for pattern
-n               " go to next match
-v               " start visual selection
-n               " extend selection to next match
-//e             " extend selection to end of current match
-```
-***
-# Title: Visual mode column operations
-# Category: Visual Mode Advanced
-# Tags: visual, column, arithmetic, calculation, block
 ---
 Perform arithmetic operations on columns of numbers.
 

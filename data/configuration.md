@@ -42,6 +42,7 @@ endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 set dictionary="/usr/dict/words"
 ```
+
 ```lua
 -- Lua:
 local function tab_or_complete()
@@ -72,6 +73,7 @@ Use `:autocmd` to set up automatic commands, `:autocmd!` to clear, `:doautocmd` 
 :doautocmd BufRead      " trigger BufRead event
 :autocmd FileType python setlocal ts=4  " Python-specific settings
 ```
+
 ```lua
 -- Lua:
 -- Run python after save
@@ -113,6 +115,7 @@ Use `:map` for mappings, `:abbrev` for abbreviations, `:unmap` and `:unabbrev` t
 :unmap <F2>             " remove mapping
 :unabbrev teh           " remove abbreviation
 ```
+
 ```lua
 -- Lua:
 vim.keymap.set('n', '<F2>', ':w<CR>', { desc = 'Save file' })
@@ -138,6 +141,7 @@ Use `:highlight` to set colors, `:syntax` for syntax highlighting, `:colorscheme
 :colorscheme desert                " change color scheme
 :highlight clear                   " clear all highlighting
 ```
+
 ```lua
 -- Lua:
 vim.cmd('highlight Comment ctermfg=green')  -- set comment color
@@ -165,6 +169,7 @@ Use `:source` to load script, `:runtime` to load from runtime path, `:scriptname
 :scriptnames            " list all loaded scripts
 :source %               " reload current file as script
 ```
+
 ```lua
 -- Lua:
 vim.cmd('source ~/.vimrc')  -- load configuration file
@@ -183,53 +188,6 @@ dofile(vim.fn.expand('~/.config/nvim/init.lua'))
 # Title: Home key smart mapping
 # Category: Configuration
 # Tags: home, key, mapping, smart, navigation
----
-Map Home key to toggle between beginning of line and first non-blank character.
-
-```vim
-" Vimscript - Smart Home key mapping:
-nnoremap <expr> <Home> (col('.') == 1 ? '^' : '0')
-inoremap <expr> <Home> (col('.') == 1 ? '<C-o>^' : '<C-o>0')
-
-" Alternative version:
-nnoremap <silent> <Home> :call SmartHome()<CR>
-function! SmartHome()
-  let curcol = col('.')
-  normal! ^
-  if col('.') == curcol
-    normal! 0
-  endif
-endfunction
-```
-```lua
--- Lua - Smart Home key mapping:
-vim.keymap.set('n', '<Home>', function()
-  local col = vim.fn.col('.')
-  return col == 1 and '^' or '0'
-end, { expr = true, desc = 'Smart Home' })
-
-vim.keymap.set('i', '<Home>', function()
-  local col = vim.fn.col('.')
-  return col == 1 and '<C-o>^' or '<C-o>0'
-end, { expr = true, desc = 'Smart Home' })
-
--- Alternative version using function:
-local function smart_home()
-  local curcol = vim.fn.col('.')
-  vim.cmd('normal! ^')
-  if vim.fn.col('.') == curcol then
-    vim.cmd('normal! 0')
-  end
-end
-
-vim.keymap.set('n', '<Home>', smart_home, { silent = true, desc = 'Smart Home' })
-```
-
-**Source:** Community contributed
-***
-# Title: Speed up vimgrep with noautocmd
-# Category: Configuration
-# Tags: vimgrep, speed, autocmd, performance, search
 ---
 Use `:noautocmd vimgrep` to speed up vimgrep by disabling autocmds during search.
 
@@ -378,6 +336,7 @@ Configure Vim/Neovim to automatically use system clipboard
 set cb+=unnamed
 set go+=a
 ```
+
 ```lua
 -- Enable system clipboard by default
 vim.opt.clipboard = 'unnamed,unnamedplus'
@@ -397,6 +356,7 @@ set keywordprg=~/.vim/php_doc
 " In .vimrc
 autocmd FileType php set keywordprg=~/.vim/php_doc
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'php',
@@ -420,6 +380,7 @@ if has('gui_running')
   colorscheme elflord
 endif
 ```
+
 ```lua
 if vim.g.gui_running then
   vim.opt.guioptions:remove('T')  -- no toolbar
@@ -440,6 +401,7 @@ set t_Co=256
 set t_AB=^[[48;5;%dm
 set t_AF=^[[38;5;%dm
 ```
+
 ```lua
 -- Enable 256 color support
 vim.opt.termguicolors = true
@@ -465,6 +427,7 @@ Verify and configure 256-color support in your terminal and Vim configuration to
 :set t_Co=256
 :color jellybeans
 ```
+
 ```lua
 -- Check terminal color support
 vim.pretty_print(vim.env.TERM)
@@ -488,6 +451,7 @@ Use command-line flags or terminal settings to specify 256-color terminfo entrie
 " xterm -tn xterm-256color
 " rxvt --termName rxvt-256color
 ```
+
 ```lua
 -- Use terminal configuration methods to enable 256 colors
 -- Command-line flags or terminal GUI settings
@@ -498,32 +462,6 @@ Use command-line flags or terminal settings to specify 256-color terminfo entrie
 # Title: Secure Vim Configuration for Encrypted Files
 # Category: configuration
 # Tags: security, encryption, file-management
----
-Create a secure Vim configuration to minimize trace data when working with sensitive files
-
-```vim
-set secure
-set viminfo=
-set noswapfile
-set nobackup
-set nowritebackup
-set history=0
-set noshelltemp
-```
-```lua
-vim.opt.secure = true
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.history = 0
-vim.opt.shelltemp = false
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/AES256_encryption_in_Vim)
-***
-# Title: Cache and Reset Vim Options Dynamically
-# Category: configuration
-# Tags: options, settings, dynamic-configuration
 ---
 Provides a flexible way to set, track, and reset Vim options, preventing unintended changes by plugins
 
@@ -555,6 +493,7 @@ command! -nargs=+ SetOption let s:tmlargs=[<f-args>]
  \ | call add(s:option_preferences, s:tmlargs[0])
  \ | exec 'let g:'. s:tmlargs[0] .'_default = &'. s:tmlargs[0]
 ```
+
 ```lua
 local M = {}
 M.option_preferences = {}
@@ -599,6 +538,7 @@ Create separate Vim instances for different file type categories with unique ser
 ```vim
 gvim.exe --servername TXTVIM --remote-tab-silent "%1"
 ```
+
 ```lua
 -- Neovim typically handles this differently through LSP and filetype plugins
 -- Can configure distinct behaviors per filetype in init.lua
@@ -609,34 +549,6 @@ gvim.exe --servername TXTVIM --remote-tab-silent "%1"
 # Title: Convert Note Files to Vim Help Documents
 # Category: configuration
 # Tags: help, documentation, custom-docs
----
-Create custom help documents from personal note files, making them searchable and accessible within Vim using help commands
-
-```vim
-" Vim modeline for help files
-" vim: filetype=help foldmethod=marker foldmarker=<<<,>>> modifiable noreadonly
-
-" Generate help tags
-:helptags ~/.vim/doc
-```
-```lua
--- In Lua, you can use vim.cmd to generate help tags
-vim.cmd('helptags ~/.vim/doc')
-
--- Autocmd to regenerate help tags after writing
-vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = '~/.vim/doc/*',
-  callback = function()
-    vim.cmd('helptags ~/.vim/doc')
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Add_your_note_files_to_Vim_help)
-***
-# Title: Add Vim to Windows Explorer Context Menu
-# Category: configuration
-# Tags: windows, file-operations, integration
 ---
 Adds 'Edit with Vim' option to right-click context menu in Windows File Explorer for quick file editing
 
@@ -650,6 +562,7 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\*\Shell\Vim\command]
 @="\"C:\\Program Files\\Vim\\vim80\\gvim.exe\" \"%1\""
 ```
+
 ```lua
 -- Note: This is a Windows Registry modification
 -- Equivalent in Neovim would typically be handled by OS-specific scripts
@@ -667,6 +580,7 @@ Resolve shell command execution problems in GVim on FreeBSD by changing the shel
 ```vim
 set sh=ksh
 ```
+
 ```lua
 vim.opt.shell = 'ksh'
 ```
@@ -683,6 +597,7 @@ Completely disable error bells and visual flashes in Vim/Neovim, which can be di
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 ```
+
 ```lua
 vim.opt.errorbells = false
 vim.opt.visualbell = true
@@ -720,6 +635,7 @@ function! SetMakeprg()
 endfunction
 call SetMakeprg()
 ```
+
 ```lua
 local function set_makeprg()
   local n = 1
@@ -750,6 +666,7 @@ Configure where keywords are searched for completion using the 'complete' option
 set complete+=i  " Include current and included files
 set complete+=t  " Include tags
 ```
+
 ```lua
 -- Configure completion sources
 vim.opt.complete:append('i')  -- Include current and included files
@@ -768,6 +685,7 @@ Enable built-in spell checking and dictionary support
 set dict=/usr/dict/words
 set spell
 ```
+
 ```lua
 vim.opt.dictionary = '/usr/dict/words'
 vim.opt.spell = true
@@ -795,6 +713,7 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 ```
+
 ```lua
 local function load_cscope()
   local db = vim.fn.findfile("cscope.out", ".;")
@@ -830,6 +749,7 @@ else
   exec "setlocal makeprg=make\ -f\ ~/academic/tools/latex.mk\ " . substitute(bufname("%"),"tex$","pdf", "")
 endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'tex',
@@ -871,6 +791,7 @@ au VimLeavePre * call WriteVars()
 
 " To restore: :call RestoreVars()
 ```
+
 ```lua
 local function write_vars()
     local vars = vim.fn.split(vim.fn.execute('let g:'))
@@ -907,6 +828,7 @@ for p in sys.path:
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
 ```
+
 ```lua
 local function add_python_paths()
   local sys_path = vim.fn.py3eval('sys.path')
@@ -935,6 +857,7 @@ Minimize intrusive 'Hit ENTER to continue' messages by configuring shortmess and
 set shortmess=a
 set cmdheight=2
 ```
+
 ```lua
 -- Reduce message verbosity and increase command line height
 vim.opt.shortmess:append('a')
@@ -952,6 +875,7 @@ Use distributed version control (like Git) to manage and backup Vim/Neovim confi
 ```vim
 " Recommended approach: Use Git to version control .vimrc and .vim directory
 ```
+
 ```lua
 -- Create a Git repository for your Neovim config
 -- Store in ~/.config/nvim and use symbolic links if needed
@@ -970,6 +894,7 @@ Use double quotes to add comments in Vim configuration files, helping document a
 " This is a comment in vimrc
 map zm :let @/=expand("<cword>") <BAR> split <BAR> execute 'normal n'<CR>
 ```
+
 ```lua
 -- This is a comment in init.lua
 -- Use comments to explain complex mappings or configurations
@@ -981,38 +906,12 @@ map zm :let @/=expand("<cword>") <BAR> split <BAR> execute 'normal n'<CR>
 # Category: configuration
 # Tags: environment, conditional-config
 ---
-Use environment variables to create conditional configurations based on user or machine
-
-```vim
-if $USER == 'davidr'
-  echo "on home pc"
-  set ...
-else
-  echo "on work pc"
-  set ...
-endif
-```
-```lua
-if vim.env.USER == 'davidr' then
-  print('on home pc')
-  -- home pc specific settings
-else
-  print('on work pc')
-  -- work pc specific settings
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backing_up_and_commenting_vimrc)
-***
-# Title: Fix Backspace Behavior in Insert Mode
-# Category: configuration
-# Tags: insert-mode, editing, key-mapping
----
 Configure backspace to work like most modern text editors, allowing deletion across line breaks, indentation, and insert start points
 
 ```vim
 set backspace=indent,eol,start
 ```
+
 ```lua
 vim.opt.backspace = {'indent', 'eol', 'start'}
 ```
@@ -1030,6 +929,7 @@ Resolve backspace key issues when connecting to Linux servers via PuTTY by chang
 " 1. Set Terminal Keyboard to 'linux'
 " 2. Set Backspace Key to 'Control-H'
 ```
+
 ```lua
 -- Neovim terminal configuration
 -- Typically handled in PuTTY settings, not directly in Neovim
@@ -1051,6 +951,7 @@ Easily edit and reload your Vim configuration file with custom key mappings
 " opens $MYVIMRC for editing
 :nmap <Leader>v :e $MYVIMRC
 ```
+
 ```lua
 -- Lua equivalent for configuration editing and reloading
 vim.keymap.set('n', '<leader>s', ':source $MYVIMRC<CR>', { desc = 'Reload Vim configuration' })
@@ -1070,6 +971,7 @@ hi Comment ctermfg=DarkGrey guifg=DarkGrey
 hi Search guibg=LightBlue
 highlight ErrorMsg guibg=White guifg=Red
 ```
+
 ```lua
 -- Customize syntax highlighting colors
 vim.cmd('hi Comment ctermfg=DarkGrey guifg=DarkGrey')
@@ -1094,6 +996,7 @@ A systematic method to isolate configuration or plugin issues by progressively e
 
 " Gradually restore configuration sections
 ```
+
 ```lua
 -- Debugging commands in Neovim terminal
 -- vim -u NONE    # Skip all startup
@@ -1120,6 +1023,7 @@ Use command-line flags to test Vim behavior with progressively reduced configura
 " vim -u NORC
 " gvim -U NONE  " For GUI-specific issues
 ```
+
 ```lua
 -- Neovim minimal configuration testing
 -- Use terminal commands:
@@ -1158,6 +1062,7 @@ endfun
 
 nnoremap <silent><F9> :call <SID>Toggle_EditHelpers()<CR>
 ```
+
 ```lua
 local function toggle_edit_helpers()
   if not vim.b.edithelpers_on then
@@ -1191,6 +1096,7 @@ Increase the number of menu items before collapsing
 ```vim
 set menuitems=50
 ```
+
 ```lua
 -- Lua equivalent
 vim.o.menuitems = 50
@@ -1210,6 +1116,7 @@ Check Python scripting capabilities and installed versions
 :py3 print(2**0.5)
 :py3 import sys; print(sys.version)
 ```
+
 ```lua
 -- Lua equivalents for checking Python support
 print(vim.fn.has('python'))
@@ -1233,6 +1140,7 @@ set DYNAMIC_PYTHON=yes
 set PYTHON=C:/Python27
 set PYTHON_VER=27
 ```
+
 ```lua
 -- Lua equivalent for Neovim build configuration
 -- Note: Build configuration is typically done via command line or build scripts
@@ -1254,6 +1162,7 @@ hg clone https://vim.googlecode.com/hg/ vim
 " Update to latest version
 hg pull -u
 ```
+
 ```lua
 -- Lua equivalent commands (typically run in shell)
 -- git clone https://github.com/vim/vim.git
@@ -1271,6 +1180,7 @@ Use --with-compiledby to set custom compilation information displayed in :versio
 ```vim
 ./configure --with-compiledby='Your Name <email@example.com>'
 ```
+
 ```lua
 -- Lua equivalent is configuration during build process
 -- Pass --with-compiledby flag during compilation
@@ -1289,6 +1199,7 @@ Install development packages and compile Vim with full GUI features
 make
 sudo make install
 ```
+
 ```lua
 -- Lua equivalent focuses on build process configuration
 -- Same shell commands apply
@@ -1301,31 +1212,12 @@ sudo make install
 # Category: configuration
 # Tags: windows, installation, build
 ---
-Comprehensive steps to install compiled Vim on Windows system
-
-```vim
-# Steps to install after compilation
-1. Create directory like C:\Program Files\vim\vim74
-2. Copy compiled .exe files
-3. Copy runtime files
-4. Run install.exe as administrator
-```
-```lua
--- Lua equivalent is documentation of installation steps
--- Actual installation is a system/shell process
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Build_Vim_with_your_name_included)
-***
-# Title: Building Vim with Extensive Features
-# Category: configuration
-# Tags: build, compilation, development
----
 Configure and build Vim with comprehensive feature support, including GUI and multiple language integrations
 
 ```vim
 ./configure --with-features=huge --enable-gui=gnome2
 ```
+
 ```lua
 -- Lua doesn't directly handle compilation, but demonstrates configuration philosophy
 vim.g.build_features = 'huge'
@@ -1343,6 +1235,7 @@ Install necessary development packages to build Vim with full GUI and language s
 ```vim
 sudo apt-get install libncurses5-dev libgnome2-dev libgtk2.0-dev
 ```
+
 ```lua
 -- Shell command for package installation
 vim.fn.system('sudo apt-get install libncurses5-dev libgnome2-dev libgtk2.0-dev')
@@ -1359,6 +1252,7 @@ Use curses library instead of termlib to enable proper color support when buildi
 ```vim
 ./configure --with-tlib=curses
 ```
+
 ```lua
 -- For Neovim compilation, use similar configure flag
 -- Relevant when building from source on specific Unix systems
@@ -1377,6 +1271,7 @@ Configure terminal type to enable color display in Vim, specifically for HP-UX a
 export TERM=dtterm
 syntax on
 ```
+
 ```lua
 -- Set terminal type in shell profile
 vim.env.TERM = 'dtterm'
@@ -1397,6 +1292,7 @@ Quick mapping to generate ctags for the current project, enabling better code na
 " Generate ctags for the project
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 ```
+
 ```lua
 -- Generate ctags for the project
 vim.keymap.set('n', '<C-F12>', ':!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>', { desc = 'Generate project ctags' })
@@ -1408,75 +1304,13 @@ vim.keymap.set('n', '<C-F12>', ':!ctags -R --sort=yes --c++-kinds=+pl --fields=+
 # Category: configuration
 # Tags: options, settings, reset
 ---
-Provides a flexible way to save, modify, and reset Vim options, preventing unintended changes by plugins or temporary modifications
-
-```vim
-let s:option_preferences = []
-function! ResetOption(options)
-  if empty(a:options)
-    let options = s:option_preferences
-  else
-    let options = a:options
-  endif
-  for name in options
-    let name0 = 'g:'. name .'_default'
-    if exists(name0)
-      exec 'let &'. name .' = '. name0
-    endif
-  endfor
-endfunction
-
-command! -nargs=* ResetOption :call ResetOption([<f-args>])
-command! -nargs=+ SetOption let s:tmlargs=[<f-args>]
- \ | for arg in s:tmlargs[1:-1]
- \ |   if arg =~ '^[+-]\?='
- \ |     exec 'set '.s:tmlargs[0] . arg
- \ |   else
- \ |     exec 'let &'.s:tmlargs[0] .'='. arg
- \ |   endif
- \ | endfor
- \ | call add(s:option_preferences, s:tmlargs[0])
- \ | exec 'let g:'. s:tmlargs[0] .'_default = &'. s:tmlargs[0]
-```
-```lua
-local option_preferences = {}
-
-function _G.reset_option(options)
-  options = options or vim.tbl_keys(option_preferences)
-  for _, name in ipairs(options) do
-    if option_preferences[name] then
-      vim.opt[name] = option_preferences[name]
-    end
-  end
-end
-
-vim.api.nvim_create_user_command('ResetOption', function(opts)
-  reset_option(opts.fargs)
-end, { nargs = '*' })
-
-vim.api.nvim_create_user_command('SetOption', function(opts)
-  local option_name = opts.fargs[1]
-  local value = opts.fargs[2]
-  
-  if value then
-    option_preferences[option_name] = vim.opt[option_name]:get()
-    vim.opt[option_name] = value
-  end
-end, { nargs = '+' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Cache_user-preferred_option_values_for_later_reset)
-***
-# Title: Fix Temporary File Errors on Windows
-# Category: configuration
-# Tags: windows, file-operations, environment
----
 Resolve Vim temporary file creation errors by setting a custom temp directory with write permissions
 
 ```vim
 let $TMP="c:/tmp"
 set directory=.,$TMP,$TEMP
 ```
+
 ```lua
 vim.env.TMP = "c:/tmp"
 vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
@@ -1494,6 +1328,7 @@ Configure temporary file directory to resolve file creation and read errors in V
 let $TMP="c:/tmp"
 set directory=.,$TMP,$TEMP
 ```
+
 ```lua
 vim.env.TMP = "c:/tmp"
 vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
@@ -1519,6 +1354,7 @@ if has('gui_running')
   endif
 endif
 ```
+
 ```lua
 if vim.g.neovide or vim.g.gui_running then
   vim.opt.guioptions:remove('T')  -- no toolbar
@@ -1546,6 +1382,7 @@ Properly escape font names with spaces when setting guifont
 ```vim
 set guifont=Monospace\ 10
 ```
+
 ```lua
 vim.opt.guifont = 'Monospace\ 10'
 ```
@@ -1564,6 +1401,7 @@ au BufEnter * if (exists("b:colors_name")) | let b:current_colors=colors_name
  \ | execute "colorscheme " . b:colors_name | endif
 au BufLeave * if (exists("b:current_colors")) | execute "colorscheme " . b:current_colors | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
@@ -1594,6 +1432,7 @@ Automatically set a preferred color scheme when Vim starts by adding it to your 
 ```vim
 colorscheme morning
 ```
+
 ```lua
 vim.cmd('colorscheme morning')
 ```
@@ -1609,6 +1448,7 @@ If color scheme isn't loading properly, try removing or commenting out highlight
 ```vim
 " Comment out highlight lines in gvimrc
 ```
+
 ```lua
 -- Remove or comment out any custom highlight configurations
 ```
@@ -1625,6 +1465,7 @@ Resolves Escape key detection issues in GNU Screen by setting a short timeout fo
 # In .screenrc
 maptimeout 5
 ```
+
 ```lua
 -- No direct Lua equivalent, this is a Screen configuration
 -- Add to ~/.screenrc
@@ -1644,6 +1485,7 @@ if match($TERM, "screen")!=-1
   let g:GNU_Screen_used = 1
 endif
 ```
+
 ```lua
 if vim.env.TERM:match("screen") then
   vim.o.term = "xterm"
@@ -1662,6 +1504,7 @@ Automatically source your Vimrc file whenever it is saved, eliminating the need 
 ```vim
 autocmd BufWritePost .vimrc source %
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '.vimrc',
@@ -1677,42 +1520,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 # Category: configuration
 # Tags: syntax-highlighting, python, customization
 ---
-Modify Python syntax highlighting to treat docstrings after a colon as comments instead of strings
-
-```vim
-syn region pythonComment
-      \ start=+\%(:\n\s*\)\@<=\z('''\|"""\)+ end=+\z1+ keepend
-      \ contains=pythonEscape,pythonTodo,@Spell
-```
-```lua
-vim.cmd[[syn region pythonComment
-      \ start=+\%(:\n\s*\)\@<=\z('''\|"""\)+ end=+\z1+ keepend
-      \ contains=pythonEscape,pythonTodo,@Spell]]
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_the_default_syntax_highlighting)
-***
-# Title: Custom Syntax Highlighting for File Types
-# Category: configuration
-# Tags: syntax, file-type, customization
----
-Easily define custom syntax highlighting for specific file types or override existing highlighting
-
-```vim
-" To highlight *.foo files like HTML
-" Add to your vimrc or create a custom syntax file
-```
-```lua
--- Reference :help new-filetype
--- Use vim.filetype.add() to define custom file type associations
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Changing_the_default_syntax_highlighting)
-***
-# Title: Toggle Vim Options Easily
-# Category: configuration
-# Tags: options, toggle, settings
----
 Provides multiple ways to manipulate boolean Vim options, including toggling, checking, and resetting to default
 
 ```vim
@@ -1723,6 +1530,7 @@ Provides multiple ways to manipulate boolean Vim options, including toggling, ch
 :set number&
 :set number?
 ```
+
 ```lua
 -- Toggle line numbers
 vim.opt.number = not vim.opt.number:get()
@@ -1747,6 +1555,7 @@ Many syntax files have built-in configuration options you can enable by setting 
 let perl_fold=1
 let perl_fold_blocks=1
 ```
+
 ```lua
 -- Lua equivalent for configuring syntax options
 vim.g.perl_fold = 1
@@ -1764,6 +1573,7 @@ Resolve COBOL syntax highlighting issues by setting a legacy code flag to preven
 ```vim
 let cobol_legacy_code=1
 ```
+
 ```lua
 vim.g.cobol_legacy_code = 1
 ```
@@ -1796,6 +1606,7 @@ if !has("gui_running")
   set t_Sb=^[[4%p1%dm
 endif
 ```
+
 ```lua
 if not vim.g.gui_running then
   vim.opt.t_Co = 8
@@ -1820,6 +1631,7 @@ syntax on
 " - Select Linux terminal emulation
 " - Export TERM=linux in bashrc
 ```
+
 ```lua
 -- Enable syntax highlighting
 vim.cmd('syntax on')
@@ -1848,6 +1660,7 @@ au BufRead,BufNewFile *.c let Comment="/*" | let EndComment="*/"
 
 vmap co :call CommentLines()<CR>
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = "*.sh",
@@ -1892,6 +1705,7 @@ set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 " Mapping to compile
 map <F9> :make <CR>
 ```
+
 ```lua
 -- Java compilation configuration
 vim.opt.makeprg = 'javac %'
@@ -1913,6 +1727,7 @@ Configure Vim to handle Java compiler errors with a more robust error format
 set makeprg=javac\ %
 set errorformat=%A:%f:%l:\ %m,%-Z%p^,%-C%.%#
 ```
+
 ```lua
 vim.o.makeprg = 'javac %'
 vim.o.errorformat = '%A:%f:%l: %m,%-Z%p^,%-C%.%#'
@@ -1935,6 +1750,7 @@ Create two Vim executables - one with standard options and another with Python s
 ```vim
 ./configure --enable-pythoninterp
 ```
+
 ```lua
 -- Use compile-time configuration for separate Vim builds
 -- Compile with: ./configure --enable-pythoninterp
@@ -1955,6 +1771,7 @@ export VIM=/path/to/custom/vim
 export VIMRUNTIME=/path/to/custom/runtime
 export PATH=$PATH:/path/to/custom/bin
 ```
+
 ```lua
 -- Lua equivalent for managing environment variables
 vim.env.VIM = '/path/to/custom/vim'
@@ -1977,6 +1794,7 @@ highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 ```
+
 ```lua
 -- Lua equivalent for cursor configuration
 vim.cmd('highlight Cursor guifg=white guibg=black')
@@ -1998,6 +1816,7 @@ if &term =~ "xterm\|rxvt"
   let &t_EI = "\<Esc>]12;red\x7"
 endif
 ```
+
 ```lua
 if vim.fn.match(vim.o.term, "xterm\|rxvt") ~= -1 then
   vim.o.t_SI = "\<Esc>]12;orange\x7"
@@ -2016,6 +1835,7 @@ Configure Vim to automatically continue Doxygen-style comments when pressing Ent
 ```vim
 set comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,bO:///,O://
 ```
+
 ```lua
 vim.opt.comments = 'sO:* -,mO:* ,exO:*/,s1:/*,mb:*,ex:*/,bO:///,O://'
 ```
@@ -2026,37 +1846,12 @@ vim.opt.comments = 'sO:* -,mO:* ,exO:*/,s1:/*,mb:*,ex:*/,bO:///,O://'
 # Category: configuration
 # Tags: encoding, internationalization, character-set
 ---
-Safely handle character encoding transitions by explicitly setting script and file encodings when moving from single-byte to multi-byte character sets
-
-```vim
-set encoding=iso-8859-1
-" Your vimrc contents here
-set encoding=utf-8
-
-" Additional recommendation
-set fileencodings=iso-8859-1
-```
-```lua
--- Lua equivalent for handling encoding
-vim.o.encoding = 'iso-8859-1'
--- Your neovim config here
-vim.o.encoding = 'utf-8'
-
--- Set file encodings
-vim.o.fileencodings = 'iso-8859-1'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Converting_LANG_to_UTF-8)
-***
-# Title: Use scriptencoding for Vimrc Encoding
-# Category: configuration
-# Tags: encoding, vimrc, script-configuration
----
 A simpler way to specify script encoding without affecting global Vim settings
 
 ```vim
 scriptencoding latin1
 ```
+
 ```lua
 -- Lua doesn't have a direct scriptencoding equivalent
 -- But you can handle this through vim.o settings
@@ -2077,6 +1872,7 @@ Configure number formats to support octal, hex, and alphabetic increments
 " View current number formats
 :set nrformats?
 ```
+
 ```lua
 -- Add alpha support to number formats
 vim.opt.nrformats:append('alpha')
@@ -2095,6 +1891,7 @@ Automatically load a session file when Vim/Neovim starts, streamlining project r
 ```vim
 au VimEnter Session.vim :source %:p
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('VimEnter', {
   pattern = 'Session.vim',
@@ -2131,6 +1928,7 @@ hi clear StatusLineNC
 hi StatusLine guifg=black guibg=white
 hi StatusLineNC guifg=LightCyan guibg=blue gui=bold
 ```
+
 ```lua
 -- Clear existing highlights
 vim.cmd('hi clear')
@@ -2177,6 +1975,7 @@ hi def link customRegion String
 
 let b:current_syntax = 'custom'
 ```
+
 ```lua
 -- Neovim syntax file template in Lua
 if vim.b.current_syntax then
@@ -2210,6 +2009,7 @@ cscope: csclean cscope.out
 cscope.out:
 	cscope -bv ./*.[ch] ./*.cpp ./if_perl.xs auto/*.h
 ```
+
 ```lua
 -- For Lua, you would typically use a separate shell script or :make command
 -- Example Lua function to trigger cscope database generation
@@ -2233,6 +2033,7 @@ Easily change the delimiter used in CSV files, supporting different data formats
 :Delimiter ;     " set delimiter to ';'
 :Delimiter \t    " set delimiter to tab
 ```
+
 ```lua
 -- Create a command to manage CSV delimiter
 vim.api.nvim_create_user_command('Delimiter', function(opts)
@@ -2258,6 +2059,7 @@ if has("autocmd")
   autocmd FileType {xml,xslt} setlocal iskeyword=@,-,\:,48-57,_,128-167,224-235
 endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {"xml", "xslt"},
@@ -2283,6 +2085,7 @@ else
   exec "setlocal makeprg=make\ -f\ ~/academic/tools/latex.mk\ " . substitute(bufname("%"),"tex$","pdf", "")
 endif
 ```
+
 ```lua
 vim.api.nvim_buf_set_option(0, 'errorformat', '%f:%l: %m,%f:%l-%d+: %m')
 if vim.fn.filereadable('Makefile') == 1 then
@@ -2307,6 +2110,7 @@ Systematic approach to identifying and resolving unexpected Vim configuration is
 gvim -u NONE -U NONE  " Start with default settings
 gvim --noplugin  " Disable all plugins
 ```
+
 ```lua
 -- Lua equivalents for debugging
 -- List loaded scripts
@@ -2337,6 +2141,7 @@ Quick ways to list and investigate defined mappings, abbreviations, and their so
 :verbose map x   " List mappings starting with 'x'
 :verbose ab x    " List abbreviations starting with 'x'
 ```
+
 ```lua
 -- Lua equivalents for listing mappings
 -- Note: Neovim provides more modern APIs for this
@@ -2353,29 +2158,6 @@ local mappings = vim.api.nvim_get_keymap('n')  -- Get normal mode mappings
 # Category: configuration
 # Tags: filetype, buffer-management
 ---
-Quick methods to check and manually set the filetype of the current buffer
-
-```vim
-" Check current filetype
-:set ft?
-
-" Set filetype manually
-:set ft=python
-```
-```lua
--- Check current filetype
-print(vim.o.filetype)
-
--- Set filetype manually
-vim.o.filetype = 'python'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Default_filetype)
-***
-# Title: Diagnose Backspace Key Mapping Issues
-# Category: configuration
-# Tags: troubleshooting, key-mapping, insert-mode
----
 Check for problematic backspace mappings in insert mode and remove them if needed
 
 ```vim
@@ -2386,6 +2168,7 @@ Check for problematic backspace mappings in insert mode and remove them if neede
 " Remove problematic mapping
 :iunmap <BS>
 ```
+
 ```lua
 -- Check backspace mappings
 vim.cmd('verbose imap <BS>')
@@ -2431,6 +2214,7 @@ if has("multi_byte")
   endif
 endif
 ```
+
 ```lua
 if vim.fn.has('multi_byte') == 1 then
   vim.opt.encoding = 'utf-8'
@@ -2452,28 +2236,13 @@ end
 # Category: configuration
 # Tags: cross-platform, file-formatting, compatibility
 ---
-Ensure Vim scripts work across different operating systems by using Unix-style line endings (\n) instead of Windows-style (\r\n)
-
-```vim
-" vim:ff=unix
-```
-```lua
--- Add to top or bottom of script to enforce Unix line endings
-vim.opt.fileformat = 'unix'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Develop_vim_modules_on_Win)
-***
-# Title: Disable Automatic Comment Insertion
-# Category: configuration
-# Tags: comments, formatting, productivity
----
 Prevent Vim from automatically inserting comment characters when creating new lines in comments
 
 ```vim
 " Disable auto-comment for all file types
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 ```
+
 ```lua
 -- Disable auto-comment for all file types
 vim.api.nvim_create_autocmd('FileType', {
@@ -2490,34 +2259,12 @@ vim.api.nvim_create_autocmd('FileType', {
 # Category: configuration
 # Tags: comments, language-specific, filetype
 ---
-Modify comment behavior specifically for C and C++ files to prevent automatic comment insertion on new lines
-
-```vim
-" Modify comment behavior for C/C++ files
-au FileType c,cpp setlocal comments-=:// comments+=f://
-```
-```lua
--- Modify comment behavior for C/C++ files
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = {'c', 'cpp'},
-  callback = function()
-    vim.opt_local.comments:remove(':// ')
-    vim.opt_local.comments:append('f://')
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_auto-comment_when_editing_C/C%2B%2B_files)
-***
-# Title: Disable Auto-Indentation for Specific Filetypes
-# Category: configuration
-# Tags: indentation, filetype, customization
----
 Disable automatic indentation for specific file types while keeping it enabled for others
 
 ```vim
 let b:did_indent = 1
 ```
+
 ```lua
 -- For Neovim, create a specific indent file for the filetype
 -- Example for HTML: ~/.config/nvim/indent/html.lua
@@ -2535,6 +2282,7 @@ Prevent automatic comment insertion when continuing lines
 ```vim
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = '*',
@@ -2550,26 +2298,12 @@ vim.api.nvim_create_autocmd('FileType', {
 # Category: configuration
 # Tags: ui, settings, noise-reduction
 ---
-Another method to completely disable bells across different Vim/Neovim environments
-
-```vim
-set belloff=all
-```
-```lua
-vim.opt.belloff = 'all'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_beeping)
-***
-# Title: Completely Silence Vim Bells
-# Category: configuration
-# Tags: ui, settings, noise-reduction
----
 Comprehensive method to disable all bell/flash notifications in Vim
 
 ```vim
 set belloff=all
 ```
+
 ```lua
 vim.opt.belloff = 'all'
 ```
@@ -2590,6 +2324,7 @@ if &term =~ '^xterm\|rxvt'
   let &t_EI .= "\<Esc>[2 q"
 endif
 ```
+
 ```lua
 -- Terminal cursor shape configuration
 if vim.fn.has('unix') then
@@ -2627,6 +2362,7 @@ set iminsert=0
 # Optional: Disable IME completely
 set imdisable
 ```
+
 ```lua
 -- Disable IME input mode
 vim.opt.iminsert = 0
@@ -2646,6 +2382,7 @@ Disable all default filetype plugins or prepare for custom ftplugin handling
 ```vim
 autocmd BufReadPre,BufNewFile * let b:did_ftplugin = 1
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufReadPre', 'BufNewFile'}, {
   callback = function()
@@ -2665,6 +2402,7 @@ Configures Vim/Neovim to always show the status line, providing constant visibil
 ```vim
 set laststatus=2
 ```
+
 ```lua
 vim.opt.laststatus = 2
 ```
@@ -2675,46 +2413,6 @@ vim.opt.laststatus = 2
 # Category: configuration
 # Tags: linux, package-management, installation
 ---
-Install full-featured Vim with scripting and GUI support on different Linux distributions
-
-```vim
-# Debian/Ubuntu
-# apt-get install vim-gtk
-
-# Fedora
-# yum install vim-enhanced vim-X11
-```
-```lua
--- Use distribution package manager
--- Debian/Ubuntu: vim.fn.system('apt-get install vim-gtk')
--- Fedora: vim.fn.system('yum install vim-enhanced vim-X11')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Download)
-***
-# Title: Download Vim for Windows
-# Category: configuration
-# Tags: windows, installation, download
----
-Multiple options for downloading Vim on Windows, including 32-bit and 64-bit builds
-
-```vim
-" Recommended download sources:
-" 1. Nightly builds: https://github.com/vim/vim-win32-installer
-" 2. Stable builds: http://sourceforge.net/projects/cream/files/Vim/
-```
-```lua
--- Use recommended download sources
--- Nightly builds: https://github.com/vim/vim-win32-installer
--- Stable builds: http://sourceforge.net/projects/cream/files/Vim/
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Download)
-***
-# Title: Windows Vim Download Options
-# Category: configuration
-# Tags: installation, windows, download
----
 Multiple ways to download Vim for Windows, including stable and nightly builds
 
 ```vim
@@ -2722,6 +2420,7 @@ Multiple ways to download Vim for Windows, including stable and nightly builds
 " - Nightly builds: https://github.com/vim/vim-win32-installer
 " - Stable builds: http://sourceforge.net/projects/cream/files/Vim/
 ```
+
 ```lua
 -- Recommended Vim download sources
 -- Nightly builds: https://github.com/vim/vim-win32-installer
@@ -2742,6 +2441,7 @@ Select Vim version based on stability and feature requirements - nightly builds 
 " - Stable builds for production
 " - Check feature support with :version
 ```
+
 ```lua
 -- Recommend checking vim-win32-installer for Windows
 -- Use package managers or official sources for other platforms
@@ -2765,6 +2465,7 @@ syn include @ep3Verilog syntax/verilog.vim
 " Define regions with different syntax
 syn region ep3PerlChunk matchgroup=Delimiter start="@perl_begin" end="@perl_end" contains=@ep3Perl,ep3Vline
 ```
+
 ```lua
 -- Lua equivalent for custom syntax highlighting
 -- Note: More complex syntax definition typically requires Vimscript
@@ -2805,6 +2506,7 @@ endfunction
 
 command -nargs=1 FP call Feral_Path(<q-args>)
 ```
+
 ```lua
 function _G.feral_path(whichpaths)
   if #whichpaths > 0 then
@@ -2845,6 +2547,7 @@ Quickly open and reload your Vim configuration file with leader key mappings
 " opens $MYVIMRC for editing
 :nmap <Leader>v :e $MYVIMRC
 ```
+
 ```lua
 -- Reload Vim configuration
 vim.keymap.set('n', '<leader>s', ':source $MYVIMRC<CR>', { desc = 'Reload Vim config' })
@@ -2865,6 +2568,7 @@ Modify 'isfname' option to include characters like spaces in file paths, expandi
 " Allow spaces in filenames
 set isfname+=32
 ```
+
 ```lua
 -- Allow spaces in filenames
 vim.opt.isfname:append(32)
@@ -2882,6 +2586,7 @@ Add a vim modeline to specify filetype for individual Perl batch files
 # Add this as the first line of the file
 @rem vim: set ft=perl:
 ```
+
 ```lua
 -- Add this as the first line of the file
 -- @rem vim: set ft=perl:
@@ -2901,6 +2606,7 @@ autocmd FileType crontab setlocal nobackup nowritebackup
 # Alternative approach
 au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'crontab',
@@ -2930,6 +2636,7 @@ Change the default SCP port dynamically within Vim session
 ```vim
 let g:netrw_scp_cmd="scp -q -P <desired_new_port>"
 ```
+
 ```lua
 -- Set custom SCP port
 vim.g.netrw_scp_cmd = 'scp -q -P 2222'
@@ -2947,6 +2654,7 @@ Configure gVim to launch inside Visual Studio as an internal window using the -P
 Command: C:\Program Files\Vim\vim71\gvim.exe
 Arguments: -P "Microsoft Visual C++" --servername MDI_VIM
 ```
+
 ```lua
 -- Lua configuration would typically involve setting up external tool configuration in Visual Studio
 -- This is more of an IDE-specific setup than a Neovim-specific configuration
@@ -2963,6 +2671,7 @@ Configure Alt+Space shortcuts for window control in Vim on Windows
 ```vim
 set winaltkeys=yes
 ```
+
 ```lua
 vim.g.winaltkeys = 'yes'
 ```
@@ -2980,6 +2689,7 @@ set backspace=indent,eol,start
 # Or
 set backspace=2
 ```
+
 ```lua
 vim.opt.backspace = {'indent', 'eol', 'start'}
 ```
@@ -3004,6 +2714,7 @@ setlocal errorformat=%f:%l:\ %m
 " Filetype plugin to set default compiler
 compiler xmllint
 ```
+
 ```lua
 -- XML Lint Compiler Plugin
 if vim.g.current_compiler then
@@ -3030,6 +2741,7 @@ Set up custom errorformat to parse Intel Fortran compiler error messages correct
 set efm=%E%.%#rror:\ %f\,\ line\ %l:\ %m,\%-C%.%#,\%-Z\%p^
 let isf="@,48-57,/,.,-,_,+,#,^,,$,%,~,="
 ```
+
 ```lua
 -- Configure errorformat for Intel Fortran compiler
 vim.opt.errorformat:append('%E%.%#rror: %f, line %l: %m,%-C%.%#,%-Z%p^')
@@ -3056,6 +2768,7 @@ nmap <F10> :clist<CR>
 nmap <F11> :cprev<CR>
 nmap <F12> :cnext<CR>
 ```
+
 ```lua
 -- Lua equivalent for error handling and navigation
 vim.opt.errorformat = {
@@ -3083,6 +2796,7 @@ Configure Vim's errorformat to parse compiler and tool error messages, enabling 
 set errorformat+=%f:line %l\,col %c\,%trror -\ %m
 set errorformat+=%f:line %l\,col %c\,%tarning -\ %m
 ```
+
 ```lua
 -- Lua equivalent for errorformat configuration
 vim.o.errorformat = vim.o.errorformat .. ',%f:line %l\,col %c\,%trror -\ %m'
@@ -3104,6 +2818,7 @@ let &efm .= ',%E' . 'CMake Error at %f:%l (%m):'
 let &efm .= ',%Z' . 'Call Stack (most recent call first):'
 let &efm .= ',%C' . ' %m'
 ```
+
 ```lua
 -- Lua equivalent for complex errorformat
 vim.o.errorformat = table.concat({
@@ -3134,6 +2849,7 @@ set smartcase
 set backspace=indent,eol,start
 set autoindent
 ```
+
 ```lua
 -- Equivalent Neovim configuration
 vim.opt.compatible = false
@@ -3164,6 +2880,7 @@ set number
 set ruler
 set hlsearch
 ```
+
 ```lua
 -- Enhance Vim usability
 vim.opt.ignorecase = true
@@ -3189,6 +2906,7 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 " Makefile-specific setting
 autocmd FileType make setlocal noexpandtab
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'python',
@@ -3219,6 +2937,7 @@ Create custom syntax extensions in the 'after' runtime directory to prevent losi
 " Place custom syntax extensions in after/syntax/
 " e.g., after/syntax/c.vim
 ```
+
 ```lua
 -- Use vim.fn.stdpath('config') .. '/after/syntax/'
 -- Create language-specific syntax extension files
@@ -3235,6 +2954,7 @@ Reduce Vim startup time in remote/telnet sessions by disabling X server connecti
 ```vim
 vim -X --noplugin
 ```
+
 ```lua
 -- Use command line arguments to speed up Vim startup
 -- vim -X --noplugin
@@ -3255,6 +2975,7 @@ Modify filename character set to enable better filename completion in shell scri
 ```vim
 set isfname-==
 ```
+
 ```lua
 vim.opt.isfname:remove('=')
 ```
@@ -3273,6 +2994,7 @@ augroup filetypedetect
   au! BufNewFile,BufRead *.cmd if getline(1) =~ '^/\*' | setf rexx | else | setf dosbatch | endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('CustomFiletypeDetect', { clear = true })
 
@@ -3314,6 +3036,7 @@ Understand the order of filetype detection across different runtime path locatio
 " 4. System fallback definitions
 " 5. User-specific fallback definitions
 ```
+
 ```lua
 -- Note: Filetype detection order remains the same in Neovim
 -- Use vim.api.nvim_create_autocmd() with appropriate group and priority
@@ -3333,6 +3056,7 @@ Resolve .vimrc configuration issues in Cygwin by either storing settings in .vir
 # Option 2: Add alias to shell config
 echo "alias vi=vim" >> ~/.bashrc
 ```
+
 ```lua
 -- Create alias in shell config
 -- In Lua, this would typically be done in shell configuration
@@ -3345,91 +3069,12 @@ echo "alias vi=vim" >> ~/.bashrc
 # Category: configuration
 # Tags: key-mapping, troubleshooting, insert-mode
 ---
-Check and remove unwanted backspace key mappings that might interfere with normal editing
-
-```vim
-" Check backspace mappings
-:verbose imap <BS>
-" Remove problematic mapping
-:iunmap <BS>
-```
-```lua
--- Check backspace mappings
-vim.cmd('verbose imap <BS>')
--- Remove problematic mapping
-vim.keymap.del('i', '<BS>')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_Backspace)
-***
-# Title: Fix Broken Syntax Highlighting
-# Category: configuration
-# Tags: syntax, performance, highlighting
----
-Provides multiple methods to fix syntax highlighting when it becomes incorrect, with options for performance and accuracy
-
-```vim
-" Method 1: Sync from start of file
-autocmd BufEnter * :syntax sync fromstart
-
-" Method 2: Quick mapping to fix highlighting
-noremap <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <F12> <C-o>:syntax sync fromstart<CR>
-
-" Method 3: Sync with a specific number of lines
-syntax sync minlines=200
-```
-```lua
--- Method 1: Sync from start of file
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = '*',
-  callback = function()
-    vim.cmd('syntax sync fromstart')
-  end
-})
-
--- Method 2: Quick mapping to fix highlighting
-vim.keymap.set('n', '<F12>', ':syntax sync fromstart<CR>', { desc = 'Fix syntax highlighting' })
-vim.keymap.set('i', '<F12>', '<C-o>:syntax sync fromstart<CR>', { desc = 'Fix syntax highlighting' })
-
--- Method 3: Sync with a specific number of lines
-vim.o.synmaxline = 200
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_Syntax_Highlighting)
-***
-# Title: Fix Arrow Keys in Remote Shell Vim
-# Category: configuration
-# Tags: terminal, remote-shell, key-mapping
----
-Resolve arrow key issues in Vim when using remote shells or terminals that display unexpected characters
-
-```vim
-" Solution 2: Dynamically set terminal key codes
-set t_ku=^[OA
-set t_kd=^[OB
-set t_kr=^[OC
-set t_kl=^[OD
-```
-```lua
--- Lua equivalent for terminal key code configuration
-vim.o.t_ku = '\x1bOA'
-vim.o.t_kd = '\x1bOB'
-vim.o.t_kr = '\x1bOC'
-vim.o.t_kl = '\x1bOD'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_arrow_keys_that_display_A_B_C_D_on_remote_shell)
-***
-# Title: Ensure Vim Compatibility Mode is Off
-# Category: configuration
-# Tags: compatibility, settings
----
 Disable Vi compatibility mode to enable modern Vim features and fix common issues like backspace behavior
 
 ```vim
 set nocompatible
 ```
+
 ```lua
 vim.o.compatible = false
 ```
@@ -3446,6 +3091,7 @@ Resolve arrow key navigation problems in terminal Vim/Neovim by adjusting termin
 :set term=builtin_ansi
 :set timeout ttimeoutlen=100 timeoutlen=5000
 ```
+
 ```lua
 -- Set terminal type to resolve key navigation issues
 vim.o.term = 'builtin_ansi'
@@ -3467,6 +3113,7 @@ Disable Vi compatibility mode to fix broken key mappings in remote SSH sessions
 ```vim
 :set nocompatible
 ```
+
 ```lua
 -- Disable Vi compatibility mode
 vim.o.compatible = false
@@ -3478,27 +3125,13 @@ vim.o.compatible = false
 # Category: configuration
 # Tags: diff, external-tools, system-integration
 ---
-Clear diffexpr to use default system diff program, resolving Windows-specific diff issues
-
-```vim
-set diffexpr=
-```
-```lua
-vim.o.diffexpr = ''
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_error_E97_Cannot_create_diffs_under_Windows)
-***
-# Title: Fix Temp File Errors on Windows
-# Category: configuration
-# Tags: windows, environment, file-operations
----
 Resolve Vim temporary file creation issues by explicitly setting the temp directory with write permissions
 
 ```vim
 let $TMP="c:/tmp"
 set directory=.,$TMP,$TEMP
 ```
+
 ```lua
 vim.env.TMP = "c:/tmp"
 vim.opt.directory = { ".", vim.env.TMP, vim.env.TEMP }
@@ -3516,6 +3149,7 @@ Modify Synaptics driver configuration to enable proper scrolling in Vim split wi
 ; Add to tp4table.dat file in Synaptics driver directory
 *,*,gvim.exe,*,*,*,WheelStd,0,9
 ```
+
 ```lua
 -- Note: This is a driver-level configuration
 -- Recommend editing tp4table.dat manually or using Synaptics driver settings
@@ -3532,6 +3166,7 @@ Ensure consistent syntax highlighting by rescanning buffer from start, useful fo
 ```vim
 autocmd BufEnter * :syntax sync fromstart
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
@@ -3551,6 +3186,7 @@ Improve syntax highlighting speed by searching backwards a configurable number o
 ```vim
 syntax sync minlines=200
 ```
+
 ```lua
 vim.opt.synmaxline = 200
 ```
@@ -3573,6 +3209,7 @@ autocmd FileType javascript syn sync ccomment javaScriptComment
 " Set minimum lines to search backwards
 syntax sync minlines=200
 ```
+
 ```lua
 -- Sync syntax highlighting from start of file
 vim.api.nvim_create_autocmd('BufEnter', {
@@ -3606,6 +3243,7 @@ Increase redraw time to ensure syntax highlighting works on complex or large fil
 " Increase redraw time
 set redrawtime=10000
 ```
+
 ```lua
 -- Increase redraw time
 vim.opt.redrawtime = 10000
@@ -3622,6 +3260,7 @@ Resolve issues with Cygwin executable paths when launching Vim from Windows 7 ta
 ```vim
 # No direct Vimscript implementation - this is a Windows shortcut configuration tip
 ```
+
 ```lua
 -- Lua tip: Ensure proper path configuration in Windows environment
 -- Modify taskbar shortcut 'Start in' property to 'C:\Users\username\Documents'
@@ -3638,6 +3277,7 @@ Automatically set syntax highlighting for files with non-standard extensions usi
 ```vim
 autocmd BufNewFile,BufRead *.meals set syntax=json
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
   pattern = '*.meals',
@@ -3660,6 +3300,7 @@ Quickly set syntax highlighting for files Vim doesn't automatically recognize
 :set syntax=perl
 :set syntax=html
 ```
+
 ```lua
 vim.opt.syntax = 'php'  -- Or
 vim.cmd('set syntax=perl')
@@ -3681,6 +3322,7 @@ elseif getline(1) =~ '\/\*'
   set ft=c
 endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufRead', {
   callback = function()
@@ -3708,6 +3350,7 @@ Ensure a file is always interpreted as Latin1 encoding by adding a line with upp
 " Or from command line
 :setlocal fenc=latin1
 ```
+
 ```lua
 -- Lua equivalent for setting file encoding
 vim.opt.fileencoding = 'latin1'
@@ -3722,31 +3365,12 @@ vim.cmd('e ++enc=latin1 file.txt')
 # Category: configuration
 # Tags: filetype, syntax-highlighting, fortran
 ---
-Manually set Fortran source form for .for files to fix syntax highlighting issues
-
-```vim
-au BufRead,BufNewFile *.for let b:fortran_fixed_source=1
-```
-```lua
-vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
-  pattern = '*.for',
-  callback = function()
-    vim.b.fortran_fixed_source = 1
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fortran_highlighting_problems)
-***
-# Title: Toggle Options Easily
-# Category: configuration
-# Tags: options, toggle, configuration
----
 Quick way to toggle boolean options like spell checking on and off
 
 ```vim
 set spell!
 ```
+
 ```lua
 vim.opt.spell = not vim.opt.spell:get()
 ```
@@ -3763,6 +3387,7 @@ Add or remove option flags using += and -= operators
 set listchars+=tab:>-  # Add tab display characters
 set listchars-=trail:_  # Remove trail character
 ```
+
 ```lua
 vim.opt.listchars:append({ tab = '>-' })
 vim.opt.listchars:remove('trail:')
@@ -3787,6 +3412,7 @@ map ^[[4~ <End>
 imap ^[[1~ <Home>
 imap ^[[4~ <End>
 ```
+
 ```lua
 if vim.env.TERM:match("screen") then
   vim.opt.term = "xterm"
@@ -3808,6 +3434,7 @@ Add special characters like colon to keyword definition for XML/namespace suppor
 ```vim
 set iskeyword+=:
 ```
+
 ```lua
 vim.opt.iskeyword:append(':')
 ```
@@ -3829,6 +3456,7 @@ if &term =~ "linux"
   endif
 endif
 ```
+
 ```lua
 if vim.env.TERM:match('linux') then
   vim.opt.t_Co = 16
@@ -3848,6 +3476,7 @@ Ignore trivial whitespace changes when using Vim's diff mode, reducing visual no
 ```vim
 set diffopt+=iwhite
 ```
+
 ```lua
 vim.opt.diffopt:append('iwhite')
 ```
@@ -3873,6 +3502,7 @@ if &term =~ "xterm"
   endif
 endif
 ```
+
 ```lua
 -- Configure terminal colors for Solaris
 if vim.o.term:match("xterm") then
@@ -3900,6 +3530,7 @@ Use environment variable to enable color support in Vim on Solaris and similar s
 set term=sun-color
 syntax on
 ```
+
 ```lua
 -- Set terminal type for color support
 vim.o.term = "sun-color"
@@ -3912,30 +3543,13 @@ vim.cmd.syntax("on")
 # Category: configuration
 # Tags: version-control, source-code, vim-development
 ---
-Demonstrates how to clone the official Vim source code repository using Mercurial, which allows developers to track and update Vim's source code directly
-
-```vim
-# Clone Vim repository
-hg clone http://hg.256bit.org/vim vim
-```
-```lua
--- Lua equivalent for shell command
--- Use os.execute or vim.fn.system to run shell commands
-vim.fn.system('hg clone http://hg.256bit.org/vim vim')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Getting_the_Vim_source_with_Mercurial)
-***
-# Title: Update Vim Source with Mercurial
-# Category: configuration
-# Tags: version-control, development, source-management
----
 Simple method to pull and update the latest Vim source code changes using Mercurial
 
 ```vim
 # Pull and update Vim source
 hg pull -u
 ```
+
 ```lua
 -- Lua equivalent for pulling updates
 vim.fn.system('cd ~/.build/hg/vim && hg pull -u')
@@ -3954,6 +3568,7 @@ Manually copy and configure missing X11 fonts for GTK Vim when fontconfig doesn'
 " cp /usr/X11R6/lib/X11/fonts/misc/6x13{,B,O}.pcf.gz ~/.fonts
 " Add ~/.fonts to ~/.fonts.conf
 ```
+
 ```lua
 -- Lua equivalent: Manual font configuration
 -- Steps remain similar, using system commands
@@ -3972,6 +3587,7 @@ Dynamically set the include path for C++ header files relative to the current fi
 ```vim
 let $INCLUDE = expand("%:p:h") . ";" . $INCLUDE
 ```
+
 ```lua
 -- Set include path dynamically for C++ projects
 vim.env.INCLUDE = vim.fn.expand('%:p:h') .. ';' .. (vim.env.INCLUDE or '')
@@ -3989,6 +3605,7 @@ Set up SSH tunneling for Subversion to work with TortoiseSVN on non-standard por
 # In Subversion config file
 ssh = $SVN_SSH "C:/Program Files/tortoisesvn/bin/tortoiseplink.exe"
 ```
+
 ```lua
 -- This is typically set in the Subversion config file, not directly in Neovim
 -- Lua equivalent would involve configuring SSH settings externally
@@ -4008,6 +3625,7 @@ set autoread
 " In visualstudioinvoke.vim
 set autoread
 ```
+
 ```lua
 vim.opt.autoread = true
 
@@ -4038,6 +3656,7 @@ nnoremap <S-F12> :so $VIMRUNTIME/plugins/MyPlugin.vim
 let &cpo = s:cpo_save
 unlet s:cpo_save
 ```
+
 ```lua
 -- Lua equivalent for safe plugin configuration
 local original_cpo = vim.o.cpo
@@ -4066,6 +3685,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 ```
+
 ```lua
 vim.opt.guioptions:remove('m')  -- remove menu bar
 vim.opt.guioptions:remove('T')  -- remove toolbar
@@ -4089,6 +3709,7 @@ syn region enType start=/`/hs=e+1 end=/`/he=s-1
 " In filetype.vim
 au BufNewFile,BufRead *.en setf en
 ```
+
 ```lua
 -- In ~/.config/nvim/ftdetect/en.lua
 vim.cmd('augroup en_filetype')
@@ -4119,6 +3740,7 @@ How to verify Vim installation details and system-wide customizations
 :version
 :scriptnames
 ```
+
 ```lua
 -- Check Vim version and loaded scripts
 vim.cmd('version')
@@ -4136,6 +3758,7 @@ Automatically create backup files when preparing patches by setting patchmode op
 ```vim
 :set patchmode=.orig
 ```
+
 ```lua
 -- Set patchmode to automatically create .orig backup files
 vim.opt.patchmode = '.orig'
@@ -4160,6 +3783,7 @@ endfunction
 au BufRead     *.txt let b:fenc_at_read=&fileencoding
 au BufWinEnter *.txt call CheckFileEncoding()
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufRead', {
   pattern = '*.txt',
@@ -4192,6 +3816,7 @@ syntax off
 set nohlsearch
 set t_Co=0
 ```
+
 ```lua
 vim.cmd('syntax off')
 vim.opt.hlsearch = false
@@ -4209,6 +3834,7 @@ Temporary method to turn off syntax highlighting during an editing session
 ```vim
 :set syntax=
 ```
+
 ```lua
 vim.cmd('set syntax=')
 ```
@@ -4218,24 +3844,6 @@ vim.cmd('set syntax=')
 # Title: Configure IPython Editor in Vim
 # Category: configuration
 # Tags: python, editor-config, external-tools
----
-Set Vim (specifically gvim) as the default editor for IPython's %edit command
-
-```vim
-" In ipython_config.py
-c.TerminalInteractiveShell.editor = 'gvim -f'
-```
-```lua
--- For modern IPython configuration
--- Typically done in Python config file, not directly in Neovim
--- But you can set external editor in IPython settings
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/IPython_integration)
-***
-# Title: Configure External Diff Tool
-# Category: configuration
-# Tags: diff, external-tool, system-integration
 ---
 Properly set up an external diff tool, particularly for Windows systems, to ensure reliable file comparison
 
@@ -4249,6 +3857,7 @@ function MyDiff()
   if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
 endfunction
 ```
+
 ```lua
 -- Clear default diff expression
 vim.o.diffexpr = ''
@@ -4277,6 +3886,7 @@ Configure completion to insert the longest common text of match candidates
 ```vim
 set completeopt+=longest
 ```
+
 ```lua
 vim.opt.completeopt:append('longest')
 ```
@@ -4299,6 +3909,7 @@ Customize how Vim handles number increments/decrements by modifying nrformats op
 " Remove octal format
 :set nrformats-=octal
 ```
+
 ```lua
 -- View current number format options
 vim.pretty_print(vim.o.nrformats)
@@ -4332,6 +3943,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 ```
+
 ```lua
 -- Spaces-only indentation
 vim.opt.expandtab = true
@@ -4362,6 +3974,7 @@ Key options that control how indentation works in Vim/Neovim
 " shiftwidth: indent width for >> << and auto-indent
 " expandtab: use spaces instead of tabs
 ```
+
 ```lua
 -- Detailed explanation of indentation settings
 -- Use vim.opt to configure similar settings in Neovim
@@ -4392,6 +4005,7 @@ let java_ignore_javadoc=1
 let java_highlight_functions="style"
 let java_minlines = 150
 ```
+
 ```lua
 -- Java indentation settings
 vim.opt.autoindent = true
@@ -4430,6 +4044,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 ```
+
 ```lua
 -- Indentation without tabs
 vim.opt.expandtab = true
@@ -4463,6 +4078,7 @@ set smartindent
 # Precise C-style indentation
 set cindent
 ```
+
 ```lua
 -- Basic auto-indentation
 vim.opt.autoindent = true
@@ -4486,6 +4102,7 @@ Examine Vim configuration and system-wide customizations before installation
 :version
 :scriptnames
 ```
+
 ```lua
 -- Print Vim version information
 print(vim.version())
@@ -4518,6 +4135,7 @@ set noerrorbells
 set laststatus=2
 set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ line:%l\ col:%c%V
 ```
+
 ```lua
 vim.opt.compatible = false
 vim.opt.history = 50
@@ -4546,6 +4164,7 @@ Strategy for installing and managing multiple Vim/Neovim versions on the same sy
 set VIM=C:\PROGRA~1\vim
 path %VIM%\vim63;%PATH%
 ```
+
 ```lua
 -- Lua equivalent focuses on environment management
 -- Use vim.env to manage environment variables
@@ -4566,6 +4185,7 @@ Set up Vim/GVim as an external diff tool for TortoiseCVS on Windows
 @echo off
 "C:\Program Files\Vim\vim63\GVim.exe" -d %1 %2
 ```
+
 ```lua
 -- For TortoiseCVS diff configuration
 -- Navigate to TortoiseCVS Preferences
@@ -4584,6 +4204,7 @@ Use VsVim or ViEmu to get Vim-like editing commands in Visual Studio
 ```vim
 -- Recommendation to install VsVim extension
 ```
+
 ```lua
 -- Recommend installing VsVim extension for Visual Studio
 -- No direct Neovim equivalent, as this is IDE-specific
@@ -4595,46 +4216,13 @@ Use VsVim or ViEmu to get Vim-like editing commands in Visual Studio
 # Category: configuration
 # Tags: java, mobile-development, compiler-integration
 ---
-Set up Vim mappings and configurations for J2ME mobile development, including compilation, verification, and emulation shortcuts
-
-```vim
-set makeprg=jikes\ -nowarn\ -classpath\ tmpclasses\ -d\ tmpclasses\ -sourcepath\ src\ -Xstdout\ +E\ %
-set errorformat=%f:%l:%c:%*\d:%*\d:%*\s%m
-
-map <M-1> :make<CR>:cw5<CR>
-map <M-2> :!preverify -classpath c:\wtk22\lib\cldcapi10.jar;c:\wtk22\lib\midpapi10.jar -d bin tmpclasses<CR>
-map <M-3> :!c:\wtk22\bin\emulator.exe -classpath bin -Xdescriptor:zhanguo.jad<CR>
-
-cmap %/ <C-R>=expand("%:p:h")."/"<CR>
-```
-```lua
--- J2ME Development Configuration
-vim.o.makeprg = 'jikes -nowarn -classpath tmpclasses -d tmpclasses -sourcepath src -Xstdout +E %'
-vim.o.errorformat = '%f:%l:%c:%*%d:%*%d:%*s%m'
-
--- Mappings for compilation, verification, and emulation
-vim.keymap.set('n', '<M-1>', ':make<CR>:cw5<CR>', { desc = 'Compile J2ME project' })
-vim.keymap.set('n', '<M-2>', ':!preverify -classpath c:\wtk22\lib\cldcapi10.jar;c:\wtk22\lib\midpapi10.jar -d bin tmpclasses<CR>', { desc = 'Preverify J2ME classes' })
-vim.keymap.set('n', '<M-3>', ':!c:\wtk22\bin\emulator.exe -classpath bin -Xdescriptor:zhanguo.jad<CR>', { desc = 'Run J2ME emulator' })
-
--- Expand current file's directory
-vim.keymap.set('c', '%/', function()
-  return vim.fn.expand('%:p:h') .. '/'
-end, { expr = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/J2ME_development)
-***
-# Title: Handle Filenames with Spaces
-# Category: configuration
-# Tags: file-handling, settings
----
 Modify isfname option to handle filenames with spaces
 
 ```vim
 " Allow spaces in filenames
 set isfname+=32
 ```
+
 ```lua
 -- Allow spaces in filenames
 vim.opt.isfname:append(32)
@@ -4651,6 +4239,7 @@ Ensure Vim GUI doesn't fork new processes, which can be important for external c
 ```vim
 set guioptions +=f
 ```
+
 ```lua
 vim.opt.guioptions:append('f')
 ```
@@ -4667,6 +4256,7 @@ Create an encrypted password file with automatic folding to hide sensitive infor
 " Modeline for secure password file
 vi: noswapfile bufhidden=wipe tw=0 fdm=expr foldexpr=getline(v:lnum)=~'^\s\|^$'
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadPre', {
   pattern = '*',
@@ -4700,6 +4290,7 @@ setlocal tabstop=4
 setlocal shiftwidth=4
 setlocal expandtab
 ```
+
 ```lua
 -- Enable filetype plugins
 vim.cmd('filetype plugin on')
@@ -4722,6 +4313,7 @@ Ensure filetype detection and plugin loading are enabled for language-specific c
 " Enable filetype detection and indent plugins
 filetype plugin indent on
 ```
+
 ```lua
 -- Enable filetype detection and indent plugins
 vim.cmd('filetype plugin indent on')
@@ -4738,6 +4330,7 @@ Create separate Vim server instances for each desktop workspace
 ```vim
 vim --servername desktop_0 --remote-tab-silent file.txt
 ```
+
 ```lua
 -- Lua function to create desktop-specific Vim server
 local function create_desktop_server()
@@ -4759,6 +4352,7 @@ if version >= 600
  set foldcolumn=2
 endif
 ```
+
 ```lua
 if vim.fn.has('nvim-0.6') == 1 then
   vim.opt.foldcolumn = '2'
@@ -4771,32 +4365,13 @@ end
 # Category: configuration
 # Tags: script-loading, runtime, error-handling
 ---
-Safely source runtime scripts only if they exist, preventing errors in different environments
-
-```vim
-if filereadable($VIMRUNTIME . "/macros/matchit.vim")
- source $VIMRUNTIME/macros/matchit.vim
-endif
-```
-```lua
-local matchit_path = vim.fn.expand('$VIMRUNTIME/macros/matchit.vim')
-if vim.fn.filereadable(matchit_path) == 1 then
-  vim.cmd.source(matchit_path)
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Loading_scripts_in_vimrc_safely)
-***
-# Title: Save Macros Persistently
-# Category: configuration
-# Tags: macro, persistence, vimrc
----
 Permanently save macros in your Neovim configuration for reuse across sessions
 
 ```vim
 " Save macro to register in vimrc
 let @a='0fa'
 ```
+
 ```lua
 -- Save macro persistently
 vim.g.saved_macro_a = '0fa'
@@ -4817,6 +4392,7 @@ Create a symbolic link to easily switch between different Vim versions without c
 # Use linkd utility to create symbolic link
 # linkd current vim70c
 ```
+
 ```lua
 -- In Neovim, this is more commonly handled through package managers
 -- Like lazy.nvim or Mason for version management
@@ -4835,6 +4411,7 @@ Automatically save macros between Vim sessions using viminfo or manually via vim
 ```vim
 let @a='0fa'  # Manually save macro to register a
 ```
+
 ```lua
 -- Save macro persistently
 vim.g.saved_macro_a = '0fa'  -- Store in global variable
@@ -4852,6 +4429,7 @@ Prevents arrow keys from exiting visual mode in Windows Vim/Neovim environments
 ```vim
 set keymodel-=stopsel
 ```
+
 ```lua
 vim.o.keymodel = vim.o.keymodel:gsub('stopsel', '')
 ```
@@ -4867,6 +4445,7 @@ Configure Vim to correctly display non-ASCII characters like umlauts in console 
 ```vim
 set isprint=@,128-255
 ```
+
 ```lua
 vim.opt.isprint:append({128, 255})
 ```
@@ -4886,6 +4465,7 @@ set makeprg=build\ -script\ script.bld\ -XO\ build.err
 " Find CA850 errors and warnings
 set errorformat=%f\ %l\ %.%#rror:\ %t%n:%m,%f\ %l\ %.%#arning:\ %t%n:%m,%+Eld850:\ %.%#rror:\ %t%n:%m
 ```
+
 ```lua
 -- Set custom make program
 vim.opt.makeprg = 'build -script script.bld -XO build.err'
@@ -4919,6 +4499,7 @@ hi Normal guifg=White guibg=Black
 hi Comment guifg=Blue guibg=Black
 hi Constant guifg=#BB0000 guibg=Black
 ```
+
 ```lua
 -- Lua equivalent for consistent color configuration
 vim.opt.background = 'dark'
@@ -4942,6 +4523,7 @@ Modify Windows registry to make Vim the default editor for files with unregister
 [HKEY_CLASSES_ROOT\Unknown\shell\Open\Command]
 @="d:\\program files\\vim\\vim60\\gvim.exe \"%1\""
 ```
+
 ```lua
 -- For Neovim on Windows, use external registry edit
 -- Recommend using a .reg file or PowerShell script
@@ -4981,6 +4563,7 @@ endfunction
 map <F5> :Caps<CR>
 map <F6> :Mixed<CR>
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Caps', function()
   for char = string.byte('a'), string.byte('z') do
@@ -5017,6 +4600,7 @@ Generate and list TODO tags automatically across code files using ctags
 # In vimrc
 command TODO tselect /^todo djh
 ```
+
 ```lua
 -- Lua equivalent requires external ctags configuration
 -- Create a Lua function to list TODOs
@@ -5041,6 +4625,7 @@ Quickly toggle boolean Vim options with simple commands, useful for settings lik
 " Check current option value
 :set number?
 ```
+
 ```lua
 -- Toggle line numbers
 vim.opt.number = not vim.opt.number:get()
@@ -5067,6 +4652,7 @@ Multiple ways to manage boolean options like line numbers, with toggle and query
 " Query current option value
 :set number?
 ```
+
 ```lua
 -- Toggle line numbers
 vim.opt.number = true  -- Turn on
@@ -5081,79 +4667,6 @@ print(vim.opt.number:get())
 # Title: Disable Terminal Flow Control for Vim
 # Category: configuration
 # Tags: terminal, settings, workflow
----
-Prevent terminal from intercepting Ctrl-S, allowing it to work as a Vim shortcut
-
-```vim
-" Disable terminal flow control
-stty -ixon  # Add to .bashrc
-```
-```lua
--- For bash/zsh config
--- Add 'stty -ixon' to your shell's startup file
--- Alternatively, in Neovim terminal settings:
-vim.g.terminal_disable_flow_control = true
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_Ctrl-S_to_save_current_or_new_files)
-***
-# Title: Remap Caps Lock to Escape or Ctrl
-# Category: configuration
-# Tags: key-mapping, productivity
----
-Remapping Caps Lock to Escape or Ctrl can significantly improve typing efficiency and reduce hand strain in Vim
-
-```vim
-" No direct Vimscript mapping, this is an OS-level configuration
-```
-```lua
--- Use AutoHotkey or system-level key remapping
--- Neovim specific key mapping example:
-vim.keymap.set('n', '<CapsLock>', '<Esc>', { noremap = true, silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows)
-***
-# Title: Map CapsLock to Escape in X11 Systems
-# Category: configuration
-# Tags: key-mapping, productivity
----
-Remap CapsLock key to Escape for easier mode switching in Vim/Neovim, reducing hand movement
-
-```vim
-# Xmodmap configuration
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
-```
-```lua
--- Neovim doesn't directly handle X11 remapping
--- Use xmodmap in shell:
--- xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows)
-***
-# Title: Quick CapsLock to Escape Command
-# Category: configuration
-# Tags: key-mapping, productivity
----
-One-line command to remap CapsLock to Escape using xmodmap
-
-```vim
-# Shell command
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-```
-```lua
--- Shell command remains the same
--- Neovim integration via vim.fn.system()
-vim.fn.system('xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_XWindows)
-***
-# Title: Remap CapsLock to Escape System-Wide
-# Category: configuration
-# Tags: key-mapping, productivity, system-config
 ---
 Remap CapsLock key to Escape system-wide, which is particularly useful for Vim/Neovim users to reduce hand movement when switching modes
 
@@ -5209,6 +4722,7 @@ Store key mappings in configuration files to persist across Vim sessions, with o
 " Add mappings to .vimrc
 map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 ```
+
 ```lua
 -- Add mappings to init.lua
 vim.keymap.set('n', '<F2>', function()
@@ -5230,6 +4744,7 @@ i
 Ctrl-K + Special Key (e.g., Ctrl-Left)
 " This will reveal the key name like <C-Left>
 ```
+
 ```lua
 -- Use vim.inspect() to help discover key names
 -- In insert mode, Ctrl-K followed by a special key reveals its name
@@ -5242,33 +4757,13 @@ Ctrl-K + Special Key (e.g., Ctrl-Left)
 # Category: configuration
 # Tags: key-mapping, special-keys, vim-reference
 ---
-Reference for special key names in Vim, useful for creating cross-platform key mappings
-
-```vim
-" Navigation Keys:
-" <Insert>, <Del>, <Home>, <End>, <PageUp>, <PageDown>
-
-" Numeric Keypad Keys:
-" <kDivide>, <kMultiply>, <kHome>, <kEnd>, etc.
-```
-```lua
--- Special key names can be used directly in Neovim mappings
--- Example mapping:
-vim.keymap.set('n', '<Home>', ':echo "Home key pressed"', {})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mappings)
-***
-# Title: Show Matching Braces Instantly
-# Category: configuration
-# Tags: ui, editing, visual-feedback
----
 Briefly highlight matching braces when typing or cursor moves over them
 
 ```vim
 set showmatch
 set matchtime=3  " Duration of highlight in tenths of a second"
 ```
+
 ```lua
 vim.opt.showmatch = true
 vim.opt.matchtime = 3
@@ -5294,6 +4789,7 @@ else
   endif
 endif
 ```
+
 ```lua
 if vim.g.neovide or vim.g.gnvim then
   vim.o.lines = 999
@@ -5332,6 +4828,7 @@ set keymodel=behave
 set selectmode=key
 " Or use: :behave mswin
 ```
+
 ```lua
 vim.o.keymodel = 'behave'
 vim.o.selectmode = 'key'
@@ -5351,6 +4848,7 @@ Modelines allow you to set Vim options specific to individual files, overriding 
 # vim: set expandtab ts=4 sw=4:
 # Add this near top/bottom of file to set tab behavior
 ```
+
 ```lua
 -- In Neovim, modelines work similarly
 -- Add to file: # vim: set expandtab ts=4 sw=4:
@@ -5376,6 +4874,7 @@ function! AppendModeline()
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 ```
+
 ```lua
 function _G.append_modeline()
   local modeline = string.format(
@@ -5418,6 +4917,7 @@ endfunction
 
 noremap <leader>w :call ToggleWrap()<CR>
 ```
+
 ```lua
 function _G.toggle_wrap()
   if vim.wo.wrap then
@@ -5446,6 +4946,7 @@ Use <bar> to chain commands in Vim configuration and key mappings
 ```vim
 map <F6> <ESC>:echo "test" <bar> :echo "test2"
 ```
+
 ```lua
 -- In Lua, use vim.keymap.set with multiple commands
 vim.keymap.set('n', '<F6>', function()
@@ -5465,6 +4966,7 @@ Automatically break hard links when editing files, creating a backup to prevent 
 ```vim
 set backupcopy=auto,breakhardlink
 ```
+
 ```lua
 vim.opt.backupcopy = 'auto,breakhardlink'
 ```
@@ -5481,6 +4983,7 @@ Practical advice for learning Vim efficiently and expanding your skills
 # Create .vimrc
 touch $HOME/.vimrc
 ```
+
 ```lua
 -- Create initial Neovim config
 vim.fn.mkdir(vim.fn.expand('~/.config/nvim'), 'p')
@@ -5494,26 +4997,6 @@ vim.fn.mkdir(vim.fn.expand('~/.config/nvim'), 'p')
 # Category: configuration
 # Tags: ui, font-configuration, macos
 ---
-Set custom fonts and font size for Neovim with optional antialiasing
-
-```vim
-set guifont=Monaco:h14
-set antialias
-```
-```lua
--- Set font in Neovim (requires Neovim GUI like Neovide)
-vim.opt.guifont = "Monaco:h14"
-
--- Optional: Enable/disable font antialiasing
--- Note: Specific antialiasing might require GUI-specific configuration
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Nicer_looking_fonts_on_MacOSX)
-***
-# Title: Toggle Line Numbers Quickly
-# Category: configuration
-# Tags: line-numbers, ui, key-mapping
----
 Easily toggle line numbers on and off with a single key mapping
 
 ```vim
@@ -5523,6 +5006,7 @@ map gN :set nonu<CR>
 " Alternative toggle version:
 map gn :set invnu<CR>
 ```
+
 ```lua
 -- Toggle line numbers
 vim.keymap.set('n', 'gn', function()
@@ -5548,6 +5032,7 @@ function! ShortEcho(msg)
   let &shortmess=saved
 endfunction
 ```
+
 ```lua
 -- Add T flag to shortmess option
 vim.opt.shortmess:append('T')
@@ -5567,29 +5052,13 @@ end
 # Category: configuration
 # Tags: completion, autocomplete, programming
 ---
-Enable language-aware autocompletion that provides intelligent suggestions based on context
-
-```vim
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-```
-```lua
-vim.cmd('filetype plugin on')
-vim.opt.omnifunc = 'syntaxcomplete#Complete'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Omni_Completion)
-***
-# Title: Use SuperTab for Easy Omni Completion
-# Category: configuration
-# Tags: completion, plugin, productivity
----
 Configure SuperTab to use context-aware or omnifunc completion with a simple keypress
 
 ```vim
 " Use Tab for context-aware completion
 let g:SuperTabDefaultCompletionType = "context"
 ```
+
 ```lua
 -- Configure SuperTab for context-aware completion
 vim.g.SuperTabDefaultCompletionType = "context"
@@ -5608,6 +5077,7 @@ set completeopt-=preview
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 ```
+
 ```lua
 vim.opt.completeopt:remove('preview')
 
@@ -5636,6 +5106,7 @@ REGEDIT4
 [HKEY_CLASSES_ROOT\Folder\shell\VimHere\command]
 @="C:\\Program Files\\Vim\\vim72\\gvim.exe ."
 ```
+
 ```lua
 -- For Neovim, this is typically handled by external tools or scripts
 -- You might use a system-specific script or AutoHotkey to achieve similar functionality
@@ -5653,6 +5124,7 @@ Remap 'K' in Perl files to use perldoc for function lookups instead of man pages
 ```vim
 au FileType perl setlocal keywordprg=perldoc\ -T\ -f
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'perl',
@@ -5682,6 +5154,7 @@ Extensions=nodirs;
 Dependencies=vim;
 EscapeSpaces=true;
 ```
+
 ```lua
 -- Lua equivalent: Create ~/.local/share/nemo/actions/vim.nemo_action
 -- Use vim.fn.writefile() to create the file programmatically
@@ -5711,6 +5184,7 @@ Prevent garbage characters when viewing man pages by disabling SGR (ANSI escape 
 ```vim
 let $GROFF_NO_SGR=1
 ```
+
 ```lua
 vim.env.GROFF_NO_SGR = '1'
 ```
@@ -5728,6 +5202,7 @@ Set Vim's path option to easily find and open include files or project files
 set path+=src/**
 set path+=/usr/include
 ```
+
 ```lua
 -- Configure path for file searching
 vim.opt.path:append('src/**')
@@ -5740,47 +5215,6 @@ vim.opt.path:append('/usr/include')
 # Category: configuration
 # Tags: windows, customization, user-settings
 ---
-Create user-specific file associations in Windows registry without affecting other users, allowing personalized file type handling
-
-```vim
-" Conceptual Vim script for .c file association
-" Requires manual registry editing
-```
-```lua
--- Conceptual Lua representation of user-specific file association
--- Typically requires external registry manipulation
--- Demonstrates principle of user-specific configuration
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_files_with_existing_Gvim_window_in_Windows)
-***
-# Title: Easy vimrc File Management
-# Category: configuration
-# Tags: configuration, file-management, vim-setup
----
-Quickly open and source your vimrc file using environment variables
-
-```vim
-" Open vimrc
-:e $MYVIMRC
-
-" Source vimrc without restarting
-:so $MYVIMRC
-```
-```lua
--- Open vimrc
-vim.cmd.edit(vim.env.MYVIMRC)
-
--- Source vimrc
-vim.cmd.source(vim.env.MYVIMRC)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_vimrc_file)
-***
-# Title: GUI-Specific Configuration
-# Category: configuration
-# Tags: configuration, gui, display
----
 Conditionally set GUI-specific options when running gvim/neovide
 
 ```vim
@@ -5789,6 +5223,7 @@ if has('gui_running')
   colorscheme elflord
 endif
 ```
+
 ```lua
 if vim.g.gui_running then
   vim.opt.guioptions:remove('T')  -- no toolbar
@@ -5808,6 +5243,7 @@ Generate a CSV file listing scripts loaded during Vim startup to optimize launch
 " Use startup_profile plugin
 :StartupProfile
 ```
+
 ```lua
 -- Alternative built-in method
 vim.cmd('vim --startuptime startup_time.log')
@@ -5827,6 +5263,7 @@ augroup CustomColorOverride
   autocmd ColorScheme * highlight Normal ctermbg=NONE guifg=lightgrey guibg=black | highlight MatchParen cterm=bold ctermfg=red ctermbg=NONE gui=bold guifg=red guibg=NONE
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('CustomColorOverride', { clear = true })
 vim.api.nvim_create_autocmd('ColorScheme', {
@@ -5851,6 +5288,7 @@ Download and integrate PHP manual as Vim help files for instant function referen
 " Put php_manual.txt in vim/doc folder
 :helptags /path/to/vim/doc
 ```
+
 ```lua
 -- For Neovim, add PHP doc path to runtimepath
 vim.opt.runtimepath:append('path/to/php/doc')
@@ -5875,6 +5313,7 @@ set keywordprg=~/.vim/php_doc
 FUNCTION=`echo $1 | sed 's/_/-/g'`
 lynx -dump -nolist http://www.php.net/manual/en/print/function.$FUNCTION.php | sed -n /^$1/,/^.*User\ Contributed\ Notes/p | grep -v 'User\ Contributed\ Notes'
 ```
+
 ```lua
 -- Configure PHP function documentation lookup
 vim.api.nvim_create_autocmd('FileType', {
@@ -5918,6 +5357,7 @@ set pastetoggle=<F2>
 nnoremap <F2> :set invpaste paste?<CR>
 set showmode
 ```
+
 ```lua
 -- Set pastetoggle key
 vim.o.pastetoggle = '<F2>'
@@ -5943,6 +5383,7 @@ if serverlist() =~? "\n."
   echo "MyWarning: Another copy of gvim or Vim is probably loaded!"
 endif
 ```
+
 ```lua
 -- Check for existing Vim server instances
 if #vim.fn.serverlist() > 1 then
@@ -5961,6 +5402,7 @@ Configure Vim to use KDE's kprinter for printing, which provides a consistent pr
 ```vim
 set printexpr=system('kprinter '\.'\ '\.v:fname_in)\.delete(v:fname_in)\.+\.v:shell_error
 ```
+
 ```lua
 vim.o.printexpr = 'system("kprinter " . v:fname_in) . delete(v:fname_in) + v:shell_error'
 ```
@@ -5977,6 +5419,7 @@ Disable PuTTY's application keypad mode to ensure numeric keypad works correctly
 " No direct Vim configuration needed
 " Configure in PuTTY settings
 ```
+
 ```lua
 -- Requires manual PuTTY configuration:
 -- 1. Open PuTTY Configuration
@@ -6003,6 +5446,7 @@ fu ShowTab()
   return TabLevel
 endf
 ```
+
 ```lua
 vim.opt.statusline = vim.o.statusline .. '%{v:lua.ShowTab()}'
 
@@ -6027,6 +5471,7 @@ function! QtClassDoc()
  	silent execute "!opera -pd .opera-qt -newpage " . qt_dir . class . ".html &>/dev/null" . " &" | redraw!
 endfunction
 ```
+
 ```lua
 function _G.qt_class_doc()
 	local qt_dir = "/usr/share/qt4/doc/html/"
@@ -6052,6 +5497,7 @@ export PSQL_EDITOR=vim
 # For older psql versions with syntax highlighting
 export PSQL_EDITOR='vim +"set syntax=sql"'
 ```
+
 ```lua
 -- This is an environment variable setting, not directly a Lua/Neovim configuration
 -- Set in shell or .bashrc/.zshrc
@@ -6063,27 +5509,6 @@ export PSQL_EDITOR='vim +"set syntax=sql"'
 # Category: configuration
 # Tags: session-management, workflow, project
 ---
-Create lightweight project sessions by saving and loading individual tab page configurations
-
-```vim
-set sessionoptions-=tabpages
-:mksession sub-project.vim
-:so sub-project.vim
-```
-```lua
--- Remove tabpages from session options
-vim.o.sessionoptions = vim.o.sessionoptions:gsub('tabpages', '')
--- Save and load session
-vim.cmd('mksession sub-project.vim')
-vim.cmd('source sub-project.vim')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_tips_for_using_tab_pages)
-***
-# Title: Customize File Path Detection
-# Category: configuration
-# Tags: file-operations, configuration, path-handling
----
 Modify 'isfname' and 'path' settings to improve file detection, especially with complex paths or spaces
 
 ```vim
@@ -6093,6 +5518,7 @@ set isfname+=32
 " Add path for include files
 set path+=C:/DOCUME~1/MYUSER~1/MYDOCU~1
 ```
+
 ```lua
 -- Customize isfname to include space character
 vim.opt.isfname:append(32)
@@ -6113,6 +5539,7 @@ Configure syntax synchronization to improve highlighting accuracy for specific f
 syntax sync minlines=200
 autocmd FileType c let c_minlines=500
 ```
+
 ```lua
 vim.cmd('syntax sync minlines=200')
 vim.api.nvim_create_autocmd('FileType', {
@@ -6137,6 +5564,7 @@ if exists("loaded_myplugin")
 endif
 let loaded_myplugin = 1
 ```
+
 ```lua
 if vim.g.loaded_myplugin then
   return
@@ -6155,6 +5583,7 @@ Use the Windows/Super key as an additional Escape key for easier mode switching
 ```vim
 xmodmap -e 'keysym Super_L = Escape'
 ```
+
 ```lua
 -- System-level key remapping
 -- Can be added to system startup scripts
@@ -6172,6 +5601,7 @@ Configure Vim to store swap and backup files in specific directories, keeping yo
 set backupdir=./.backup,.,/tmp
 set directory=.,./.backup,/tmp
 ```
+
 ```lua
 vim.opt.backupdir = {'./.backup', '.', '/tmp'}
 vim.opt.directory = {'.', './.backup', '/tmp'}
@@ -6188,6 +5618,7 @@ Use double path separators to ensure unique swap file names when editing files w
 ```vim
 set directory=~/.backup//
 ```
+
 ```lua
 vim.opt.directory = {'~/.backup//'}
 ```
@@ -6213,6 +5644,7 @@ set guioptions-=r
 " Toggle menu bar
 nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 ```
+
 ```lua
 -- Remove menu bar
 vim.o.guioptions = vim.o.guioptions:gsub('m', '')
@@ -6257,6 +5689,7 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 ```
+
 ```lua
 -- Restore cursor position configuration
 vim.opt.viminfo = "'10,\"100,:20,%,n~/.viminfo"
@@ -6289,6 +5722,7 @@ Resolve GNOME menu bar display issues in GVim by modifying Gnome settings or usi
 :set guioptions+=m  " Enable menu bar
 :set guioptions-=m  " Disable menu bar
 ```
+
 ```lua
 -- For menu bar toggle in Neovim
 vim.o.guioptions = vim.o.guioptions:gsub('m', '')  -- Toggle menu bar
@@ -6312,6 +5746,7 @@ Fix menu and toolbar overlay by modifying Gnome placement settings
 " To:
 " Dock=Toolbar\0,1,0,0\Menubar\0,0,0,0
 ```
+
 ```lua
 -- Lua cannot directly edit this file, but can help diagnose
 vim.notify('Check ~/.gnome2/Vim configuration for menu placement issues', vim.log.levels.WARN)
@@ -6334,6 +5769,7 @@ let g:screen_size_by_vim_instance = 1
 autocmd VimEnter * if g:screen_size_restore_pos == 1 | call ScreenRestore() | endif
 autocmd VimLeavePre * if g:screen_size_restore_pos == 1 | call ScreenSave() | endif
 ```
+
 ```lua
 -- Configuration options
 vim.g.screen_size_restore_pos = 1
@@ -6369,6 +5805,7 @@ Automatically save Vim session and viminfo when exiting, allowing you to restore
 au VimLeave * exe 'if strlen(v:this_session) | exe "wviminfo! " . v:this_session . ".viminfo" | else | exe "wviminfo! " . "~/.vim/session/" . g:myfilename . ".session.viminfo" | endif'
 au VimLeave * exe 'if strlen(v:this_session) | exe "mksession! " . v:this_session | else | exe "mksession! " . "~/.vim/session/" . g:myfilename . ".session" | endif'
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('VimLeave', {
   callback = function()
@@ -6401,6 +5838,7 @@ set indentkeys-=0#
 " Optional mapping for smartindent
 :inoremap # X<BS>#
 ```
+
 ```lua
 vim.opt.cindent = true
 vim.cmd('set cinkeys-=0#')
@@ -6434,6 +5872,7 @@ function! VimLeave()
   exe "mksession! " . g:PathToSessions . "/LastSession.vim"
 endfunction
 ```
+
 ```lua
 vim.g.path_to_sessions = vim.fn.expand('$HOME') .. '/.vim/sessions/'
 
@@ -6474,6 +5913,7 @@ syntax sync minlines=200
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 ```
+
 ```lua
 -- Option 1: Sync from start of file
 vim.api.nvim_create_autocmd('BufEnter', {
@@ -6502,6 +5942,7 @@ Add colon to iskeyword to support XML namespaces without breaking other settings
 ```vim
 set iskeyword+=:
 ```
+
 ```lua
 vim.opt.iskeyword:append(':')
 ```
@@ -6517,6 +5958,7 @@ Enable full mouse support in terminal Vim, allowing mouse interactions like sele
 ```vim
 set mouse=a
 ```
+
 ```lua
 vim.opt.mouse = 'a'
 ```
@@ -6543,6 +5985,7 @@ endfunction
 map <silent> <F8> :call ToggleFlag("guioptions","m")<CR>
 map <silent> <F9> :call ToggleFlag("guioptions","T")<CR>
 ```
+
 ```lua
 function _G.toggle_flag(option, flag)
   local current_opts = vim.o[option]
@@ -6578,6 +6021,7 @@ endfunction
 " Example usage
 noremap <silent> <F7> :call CycleNum("foldcolumn",0,2,6)<BAR>set foldcolumn?<CR>
 ```
+
 ```lua
 function _G.cycle_num(option, min, inc, max)
   local current = vim.o[option]
@@ -6613,6 +6057,7 @@ setlocal errorformat=%f:%l:\ %m
 " In ~/.vim/ftplugin/xml.vim
 compiler xmllint
 ```
+
 ```lua
 -- In ~/.config/nvim/compiler/xmllint.lua
 if vim.g.current_compiler then
@@ -6636,21 +6081,6 @@ vim.api.nvim_create_autocmd('FileType', {
 # Category: configuration
 # Tags: man-pages, documentation
 ---
-Disable SGR for better man page rendering in Vim/Neovim
-
-```vim
-let $GROFF_NO_SGR=1
-```
-```lua
-vim.env.GROFF_NO_SGR = '1'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip485)
-***
-# Title: Flexible File Path Configuration
-# Category: configuration
-# Tags: file-operations, path-management
----
 Configure Vim's path and filename handling to work with complex file systems and naming conventions
 
 ```vim
@@ -6660,6 +6090,7 @@ set isfname+=32
 " Add custom paths for file searching
 set path+=C:/DOCUME~1/MYUSER~1/MYDOCU~1
 ```
+
 ```lua
 -- Lua equivalents for path and filename configuration
 vim.opt.isfname:append(32)  -- Add space to valid filename chars
@@ -6672,32 +6103,6 @@ vim.opt.path:append('C:/DOCUME~1/MYUSER~1/MYDOCU~1')
 # Category: configuration
 # Tags: gui, environment-detection
 ---
-Reliable ways to check if running in GUI mode for conditional configuration
-
-```vim
-" Check if GUI is running
-if has("gui_running")
-  " GUI-specific settings
-endif
-
-" Alternative GUI check
-if has("gui")
-  " Another GUI-specific block
-endif
-```
-```lua
--- Check if GUI is running in Lua
-if vim.g.neovide or vim.fn.has('gui_running') == 1 then
-  -- GUI-specific Neovim configuration
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip488)
-***
-# Title: Fix Backspace in PuTTY Terminal Vim
-# Category: configuration
-# Tags: terminal, putty, keyboard-config
----
 Resolve backspace key issues when connecting to Linux servers via PuTTY by adjusting terminal keyboard settings
 
 ```vim
@@ -6705,6 +6110,7 @@ Resolve backspace key issues when connecting to Linux servers via PuTTY by adjus
 " - Set Keyboard to 'linux' instead of default 'xterm'
 " - Set Backspace Key to 'Control-H'
 ```
+
 ```lua
 -- Configuration is done in PuTTY settings, not in Neovim
 -- 1. Change Terminal Keyboard to 'linux'
@@ -6722,6 +6128,7 @@ Allows setting a custom VIMRUNTIME path within your configuration, useful for ma
 ```vim
 let $VIMRUNTIME='C:/usr/share/vim/vim63'
 ```
+
 ```lua
 vim.env.VIMRUNTIME = 'C:/usr/share/vim/vim63'
 ```
@@ -6758,6 +6165,7 @@ endfun
 nmap <F12> :call UnsetComplete()<CR>
 imap <F12> <Esc>:call UnsetComplete()<CR>a
 ```
+
 ```lua
 local function set_complete()
   vim.fn.DoWordComplete()
@@ -6798,6 +6206,7 @@ let $LANG='el' / let $LANG='gr'
 :menut English Greek
 let menut=Greek
 ```
+
 ```lua
 -- Set language for messages
 vim.env.LANG = 'el' -- or 'gr'
@@ -6819,6 +6228,7 @@ Comprehensive guide to translating Vim messages and menus using GNU gettext util
 " Set language in Vim
 :language el  " Set to Greek example
 ```
+
 ```lua
 -- Set language in Neovim
 vim.cmd('language el')  -- Set to Greek example
@@ -6839,6 +6249,7 @@ Process for generating .po and .mo files to support custom language translations
 " 3. Convert to vim.mo
 " 4. Install in language directory
 ```
+
 ```lua
 -- Translation process requires external tools like xgettext and msgfmt
 -- Typically handled outside of Lua/Neovim configuration
@@ -6859,6 +6270,7 @@ set t_kd=^[OB
 set t_kr=^[OC
 set t_kl=^[OD
 ```
+
 ```lua
 -- Lua equivalent for terminal key configuration
 vim.opt.t_ku = '^[OA'
@@ -6880,6 +6292,7 @@ Create custom regex patterns to extract meaningful tags from ANT XML build files
 --regex-ant=/^[ \t]*<[ \t]*target.*name="([^<"&]+)".*>/\1/t,target/i
 --regex-ant=/^[ \t]*<[ \t]*property.*name="([^<"&]+)".*>/\1/r,property/i
 ```
+
 ```lua
 -- CTags configuration can be placed in a separate ctags configuration file
 -- This is typically a system-wide or user-specific configuration
@@ -6906,6 +6319,7 @@ augroup vimrc_autocmds
   autocmd BufRead * echo "File read!"
 augroup END
 ```
+
 ```lua
 -- Lua equivalent for safely managing configurations
 -- Use vim.api.nvim_create_user_command for commands
@@ -6941,6 +6355,7 @@ Easily open and edit your Vim configuration file using environment variables
 :e $MYVIMRC
 :e $MYGVIMRC
 ```
+
 ```lua
 -- Open vimrc in Neovim
 vim.keymap.set('n', '<leader>ve', function()
@@ -6962,45 +6377,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 # Category: configuration
 # Tags: font, gui, cross-platform
 ---
-Provides a robust, cross-platform method for setting GUI fonts in Vim, with platform-specific configurations
-
-```vim
-if has("gui_running")
-  if has("gui_gtk2") || has("gui_gtk3")
-    set guifont=Courier\ New\ 11
-  elseif has("gui_photon")
-    set guifont=Courier\ New:s11
-  elseif has("gui_kde")
-    set guifont=Courier\ New/11/-1/5/50/0/0/0/1/0
-  elseif has("x11")
-    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
-  else
-    set guifont=Courier_New:h11:cDEFAULT
-  endif
-endif
-```
-```lua
-if vim.g.gui_running then
-  if vim.fn.has('gui_gtk2') == 1 or vim.fn.has('gui_gtk3') == 1 then
-    vim.opt.guifont = 'Courier\ New 11'
-  elseif vim.fn.has('gui_photon') == 1 then
-    vim.opt.guifont = 'Courier\ New:s11'
-  elseif vim.fn.has('gui_kde') == 1 then
-    vim.opt.guifont = 'Courier\ New/11/-1/5/50/0/0/0/1/0'
-  elseif vim.fn.has('x11') == 1 then
-    vim.opt.guifont = '-*-courier-medium-r-normal-*-*-180-*-*-m-*-*'
-  else
-    vim.opt.guifont = 'Courier_New:h11:cDEFAULT'
-  end
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip632)
-***
-# Title: Enable Windows Shortcuts in GVim
-# Category: configuration
-# Tags: windows, shortcut-keys, window-management
----
 Configure winaltkeys to enable standard Windows window management shortcuts in Vim
 
 ```vim
@@ -7011,6 +6387,7 @@ set winaltkeys=yes
 " Alt+Space followed by 'n' to minimize
 " Alt+Space followed by 'r' to restore
 ```
+
 ```lua
 -- For Neovim, this can be set in init.lua
 vim.g.winaltkeys = 'yes'
@@ -7029,6 +6406,7 @@ Automatically continue Doxygen-style comments when pressing enter or creating ne
 ```vim
 set comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,bO:///,O://
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {'c', 'cpp'},
@@ -7051,6 +6429,7 @@ autocmd FileType c,cpp set comments-=://
 autocmd FileType c,cpp set comments+=:///
 autocmd FileType c,cpp set comments+=://
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {'c', 'cpp'},
@@ -7085,6 +6464,7 @@ function MyDiff()
   silent execute '!diff -a ' . opt . v:fname_in . ' ' . v:fname_new . ' > ' . v:fname_out
 endfunction
 ```
+
 ```lua
 -- Clear diff expression
 vim.o.diffexpr = ''
@@ -7104,62 +6484,13 @@ end
 # Category: configuration
 # Tags: debugging, startup, options
 ---
-Dynamically enable verbose mode only during runtime to avoid startup 'file not found' messages
-
-```vim
-if &verbose == 0
-  augroup late-verbose
-    autocmd VimEnter * set verbose=1
-    autocmd VimLeave * set verbose=0
-  augroup END
-endif
-```
-```lua
-if vim.o.verbose == 0 then
-  vim.api.nvim_create_augroup('late-verbose', { clear = true })
-  vim.api.nvim_create_autocmd('VimEnter', {
-    group = 'late-verbose',
-    callback = function()
-      vim.o.verbose = 1
-    end
-  })
-  vim.api.nvim_create_autocmd('VimLeave', {
-    group = 'late-verbose',
-    callback = function()
-      vim.o.verbose = 0
-    end
-  })
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip680)
-***
-# Title: Disable Mouse Visual Mode Selection
-# Category: configuration
-# Tags: mouse, ui, interaction
----
-Prevent accidental visual mode activation when dragging mouse, allowing normal mouse interactions
-
-```vim
-noremap <LeftDrag> <LeftMouse>
-noremap! <LeftDrag> <LeftMouse>
-```
-```lua
-vim.keymap.set({'n', 'v', 'i', 'c'}, '<LeftDrag>', '<LeftMouse>', { noremap = true, silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip696)
-***
-# Title: Configure Mouse Behavior
-# Category: configuration
-# Tags: mouse, ui, settings
----
 Adjust mouse interactions in Vim/Neovim, limiting or disabling specific mouse functions
 
 ```vim
 set mouse=nicr  # Disable visual mode mouse selection
 set mouse=      # Completely disable mouse
 ```
+
 ```lua
 vim.opt.mouse = 'nicr'  -- Limit mouse interactions
 -- or
@@ -7172,49 +6503,6 @@ vim.opt.mouse = ''  -- Disable mouse completely
 # Category: configuration
 # Tags: java, indentation, code-style
 ---
-Configure Vim/Neovim settings to improve Java code indentation and syntax highlighting
-
-```vim
-"Java indentation and highlighting settings
-set autoindent
-set si
-set shiftwidth=4
-set cinoptions+=j1
-
-"Syntax highlighting
-let java_comment_strings=1
-let java_highlight_java_lang_ids=1
-let java_mark_braces_in_parens_as_errors=1
-let java_highlight_all=1
-let java_highlight_debug=1
-let java_ignore_javadoc=1
-let java_highlight_functions="style"
-let java_minlines = 150
-```
-```lua
--- Java indentation and highlighting settings
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.shiftwidth = 4
-vim.opt.cinoptions:append('j1')
-
--- Syntax highlighting
-vim.g.java_comment_strings = 1
-vim.g.java_highlight_java_lang_ids = 1
-vim.g.java_mark_braces_in_parens_as_errors = 1
-vim.g.java_highlight_all = 1
-vim.g.java_highlight_debug = 1
-vim.g.java_ignore_javadoc = 1
-vim.g.java_highlight_functions = 'style'
-vim.g.java_minlines = 150
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip700)
-***
-# Title: Handle Encoding Transitions Safely
-# Category: configuration
-# Tags: encoding, character-set, internationalization
----
 Safely manage character encoding transitions, especially when moving from single-byte to UTF-8 encodings
 
 ```vim
@@ -7222,6 +6510,7 @@ set encoding=iso-8859-1
 " Your vimrc contents
 set encoding=utf-8
 ```
+
 ```lua
 -- Lua equivalent for managing encoding
 vim.o.encoding = 'iso-8859-1'
@@ -7240,6 +6529,7 @@ Specify script encoding to ensure correct interpretation of character sets in co
 ```vim
 scriptencoding latin1
 ```
+
 ```lua
 -- In Lua, encoding is typically handled by the runtime environment
 -- Use UTF-8 by default in Neovim
@@ -7281,6 +6571,7 @@ function! MyDiff()
   if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
 endfunction
 ```
+
 ```lua
 function _G.MyDiff()
   local opt = ''
@@ -7307,6 +6598,7 @@ if has("statusline")
  set statusline=%<%f\ %h%m%r%=%{"[".(&fenc==""?&enc:&fenc).((exists("+bomb") && &bomb)?",B":"")."]"}\ %k\ %-14.(%l,%c%V%)\ %P
 endif
 ```
+
 ```lua
 vim.opt.statusline = '%<%f %h%m%r%=%{"[" .. (vim.bo.fileencoding == "" and vim.o.encoding or vim.bo.fileencoding) .. (vim.o.bomb and ",B" or "") .. "]"} %k %-14.(%l,%c%V%) %P'
 ```
@@ -7317,32 +6609,6 @@ vim.opt.statusline = '%<%f %h%m%r%=%{"[" .. (vim.bo.fileencoding == "" and vim.o
 # Category: configuration
 # Tags: terminal, key-mapping, meta-keys
 ---
-Configures Vim to properly handle Meta (Alt) key sequences in terminal emulators that generate escape sequences
-
-```vim
-" Fix meta-keys which generate <Esc>a .. <Esc>z
-let c='a'
-while c <= 'z'
-  exec "set <M-".toupper(c).">=\e".c
-  exec "imap \e".c." <M-".toupper(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
-```
-```lua
--- Fix meta-keys in Neovim terminal
-for i = string.byte('a'), string.byte('z') do
-  local char = string.char(i)
-  local upper_char = string.upper(char)
-  vim.api.nvim_set_keymap('i', '\027' .. char, '<M-' .. upper_char .. '>', { noremap = true, silent = true })
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip738)
-***
-# Title: Terminal-Specific Cursor Shape and Color
-# Category: configuration
-# Tags: terminal, cursor-shape, escape-sequences
----
 Set dynamic cursor shape and color for different terminals, particularly for xterm and tmux
 
 ```vim
@@ -7351,6 +6617,7 @@ if &term =~ "xterm\|rxvt"
   let &t_EI = "\<Esc>]12;red\x7"
 endif
 ```
+
 ```lua
 -- Terminal-specific cursor configuration
 if vim.env.TERM:match("xterm") or vim.env.TERM:match("rxvt") then
@@ -7365,54 +6632,12 @@ end
 # Category: configuration
 # Tags: sync, runtime, file-management
 ---
-Efficiently synchronize Vim runtime files using rsync, keeping your Vim environment up-to-date
-
-```vim
-rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/
-```
-```lua
--- Use shell command in Lua
-vim.fn.system('rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip747)
-***
-# Title: Bright Background Colors in Linux Console
-# Category: configuration
-# Tags: terminal, color-configuration, console
----
-Configure Vim to use 16 background colors in Linux framebuffer console, enabling bright background and foreground colors
-
-```vim
-if &term =~ "linux"
-  if has("terminfo")
-    set t_Co=16
-    set t_AB=<Esc>[%?%p1%{7}%>%t5%p1%{8}%-%e25%p1%;m<Esc>[4%dm
-    set t_AF=<Esc>[%?%p1%{7}%>%t1%p1%{8}%-%e22%p1%;m<Esc>[3%dm
-  endif
-endif
-```
-```lua
-if vim.o.term:match("linux") then
-  if vim.fn.has("terminfo") == 1 then
-    vim.o.t_Co = 16
-    vim.o.t_AB = "\x1b[%?%p1%{7}%>%t5%p1%{8}%-%e25%p1%;m\x1b[4%dm"
-    vim.o.t_AF = "\x1b[%?%p1%{7}%>%t1%p1%{8}%-%e22%p1%;m\x1b[3%dm"
-  end
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip748)
-***
-# Title: Remap CapsLock to Escape/Ctrl Systemwide
-# Category: configuration
-# Tags: key-mapping, productivity, workflow
----
 Remap CapsLock key to Escape or Ctrl to improve keyboard ergonomics and efficiency in Vim and other applications
 
 ```vim
 " No direct Vim configuration, system-level mapping
 ```
+
 ```lua
 -- Recommended Neovim-specific alternative using AutoHotkey/system utility
 -- Lua mapping example for application-specific remapping
@@ -7430,6 +6655,7 @@ Configure Vim to use Windows-like text selection behavior
 ```vim
 set keymodel=startsel,stopsel
 ```
+
 ```lua
 vim.opt.keymodel = {'startsel', 'stopsel'}
 ```
@@ -7447,6 +6673,7 @@ Use a Vim doclet to generate help files for Java documentation, allowing quick a
 set keywordprg=
 " Use 'K' to bring up docs for Java keywords
 ```
+
 ```lua
 -- In Neovim, you can set keywordprg similarly
 vim.o.keywordprg = ''
@@ -7467,6 +6694,7 @@ Manually add a context menu option to edit files with Vim in Windows Vista/7
 # Create new key 'Open with gVIm' with command:
 # "C:\Program Files (x86)\Vim\vim72\gvim.exe" "%1"
 ```
+
 ```lua
 -- For Neovim, this would typically be handled by external tools
 -- Or can be scripted with vim.fn.system() for registry edits
@@ -7486,6 +6714,7 @@ Resolve file association problems after Vim upgrade by updating registry keys
 # Navigate to HKEY_CLASSES_ROOT\Applications\gvim.exe
 # Ensure edit\command and open\command have correct path
 ```
+
 ```lua
 -- For Neovim, use vim.fn.system() to modify registry if needed
 -- Recommended to use official installers or Windows tools
@@ -7511,6 +6740,7 @@ set wildmode-=lastused
 " Add flag to beginning
 set wildmode^=full
 ```
+
 ```lua
 -- Note: In Neovim, use vim.opt with += -= ^= similar to Vim
 vim.opt.wildmode:append('lastused')
@@ -7534,6 +6764,7 @@ let $LANG='el'
 " Set menu language
 :menut English Greek
 ```
+
 ```lua
 -- Set language
 vim.env.LANG = 'el'
@@ -7549,31 +6780,13 @@ vim.cmd('menut English Greek')
 # Category: configuration
 # Tags: language-support, encoding, internationalization
 ---
-Configure Vim to switch between different language encodings and menu languages
-
-```vim
-" Toggle between languages
-let $LANG='gr'
-:lan mes gr
-```
-```lua
--- Toggle between languages
-vim.env.LANG = 'gr'
-vim.cmd('lan mes gr')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Vim_goes_Greek_-_Greek_language_support_for_Vim_6.1)
-***
-# Title: Create Vim Translation Files
-# Category: configuration
-# Tags: internationalization, localization, translation
----
 Steps to extract, translate, and install message translation files for Vim
 
 ```vim
 " No direct Vimscript implementation
 " Relies on external tools like xgettext and msgfmt
 ```
+
 ```lua
 -- No direct Lua implementation
 -- Translation process involves external GNU gettext utilities
@@ -7591,6 +6804,7 @@ Select the appropriate Vim build based on your Windows architecture and feature 
 " Check system architecture
 " 32-bit vs 64-bit considerations
 ```
+
 ```lua
 -- Consider 64-bit Vim for:
 -- 1. Editing files >4GB
@@ -7618,6 +6832,7 @@ endfunction
 set statusline+=\ w:%{WordCount()},
 set laststatus=2
 ```
+
 ```lua
 function _G.word_count()
     local wc = vim.fn.wordcount()
@@ -7652,6 +6867,7 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 ```
+
 ```lua
 if vim.fn.has('multi_byte') == 1 then
   if not string.lower(vim.o.encoding):match('^u') then

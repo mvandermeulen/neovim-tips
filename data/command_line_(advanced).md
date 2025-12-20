@@ -90,20 +90,6 @@ Integrate external commands seamlessly with Vim command line.
 # Category: Command Line Advanced
 # Tags: abbreviation, shortcut, cabbrev, expand
 ---
-Create command line abbreviations for frequently used commands.
-
-```vim
-:cabbrev W w                 " expand W to w
-:cabbrev Q q                 " expand Q to q  
-:cabbrev Wq wq               " expand Wq to wq
-:cabbrev vsb vert sb         " expand vsb to 'vert sb'
-:cabbrev today put =strftime('%Y-%m-%d')  " insert today's date
-```
-***
-# Title: Command line register manipulation
-# Category: Command Line Advanced
-# Tags: register, insert, content, reference
----
 Access and manipulate registers from command line efficiently.
 
 ```vim

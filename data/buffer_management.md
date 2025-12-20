@@ -754,6 +754,7 @@ return M
 ```vim
 vim.keymap.set("n", "<leader>X", "<cmd>%bd|e#<cr>", { desc = "Close other", noremap = true, silent = true })
 ```
+
 ```lua
 :%bd|e#
 ```
@@ -774,6 +775,7 @@ function! ShowPydoc(what)
   execute "pedit" fnameescape(path)
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Pyhelp', function(opts)
   local what = opts.args
@@ -794,6 +796,7 @@ Automatically convert all opened buffers into tabs for easier navigation
 ```vim
 autocmd BufReadPost * tab ball
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
@@ -826,6 +829,7 @@ function! s:GdbFocusBuf(nameref)
   return l:oldnr
 endfunction
 ```
+
 ```lua
 function _G.gdb_focus_buf(nameref)
   local oldnr = vim.fn.bufnr('%')
@@ -849,36 +853,6 @@ end
 # Category: buffer_management
 # Tags: buffers, menu-customization, navigation
 ---
-Modify buffer menu to show numbered buffers for faster selection, with single-keystroke access for first 9 buffers
-
-```vim
-" In menu.vim, modify buffer name display
-let name2 = '&' . a:bnum . '. ' . name2
-
-" Conditional display for more than 9 buffers
-if a:bnum >= 10
-  let name2 = name2 . ' (' . a:bnum . ')'
-else
-  let name2 = '&' . a:bnum . '. ' . name2
-endif
-```
-```lua
--- Lua equivalent (conceptual, as this is a menu.vim function)
-function BufferMenuDisplay(name, bnum)
-  if bnum >= 10 then
-    return string.format('%s (%d)', name, bnum)
-  else
-    return string.format('%d. %s', bnum, name)
-  end
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Alter_the_display_of_buffers_in_the_buffers_menu)
-***
-# Title: Execute Command Across Multiple Buffers
-# Category: buffer_management
-# Tags: buffer, automation, command-line
----
 Run a command or macro across all open buffers, with options to save or update files automatically
 
 ```vim
@@ -892,6 +866,7 @@ function! BufDo(command)
 endfunction
 com! -nargs=+ -complete=command Bufdo call BufDo(<q-args>)
 ```
+
 ```lua
 -- Execute macro across all buffers
 vim.cmd('bufdo execute "normal! @a" | update')
@@ -921,6 +896,7 @@ Automatically save files when switching buffers or performing certain actions
 set autowrite
 set autowriteall
 ```
+
 ```lua
 vim.opt.autowrite = true
 vim.opt.autowriteall = true
@@ -959,6 +935,7 @@ if v:version >= 700
     autocmd BufEnter * call AutoRestoreWinView()
 endif
 ```
+
 ```lua
 local function auto_save_win_view()
     if vim.w.SavedBufView == nil then
@@ -1006,6 +983,7 @@ function! BufDo(command)
 endfunction
 com! -nargs=+ -complete=command Bufdo call BufDo(<q-args>)
 ```
+
 ```lua
 function _G.buf_do(command)
   local current_buf = vim.api.nvim_get_current_buf()
@@ -1035,6 +1013,7 @@ Ctrl-^
 Ctrl-O
 Ctrl-I
 ```
+
 ```lua
 -- Next/Previous Buffer
 vim.cmd('bnext')
@@ -1061,6 +1040,7 @@ autocmd VimEnter * tearoff Buffers
 " Limit buffer menu path length
 let g:bmenu_max_pathlen=0
 ```
+
 ```lua
 -- Neovim equivalent (note: may require different approach)
 -- Consider using telescope.nvim or other buffer management plugins
@@ -1098,6 +1078,7 @@ function! CSVH(colnr)
 endfunction
 command! -nargs=1 Csv :call CSVH(<args>)
 ```
+
 ```lua
 -- Highlight a specific column in CSV
 local function csv_highlight(colnr)
@@ -1152,6 +1133,7 @@ endfunction
 nnoremap <silent> <C-n> :call SwitchToNextBuffer(1)<CR>
 nnoremap <silent> <C-p> :call SwitchToNextBuffer(-1)<CR>
 ```
+
 ```lua
 function _G.switch_to_next_buffer(incr)
   local help_buffer = vim.bo.filetype == 'help'
@@ -1196,6 +1178,7 @@ Provides a custom command to delete a buffer while preserving the current window
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 nnoremap <silent> <Leader>bd :Bclose<CR>
 ```
+
 ```lua
 -- Lua equivalent for buffer management
 function _G.bclose(bang, buffer)
@@ -1239,6 +1222,7 @@ function! s:DiffWithSaved()
 endfunction
 com! DiffSaved call s:DiffWithSaved()
 ```
+
 ```lua
 function _G.diff_with_saved()
   local filetype = vim.bo.filetype
@@ -1275,6 +1259,7 @@ function! s:DiffWithGITCheckedOut()
 endfunction
 com! DiffGIT call s:DiffWithGITCheckedOut()
 ```
+
 ```lua
 function _G.diff_with_git_checkout()
   local filetype = vim.bo.filetype
@@ -1298,85 +1283,12 @@ vim.api.nvim_create_user_command('DiffGIT', _G.diff_with_git_checkout, {})
 # Category: buffer_management
 # Tags: buffer-navigation, custom-function, fuzzy-matching
 ---
-A custom function that allows fuzzy buffer selection, displaying matching buffers and letting you choose by number if multiple matches exist
-
-```vim
-function! BufSel(pattern)
-  let bufcount = bufnr("$")
-  let currbufnr = 1
-  let nummatches = 0
-  let firstmatchingbufnr = 0
-  while currbufnr <= bufcount
-    if(bufexists(currbufnr))
-      let currbufname = bufname(currbufnr)
-      if(match(currbufname, a:pattern) > -1)
-        echo currbufnr . ": ". bufname(currbufnr)
-        let nummatches += 1
-        let firstmatchingbufnr = currbufnr
-      endif
-    endif
-    let currbufnr = currbufnr + 1
-  endwhile
-  if(nummatches == 1)
-    execute ":buffer ". firstmatchingbufnr
-  elseif(nummatches > 1)
-    let desiredbufnr = input("Enter buffer number: ")
-    if(strlen(desiredbufnr) != 0)
-      execute ":buffer ". desiredbufnr
-    endif
-  else
-    echo "No matching buffers"
-  endif
-endfunction
-
-command! -nargs=1 Bs :call BufSel("<args>")
-```
-```lua
-function _G.buf_select(pattern)
-  local bufcount = vim.fn.bufnr('$')
-  local matches = {}
-  
-  for bufnr = 1, bufcount do
-    if vim.fn.bufexists(bufnr) == 1 then
-      local bufname = vim.fn.bufname(bufnr)
-      if bufname:find(pattern) then
-        table.insert(matches, {bufnr = bufnr, name = bufname})
-      end
-    end
-  end
-  
-  if #matches == 1 then
-    vim.cmd('buffer ' .. matches[1].bufnr)
-  elseif #matches > 1 then
-    print('Matching Buffers:')
-    for _, match in ipairs(matches) do
-      print(match.bufnr .. ': ' .. match.name)
-    end
-    local choice = vim.fn.input('Enter buffer number: ')
-    if choice ~= '' then
-      vim.cmd('buffer ' .. choice)
-    end
-  else
-    print('No matching buffers')
-  end
-end
-
-vim.api.nvim_create_user_command('Bs', function(opts)
-  _G.buf_select(opts.args)
-end, { nargs = 1 })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easier_buffer_switching)
-***
-# Title: Quick Buffer List and Switch Mapping
-# Category: buffer_management
-# Tags: key-mapping, buffer-navigation
----
 A simple mapping to quickly list buffers and switch between them using a single key press
 
 ```vim
 nnoremap <F5> :buffers<CR>:buffer<Space>
 ```
+
 ```lua
 vim.keymap.set('n', '<F5>', function()
   vim.cmd('buffers')
@@ -1411,6 +1323,7 @@ function! AskVims()
 endfunction
 auto SwapExists * call AskVims()
 ```
+
 ```lua
 local function ask_vims()
   local full_name = vim.fn.escape(vim.fn.expand('<afile>:p'), ' ')
@@ -1448,6 +1361,7 @@ Utilize Vim's tempname() function to create and manage temporary files for SQL q
 ```vim
 au FileType sql map <F12> :let fname = tempname()<CR><C-W><C-O>:silent exe "w !isql -SYourServerName -DYourDatabaseName -UYourUserName -PYourPassword > " . fname<CR>:exe "split " . fname<CR>
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'sql',
@@ -1479,6 +1393,7 @@ Easily switch between the first nine buffers using Alt+number keys or cycle thro
 :nmap <M-Left> :bprev<CR>
 :nmap <M-Right> :bnext<CR>
 ```
+
 ```lua
 -- Method 1: Direct buffer access
 for i = 1, 9 do
@@ -1505,6 +1420,7 @@ Quickly switch to buffers by number using Ctrl-^ instead of :b command
 " 1<C-^> switches to buffer 1
 " <C-^> without number switches to previous buffer
 ```
+
 ```lua
 -- Builtin Vim/Neovim behavior, no specific Lua configuration needed
 -- Use vim.cmd() if you want to map this programmatically
@@ -1550,6 +1466,7 @@ endfunction
 nnoremap <silent> <C-n> :call SwitchToNextBuffer(1)<CR>
 nnoremap <silent> <C-p> :call SwitchToNextBuffer(-1)<CR>
 ```
+
 ```lua
 -- Simple buffer cycling
 vim.keymap.set('n', '<C-n>', ':bnext<CR>', { noremap = true })
@@ -1605,6 +1522,7 @@ set hidden
 :bnext!
 :bprevious!
 ```
+
 ```lua
 -- Option 1: Auto save buffers
 vim.opt.autowrite = true
@@ -1645,6 +1563,7 @@ endfunction
 nnoremap <silent> <Leader>f :call Gather(input("Search for: "))<CR>
 nnoremap <silent> <Leader>F :call Gather(@/)<CR>
 ```
+
 ```lua
 function _G.gather_search_results(pattern)
   if pattern ~= "" then
@@ -1696,6 +1615,7 @@ function! MySwitch()
 endfu
 map <C-^> :call MySwitch()<CR>
 ```
+
 ```lua
 function _G.enhanced_file_switch()
   if vim.fn.expand('#') == '' then
@@ -1748,6 +1668,7 @@ endfunction
 " Mapping to toggle hex mode
 command -bar Hexmode call ToggleHex()
 ```
+
 ```lua
 local function toggle_hex()
   local modified = vim.o.modified
@@ -1797,6 +1718,7 @@ Create a custom command to capture and display global search results in a tempor
 ```vim
 command! -nargs=? F let @a='' | execute 'redir @a | silent g/<args>/print' | redir END | silent execute 'new | setlocal bt=nofile | put=split(@a, '\n'') | set syntax=vera | 1d'
 ```
+
 ```lua
 vim.api.nvim_create_user_command('F', function(opts)
   -- Capture global search results in a scratch buffer
@@ -1822,82 +1744,6 @@ end, { nargs = '?' })
 # Category: buffer_management
 # Tags: hex-editing, binary-files, file-manipulation
 ---
-Provides a robust method to toggle hex mode for binary file editing using xxd, with automatic handling of binary file conversions
-
-```vim
-" Toggle Hex Mode
-command -bar Hexmode call ToggleHex()
-
-function ToggleHex()
-  let l:modified=&mod
-  let l:oldreadonly=&readonly
-  let &readonly=0
-  let l:oldmodifiable=&modifiable
-  let &modifiable=1
-  if !exists("b:editHex") || !b:editHex
-    let b:oldft=&ft
-    let b:oldbin=&bin
-    setlocal binary
-    silent :e
-    let &ft="xxd"
-    let b:editHex=1
-    %!xxd
-  else
-    let &ft=b:oldft
-    if !b:oldbin
-      setlocal nobinary
-    endif
-    let b:editHex=0
-    %!xxd -r
-  endif
-  let &mod=l:modified
-  let &readonly=l:oldreadonly
-  let &modifiable=l:oldmodifiable
-endfunction
-```
-```lua
--- Hex Mode Toggle in Neovim
-local function toggle_hex_mode()
-  -- Save current buffer state
-  local modified = vim.bo.modified
-  local readonly = vim.bo.readonly
-  local modifiable = vim.bo.modifiable
-
-  vim.bo.readonly = false
-  vim.bo.modifiable = true
-
-  if not vim.b.edit_hex then
-    vim.b.old_ft = vim.bo.filetype
-    vim.bo.binary = true
-    vim.cmd('silent edit')
-    vim.bo.filetype = 'xxd'
-    vim.b.edit_hex = true
-    vim.cmd('%!xxd')
-  else
-    vim.bo.filetype = vim.b.old_ft
-    if not vim.b.old_bin then
-      vim.bo.binary = false
-    end
-    vim.b.edit_hex = false
-    vim.cmd('%!xxd -r')
-  end
-
-  vim.bo.modified = modified
-  vim.bo.readonly = readonly
-  vim.bo.modifiable = modifiable
-end
-
--- Create command and keymapping
-vim.api.nvim_create_user_command('HexMode', toggle_hex_mode, {})
-vim.keymap.set('n', '<C-H>', ':HexMode<CR>', { noremap = true, silent = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Improved_Hex_editing)
-***
-# Title: Quick Buffer and Tab Management
-# Category: buffer_management
-# Tags: buffers, tabs, navigation
----
 Flexible buffer switching with tab support, allowing easy navigation between buffers across tabs
 
 ```vim
@@ -1905,6 +1751,7 @@ set switchbuf=usetab
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 ```
+
 ```lua
 -- Buffer switching with tab support
 vim.opt.switchbuf = 'usetab'
@@ -1924,6 +1771,7 @@ Quickly toggle between showing all buffers in tabs and closing all but the curre
 let notabs = 0
 nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
 ```
+
 ```lua
 -- Toggle all buffers in tabs
 local notabs = false
@@ -1986,6 +1834,7 @@ nmap go :<C-U>call JumpBuffers()<CR>
 nmap <C-G><C-O> 2go
 nnoremap g<C-O> go
 ```
+
 ```lua
 function _G.jump_buffers()
     local jumptxt = vim.fn.execute('jumps')
@@ -2055,6 +1904,7 @@ command! -bang Ls redir @" | silent ls<bang> | redir END | echo " " |
 \ }
 \ <CR>
 ```
+
 ```lua
 -- Note: Requires a different approach in Neovim without Perl
 -- A pure Lua solution would involve:
@@ -2089,6 +1939,7 @@ Quickly display buffer list with a timed display, useful for managing multiple o
 ```vim
 nnoremap <m-:> :ls|sleep<CR><CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<m-:>', function() 
   vim.cmd('ls') 
@@ -2122,6 +1973,7 @@ function UpdateModifiable()
 endfunction
 autocmd BufReadPost * call UpdateModifiable()
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
@@ -2149,6 +2001,7 @@ set switchbuf=usetab
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 ```
+
 ```lua
 -- Smart buffer switching
 vim.opt.switchbuf = 'usetab'
@@ -2168,6 +2021,7 @@ Enhance buffer switching in GVim by remapping right mouse click to exit modes an
 imap <RightMouse> <Esc>
 nmap <RightMouse> i<LeftMouse>
 ```
+
 ```lua
 vim.keymap.set('i', '<RightMouse>', '<Esc>', { desc = 'Exit insert mode with right mouse' })
 vim.keymap.set('n', '<RightMouse>', 'i<LeftMouse>', { desc = 'Enter insert mode at mouse click' })
@@ -2184,6 +2038,7 @@ Perform substitution and automatically save each buffer in the argument list
 ```vim
 argdo %s/foo/bar/gc | w
 ```
+
 ```lua
 -- Use vim.cmd for executing argdo with chained commands
 vim.cmd('argdo s/foo/bar/gc | w')
@@ -2203,6 +2058,7 @@ Efficiently navigate between buffers in a single window using custom key mapping
 :nm <A-Down> :bn!<CR>
 :nm <C-F4> :bd!<CR>
 ```
+
 ```lua
 -- Buffer navigation mappings
 vim.keymap.set('n', '<A-Up>', ':bp!<CR>', { desc = 'Previous buffer' })
@@ -2221,6 +2077,7 @@ Open a new buffer with SVN diff output, set syntax highlighting, and make it a t
 ```vim
 map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
 ```
+
 ```lua
 vim.keymap.set('n', '<F9>', function()
   vim.cmd('new')
@@ -2246,6 +2103,7 @@ gvim -p *.py
 " Automatically open buffers in tabs
 :au BufAdd,BufNewFile * nested tab sball
 ```
+
 ```lua
 -- Open files in tabs from command line: use vim.fn.argv() and -p flag
 
@@ -2272,6 +2130,7 @@ au BufNewFile,BufRead * nested
   \   tab sball |
   \ endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
   nested = true,
@@ -2306,6 +2165,7 @@ function! LargeFile()
   setlocal undolevels=-1
 endfunction
 ```
+
 ```lua
 vim.g.LargeFile = 1024 * 1024 * 10
 
@@ -2338,6 +2198,7 @@ set switchbuf=usetab
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 ```
+
 ```lua
 -- Configure buffer switching to use tabs
 vim.opt.switchbuf = 'usetab'
@@ -2356,6 +2217,7 @@ Create a custom command to reload a file while preserving undo history, which is
 ```vim
 command! Reload %d|r|1d
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Reload', function()
   -- Delete buffer contents
@@ -2384,6 +2246,7 @@ function! ReloadFile(is_force_pos)
   endif
 endfunc
 ```
+
 ```lua
 function _G.reload_file(force_pos)
   local pos = vim.fn.getpos('.')
@@ -2405,27 +2268,12 @@ end, {})
 # Category: buffer_management
 # Tags: buffer, session-management, viminfo
 ---
-Automatically remember opened buffers when restarting Vim, allowing you to quickly restore your previous editing context
-
-```vim
-:set viminfo^=%
-```
-```lua
--- Set viminfo to remember buffer list
-vim.opt.viminfo:append('%')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remember_my_buffers)
-***
-# Title: Run Command Across Multiple Buffers
-# Category: buffer_management
-# Tags: bufdo, buffer-manipulation, batch-operations
----
 Execute a command (like a macro) across all open buffers and optionally save changes
 
 ```vim
 :bufdo execute "normal! @a" | update
 ```
+
 ```lua
 -- Run macro in register 'a' across all buffers and save changes
 for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
@@ -2451,6 +2299,7 @@ function! BufDo(command)
 endfunction
 com! -nargs=+ -complete=command Bufdo call BufDo(<q-args>)
 ```
+
 ```lua
 function _G.buf_do(command)
   local original_buf = vim.api.nvim_get_current_buf()
@@ -2475,6 +2324,7 @@ Quickly replace existing buffer list when switching between project sessions wit
 1,999bdelete
 :so ~/v/project2.vim
 ```
+
 ```lua
 -- Delete all existing buffers before loading new session
 vim.cmd('1,' .. vim.fn.bufnr('$') .. 'bdelete')
@@ -2487,29 +2337,6 @@ vim.cmd('source ~/v/project2.vim')
 # Category: buffer_management
 # Tags: autocmd, file-handling, buffer-settings
 ---
-Temporarily suppress file change warnings when running shell commands that modify the current buffer
-
-```vim
-function ChangeThisBuffer()
-  setlocal autoread
-  execute('silent !mycommand')
-  set autoread<
-endfunction
-```
-```lua
-function ChangeThisBuffer()
-  vim.opt_local.autoread = true
-  vim.fn.execute('silent !mycommand')
-  vim.opt_local.autoread = false
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip595)
-***
-# Title: Save All Buffers at Once
-# Category: buffer_management
-# Tags: buffer-operations, file-saving, workflow
----
 Quickly save all modified buffers without closing Vim, or save and exit all buffers in a single command
 
 ```vim
@@ -2517,6 +2344,7 @@ Quickly save all modified buffers without closing Vim, or save and exit all buff
 :xa  # Save all and exit
 :wqa # Alternative save and exit command
 ```
+
 ```lua
 vim.cmd('wa')  -- Write all changed buffers
 vim.cmd('xa')  -- Save all and exit
@@ -2565,6 +2393,7 @@ endfunction
 
 command! -nargs=1 Bs :call BufSel("<args>")
 ```
+
 ```lua
 -- Function to select buffer with partial matches
 local function buf_sel(pattern)
@@ -2613,6 +2442,7 @@ Create a quick mapping to list buffers and allow easy selection by number
 " Quick buffer list and selection
 :nnoremap <F5> :buffers<CR>:buffer<Space>
 ```
+
 ```lua
 -- Quick buffer list and selection
 vim.keymap.set('n', '<F5>', function()

@@ -1,7 +1,3 @@
-# Title: Auto-reload changed files
-# Category: Autocommands
-# Tags: autocmd, checktime, FileChangedShellPost, reload
----
 Use `FileChangedShellPost` and `checktime` to automatically reload files changed by external programs.
 Or:
 
@@ -10,6 +6,7 @@ Or:
 :autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
 :autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 ```
+
 ```lua
 vim.opt.autoread = true
 
@@ -40,6 +37,7 @@ Or:
 " Creates parent directories if they don't exist
 " 'p' creates intermediate directories like mkdir -p
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = '*',
@@ -69,6 +67,7 @@ Or:
     \ endif
 " Jumps to last position if it exists and is valid
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = '*',
@@ -94,6 +93,7 @@ Or:
 :autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy  
 :autocmd BufRead * if getline(1) =~ '^#!/usr/bin/env python' | set ft=python | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
     pattern = '*.conf',
@@ -136,6 +136,7 @@ Or:
 :autocmd BufWritePre *.go !gofmt -w %
 " Format different file types with appropriate tools
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     pattern = { '*.js', '*.ts', '*.jsx', '*.tsx'},
@@ -174,6 +175,7 @@ Or:
 :autocmd FileType gitcommit setlocal colorcolumn=72
 " Set different line length limits per file type
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({ 'FileType' }, {
     pattern = 'python',
@@ -212,6 +214,7 @@ Or:
 :autocmd BufWritePost init.lua source %
 " Compile C files, build LaTeX, reload Lua config
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { '*.c', '*.cpp' },
@@ -249,6 +252,7 @@ Or:
 " Equalizes window sizes when vim is resized
 " Useful when terminal window size changes
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('VimResized', {
     pattern = '*',
@@ -272,6 +276,7 @@ Or:
 " Alternative: use 'autochdir' option
 :set autochdir  " same effect as above
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
     pattern = '*',
@@ -296,6 +301,7 @@ Or:
 :autocmd BufNewFile *.py 0r ~/.vim/templates/python_template.py
 :autocmd BufNewFile *.sh 0put ='#!/bin/bash' | $put ='' | 1
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufNewFile', {
     pattern = '*.html',
@@ -341,6 +347,7 @@ Or:
 :autocmd InsertLeave * set relativenumber
 " Absolute numbers in insert mode, relative in normal mode
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('InsertEnter', {
     pattern = '*',
@@ -370,6 +377,7 @@ Or:
 :autocmd FileType help set nospell
 " Enable spell check for text files, disable for help
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
     pattern = { 'markdown', 'text', 'gitcommit' },
@@ -404,6 +412,7 @@ Or:
 :autocmd TextYankPost * silent! call matchadd('Search', @", 86400)
 :autocmd TextYankPost * silent! call timer_start(150, {-> clearmatches()})
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
@@ -437,6 +446,7 @@ Or:
     \ execute 'write! ' . expand('%') . '.backup.' . strftime('%Y%m%d_%H%M%S')
 " Creates timestamped backups of config files
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '.vimrc', 'init.lua', 'init.vim'},
@@ -466,6 +476,7 @@ Or:
     \ endif
 " Make files with shebang executable
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = { '*.sh', '*.py', '*.pl', '*.rb' },
@@ -531,6 +542,7 @@ Automatically adjust screen brightness when Vim gains or loses focus, useful for
 :au FocusGained * :!brightness 1
 :au FocusLost * :!brightness 0.5
 ```
+
 ```lua
 vim.api.nvim_create_augroup('BrightnessAdjust', { clear = true })
 
@@ -561,6 +573,7 @@ Automatically set fold method and open folds for specific file types while maint
 autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 ```
+
 ```lua
 vim.api.nvim_create_augroup('CustomFolding', { clear = true })
 
@@ -585,6 +598,7 @@ Automatically position cursor at the first line of git commit messages, overridi
 ```vim
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'gitcommit',
@@ -616,6 +630,7 @@ endfunction
 
 au BufWritePre * let b:start_time=localtime()
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
   callback = function()
@@ -650,6 +665,7 @@ Create a custom auto-save for specific file types like notes, enabling periodic 
 ```vim
 au CursorHold <buffer> update
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('CursorHold', {
   buffer = 0,  -- current buffer
@@ -673,6 +689,7 @@ function s:CompleteTags()
 endfunction
 autocmd BufRead,BufNewFile *.html,*.js,*.xml call s:CompleteTags()
 ```
+
 ```lua
 -- Lua equivalent for advanced HTML tag completion
 local function complete_tags()
@@ -710,6 +727,7 @@ function! InsertCHHeader()
   startinsert
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_augroup('HeaderTemplate', { clear = true })
 
@@ -751,6 +769,7 @@ function! ModifyTime()
   endif
 endfunction
 ```
+
 ```lua
 function _G.ModifyTime()
   if vim.bo.modified then
@@ -788,6 +807,7 @@ function! CompileJS()
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWriteCmd', {
   pattern = '*.js',
@@ -818,6 +838,7 @@ autocmd FileType javascript compiler closure
 autocmd BufWritePost *.js make!
 autocmd BufWritePost *.js cwindow
 ```
+
 ```lua
 vim.api.nvim_create_augroup('JavaScriptCompilation', { clear = true })
 
@@ -849,6 +870,7 @@ Automatically insert a basic Java class template when creating a new .java file,
 autocmd BufNewFile *.java \
   \ exe "normal Opublic class " . expand('%:t:r') . "\n{\n}\<Esc>1G"
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("BufNewFile", {
   pattern = "*.java",
@@ -884,6 +906,7 @@ function! InsertJavaPackage()
   let result = append(3, "}")
 endfunction
 ```
+
 ```lua
 function InsertJavaPackage()
   local cwd = vim.fn.getcwd()
@@ -917,6 +940,7 @@ Automatically save all modified files when Vim loses focus, reducing manual save
 ```vim
 :au FocusLost * silent! wa
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FocusLost', {
   pattern = '*',
@@ -960,6 +984,7 @@ if !exists("au_p4_cmd")
   au FileChangedRO * call P4Checkout()
 endif
 ```
+
 ```lua
 local function is_under_perforce()
   local p4home = vim.env.P4HOME
@@ -1023,6 +1048,7 @@ function! UpdateTags()
 endfunction
 autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
 ```
+
 ```lua
 local function del_tag_of_file(file)
   local fullpath = file
@@ -1071,6 +1097,7 @@ function! MapSpaceInMakefile()
   return ""
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'make',
@@ -1099,6 +1126,7 @@ Automatically compile LaTeX document and refresh xdvi viewer when saving a .tex 
 au BufWritePost *.tex silent call Tex_RunLaTeX()
 au BufWritePost *.tex silent !pkill -USR1 xdvi.bin
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*.tex',
@@ -1125,6 +1153,7 @@ augroup filetypedetect
  \ endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('filetypedetect', { clear = true })
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
@@ -1158,6 +1187,7 @@ function! s:insert_gates()
 endfunction
 autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = {'*.h', '*.hpp'},
@@ -1218,6 +1248,7 @@ if argc() == 0
   autocmd VimLeave * call SaveSession(FindProjectName())
 end
 ```
+
 ```lua
 local function find_project_name()
   local name = vim.fn.getcwd()
@@ -1274,6 +1305,7 @@ autocmd BufWritePre *
   \   exe "g#\cCOPYRIGHT \(".strftime("%Y")."\)\@![0-9]\{4\}\(-".strftime("%Y")."\)\@!#s#\([0-9]\{4\}\)\(-[0-9]\{4\}\)\?#\1-".strftime("%Y") |
   \ endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
@@ -1295,66 +1327,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 # Category: autocmds
 # Tags: email-editing, cursor-placement, automation
 ---
-Automatically position the cursor in the most logical place when editing email messages, such as in an empty subject line or at the start of the email body
-
-```vim
-function FirstInPost (...) range
-  let cur = a:firstline
-  while cur <= a:lastline
-    let str = getline(cur)
-    if str == 'Subject: '
-      execute cur
-      :start!
-      break
-    endif
-    if str == ''
-      let cur = cur + 1
-      if strlen(matchstr(getline(cur), '^On.*wrote:.*')) > 0
-        let cur = cur + 1
-      endif
-      execute cur
-      :start
-      break
-    endif
-    let cur = cur + 1
-  endwhile
-endfunction
-
-com Fip :set tw=0<Bar>:%call FirstInPost()
-```
-```lua
-local function first_in_post()
-  local cur = 1
-  local last_line = vim.fn.line('$')
-  while cur <= last_line do
-    local str = vim.fn.getline(cur)
-    if str == 'Subject: ' then
-      vim.cmd.normal('gg' .. cur .. 'G^')
-      vim.cmd.startinsert()
-      return
-    end
-    if str == '' then
-      cur = cur + 1
-      if vim.fn.matchstr(vim.fn.getline(cur), '^On.*wrote:.*') ~= '' then
-        cur = cur + 1
-      end
-      vim.cmd.normal('gg' .. cur .. 'G^')
-      vim.cmd.startinsert()
-      return
-    end
-    cur = cur + 1
-  end
-end
-
-vim.api.nvim_create_user_command('Fip', first_in_post, {})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_position_the_cursor_when_editing_email_messages)
-***
-# Title: Auto-Close Vim When Quickfix is Last Window
-# Category: autocmds
-# Tags: quickfix, window-management, automation
----
 Automatically close Vim when the quickfix window is the only remaining window, which helps clean up after compilation or search results
 
 ```vim
@@ -1367,6 +1339,7 @@ function! MyLastWindow()
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
@@ -1410,6 +1383,7 @@ endfunction
 
 autocmd! QuickfixCmdPost * call s:SortUniqQFList()
 ```
+
 ```lua
 local function compare_quickfix_entries(i1, i2)
   local buf1 = vim.fn.bufname(i1.bufnr)
@@ -1456,6 +1430,7 @@ Automatically set the appropriate compiler for a file based on its filetype when
 ```vim
 au BufRead * try | execute "compiler ".&filetype | catch /./ | endtry
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufRead', {
   callback = function()
@@ -1479,6 +1454,7 @@ au BufEnter * if (exists("b:colors_name")) | let b:current_colors=colors_name
  | execute "colorscheme " . b:colors_name | endif
 au BufLeave * if (exists("b:current_colors")) | execute "colorscheme " . b:current_colors | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
@@ -1509,6 +1485,7 @@ Dynamically change color scheme based on the current file's directory to provide
 ```vim
 autocmd BufEnter * if match(@%,'/otherdir/')>=0 | colorscheme oceanblack | else | colorscheme inkpot | end
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
@@ -1534,6 +1511,7 @@ Change color scheme to highlight the currently focused Vim instance
 autocmd FocusLost * :colorscheme desert
 autocmd FocusGained * :colorscheme default
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("FocusLost", {
   callback = function()
@@ -1559,6 +1537,7 @@ Automatically set syntax highlighting for files in a specific directory path, us
 ```vim
 autocmd BufRead,BufNewFile ~/.pyblosxom/data/* set syntax=html
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
   pattern = vim.fn.expand('~/.pyblosxom/data/*'),
@@ -1580,6 +1559,7 @@ Automatically format XML files using Tidy whenever a file with XML filetype is o
 " Automatically format XML files
 :au FileType xml :%!tidy -i -xml --show-errors 0 2>/dev/null
 ```
+
 ```lua
 -- Automatically format XML files
 vim.api.nvim_create_autocmd('FileType', {
@@ -1605,6 +1585,7 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('CursorLine', { clear = true })
 vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter', 'BufWinEnter'}, {
@@ -1645,6 +1626,7 @@ endfunction
 
 autocmd BufEnter * call CommentIt()
 ```
+
 ```lua
 local function comment_it()
   local ft = vim.bo.filetype
@@ -1678,6 +1660,7 @@ autocmd FileType c,cpp set comments-=://
 autocmd FileType c,cpp set comments+=:///
 autocmd FileType c,cpp set comments+=://
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {'c', 'cpp'},
@@ -1701,6 +1684,7 @@ Automatically set different tab settings for specific file types like Python
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 autocmd FileType make setlocal noexpandtab
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'python',
@@ -1735,6 +1719,7 @@ au BufLeave * if exists('b:BuffEnter')|exec b:BuffLeave|endif
 let b:BuffEnter='amenu C.added ...'
 let b:BuffLeave='unmenu! C|unmenu C'
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufEnter', 'BufLeave'}, {
   callback = function(event)
@@ -1762,6 +1747,7 @@ Interactively debug autocommands triggered by window actions like closing or loa
 :debug quit
 :debug edit <file>
 ```
+
 ```lua
 -- For Neovim, use similar Ex commands with interactive debugging
 -- Use :debug to step through autocommands when triggering specific actions
@@ -1787,6 +1773,7 @@ endfunction
 autocmd BufReadCmd *.class
   \ call <SID>ReadClass(expand("<afile>:p:h"), expand("<afile>:t:r"))
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadCmd', {
   pattern = '*.class',
@@ -1819,6 +1806,7 @@ autocmd VimEnter * autocmd WinEnter * let w:created=1
 " Initialize window-specific options only for new windows
 autocmd WinEnter * if !exists('w:created') | setlocal nu | endif
 ```
+
 ```lua
 -- Set up autocommand to mark new windows
 vim.api.nvim_create_autocmd('VimEnter', {
@@ -1856,6 +1844,7 @@ autocmd VimEnter * autocmd WinEnter * let w:created=1
 " Initialize options only for new windows
 autocmd WinEnter * if !exists('w:created') | setlocal nu | endif
 ```
+
 ```lua
 -- Set window-local created flag
 vim.api.nvim_create_autocmd('VimEnter', {
@@ -1890,6 +1879,7 @@ Automatically load filetype-specific dictionaries to provide context-aware word 
 " Automatically load filetype-specific dictionary
 au FileType * execute 'setlocal dict+=~/.vim/words/'.&filetype.'.txt'
 ```
+
 ```lua
 -- Automatically load filetype-specific dictionary
 vim.api.nvim_create_autocmd('FileType', {
@@ -1914,6 +1904,7 @@ let g:do_filetype = 0
 au BufWinEnter,BufAdd * if expand('<afile>') == "" | let g:do_filetype = 1 | endif
 au BufEnter * if g:do_filetype | setf python | let g:do_filetype = 0 | endif
 ```
+
 ```lua
 vim.g.do_filetype = 0
 
@@ -1950,6 +1941,7 @@ Automatically set UTF-8 extended attributes for files to ensure correct display 
 ```vim
 au BufWritePost * :if &fenc=='utf-8' || (&fenc=='' && &enc=='utf-8') | exec "silent !xattr -w com.apple.TextEncoding 'UTF-8;134217984' '%'" | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePost', {
   callback = function()
@@ -1978,6 +1970,7 @@ endfunction
 autocmd FileType perl,cgi,csh,sh call PoundComment()
 autocmd FileType java call SlashComment()
 ```
+
 ```lua
 local function setup_comment_mapping(comment_char)
   vim.keymap.set('n', '-', function()
@@ -2010,6 +2003,7 @@ Automatically detect and set filetype for MoinMoin wiki files with .moin extensi
 ```vim
 au! BufNewFile,BufRead *.moin setf moin
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
   pattern = '*.moin',
@@ -2028,6 +2022,7 @@ Automatically detect and set filetype for Perl batch files based on first line c
 ```vim
 au BufRead,BufNewFile *.bat 	if getline(1) =~ '--*-Perl-*--' | setf perl | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
   pattern = '*.bat',
@@ -2056,6 +2051,7 @@ augroup encrypted
   autocmd BufReadPost,FileReadPost *.gpg '[,']!gpg --decrypt 2> /dev/null
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('encrypted', { clear = true })
 vim.api.nvim_create_autocmd({'BufReadPre', 'FileReadPre'}, {
@@ -2103,6 +2099,7 @@ if has("autocmd")
  autocmd WinEnter * call CloseIfLast()
 endif
 ```
+
 ```lua
 local function open_file_window()
  vim.cmd('20vs')
@@ -2151,6 +2148,7 @@ function FCSHandler(name)
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileChangedShell', {
   callback = function(event)
@@ -2174,6 +2172,7 @@ Use noautocmd to significantly speed up vimgrep searches by temporarily disablin
 ```vim
 :noautocmd vimgrep /{pattern}/[flags] {file(s)}
 ```
+
 ```lua
 vim.cmd('noautocmd vimgrep /{pattern}/[flags] {file(s)}')
 ```
@@ -2204,6 +2203,7 @@ augroup focus_buffer_check
   au FocusLost * endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('focus_buffer_check', { clear = true })
 
@@ -2241,6 +2241,7 @@ Automatically detect and reload files that have been modified externally, improv
 " Watch for external file changes
 command! -bang WatchForChanges :call WatchForChanges(@%, {'toggle': 1, 'autoread': <bang>0})
 ```
+
 ```lua
 -- Lua equivalent for watching file changes
 vim.api.nvim_create_user_command('WatchForChanges', function(opts)
@@ -2261,6 +2262,7 @@ Automatically check and reload files when Vim regains focus or enters a buffer, 
 ```vim
 au FocusGained,BufEnter * :checktime
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'FocusGained', 'BufEnter'}, {
   pattern = '*',
@@ -2288,6 +2290,7 @@ function! Noma_workaround()
 endfunction
 au BufNewFile,BufRead mutt*,*.txt,*/.followup call Noma_workaround()
 ```
+
 ```lua
 local function noma_workaround()
   if vim.opt.modifiable:get() then
@@ -2331,6 +2334,7 @@ augroup Binary
         \ endif
 augroup END
 ```
+
 ```lua
 local binary_augroup = vim.api.nvim_create_augroup('BinaryFileHandling', { clear = true })
 
@@ -2386,6 +2390,7 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('vimrc', { clear = true })
 vim.api.nvim_create_autocmd({'BufReadPre'}, {
@@ -2415,6 +2420,7 @@ Automatically cycle through color schemes when entering a new window, creating a
 ```vim
 :au WinEnter * :silent CN
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('WinEnter', {
   callback = function()
@@ -2446,6 +2452,7 @@ augroup Binary
         \ endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('Binary', { clear = true })
 
@@ -2503,6 +2510,7 @@ endfun
 
 autocmd BufWritePre * call LastModified()
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
@@ -2543,6 +2551,7 @@ EOF
 endfunction
 nnoremap <F4> :call PerlImageSize()<CR>
 ```
+
 ```lua
 local function perl_image_size()
   -- Note: Requires Perl and Image::Size module
@@ -2572,6 +2581,7 @@ fu! Sqllog()
 endf
 au BufWrite afiedt.buf call Sqllog()
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWrite', {
   pattern = 'afiedt.buf',
@@ -2599,6 +2609,7 @@ augroup backups
  autocmd BufWritePost,FileWritePost * !diff -d <afile> <afile>~ &> /dev/null;if [[ $? == 1 ]];then touch <afile>~;mv <afile>~ `mktemp ~/Desktop/Trash/<afile>.XXXXXX`;fi
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('backups', { clear = true })
 
@@ -2623,27 +2634,6 @@ vim.api.nvim_create_autocmd({'BufWritePost', 'FileWritePost'}, {
 # Category: autocmds
 # Tags: file-protection, autocmd, read-only
 ---
-Prevent accidental modifications to batch job output files by setting them read-only
-
-```vim
-" Prevents, by default, modification of listing files
-autocmd BufReadPre *.o[0-9]* set ro
-```
-```lua
-vim.api.nvim_create_autocmd('BufReadPre', {
-  pattern = '*.o[0-9]*',
-  callback = function()
-    vim.opt_local.readonly = true
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_remote_batch_jobs_and_view_results_in_Vim)
-***
-# Title: Dynamic Color Schemes Based on Context
-# Category: autocmds
-# Tags: color-scheme, buffer-management, workflow
----
 Automatically change color schemes to visually distinguish between different files, directories, or Vim instances, helping prevent accidental edits
 
 ```vim
@@ -2651,6 +2641,7 @@ au BufEnter * if (exists("b:colors_name")) | let b:current_colors=colors_name
   \ | execute "colorscheme " . b:colors_name | endif
 au BufLeave * if (exists("b:current_colors")) | execute "colorscheme " . b:current_colors | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
@@ -2682,6 +2673,7 @@ Automatically open quickfix window after running make, showing compilation error
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('QuickFixCmdPost', {
   pattern = '[^l]*',
@@ -2721,6 +2713,7 @@ augroup vimrc
     \|  endif
 augroup END
 ```
+
 ```lua
 vim.opt.viewoptions:remove('options')
 
@@ -2768,6 +2761,7 @@ function! MakeViewCheck()
     return 1
 endfunction
 ```
+
 ```lua
 local M = {}
 
@@ -2813,6 +2807,7 @@ Automatically close the preview window when moving cursor or leaving insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'CursorMovedI', 'InsertLeave'}, {
   callback = function()
@@ -2844,6 +2839,7 @@ if &swf
   au BufReadPre * call CheckSwap()
 endif
 ```
+
 ```lua
 vim.api.nvim_create_augroup('SwapFileCheck', { clear = true })
 
@@ -2876,6 +2872,7 @@ endfunction
 
 au BufWritePost *.py,*.ptl call WritePythonTags()
 ```
+
 ```lua
 local function write_python_tags()
   vim.fn.system("/usr/bin/ctags --langmap=python:.py.ptl *.py *.ptl")
@@ -2902,6 +2899,7 @@ function! Timer()
   " Periodically trigger a function
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('CursorHold', {
   callback = function()
@@ -2925,6 +2923,7 @@ autocmd InsertEnter * let CursorColumnI = col('.')
 autocmd CursorMovedI * let CursorColumnI = col('.')
 autocmd InsertLeave * if col('.') != CursorColumnI | call cursor(0, col('.')+1) | endif
 ```
+
 ```lua
 vim.api.nvim_create_augroup('CursorPositionTracking', { clear = true })
 vim.api.nvim_create_autocmd('InsertEnter', {
@@ -2986,6 +2985,7 @@ endfunction
 " Example usage
 autocommand CursorMoved * if LongEnough("g:MatchParens", 1, 3) | call MatchParens() | endif
 ```
+
 ```lua
 local function long_enough(timer, delay, suppression_count)
   suppression_count = suppression_count or 0
@@ -3043,6 +3043,7 @@ function! Refresh_firefox()
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWriteCmd', {
   pattern = {'*.html', '*.css', '*.gtpl'},
@@ -3073,6 +3074,7 @@ autocmd BufWritePre *.{cpp,h,c} %s/\s\+$//e
 " More selective version
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> %s/\s\+$//e
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = {'*.{cpp,h,c}'},
@@ -3111,6 +3113,7 @@ Automatically position cursor at a specific line when opening a file, useful for
 au BufWinEnter * exe 'normal gg'  " Go to first line
 au BufWinEnter * exe 'normal 6gg'  " Go to 6th line
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWinEnter', {
   callback = function()
@@ -3129,77 +3132,12 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 # Category: autocmds
 # Tags: tab-management, mode-persistence, workflow
 ---
-Automatically restore the previous mode (insert/normal) when switching between tab pages, treating each tab as a separate workspace
-
-```vim
-augroup tabInsertMode
-  au!
-  au TabLeave * let t:tabInsertMode_lastmode = mode()
-        \ | let t:tabInsertMode_lastcol = col('.')
-        \ | if t:tabInsertMode_lastcol == col('$')
-        \ |   let t:tabInsertMode_lastmode = 'A'
-        \ | endif
-  au TabEnter * if exists('t:tabInsertMode_lastmode')
-        \ |   if t:tabInsertMode_lastmode == 'A'
-        \ |     if mode() == 'i' | call feedkeys("\<C-O>l")
-        \ |     else | call feedkeys("A") | endif
-        \ |   elseif t:tabInsertMode_lastmode == 'i'
-        \ |     if mode() != 'i' | call feedkeys("i") | endif
-        \ |   else
-        \ |     if mode() == 'i' | call feedkeys("\<Esc>") | endif
-        \ |   endif
-        \ | endif
-augroup END
-```
-```lua
-vim.api.nvim_create_augroup('tabInsertMode', { clear = true })
-
-vim.api.nvim_create_autocmd('TabLeave', {
-  group = 'tabInsertMode',
-  callback = function()
-    vim.t.tabInsertMode_lastmode = vim.fn.mode()
-    vim.t.tabInsertMode_lastcol = vim.fn.col('.')
-    if vim.t.tabInsertMode_lastcol == vim.fn.col('$') then
-      vim.t.tabInsertMode_lastmode = 'A'
-    end
-  end
-})
-
-vim.api.nvim_create_autocmd('TabEnter', {
-  group = 'tabInsertMode',
-  callback = function()
-    if vim.t.tabInsertMode_lastmode then
-      if vim.t.tabInsertMode_lastmode == 'A' then
-        if vim.fn.mode() == 'i' then
-          vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-O>l', true, false, true), 'n', false)
-        else
-          vim.api.nvim_feedkeys('A', 'n', false)
-        end
-      elseif vim.t.tabInsertMode_lastmode == 'i' then
-        if vim.fn.mode() ~= 'i' then
-          vim.api.nvim_feedkeys('i', 'n', false)
-        end
-      else
-        if vim.fn.mode() == 'i' then
-          vim.api.nvim_feedkeys('<Esc>', 'n', false)
-        end
-      end
-    end
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Restore_the_last_used_mode_when_switching_tabpages)
-***
-# Title: Set Fortran Source Form Manually
-# Category: autocmds
-# Tags: fortran, syntax-highlighting, file-type
----
 Manually set Fortran source form for .for files to fix syntax highlighting issues
 
 ```vim
 au BufRead,BufNewFile *.for let b:fortran_fixed_source=1
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
   pattern = '*.for',
@@ -3221,6 +3159,7 @@ Create an autocmd to remember and restore the last line position in the command 
 " Autocmd to remember command window line position
 autocmd CmdwinEnter * nnoremap <buffer> <F5> :let g:CmdWindowLineMark=line(".")<CR><CR>q::execute "normal ".g:CmdWindowLineMark."G"<CR>
 ```
+
 ```lua
 -- Lua equivalent for remembering command window line position
 vim.api.nvim_create_autocmd('CmdwinEnter', {
@@ -3252,6 +3191,7 @@ function! MyLastWindow()
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
@@ -3277,6 +3217,7 @@ exe "au FileChangedShell " . expand("%") . " let &cpo = &cpo"
 checktime
 exe "au! FileChangedShell " . expand("%")
 ```
+
 ```lua
 vim.cmd('checktime')
 vim.cmd(string.format('au FileChangedShell %s let &cpo = &cpo', vim.fn.expand('%')))
@@ -3310,6 +3251,7 @@ function! PHPsynCHK()
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWriteCmd', {
   pattern = '*.php',

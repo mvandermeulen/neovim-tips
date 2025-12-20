@@ -163,6 +163,7 @@ Configures Vim to run Perl syntax checks and parse errors, allowing quick naviga
 setlocal errorformat=%f:%l:\ %m
 setlocal makeprg=perl\ -MVimCompile\ -c\ %
 ```
+
 ```lua
 -- Lua equivalent for Perl syntax checking
 vim.opt.errorformat = '%f:%l: %m'
@@ -190,6 +191,7 @@ endfunction
 " Custom command to open new buffer with command output
 :command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 ```
+
 ```lua
 -- Lua equivalent for appending command output
 function _G.get_date(format)
@@ -221,6 +223,7 @@ Apply any command to a specific line range using global command with empty patte
 ```vim
 :n1,n2 g/^/ command
 ```
+
 ```lua
 -- Lua equivalent would typically be a function or use vim.cmd
 -- Example: Execute command on lines 5-10
@@ -238,6 +241,7 @@ Create a custom :Make command that runs make and automatically opens quickfix wi
 ```vim
 :command -nargs=* Make make <args> | cwindow 3
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Make', function(opts)
   vim.cmd('make ' .. opts.args)
@@ -265,6 +269,7 @@ nmap <leader>mh :Repl http://
 nmap <silent> <leader>ml :Repl file:///%:p<CR>
 nmap <silent> <leader>md :Repl http://localhost/
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Repl', function(opts)
   vim.fn.system(string.format(
@@ -292,6 +297,7 @@ command! -nargs=1 Silent
     execute 'silent !' . <q-args>
     | execute 'redraw!'
 ```
+
 ```lua
 -- Create a silent command executor
 vim.api.nvim_create_user_command('Silent', function(ctx)
@@ -311,6 +317,7 @@ Use :g command to apply actions to lines matching a pattern
 ```vim
 :g/pattern/d  " Delete all lines matching pattern
 ```
+
 ```lua
 -- Can be used directly in command mode
 -- For programmatic approach:
@@ -328,6 +335,7 @@ Add a custom command to evaluate Perl expressions directly in Vim, allowing quic
 ```vim
 :command! -nargs=+ Evaluate :perl VIM::Msg(eval{<args>})
 ```
+
 ```lua
 -- Lua equivalent would require a different approach
 -- In Neovim, you might use vim.fn.system() or a Lua-based implementation
@@ -346,6 +354,7 @@ Properly escape shell command special characters to prevent errors when running 
 " Use shellescape() for commands with special characters
 let escaped_cmd = shellescape(original_cmd)
 ```
+
 ```lua
 -- Use vim.fn.shellescape() to escape special characters
 local escaped_cmd = vim.fn.shellescape(original_cmd)
@@ -374,6 +383,7 @@ function! TabMessage(cmd)
 endfunction
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 ```
+
 ```lua
 function _G.tab_message(cmd)
   local output = vim.api.nvim_exec(cmd, true)
@@ -404,6 +414,7 @@ Remotely save and close Vim sessions using the client-server protocol, useful fo
 ```vim
 vim --servername GVIM --remote-send '<Esc>:wqa<CR>'
 ```
+
 ```lua
 -- Lua equivalent for remote Vim interaction
 -- Requires setting up Vim's client-server functionality
@@ -422,6 +433,7 @@ Remotely query the current Vim session's mode and working directory using client
 ```vim
 vim --servername GVIM --remote-expr 'mode()'
 ```
+
 ```lua
 -- Lua approach to query Vim session state
 -- vim.fn.remote_expr('GVIM', 'mode()')
@@ -458,6 +470,7 @@ endfunction
 
 command! Pycheck call DoMake('pyflakes', 'pep8')
 ```
+
 ```lua
 function _G.do_make(...)
   vim.cmd('update')
@@ -500,6 +513,7 @@ function! s:RemoveLastPathComponent()
   return substitute(getcmdline(), '\%(\ \|[\/]\@!\f\)\+[\/]\=$\|.$', '', '')
 endfunction
 ```
+
 ```lua
 vim.keymap.set('c', '<C-t>', function()
   local cmdline = vim.fn.getcmdline()
@@ -519,6 +533,7 @@ Use -S flag to source a Vim script when launching Vim, which is more concise tha
 ```vim
 vim -S foobar.vim
 ```
+
 ```lua
 vim.cmd('source foobar.vim')
 ```
@@ -540,6 +555,7 @@ function v() {
   vim *${1}*
 }
 ```
+
 ```lua
 -- Lua equivalents typically done via external shell functions
 -- In Neovim, you can use telescope.nvim for similar functionality
@@ -563,6 +579,7 @@ gvim -R important.txt     # Open read-only
 gvim +10 file.txt         # Open and jump to line 10
 gvim -c "/search" file.c  # Open and jump to search match
 ```
+
 ```lua
 -- While these are CLI options, in Neovim you can replicate some behaviors
 -- Open read-only
@@ -584,6 +601,7 @@ Perform find and replace operations across multiple files efficiently
 vim -c "argdo %s/ABC/DEF/g | w" *.txt
 vim -c "argdo %s/FOO/BAR/g | update" `grep -l FOO *`
 ```
+
 ```lua
 -- Lua equivalent using nvim-spectre or manual approach
 -- Requires external grep and argument manipulation
@@ -609,6 +627,7 @@ nnoremap : q:i
 nnoremap / q/i
 nnoremap ? q?i
 ```
+
 ```lua
 -- Open command window directly in Neovim
 vim.keymap.set('n', ':', function() vim.cmd('q:i') end, { desc = 'Open command window' })
@@ -628,6 +647,7 @@ Create a mapping to execute a command and automatically reopen the command windo
 " Reopen command window after executing a command
 autocmd CmdwinEnter * nnoremap <buffer> <F5> :let g:CmdWindowLineMark=line('.')<CR><CR>q::execute 'normal '.g:CmdWindowLineMark.'G'<CR>
 ```
+
 ```lua
 -- Lua equivalent for keeping command window open
 vim.api.nvim_create_autocmd('CmdwinEnter', {
@@ -651,30 +671,12 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
 # Category: command_line
 # Tags: java, execution, file-path
 ---
-Quickly run the compiled Java class from the current file's directory
-
-```vim
-map <F6> :!java -cp %:p:h %:t:r<CR>
-```
-```lua
-vim.keymap.set('n', '<F6>', function()
-  local classpath = vim.fn.expand('%:p:h')
-  local classname = vim.fn.expand('%:t:r')
-  vim.cmd('!java -cp ' .. classpath .. ' ' .. classname)
-end, { desc = 'Run Java class' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Compile_Java_with_Jikes)
-***
-# Title: Quick Compile Current File with GCC
-# Category: command_line
-# Tags: compilation, gcc, build-tools
----
 Configure Vim to compile the current file quickly using gcc with a single command
 
 ```vim
 set makeprg=gcc\ -o\ %<\ %
 ```
+
 ```lua
 vim.opt.makeprg = 'gcc -o %< %'
 ```
@@ -691,6 +693,7 @@ Define user commands to convert numbers between decimal and hexadecimal in visua
 command! -nargs=? -range Dec2hex call s:Dec2hex(<line1>, <line2>, '<args>')
 command! -nargs=? -range Hex2dec call s:Hex2dec(<line1>, <line2>, '<args>')
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Dec2hex', function(opts)
   local start_line = opts.line1
@@ -718,6 +721,7 @@ Add a custom command to easily count pattern occurrences
 ```vim
 command -nargs=1 Count :%s/<args>//gn
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Count', ':%s/<args>//gn', {})
 ```
@@ -733,6 +737,7 @@ Set verbose levels to get more detailed information about command execution
 ```vim
 :9verbose edit somefile.txt.gz
 ```
+
 ```lua
 -- Neovim equivalent for verbose command execution
 -- Use :9verbose before commands to get detailed debug information
@@ -752,6 +757,7 @@ Delete lines matching a pattern while preserving specific exceptions using globa
 " Alternative method:
 :g#\(^\./help/\)\(de/\)\@!#d
 ```
+
 ```lua
 -- Lua equivalent using vim.api and global command
 vim.cmd('g#\(^\./help/\)\(de/\)\@!#d')
@@ -776,6 +782,7 @@ Use a custom bash script to retrieve and insert table description directly into 
 ```vim
 :r !describe <tableName>
 ```
+
 ```lua
 -- Equivalent Lua command
 vim.api.nvim_command('r !describe ' .. table_name)
@@ -793,6 +800,7 @@ Quickly repeat the last Ex (colon) command using @: and repeat again with @@
 " Press @: to repeat last Ex command
 " Press @@ to repeat again
 ```
+
 ```lua
 -- No direct Lua equivalent, but can be mapped similarly
 vim.keymap.set('n', '<leader>@', '@:', { desc = 'Repeat last Ex command' })
@@ -813,6 +821,7 @@ set invpaste
 " Method 2: Literal character insertion
 " Press <C-V> before the expansion character
 ```
+
 ```lua
 -- Method 1: Toggle paste mode
 vim.opt.paste = not vim.opt.paste:get()
@@ -835,6 +844,7 @@ Comprehensive set of commands to display various Vim environment details, useful
 :map          " Show all mappings
 :scriptnames  " List sourced scripts
 ```
+
 ```lua
 -- Lua equivalents for environment inspection
 vim.cmd('set all')      -- Show all options
@@ -858,6 +868,7 @@ Create a shell function to quickly open files found by the whereis command in Vi
 function vvim() { vim `whereis $1|cut -d: -f2` }
 function ggvim() { gvim `whereis $1|cut -d: -f2` }
 ```
+
 ```lua
 -- Bash function to be added to .bashrc or .bash_profile
 -- function vvim() {
@@ -892,6 +903,7 @@ augroup ECW_au
   au CmdwinLeave * nmap <Esc> q:<C-W>_
 augroup END
 ```
+
 ```lua
 vim.keymap.set('n', '<Esc>', 'q:<C-W>_', { desc = 'Open command window' })
 vim.keymap.set('n', 'q/', 'q/<C-W>_', { desc = 'Open search command window' })
@@ -933,6 +945,7 @@ augroup ECW_au
   au CmdwinLeave : :let @/=""
 augroup END
 ```
+
 ```lua
 -- Enhanced command window navigation
 local augroup = vim.api.nvim_create_augroup('ECW_au', { clear = true })
@@ -984,6 +997,7 @@ Easily read, modify, and insert environment variables directly within Vim
 " Append to PATH
 :let $PATH .= ':/foo:/bar'
 ```
+
 ```lua
 -- Display PATH variable
 print(vim.env.PATH)
@@ -1010,6 +1024,7 @@ Run external console programs without blocking Vim, with optional pause to view 
 " Run compiled program corresponding to current source file
 nnoremap <silent> <F5> :!start cmd /c "%:p:r:s,$,.exe," & pause<CR>
 ```
+
 ```lua
 -- Lua equivalent for running external programs
 vim.keymap.set('n', '<F5>', function()
@@ -1029,6 +1044,7 @@ Quickly open Vim help for a specific topic in a full window from the command lin
 #!/bin/bash
 vim -c "help $1" -c only
 ```
+
 ```lua
 -- Lua equivalent (shell script)
 local function open_help(topic)
@@ -1054,6 +1070,7 @@ vimhelpgrep() {
   vim -c "helpgrep $1" -c on -c copen -c "au! VimEnter *"
 }
 ```
+
 ```lua
 -- Lua functions for Neovim help search
 local function vim_help(topic)
@@ -1092,6 +1109,7 @@ endfunc
 cno $c e <C-\>eCurrentFileDir()<CR>
 cmap <C-q> <C-\>eDeleteTillSlash()<CR>
 ```
+
 ```lua
 local function current_file_dir()
   return 'e ' .. vim.fn.expand('%:p:h') .. '/'
@@ -1130,6 +1148,7 @@ Use tab and Ctrl-D for dynamic file name completion and listing
 :e <space>Ctrl-D  # List all files
 :e get<Tab>      # Complete files starting with 'get'
 ```
+
 ```lua
 -- These are built-in Vim/Neovim command line completion features
 -- Use in command mode with Ctrl-D or Tab
@@ -1141,33 +1160,13 @@ Use tab and Ctrl-D for dynamic file name completion and listing
 # Category: command_line
 # Tags: shell-scripting, vim-environment
 ---
-Retrieve the VIMRUNTIME directory path using Vim in a bash script, which can be useful for scripting and plugin development
-
-```vim
-vim --cmd 'echo $VIMRUNTIME' --cmd 'quit' 2> /tmp/VIMRUNTIME.txt
-VIMRUNTIME=`perl -pe 's/
-//g' /tmp/VIMRUNTIME.txt`
-rm -f /tmp/VIMRUNTIME.txt
-```
-```lua
--- Lua equivalent for getting VIMRUNTIME
-local handle = io.popen('vim --cmd "echo $VIMRUNTIME" --cmd "quit"')
-local vimruntime = handle:read('*a'):gsub('[\r\n]', '')
-handle:close()
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_VIMRUNTIME_in_a_bash_script)
-***
-# Title: Escape Shell Commands Properly
-# Category: command_line
-# Tags: shell-commands, escaping
----
 Use shellescape() to properly escape special characters in external shell commands to prevent errors
 
 ```vim
 " Example: Escape command with special characters
 let escaped_cmd = shellescape(original_cmd)
 ```
+
 ```lua
 -- Use vim.fn.shellescape() to escape shell commands
 local escaped_cmd = vim.fn.shellescape(original_cmd)
@@ -1184,6 +1183,7 @@ Generate a shell 'cd' command for the current Vim working directory, which can b
 ```vim
 com Scd let @+="cd \"" . escape(getcwd(), "\"") . """
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Scd', function()
   local cwd = vim.fn.getcwd()
@@ -1210,6 +1210,7 @@ function! GetCmdCompletion(cmd_prefix)
   return res
 endfunction
 ```
+
 ```lua
 function _G.get_cmd_completion(cmd_prefix)
   local cwh = vim.o.cmdheight
@@ -1238,23 +1239,6 @@ end
 # Category: command_line
 # Tags: completion, command-line, usability
 ---
-Improve command-line completion with a menu and enhanced tab behavior, showing all possible completions and automatically completing to the longest common string
-
-```vim
-set wildmenu
-set wildmode=list:longest,full
-```
-```lua
-vim.opt.wildmenu = true
-vim.opt.wildmode = 'list:longest,full'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Great_wildmode/wildmenu_and_console_mouse)
-***
-# Title: Fix Common Command-Line Typos
-# Category: command_line
-# Tags: typo-correction, command-line, productivity
----
 Automatically correct common command-line typos like accidentally holding Shift or mistyping quit/write commands
 
 ```vim
@@ -1264,6 +1248,7 @@ cabbrev W write
 cabbrev q!@ q!
 cabbrev wq!@ wq!
 ```
+
 ```lua
 -- Correct common command typos in Neovim
 vim.cmd('cabbrev Q quit')
@@ -1284,6 +1269,7 @@ Quickly insert text from the current buffer into command line using different me
 " Method 1: Use Shift-Insert
 " Method 2: Use Ctrl-R Ctrl-W to insert current word
 ```
+
 ```lua
 -- Insert current word in command line
 vim.keymap.set('c', '<C-r><C-w>', function()
@@ -1303,6 +1289,7 @@ Quickly insert the path to perl executable using which command
 ```vim
 :r !which perl
 ```
+
 ```lua
 vim.cmd('r !which perl')
 ```
@@ -1320,6 +1307,7 @@ vim -c "cmd1|cmd2|cmd3"
 # Example: Print paste contents to default printer
 gvim -c 's/^/\=@*/|hardcopy!|q!'
 ```
+
 ```lua
 -- Lua equivalent using vim.cmd
 -- Note: Direct command-line usage remains similar
@@ -1356,6 +1344,7 @@ function! s:Filter_lines(cmd, filter)
 endfunction
 command! -nargs=? Scriptnames call s:Filter_lines('scriptnames', <q-args>)
 ```
+
 ```lua
 function _G.filter_scripts(cmd, filter)
   local lines = vim.fn.execute(cmd)
@@ -1396,6 +1385,7 @@ set makeprg=gcc\ -o\ %<\ %
 " Compile current file
 :make %:r
 ```
+
 ```lua
 -- Set make program for compiling current file
 vim.o.makeprg = 'gcc -o %< %'
@@ -1410,37 +1400,12 @@ vim.cmd('make %:r')
 # Category: command_line
 # Tags: compilation, quickfix, make
 ---
-Set up a quick way to compile the current file and open compilation errors in the quickfix window
-
-```vim
-" Configure make program for gcc compilation
-set makeprg=gcc\ -o\ %<\ %
-
-" Mapping to compile current file
-nnoremap <F7> :update<CR>:make<CR>
-```
-```lua
--- Configure make program for gcc compilation
-vim.o.makeprg = 'gcc -o %< %'
-
--- Mapping to compile current file
-vim.keymap.set('n', '<F7>', function()
-  vim.cmd.write()
-  vim.cmd.make()
-end, { desc = 'Compile current file' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Map_function_keys_to_compile_and_run_your_code)
-***
-# Title: Quickly Repeat Previous Command
-# Category: command_line
-# Tags: productivity, key-mapping, command-repeat
----
 Easily re-run the last command using a leader key mapping
 
 ```vim
 nmap <Leader>. :<C-P><CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>.', function()
   vim.cmd(':<C-P><CR>')
@@ -1458,6 +1423,7 @@ Execute multiple Vim commands sequentially, with each command running only if th
 ```vim
 %s/htm/html/c | %s/JPEG/jpg/c | %s/GIF/gif/c
 ```
+
 ```lua
 -- For Lua, use vim.cmd to execute multiple commands
 vim.cmd('s/htm/html/c | s/JPEG/jpg/c | s/GIF/gif/c')
@@ -1476,6 +1442,7 @@ alias gvir="gvim --remote"
 alias gvdev="gvim --servername dev --remote"
 alias gvlib="gvim --servername lib --remote"
 ```
+
 ```lua
 -- These are shell aliases, not Lua code
 -- Add to your .bashrc or .zshrc
@@ -1496,6 +1463,7 @@ Easily paste word or WORD under cursor into command line using keyboard shortcut
 " <C-r><C-w> - Paste word under cursor
 " <C-r><C-a> - Paste WORD under cursor
 ```
+
 ```lua
 -- Functionality is built-in, no specific Lua implementation needed
 -- Can be used directly in command and search modes
@@ -1512,6 +1480,7 @@ Execute PostgreSQL queries directly from Vim by mapping a key to run the current
 ```vim
 map <F9> :!psql -d yourdb < % <BAR> less
 ```
+
 ```lua
 vim.keymap.set('n', '<F9>', function()
   vim.cmd('!psql -d yourdb < % | less')
@@ -1529,6 +1498,7 @@ Quickly open a URL in the default browser directly from Vim using the :!start ex
 ```vim
 :!start explorer http://www.vim.org/
 ```
+
 ```lua
 vim.fn.system('start explorer http://www.vim.org/')
 ```
@@ -1539,27 +1509,13 @@ vim.fn.system('start explorer http://www.vim.org/')
 # Category: command_line
 # Tags: file-preview, quick-view, vim-tricks
 ---
-View file contents directly in Vim's command line without opening a new buffer, useful for quick file inspection
-
-```vim
-:echo join(readfile('foo.bat'), "\n")
-```
-```lua
-vim.api.nvim_command(string.format('echo join(readfile("%s"), "\n")', 'foo.bat'))
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quick_peek_at_files)
-***
-# Title: Quick Buffer and Global Commands
-# Category: command_line
-# Tags: buffer-management, global-commands, text-manipulation
----
 Apply commands across all buffers or matching lines efficiently
 
 ```vim
 :bufdo %s/pattern/substitution/g  # Replace in all buffers
 :g/pattern/d  # Delete all lines matching pattern
 ```
+
 ```lua
 -- For buffer-wide substitution
 vim.cmd('bufdo %s/pattern/substitution/g')
@@ -1580,6 +1536,7 @@ Set up a custom make program and mapping to parse Visual Studio compiler errors 
 set makeprg=/bin/dovcmake
 map <F7> :make <C-R>%<CR>
 ```
+
 ```lua
 vim.o.makeprg = '/bin/dovcmake'
 vim.keymap.set('n', '<F7>', function()
@@ -1599,6 +1556,7 @@ Configure Vim's quickfix to navigate through Doxygen documentation generation er
 :set makeprg=doxygen
 :make Doxyfile
 ```
+
 ```lua
 vim.opt.makeprg = 'doxygen'
 vim.cmd('make Doxyfile')
@@ -1618,6 +1576,7 @@ Use flexible range specifiers for precise text manipulation across lines
 :.,$s/old/new/g           " Replace from current line to end
 :/pattern/,/endpattern/ s/old/new/g  " Replace between patterns
 ```
+
 ```lua
 -- Lua equivalent uses Vim command mode
 vim.cmd(':%s/old/new/g')               -- Replace in all lines
@@ -1641,6 +1600,7 @@ Use flexible range specifiers for powerful text editing across multiple lines, i
 :'a,'bd               " Delete lines from mark a to b
 :/apples/,/peaches/s/^/# /g  " Comment lines between patterns
 ```
+
 ```lua
 -- Lua equivalents use ex commands
 vim.cmd('21,25s/old/new/g')      -- Substitute in lines 21-25
@@ -1670,6 +1630,7 @@ Easily read, display, and modify environment variables directly within Vim, allo
 " Append to PATH
 :let $PATH .= ':/foo:/bar'
 ```
+
 ```lua
 -- Display PATH variable
 print(vim.env.PATH)
@@ -1701,6 +1662,7 @@ Decode base64 encoded strings directly within Vim using Ruby or Perl embedded in
 :perl require MIME::Base64
 :.perldo $_=MIME::Base64::decode($_)
 ```
+
 ```lua
 -- Lua base64 decoding (requires 'base64' luarocks package)
 local base64 = require('base64')
@@ -1713,53 +1675,12 @@ vim.api.nvim_command(string.format(':lua vim.api.nvim_set_current_line(base64.de
 # Category: command_line
 # Tags: command-history, navigation
 ---
-Use q: to open command-line window for easier command history navigation and editing without leaving home row
-
-```vim
-" Open command-line window
-q:
-```
-```lua
--- Open command-line window
-vim.cmd('q:')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last)
-***
-# Title: Repeat Last Ex Command Efficiently
-# Category: command_line
-# Tags: ex-commands, productivity, repeat
----
-Use @: to repeat the last colon command, and @@ to repeat subsequent times. Useful for batch operations across files.
-
-```vim
-" Repeat last colon command
-@:
-" Repeat again
-@@
-" Repeat multiple times
-10@@
-```
-```lua
--- Repeat last command in Ex mode
-vim.cmd('normal! @:')
--- Repeat again
-vim.cmd('normal! @@')
--- Repeat multiple times
-vim.cmd('normal! 10@@')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Repeat_last_colon_command)
-***
-# Title: Repeat Ex Command on Multiple Blocks
-# Category: command_line
-# Tags: global-command, text-manipulation, bulk-editing
----
 Use the global command to apply an Ex command (like sort) to multiple blocks of text separated by blank lines
 
 ```vim
 :g/^\s*$/;//-1sort
 ```
+
 ```lua
 -- Sort each block of text in a file
 vim.cmd('g/^\s*$/;//-1sort')
@@ -1783,6 +1704,7 @@ command! -nargs=+ CommandCabbr call CommandCabbr(<f-args>)
 " Example: Replace 'w1' with 'w!' to force write
 cabbrev w1 <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'w!' : 'w1')<CR>
 ```
+
 ```lua
 -- Function to create command abbreviations
 local function command_cabbr(abbreviation, expansion)
@@ -1808,6 +1730,7 @@ Replace a command with its full system path using 'which' directly in Vim, usefu
 ```vim
 !which $(cat)
 ```
+
 ```lua
 -- Lua equivalent for finding command full path
 local function get_command_path(cmd)
@@ -1832,6 +1755,7 @@ Create a mapping to restrict commands like substitution to the current function 
 ```vim
 :cmap ;tf ?^{??(?,/^}/
 ```
+
 ```lua
 -- Lua equivalent requires more complex setup
 vim.keymap.set('c', ';tf', '?^{??(?,/^}/', { desc = 'Select current function scope' })
@@ -1855,6 +1779,7 @@ nnoremap / q/i
 " Open command-line window for reverse searches
 nnoremap ? q?i
 ```
+
 ```lua
 -- Open command-line window for commands
 vim.keymap.set('n', ':', function() vim.cmd('q:') end, { desc = 'Open command history window' })
@@ -1883,6 +1808,7 @@ noremap <M-2> :cp<CR>
 noremap <M-3> :cn<CR>
 noremap <M-4> :cl<CR>
 ```
+
 ```lua
 vim.o.makeprg = 'javac'
 vim.o.makeef = 'c:\\dev\\src\\errors.txt'
@@ -1906,6 +1832,7 @@ Provides multiple methods to insert shell command output into Vim/Neovim buffers
 " Command to create a new scratch buffer with command output
 :command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 ```
+
 ```lua
 -- Lua equivalent for creating a command to capture shell output
 vim.api.nvim_create_user_command('R', function(ctx)
@@ -1928,6 +1855,7 @@ Validate XML file's wellformedness directly from Vim using xmllint
 ```vim
 !xmllint --noout %
 ```
+
 ```lua
 vim.cmd('!xmllint --noout %')
 ```
@@ -1954,6 +1882,7 @@ function! s:MyCommandFunction(...) range
   q
 endfunction
 ```
+
 ```lua
 -- Lua equivalent for creating a custom command
 vim.api.nvim_create_user_command('MyCommand', function(opts)
@@ -2007,6 +1936,7 @@ endfunction
 
 command -nargs=0 ECWCtrlD call s:ECWCtrlD()
 ```
+
 ```lua
 local function ecw_ctrl_d()
   local line = vim.fn.getline('.')
@@ -2046,6 +1976,7 @@ Use macOS pbcopy and pbpaste commands directly from Vim for system clipboard ope
 " Paste clipboard content to current line
 :r !pbpaste
 ```
+
 ```lua
 -- These can typically be used directly in Neovim's command mode as well
 ```
@@ -2070,6 +2001,7 @@ fu! Mycscope(func)
 endf
 command -nargs=* CScope :silent call Mycscope("<args>")
 ```
+
 ```lua
 function _G.mycscope(func)
   local tmp1 = vim.o.grepprg
@@ -2097,6 +2029,7 @@ Quickly check PHP syntax directly from the editor without leaving the buffer
 ```vim
 map <C-B> :!php -l %<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-b>', ':!php -l %<CR>', { desc = 'Check PHP syntax' })
 ```
@@ -2130,6 +2063,7 @@ endfunction
 
 let g:explFileHandler = "MyFileHandler"
 ```
+
 ```lua
 function _G.my_file_handler(filename)
   local oldpath = vim.fn.getcwd()
@@ -2168,6 +2102,7 @@ Quickly check XML document well-formedness directly from Vim using xmllint
 ```vim
 !xmllint --noout %
 ```
+
 ```lua
 vim.cmd('!xmllint --noout %')
 ```

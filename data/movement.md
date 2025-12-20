@@ -62,17 +62,6 @@ G   " last line
 # Category: Movement
 # Tags: scroll, screen, navigation
 ---
-Use `Ctrl+e` to scroll down and `Ctrl+y` to scroll up without moving the cursor position.
-
-```vim
-Ctrl+e  " scroll down
-Ctrl+y  " scroll up
-```
-***
-# Title: Center cursor on screen
-# Category: Movement
-# Tags: center, screen, cursor
----
 Use `zz` to center the current line on screen, `zt` to move it to the top, and `zb` to move it to the bottom.
 
 ```vim
@@ -153,17 +142,6 @@ L  " move to bottom of screen
 # Title: Jump to definition
 # Category: Movement
 # Tags: definition, jump, lsp
----
-Use `gd` to jump to the definition of the symbol under the cursor (requires LSP). Use `gD` to go to declaration instead of definition.
-
-```vim
-gd  " go to definition
-gD  " go to declaration
-```
-***
-# Title: Jump list navigation
-# Category: Movement
-# Tags: jump, list, navigation
 ---
 Use `Ctrl+o` to go back to previous location and `Ctrl+i` to go forward in the jump list. Use `:jumps` to see the jump list.
 

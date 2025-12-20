@@ -23,28 +23,6 @@ Ctrl+l  " redraw screen
 # Category: Edit
 # Tags: file, info, position, status
 ---
-Use `Ctrl+g` to display current file name, cursor position, and buffer information.
-
-```vim
-Ctrl+g  " show file info and cursor position
-```
-***
-# Title: Substitute characters
-# Category: Edit
-# Tags: substitute, character, delete, insert
----
-Use `s` to substitute (delete character under cursor and enter insert mode) and `S` to substitute entire line.
-
-```vim
-s   " substitute character under cursor
-S   " substitute entire line
-5s  " substitute 5 characters
-```
-***
-# Title: Repeat last change
-# Category: Edit
-# Tags: repeat, change, command
----
 Use `.` (dot) to repeat the last change command.
 
 ```vim

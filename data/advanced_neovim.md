@@ -93,20 +93,6 @@ Use `vim.g` to manage global variables from Lua, providing type-safe access to v
 # Category: Advanced Neovim
 # Tags: tab, local, variables, vim.t
 ---
-Use `vim.t` to manage tab-local variables for tab-specific settings and state management.
-
-```vim
-:lua vim.t.project_root = vim.fn.getcwd()
-:lua vim.t[2].custom_title = 'Tab 2'  " specific tab
-:lua print('Current tab project:', vim.t.project_root)
-```
-
-**Source:** Community contributed
-***
-# Title: Lua heredoc syntax
-# Category: Advanced Neovim
-# Tags: lua, heredoc, multiline, syntax
----
 Use Lua heredoc syntax in vimscript for clean multiline Lua code blocks within vim configuration.
 
 ```vim
@@ -186,22 +172,6 @@ Use `vim.filetype.add()` to register custom filetype detection patterns and func
 # Title: Highlight group API
 # Category: Advanced Neovim
 # Tags: highlight, api, colors, groups
----
-Use `vim.api.nvim_set_hl()` to programmatically define and modify highlight groups from Lua.
-
-```vim
-:lua vim.api.nvim_set_hl(0, 'MyHighlight', {
-  fg = '#ff0000', bg = '#000000', bold = true
-})
-:lua local hl = vim.api.nvim_get_hl(0, {name = 'Comment'})
-:lua print(vim.inspect(hl))
-```
-
-**Source:** Community contributed
-***
-# Title: Snippet expansion API
-# Category: Advanced Neovim
-# Tags: snippet, expansion, api, completion
 ---
 Use `vim.snippet` API for snippet expansion and navigation without external snippet engines.
 
@@ -366,6 +336,7 @@ function! MyCompletion(findstart, base)
 endfunction
 :set omnifunc=MyCompletion
 ```
+
 ```lua
 -- Lua:
 local function my_completion(findstart, base)
@@ -429,6 +400,7 @@ Use `inccommand` for live preview of Ex commands, especially substitution with r
 :%s/old/new/g            " shows live preview while typing
 " Preview works with :substitute, :global, :sort, etc.
 ```
+
 ```lua
 -- Lua:
 vim.opt.inccommand = 'split'     -- preview in split window
@@ -452,6 +424,7 @@ git config --global mergetool.diffconflicts.cmd 'diffconflicts vim $BASE $LOCAL 
 git config --global mergetool.diffconflicts.trustExitCode true
 git config --global mergetool.keepBackup false
 ```
+
 ```lua
 -- Git configuration can remain the same
 -- Use with a custom diffconflicts script
@@ -479,6 +452,7 @@ endfunction
 
 nnoremap gn :call DecAndHex(expand("<cWORD>"))<CR>
 ```
+
 ```lua
 local function dec_and_hex(number)
   local dec = tonumber(number)
@@ -513,6 +487,7 @@ setlocal completefunc=MKwCompleteId
 
 " Usage: Type part of a keyword and use CTRL-X CTRL-U to complete
 ```
+
 ```lua
 -- Lua equivalent for custom keyword completion
 function MKwCompleteId(findstart, base)
@@ -573,6 +548,7 @@ endfunction
 
 au! CursorHold *.[ch] nested call PreviewWord()
 ```
+
 ```lua
 local function preview_word()
   -- Check if already in preview window
@@ -625,6 +601,7 @@ com! CheckHighlightUnderCursor echo {l,c,n ->
         \  .'lo<'    . synIDattr(synIDtrans(synID(l, c, 1)), n) . '> '
         \ }(line("."), col("."), "name")
 ```
+
 ```lua
 vim.api.nvim_create_user_command('CheckHighlightUnderCursor', function()
   local line = vim.fn.line('.')
@@ -654,6 +631,7 @@ Create a script to launch Vim instances specific to the current desktop, ensurin
 # Bash script to manage desktop-specific Vim instances
 exec /usr/bin/vim --servername $desktop --remote-tab-silent "$@"
 ```
+
 ```lua
 -- Lua equivalent requires external script or system integration
 -- Can use vim.fn.serverlist() and custom desktop detection logic
@@ -674,6 +652,7 @@ call setline(".", ["a", "b"])
 " Instead of
 let @a = "a" . "\n" . "b"
 ```
+
 ```lua
 -- Lua equivalent for handling newlines
 vim.fn.setline(".", {"a", "b"})
@@ -700,6 +679,7 @@ function! OpenPhpFunction (keyword)
   exe 'silent r!lynx -dump http://php.net/'.proc_keyword
 endfunction
 ```
+
 ```lua
 function _G.open_php_function(keyword)
   local proc_keyword = keyword:gsub('_', '-')

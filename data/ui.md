@@ -124,6 +124,7 @@ if &term =~ '^xterm\|rxvt'
   let &t_EI .= "\<Esc>[2 q"  " solid block in normal mode
 endif
 ```
+
 ```lua
 local function set_cursor_style()
   if vim.env.TERM:match("xterm") or vim.env.TERM:match("rxvt") then
@@ -157,6 +158,7 @@ Disable cursor blinking to reduce visual distraction and improve focus
 " Restore default:
 :set guicursor&
 ```
+
 ```lua
 -- Disable cursor blinking
 vim.opt.guicursor:append('a:blinkon0')
@@ -179,6 +181,7 @@ let &t_SI = "\<Esc>[6 q"  " Insert mode: vertical bar
 let &t_SR = "\<Esc>[4 q"  " Replace mode: underline
 let &t_EI = "\<Esc>[2 q"  " Normal mode: block
 ```
+
 ```lua
 -- Cursor shape configuration
 vim.cmd([[let &t_SI = "\<Esc>[6 q"  " Insert mode: vertical bar
@@ -217,6 +220,7 @@ function! AdjustFontSize(amount)
     let &guifont = substitute(&guifont, l:font_size_pattern, l:font_size, '')
 endfunction
 ```
+
 ```lua
 function _G.adjust_font_size(amount)
     if not vim.g.gui_running then
@@ -260,6 +264,7 @@ Change color scheme when Vim gains or loses focus to visually distinguish active
 :autocmd FocusLost * :colorscheme desert
 :autocmd FocusGained * :colorscheme default
 ```
+
 ```lua
 vim.api.nvim_create_augroup('VimFocusColorScheme', { clear = true })
 
@@ -308,6 +313,7 @@ au InsertLeave * hi statusline guibg=green
 " Default statusline to green on Vim entry
 hi statusline guibg=green
 ```
+
 ```lua
 -- Change statusline color based on mode
 function InsertStatuslineColor(mode)
@@ -356,6 +362,7 @@ Change color scheme based on the current file's directory to quickly identify wh
 ```vim
 autocmd BufEnter * if match(@%,'/otherdir/')>=0 | colorscheme oceanblack | else | colorscheme inkpot | end
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
   callback = function()
@@ -383,6 +390,7 @@ Change the mouse cursor shape in different Vim modes for improved visual feedbac
 " For different modes, you can use various shapes
 " Check :help 'mouseshape' for more options
 ```
+
 ```lua
 -- Note: This is X11/Linux specific
 -- Neovim doesn't have direct mouseshape setting
@@ -404,6 +412,7 @@ highlight Pmenu guibg=brown gui=bold
 " Console Vim color customization
 highlight Pmenu ctermbg=238 gui=bold
 ```
+
 ```lua
 -- Customize completion menu colors
 vim.cmd.highlight('Pmenu guibg=brown gui=bold')
@@ -432,56 +441,12 @@ vim.opt.guifont = 'ProFont:h10'  -- Another recommended console-style font
 # Category: ui
 # Tags: interface, mouse-support, display
 ---
-Enable mouse support and improve user interface with minimal configuration
-
-```vim
-" UI and mouse settings
-if has('mouse')
-  set mouse=a
-endif
-set number
-set ruler
-set laststatus=2
-set cmdheight=2
-```
-```lua
--- Neovim UI and mouse configuration
-if vim.fn.has('mouse') == 1 then
-  vim.opt.mouse = 'a'
-end
-vim.opt.number = true
-vim.opt.ruler = true
-vim.opt.laststatus = 2
-vim.opt.cmdheight = 2
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_Vimrc)
-***
-# Title: Toggle Line Numbers Easily
-# Category: ui
-# Tags: toggle, display, line-numbers
----
-Quickly toggle line numbers on and off with a simple command
-
-```vim
-set nu!
-:set nu!
-```
-```lua
-vim.opt.number = not vim.opt.number:get()
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/From_Vim_Help/2008)
-***
-# Title: Full Mouse Support in Console Vim
-# Category: ui
-# Tags: mouse, terminal, interaction
----
 Enable full mouse support in console Vim, including scrolling and clicking, making terminal Vim more interactive
 
 ```vim
 set mouse=a
 ```
+
 ```lua
 vim.opt.mouse = 'a'
 ```
@@ -504,6 +469,7 @@ nnoremap <C-F2> :if &go=~#'T'<Bar>set go-=T<Bar>else<Bar>set go+=T<Bar>endif<CR>
 " Toggle right scrollbar
 nnoremap <C-F3> :if &go=~#'r'<Bar>set go-=r<Bar>else<Bar>set go+=r<Bar>endif<CR>
 ```
+
 ```lua
 -- Toggle menu bar
 vim.keymap.set('n', '<C-F1>', function()
@@ -537,6 +503,7 @@ Remove specific buttons from the GUI toolbar to simplify interface
 aunmenu ToolBar.FindNext
 aunmenu ToolBar.FindPrev
 ```
+
 ```lua
 -- Remove specific toolbar buttons
 -- Note: This might require a plugin or custom implementation in Neovim
@@ -570,6 +537,7 @@ augroup InsertHL
   autocmd InsertLeave * call s:DeleteHighlight()
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('InsertHL', { clear = true })
 
@@ -604,6 +572,7 @@ Activate tearoff menus using Alt+Menu Hotletter to open menus in a separate wind
 " Enable tearoff menus
 set guioptions+=t
 ```
+
 ```lua
 -- Enable tearoff menus in Neovim
 vim.opt.guioptions:append('t')
@@ -621,6 +590,7 @@ Disable automatic visual mode selection when mouse dragging in Vim, preventing u
 noremap <LeftDrag> <LeftMouse>
 noremap! <LeftDrag> <LeftMouse>
 ```
+
 ```lua
 vim.keymap.set({'n', '!'}, '<LeftDrag>', '<LeftMouse>', { noremap = true })
 ```
@@ -631,44 +601,13 @@ vim.keymap.set({'n', '!'}, '<LeftDrag>', '<LeftMouse>', { noremap = true })
 # Category: ui
 # Tags: mouse, configuration
 ---
-Completely disable mouse interaction in Vim to prevent unintended mode switches or selections
-
-```vim
-set mouse=
-```
-```lua
-vim.opt.mouse = ''
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode)
-***
-# Title: Highlight Matching Braces Instantly
-# Category: ui
-# Tags: highlight, editing
----
-Configure instant brace matching with configurable display time
-
-```vim
-set showmatch
-set matchtime=3  " Highlight for 300ms
-```
-```lua
-vim.opt.showmatch = true
-vim.opt.matchtime = 3
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_It_Plugin)
-***
-# Title: Show Matching Braces Briefly
-# Category: ui
-# Tags: syntax-highlighting, editing-experience
----
 Configure showmatch to briefly highlight matching braces when typing closing brackets
 
 ```vim
 set showmatch
 set matchtime=3
 ```
+
 ```lua
 vim.opt.showmatch = true
 vim.opt.matchtime = 3
@@ -679,25 +618,6 @@ vim.opt.matchtime = 3
 # Title: Non-Blinking Block Cursor in Linux Console
 # Category: ui
 # Tags: terminal, cursor, console
----
-Disable cursor blinking in Linux console for a cleaner visual experience
-
-```vim
-if &term == "linux"
-  set t_ve+=^[[?81;0;112c
-endif
-```
-```lua
-if vim.o.term == "linux" then
-  vim.o.t_ve = vim.o.t_ve .. "\x1b[?81;0;112c"
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Non-blinking_block_cursor_in_a_Linux_console)
-***
-# Title: Show Non-Native File Format in Statusline
-# Category: ui
-# Tags: statusline, file-format, customization
 ---
 Display a visual indicator when a file's format differs from the native system format, helping identify potential cross-platform issues
 
@@ -716,6 +636,7 @@ hi User1 term=bold cterm=bold ctermfg=red ctermbg=darkblue
 
 set statusline+=%1*%{ShowFileFormatFlag(&fileformat)}%*
 ```
+
 ```lua
 vim.cmd('hi User1 term=bold cterm=bold ctermfg=red ctermbg=darkblue')
 
@@ -759,6 +680,7 @@ function! s:HourColor()
   execute 'colorscheme '.split(nowcolors)[i]
 endfunction
 ```
+
 ```lua
 local function hour_color()
   local hour = tonumber(os.date('%H'))
@@ -789,6 +711,7 @@ Provides a quick keyboard shortcut to open the font selection dialog in GUI Vim
 ```vim
 map <F3> <Esc>:set guifont=*<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F3>', ':set guifont=*<CR>', { desc = 'Open Font Selector' })
 ```
@@ -811,6 +734,7 @@ set guioptions-=L  " remove left-hand scroll bar
 " Toggle menu bar with Ctrl-F1
 nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 ```
+
 ```lua
 -- Remove GUI elements
 vim.o.guioptions = vim.o.guioptions:gsub('m', '')  -- remove menu bar
@@ -839,6 +763,7 @@ nnoremap <F8> :call NextColor(1)<CR>
 nnoremap <S-F8> :call NextColor(-1)<CR>
 nnoremap <A-F8> :call NextColor(0)<CR>
 ```
+
 ```lua
 -- Color scheme switching in Neovim
 vim.keymap.set('n', '<F8>', function() 
@@ -865,6 +790,7 @@ Replace existing toolbar icon to launch explorer with selected URL/path
 ```vim
 vnoremenu 1.140 ToolBar.New "wy:!start explorer <C-R>w<CR>
 ```
+
 ```lua
 vim.cmd('vnoremenu 1.140 ToolBar.New "wy:!start explorer <C-R>w<CR>')
 ```
@@ -892,6 +818,7 @@ hi User1 term=bold cterm=bold ctermfg=red ctermbg=darkblue
 
 set statusline+=%1*%{ShowFileFormatFlag(&fileformat)}%*
 ```
+
 ```lua
 vim.api.nvim_create_user_command('ShowFileFormatFlag', function()
   local fileformat = vim.o.fileformat
@@ -920,6 +847,7 @@ Create a comprehensive statusline that displays file details, cursor position, a
 ```vim
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime("%d/%m/%y\ -\ %H:%M")}
 ```
+
 ```lua
 vim.opt.statusline = table.concat({
   '%F%m%r%h%w',
@@ -941,6 +869,7 @@ Ensure the statusline is always visible, even in single window mode
 ```vim
 set laststatus=2
 ```
+
 ```lua
 vim.opt.laststatus = 2
 ```
@@ -966,6 +895,7 @@ function! AdjustFontSize(amount)
   endif
 endfunction
 ```
+
 ```lua
 function _G.adjust_font_size(amount)
   if vim.fn.has('gui_running') == 1 then
@@ -1002,6 +932,7 @@ function! GetFontInfo()
   return { 'name': l:font_name, 'size': l:font_size }
 endfunction
 ```
+
 ```lua
 local function get_font_info()
   local guifont = vim.o.guifont

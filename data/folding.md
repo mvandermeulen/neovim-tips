@@ -77,6 +77,7 @@ set foldlevelstart=20
 autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
 autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
 ```
+
 ```lua
 -- Set fold method and default open level
 vim.opt.foldmethod = 'indent'
@@ -105,6 +106,7 @@ Enable automatic folding for Perl subroutines using built-in syntax folding
 ```vim
 let perl_fold = 1
 ```
+
 ```lua
 vim.g.perl_fold = 1
 ```
@@ -145,6 +147,7 @@ endfunction
 setlocal foldexpr=GetPerlFold()
 setlocal foldmethod=expr
 ```
+
 ```lua
 local function get_perl_fold(lnum)
   local line = vim.fn.getline(lnum)
@@ -203,6 +206,7 @@ endfunction
 
 set foldtext=MyFoldText()
 ```
+
 ```lua
 function _G.custom_fold_text()
   local start_line = vim.fn.getline(vim.v.foldstart)
@@ -240,6 +244,7 @@ Temporarily switch to manual folding during insert mode to prevent syntax foldin
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 ```
+
 ```lua
 vim.api.nvim_create_augroup('FoldMethodToggle', { clear = true })
 
@@ -277,6 +282,7 @@ syn region dosiniSection start="^\[" end="\(\n\+\[\)\@=" contains=dosiniLabel,do
 setlocal foldmethod=syntax
 setlocal foldlevel=20
 ```
+
 ```lua
 vim.cmd([[syn region dosiniSection start="^\[" end="\(\n\+\[\)\@=" contains=dosiniLabel,dosiniHeader,dosiniComment keepend fold]])
 vim.wo.foldmethod = 'syntax'
@@ -294,6 +300,7 @@ Add a convenient double-click mouse mapping to open and close code folds in Vim/
 ```vim
 :noremap <2-LeftMouse> za
 ```
+
 ```lua
 vim.keymap.set({'n', 'v'}, '<2-LeftMouse>', 'za', { desc = 'Toggle fold with double-click' })
 ```
@@ -312,6 +319,7 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('foldconfig', { clear = true })
 vim.api.nvim_create_autocmd({'BufReadPre'}, {
@@ -345,6 +353,7 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 ```
+
 ```lua
 -- Indent folding with manual override
 vim.api.nvim_create_augroup('folding', { clear = true })
@@ -384,6 +393,7 @@ function HeadingLevel(lnum)
   return (n == 0) ? '=' : '>' . n
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'moin',
@@ -407,57 +417,6 @@ end
 # Category: folding
 # Tags: xml, navigation, project-structure
 ---
-Quickly explore hierarchical XML files by creating folds based on display names and navigating parent nodes
-
-```vim
-" Function to move to parent node in XML hierarchy
-function! FoldMoveToParentNode()
-  normal! zc
-  let curNodeIndent = indent(foldclosed('.'))
-  let nodeIndent = curNodeIndent
-  let curLine = line('.')
-  let line = -1
-  while nodeIndent >= curNodeIndent
-    normal! zkzc
-    let line = line('.')
-    if line == curLine
-      break
-    endif
-    let nodeIndent = indent(foldclosed('.'))
-  endwhile
-endfunction
-
-" Map to parent node navigation
-nnoremap \fdp :call FoldMoveToParentNode()<CR>
-```
-```lua
-function _G.fold_move_to_parent_node()
-  vim.cmd('normal! zc')
-  local cur_node_indent = vim.fn.indent(vim.fn.foldclosed('.'))
-  local node_indent = cur_node_indent
-  local cur_line = vim.fn.line('.')
-  local line = -1
-
-  while node_indent >= cur_node_indent do
-    vim.cmd('normal! zkzc')
-    line = vim.fn.line('.')
-    if line == cur_line then
-      break
-    end
-    node_indent = vim.fn.indent(vim.fn.foldclosed('.'))
-  end
-end
-
--- Map to parent node navigation
-vim.keymap.set('n', '<leader>fp', _G.fold_move_to_parent_node, { desc = 'Find Parent Node in XML' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Finding_your_way_around_in_an_installshield_project_XML_file)
-***
-# Title: Navigate XML Project Files with Folding
-# Category: folding
-# Tags: xml, navigation, project-management
----
 Quickly navigate complex XML project files by creating folds based on a specific attribute and moving between parent nodes
 
 ```vim
@@ -477,6 +436,7 @@ function! FoldMoveToParentNode()
   endwhile
 endfunction
 ```
+
 ```lua
 function _G.fold_move_to_parent_node()
   vim.cmd('normal! zc')
@@ -510,6 +470,7 @@ Automatically create folds for multi-line C-style comments in source code files
 ```vim
 au BufNewFile,BufRead *.cpp,*.c,*.h,*.java syn region myCComment start="/\*" end="\*/" fold keepend transparent
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
   pattern = {"*.cpp", "*.c", "*.h", "*.java"},
@@ -536,6 +497,7 @@ function MyFoldText()
   return "+-" . v:folddashes . nlines . ": " . sub
 endfunction
 ```
+
 ```lua
 function _G.custom_fold_text()
   local first_line = vim.api.nvim_buf_get_lines(0, vim.v.foldstart - 1, vim.v.foldstart, false)[1]
@@ -557,6 +519,7 @@ Automatically fold C# #region blocks using matchit and custom matchwords
 ```vim
 let b:match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 ```
+
 ```lua
 vim.g.match_words = '\s*#\s*region.*$:\s*#\s*endregion'
 ```
@@ -574,6 +537,7 @@ syn match MyEmptyLines "(^\s*\n)\+" fold
 syn sync fromstart
 setlocal foldmethod=syntax
 ```
+
 ```lua
 vim.cmd('syn match MyEmptyLines "(^\\s*\\n)\\+" fold')
 vim.cmd('syn sync fromstart')
@@ -603,6 +567,7 @@ endfunction
 setlocal foldexpr=MyFoldLevel(v:lnum)
 setlocal foldmethod=expr
 ```
+
 ```lua
 function _G.java_fold_level(linenum)
   local line = vim.fn.getline(linenum)
@@ -626,58 +591,6 @@ vim.wo.foldmethod = 'expr'
 # Category: folding
 # Tags: search, folding, regex
 ---
-Create a custom fold command that hides lines not matching a search pattern, with optional context lines around matches
-
-```vim
-nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\|\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
-```
-```lua
-vim.keymap.set('n', '<leader>z', function()
-  vim.wo.foldexpr = 'v:lua.custom_fold_expr()'
-  vim.wo.foldmethod = 'expr'
-  vim.wo.foldlevel = 0
-  vim.wo.foldcolumn = '2'
-end, { desc = 'Fold by Search Pattern' })
-
-function _G.custom_fold_expr()
-  local line = vim.fn.getline(vim.v.lnum)
-  local prev_line = vim.fn.getline(vim.v.lnum - 1)
-  local next_line = vim.fn.getline(vim.v.lnum + 1)
-  local search_pattern = vim.fn.getreg('/')
-
-  if line:match(search_pattern) then
-    return 0
-  elseif prev_line:match(search_pattern) or next_line:match(search_pattern) then
-    return 1
-  else
-    return 2
-  end
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_regular_expression)
-***
-# Title: Quick Java API Folding
-# Category: folding
-# Tags: code-navigation, folding, source-code
----
-Create a command to fold a Java source file, showing only public/protected/private declarations
-
-```vim
-command! Japi Foldsearch public\s\|protected\s\|private\s
-```
-```lua
-vim.api.nvim_create_user_command('Japi', function()
-  vim.cmd('Foldsearch public\\s\\|protected\\s\\|private\\s')
-end, {})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fold_regular_expression)
-***
-# Title: Dynamic Indent Folding with Manual Override
-# Category: folding
-# Tags: autocmd, configuration, code-navigation
----
 Configure Vim to use indent-based folding by default, but allow manual fold creation during editing
 
 ```vim
@@ -686,6 +599,7 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('folding', { clear = true })
 vim.api.nvim_create_autocmd('BufReadPre', {
@@ -723,6 +637,7 @@ function! DiffFold(lnum)
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'diff',
@@ -759,6 +674,7 @@ set foldtext=getline(v:foldstart)
 set fillchars=fold:\ 
 highlight Folded ctermfg=DarkGreen ctermbg=Black
 ```
+
 ```lua
 vim.opt_local.foldmethod = 'expr'
 vim.opt_local.foldexpr = [[v:lua.custom_fold_expr()]]
@@ -797,6 +713,7 @@ endfunction
 set foldexpr=FoldBrace()
 set foldmethod=expr
 ```
+
 ```lua
 function _G.custom_fold()
   local next_line = vim.fn.getline(vim.v.lnum + 1)
@@ -842,6 +759,7 @@ endfu
 
 setl foldenable foldmethod=expr foldexpr=VBFold(v:lnum) foldtext=VBFoldText()
 ```
+
 ```lua
 local function vb_fold(lnum)
     local line = vim.fn.getline(lnum)
@@ -896,6 +814,7 @@ function FileBrowserFoldText()
   return getline(v:foldstart) . '    ... [' . (v:foldend-v:foldstart+1) . ' lines]'
 endfunction
 ```
+
 ```lua
 vim.opt.mouse = 'a'
 vim.opt.foldminlines = 1
@@ -935,6 +854,7 @@ Create a fold that shows only lines matching a search pattern with optional cont
 ```vim
 nnoremap \z :setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)||(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>zf', function()
   vim.wo.foldexpr = 'v:lua.custom_fold_expr()'
@@ -970,6 +890,7 @@ Create a quick overview of methods and variables in a Java source file using reg
 ```vim
 command! Japi Foldsearch public\s\|protected\s\|private\s
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Japi', function()
   vim.cmd('Foldsearch public\\s\\|protected\\s\\|private\\s')
@@ -991,6 +912,7 @@ set foldmethod=syntax
 " Limit fold nesting
 set foldnestmax=3
 ```
+
 ```lua
 -- Set folding method
 vim.opt.foldmethod = 'syntax'
@@ -1016,6 +938,7 @@ syn region javaFuncDef start="^\z(\s*\)\%(@[A-Z]\k*\%((\_.\{-}\))\?\s*\)*\%(.\+\
 " Fold multi-line comments
 syn region javaMultiLineComment start="/[*]\{1,}" end="[*]/" keepend transparent fold
 ```
+
 ```lua
 -- Use in init.lua or after/syntax/java.lua
 
@@ -1057,6 +980,7 @@ endfunction
 setlocal foldexpr=MyFoldLevel(v:lnum)
 setlocal foldmethod=expr
 ```
+
 ```lua
 function _G.java_fold_level(line_nr)
   local line = vim.fn.getline(line_nr)
@@ -1089,6 +1013,7 @@ syn region javaMethod start="^\z(\s*\)\(public\|private\|protected\)\(\_.*)\*{\s
 syn region javaLoop start="^\z(\s*\)\(for\|if\|while\|switch\).*{\s*$" end="^\z1}\s*$" transparent fold keepend
 syn region javadoc start="^\s*/\*\*" end="^.*\*/" transparent fold keepend
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'java',
@@ -1119,6 +1044,7 @@ vim:fdm=marker:tw=78:isk=!-~,^*,^\|,^":ts=8:ft=help:norl:
 Commands {{{1
 ==================================================
 ```
+
 ```lua
 -- Set folding method
 vim.o.foldmethod = 'marker'
@@ -1145,6 +1071,7 @@ zf  # Create fold
 zo  # Open fold
 zc  # Close fold
 ```
+
 ```lua
 vim.opt.foldmethod = 'indent'
 -- Fold commands remain the same in Neovim
@@ -1161,6 +1088,7 @@ Create fold markers around a visual selection quickly, useful for organizing cod
 ```vim
 vmap <Leader>fold mz:<Esc>'<O// {{{<Esc>'>o// }}}<Esc>`z?{{{<CR>A<Space>
 ```
+
 ```lua
 vim.keymap.set('v', '<Leader>fold', function()
   -- Save current cursor position
@@ -1198,6 +1126,7 @@ endfu
 
 setl foldenable foldmethod=expr foldexpr=VBFold(v:lnum) foldtext=VBFoldText()
 ```
+
 ```lua
 local function vb_fold(lnum)
     local line = vim.fn.getline(lnum)
@@ -1243,6 +1172,7 @@ endfunction
 set foldexpr=FoldBrace()
 set foldmethod=expr
 ```
+
 ```lua
 function _G.custom_fold_expr(lnum)
   local next_line = vim.fn.getline(lnum + 1)
@@ -1275,6 +1205,7 @@ Automatically enable syntax-based folding for XML files
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 ```
+
 ```lua
 vim.g.xml_syntax_folding = 1
 vim.api.nvim_create_autocmd('FileType', {
@@ -1301,6 +1232,7 @@ set foldmethod=indent
 :map << to promote
 :map >> to demote
 ```
+
 ```lua
 vim.opt.autoindent = true
 vim.opt.foldmethod = 'indent'
@@ -1332,6 +1264,7 @@ endfunction
 
 command! -bar -count=99999 FoldMisses call s:FoldMisses(getqflist(), <count>)
 ```
+
 ```lua
 local function fold_misses(list, context)
   vim.wo.foldmethod = 'manual'

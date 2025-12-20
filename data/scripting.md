@@ -14,6 +14,7 @@ function DontLoadTwice(globalIdentifier)
   return dltcmd
 endfunction
 ```
+
 ```lua
 function _G.dont_load_twice(identifier)
   if vim.g[identifier] then
@@ -38,6 +39,7 @@ str = uniStr.encode( vim.eval("&encoding") )
 print str
 EOS
 ```
+
 ```lua
 -- Lua equivalent for handling UTF-8 encoding
 -- Note: Neovim has better Unicode support by default

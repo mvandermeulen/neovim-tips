@@ -29,6 +29,7 @@ function CommentIt()
 endfunction
 autocmd BufEnter * call CommentIt()
 ```
+
 ```lua
 -- Lua:
 local function comment_it()
@@ -95,6 +96,7 @@ gggqG
 " Mapping to format current paragraph
 nnoremap Q gqip
 ```
+
 ```lua
 -- Set text width and format options
 vim.opt.formatoptions:append('w')
@@ -113,33 +115,12 @@ vim.keymap.set('n', 'Q', 'gqip', { desc = 'Format current paragraph' })
 # Category: formatting
 # Tags: text-alignment, number-formatting, substitution
 ---
-Automatically align numbers with consistent decimal precision and formatting
-
-```vim
-:%s§\([-+]\?\d\+\)\.\?(\d*$)§\1                        !\200000§
-:%s§\%15c\s*!§!§
-:%s§\(^\S*\)(\s*)!§\2\1.§
-:%s§\%21c\d*§§
-:%s§\s\(\d\)§+\1§
-```
-```lua
--- Lua implementation would typically use a more robust plugin like 'Tabular'
--- Or a custom function with vim.api.nvim_buf_set_lines()
--- Example using Tabular plugin:
--- ':Tabularize /\./r0l0l0'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Align_numbers_at_decimal_point)
-***
-# Title: Align Text into Columns
-# Category: formatting
-# Tags: text-alignment, formatting, productivity
----
 Easily align text into columns using an external Perl script, helpful for formatting code or config files
 
 ```vim
 :vmap <A-a> !perl ~/perl/align -c:=
 ```
+
 ```lua
 -- Note: Requires external Perl script
 vim.keymap.set('v', '<A-a>', function()
@@ -160,6 +141,7 @@ Set text width to automatically break lines at a specified character length, use
 :setlocal textwidth=60
 :setl tw=60
 ```
+
 ```lua
 -- Set text width to 60 characters
 vim.opt.textwidth = 60
@@ -180,6 +162,7 @@ if version >= 540
   augroup END
 endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'xml',
@@ -203,6 +186,7 @@ Simple method to indent XML/HTML files using search and replace followed by auto
 </g
 gg=G
 ```
+
 ```lua
 function IndentXML()
   -- Replace ><, add newline, then auto-indent entire file
@@ -228,6 +212,7 @@ set formatprg=par\ -w60
 map <A-q> {v}!par -jw60<CR>
 vmap <A-q> !par -jw60<CR>
 ```
+
 ```lua
 vim.opt.formatprg = 'par -w60'
 vim.keymap.set({'n', 'v'}, '<A-q>', function()
@@ -250,6 +235,7 @@ Use the Tidy external tool to automatically format and clean up HTML and XML fil
 " Command to tidy entire HTML file
 :command Thtml :%!tidy -q -i --show-errors 0
 ```
+
 ```lua
 -- Tidy mapping for HTML cleanup
 vim.keymap.set('v', ',x', function()
@@ -274,6 +260,7 @@ Easily convert Vim/Neovim buffer to HTML with syntax coloring for sharing code i
 " Optional: Switch to light colorscheme first
 :colorscheme default
 ```
+
 ```lua
 -- Use built-in :TOhtml command
 -- For light background before conversion
@@ -292,6 +279,7 @@ Remove single newlines while preserving paragraph breaks when copying text to Wo
 ```vim
 vmap <C-C> '+y:let @+ = substitute(@+, "\n\n\n*", "±", "g")\|:let @+ = substitute(@+, "\n", " ", "g")\|:let @+ = substitute(@+, "±", "\n", "g")<CR>\|'<
 ```
+
 ```lua
 vim.keymap.set('v', '<C-C>', function()
   -- Copy visual selection
@@ -318,6 +306,7 @@ Quickly join lines within paragraphs, removing unnecessary line breaks
 ```vim
 :v/^\s*$/norm vipJ
 ```
+
 ```lua
 vim.cmd(':%s/\v(\S+)\n(\S+)/\1 \2/ge')
 ```
@@ -333,6 +322,7 @@ Convert all tab indents to spaces in the current file
 ```vim
 :set et|retab
 ```
+
 ```lua
 vim.opt.expandtab = true
 vim.cmd('retab!')
@@ -343,33 +333,6 @@ vim.cmd('retab!')
 # Title: Reformat Email Quotations Quickly
 # Category: formatting
 # Tags: email, text-formatting, text-objects
----
-Easily reformat long email quotations to a consistent width using Vim's text formatting commands
-
-```vim
-" Formatting options for email
-set formatoptions+=cq
-set textwidth=76
-
-" Formatting methods:
-" gqip - Format current paragraph
-" gqap - Format around paragraph
-" gq} - Format to end of paragraph
-```
-```lua
--- Set formatting options for email
-vim.opt.formatoptions:append('cq')
-vim.opt.textwidth = 76
-
--- Formatting can be done via text objects
--- Use gqip, gqap, or gq} in normal mode
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_email_quotations_with_long_lines)
-***
-# Title: Reindent Entire File or Selected Text
-# Category: formatting
-# Tags: indentation, text-formatting, code-cleanup
 ---
 Quickly fix indentation for entire file or selected text using built-in = operator
 
@@ -383,6 +346,7 @@ V=
 " Quick mapping to reindent and return to original position
 map <F7> gg=G<C-o><C-o>
 ```
+
 ```lua
 -- Reindent entire file
 vim.cmd('normal! gg=G')
@@ -409,6 +373,7 @@ Use text objects to quickly format code blocks, functions, or entire files with 
 =i{  " Format inner code block
 gg=G  " Format entire buffer
 ```
+
 ```lua
 vim.cmd('normal =i{')  -- Format inner code block
 vim.cmd('normal gg=G')  -- Format entire buffer
@@ -428,6 +393,7 @@ Intelligently format only lines longer than a specified width without merging sh
 # Alternative for lines 80 chars or longer
 :g/\{80,\}/ .!par w70
 ```
+
 ```lua
 -- Format only lines with content
 vim.cmd('g/./ normal gqq')
@@ -448,6 +414,7 @@ Format the current paragraph while keeping the cursor in its original position
 gqap  " Format paragraph
 gwap  " Format paragraph and restore cursor
 ```
+
 ```lua
 vim.cmd('normal! gwap')  -- Format paragraph and restore cursor position
 ```
@@ -463,6 +430,7 @@ Automatically format XML files using xmllint, which can clean up and standardize
 ```vim
 au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'xml',
@@ -484,6 +452,7 @@ Provides a custom mapping to format LaTeX paragraphs while respecting environmen
 map \gq ?^$\|^\s*\(\\begin\|\\end\|\\label\)?1<CR>gq//-1<CR>
 omap lp ?^$\|^\s*\(\\begin\|\\end\|\\label\)?1<CR>//-1<CR>.<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>gq', function()
   -- Use Vim's search and formatting commands
@@ -504,6 +473,7 @@ Quickly format a block of text to a specific width using a custom mapping
 ```vim
 map st :set tw=70<CR>v<S-}>gq<End>
 ```
+
 ```lua
 vim.keymap.set('n', 'st', function()
   vim.opt.textwidth = 70
@@ -526,6 +496,7 @@ let fill = repeat(' ', width)
 :%s/([^,]*),\=/\=strpart(submatch(1).fill, 0, width)/ge
 :%s/\s\+$//ge
 ```
+
 ```lua
 local function format_csv_columns(width)
   width = width or 20
@@ -549,6 +520,7 @@ Handle Unicode text formatting with iconv when using 'par'
 # Unicode conversion for par formatting
 # cat file | iconv -f utf-8 -t <encoding> | par <options> | iconv -f <encoding> -t utf-8
 ```
+
 ```lua
 -- Unicode formatting function (example)
 function format_unicode_text(file, from_encoding, to_encoding, par_options)
@@ -572,6 +544,7 @@ Quickly convert spaces to tabs with consistent indentation across different tab 
 :ret! 2
 :x
 ```
+
 ```lua
 vim.cmd('ret! 2')
 vim.cmd('x')
@@ -601,6 +574,7 @@ function! DoPrettyXML()
 endfunction
 command! PrettyXML call DoPrettyXML()
 ```
+
 ```lua
 function _G.pretty_xml()
   local orig_ft = vim.bo.filetype
@@ -640,6 +614,7 @@ com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom
 
 nnoremap = :FormatXML<Cr>
 ```
+
 ```lua
 vim.api.nvim_create_user_command('FormatXML', function()
   vim.cmd("%!python3 -c 'import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())'") 
@@ -672,6 +647,7 @@ function! AlignSection(regex) range
   call setline(a:firstline, section)
 endfunction
 ```
+
 ```lua
 function M.align_section(regex)
   local extra = 1
@@ -701,6 +677,7 @@ Simple method to indent XML/HTML files without external tools
 </g
 gg=G
 ```
+
 ```lua
 -- Split tags onto new lines and then indent
 vim.api.nvim_command(':%s/></>
@@ -720,6 +697,7 @@ Automatically realign table rows to match the heading row's field widths, making
 " Alignment mapping
 map <Leader>ta :AlignTableFields<CR>
 ```
+
 ```lua
 -- Lua conceptual implementation
 function _G.align_table_fields()
@@ -740,6 +718,7 @@ Quickly add line numbers to the entire file using a Perl one-liner within Vim
 ```vim
 :amenu Mo1.Format.NumberLines<Tab>:!perl :1,$!perl -ne "printf("%3d:%s",$.,$$_);"
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>nl', function()
   vim.cmd(':%!perl -ne "printf("%3d:%s",$.,$$_)"')
@@ -757,6 +736,7 @@ Quickly align text with equal spacing around a delimiter (like '=') using an ext
 ```vim
 :vmap <A-a> !perl ~/perl/align -c:=
 ```
+
 ```lua
 -- Note: Requires external Perl script
 -- Can be implemented with more modern Lua alignment plugins
@@ -779,6 +759,7 @@ Easily break long lines to a specified width using the external fmt command in V
 'v' to select block
 '!fmt<Enter>'
 ```
+
 ```lua
 -- For lines 1-10
 vim.cmd('1,10!fmt')
@@ -800,6 +781,7 @@ Native Vim method to break long lines without external tools or regex
 ```vim
 gqq  " Format current line
 ```
+
 ```lua
 -- Equivalent native Neovim formatting
 vim.cmd('normal gqq')

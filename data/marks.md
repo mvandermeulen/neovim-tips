@@ -17,6 +17,7 @@ function! MoshBookmark()
 endfunction
 :command! MoshBookmark :call MoshBookmark()
 ```
+
 ```lua
 function _G.mosh_bookmark()
   local file = io.open(vim.fn.expand('~/.vims'), 'a')
@@ -46,6 +47,7 @@ mk      " Mark current line with 'k'
 y'k     " Yank from mark to current position
 d'k     " Delete from mark to current position
 ```
+
 ```lua
 -- Mark current line with 'k'
 vim.fn.setmark('k')
@@ -75,6 +77,7 @@ mA
 `a  " Jump to exact position of mark a
 `A  " Jump to global mark A in its file
 ```
+
 ```lua
 -- Set local mark
 vim.cmd('ma')
@@ -105,6 +108,7 @@ Quickly jump between marks using built-in navigation commands
 ]`  " Next mark
 [`  " Previous mark
 ```
+
 ```lua
 -- These are Ex commands, so use vim.cmd
 -- Jump to next/previous marked lines
@@ -131,6 +135,7 @@ Use special marks to quickly jump to recent editing locations
 `` ''  " Previous jump location
 `` `   " Previous exact location
 ```
+
 ```lua
 -- Jump to special marks
 vim.cmd('`.')
@@ -146,35 +151,6 @@ vim.cmd('`^')  -- Last insertion point
 # Category: marks
 # Tags: navigation, bookmarks, jumping
 ---
-Use lowercase marks within a file and uppercase marks across files to quickly jump between locations. Uppercase marks persist between Vim sessions when viminfo is enabled.
-
-```vim
-" Set a mark in current file
-ma
-
-" Jump to mark
-'a
-
-" Jump to specific file mark
-'A
-```
-```lua
--- Set a mark in current file
-vim.cmd('ma')
-
--- Jump to mark within current file
-vim.cmd("'a")
-
--- Jump to global file mark
-vim.cmd("'A")
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Marks)
-***
-# Title: Navigate Between Marks Quickly
-# Category: marks
-# Tags: navigation, movement
----
 Use special commands to jump between marks efficiently, with support for count-based jumps.
 
 ```vim
@@ -182,6 +158,7 @@ Use special commands to jump between marks efficiently, with support for count-b
 ]'
 ['
 ```
+
 ```lua
 -- Note: These are Vim commands that can be run in Lua
 vim.cmd(']\'')
@@ -203,6 +180,7 @@ Utilize Vim's built-in special marks to quickly jump to recent edit or change lo
 " Jump to last exit location
 `"
 ```
+
 ```lua
 -- These can be run as Vim commands in Lua
 vim.cmd('`.')
@@ -220,6 +198,7 @@ Automatically mark the last position in Vim help files and easily return to it a
 ```vim
 au BufLeave * if &ft == "help" | mark H | endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufLeave', {
   callback = function()

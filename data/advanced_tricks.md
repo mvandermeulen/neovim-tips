@@ -13,6 +13,7 @@ function Unscramble()
   %!gpg -q --cipher-algo aes256 --decrypt --armor 2>/dev/null
 endfunction
 ```
+
 ```lua
 function _G.encrypt_file()
   vim.cmd('%!gpg -q --cipher-algo aes256 --symmetric --armor 2>/dev/null')
@@ -56,6 +57,7 @@ function! AutoHighlightToggle()
   endif
 endfunction
 ```
+
 ```lua
 local function auto_highlight_toggle()
   -- Toggle highlighting of current word
@@ -93,36 +95,6 @@ vim.keymap.set('n', 'z/', auto_highlight_toggle, { desc = 'Toggle auto word high
 # Category: advanced_tricks
 # Tags: encoding, perl, text-processing
 ---
-Add custom commands to decode MIME-encoded text directly in Vim using Perl modules
-
-```vim
-command! -range=% Decode64 :w | <line1>,<line2>delete | let foo = @"
- \ | perl use MIME::Base64 (); my $foo=VIM::Eval(foo); my ($r, $c)=$curwin->Cursor(); $curbuf->Append($r-1, split '\n', MIME::Base64::decode($foo));
-
-command! -range=% DecodeQP :w | <line1>,<line2>delete | let foo = @"
- \ | perl use MIME::QuotedPrint (); my $foo=VIM::Eval(foo); my ($r, $c)=$curwin->Cursor(); $curbuf->Append($r-1, split '\n', MIME::QuotedPrint::decode_qp($foo));
-```
-```lua
--- Note: Requires Vim compiled with Perl support
-vim.api.nvim_create_user_command('Decode64', function()
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local decoded_lines = vim.fn.system('perl -MMIME::Base64 -e "print decode_base64(join(\'\', <>))"', lines)
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(decoded_lines, '\n'))
-end, {})
-
-vim.api.nvim_create_user_command('DecodeQP', function()
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local decoded_lines = vim.fn.system('perl -MMIME::QuotedPrint -e "print decode_qp(join(\'\', <>))"', lines)
-  vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(decoded_lines, '\n'))
-end, {})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Decode_MIME_text_using_Perl_in_Vim)
-***
-# Title: Enhanced Hex Mode Editing in Vim
-# Category: advanced_tricks
-# Tags: hex-editing, binary-files, file-manipulation
----
 Provides an improved method for editing binary files in hex mode using xxd, with easy toggling and automatic conversion
 
 ```vim
@@ -159,6 +131,7 @@ endfunction
 " Mapping to toggle hex mode
 nnoremap <C-H> :Hexmode<CR>
 ```
+
 ```lua
 local function toggle_hex()
   local modified = vim.o.modified
@@ -218,6 +191,7 @@ nnoremap <Leader>H :update<Bar>call ViewHtmlText(expand('%:p'))<CR>
 vnoremap <Leader>h y:call ViewHtmlText(@@)<CR>
 nnoremap <Leader>h :call ViewHtmlText(@+)<CR>
 ```
+
 ```lua
 function _G.view_html_text(url)
   if url ~= '' then

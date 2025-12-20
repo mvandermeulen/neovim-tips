@@ -13,6 +13,7 @@ example=d:/example {
   }
 }
 ```
+
 ```lua
 -- Equivalent project configuration in Lua
 -- Would typically be managed through a plugin like project.nvim
@@ -41,6 +42,7 @@ CTAGS_FLAGS=--c++-kinds=+p --fields=+imaS --extra=+q
 tags: $(SRC)
 	ctags $(CTAGS_FLAGS) $(SRC)
 ```
+
 ```lua
 -- Lua equivalent using vim.fn and vim.system
 local function generate_ctags()
@@ -76,6 +78,7 @@ Use JCommenter.vim to automatically generate documentation comments for PHP func
 ```vim
 call JCommentWriter()
 ```
+
 ```lua
 -- Note: This requires installing the JCommenter.vim plugin
 -- Equivalent functionality would need to be implemented in a Lua plugin
@@ -156,6 +159,7 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 ```
+
 ```lua
 -- OmniCppComplete configuration in Neovim
 vim.g.OmniCpp_NamespaceSearch = 1
@@ -192,6 +196,7 @@ Use SuperTab to invoke omni-completion more easily with Tab key
 " Use Tab for context-aware completion
 let g:SuperTabDefaultCompletionType = "context"
 ```
+
 ```lua
 -- Configure SuperTab for context-aware completion
 vim.g.SuperTabDefaultCompletionType = "context"
@@ -209,6 +214,7 @@ Use Perl LaTeX::Table module to quickly convert text tables into formatted LaTeX
 # Select lines and run external filter
 :'<,'>!ltpretty
 ```
+
 ```lua
 -- Requires external Perl module
 -- Select lines and use vim.fn.system() to run ltpretty filter
@@ -239,6 +245,7 @@ function! MyGetSpecialDay(day, month, year)
   return l:found
 endfunction
 ```
+
 ```lua
 vim.g.calendar_sign = function(day, month, year)
   local m100d = 10000 + (month * 100) + day
@@ -272,6 +279,7 @@ Generate a comprehensive ctags file for C/C++ projects that includes symbols fro
 gcc -M $* | sed -e 's/[\ ]/\n/g' | \
         sed -e '/^$/d' -e '/\.o:[ \t]*$/d' | ctags -L - --c++-kinds=+p --fields=+iaS --extra=+q
 ```
+
 ```lua
 -- Lua equivalent (shell script, can be integrated with vim.fn.system())
 local function generate_ctags(files)
@@ -292,23 +300,6 @@ generate_ctags({'file1.cpp', 'file2.c', 'file3.cpp'})
 # Category: plugins
 # Tags: version-control, svn, integration
 ---
-Configure VCSCommand plugin to work with TortoiseSVN checkouts, especially for non-standard SSH configurations
-
-```vim
-let VCSCommandSVNExec="C:\\Progra~1\\TortoiseSVN\\bin\\svn.exe"
-let VCSCommandVCSTypeOverride= [['C:\\working\\*', 'SVN']]
-```
-```lua
-vim.g.VCSCommandSVNExec = "C:\\Progra~1\\TortoiseSVN\\bin\\svn.exe"
-vim.g.VCSCommandVCSTypeOverride = {{"C:\\working\\*", "SVN"}}
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_VCSCommand_work_with_an_existing_TortoiseSVN_checkout)
-***
-# Title: Create Custom Commands with Autocompletion
-# Category: plugins
-# Tags: custom-commands, autocompletion, scripting
----
 Create user-defined commands with range support, parameters, and autocompletion to simplify complex operations
 
 ```vim
@@ -325,6 +316,7 @@ function! s:MyCommandFunction(...) range
   q
 endfunction
 ```
+
 ```lua
 -- Lua equivalent for creating custom commands
 vim.api.nvim_create_user_command('MyCommand', function(opts)
@@ -366,6 +358,7 @@ augroup plugin_initialize
     autocmd VimEnter * call LoadPluginScript()
 augroup END
 ```
+
 ```lua
 local function load_plugin_script()
     if vim.fn.exists(':Tabularize') == 1 then
@@ -393,6 +386,7 @@ Initialize plugins by creating a similarly named file in the after/plugin direct
 " In .vim/after/plugin/HiMtchBrkt.vim
 norm \[i
 ```
+
 ```lua
 -- In ~/.config/nvim/after/plugin/HiMtchBrkt.lua
 vim.cmd('norm \[i')
@@ -409,6 +403,7 @@ Automatically source all Vim script plugins from a specific directory, mimicking
 ```vim
 exec "source " . substitute(glob($VIM."/plugins/*.vim"), "\n", "\nsource ", "g")
 ```
+
 ```lua
 -- Load all .vim plugins from a specific directory
 local plugin_dir = vim.fn.expand('$VIM/plugins/*.vim')
@@ -430,6 +425,7 @@ if v:version >= 700
   runtime! plugin/matchit.vim
 endif
 ```
+
 ```lua
 -- Lua version for dynamic plugin loading
 if vim.version().major >= 7 then
@@ -460,6 +456,7 @@ function <SID>PythonGrep(tool)
   nnoremap <buffer> <silent> c :cclose<CR>
 endfunction
 ```
+
 ```lua
 function _G.python_lint(tool)
   vim.o.lazyredraw = true
@@ -503,6 +500,7 @@ Configure Vim as an external editor for Thunderbird, allowing email composition 
 ```vim
 gvim.exe "+set ft=mail"
 ```
+
 ```lua
 -- Configure external editor for Thunderbird
 -- Use gvim with mail filetype
@@ -527,6 +525,7 @@ autocmd FileType python compiler pylint
 " Check all Python files in directory
 :make *.py
 ```
+
 ```lua
 -- Set up pylint for Python files in Lua
 vim.api.nvim_create_autocmd('FileType', {
@@ -554,6 +553,7 @@ let g:ale_linters = {
   \ 'javascript': ['eslint']
   \ }
 ```
+
 ```lua
 -- ALE configuration in Lua
 vim.g.ale_linters = {
@@ -568,33 +568,13 @@ vim.g.ale_linters = {
 # Category: plugins
 # Tags: fuzzy-finder, ui-enhancement, file-navigation
 ---
-Several powerful plugins provide advanced item selection interfaces for improved workflow in Vim and Neovim
-
-```vim
-" Notable plugins for advanced UI selection
-" - CtrlP
-" - FuzzyFinder
-" - unite.vim
-```
-```lua
--- Recommended modern Neovim alternatives
--- telescope.nvim
--- fzf-lua
--- which-key.nvim
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/List_of_scripts_that_provide_advanced_UI_elements)
-***
-# Title: Advanced Matching with matchit Plugin
-# Category: plugins
-# Tags: syntax-navigation, language-support
----
 Extend % key to match words, language-specific constructs, and more complex syntax elements
 
 ```vim
 " Enable matchit plugin
 runtime macros/matchit.vim
 ```
+
 ```lua
 -- For matchit, use vim.cmd to load plugin
 vim.cmd('runtime macros/matchit.vim')
@@ -611,6 +591,7 @@ Improve Vim startup performance by delaying non-critical plugin function calls
 ```vim
 " Recommended to use autoload or lazy loading techniques
 ```
+
 ```lua
 -- Use a plugin manager like lazy.nvim for efficient plugin loading
 require('lazy').setup({
@@ -630,6 +611,7 @@ Vim now includes native package management, allowing easier plugin installation 
 " Use native Vim package management
 " Place plugins in ~/.vim/pack/vendor/start/
 ```
+
 ```lua
 -- Neovim supports native package management
 -- Place plugins in ~/.local/share/nvim/site/pack/vendor/start/
@@ -664,6 +646,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'plugin-name'
 call plug#end()
 ```
+
 ```lua
 -- Use a plugin manager like lazy.nvim
 require('lazy').setup({
@@ -685,6 +668,7 @@ Plugin managers simplify the process of installing, updating, and managing Vim/N
 " - Vundle
 " - pathogen.vim
 ```
+
 ```lua
 -- Popular Neovim plugin managers:
 -- - lazy.nvim (recommended)
@@ -704,6 +688,7 @@ Several powerful plugins provide advanced UI elements for selecting buffers, fil
 " Recommended plugins for enhanced file/buffer selection
 " Command-T, CtrlP, FuzzyFinder, unite
 ```
+
 ```lua
 -- Recommended Neovim plugins for file/buffer selection
 -- telescope.nvim (modern replacement for these plugins)
@@ -725,6 +710,7 @@ if exists('g:loaded_dbext') || &cp
 endif
 let g:loaded_dbext = 503
 ```
+
 ```lua
 if vim.g.loaded_dbext or vim.o.compatible then
   return
@@ -744,6 +730,7 @@ Simple method to reload buffer-specific files and test plugin changes by using :
 " Reload buffer to test plugin changes
 :e
 ```
+
 ```lua
 -- Reload current buffer to trigger plugin reloading
 vim.cmd('edit')
@@ -763,6 +750,7 @@ if exists("plugin_name_loaded") && !exists("g:plugin_name_debug_mode")
 endif
 let plugin_name_loaded = 1
 ```
+
 ```lua
 if vim.g.plugin_name_loaded and not vim.g.plugin_name_debug_mode then
   return
@@ -781,6 +769,7 @@ Enhance navigation in ANT build files by configuring TagList to recognize projec
 ```vim
 let g:tlist_ant_settings = 'ant;p:Project;t:Target;r:Property'
 ```
+
 ```lua
 vim.g.tlist_ant_settings = 'ant;p:Project;t:Target;r:Property'
 ```
@@ -798,6 +787,7 @@ Use the Mozex plugin to edit web textareas and view source code directly in Vim/
 user_pref("mozex.command.textarea", "C:\\vim\\gvim.exe %t");
 user_pref("mozex.command.source", "C:\\vim\\gvim.exe %t");
 ```
+
 ```lua
 -- Lua equivalent (configuration would be browser-specific)
 -- Requires Mozex or similar browser extension

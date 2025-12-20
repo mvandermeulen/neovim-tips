@@ -168,20 +168,6 @@ vim.w[1001].custom_setting = true
 # Category: Lua
 # Tags: lua, variables, tabpage, vim.t
 ---
-Use `vim.t` to set tabpage-local variables.
-
-```lua
--- Current tabpage
-vim.t.tab_name = "Main"
-
--- Specific tabpage
-vim.t[2].custom_data = {}
-```
-***
-# Title: Set options with vim.opt
-# Category: Lua
-# Tags: lua, options, vim.opt
----
 Use `vim.opt` to set options with a convenient Lua interface that supports advanced operations.
 
 ```lua
@@ -736,26 +722,6 @@ vim.api.nvim_feedkeys(
 # Category: Lua
 # Tags: lua, quickfix, diagnostics
 ---
-Use `vim.fn.setqflist()` and `vim.fn.getqflist()` to work with quickfix list.
-
-```lua
--- Set quickfix list
-vim.fn.setqflist({
-  {filename = 'file1.lua', lnum = 10, text = 'Error message'},
-  {filename = 'file2.lua', lnum = 20, text = 'Warning'},
-})
-
--- Open quickfix window
-vim.cmd.copen()
-
--- Get quickfix items
-local qf_items = vim.fn.getqflist()
-```
-***
-# Title: Create buffer-local keymaps
-# Category: Lua
-# Tags: lua, keymap, buffer-local
----
 Use the `buffer` option to create buffer-local keymaps that only work in specific buffers.
 
 ```lua
@@ -1269,80 +1235,6 @@ print(s1 == s2)  -- true (same instance)
 # Title: Create abstract base classes with error checking
 # Category: Lua
 # Tags: lua, oop, abstract-class, validation
----
-Implement abstract base class pattern that requires derived classes to implement specific methods.
-
-```lua
----@class Shape (abstract)
-local Shape = {}
-
-function Shape:new(type)
-  local instance = { type = type }
-  self.__index = function(t, k)
-    -- Check if method must be implemented by subclass
-    if k == "area" or k == "perimeter" then
-      error(string.format(
-        "Abstract method '%s' must be implemented by subclass '%s'",
-        k, t.type or "unknown"
-      ))
-    end
-    return self[k]
-  end
-  return setmetatable(instance, self)
-end
-
----@class Rectangle : Shape
-local Rectangle = Shape:new("Rectangle")
-
-function Rectangle:new(width, height)
-  local instance = Shape.new(self, "Rectangle")
-  instance.width = width
-  instance.height = height
-  return instance
-end
-
--- Implement required abstract methods
-function Rectangle:area()
-  return self.width * self.height
-end
-
-function Rectangle:perimeter()
-  return 2 * (self.width + self.height)
-end
-
----@class Circle : Shape
-local Circle = Shape:new("Circle")
-
-function Circle:new(radius)
-  local instance = Shape.new(self, "Circle")
-  instance.radius = radius
-  return instance
-end
-
-function Circle:area()
-  return math.pi * self.radius * self.radius
-end
-
-function Circle:perimeter()
-  return 2 * math.pi * self.radius
-end
-
--- Usage
-local rect = Rectangle:new(5, 3)
-print("Rectangle area:", rect:area())      -- 15
-print("Rectangle perimeter:", rect:perimeter())  -- 16
-
-local circle = Circle:new(4)
-print("Circle area:", circle:area())       -- ~50.27
-print("Circle perimeter:", circle:perimeter())   -- ~25.13
-
--- This would error: local shape = Shape:new()
--- shape:area() -- Error: Abstract method 'area' must be implemented
-```
-***
-# Title: Defer execution with vim.schedule
-# Category: Lua
-# Tags: lua, schedule, defer, async, callback
 ---
 Use `vim.schedule()` to defer execution of code to be run on the main event loop, useful for async callbacks and avoiding "textlock" errors.
 

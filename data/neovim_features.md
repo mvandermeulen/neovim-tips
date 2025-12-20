@@ -14,30 +14,6 @@ cgn     " change next match
 # Category: Neovim Features
 # Tags: treesitter, textobject, modern
 ---
-Use `vaf` to select around function, `vif` for inside function, `vac` for around class (requires treesitter text objects).
-
-```vim
-vaf  " select around function
-vif  " select inside function
-vac  " select around class
-```
-***
-# Title: Quick fix navigation
-# Category: Neovim Features
-# Tags: quickfix, navigation, errors
----
-Use `:cn` to go to next error/item in quickfix list, `:cp` for previous, `:copen` to open quickfix window.
-
-```vim
-:cn     " next quickfix item
-:cp     " previous quickfix item
-:copen  " open quickfix window
-```
-***
-# Title: Built-in terminal
-# Category: Neovim Features
-# Tags: terminal, integrated, modern
----
 Use `:term` to open terminal, `Ctrl+\` followed by `Ctrl+n` to exit terminal mode to normal mode.
 
 ```vim
@@ -191,24 +167,6 @@ vim.opt.statusline = '%!v:lua.custom_statusline()'
 # Title: RPC and job control (jobstart)
 # Category: Neovim Features
 # Tags: rpc, jobs, async, communication
----
-Use Neovim's job control and RPC capabilities for asynchronous operations.
-
-```lua
-local job_id = vim.fn.jobstart({'ls', '-la'}, {
-  on_stdout = function(_, data)
-    for _, line in ipairs(data) do
-      if line ~= '' then
-        print(line)
-      end
-    end
-  end
-})
-```
-***
-# Title: Health checks
-# Category: Neovim Features
-# Tags: health, check, diagnostics, system
 ---
 Use `:checkhealth` to diagnose Neovim installation and plugin issues.
 

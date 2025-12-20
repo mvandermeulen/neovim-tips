@@ -13,31 +13,6 @@ O  " new line above
 # Category: Insert
 # Tags: paste, insert, register, clipboard
 ---
-Use `Ctrl+r "` to paste from default register, or `Ctrl+r a` to paste from register 'a' while in insert mode.
-
-```vim
-" In insert mode:
-Ctrl+r "     " paste from default register
-Ctrl+r a     " paste from register 'a'
-```
-***
-# Title: Insert mode completion
-# Category: Insert
-# Tags: completion, autocomplete, popup
----
-Use `Ctrl+n` for next completion match and `Ctrl+p` for previous completion match. Use `Ctrl+x Ctrl+f` for filename completion.
-
-```vim
-" In insert mode:
-Ctrl+n        " next completion
-Ctrl+p        " previous completion
-Ctrl+x Ctrl+f " filename completion
-```
-***
-# Title: Insert digraphs
-# Category: Insert
-# Tags: digraph, special, characters, unicode
----
 Use `Ctrl+k` followed by two characters to insert digraphs (special characters). Use `:digraphs` to see available combinations.
 
 ```vim
@@ -50,18 +25,6 @@ Ctrl+k <<    " insert «
 # Title: Insert calculation result
 # Category: Insert
 # Tags: calculation, expression, register
----
-Use `Ctrl+r =` to insert the result of an expression calculation in insert mode.
-
-```vim
-" In insert mode:
-Ctrl+r =2+3<Enter>  " inserts 5
-Ctrl+r =strftime("%Y-%m-%d")<Enter>  " inserts current date
-```
-***
-# Title: Replace mode
-# Category: Insert
-# Tags: replace, overwrite, mode
 ---
 Use `R` to enter replace mode where typed characters overwrite existing text. Use `gR` for virtual replace mode.
 
@@ -155,18 +118,6 @@ Ctrl+g k  " move up to insertion start column
 # Title: Control undo granularity in insert mode
 # Category: Insert
 # Tags: undo, granularity, control
----
-Use `Ctrl+g u` to start a new undoable edit and `Ctrl+g U` to prevent the next cursor movement from breaking the undo sequence.
-
-```vim
-" In insert mode:
-Ctrl+g u  " start new undo block
-Ctrl+g U  " don't break undo with next movement
-```
-***
-# Title: Trigger abbreviation manually
-# Category: Insert
-# Tags: abbreviation, trigger, expand
 ---
 Use `Ctrl+]` to manually trigger abbreviation expansion in insert mode.
 

@@ -1,7 +1,3 @@
-# Title: Filter text through external commands
-# Category: Text Manipulation
-# Tags: filter, external, command, !, pipe, processing
----
 Use `!{motion}{command}` to filter text through external commands for text processing.
 
 ```vim
@@ -16,27 +12,6 @@ Use `!{motion}{command}` to filter text through external commands for text proce
 # Category: Text Manipulation
 # Tags: case, line, transform
 ---
-Use `guu` to lowercase current line or `gUU` to uppercase current line.
-
-```vim
-guu  " lowercase current line
-gUU  " uppercase current line
-```
-***
-# Title: Uppercase current word
-# Category: Text Manipulation
-# Tags: case, word, uppercase
----
-Use `gUw` to uppercase current word.
-
-```vim
-gUw  " uppercase current word
-```
-***
-# Title: Format paragraph
-# Category: Text Manipulation
-# Tags: format, paragraph, wrap
----
 Use `gqap` to format/wrap a paragraph according to textwidth.
 
 ```vim
@@ -46,26 +21,6 @@ gqap  " format around paragraph
 # Title: Remove trailing whitespace
 # Category: Text Manipulation
 # Tags: whitespace, trailing, clean
----
-Use `:%s/\s\+$//` to remove trailing whitespace from all lines.
-
-```vim
-:%s/\s\+$//  " remove trailing whitespace
-```
-***
-# Title: Delete blank lines
-# Category: Text Manipulation
-# Tags: delete, blank, lines
----
-Use `:g/^$/d` to delete all blank/empty lines in the buffer.
-
-```vim
-:g/^$/d  " delete blank lines
-```
-***
-# Title: Delete non-matching lines
-# Category: Text Manipulation
-# Tags: delete, pattern, inverse
 ---
 Use `:v/pattern/d` to delete all lines that do NOT match the pattern.
 
@@ -77,18 +32,6 @@ Use `:v/pattern/d` to delete all lines that do NOT match the pattern.
 # Category: Text Manipulation
 # Tags: numbering, sequence, insert, auto
 ---
-Use `:put =range(1,10)` to insert numbers 1-10, or select lines and use `:s/^/\=line('.')-line("'<")+1.'. '/` for relative numbering.
-
-```vim
-:put =range(1,10)  " insert numbers 1-10
-" Or for selected lines:
-:'<,'>s/^/\=line('.')-line("'<")+1.'. '/
-```
-***
-# Title: Convert tabs to spaces
-# Category: Text Manipulation
-# Tags: tabs, spaces, convert, whitespace
----
 Use `:retab` to convert tabs to spaces using current tabstop setting, or `:set expandtab | retab` to convert and set future tabs as spaces.
 
 ```vim
@@ -99,41 +42,6 @@ Use `:retab` to convert tabs to spaces using current tabstop setting, or `:set e
 # Title: Join lines with custom separator
 # Category: Text Manipulation
 # Tags: join, separator, custom, lines
----
-Use `:'<,'>s/\n/, /g` to join selected lines with custom separator (comma-space in example).
-
-```vim
-:'<,'>s/\n/, /g     " join lines with ", "
-:'<,'>s/\n/ | /g    " join lines with " | "
-```
-***
-# Title: Reverse lines
-# Category: Text Manipulation
-# Tags: reverse, lines, order, flip
----
-Use `:g/^/m0` to reverse all lines in buffer, or select lines and use `:'<,'>g/^/m '<-1` for selection.
-
-```vim
-:g/^/m0             " reverse all lines
-:'<,'>g/^/m'<-1     " reverse selected lines
-```
-***
-# Title: Insert column of text
-# Category: Text Manipulation
-# Tags: column, insert, visual, block
----
-Use visual block mode (`Ctrl+V`), select column, press `I` to insert, type text, then `Esc` to apply to all lines.
-
-```vim
-Ctrl+V  " start visual block
-I       " insert at beginning of block
-text    " type text to insert
-Esc     " apply to all selected lines
-```
-***
-# Title: Align numbers at decimal point
-# Category: Text Manipulation
-# Tags: align, numbers, decimal, format
 ---
 Use visual selection and substitute to align decimal numbers at their decimal points.
 
@@ -319,25 +227,6 @@ g<C-x>              " decrement each selected number progressively
 # Category: Text Manipulation
 # Tags: comment, uncomment, code, blocks
 ---
-Add or remove comment markers from blocks of code.
-
-```vim
-" For line comments (e.g., //):
-:'<,'>s/^/\/\/ /    " add comment
-:'<,'>s/^\/\/ //    " remove comment
-
-" For block comments:
-:'<,'>s/^/\/* /     " add start comment
-:'<,'>s/$/ *\//     " add end comment
-
-" Using substitute with confirmation:
-:%s/^/# /gc         " add # comments with confirmation
-```
-***
-# Title: Duplicate lines or selections
-# Category: Text Manipulation
-# Tags: duplicate, copy, lines, repeat
----
 Duplicate current line or selected text efficiently.
 
 ```vim
@@ -351,30 +240,6 @@ yyp                 " duplicate current line (yank and paste)
 # Title: Undo and redo operations
 # Category: Text Manipulation
 # Tags: undo, redo, history
----
-Use `u` to undo changes, `Ctrl+r` to redo undone changes, and `U` to undo all changes on current line.
-
-```vim
-u      " undo last change
-Ctrl+r " redo (undo the undo)
-U      " undo all changes on current line
-```
-***
-# Title: Put text from register
-# Category: Text Manipulation
-# Tags: put, paste, register
----
-Use `p` to put (paste) text after cursor and `P` to put text before cursor.
-
-```vim
-p  " put text after cursor
-P  " put text before cursor
-"ap " put from register 'a' after cursor
-```
-***
-# Title: Replace mode operations
-# Category: Text Manipulation
-# Tags: replace, mode, overwrite
 ---
 Use `R` to enter Replace mode where typed characters overwrite existing text. Use `r{char}` to replace single character.
 

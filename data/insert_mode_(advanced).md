@@ -16,20 +16,6 @@ Use `<C-o>` in insert mode to execute a single normal mode command and return im
 # Category: Insert Mode Advanced
 # Tags: navigation, cursor, movement, arrow
 ---
-Use arrow keys or `Ctrl+h` (left), `Ctrl+j` (down), `Ctrl+k` (up), `Ctrl+l` (right) to navigate in insert mode.
-
-```vim
-" In insert mode:
-<Left>/<Right>  " move by character
-<Up>/<Down>     " move by line
-Ctrl+h          " move left (backspace)
-Ctrl+l          " move right
-```
-***
-# Title: Word movement in insert mode
-# Category: Insert Mode Advanced
-# Tags: word, movement, navigation, shift
----
 Use `Shift+Left` and `Shift+Right` to move by words in insert mode.
 
 ```vim

@@ -14,18 +14,6 @@ xp  " swap characters
 # Category: Clever Tricks
 # Tags: indent, format, document, auto
 ---
-Use `gg=G` to auto-indent entire document from top to bottom.
-
-```vim
-gg=G  " auto-indent entire file
-```
-
-**Source:** Community contributed
-***
-# Title: Auto-indent current block
-# Category: Clever Tricks
-# Tags: indent, block, braces, auto
----
 Use `=%` when cursor is on opening brace to auto-indent entire block.
 
 ```vim
@@ -37,19 +25,6 @@ Use `=%` when cursor is on opening brace to auto-indent entire block.
 # Title: Open file under cursor
 # Category: Clever Tricks
 # Tags: file, open, cursor, path
----
-Use `gf` to open file whose name is under cursor. Use `gF` to go to specific line number.
-
-```vim
-gf   " open file under cursor
-gF   " open file and go to line number
-```
-
-**Source:** Community contributed
-***
-# Title: Line completion in insert mode
-# Category: Clever Tricks
-# Tags: completion, line, insert, auto
 ---
 Use `Ctrl+X Ctrl+L` in insert mode to complete entire lines from current buffer.
 
@@ -75,18 +50,6 @@ ciwfoo  " change word to 'foo'
 # Title: Split line at cursor
 # Category: Clever Tricks
 # Tags: split, line, break
----
-Use `i` followed by `Enter` then `Esc`, or more efficiently `r` followed by `Enter` to break line at cursor.
-
-```vim
-i<Enter><Esc>  " split line at cursor
-```
-
-**Source:** Community contributed
-***
-# Title: Quick number increment
-# Category: Clever Tricks
-# Tags: number, increment, math
 ---
 Use `Ctrl+a` to increment number under cursor, `Ctrl+x` to decrement. Works with decimals and hex.
 
@@ -126,19 +89,6 @@ cf;  " change including semicolon
 # Category: Clever Tricks
 # Tags: center, jump, navigation
 ---
-Append `zz` after navigation commands to center the line. Works with searches, line jumps, etc.
-
-```vim
-42Gzz   " jump to line 42 and center
-/foozz  " search for 'foo' and center
-```
-
-**Source:** Community contributed
-***
-# Title: G-commands - search variations
-# Category: Clever Tricks
-# Tags: search, variations, boundaries
----
 Use `g*` and `g#` to search for word under cursor without word boundaries (matches partial words).
 
 ```vim
@@ -152,34 +102,6 @@ g#  " search backward for word without boundaries
 # Category: Clever Tricks
 # Tags: undo, branch, time, state
 ---
-Use `g-` and `g+` to navigate through undo branches by time.
-
-```vim
-g-  " go to older text state
-g+  " go to newer text state
-```
-
-**Source:** Community contributed
-***
-# Title: G-commands - screen line movement
-# Category: Clever Tricks
-# Tags: screen, line, wrap, movement
----
-Use `gj` and `gk` to move by screen lines when text is wrapped, `g0` and `g$` for screen line start/end.
-
-```vim
-gj  " move down by screen line (with wrap)
-gk  " move up by screen line (with wrap)
-g0  " go to start of screen line
-g$  " go to end of screen line
-```
-
-**Source:** Community contributed
-***
-# Title: G-commands - middle of line
-# Category: Clever Tricks
-# Tags: middle, line, screen, text
----
 Use `gm` to go to middle of screen line and `gM` to go to middle of text line.
 
 ```vim
@@ -192,20 +114,6 @@ gM  " go to middle of text line
 # Title: G-commands - case conversion
 # Category: Clever Tricks
 # Tags: case, convert, upper, lower
----
-Use `gU{motion}` for uppercase, `gu{motion}` for lowercase, and `g~{motion}` to toggle case.
-
-```vim
-gUw   " uppercase word
-guu   " lowercase current line
-g~iw  " toggle case of word under cursor
-```
-
-**Source:** Community contributed
-***
-# Title: G-commands - join without space
-# Category: Clever Tricks
-# Tags: join, line, space
 ---
 Use `gJ` to join lines without inserting a space between them.
 
@@ -232,19 +140,6 @@ gN               " select previous match
 # Title: G-commands - put and leave cursor
 # Category: Clever Tricks
 # Tags: put, paste, cursor, position
----
-Use `gp` and `gP` to put text and leave cursor after the pasted text.
-
-```vim
-gp  " put after and leave cursor at end
-gP  " put before and leave cursor at end
-```
-
-**Source:** Community contributed
-***
-# Title: G-commands - format keeping cursor
-# Category: Clever Tricks
-# Tags: format, cursor, position, text
 ---
 Use `gw{motion}` to format text while keeping cursor position unchanged.
 
@@ -335,19 +230,6 @@ g<  " display previous command output
 # Category: Clever Tricks
 # Tags: mark, navigation, jumplist
 ---
-Use `g'` and `` g` `` to jump to marks without changing the jumplist.
-
-```vim
-g'a  " jump to mark 'a' without affecting jumplist
-g`a  " jump to exact position of mark 'a' without jumplist
-```
-
-**Source:** Community contributed
-***
-# Title: Repeat last Ex command with @:
-# Category: Clever Tricks
-# Tags: repeat, ex, command, macro, colon
----
 Use `@:` to repeat the last Ex command, similar to how `@@` repeats macros.
 
 ```vim
@@ -370,6 +252,7 @@ nnoremap <leader>. .`[
 " Now after making a change:
 <leader>.  " repeat change and go to start position
 ```
+
 ```lua
 -- Lua:
 vim.keymap.set('n', '<leader>.', '.`[', { desc = 'Repeat change and return to start' })
@@ -395,19 +278,6 @@ Use `:g//` to list all lines containing the last search pattern without specifyi
 # Category: Clever Tricks
 # Tags: file, save, line, separate, export
 ---
-Use `:g/^/exe` to save each line to a separate file with incremental names.
-
-```vim
-:let i = 1 | g/^/exe 'w! line' . i . '.txt' | let i = i + 1
-" Saves each line to line1.txt, line2.txt, etc.
-```
-
-**Source:** Community contributed
-***
-# Title: Alternative substitute delimiters
-# Category: Clever Tricks
-# Tags: substitute, delimiter, slash, alternative
----
 Use any character as delimiter in substitute commands to avoid escaping slashes in paths.
 
 ```vim
@@ -421,21 +291,6 @@ Use any character as delimiter in substitute commands to avoid escaping slashes 
 # Title: Calculation with expression register
 # Category: Clever Tricks
 # Tags: calculation, expression, register, math, evaluate
----
-Use `=` register to evaluate mathematical expressions and insert results.
-
-```vim
-" In insert mode:
-Ctrl+r =2+3*4<Enter>    " inserts 14
-Ctrl+r =sqrt(16)<Enter> " inserts 4.0
-Ctrl+r =strftime("%Y")<Enter>  " inserts current year
-```
-
-**Source:** Community contributed
-***
-# Title: Scroll windows together
-# Category: Clever Tricks
-# Tags: scroll, window, together, bind, sync
 ---
 Use `:set scrollbind` in multiple windows to scroll them together synchronously.
 
@@ -451,6 +306,7 @@ Use `:set scrollbind` in multiple windows to scroll them together synchronously.
 " To disable:
 :set noscrollbind
 ```
+
 ```lua
 -- Lua:
 -- In first window:
@@ -477,6 +333,7 @@ Use `:cd %:h` to change directory to the directory of the current file.
 :pwd        " verify current directory
 :lcd %:h    " change local directory for current window only
 ```
+
 ```lua
 -- Lua:
 vim.cmd('cd ' .. vim.fn.expand('%:h'))  -- change to current file's directory
@@ -500,6 +357,7 @@ Add file encoding to status line to see current file's character encoding.
 :set statusline=%f\ [%{&fileencoding?&fileencoding:&encoding}]\ %y
 " Shows filename, encoding, and filetype
 ```
+
 ```lua
 -- Lua:
 vim.opt.statusline = '%f [%{&fileencoding?&fileencoding:&encoding}] %y'
@@ -511,21 +369,6 @@ vim.opt.statusline = '%f [%{&fileencoding?&fileencoding:&encoding}] %y'
 # Title: Create word frequency table
 # Category: Clever Tricks
 # Tags: word, frequency, table, count, analysis
----
-Create a word frequency analysis using Vim commands and external tools.
-
-```vim
-" Create word frequency table:
-:%s/\W\+/\r/g | sort | uniq -c | sort -nr
-" Or using Vim's internal commands:
-:g/./normal 0"ay$
-```
-
-**Source:** Community contributed
-***
-# Title: Search for lines NOT matching pattern
-# Category: Clever Tricks
-# Tags: search, not, matching, invert, negative
 ---
 Use `:v/pattern/` or `:g!/pattern/` to work with lines that do NOT match a pattern.
 
@@ -609,6 +452,7 @@ function! AddLink()
   put ='<a href="' . url . '"' . target . '>' . title . '</a>'
 endfunction
 ```
+
 ```lua
 function _G.add_html_link()
   local url = vim.fn.input('URL to add? ')
@@ -642,6 +486,7 @@ Quickly insert the current filename (without path/extension) while in insert mod
 " Insert classname (filename minus path and extension).
 iab <buffer> <unique> ,f <C-r>=expand('%:t:r')<CR>
 ```
+
 ```lua
 -- Create buffer-local abbreviation to insert filename
 vim.cmd('iab <buffer> <unique> ,f ' .. vim.fn.expand('%:t:r'))
@@ -666,6 +511,7 @@ endfunction
 " Optional insert mode mapping
 imap <buffer> <C-Space> <Esc>:Ei<Space>
 ```
+
 ```lua
 vim.api.nvim_create_user_command('E', function(opts)
   local env = opts.args
@@ -714,6 +560,7 @@ endfunction
 
 vnoremap ;bc "ey:call CalcBC()<CR>
 ```
+
 ```lua
 function _G.calc_bc()
   local text = vim.fn.getreg('e')
@@ -767,6 +614,7 @@ let g:MyCalcRounding = 1
 map <silent> <Leader>c :s/.*/\=MyCalc(submatch(0))/<CR>:noh<CR>
 vmap <silent> <Leader>c :B s/.*/\=MyCalc(submatch(0))/<CR>:noh<CR>
 ```
+
 ```lua
 local function my_calc(str)
   local precision = vim.g.MyCalcPresition or 2
@@ -821,6 +669,7 @@ endfunction
 command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
 noremap <silent> <F8> :ToggleSlash<CR>
 ```
+
 ```lua
 function _G.toggle_slashes(independent, first_line, last_line)
   for lnum = first_line, last_line do
@@ -864,6 +713,7 @@ function! s:Dec2hex(line1, line2, arg) range
   endif
 endfunction
 ```
+
 ```lua
 -- Convert decimal to hex
 vim.api.nvim_create_user_command('Dec2hex', function(opts)
@@ -898,6 +748,7 @@ function! Hex2dec(arg)
   return (a:arg =~? '^0x') ? a:arg + 0 : ('0x'.a:arg) + 0
 endfunction
 ```
+
 ```lua
 -- Convert decimal to hex
 function _G.dec_to_hex(arg)
@@ -929,6 +780,7 @@ Use built-in Vim functions to quickly convert numbers between bases in command m
 " <C-R>=0x09ab<Enter> inserts 2475
 " <C-R>=printf('0x%04x',2475)<Enter> inserts 0x09ab
 ```
+
 ```lua
 -- Convert hex to decimal
 print(tonumber('0x0a2f', 16))
@@ -961,6 +813,7 @@ nnoremap <silent> <Leader><C-a> :<C-u>call AddSubtract("\<C-a>", 'b')<CR>
 nnoremap <silent>         <C-x> :<C-u>call AddSubtract("\<C-x>", '')<CR>
 nnoremap <silent> <Leader><C-x> :<C-u>call AddSubtract("\<C-x>", 'b')<CR>
 ```
+
 ```lua
 local function add_subtract(char, back)
   local pattern = vim.o.nrformats:match('alpha') and '[%w]' or '[%d]'
@@ -980,41 +833,6 @@ vim.keymap.set('n', '<leader><C-x>', function() add_subtract('\<C-x>', 'b') end,
 # Category: clever_tricks
 # Tags: mapping, text-insertion, productivity
 ---
-Adds a mapping to create a new Perl subroutine with the word under the cursor, placing it at the end of the file or before special tokens
-
-```vim
-nnoremap <Leader>ns :call Newsub()<CR>
-function! Newsub()
-  let word = "sub " . expand("<cword>") . "{}"
-  let ln = search("__.*__", 'nW')
-  if ln == 0
-    call append('$', word)
-  else
-    call append(ln-1, word)
-  endif
-endfunction
-```
-```lua
-vim.keymap.set('n', '<Leader>ns', function()
-  local word = expand('<cword>')
-  local line_num = vim.fn.search('__.*__', 'nW')
-  
-  if line_num == 0 then
-    -- Append to end of file
-    vim.fn.append('$', 'sub ' .. word .. '{}')
-  else
-    -- Insert before special token
-    vim.fn.append(line_num - 1, 'sub ' .. word .. '{}')
-  end
-end, { desc = 'Create new Perl subroutine' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Create_new_subroutines)
-***
-# Title: Repeat Last Change Efficiently
-# Category: clever_tricks
-# Tags: productivity, editing, normal-mode
----
 Use the dot (.) command to repeat the last change in normal mode, which can dramatically speed up repetitive editing tasks
 
 ```vim
@@ -1022,6 +840,7 @@ Use the dot (.) command to repeat the last change in normal mode, which can dram
 # After deleting a word with 'dw', press '.' to delete another word
 # After joining lines with 'J', press '.' to join more lines
 ```
+
 ```lua
 -- Dot command works the same in Neovim
 -- Simply press '.' to repeat the last normal mode change
@@ -1040,6 +859,7 @@ Use Ctrl-R= to evaluate expressions in insert, command, and normal modes, enabli
 " Map Ctrl-R= to work in normal mode for expression evaluation
 map <CTRL-R>= :echo
 ```
+
 ```lua
 -- Lua equivalent for mapping expression evaluation
 vim.keymap.set({'n', 'i', 'c'}, '<C-r>=', function()
@@ -1076,6 +896,7 @@ def EvaluateCurrentLine(*args):
 EOL
 command -narg=* PyEv python EvaluateCurrentLine(<f-args>)
 ```
+
 ```lua
 function _G.evaluate_current_line(...)
   local cur_str = vim.api.nvim_get_current_line()
@@ -1132,6 +953,7 @@ def PyExecReplace(line1,line2):
 EOL
 command -range Pyer python PyExecReplace(<f-line1>,<f-line2>)
 ```
+
 ```lua
 local function py_exec_replace(line1, line2)
   local buffer = vim.api.nvim_get_current_buf()
@@ -1166,6 +988,7 @@ endfunction
 com! -range -nargs=+ SS call SafeSearchCommand(<line1>, <line2>, <q-args>)
 com! -range -nargs=* S call SafeSearchCommand(<line1>, <line2>, 's' . <q-args>)
 ```
+
 ```lua
 function _G.safe_search_command(line1, line2, command)
   local search = vim.fn.getreg('/')
@@ -1201,6 +1024,7 @@ function! CPhone(check)
   return nr
 endfunction
 ```
+
 ```lua
 function CPhone(check)
   local s = '[-+./()0-9 ]*'
@@ -1244,6 +1068,7 @@ endfunction
 
 nnoremap <F9> :call GroupMatchingLines()<CR>
 ```
+
 ```lua
 function _G.group_matching_lines()
   local pattern = vim.fn.strpart(vim.fn.getline('.'), vim.fn.col('.') - 1, #vim.fn.getreg('"'))
@@ -1284,6 +1109,7 @@ Easily convert between hex and decimal numbers using built-in Vim functions and 
 " Ctrl-R = 0x09ab Enter (inserts 2475)
 " Ctrl-R = printf('0x%04x',2475) Enter (inserts 0x09ab)
 ```
+
 ```lua
 -- Convert decimal to hex
 print(string.format('%x', 74565))
@@ -1316,6 +1142,7 @@ function! DecAndHex(number)
   endif
 endfunction
 ```
+
 ```lua
 function _G.dec_and_hex(number)
   local dec = tonumber(number)
@@ -1357,6 +1184,7 @@ function HighlightNearCursor()
   endif
 endfunction
 ```
+
 ```lua
 vim.keymap.set('n', '<C-K>', function()
   if not vim.g.highlightcursor then
@@ -1375,26 +1203,12 @@ end, { desc = 'Toggle cursor word highlight' })
 # Category: clever_tricks
 # Tags: text-manipulation, key-mapping, security
 ---
-Instantly encode text using rot13 to quickly obscure screen contents when someone approaches
-
-```vim
-map <F3> ggg?G
-```
-```lua
-vim.keymap.set('n', '<F3>', 'ggg?G', { desc = 'Obscure text with rot13 encoding' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/How_to_obscure_text_instantaneously)
-***
-# Title: Rot13 Encoding for Visible Screen Only
-# Category: clever_tricks
-# Tags: text-manipulation, cursor-position, key-mapping
----
 Encode only the visible screen with rot13, preserving cursor position
 
 ```vim
 map <F3> mzHVLg?`z
 ```
+
 ```lua
 vim.keymap.set('n', '<F3>', 'mzHVLg?`z', { desc = 'Rot13 encode visible screen' })
 ```
@@ -1412,6 +1226,7 @@ nnoremap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F10>', function()
   local line = vim.fn.line('.')
@@ -1444,6 +1259,7 @@ Multiple ways to quickly insert the current working directory name in your buffe
 " Method 2: Using getcwd() function
 :inoremap \fp <C-R>=getcwd()<CR>
 ```
+
 ```lua
 -- Method 1: Using external command in normal mode
 vim.cmd('!!pwd')
@@ -1480,6 +1296,7 @@ EOF
 endfunction
 nnoremap <F4> :call PerlImageSize()<CR>
 ```
+
 ```lua
 function _G.perl_image_size()
   -- Note: This requires Perl and Image::Size module
@@ -1506,6 +1323,7 @@ A clever way to rotate through multiple email signatures from a text file, autom
 ```vim
 map <Leader>ms :e c:\sign.txt<CR>ggV/^--  $<CR>k"*xG$a<C-R><C-O>*<Esc>:w<CR>:bd<CR>G$a<C-M><Esc>"*P
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>ms', function()
   -- Open signatures file
@@ -1534,6 +1352,7 @@ Showcase of complex text manipulation and transformation using Vim's powerful co
 ```vim
 vim -c ":%s%s*%Cyrnfr)fcbafbe[Oenz(Zbbyranne%|:%s)[[()])-)Ig|norm Vg?"
 ```
+
 ```lua
 -- Lua equivalent demonstrates text transformation
 -- Actual implementation would depend on specific transformation intent
@@ -1563,6 +1382,7 @@ Create a personal memo file using Vim help-style markup, enabling easy navigatio
 " Vim settings for help-like file
 vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^":ts=8:ft=help:norl:
 ```
+
 ```lua
 -- Lua approach for creating a memo file
 -- Use vim.o and vim.opt to set file-specific settings
@@ -1597,6 +1417,7 @@ endfunction
 
 menu &Utilities.&ZipLookup :call ZIPLookup(expand("<cword>")) <CR>
 ```
+
 ```lua
 -- Lua equivalent requires external plugin or custom function
 -- Could be implemented using vim.fn.system() and a web request library
@@ -1618,105 +1439,6 @@ vim.keymap.set('n', '<leader>zl', _G.zip_lookup, { desc = 'Lookup ZIP code' })
 # Category: clever_tricks
 # Tags: macro-expansion, c-cpp, development
 ---
-Expand C/C++ macros using gcc in a preview window, helping developers understand macro preprocessing
-
-```vim
-function! ExpandCMacro()
-  let l:macro_file_name = "__macroexpand__" . tabpagenr()
-  let l:file_row = line(".")
-  let l:file_name = expand("%")
-  let l:file_window = winnr()
-  
-  execute "normal! Oint " . l:macro_file_name . ";"
-  execute "w"
-  
-  if bufwinnr(l:macro_file_name) != -1
-    execute bufwinnr(l:macro_file_name) . "wincmd w"
-    setlocal modifiable
-    execute "normal! ggdG"
-  else
-    execute "bot 10split " . l:macro_file_name
-    execute "setlocal filetype=cpp"
-    execute "setlocal buftype=nofile"
-    nnoremap <buffer> q :q!<CR>
-  endif
-  
-  silent! execute "r!gcc -E " . l:file_name
-  execute "normal! ggV/int " . l:macro_file_name . ";$\<CR>d"
-  execute "normal! jdG"
-  execute "%!indent -st -kr"
-  execute "normal! gg=G"
-  
-  execute "normal! G"
-  let l:macro_end_row = line(".")
-  execute "resize " . l:macro_end_row
-  execute "normal! gg"
-  
-  setlocal nomodifiable
-  execute l:file_window . "wincmd w"
-  execute l:file_row
-  execute "normal!u"
-  execute "w"
-  
-  let @/ = getline('.')
-endfunction
-```
-```lua
-function _G.expand_c_macro()
-  local macro_file_name = string.format("__macroexpand__%d", vim.fn.tabpagenr())
-  local file_row = vim.fn.line(".")
-  local file_name = vim.fn.expand("%")
-  local file_window = vim.fn.winnr()
-
-  vim.cmd(string.format("normal! Oint %s;", macro_file_name))
-  vim.cmd("w")
-
-  if vim.fn.bufwinnr(macro_file_name) ~= -1 then
-    vim.cmd(string.format("%dwincmd w", vim.fn.bufwinnr(macro_file_name)))
-    vim.api.nvim_win_set_option(0, 'modifiable', true)
-    vim.cmd("normal! ggdG")
-  else
-    vim.cmd(string.format("bot 10split %s", macro_file_name))
-    vim.api.nvim_buf_set_option(0, 'filetype', 'cpp')
-    vim.api.nvim_buf_set_option(0, 'buftype', 'nofile')
-    vim.api.nvim_buf_set_keymap(0, 'n', 'q', ':q!<CR>', {noremap = true, silent = true})
-  end
-
-  vim.cmd(string.format("r!gcc -E %s", file_name))
-  vim.cmd(string.format("normal! ggV/int %s;$\<CR>d", macro_file_name))
-  vim.cmd("normal! jdG")
-  vim.cmd("%!indent -st -kr")
-  vim.cmd("normal! gg=G")
-
-  vim.cmd("normal! G")
-  local macro_end_row = vim.fn.line(".")
-  vim.cmd(string.format("resize %d", macro_end_row))
-  vim.cmd("normal! gg")
-
-  vim.api.nvim_win_set_option(0, 'modifiable', false)
-  vim.cmd(string.format("%dwincmd w", file_window))
-  vim.cmd(tostring(file_row))
-  vim.cmd("normal!u")
-  vim.cmd("w")
-
-  vim.fn.setreg('/', vim.fn.getline('.'))
-end
-
--- Mapping
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'cpp',
-  callback = function()
-    vim.keymap.set('n', '<leader>m', _G.expand_c_macro, { desc = 'Expand C/C++ Macro' })
-  end
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Macro_expansion_C/C%2B%2B)
-***
-# Title: Persistent Echo Messages in Vim
-# Category: clever_tricks
-# Tags: scripting, messages, autocmd
----
 Ensure echo messages are visible and don't disappear quickly, especially useful for script debugging and user notifications
 
 ```vim
@@ -1728,6 +1450,7 @@ let g:PersistentEcho=''
 if &ut>200|let &ut=200|endif
 au CursorHold * if PersistentEcho!=''|echo PersistentEcho|let PersistentEcho=''|endif
 ```
+
 ```lua
 local function persistent_echo(msg)
   vim.api.nvim_echo({{msg, 'Normal'}}, false, {})
@@ -1760,6 +1483,7 @@ Generate numbered lists or sequences with built-in Vim range and map functions
 " Format numbers with leading zeros
 :put =map(range(1,150), 'printf(''%04d'', v:val)')
 ```
+
 ```lua
 -- Insert numbered list
 vim.cmd.put(vim.fn.range(11, 15))
@@ -1802,6 +1526,7 @@ let g:PersistentEcho=''
 if &ut>200|let &ut=200|endif
 au CursorHold * if PersistentEcho!=''|echo PersistentEcho|let PersistentEcho=''|endif
 ```
+
 ```lua
 local function persistent_echo(msg)
   vim.api.nvim_echo({{msg, 'Normal'}}, false, {})
@@ -1838,6 +1563,7 @@ function! Browser()
 endfunction
 map <Leader>w :call Browser()<CR>
 ```
+
 ```lua
 function _G.open_url_from_line()
   local line = vim.fn.matchstr(vim.fn.getline('.'), '[a-z]*://[^ >,;:]*')
@@ -1869,6 +1595,7 @@ endfunction
 " Linux
 nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;|%")<CR><CR>
 ```
+
 ```lua
 -- Mac OS X
 function _G.mac_open_uri()
@@ -1905,6 +1632,7 @@ function! PH_Multiple()
 endfunction
 set printheader=%<%f%h%m%=Page\ %N\ of\ %{PH_Multiple()}
 ```
+
 ```lua
 function PrintPageCount()
   local lpp = 73 -- lines per page
@@ -1941,6 +1669,7 @@ endfunction
 
 iab wq <BS><Esc>:call WQHelper()<CR>
 ```
+
 ```lua
 function _G.wq_helper()
   local choice = vim.fn.confirm(
@@ -1968,6 +1697,7 @@ Use the 'boxes' utility to automatically create formatted comment boxes around t
 " Map F2 to create comment boxes for selected text
 vmap <F2> !boxes -s 80 <CR>
 ```
+
 ```lua
 -- Lua equivalent for creating comment boxes
 vim.keymap.set('v', '<F2>', '!boxes -s 80<CR>', { desc = 'Create comment box' })
@@ -1993,6 +1723,7 @@ j    " Move to next line
 @q   " Execute macro recursively
 q    " Stop recording
 ```
+
 ```lua
 -- Lua equivalent of recursive macro recording
 -- Note: Macros are typically still recorded in normal mode
@@ -2011,6 +1742,7 @@ Create a quick mapping to resync syntax highlighting when it breaks, improving e
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 ```
+
 ```lua
 vim.keymap.set({'n', 'i'}, '<F12>', ':syntax sync fromstart<CR>', { desc = 'Resync syntax highlighting' })
 ```
@@ -2028,6 +1760,7 @@ Ensure cursor returns to original position after undoing script-made changes by 
 execute "normal! i "
 execute "normal! a\<BS>"
 ```
+
 ```lua
 -- Lua equivalent for preserving cursor position
 local function preserve_cursor_on_undo()
@@ -2053,6 +1786,7 @@ jV/<\/div><CR>
 q
 @a@@@@@@
 ```
+
 ```lua
 -- Note: Translated macro approach
 -- 1. Set mark at first block end
@@ -2090,6 +1824,7 @@ endfunction
 " Mapping
 nnoremap ,r :call RotateSig()<CR>
 ```
+
 ```lua
 function _G.rotate_signature()
   -- Mark current position
@@ -2136,6 +1871,7 @@ fun! s:Show()
 endfun
 nn cc :call <SID>Show()<Cr>
 ```
+
 ```lua
 function _G.show_character_class()
   vim.cmd('normal! viwy')
@@ -2176,6 +1912,7 @@ function! BrowserURL()
   endif
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufRead', {
   pattern = '~/url',
@@ -2216,6 +1953,7 @@ function! GenerateUnicode(first, last)
   endwhile
 endfunction
 ```
+
 ```lua
 function _G.generate_unicode(first, last)
   local buffer = vim.api.nvim_create_buf(true, true)
@@ -2255,6 +1993,7 @@ Use Vim abbreviations to quickly generate code snippets by typing a word followe
 ```vim
 :ab ff <Esc>^d$ifor(int i=0;i<<Esc>pi.length;i++){<CR><CR>}//end for loop over array <Esc>pi[i]<Esc>==k==k==ji<Tab>
 ```
+
 ```lua
 -- Note: In Neovim, you can use vim.cmd to set abbreviations
 vim.cmd('ab ff <Esc>^d$ifor(int i=0;i<<Esc>pi.length;i++){<CR><CR>}//end for loop over array <Esc>pi[i]<Esc>==k==k==ji<Tab>')
@@ -2274,6 +2013,7 @@ iabbrev seperate separate
 iabbrev #i #include
 iabbrev #d #define
 ```
+
 ```lua
 vim.cmd('iabbrev teh the')
 vim.cmd('iabbrev seperate separate')
@@ -2298,6 +2038,7 @@ function! CppSetupCout()
   imap ; <Esc>:call CppResetCout()<CR>a;
 endfunction
 ```
+
 ```lua
 function _G.cpp_setup_cout()
   vim.keymap.set('i', ',', '<Space><<', { buffer = true })
@@ -2325,6 +2066,7 @@ inoremap <somekey> <Esc>u@.
 
 autocmd CursorHoldI * call feedkeys("\<C-G>u", 'tn')
 ```
+
 ```lua
 -- Lua equivalent
 vim.keymap.set('i', '<somekey>', '<Esc>u@.', { desc = 'Undo and execute as command' })
@@ -2350,6 +2092,7 @@ nmap _Y :!echo "" > ~/.vi_tmp<CR><CR>:w! ~/.vi_tmp<CR>
 vmap _Y :w! ~/.vi_tmp<CR>
 nmap _P :r ~/.vi_tmp<CR>
 ```
+
 ```lua
 -- Function to copy text to a temp file
 function CopyToTempFile()
@@ -2372,22 +2115,6 @@ vim.keymap.set('n', '_P', PasteFromTempFile, { desc = 'Paste from temp file' })
 # Category: clever_tricks
 # Tags: windows, multi-instance, launcher
 ---
-Use Rundll32.exe to launch multiple Vim instances reliably in Windows, bypassing single-instance limitations
-
-```vim
-C:\WINDOWS\system32\rundll32.exe Shell32.dll,ShellExec_RunDLL "C:\Program Files\Vim\vim72\gvim.exe"
-```
-```lua
--- For Neovim, use vim.fn.system() to launch
-vim.fn.system('rundll32.exe Shell32.dll,ShellExec_RunDLL "nvim"')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip676)
-***
-# Title: Quick Word Count in Vim
-# Category: clever_tricks
-# Tags: text-editing, statistics, productivity
----
 Multiple methods to count words in a document, including partial selections and live word count
 
 ```vim
@@ -2401,6 +2128,7 @@ g Ctrl-g
 " Get word count using external command
 :w !wc
 ```
+
 ```lua
 -- Note: Word count functionality is built-in
 -- Use g Ctrl-g in normal or visual mode
@@ -2434,6 +2162,7 @@ g Ctrl-g
 " Count words using external wc command
 :w !wc
 ```
+
 ```lua
 -- For current buffer word count
 -- Use g Ctrl-g in normal mode

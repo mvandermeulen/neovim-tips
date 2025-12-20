@@ -11,6 +11,7 @@ Or:
 " noremap prevents recursive mapping, silent suppresses command echo
 " Use noremap by default to avoid unexpected behavior
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>w', '<Cmd>w<CR>', { silent = true })
 vim.keymap.set('i', 'jk', '<Esc>')
@@ -31,6 +32,7 @@ Or:
 :nnoremap <expr> n 'Nn'[v:searchforward]
 " Tab for completion navigation, Enter to accept
 ```
+
 ```lua
 vim.keymap.set('i', '<Tab>', function()
     return vim.fn.pumvisible() == 1 and '<C-n>' or '<Tab>'
@@ -60,6 +62,7 @@ function! s:CompileAndRun()
 endfunction
 " <SID> ensures function is only accessible from this script
 ```
+
 ```lua
 local function compile_and_run()
     vim.cmd('!ggc % -o %:r && ./%:r')
@@ -84,6 +87,7 @@ Or:
 " Abbreviations expand after whitespace/punctuation
 " Mappings activate immediately when typed
 ```
+
 ```lua
 vim.keymap.set('ia', 'teh', 'the')
 vim.keymap.set('ia', '@@', 'your.email@domain.com')
@@ -107,6 +111,7 @@ Or:
 :nnoremap <leader>\ :nohlsearch<CR>
 " Surround word with quotes, backslash to clear search
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>"', 'ciw"<C-r>""<Esc>')
 vim.keymap.set('n', "<leader>'", "ciw'<C-r>\"'<Esc>")
@@ -128,6 +133,7 @@ Or:
 :abbreviate Q q
 " 'W' expands to 'w', but 'Wq' won't recursively expand the 'W' part
 ```
+
 ```lua
 vim.keymap.set('ca', 'W', 'w')
 vim.keymap.set('ca', 'Wq', 'wq')
@@ -150,6 +156,7 @@ Or:
 :vnoremap # y?\V<C-r>"<CR>
 " Sort selection, remove duplicates, search for selection
 ```
+
 ```lua
 vim.keymap.set('v', '<leader>s', '<Cmd>sort<CR>')
 vim.keymap.set('v', '<leader>u', '<Cmd>!uniq<CR>')
@@ -174,6 +181,7 @@ Or:
 :cnoremap <C-d> <Delete>
 " Emacs-style command line navigation
 ```
+
 ```lua
 vim.keymap.set('c', '<C-a>', '<Home>')
 vim.keymap.set('c', '<C-e>', '<End>')
@@ -198,6 +206,7 @@ Or:
 " Creates 'in(' and 'an(' text objects
 " Now you can use din( to delete inside next parentheses
 ```
+
 ```lua
 vim.keymap.set('o', 'in(', '<Cmd><C-u>normal! f(vi(<CR>')
 vim.keymap.set('o', 'an(', '<Cmd><C-u>normal! f(va(<CR>')
@@ -221,6 +230,7 @@ Or:
 :tnoremap <C-w>l <C-\><C-n><C-w>l
 " Escape to exit terminal mode, window navigation
 ```
+
 ```lua
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 vim.keymap.set('t', '<C-w>h', '<C-\\><C-n><C-w>h')
@@ -246,6 +256,7 @@ Or:
 :inoremap <C-s> <Esc>:w<CR>a
 " Multiple ways to save: <leader>fs and <C-s>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>fs', '<Cmd>w<CR>')
 vim.keymap.set('n', '<leader>ff', '<Cmd>find<Space>')
@@ -270,6 +281,7 @@ function! DeleteLines(count)
 endfunction
 " 3<leader>d deletes 3 lines
 ```
+
 ```lua
 local function delete_lines(count)
     vim.cmd('normal! ' .. count .. 'dd')
@@ -301,6 +313,7 @@ Or:
 :inoremap <expr> " '""<Left>'
 " Smart auto-pairing that considers context
 ```
+
 ```lua
 vim.keymap.set('i', '(', function()
   local line = vim.fn.getline('.')
@@ -345,6 +358,7 @@ Or:
 :autocmd FileType sh nnoremap <buffer> <F5> :!bash %<CR>
 " Same key, different behavior per file type
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'python',
@@ -420,6 +434,7 @@ map <F7> [s
 " Suggest corrections
 map <F8> z=
 ```
+
 ```lua
 vim.keymap.set('n', '<F5>', function()
   vim.opt.spell = not vim.opt.spell
@@ -442,6 +457,7 @@ ROT13 encode only the visible screen while maintaining cursor position
 ```vim
 map <F3> mzHVLg?`z
 ```
+
 ```lua
 vim.keymap.set('n', '<F3>', 'mzHVLg?`z', { desc = 'ROT13 visible screen with cursor position' })
 ```
@@ -462,6 +478,7 @@ endfunction
 
 iabbrev <expr> for <SID>Ask('for', "for () {\n}", 2)
 ```
+
 ```lua
 local function ask_expand(abbr, expansion, defprompt)
   local choice = vim.fn.confirm(string.format("Expand '%s'?", abbr), "&Yes\n&No", defprompt)
@@ -485,6 +502,7 @@ Create a flexible abbreviation for inserting dates that can be selectively expan
 iabbrev date^A <c-r>=strftime("%F")<CR>
 inoremap <c-b> <c-v><c-a><c-]>
 ```
+
 ```lua
 vim.cmd('iabbrev date^A <c-r>=strftime("%F")<CR>')
 vim.keymap.set('i', '<c-b>', '<c-v><c-a><c-]>', { desc = 'Expand date abbreviation' })
@@ -504,6 +522,7 @@ nnoremap <buffer> K :<C-u>let save_isk = &iskeyword |
     \ execute "!pydoc " . expand("<cword>") |
     \ let &iskeyword = save_isk<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 'K', function()
   local save_iskeyword = vim.opt.iskeyword:get()
@@ -527,6 +546,7 @@ Add familiar clipboard shortcuts for copy, cut, and paste in insert and visual m
 :vnoremap <C-c> "+y
 :vnoremap <C-d> "+d
 ```
+
 ```lua
 -- Clipboard shortcuts
 vim.keymap.set('i', '<C-v>', '<ESC>"+pa')
@@ -546,6 +566,7 @@ Convert two lines (URL and title) into a single HTML anchor tag using a simple F
 " Convert two lines (URL then TITLE) to one line: <a href=URL>TITLE</a>
 map <F7> <Esc>I<a href="<Esc>A"><Esc>gJA</a><Esc>
 ```
+
 ```lua
 vim.keymap.set('n', '<F7>', function()
   -- Get the current line and next line
@@ -578,6 +599,7 @@ inoremap {}     {}
 inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 ```
+
 ```lua
 vim.keymap.set('i', '{', function()
   local line = vim.fn.getline('.')
@@ -614,6 +636,7 @@ inoremap <expr> ( ConditionalPairMap('(', ')')
 inoremap <expr> { ConditionalPairMap('{', '}')
 inoremap <expr> [ ConditionalPairMap('[', ']')
 ```
+
 ```lua
 local function conditional_pair_map(open, close)
   local line = vim.fn.getline('.')
@@ -647,6 +670,7 @@ Quickly insert and align #endif with its corresponding #if directive in C/C++ co
 ```vim
 inoremap <buffer> #en X<BS><Esc>?#if<CR>"zy0^Og0"zpDa#endif<CR>X<BS><Esc>?#end?-1<CR>^"zy0^O0"zpDa
 ```
+
 ```lua
 vim.keymap.set('i', '#en', function()
   -- Simplified implementation of finding and aligning #endif
@@ -664,33 +688,6 @@ end, { buffer = true })
 # Category: advanced_mappings
 # Tags: code-generation, documentation, automation
 ---
-Quickly generate standardized function header comments with a keystroke
-
-```vim
-" Shortcut to insert function header template
-map <F2> o/**<CR> * Function description<CR> *<CR> * @param <CR> * @return <CR>*/<CR>
-```
-```lua
-vim.keymap.set('n', '<F2>', function()
-  local header = {
-    '/**',
-    ' * Function description',
-    ' *',
-    ' * @param ',
-    ' * @return ',
-    ' */',
-    ''
-  }
-  vim.api.nvim_put(header, 'l', true, true)
-end, { desc = 'Insert function header' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_tips_for_C_family_programming)
-***
-# Title: Alternative Escape Key Mappings
-# Category: advanced_mappings
-# Tags: key-mapping, insert-mode, productivity
----
 Quick alternative ways to exit insert mode without reaching for the Escape key
 
 ```vim
@@ -700,6 +697,7 @@ Quick alternative ways to exit insert mode without reaching for the Escape key
 :imap kj <Esc>
 :imap ;; <Esc>
 ```
+
 ```lua
 -- Alternative escape key mappings in Neovim
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
@@ -720,6 +718,7 @@ Equivalent to Escape key for quickly exiting insert mode, especially useful on d
 " Use Ctrl-[ as Escape alternative
 " (Already built-in, no additional mapping needed)
 ```
+
 ```lua
 -- Ctrl-[ works as Escape by default in Neovim
 -- No additional configuration required
@@ -740,6 +739,7 @@ function s:CompleteTags()
 endfunction
 autocmd BufRead,BufNewFile *.html,*.js,*.xml call s:CompleteTags()
 ```
+
 ```lua
 local function complete_tags()
   vim.keymap.set('i', '>', function()
@@ -769,6 +769,7 @@ Automatically insert matching quotes and position cursor between them when typin
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 ```
+
 ```lua
 vim.keymap.set('i', '"', '""<Left>', { desc = 'Auto-close double quotes' })
 vim.keymap.set('i', "'", "''<Left>", { desc = 'Auto-close single quotes' })
@@ -788,6 +789,7 @@ imap [] []<LEFT>
 imap {} {}<LEFT>
 imap <> <><LEFT>
 ```
+
 ```lua
 vim.keymap.set('i', '(', '()<Left>', { desc = 'Auto-close parentheses' })
 vim.keymap.set('i', '[', '[]<Left>', { desc = 'Auto-close square brackets' })
@@ -800,27 +802,6 @@ vim.keymap.set('i', '<', '<><Left>', { desc = 'Auto-close angle brackets' })
 # Title: Automatic Closing Characters for Brackets and Quotes
 # Category: advanced_mappings
 # Tags: auto-completion, insert-mode, key-mapping
----
-Automatically insert and skip closing characters like parentheses, brackets, and quotes in insert mode, making coding more efficient
-
-```vim
-inoremap ( ()<Left>
-inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-```
-```lua
-vim.keymap.set('i', '(', '()<Left>', { noremap = true })
-vim.keymap.set('i', ')', function()
-  local line = vim.fn.getline('.')
-  local col = vim.fn.col('.')
-  return line:sub(col, col) == ')' and '<Right>' or ')'
-end, { expr = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Autoappend_closing_characters)
-***
-# Title: Conditional Closing Brace Insertion
-# Category: advanced_mappings
-# Tags: auto-completion, conditional-mapping, insert-mode
 ---
 Insert closing braces only when the cursor is at the end of the line, preventing unwanted auto-completions
 
@@ -837,6 +818,7 @@ endf
 inoremap <expr> ( ConditionalPairMap('(', ')')
 inoremap <expr> { ConditionalPairMap('{', '}')
 ```
+
 ```lua
 local function conditional_pair_map(open, close)
   local line = vim.fn.getline('.')
@@ -869,6 +851,7 @@ inoremap {}     {}
 inoremap        (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 ```
+
 ```lua
 vim.keymap.set('i', '{', '{}<Left>', { desc = 'Auto-insert closing brace' })
 vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O', { desc = 'Auto-insert closing brace on new line' })
@@ -903,6 +886,7 @@ inoremap <expr> ( ConditionalPairMap('(', ')')
 inoremap <expr> { ConditionalPairMap('{', '}')
 inoremap <expr> [ ConditionalPairMap('[', ']')
 ```
+
 ```lua
 local function conditional_pair_map(open, close)
   local line = vim.fn.getline('.')
@@ -925,53 +909,6 @@ vim.keymap.set('i', '[', function() return conditional_pair_map('[', ']') end, {
 # Category: advanced_mappings
 # Tags: cscope, code-navigation, project-management
 ---
-Quickly generate and update cscope database for C/C++ projects, enabling efficient code navigation and symbol lookup
-
-```vim
-nmap <F11> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files ;
-  \:!cscope -b -i cscope.files -f cscope.out<CR>
-  \:cs reset<CR>
-```
-```lua
-vim.keymap.set('n', '<F11>', function()
-  -- Generate list of source files
-  vim.fn.system('find . -iname "*.c" -o -iname "*.cpp" -o -iname "*.h" -o -iname "*.hpp" > cscope.files')
-  
-  -- Build cscope database
-  vim.fn.system('cscope -b -i cscope.files -f cscope.out')
-  
-  -- Reset cscope connection
-  vim.cmd('cs reset')
-end, { desc = 'Update Cscope Database' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatically_create_and_update_cscope_database)
-***
-# Title: Quick Escape from Insert Mode
-# Category: advanced_mappings
-# Tags: insert-mode, key-mapping, productivity
----
-Use alternative key combinations to exit insert mode quickly without reaching for Escape key
-
-```vim
-" Quick escape mappings
-:imap jk <Esc>
-:imap kj <Esc>
-:imap ;; <Esc>
-```
-```lua
--- Quick escape mappings
-vim.keymap.set('i', 'jk', '<Esc>', { noremap = true })
-vim.keymap.set('i', 'kj', '<Esc>', { noremap = true })
-vim.keymap.set('i', ';;', '<Esc>', { noremap = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Avoid_the_escape_key)
-***
-# Title: Troubleshoot Backspace Key Mappings
-# Category: advanced_mappings
-# Tags: key-mapping, troubleshooting, insert-mode
----
 Check for problematic backspace key mappings and diagnose insert mode mapping issues
 
 ```vim
@@ -979,6 +916,7 @@ Check for problematic backspace key mappings and diagnose insert mode mapping is
 :verbose imap <BS>
 :verbose imap ^H
 ```
+
 ```lua
 -- Check backspace mappings
 vim.cmd('verbose imap <BS>')
@@ -991,55 +929,12 @@ vim.cmd('verbose imap ^H')
 # Category: advanced_mappings
 # Tags: jump-list, custom-function, navigation
 ---
-Interactive function to select and jump to specific locations in jump list
-
-```vim
-function! GotoJump()
-  jumps
-  let j = input("Please select your jump: ")
-  if j != ''
-    let pattern = '\v\c^\+'
-    if j =~ pattern
-      let j = substitute(j, pattern, '', 'g')
-      execute "normal " . j . "\<c-i>"
-    else
-      execute "normal " . j . "\<c-o>"
-    endif
-  endif
-endfunction
-
-" Map to leader key
-nmap <Leader>j :call GotoJump()<CR>
-```
-```lua
-function _G.goto_jump()
-  vim.cmd('jumps')
-  local j = vim.fn.input('Please select your jump: ')
-  if j ~= '' then
-    if j:match('^+') then
-      j = j:gsub('^+', '')
-      vim.cmd('normal! ' .. j .. '\<C-i>')
-    else
-      vim.cmd('normal! ' .. j .. '\<C-o>')
-    end
-  end
-end
-
--- Map to leader key
-vim.keymap.set('n', '<Leader>j', _G.goto_jump, { desc = 'Interactive jump list navigation' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Backtracking_your_movements_in_a_file)
-***
-# Title: Postfix Abbreviations for Quick Code Snippets
-# Category: advanced_mappings
-# Tags: abbreviations, productivity, code-generation
----
 Create dynamic code snippet expansions using postfix abbreviations, allowing quick insertion of boilerplate code by typing the array/variable name followed by an abbreviation
 
 ```vim
 :ab ff <Esc>^d$ifor(int i=0;i<<Esc>pi.length;i++){<CR><CR>}//end for loop over array <Esc>pi[i]<Esc>==k==k==ji<Tab>
 ```
+
 ```lua
 -- Example of creating an abbreviation in Lua
 vim.cmd.abbreviate('ff', '<Esc>^d$ifor(int i=0;i<<Esc>pi.length;i++){<CR><CR>}//end for loop over array <Esc>pi[i]<Esc>==k==k==ji<Tab>')
@@ -1069,6 +964,7 @@ function! EditMostRecentFile()
   exec "e ".system(shell_cmd)
 endfunction
 ```
+
 ```lua
 -- F7: Execute current file after saving and making executable
 vim.keymap.set('n', '<F7>', function()
@@ -1111,6 +1007,7 @@ function! InsertBrackets()
   endif
 endfunction
 ```
+
 ```lua
 function _G.insert_brackets()
   local filetype = vim.bo.filetype
@@ -1156,6 +1053,7 @@ endfunction
 
 map <silent> ,tblame :call TortoiseBlame()<CR>
 ```
+
 ```lua
 -- Diff current file with SVN version
 vim.keymap.set('n', '<leader>td', function()
@@ -1197,6 +1095,7 @@ endfunction
 
 command! -range CamelCase silent! call <SID>Camelize(<range>)
 ```
+
 ```lua
 function CamelCase(range)
   local start_line, end_line
@@ -1234,6 +1133,7 @@ endfunction
 
 command! -range CamelCase silent! call <SID>Camelize(<range>)
 ```
+
 ```lua
 local function camelize(range)
   local cmd = range == 0 and
@@ -1267,6 +1167,7 @@ endfunction
 
 command! -range CamelCase silent! call <SID>Camelize(<range>)
 ```
+
 ```lua
 local function camelize(range)
   local cmd = range == 0 and 
@@ -1312,6 +1213,7 @@ else
   vmap gc gu~h
 endif
 ```
+
 ```lua
 -- Capitalize every word on current line
 vim.keymap.set('n', 'gcc', function()
@@ -1340,6 +1242,7 @@ nmap <F8> mzgUiw`z
 "Insert mode mappings:
 imap <F8> _<Esc>mzwbgUiw`zi<Del>
 ```
+
 ```lua
 -- Normal mode mappings
 vim.keymap.set('n', '<F7>', 'mzg~iw`z', { desc = 'Toggle word case' })
@@ -1364,6 +1267,7 @@ nnoremap <leader>cd :cd %:p:h<CR>
 " With path display
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 ```
+
 ```lua
 -- Quick directory change mapping
 vim.keymap.set('n', '<leader>cd', ':cd %:p:h<CR>', { desc = 'Change to current file directory' })
@@ -1386,6 +1290,7 @@ Use 'S' to quickly replace the current word with the last yanked text, allowing 
 ```vim
 nnoremap S diw"0P
 ```
+
 ```lua
 vim.keymap.set('n', 'S', function()
   vim.cmd('normal! diw"0P')
@@ -1405,6 +1310,7 @@ Easily search the web for the word under cursor or selected text using different
 nmap gF vviWgF
 vmap <silent> gF y:sil! !start C:/progra~1/intern~1/iexplore.exe -nohome http://www.google.com/search?hl=en&q=<C-R>0<CR>
 ```
+
 ```lua
 -- Search Google for current word
 vim.keymap.set('n', 'gF', function()
@@ -1429,6 +1335,7 @@ Add convenient keymaps to interact with system clipboard in different modes
 " Cut in visual mode
 :vnoremap <C-d> "+d
 ```
+
 ```lua
 -- Paste in insert mode
 vim.keymap.set('i', '<C-v>', '<ESC>"+pa', { noremap = true })
@@ -1460,6 +1367,7 @@ function! ClojureCommentUncomment()
   let @/ = search_saved
 endfunction
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>.', function()
   local line = vim.api.nvim_get_current_line()
@@ -1501,6 +1409,7 @@ fu! VimSQL()
 endf
 au BufEnter afiedt.buf call VimSQL()
 ```
+
 ```lua
 local function vim_sql()
   vim.bo.filetype = 'sql'
@@ -1551,6 +1460,7 @@ endfunction
 map <C-a> :call Comment()<CR>
 map <C-b> :call Uncomment()<CR>
 ```
+
 ```lua
 function _G.comment_lines()
   local ft = vim.bo.filetype
@@ -1628,6 +1538,7 @@ function CurlyBracket()
   endif
 endfunction
 ```
+
 ```lua
 function _G.CurlyBracket()
   local startline = vim.fn.line('.')
@@ -1682,6 +1593,7 @@ endfunction
 nnoremap <Leader>c <Esc>:set opfunc=DoCommentOp<CR>g@
 nnoremap <Leader>C <Esc>:set opfunc=UnCommentOp<CR>g@
 ```
+
 ```lua
 local function get_comment_string()
   local ft = vim.bo.filetype
@@ -1713,6 +1625,7 @@ map <F10> :!echo %|awk -F. '{print $1}'|xargs java<CR>
 map <F11> :set makeprg=javac\ #<CR>:make<CR>
 map <F12> :!echo #|awk -F. '{print $1}'|xargs java<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F9>', function()
   vim.o.makeprg = 'javac %'
@@ -1747,6 +1660,7 @@ function! Make()
 endfunction
 nnoremap <F7> :update<CR>:call Make()<CR>
 ```
+
 ```lua
 function _G.make_current_file()
   local curr_dir = vim.fn.expand('%:h')
@@ -1773,6 +1687,7 @@ Quickly open MSDN documentation for a word under cursor using Google's 'I'm Feel
 ```vim
 nmap <F1> :silent ! start iexplore "http://www.google.com/search?hl=en&btnI=I%27m+Feeling+Lucky&q=site%3Amsdn.microsoft.com%20<cWORD>"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F1>', function()
   local word = vim.fn.expand('<cWORD>')
@@ -1794,6 +1709,7 @@ imap <silent> <expr> <buffer> <CR> pumvisible() ? "<CR><C-R>=(col('.')-1&&match(
       \ col('.')-2) == col('.')-2)?"\<lt>C-X>\<lt>C-O>":""<CR>"
       \ : "<CR>"
 ```
+
 ```lua
 vim.keymap.set('i', '<CR>', function()
   if vim.fn.pumvisible() == 1 then
@@ -1824,6 +1740,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
+
 ```lua
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
@@ -1847,6 +1764,7 @@ vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
     \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
 omap s :normal vs<CR>
 ```
+
 ```lua
 -- Lua equivalent (requires vim.keymap.set)
 vim.keymap.set('v', 's', function()
@@ -1877,6 +1795,7 @@ function! ModeMapping(guiLhs, termLhs, rhs, ...)
   endif
 endfunction
 ```
+
 ```lua
 function _G.ModeMapping(guiLhs, termLhs, rhs, mapCommand)
   mapCommand = mapCommand or 'map'
@@ -1903,6 +1822,7 @@ vnoremap af :<C-U>silent! normal! [zV]z<CR>
 " Operator-pending mode mapping
 omap af :normal Vaf<CR>
 ```
+
 ```lua
 -- Visual mode mapping for 'a fold'
 vim.keymap.set('v', 'af', function()
@@ -1928,6 +1848,7 @@ Provides a mapping solution for AZERTY keyboard users to navigate Vim help, whic
 nmap <F9> <C-]>
 map! <F9> <C-]>
 ```
+
 ```lua
 -- Map F9 to navigate help links in all modes
 vim.keymap.set({'n', 'i', 'c'}, '<F9>', '<C-]>', { desc = 'Navigate help links' })
@@ -1946,6 +1867,7 @@ Prevent accidental F1 key presses from opening help, which can be disruptive dur
 :nmap <F1> <nop>
 :imap <F1> <Esc>
 ```
+
 ```lua
 -- Disable F1 help key in Neovim
 vim.keymap.set('n', '<F1>', '<Nop>')
@@ -1970,6 +1892,7 @@ function! MapF1()
 endfunction
 noremap <F1> :call MapF1()<CR>
 ```
+
 ```lua
 function _G.smart_help()
   if vim.bo.buftype == "help" then
@@ -1988,26 +1911,12 @@ vim.keymap.set('n', '<F1>', _G.smart_help)
 # Category: advanced_mappings
 # Tags: key-mapping, customization
 ---
-Easily disable built-in Vim commands that you find annoying or accidentally trigger
-
-```vim
-:map K <Nop>
-```
-```lua
-vim.keymap.set('n', 'K', '<Nop>', { desc = 'Disable built-in command' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Disable_built-in_command)
-***
-# Title: One-Key Header/Source File Toggle
-# Category: advanced_mappings
-# Tags: key-mapping, file-switching
----
 Quick single-key mapping to toggle between .cpp and .h files in the same directory
 
 ```vim
 map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F4>', function()
   local current_file = vim.fn.expand('%:p')
@@ -2032,6 +1941,7 @@ map ,> :s/^/> /<CR>
 map ,' :s/^/'/<CR>
 map ,c :s/^/\/\/\|^--\|^> \|^[#"%!;]//<CR>
 ```
+
 ```lua
 -- Lua equivalent using Neovim keymap API
 local function comment_line(comment_char)
@@ -2067,6 +1977,7 @@ function! Komment()
 endfunction
 map k :call Komment()<CR>
 ```
+
 ```lua
 local function toggle_comment()
   local line = vim.api.nvim_get_current_line()
@@ -2092,34 +2003,12 @@ vim.keymap.set('n', 'k', toggle_comment)
 # Category: advanced_mappings
 # Tags: mouse-selection, key-mapping, visual-mode
 ---
-Enable block selection using Alt+Left Mouse in Vim, similar to other editors
-
-```vim
-noremap <M-LeftMouse> <4-LeftMouse>
-inoremap <M-LeftMouse> <4-LeftMouse>
-onoremap <M-LeftMouse> <C-C><4-LeftMouse>
-
-noremap <M-LeftDrag> <LeftDrag>
-inoremap <M-LeftDrag> <LeftDrag>
-onoremap <M-LeftDrag> <C-C><LeftDrag>
-```
-```lua
--- Enable block selection with Alt+Left Mouse
-vim.keymap.set({'n', 'i', 'o'}, '<M-LeftMouse>', '<4-LeftMouse>', { noremap = true })
-vim.keymap.set({'n', 'i', 'o'}, '<M-LeftDrag>', '<LeftDrag>', { noremap = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Easy_block_selection_with_mouse)
-***
-# Title: Quick Macro Playback with Q
-# Category: advanced_mappings
-# Tags: macro, key-mapping, productivity
----
 Remap Q to quickly play back the macro recorded in the q register, making macro replay more convenient
 
 ```vim
 noremap Q @q
 ```
+
 ```lua
 vim.keymap.set('n', 'Q', '@q', { desc = 'Play macro from q register' })
 ```
@@ -2135,6 +2024,7 @@ Map function keys to specific macro registers for quick and easy macro replay
 ```vim
 nmap <F2> @a
 ```
+
 ```lua
 vim.keymap.set('n', '<F2>', '@a', { desc = 'Play macro from a register' })
 ```
@@ -2151,6 +2041,7 @@ Map space key to quickly replay a macro from the q register
 " Map space to replay macro in q register
 :nnoremap <Space> @q
 ```
+
 ```lua
 vim.keymap.set('n', '<Space>', '@q', { desc = 'Replay macro from q register' })
 ```
@@ -2188,6 +2079,7 @@ endfun
 nmap <F12> :call UnsetComplete()<CR>
 imap <F12> <Esc>:call UnsetComplete()<CR>a
 ```
+
 ```lua
 local function set_complete()
   vim.fn.DoWordComplete()
@@ -2218,48 +2110,6 @@ vim.keymap.set('i', '<F12>', '<Esc>:lua unset_complete()<CR>a')
 # Category: advanced_mappings
 # Tags: key-mapping, insert-mode, productivity
 ---
-Multiple ways to quickly exit insert mode without reaching for the Escape key, improving typing efficiency
-
-```vim
-" Alternative escape mappings
-:imap jj <Esc>
-:imap jk <Esc>
-:imap kj <Esc>
-:imap ;; <Esc>
-```
-```lua
--- Alternative escape mappings
-vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
-vim.keymap.set('i', 'jk', '<Esc>', { noremap = true })
-vim.keymap.set('i', 'kj', '<Esc>', { noremap = true })
-vim.keymap.set('i', ';;', '<Esc>', { noremap = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Esc)
-***
-# Title: Useful Vim Mappings for Productivity
-# Category: advanced_mappings
-# Tags: key-mapping, productivity, search
----
-Handy key mappings that improve editing efficiency and search experience
-
-```vim
-" Productive mappings
-map Y y$
-nnoremap <C-L> :nohl<CR><C-L>
-```
-```lua
--- Equivalent Neovim mappings
-vim.keymap.set('n', 'Y', 'y$', { desc = 'Yank to end of line' })
-vim.keymap.set('n', '<C-L>', ':nohl<CR><C-L>', { desc = 'Clear search highlighting' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Example_Vimrc)
-***
-# Title: Execute Normal Mode Commands from Insert Mode
-# Category: advanced_mappings
-# Tags: insert-mode, key-mapping, command-execution
----
 Quickly execute a normal mode command accidentally typed in insert mode by using a custom mapping that switches to normal mode, undoes the last insertion, and executes the command
 
 ```vim
@@ -2267,6 +2117,7 @@ inoremap <somekey> <Esc>u@.
 
 autocmd CursorHoldI * call feedkeys("\<C-G>u", 'tn')
 ```
+
 ```lua
 vim.keymap.set('i', '<somekey>', '<Esc>u@.', { desc = 'Execute normal mode command from insert mode' })
 
@@ -2295,6 +2146,7 @@ nmap \x :silent !start rundll32 url.dll,FileProtocolHandler <cWORD> <CR>
 " Execute string with current file's path
 nmap \xl :silent !start rundll32 url.dll,FileProtocolHandler %:p:h/<cWORD> <CR>
 ```
+
 ```lua
 -- Execute current file
 vim.keymap.set('n', '<leader>xf', function()
@@ -2323,6 +2175,7 @@ Provides a quick way to expand existing abbreviations in Vim, allowing for dynam
 ```vim
 map <C-X><C-X> diw:exe "normal i".@"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-X><C-X>', function()
   -- Delete current word and replace with its expanded version
@@ -2341,6 +2194,7 @@ A more robust method for expanding abbreviations, especially when the abbreviati
 ```vim
 nno <C-X><C-X> ciw@<Esc>"_s<C-R>"<Esc>b
 ```
+
 ```lua
 vim.keymap.set('n', '<C-X><C-X>', function()
   -- Change inner word, then paste register content
@@ -2361,6 +2215,7 @@ Dynamically insert tabs or spaces based on cursor position and file context
 " Insert spaces at line start, real tabs elsewhere
 inoremap <Silent> <Tab> <C-R>=(col('.') > (matchend(getline('.'), '^\s*') + 1))?'<C-V><C-V><Tab>':'<Tab>'<CR>
 ```
+
 ```lua
 vim.keymap.set('i', '<Tab>', function()
   local col = vim.fn.col('.')
@@ -2386,6 +2241,7 @@ Map a key to run external commands quickly, with automatic execution by adding <
 ```vim
 map <F6> :!p4 edit %<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F6>', function() vim.cmd('!p4 edit %') end, { desc = 'Run external command on current file' })
 ```
@@ -2401,6 +2257,7 @@ Quick mapping to execute the current Python file
 ```vim
 map <F5> <Esc>:!python %<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F5>', function() vim.cmd('!python %') end, { desc = 'Run current Python file' })
 ```
@@ -2418,6 +2275,7 @@ iab phpb exit("<hr>Debug ");
 iab phpv echo "<hr><pre>";var_dump($a);exit("debug ");
 iab phpallv print_r(get_defined_vars());
 ```
+
 ```lua
 vim.cmd([[iabbrev phpb exit("<hr>Debug ");]])
 vim.cmd([[iabbrev phpv echo "<hr><pre>";var_dump($a);exit("debug ");]])
@@ -2449,6 +2307,7 @@ while i<13
   let i=i+1
 endwhile
 ```
+
 ```lua
 local function map_last_command_to_keys(keys_to_map_to)
   vim.cmd('unmap ' .. keys_to_map_to)
@@ -2471,29 +2330,12 @@ end
 # Category: advanced_mappings
 # Tags: mapping, search, productivity
 ---
-Create a mapping to search for the word under cursor across all files in the current project
-
-```vim
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-```
-```lua
-vim.keymap.set('n', '<F4>', function() 
-  vim.cmd('vimgrep /' .. vim.fn.expand('<cword>') .. '/j **') 
-  vim.cmd('cw') 
-end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Find_in_files_recursively)
-***
-# Title: Quick Word Search Across Files
-# Category: advanced_mappings
-# Tags: mapping, search, quickfix
----
 Create a mapping to search for word under cursor in all files and open quickfix window
 
 ```vim
 map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F4>', function()
   vim.cmd('execute "vimgrep /' .. vim.fn.expand('<cword>') .. '/j **" | cw')
@@ -2506,48 +2348,6 @@ end, { noremap = true, silent = true })
 # Category: advanced_mappings
 # Tags: key-mapping, custom-function, editing
 ---
-Advanced backspace handling that works at line boundaries and preserves editing context
-
-```vim
-func Backspace()
-  if col('.') == 1
-    if line('.') != 1
-      return "\<ESC>Dk$p\<S-J>i"
-    else
-      return ""
-    endif
-  else
-    return "\<Left>\<Del>"
-  endif
-endfunc
-
-inoremap <BS> <c-r>=Backspace()<CR>
-```
-```lua
-function _G.custom_backspace()
-  local col = vim.fn.col('.')
-  local line = vim.fn.line('.')
-  
-  if col == 1 then
-    if line ~= 1 then
-      return vim.api.nvim_replace_termcodes('<ESC>Dk$p<S-J>i', true, false, true)
-    else
-      return ''
-    end
-  else
-    return vim.api.nvim_replace_termcodes('<Left><Del>', true, false, true)
-  end
-end
-
-vim.keymap.set('i', '<BS>', 'v:lua.custom_backspace()', { expr = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_Backspace)
-***
-# Title: Diagnose and Clear Problematic Key Mappings
-# Category: advanced_mappings
-# Tags: key-mapping, debugging, troubleshooting
----
 Check and remove unintended insert mode mappings for backspace key
 
 ```vim
@@ -2558,6 +2358,7 @@ Check and remove unintended insert mode mappings for backspace key
 " Clear problematic mapping
 :iunmap <BS>
 ```
+
 ```lua
 -- Check backspace mappings
 vim.cmd('verbose imap <BS>')
@@ -2573,39 +2374,13 @@ vim.keymap.del('i', '<BS>')
 # Category: advanced_mappings
 # Tags: key-mapping, terminal-config, meta-keys
 ---
-Resolves issues with Meta (Alt) keys breaking out of Insert mode in terminal Vim by configuring escape sequences
-
-```vim
-" fix meta-keys which generate <Esc>a .. <Esc>z
-let c='a'
-while c <= 'z'
-  exec "set <M-".toupper(c).">=\e".c
-  exec "imap \e".c." <M-".toupper(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
-```
-```lua
--- Fix Meta-keys in Neovim
-for i = string.byte('a'), string.byte('z') do
-  local char = string.char(i)
-  vim.keymap.set({'n', 'i'}, string.format('<M-%s>', string.upper(char)), function()
-    -- Custom meta-key handling
-  end)
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fix_meta-keys_that_break_out_of_Insert_mode)
-***
-# Title: Quick Syntax Highlighting Reset Mapping
-# Category: advanced_mappings
-# Tags: mapping, syntax, productivity
----
 Add a quick keybinding to reset syntax highlighting when it breaks
 
 ```vim
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F12>', ':syntax sync fromstart<CR>', { noremap = true })
 vim.keymap.set('i', '<F12>', '<C-o>:syntax sync fromstart<CR>', { noremap = true })
@@ -2629,6 +2404,7 @@ endfu!
 silent! unmap x
 :nnoremap <silent>x x:call Redefine_x_ForVirtualEdit()<CR>
 ```
+
 ```lua
 vim.api.nvim_create_user_command('RedefineXForVirtualEdit', function()
   if vim.o.virtualedit ~= '' and vim.fn.col('.') >= vim.fn.col('$') then
@@ -2656,6 +2432,7 @@ inoremap <S-Left> <C-O>zo
 nnoremap <S-Right> zc
 inoremap <S-Right> <C-O>zc
 ```
+
 ```lua
 vim.keymap.set({'n', 'i'}, '<S-Left>', 'zo', { desc = 'Open fold' })
 vim.keymap.set({'n', 'i'}, '<S-Right>', 'zc', { desc = 'Close fold' })
@@ -2672,6 +2449,7 @@ Create a custom key mapping to format XML files on demand using xmllint
 ```vim
 map @@x !%xmllint --format --recover -^M
 ```
+
 ```lua
 vim.keymap.set('n', '@@x', ':%!xmllint --format --recover -<CR>', { desc = 'Format XML document' })
 ```
@@ -2696,6 +2474,7 @@ map! ;f ë
 map! ;g é
 imap ;q «  »<Esc>hi
 ```
+
 ```lua
 -- French character mappings in Neovim
 vim.keymap.set({'i', 'c'}, ';z', 'à', { desc = 'Insert à' })
@@ -2719,6 +2498,7 @@ map jgs mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic
 <Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa=
 <Esc>"npa;<CR>}<Esc>=<CR>`ak
 ```
+
 ```lua
 -- Lua equivalent requires more complex implementation
 -- Recommended to use a dedicated plugin like 'java_getset.vim'
@@ -2748,6 +2528,7 @@ map <F3> :s/\(\(\w\)\(\w\+\)\).*/public function get\u\2\3(){
 " Public Setters
 map <S-F3> :s/\(\(\w\)\(\w\+\)\).*/public function set\u\2\3(\$\1){\r	\$this->\1 = \$\1;\r}/<CR>
 ```
+
 ```lua
 -- Lua equivalent for generating PHP accessors/setters
 local function generate_getter()
@@ -2781,6 +2562,7 @@ nnoremap <buffer> K :<C-u>let save_isk = &iskeyword |
     \ execute "!pydoc " . expand("<cword>") |
     \ let &iskeyword = save_isk<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 'K', function()
   local save_isk = vim.o.iskeyword
@@ -2801,6 +2583,7 @@ Create a custom mapping to fetch PHP function documentation in a new window usin
 ```vim
 map <C-F1> "vyiw:new<CR>:execute "r!lynx -dump http://localhost/phpman/function.".@v.".html"<CR>:1<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-F1>', function()
   -- Yank the word under cursor
@@ -2829,6 +2612,7 @@ inoremap <F1> <Nop>
 nnoremap <S-Up> V
 nnoremap <S-Down> V
 ```
+
 ```lua
 -- Prevent F1 key from interrupting in insert mode
 vim.keymap.set('i', '<F1>', '<Nop>')
@@ -2860,6 +2644,7 @@ endfunction
 map <silent> <F8> :call ToggleFlag("guioptions","m")<CR>
 map <silent> <F9> :call ToggleFlag("guioptions","T")<CR>
 ```
+
 ```lua
 function _G.toggle_flag(option, flag)
   local current_opts = vim.api.nvim_get_option(option)
@@ -2881,47 +2666,13 @@ vim.keymap.set('n', '<F9>', function() _G.toggle_flag('guioptions', 'T') end)
 # Category: advanced_mappings
 # Tags: configuration, key-mapping, options
 ---
-Create a function to cycle numeric options between predefined min/max values with a specified increment
-
-```vim
-function CycleNum(option,min,inc,max)
-  exec ('let tz_value = (((&'.a:option.'-'.a:min.')+'.a:inc.')%(('.a:max.'-'.a:min.')+'.a:inc.'))+'.a:min)
-  if (tz_value < a:min) " in case inc<0
-    let tz_value = tz_value+a:max
-  endif
-  exec ('setlocal '.a:option.'='.tz_value)
-endfunction
-
-" Cycle tabstop
-noremap <silent> <M-t>s :call CycleNum("tabstop",4,4,8)<BAR>set tabstop?<CR>
-```
-```lua
-function _G.cycle_num(option, min, inc, max)
-  local current = vim.api.nvim_get_option(option)
-  local next_val = ((current - min + inc) % (max - min + inc)) + min
-  if next_val < min then
-    next_val = next_val + max
-  end
-  vim.api.nvim_set_option(option, next_val)
-  print(string.format('%s is now %d', option, next_val))
-end
-
--- Cycle tabstop
-vim.keymap.set('n', '<M-t>s', function() _G.cycle_num('tabstop', 4, 4, 8) end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Handy_option_flag_toggler)
-***
-# Title: Repeat Last Edit Without Moving Cursor
-# Category: advanced_mappings
-# Tags: editing, cursor-position, dot-command
----
 Create a mapping that repeats the last edit while maintaining the original cursor position, mimicking Emacs behavior
 
 ```vim
 " Restore cursor position after dot repeat
 noremap . mz.`z
 ```
+
 ```lua
 -- Restore cursor position after dot repeat
 vim.keymap.set('n', '.', function()
@@ -2937,21 +2688,6 @@ end, { desc = 'Repeat last edit without moving cursor' })
 # Category: advanced_mappings
 # Tags: undo, insert-mode, key-mapping
 ---
-Add breakpoints in insert mode to allow undoing changes at a more granular level, specifically per line or logical chunk
-
-```vim
-inoremap <CR> <C-G>u<CR>
-```
-```lua
-vim.keymap.set('i', '<CR>', '<C-G>u<CR>', { desc = 'Create undo breakpoint on line break' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Helps_undo_1_line_when_entered_many)
-***
-# Title: Toggle Long Line Highlighting
-# Category: advanced_mappings
-# Tags: mapping, highlighting, text-width
----
 Create a toggle mapping to highlight lines exceeding text width, with fallback to 80 characters if no textwidth is set
 
 ```vim
@@ -2965,6 +2701,7 @@ nnoremap <silent> <Leader>l
       \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
       \ endif<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>l', function()
   local match_id = vim.w.long_line_match
@@ -3002,6 +2739,7 @@ nnoremap <silent> <Leader>l
       \   let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
       \ endif<CR>
 ```
+
 ```lua
 local function toggle_line_length_highlight()
   local match_exists = vim.w.long_line_match ~= nil
@@ -3037,6 +2775,7 @@ loadkeymap
 sz ß  " German eszet mapping
 :a ä   " Umlaut mapping
 ```
+
 ```lua
 -- Lua equivalent for creating custom keymaps
 -- Note: Neovim keymap creation is more flexible
@@ -3066,6 +2805,7 @@ autocmd FileType javascript nnoremap <buffer> <localleader>uc 0v2ld
 autocmd BufNewFile,BufRead *.css nnoremap <buffer> <localleader>c I/* <esc>A */<esc>
 autocmd BufNewFile,BufRead *.css nnoremap <buffer> <localleader>uc 0v2ld$v2hd
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
   pattern = '*.html',
@@ -3112,6 +2852,7 @@ if &diff
     endfunction
 endif
 ```
+
 ```lua
 if vim.o.diff then
     vim.keymap.set('n', 'gs', function()
@@ -3140,6 +2881,7 @@ inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 ```
+
 ```lua
 vim.keymap.set('i', '<Esc>', function()
   return vim.fn.pumvisible() == 1 and '<C-e>' or '<Esc>'
@@ -3184,6 +2926,7 @@ endfor
 " Automatically turn off when leaving insert mode
 autocmd InsertLeave * set iminsert=0
 ```
+
 ```lua
 -- Toggle insert-mode only Caps Lock
 for i = string.byte('a'), string.byte('z') do
@@ -3213,6 +2956,7 @@ Override automatic comment insertion when using 'o' or 'O' to open new lines
 nnoremap go o<Esc>S
 nnoremap gO O<Esc>S
 ```
+
 ```lua
 vim.keymap.set('n', 'go', 'o<Esc>S', { desc = 'Insert line below without comments' })
 vim.keymap.set('n', 'gO', 'O<Esc>S', { desc = 'Insert line above without comments' })
@@ -3230,6 +2974,7 @@ Provides an efficient way to insert a single character without switching to inse
 nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
 nnoremap S :exec "normal a".nr2char(getchar())."\e"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 's', function()
   local char = vim.fn.nr2char(vim.fn.getchar())
@@ -3257,6 +3002,7 @@ endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 's', function()
   local count = vim.v.count1
@@ -3282,6 +3028,7 @@ Quickly insert a formatted comment box that spans 100 columns, useful for sectio
 ```vim
 map ,co O#====================================================================================================<CR>#<CR>#====================================================================================================<Esc>100\|Dkk100\|DjA
 ```
+
 ```lua
 vim.keymap.set('n', ',co', function()
   -- Create a 100-column comment box
@@ -3304,6 +3051,7 @@ nmap ,o o<Esc>k
 " Insert line above
 nmap ,O O<Esc>j
 ```
+
 ```lua
 vim.keymap.set('n', ',o', 'o<Esc>k', { desc = 'Insert line below' })
 vim.keymap.set('n', ',O', 'O<Esc>j', { desc = 'Insert line above' })
@@ -3320,6 +3068,7 @@ Insert a space at the current cursor position without moving the cursor, useful 
 ```vim
 nnoremap <Space> i<Space><Esc>
 ```
+
 ```lua
 vim.keymap.set('n', '<Space>', 'i<Space><Esc>', { desc = 'Insert space at cursor' })
 ```
@@ -3336,6 +3085,7 @@ Insert a blank line above or below current line while keeping cursor in place
 nnoremap <C-J> m`o<Esc>``
 nnoremap <C-K> m`O<Esc>``
 ```
+
 ```lua
 vim.keymap.set('n', '<C-J>', 'm`o<Esc>``', { desc = 'Insert line below, keep cursor' })
 vim.keymap.set('n', '<C-K>', 'm`O<Esc>``', { desc = 'Insert line above, keep cursor' })
@@ -3357,6 +3107,7 @@ endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 's', function()
   local count = vim.v.count1
@@ -3386,6 +3137,7 @@ map <F12> b"*yw<Esc>:! c:/bin/agrep -wih <C-R>* "c:/dict/an-cs.txt"<CR>
 " Partial pattern lookup
 map <S-F12> b"*yw<Esc>:! c:/bin/agrep -ih <C-R>* "c:/dict/an-cs.txt"<CR>
 ```
+
 ```lua
 -- Whole word lookup (exact match)
 vim.keymap.set('n', '<F12>', function()
@@ -3418,6 +3170,7 @@ vmenu &AutoCad.Insert.Space <Esc>`<i\~<Esc>%
 imenu &AutoCad.Colour.Red \C1;
 vmenu &AutoCad.Colour.Red <Esc>`>a\C7;<Esc>`<i\C1;<Esc>%
 ```
+
 ```lua
 -- Lua equivalent for custom AutoCAD MTEXT menu
 local function create_autocad_menu()
@@ -3451,6 +3204,7 @@ fun! MagicMirrorIt()
 endfun
 map <C-S> :call MagicMirrorIt()<CR>
 ```
+
 ```lua
 function MagicMirrorIt()
   local path = vim.fn.expand('%:p'):gsub('/', ':')
@@ -3474,6 +3228,7 @@ Quickly search the internet for the word under the cursor using a custom key map
 nmap gF vviWgF
 vmap <silent> gF y:sil! !start C:/progra~1/intern~1/iexplore.exe -nohome http://www.google.com/search?hl=en&q=<C-R>0<CR>
 ```
+
 ```lua
 -- Search Google for word under cursor
 vim.keymap.set('n', 'gF', function()
@@ -3503,6 +3258,7 @@ Quickly open URLs or web links directly from Vim
 nmap gF viWgF
 vmap <silent> gF y:sil! !start C:/progra~1/intern~1/iexplore.exe <C-R>=escape(@0,"#%")<CR><CR>
 ```
+
 ```lua
 -- Open URL under cursor
 vim.keymap.set('n', 'gF', function()
@@ -3533,6 +3289,7 @@ A quick mapping to extract a complex expression into a named variable, useful fo
 " map \v to put x = y on the line above cursor
 map <Leader>v 0wh:put .<CR>a = <Esc>pa<CR><Esc>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>v', function()
   -- Go to start of line
@@ -3579,6 +3336,7 @@ inoremap ( 9
 inoremap ) 0
 inoremap _ -
 ```
+
 ```lua
 -- Lua equivalent for number row key inversion
 local function setup_key_inversion()
@@ -3613,6 +3371,7 @@ endfunction
 command! -nargs=1 FooCmd call Foo(<args>)
 map ,a :<C-U>FooCmd(v:count)<CR>
 ```
+
 ```lua
 function _G.foo(count)
   print(string.format('FOO: %d', count))
@@ -3641,6 +3400,7 @@ Redirect and save all current key mappings to a text file for reference or backu
 :silent verbose map
 :redir END
 ```
+
 ```lua
 -- Lua equivalent for saving key mappings
 vim.cmd('redir! > vim_keys.txt')
@@ -3674,6 +3434,7 @@ endfunction
 " Optional mapping
 nmap <Leader>j :call GotoJump()<CR>
 ```
+
 ```lua
 function _G.goto_jump()
   vim.cmd('jumps')
@@ -3704,6 +3465,7 @@ Disable Alt key menu shortcuts to allow custom Alt key mappings, which is useful
 ```vim
 set winaltkeys=no
 ```
+
 ```lua
 vim.o.winaltkeys = 'no'
 ```
@@ -3724,6 +3486,7 @@ Create Alt key combinations to quickly insert special characters or symbols that
 " <M-f> [
 " <M-g> ]
 ```
+
 ```lua
 -- Alt key character mappings
 vim.keymap.set('n', '<M-`>', '0', { desc = 'Insert 0' })
@@ -3744,6 +3507,7 @@ Create a fast mapping to initiate a global search and replace with confirmation
 ```vim
 :map <F4> :%s///gc<Left><Left><Left>
 ```
+
 ```lua
 vim.keymap.set('n', '<F4>', ':%s///gc<Left><Left><Left>', { desc = 'Global substitution with confirmation' })
 ```
@@ -3771,6 +3535,7 @@ function! EditMostRecentFile()
   exec "e ".system(shell_cmd)
 endfunction
 ```
+
 ```lua
 vim.keymap.set('n', '<F7>', function()
   vim.cmd('w')
@@ -3810,6 +3575,7 @@ function! Make()
 endfunction
 nnoremap <F7> :update<CR>:call Make()<CR>
 ```
+
 ```lua
 function _G.compile_current_buffer()
   local curr_dir = vim.fn.expand('%:h')
@@ -3847,6 +3613,7 @@ vnoremap <C-S-Right> w
 nnoremap <C-S-Right> gh<C-O>w
 inoremap <C-S-Right> <C-\><C-O>gh<C-O>w
 ```
+
 ```lua
 -- Windows-style word navigation
 vim.keymap.set('n', '<C-Left>', 'b', { desc = 'Move back a word' })
@@ -3876,6 +3643,7 @@ Configure Shift-Tab to work correctly across different terminals and use it for 
 " More robust method
 :exe 'set t_kB=' . nr2char(27) . '[Z'
 ```
+
 ```lua
 -- Lua equivalent for handling Shift-Tab
 vim.keymap.set({'n', 'i', 'v'}, '<S-Tab>', function()
@@ -3900,6 +3668,7 @@ inoremap <expr> <C-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Es
 inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') .
             \ '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
 ```
+
 ```lua
 -- Open omni completion menu
 vim.keymap.set('i', '<C-Space>', function()
@@ -3936,6 +3705,7 @@ inoremap { {<CR>}<Esc>O
 " Jump out of brackets
 inoremap <C-j> <Esc>:call search(BC_GetChar(), "W")<CR>a
 ```
+
 ```lua
 -- Auto-close brackets and navigate
 vim.keymap.set('i', '(', '()<Esc>i', { desc = 'Auto-close parentheses' })
@@ -3952,78 +3722,12 @@ vim.keymap.set('i', '<C-j>', '<Esc>/', { desc = 'Navigate out of brackets' })
 # Category: advanced_mappings
 # Tags: key-mapping, function, customization
 ---
-Create a reusable function to toggle specific options with a key mapping
-
-```vim
-function! ToggleMouse()
-  if &mouse == 'a'
-    set mouse=
-    echo "Mouse usage disabled"
-  else
-    set mouse=a
-    echo "Mouse usage enabled"
-  endif
-endfunction
-
-nnoremap <F12> :call ToggleMouse()<CR>
-```
-```lua
-function _G.toggle_mouse()
-  if vim.o.mouse == 'a' then
-    vim.o.mouse = ''
-    print('Mouse usage disabled')
-  else
-    vim.o.mouse = 'a'
-    print('Mouse usage enabled')
-  end
-end
-
-vim.keymap.set('n', '<F12>', _G.toggle_mouse, { desc = 'Toggle mouse support' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Managing_boolean_options)
-***
-# Title: Create a Function to Toggle Options
-# Category: advanced_mappings
-# Tags: key-mapping, function, toggle
----
-Dynamically toggle options like mouse usage with a function and key mapping
-
-```vim
-nnoremap <F12> :call ToggleMouse()<CR>
-function! ToggleMouse()
-  if &mouse == 'a'
-    set mouse=
-    echo "Mouse usage disabled"
-  else
-    set mouse=a
-    echo "Mouse usage enabled"
-  endif
-endfunction
-```
-```lua
-vim.keymap.set('n', '<F12>', function()
-  if vim.opt.mouse:get() == 'a' then
-    vim.opt.mouse = ''
-    print('Mouse usage disabled')
-  else
-    vim.opt.mouse = 'a'
-    print('Mouse usage enabled')
-  end
-end, { desc = 'Toggle mouse usage' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Managing_set_options)
-***
-# Title: Remap CapsLock to Escape or Ctrl
-# Category: advanced_mappings
-# Tags: key-mapping, productivity, workflow
----
 Remapping CapsLock to Escape or Ctrl can significantly improve typing efficiency and reduce hand strain in Vim/Neovim
 
 ```vim
 " No native Vim mapping, uses OS-level remapping
 ```
+
 ```lua
 -- Recommended to use AutoHotkey, SharpKeys, or OS-level key remapping
 -- In Neovim, you can alternatively create a custom mapping
@@ -4041,6 +3745,7 @@ Create application-specific key mappings that only activate in certain contexts 
 ```vim
 " No native Vim equivalent
 ```
+
 ```lua
 -- While Neovim doesn't directly support this, you can use autocmds
 vim.api.nvim_create_autocmd('FileType', {
@@ -4067,6 +3772,7 @@ imap <C-BS> <C-W>
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 ```
+
 ```lua
 -- Map Ctrl-Backspace to delete previous word
 vim.keymap.set('i', '<C-BS>', '<C-W>', { desc = 'Delete previous word' })
@@ -4100,6 +3806,7 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
 " Insert mode mapping
 inoremap <c-s> <c-o>:Update<CR>
 ```
+
 ```lua
 -- Create Update command
 vim.api.nvim_create_user_command('Update', function()
@@ -4128,6 +3835,7 @@ Advanced key mapping to use Caps Lock as Ctrl when held, and Escape when tapped
 ```vim
 " No direct Vimscript implementation
 ```
+
 ```lua
 -- Conceptual implementation
 -- Requires external tool like AutoHotkey
@@ -4165,6 +3873,7 @@ map Ö {
 map Ä }
 map ß /
 ```
+
 ```lua
 -- German keyboard example
 vim.keymap.set('n', 'ü', '<C-]>', { desc = 'Custom mapping for ]' })
@@ -4188,6 +3897,7 @@ Optimize keyboard layout by remapping less accessible keys to more convenient ac
 nmap ş <cr>
 let mapleader = "ğ"
 ```
+
 ```lua
 -- Turkish keyboard layout optimization
 vim.keymap.set('n', 'ş', '<CR>', { desc = 'Remap Enter key' })
@@ -4207,6 +3917,7 @@ Quickly enter command mode by mapping semicolon to colon, reducing the need to p
 nnoremap ; :
 vnoremap ; :
 ```
+
 ```lua
 -- Map semicolon to enter command mode
 vim.keymap.set('n', ';', ':', { desc = 'Enter command mode quickly' })
@@ -4225,6 +3936,7 @@ Remap double semicolon to preserve original semicolon functionality for repeat f
 " Double semicolon to get original semicolon behavior
 noremap ;; ;
 ```
+
 ```lua
 -- Double semicolon to get original semicolon behavior
 vim.keymap.set('n', ';;', ';', { desc = 'Repeat last f/t motion' })
@@ -4236,35 +3948,6 @@ vim.keymap.set('n', ';;', ';', { desc = 'Repeat last f/t motion' })
 # Category: advanced_mappings
 # Tags: key-mapping, terminal, performance
 ---
-Efficiently map complex key combinations in terminal Vim by using timeout settings and unused function keys to resolve terminal keycode ambiguity
-
-```vim
-set timeout timeoutlen=1000 ttimeoutlen=100
-if !has("gui_running")
-  if &term == "xterm"
-    set <F13>=^[[1;6B
-    map <F13> <C-S-Down>
-    map! <F13> <C-S-Down>
-endif
-```
-```lua
-vim.o.timeout = true
-vim.o.timeoutlen = 1000
-vim.o.ttimeoutlen = 100
-
-if not vim.g.neovide and vim.fn.has('gui_running') == 0 then
-  if vim.o.term == 'xterm' then
-    vim.keymap.set({'n', 'i'}, '<F13>', '<C-S-Down>', { noremap = true })
-  end
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Mapping_fast_keycodes_in_terminal_Vim)
-***
-# Title: Create Mode-Specific Key Mappings
-# Category: advanced_mappings
-# Tags: key-mapping, modes, customization
----
 Create targeted key mappings for specific Vim editing modes, allowing more precise and context-aware shortcuts
 
 ```vim
@@ -4274,6 +3957,7 @@ nnoremap <F2> :lchdir %:p:h<CR>:pwd<CR>
 " Insert mode mapping
 imap <F3> <C-R>=strftime('%c')<CR>
 ```
+
 ```lua
 -- Normal mode mapping
 vim.keymap.set('n', '<F2>', ':lchdir %:p:h<CR>:pwd<CR>', { desc = 'Change to current file directory' })
@@ -4297,6 +3981,7 @@ Learn how to identify and use unused key sequences for custom mappings without c
 " Check verbose mapping details
 :verbose map ,
 ```
+
 ```lua
 -- Check existing maps
 vim.cmd('map')
@@ -4318,6 +4003,7 @@ Use symbolic key notation for more readable and consistent key mappings across d
 :map <C-R> :somecommand<CR>
 :map <S-F2> :anothercommand<CR>
 ```
+
 ```lua
 -- Examples of symbolic key notation
 vim.keymap.set('n', '<C-R>', ':somecommand<CR>')
@@ -4338,6 +4024,7 @@ Prevent mapping keys like 'j', 'k', 'l', 'h' at the start of custom mappings to 
 " Good practice: use less common prefix
 :nmap <leader>jx :somecommand<CR>
 ```
+
 ```lua
 -- Avoid mapping frequently used navigation keys
 -- Use a leader key or less common prefix
@@ -4356,6 +4043,7 @@ Use <Leader> to create consistent and customizable key mappings across plugins, 
 let mapleader = '_'
 nnoremap <Leader>f :call <SID>JumpToFile()<CR>
 ```
+
 ```lua
 vim.g.mapleader = '_'
 vim.keymap.set('n', '<Leader>f', function() -- implement JumpToFile function end, { desc = 'Jump to file' })
@@ -4373,6 +4061,7 @@ Use <Plug> to create unique, user-configurable key mappings in plugins that won'
 noremap <unique> <Plug>ScriptFunc :call <SID>VimScriptFn()<CR>
 nmap _p <Plug>ScriptFunc
 ```
+
 ```lua
 vim.keymap.set('n', '<Plug>ScriptFunc', function() -- implement VimScriptFn end, { unique = true })
 vim.keymap.set('n', '_p', '<Plug>ScriptFunc')
@@ -4393,6 +4082,7 @@ nnoremap <F2> :lchdir %:p:h<CR>:pwd<CR>
 " Insert mode mapping
 imap <F3> <C-R>=strftime('%c')<CR>
 ```
+
 ```lua
 -- Normal mode mapping
 vim.keymap.set('n', '<F2>', ':lchdir %:p:h<CR>:pwd<CR>', { desc = 'Change to current file directory' })
@@ -4420,6 +4110,7 @@ Use built-in Vim commands to list, inspect, and manage key mappings across diffe
 " Remove a specific mapping
 :unmap <F2>
 ```
+
 ```lua
 -- List mappings in Neovim
 -- Use :nmap, :imap etc. directly or use lua API
@@ -4447,6 +4138,7 @@ nnoremap <unique> : ;
 " Quick command-line editing
 cnoremap <expr> ; (getcmdpos() == 1 && getcmdtype() =~ '\v^:') ? '<C-F>A' : ';'
 ```
+
 ```lua
 -- Swap ; and : keys
 vim.keymap.set('n', ';', ':', { unique = true })
@@ -4473,6 +4165,7 @@ Provides a smart paste mapping in visual mode that preserves the original copied
 ```vim
 xnoremap <silent> p p:let @"=@0<CR>
 ```
+
 ```lua
 vim.keymap.set('x', 'p', 'p<cmd>let @"=@0<CR>', { silent = true })
 ```
@@ -4497,6 +4190,7 @@ imap <A-l> <Right>
 imap <A-o> <C-o>
 imap <A-w> <C-o>:w<CR>
 ```
+
 ```lua
 -- Lua equivalents for Alt key mappings
 vim.keymap.set('i', '<A-h>', '<Left>', { desc = 'Move left in insert mode' })
@@ -4525,6 +4219,7 @@ endfun
 com! -range -register -bang TestOne <line1>,<line2>call TestOne("<reg>",<bang>0,<q-args>)
 nnoremap \aa :TestOne<CR>
 ```
+
 ```lua
 function _G.test_one(reg, bang, args, first_line, last_line)
   -- Equivalent logic for processing command arguments
@@ -4572,6 +4267,7 @@ else
   set pastetoggle=<F7> mouse=rnv
 endif
 ```
+
 ```lua
 -- Enhanced mouse interaction in Neovim
 vim.opt.mouse = 'ra'
@@ -4609,6 +4305,7 @@ vnoremap <Esc>[C l
 inoremap <Esc>[D <C-O>vh
 vnoremap <Esc>[D h
 ```
+
 ```lua
 -- Simulate shift-arrows with control-arrows
 vim.keymap.set({'i', 'v'}, '<Esc>[A', function() 
@@ -4636,6 +4333,7 @@ inoremap <CR> <c-g>u<CR>
 inoremap <del> <c-g>u<del>
 inoremap <c-w> <c-g>u<c-w>
 ```
+
 ```lua
 vim.keymap.set('i', '<BS>', '<C-g>u<BS>', { desc = 'Undo break on backspace' })
 vim.keymap.set('i', '<CR>', '<C-g>u<CR>', { desc = 'Undo break on enter' })
@@ -4654,6 +4352,7 @@ Map <End> key to explicitly break the undo chain in insert mode
 ```vim
 inoremap <End> <C-g>u<End>
 ```
+
 ```lua
 vim.keymap.set('i', '<End>', '<C-g>u<End>', { desc = 'Break undo chain at end of line' })
 ```
@@ -4677,6 +4376,7 @@ Prevent accidental middle mouse button pastes in Vim/Neovim by mapping the middl
 :map <4-MiddleMouse> <Nop>
 :imap <4-MiddleMouse> <Nop>
 ```
+
 ```lua
 -- Disable middle mouse button paste in all modes
 vim.keymap.set({'n', 'i', 'v', 'x', 's', 'c', 't'}, '<MiddleMouse>', '<Nop>')
@@ -4700,6 +4400,7 @@ imap <S-Up> _<Esc>mz:set ve=all<CR>i<Up>_<Esc>my`zi<Del><Esc>:set ve=<CR>`yi<Del
 "cursor down with a new line
 imap <S-CR> _<Esc>mz:set ve=all<CR>o<C-o>`z<Down>_<Esc>my`zi<Del><Esc>:set ve=<CR>`yi<Del>
 ```
+
 ```lua
 vim.keymap.set('i', '<S-Down>', function()
   local cursor = vim.api.nvim_win_get_cursor(0)
@@ -4733,6 +4434,7 @@ nmap ,mc "zdiWxf,a <Esc>"zp
 "Move until next parenthesis
 nmap ,mp "zdiWxf)hi, <Esc>"zpx
 ```
+
 ```lua
 -- Move parameter after next comma
 vim.keymap.set('n', ',mc', function()
@@ -4763,6 +4465,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ```
+
 ```lua
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
@@ -4799,6 +4502,7 @@ function! ToggleOptionsMenu()
   endif
 endfunction
 ```
+
 ```lua
 -- Lua equivalent of toggle options menu
 local function toggle_options()
@@ -4829,66 +4533,13 @@ vim.keymap.set('n', '<Leader>o', toggle_options, { desc = 'Toggle Vim Options' }
 # Category: advanced_mappings
 # Tags: documentation, browser-integration, key-mapping
 ---
-Quickly open online documentation for the word under the cursor, supporting multiple programming languages and documentation sources
-
-```vim
-function! OnlineDoc()
-  if &ft =~ "cpp"
-    let s:urlTemplate = "http://doc.trolltech.com/4.1/%.html"
-  elseif &ft =~ "ruby"
-    let s:urlTemplate = "http://www.ruby-doc.org/core/classes/%.html"
-  elseif &ft =~ "perl"
-    let s:urlTemplate = "http://perldoc.perl.org/functions/%.html"
-  else
-    return
-  endif
-  let s:browser = "firefox"
-  let s:wordUnderCursor = expand("<cword>")
-  let s:url = substitute(s:urlTemplate, "%", s:wordUnderCursor, "g")
-  let s:cmd = "silent !" . s:browser . " " . s:url
-  execute s:cmd
-endfunction
-
-map <M-d> :call OnlineDoc()<CR>
-```
-```lua
-function OnlineDoc()
-  local ft = vim.bo.filetype
-  local urlTemplate = nil
-  
-  if ft:match("cpp") then
-    urlTemplate = "http://doc.trolltech.com/4.1/%.html"
-  elseif ft:match("ruby") then
-    urlTemplate = "http://www.ruby-doc.org/core/classes/%.html"
-  elseif ft:match("perl") then
-    urlTemplate = "http://perldoc.perl.org/functions/%.html"
-  else
-    return
-  end
-
-  local browser = "firefox"
-  local wordUnderCursor = vim.fn.expand("<cword>")
-  local url = urlTemplate:gsub("%%", wordUnderCursor)
-  local cmd = string.format("silent !%s %s", browser, url)
-  
-  vim.cmd(cmd)
-end
-
-vim.keymap.set('n', '<M-d>', OnlineDoc, { desc = 'Open online documentation' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Online_documentation_for_word_under_cursor)
-***
-# Title: Open Windows Help Files with Vim Keymaps
-# Category: advanced_mappings
-# Tags: windows, key-mapping, help
----
 Create custom keymaps to open Windows HTML Help files with the word under cursor or selected text
 
 ```vim
 nnoremap <C-F1> :silent! !cmd.exe /c start keyhh.exe -#klink "<C-R><C-W>" "$ASANY9\docs\dbmaen9.chm"<CR><CR>
 vnoremap <C-F1> :<C-U>let old_reg=@"<CR>gvy:silent!!cmd.exe /cstart keyhh.exe -#klink "<C-R><C-R>"" "$ASANY9\docs\dbmaen9.chm"<CR><CR>:let @"=old_reg<CR>:echo ""<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-F1>', function()
   local word = vim.fn.expand('<cword>')
@@ -4929,6 +4580,7 @@ endfunction
 nnoremap <Leader>o :<C-u>call OpenLines(v:count, 0)<CR>S
 nnoremap <Leader>O :<C-u>call OpenLines(v:count, -1)<CR>S
 ```
+
 ```lua
 -- Function to insert multiple blank lines
 function _G.open_lines(nrlines, dir)
@@ -4976,6 +4628,7 @@ nnoremap <F5> :update<Bar>silent !xdg-open %:p &<CR>
 " Open URL under cursor in browser
 nnoremap <F8> :silent !xdg-open <cfile> &<CR>
 ```
+
 ```lua
 -- Open current file in default browser
 vim.keymap.set('n', '<F5>', function()
@@ -4995,71 +4648,13 @@ end, { desc = 'Open URL under cursor in browser' })
 # Category: advanced_mappings
 # Tags: key-mapping, function-handler, conditional-execution
 ---
-Create a flexible key mapping that can execute different handlers based on context, allowing dynamic behavior for a single key press
-
-```vim
-function! RunHandlers(handler_list, default_action)
-  for handler in a:handler_list
-    execute "let handled = " handler."()"
-    if handled
-      return
-    endif
-  endfor
-  execute a:default_action
-endfunction
-
-" Example handler
-function! CloseScratch()
-  if &buftype == "nofile" && &bufhidden == "hide" && !&swapfile
-    bdelete
-    return 1
-  endif
-  return 0
-endfunction
-
-" Setup multiple handlers for Escape key
-let g:esc_handler = []
-call add(g:esc_handler, "CloseScratch")
-nnoremap <Esc> :call RunHandlers(g:esc_handler, "call DefaultEsc()")<CR>
-```
-```lua
-function RunHandlers(handler_list, default_action)
-  for _, handler in ipairs(handler_list) do
-    local handled = _G[handler]()
-    if handled then
-      return
-    end
-  end
-  vim.cmd(default_action)
-end
-
-function CloseScratch()
-  if vim.bo.buftype == "nofile" and vim.bo.bufhidden == "hide" and not vim.bo.swapfile then
-    vim.cmd('bdelete')
-    return true
-  end
-  return false
-end
-
--- Setup multiple handlers for Escape key
-local esc_handlers = {"CloseScratch"}
-vim.keymap.set('n', '<Esc>', function()
-  RunHandlers(esc_handlers, 'normal! \<Esc>')
-end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Overload_a_key_with_multiple_handlers)
-***
-# Title: Run Macro on Matching Lines
-# Category: advanced_mappings
-# Tags: macros, text-processing
----
 Execute a recorded macro on all lines matching a specific pattern
 
 ```vim
 " Run macro 'q' on lines containing 'pattern'
 :g/pattern/normal @q
 ```
+
 ```lua
 -- Run macro 'q' on lines containing 'pattern'
 vim.cmd('g/pattern/normal @q')
@@ -5078,6 +4673,7 @@ set timeoutlen=300
 inoremap fj <Esc>l
 inoremap jf <Esc>l
 ```
+
 ```lua
 vim.opt.timeoutlen = 300
 vim.keymap.set('i', 'fj', '<Esc>l')
@@ -5101,6 +4697,7 @@ cabbrev W write
 cabbrev q!@ q!
 cabbrev wq!@ wq!
 ```
+
 ```lua
 -- Lua equivalent for command typo correction
 vim.cmd('cabbrev Q quit')
@@ -5136,6 +4733,7 @@ vmap <silent> <F7> :call Ruby_eval_vsplit()<CR>
 nmap <silent> <F7> mzggVG<F7>`z
 imap <silent> <F7> <Esc><F7>a
 ```
+
 ```lua
 function _G.ruby_eval_vsplit(first_line, last_line)
   local src = vim.fn.tempname()
@@ -5192,6 +4790,7 @@ Map escape sequences from numeric keypad to corresponding numbers and operations
 :inoremap <Esc>Oy 9
 :inoremap <Esc>Op 0
 ```
+
 ```lua
 -- Lua equivalent for handling numeric keypad escape sequences
 local function map_keypad_sequences()
@@ -5222,6 +4821,7 @@ Create a key mapping to quickly convert Markdown to HTML and open in a browser f
 ```vim
 map ^P :w!<CR>:w!/home/user/tmp/vim-markdown.md<CR>:!pandoc -s -f markdown -t html -o /home/user/tmp/vim-markdown.html /home/user/tmp/vim-markdown.md<CR>:!dillo /home/user/tmp/vim-markdown.html > /dev/null 2> /dev/null&<CR><CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-p>', function()
   -- Save current file
@@ -5269,6 +4869,7 @@ inoremap DD <Esc>dd
 " Undo
 inoremap UU <Esc>u
 ```
+
 ```lua
 -- Quick movements and line modifications
 local function setup_insert_mode_mappings()
@@ -5301,6 +4902,7 @@ function Ender()
   normal `e
 endfunction
 ```
+
 ```lua
 vim.keymap.set('i', '<F2>', function()
   -- Record current position
@@ -5327,6 +4929,7 @@ Replace existing toolbar icon to launch selected URL in browser using visual mod
 ```vim
 vnoremenu 1.140 ToolBar.New "wy:!start explorer <C-R>w<CR>
 ```
+
 ```lua
 vim.keymap.set('v', '<ToolBar>New', function()
   local selected_text = vim.fn.getreg('"')
@@ -5345,6 +4948,7 @@ Create a custom mapping to quickly preview files from an index or listing, with 
 ```vim
 nnoremap <buffer> <Space> :exec "let alist=readfile(expand('%:p:h').'/'.substitute(getline('.'), '\(^.*\|\s*\)\|\(\s\s*$\)', '', 'g'))\|echo join(alist,\"\n\")"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Space>', function()
   local filename = vim.fn.expand('%:p:h') .. '/' .. vim.fn.substitute(vim.fn.getline('.'), '\(^.*\|\s*\)\|\(\s\s*$\)', '', 'g')
@@ -5365,6 +4969,7 @@ Quickly insert opening and closing braces with automatic indentation, saving key
 " Opening and closing braces
 imap <C-F> {<CR>}<C-O>O
 ```
+
 ```lua
 -- Quick braces insertion
 vim.keymap.set('i', '<C-f>', '{<CR>}<C-o>O', { desc = 'Insert braces with auto-indent' })
@@ -5382,6 +4987,7 @@ Custom mappings to quickly change text and exit insert mode with Space or Enter
 nmap pw :inoremap <Space> <Space><Esc>:iunmap <Space><CR><CR> cw
 nmap p$ :inoremap <CR> <CR><Esc>:iunmap <CR><CR><CR> c$
 ```
+
 ```lua
 -- Lua equivalent with modern Neovim mapping
 vim.keymap.set('n', 'pw', function()
@@ -5407,6 +5013,7 @@ Create a custom mapping to quickly insert a single word and automatically exit i
 nmap <buffer> <silent> ,w :exec ":imap \<space\> \<space\>\<esc\>,BB"<CR>i
 nmap <buffer> <silent> ,BB :exec ":iunmap \<space\>"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', ',w', function()
   -- Temporarily map space to exit insert mode
@@ -5447,6 +5054,7 @@ let g:lessmode = 0
 nnoremap <F5> :call LessMode()<CR>
 inoremap <F5> <Esc>:call LessMode()<CR>
 ```
+
 ```lua
 local less_mode = false
 
@@ -5485,6 +5093,7 @@ nnoremap <Leader>Q :%s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='
 vnoremap <Leader>Q :s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='
 '?'':nr2char('0x'.submatch(1))/ge<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>Q', function()
   vim.cmd([[%s/=\(\x\x\|\n\)/\=submatch(1) == '\n' ? '' : nr2char('0x' . submatch(1))/ge]])
@@ -5507,6 +5116,7 @@ Quick mappings for basic RCS version control operations directly from Vim, allow
 map <F1> :write %<CR>:!ci -l %<CR>:edit!<CR>
 map <F2> :!co -l %<CR>:edit!<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F1>', function()
   vim.cmd.write()
@@ -5532,6 +5142,7 @@ Add an undo breakpoint before Ctrl-U and Ctrl-W deletions to make them undoable
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 ```
+
 ```lua
 vim.keymap.set('i', '<C-u>', '<C-g>u<C-u>', { desc = 'Undo-breakpoint before line deletion' })
 vim.keymap.set('i', '<C-w>', '<C-g>u<C-w>', { desc = 'Undo-breakpoint before word deletion' })
@@ -5552,6 +5163,7 @@ Recursive mappings allow you to create powerful, self-repeating editing commands
 " Example 2: Recursive mapping to increment numbers
 :map z 2^Ajz
 ```
+
 ```lua
 -- Lua implementation requires more explicit handling
 -- This demonstrates the concept rather than direct translation
@@ -5602,23 +5214,6 @@ vim.keymap.set({'i', 'n'}, '<CapsLock>', caps_escape, { expr = true })
 # Category: advanced_mappings
 # Tags: key-mapping, conditional-mapping, workflow
 ---
-Create application-specific key mappings using AutoHotkey, allowing different behaviors in different contexts
-
-```lua
--- Neovim equivalent using lua conditional mapping
--- Map CapsLock to Escape only in Neovim/terminal modes
-vim.keymap.set({'n', 't'}, '<CapsLock>', '<Esc>', {
-  desc = 'Escape in normal and terminal modes',
-  buffer = true  -- Makes mapping buffer-local
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Remap_CapsLock_or_other_keys_without_reboot_in_Windows)
-***
-# Title: Copy and Replace Words or Lines Repeatedly
-# Category: advanced_mappings
-# Tags: registers, copy-paste, text-manipulation
----
 Efficiently copy and replace text at multiple locations using yanking and dot command
 
 ```vim
@@ -5626,6 +5221,7 @@ Efficiently copy and replace text at multiple locations using yanking and dot co
 # Replace word: ciw<C-R>0<Esc>
 # Repeat replacements with '.'
 ```
+
 ```lua
 -- Copy word: 'yiw'
 -- Replace word: 'ciw' .. vim.fn.getreg('0') .. '<Esc>'
@@ -5644,6 +5240,7 @@ Modify the dot (.) command to return cursor to start of previous change, making 
 ```vim
 nmap . .`[
 ```
+
 ```lua
 vim.keymap.set('n', '.', function()
   vim.cmd('normal! .`[')
@@ -5656,77 +5253,6 @@ end, { desc = 'Repeat last command and return to change start' })
 # Category: advanced_mappings
 # Tags: clipboard, key-mapping, visual-mode
 ---
-Convenient key mappings for copying and replacing words or selections using clipboard
-
-```vim
-" Copy current word/selection to clipboard
-nnoremap <F4> "+yiw
-vnoremap <F4> "+y
-
-" Replace with clipboard contents
-nnoremap <F5> viw"+p
-vnoremap <F5> "+p
-```
-```lua
--- Copy current word/selection to clipboard
-vim.keymap.set('n', '<F4>', '"+yiw', { desc = 'Copy word to clipboard' })
-vim.keymap.set('v', '<F4>', '"+y', { desc = 'Copy selection to clipboard' })
-
--- Replace with clipboard contents
-vim.keymap.set('n', '<F5>', 'viw"+p', { desc = 'Replace word with clipboard' })
-vim.keymap.set('v', '<F5>', '"+p', { desc = 'Replace selection with clipboard' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_a_word_with_the_yanked_text)
-***
-# Title: Quick Word Replacement Mapping
-# Category: advanced_mappings
-# Tags: text-objects, editing, replacement
----
-Create a quick mapping to replace the current word with the last yanked text, making repetitive text replacement easy.
-
-```vim
-nnoremap S diw"0P
-```
-```lua
-vim.keymap.set('n', 'S', 'diw"0P', { desc = 'Replace word with last yanked text' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_text_to_register_content_with_visual_selection_help)
-***
-# Title: Quickly Replace Words Without Typing
-# Category: advanced_mappings
-# Tags: key-mapping, word-replacement, registers
----
-Efficiently replace words by yanking a word to a register and then pasting it over another word, avoiding manual retyping
-
-```vim
-" Copy word to register b
-noremap gy lb"bye
-
-" Replace word with register b (with space)
-noremap go lb"bPldwi <Esc>hbye
-
-" Replace word with register b (without space)
-noremap gp lb"bPldwhbyw
-```
-```lua
--- Copy word to register b
-vim.keymap.set('n', 'gy', 'lb"bye', { desc = 'Yank word to register b' })
-
--- Replace word with register b (with space)
-vim.keymap.set('n', 'go', 'lb"bPldwi <Esc>hbye', { desc = 'Replace word with register b, add space' })
-
--- Replace word with register b (without space)
-vim.keymap.set('n', 'gp', 'lb"bPldwhbyw', { desc = 'Replace word with register b, no space' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Replace_with_no_typing)
-***
-# Title: Quick Text Replacement Workflow
-# Category: advanced_mappings
-# Tags: text-objects, productivity, replace
----
 Efficient method to replace multiple words or text objects using change and register recall
 
 ```vim
@@ -5735,6 +5261,7 @@ Efficient method to replace multiple words or text objects using change and regi
 " ciw<C-r>0 (change inner word, paste from register 0)
 " . (repeat last change)
 ```
+
 ```lua
 -- Note: This workflow is inherently Vim-like and works similarly in Neovim
 -- 1. yank word with yiw
@@ -5765,6 +5292,7 @@ endfunction
 nmap ,sp :call SavePosition()<CR>
 nmap ,ic :call InsertComment()<CR>
 ```
+
 ```lua
 function _G.save_position()
   vim.g.file_name = vim.fn.expand('%:t')
@@ -5794,6 +5322,7 @@ Add a custom mapping to quickly convert and display the number under the cursor 
 ```vim
 nnoremap gn :call DecAndHex(expand("<cWORD>"))<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 'gn', function()
   local word = vim.fn.expand('<cWORD>')
@@ -5821,6 +5350,7 @@ Ctrl-O allows executing a single normal mode command while in insert mode withou
 ```vim
 :imap <F5> <C-o>:set number!<CR>
 ```
+
 ```lua
 vim.keymap.set('i', '<F5>', '<C-o>:set number!<CR>', { desc = 'Toggle line numbers in insert mode' })
 ```
@@ -5837,6 +5367,7 @@ Multiple approaches to running commands in insert mode: multiple Ctrl-O, using |
 :map <F5> :set number!<CR>
 :imap <F5> <c-o><F5>
 ```
+
 ```lua
 vim.keymap.set('n', '<F5>', ':set number!<CR>')
 vim.keymap.set('i', '<F5>', '<c-o><F5>', { desc = 'Execute normal mode F5 from insert mode' })
@@ -5853,6 +5384,7 @@ Rapidly create XML elements from any word in insert mode by typing the word foll
 ```vim
 imap ,,, <Esc>diwi<<Esc>pa><CR></<Esc>pa><Esc>kA
 ```
+
 ```lua
 vim.keymap.set('i', ',,,', function()
   -- Get current word
@@ -5881,6 +5413,7 @@ endfunction
 nnoremap s :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
 nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
 ```
+
 ```lua
 function RepeatChar(char, count)
   return string.rep(char, count)
@@ -5910,6 +5443,7 @@ Custom mapping to swap words without changing cursor position, supporting comple
 ```vim
 nnoremap <silent> gw "_yiw:s/\(%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>:nohlsearch<CR>
 ```
+
 ```lua
 vim.keymap.set('n', 'gw', function()
   local current_word = vim.fn.expand('<cword>')
@@ -5931,6 +5465,7 @@ Modify the dot (.) repeat command to maintain cursor position after repeating th
 "make . not move the cursor
 noremap . mz.`z
 ```
+
 ```lua
 vim.keymap.set('n', '.', function()
   local mark = vim.fn.getpos('.')
@@ -5950,6 +5485,7 @@ An alternative method to preserve cursor position after repeating a command, usi
 ```vim
 noremap . .'^
 ```
+
 ```lua
 vim.keymap.set('n', '.', function()
   vim.cmd('normal! .')
@@ -5975,6 +5511,7 @@ noremap go lb"bPldwi <Esc>hbye
 " Replace word with register b (without space)
 noremap gp lb"bPldwhbyw
 ```
+
 ```lua
 -- Copy word to register b
 vim.keymap.set('n', 'gy', 'lb"bye', { desc = 'Yank word to register b' })
@@ -6007,6 +5544,7 @@ Map PuTTY numeric keypad escape sequences to actual numbers in Vim
 :inoremap <Esc>Oy 9
 :inoremap <Esc>Op 0
 ```
+
 ```lua
 -- Map numeric keypad escape sequences
 vim.keymap.set('i', '<Esc>Oq', '1')
@@ -6033,6 +5571,7 @@ Create custom keymappings to quickly open Windows HTML help files for specific t
 nnoremap <C-F1> :silent! !cmd.exe /c start keyhh.exe -#klink "<C-R><C-W>" "$ASANY9\docs\dbmaen9.chm"<CR><CR>
 vnoremap <C-F1> :<C-U>let old_reg=@"<CR>gvy:silent!!cmd.exe /cstart keyhh.exe -#klink "<C-R><C-R>"" "$ASANY9\docs\dbmaen9.chm"<CR><CR>:let @"=old_reg<CR>:echo ""<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-F1>', function()
   vim.cmd.silent('!cmd.exe /c start keyhh.exe -#klink "' .. vim.fn.expand('<cword>') .. '" "$ASANY9\\docs\\dbmaen9.chm"')
@@ -6069,6 +5608,7 @@ function! s:SearchMode()
   endif
 endfunction
 ```
+
 ```lua
 local function search_mode()
   local modes = {
@@ -6117,6 +5657,7 @@ ounmap <Esc>[Z
 " Alternatively, set terminal key code
 exe 'set t_kB=' . nr2char(27) . '[Z'
 ```
+
 ```lua
 -- Map Shift-Tab in Neovim
 vim.keymap.set({'n', 'i', 'v'}, '<S-Tab>', '<C-d>', { desc = 'Unindent or navigate back' })
@@ -6161,6 +5702,7 @@ func! NextField(fieldsep,minlensep,padstr,offset)
   return
 endfunc
 ```
+
 ```lua
 function _G.next_field(fieldsep, minlensep, padstr, offset)
   local curposn = vim.fn.col('.')
@@ -6206,6 +5748,7 @@ Dynamically map Tab and Shift-Tab to navigate between table fields in both inser
 map <Tab> :call NextField()<CR>
 map <S-Tab> :call PreviousField()<CR>
 ```
+
 ```lua
 -- Lua equivalent (conceptual)
 function _G.next_table_field()
@@ -6227,6 +5770,7 @@ Create a quick leader key mapping to save files only when changes have been made
 ```vim
 noremap <Leader>s :update<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = 'Save file if modified' })
 ```
@@ -6237,29 +5781,13 @@ vim.keymap.set('n', '<leader>s', ':update<CR>', { desc = 'Save file if modified'
 # Category: advanced_mappings
 # Tags: selection, text-objects, code-navigation
 ---
-Use extended matching and text object selection for more flexible code navigation and editing
-
-```vim
-" Install matchit.vim
-runtime macros/matchit.vim
-```
-```lua
--- For Neovim, use a plugin like vim-matchup
--- Enables advanced % key navigation and text object selection
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip6)
-***
-# Title: Quick Word 'Stamping' Across Document
-# Category: advanced_mappings
-# Tags: editing, registers, key-mapping
----
 Replace words quickly with last yanked text using a custom mapping
 
 ```vim
 " Replace current word with last yanked text
 nnoremap S diw"0P
 ```
+
 ```lua
 -- Lua equivalent for word stamping
 vim.keymap.set('n', 'S', function()
@@ -6284,6 +5812,7 @@ loadkeymap
 " Key mappings go here
 A <Char-0x00C1>  " Map A to Á
 ```
+
 ```lua
 -- Lua equivalent for custom keymap
 vim.g.keymap_name = "cz"
@@ -6303,6 +5832,7 @@ Quickly insert fprintf debugging statements with file and line information for e
 ```vim
 nmap _if ofprintf(0<C-d>stderr, "{%s} {%d} - \n", __FILE__, __LINE__);<Esc>F\i
 ```
+
 ```lua
 vim.keymap.set('n', '_if', function()
   local debug_stmt = string.format('fprintf(0stderr, "{%%s} {%%d} - \n", __FILE__, __LINE__);
@@ -6329,6 +5859,7 @@ nmap \x :silent !start rundll32 url.dll,FileProtocolHandler <cWORD> <CR>
 " eXecute string below cursor after prepending it with path to file
 nmap \xl :silent !start rundll32 url.dll,FileProtocolHandler %:p:h/<cWORD> <CR>
 ```
+
 ```lua
 -- Execute current file
 vim.keymap.set('n', '\xf', function()
@@ -6363,6 +5894,7 @@ inoremap {}     {}
 inoremap (  ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 ```
+
 ```lua
 -- Lua equivalent for closing characters
 vim.keymap.set('i', '{', '{}<Left>', { desc = 'Auto-insert closing brace' })
@@ -6384,29 +5916,12 @@ end, { expr = true, desc = 'Smart closing parenthesis handling' })
 # Category: advanced_mappings
 # Tags: key-mapping, command-execution, windows
 ---
-Quickly open a Windows program for the current word using the K key without spawning a command prompt
-
-```vim
-map K yiw:exec "silent !".&kp." ".@0<CR>
-```
-```lua
-vim.keymap.set('n', 'K', function()
-  local word = vim.fn.expand('<cword>')
-  vim.fn.system({vim.o.keywordprg, word})
-end, { desc = 'Run program on current word' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip642)
-***
-# Title: Disable Unwanted Vim Key Mappings
-# Category: advanced_mappings
-# Tags: key-mapping, configuration, customization
----
 Quickly disable built-in Vim key commands that you find annoying or accidentally trigger
 
 ```vim
 :map K <Nop>
 ```
+
 ```lua
 vim.keymap.set('n', 'K', '<Nop>', { desc = 'Disable built-in K command' })
 ```
@@ -6422,6 +5937,7 @@ Provides a quick way to expand existing abbreviations with a custom keybinding
 ```vim
 map <C-X><C-X> diw:exe "normal i".@"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-X><C-X>', function()
   -- Alternative implementation that works better
@@ -6437,45 +5953,6 @@ end, { desc = 'Expand existing abbreviation' })
 # Category: advanced_mappings
 # Tags: comments, filetype, autocmd, mapping
 ---
-Dynamically set comment/uncomment mappings based on current file type, allowing easy commenting across multiple languages
-
-```vim
-function CommentIt()
-  if &filetype == "vim"
-    vmap +# :s/^/"/<CR>
-    vmap -# :s/^"//
-  elseif &filetype == "c"
-    vmap +# I/*<Esc>gv<End><Esc>a*/<Esc>
-    vmap -# I<Esc>2xgv$<Esc>h2x<Esc>
-  endif
-endfunction
-
-autocmd BufEnter * call CommentIt()
-```
-```lua
-function _G.comment_it()
-  local ft = vim.bo.filetype
-  if ft == 'vim' then
-    vim.keymap.set('v', '+#', ':s/^/"/<CR>', { buffer = true })
-    vim.keymap.set('v', '-#', ':s/^"//
-', { buffer = true })
-  elseif ft == 'c' then
-    vim.keymap.set('v', '+#', 'I/*<Esc>gv<End><Esc>a*/<Esc>', { buffer = true })
-    vim.keymap.set('v', '-#', 'I<Esc>2xgv$<Esc>h2x<Esc>', { buffer = true })
-  end
-end
-
-vim.api.nvim_create_autocmd('BufEnter', {
-  callback = _G.comment_it
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip660)
-***
-# Title: Diagnose and Fix Backspace Key Mappings
-# Category: advanced_mappings
-# Tags: troubleshooting, key-mapping, insert-mode
----
 Check for existing backspace mappings and remove them if they're causing issues
 
 ```vim
@@ -6485,6 +5962,7 @@ Check for existing backspace mappings and remove them if they're causing issues
 " Remove problematic mapping
 :iunmap <BS>
 ```
+
 ```lua
 -- Check backspace mappings
 vim.cmd('verbose imap <BS>')
@@ -6505,6 +5983,7 @@ Create convenient keymappings for copying and pasting using system clipboard
 map <F2> :.w !pbcopy<CR><CR>
 map <F3> :r !pbpaste<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<F2>', ':.w !pbcopy<CR><CR>', { desc = 'Copy current line' })
 vim.keymap.set('n', '<F3>', ':r !pbpaste<CR>', { desc = 'Paste from clipboard' })
@@ -6530,6 +6009,7 @@ map! ;f ë
 map! ;g é
 imap ;q «  »<Esc>hi
 ```
+
 ```lua
 -- French character mappings for Neovim
 vim.keymap.set({'i', 'c'}, ';z', 'à', { desc = 'Insert à' })
@@ -6549,6 +6029,7 @@ Create powerful text templates with variable substitution using a custom Perl sc
 ```vim
 vnoremap <F6> :!perl E:\Devtools\vim\vimfiles\template\truler.pl<CR>
 ```
+
 ```lua
 vim.keymap.set('v', '<F6>', function()
   -- Example implementation would require adapting the Perl script
@@ -6578,6 +6059,7 @@ function! ModeMapping(guiLhs, termLhs, rhs, ...)
   endif
 endfunction
 ```
+
 ```lua
 function _G.mode_mapping(gui_lhs, term_lhs, rhs, map_command)
   map_command = map_command or 'map'
@@ -6603,6 +6085,7 @@ nnoremap <silent> <Leader>ud :%!uudecode -o /dev/stdout<CR>
 vnoremap <silent> <Leader>ue !uuencode -m /dev/stdout<CR>
 vnoremap <silent> <Leader>ud !uudecode -o /dev/stdout<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>ue', ':%!uuencode -m /dev/stdout<CR>', { silent = true })
 vim.keymap.set('n', '<Leader>ud', ':%!uudecode -o /dev/stdout<CR>', { silent = true })
@@ -6621,6 +6104,7 @@ Create a custom CapsLock key that acts as Escape when tapped, and Ctrl when held
 ```vim
 " No direct Vim implementation
 ```
+
 ```lua
 -- Conceptual Lua implementation would require external utility like AutoHotkey
 -- Demonstrates advanced key remapping potential
@@ -6637,6 +6121,7 @@ Dynamically select pasted text while preserving the original visual mode (charac
 ```vim
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 ```
+
 ```lua
 vim.keymap.set('n', 'gp', function() 
   return '`[' .. vim.fn.strpart(vim.fn.getregtype(), 0, 1) .. '`]'

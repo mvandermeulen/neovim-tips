@@ -27,6 +27,7 @@ Powerful commands to reindent code blocks using text objects and motion commands
 " Reindent with cursor on brace
 =%
 ```
+
 ```lua
 -- Reindent inner block
 vim.cmd('normal =i{')
@@ -53,6 +54,7 @@ Easily increase or decrease indentation for code blocks using motion commands
 " Decrease indent of inner block
 <i{
 ```
+
 ```lua
 -- Increase indent of inner block
 vim.cmd('normal >i{')
@@ -97,6 +99,7 @@ endfunction
 setlocal indentexpr=GetPhpHtmlIndent(v:lnum)
 setlocal indentkeys+=<>>
 ```
+
 ```lua
 local function get_php_html_indent(lnum)
   local html_ind = vim.fn['HtmlIndentGet'](lnum)
@@ -151,6 +154,7 @@ imap <C-Tab> <C-t>
 "Indent backward in insert mode
 imap <C-S-Tab> <C-d>
 ```
+
 ```lua
 -- Indent forward in normal mode
 vim.keymap.set('n', '<C-Tab>', 'a<C-t><Esc>', { desc = 'Indent line forward' })
@@ -179,6 +183,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 ```
+
 ```lua
 -- Configure indentation
 vim.opt.shiftwidth = 4
@@ -227,6 +232,7 @@ function! IndentIgnoringBlanks(child)
   endif
 endfunction
 ```
+
 ```lua
 function _G.indent_ignoring_blanks(child)
   local lnum = vim.v.lnum
@@ -279,6 +285,7 @@ Create a custom indent script to disable auto-indentation for specific file type
 ```vim
 let b:did_indent = 1
 ```
+
 ```lua
 -- In ~/.config/nvim/after/indent/html.lua
 vim.g.did_indent = 1
@@ -295,6 +302,7 @@ Quickly turn off auto-indentation for the current buffer
 ```vim
 :setlocal noautoindent nocindent nosmartindent indentexpr=
 ```
+
 ```lua
 -- Disable auto-indentation for current buffer
 vim.opt_local.autoindent = false
@@ -309,34 +317,6 @@ vim.opt_local.indentexpr = ''
 # Category: indentation
 # Tags: code-formatting, text-editing, navigation
 ---
-Quickly reindent code blocks using text objects and indent commands in Vim/Neovim
-
-```vim
-" Reindent inner block
-=i{
-
-" Reindent block including braces
-=a{
-
-" Increase/decrease indent of block
->i{
-<i{
-```
-```lua
--- Lua equivalents use same keystrokes
--- These work out of the box in Neovim
--- =i{ reindents inner block
--- =a{ reindents block with braces
--- >i{ increases indent
--- <i{ decreases indent
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Indent_a_code_block)
-***
-# Title: Block Indent with Matching Brace
-# Category: indentation
-# Tags: code-formatting, text-objects
----
 Indent entire code blocks relative to matching braces quickly
 
 ```vim
@@ -347,6 +327,7 @@ Indent entire code blocks relative to matching braces quickly
 >%
 <%
 ```
+
 ```lua
 -- These commands work identically in Neovim
 -- Cursor should be on { or } when using
@@ -380,6 +361,7 @@ function! s:IndTxtObj(inner)
   endif
 endfunction
 ```
+
 ```lua
 local function ind_txt_obj(inner)
   local curline = vim.fn.line('.')
@@ -414,6 +396,7 @@ set softtabstop=0
 set shiftwidth=4
 set tabstop=4
 ```
+
 ```lua
 vim.opt.expandtab = false
 vim.opt.copyindent = true
@@ -437,6 +420,7 @@ Use tabs only for indentation levels while using spaces for text alignment, main
 :set cindent
 :set cinoptions=(0,u0,U0
 ```
+
 ```lua
 -- Recommended to use Smart Tabs plugin
 vim.opt.expandtab = false
@@ -463,6 +447,7 @@ set indentkeys-=0#
 " Alternative mapping for smartindent
 :inoremap # X<BS>#
 ```
+
 ```lua
 -- Preserve indentation for lines starting with #
 vim.opt.cindent = true
@@ -489,6 +474,7 @@ Prefer filetype-based indentation over generic smartindent, which provides more 
 filetype indent on
 set autoindent
 ```
+
 ```lua
 -- Enable filetype-specific indentation
 vim.cmd('filetype indent on')
@@ -501,61 +487,12 @@ vim.opt.autoindent = true
 # Category: indentation
 # Tags: formatting, code-style, text-editing
 ---
-Easily reformat indentation for entire file or selected sections using built-in = operator
-
-```vim
-" Reindent entire file
-gg=G
-
-" Reindent selected visual block
-=
-
-" Mapping to reindent file and return to original position
-map <F7> gg=G<C-o><C-o>
-```
-```lua
--- Reindent entire file
-vim.cmd('normal! gg=G')
-
--- Reindent selected visual block
-vim.cmd('normal! gv=')
-
--- Mapping to reindent file and return to original position
-vim.keymap.set('n', '<F7>', function()
-  vim.cmd('normal! gg=G')
-  vim.cmd('normal! 2\<C-o>')
-end, { desc = 'Reindent entire file' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Quickly_align_whole_file)
-***
-# Title: Adjust Indent in Insert Mode
-# Category: indentation
-# Tags: insert-mode, indentation, editing
----
-Quickly increase or decrease indent while in insert mode
-
-```vim
-" Ctrl-D: decrease indent
-" Ctrl-T: increase indent
-```
-```lua
--- These are built-in Neovim behaviors, but can be explicitly mapped
-vim.keymap.set('i', '<C-d>', '<C-d>', { desc = 'Decrease indent' })
-vim.keymap.set('i', '<C-t>', '<C-t>', { desc = 'Increase indent' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Removing_automatic_comment_leaders)
-***
-# Title: Correct Indentation in Blank Lines
-# Category: indentation
-# Tags: editing, insert-mode, indentation
----
 Use 'cc' or 'S' to start insert mode on a new line with correct indentation, avoiding manual indent issues
 
 ```vim
 " No direct vimscript mapping needed, just use built-in commands
 ```
+
 ```lua
 -- Use built-in Vim commands 'cc' or 'S' to start insert mode
 -- with correct indentation on a blank line
@@ -593,6 +530,7 @@ endfunction
 " Replace Ctrl-D in insert mode with smart dedent
 imap <C-d> <C-o>:call DedentToPrevious()<CR>
 ```
+
 ```lua
 function _G.smart_dedent()
     local tabsize = vim.o.tabstop
@@ -640,6 +578,7 @@ Efficient ways to reindent code blocks in Vim, using text object navigation
 >i{
 <i{
 ```
+
 ```lua
 -- Lua equivalents (these work the same in Neovim)
 -- Can be used in visual mode or with text objects
@@ -663,6 +602,7 @@ Use % to match braces and indent entire code blocks with single commands
 >%
 <%
 ```
+
 ```lua
 -- Lua equivalents work identically in Neovim
 -- These commands leverage Vim's text object and matching capabilities

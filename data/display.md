@@ -8,6 +8,7 @@ Use `:set list!` to toggle display of invisible characters (tabs, spaces, etc.).
 " Vimscript:
 :set list!  " toggle invisible characters
 ```
+
 ```lua
 -- Lua:
 vim.opt.list = not vim.opt.list:get()  -- toggle invisible characters
@@ -27,6 +28,7 @@ Use `:set foldcolumn` to show fold column, `:set foldtext` for custom fold text,
 :set fillchars=fold:.,vert:|  " customize fill characters
 :set foldtext=MyFoldText()    " custom fold text function
 ```
+
 ```lua
 -- Lua:
 vim.opt.foldcolumn = '4'  -- show fold indicators in 4-char column
@@ -48,6 +50,7 @@ Use `:set laststatus` for status line, `:set showtabline` for tab line, `:set st
 :set showtabline=2    " always show tab line
 :set statusline=%f\ %m%r%h%w\ [%Y]\ [%{&ff}]\ %=%l,%c\ %p%%
 ```
+
 ```lua
 -- Lua:
 vim.opt.laststatus = 2  -- always show status line
@@ -71,6 +74,7 @@ Use `:set conceallevel=2` to hide concealed text and `:syntax match` with `conce
 " Toggle conceal on/off
 nnoremap <leader>c :let &conceallevel = (&conceallevel == 2) ? 0 : 2<CR>
 ```
+
 ```lua
 -- Lua:
 vim.opt.conceallevel = 2  -- hide concealed text completely
@@ -95,6 +99,7 @@ Add mappings to quickly disable diff syntax highlighting in one window, which ca
 " Example mapping to toggle diff highlighting
 nnoremap <leader>dh :set nodiff<CR>
 ```
+
 ```lua
 -- Lua equivalent for toggling diff highlighting
 vim.keymap.set('n', '<leader>dh', function()
@@ -115,6 +120,7 @@ Display the ASCII or Unicode value of the character under the cursor in decimal,
 :set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 :set laststatus=2
 ```
+
 ```lua
 -- Configure status line to show character values
 vim.opt.statusline = '%<%f%h%m%r%=%b 0x%B  %l,%c%V %P'
@@ -133,6 +139,7 @@ Quickly view ASCII/Unicode value of the current character using built-in command
 " Use ga in normal mode
 " Or :ascii/:as in command mode
 ```
+
 ```lua
 -- These commands work the same in Neovim
 -- Press 'ga' in normal mode
@@ -144,27 +151,6 @@ Quickly view ASCII/Unicode value of the current character using built-in command
 # Title: Soft Line Wrapping
 # Category: display
 # Tags: text-display, ui, navigation
----
-Enable soft line wrapping that displays long lines across multiple screen lines without changing the actual text
-
-```vim
-set wrap
-set linebreak
-```
-```lua
-vim.opt.wrap = true
-vim.opt.linebreak = true
-
--- Use gj and gk to move by screen lines instead of real lines
-vim.keymap.set('n', 'j', 'gj', { noremap = true })
-vim.keymap.set('n', 'k', 'gk', { noremap = true })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Automatic_word_wrapping)
-***
-# Title: Dynamic Font Size Adjustment in GUI
-# Category: display
-# Tags: gui, font-size, key-mapping
 ---
 Quickly change font size in GVim using function and key mappings for better readability
 
@@ -194,6 +180,7 @@ endfunction
 nmap <C-S-F11> :call ScaleFontDown()<CR>
 nmap <C-S-F12> :call ScaleFontUp()<CR>
 ```
+
 ```lua
 local function scale_font_up()
   local guifont = vim.o.guifont
@@ -227,6 +214,7 @@ Easily toggle highlighting of the current line and column to improve cursor visi
 :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 ```
+
 ```lua
 -- Highlight current line and column
 vim.cmd('hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white')
@@ -248,6 +236,7 @@ Detailed guide for configuring PuTTY color palette to match Vim's desert color s
 ```vim
 :colorscheme desert
 ```
+
 ```lua
 vim.cmd('colorscheme desert')
 ```
@@ -264,6 +253,7 @@ Customize line number display width and behavior
 set number
 set numberwidth=4
 ```
+
 ```lua
 vim.opt.number = true
 vim.opt.numberwidth = 4
@@ -281,6 +271,7 @@ Customize the status line to show current date and time, updating when you inter
 set ruler
 set rulerformat=%55(%{strftime('%a\ %b\ %e\ %I:%M\ %p')}\ %5l,%-6(%c%V%)\ %P%)
 ```
+
 ```lua
 vim.opt.ruler = true
 vim.opt.rulerformat = '%55(%{strftime("%a %b %e %I:%M %p")} %5l,%-6(%c%V%) %P%)'
@@ -300,6 +291,7 @@ function! UpdateStatusBar(timer)
   execute 'let &ro = &ro'
 endfunction
 ```
+
 ```lua
 local timer = vim.fn.timer_start(4000, function()
   vim.o.readonly = vim.o.readonly
@@ -318,6 +310,7 @@ Show relative line numbers to make movement and editing commands more intuitive
 set relativenumber
 set number
 ```
+
 ```lua
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -335,6 +328,7 @@ Customize the appearance of line numbers in the gutter
 set numberwidth=3
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 ```
+
 ```lua
 vim.opt.numberwidth = 3
 vim.api.nvim_set_hl(0, 'LineNr', {
@@ -366,6 +360,7 @@ function! s:SwitchPSCStyle()
 endfunction
 map <silent> <F6> :call <SID>SwitchPSCStyle()<CR>
 ```
+
 ```lua
 local function switch_color_style()
   local style = vim.g.psc_style
@@ -390,28 +385,12 @@ vim.keymap.set('n', '<F6>', switch_color_style, { silent = true })
 # Category: display
 # Tags: syntax-highlighting, color-scheme, customization
 ---
-Easily modify specific syntax highlighting colors directly in your configuration without editing full color scheme files
-
-```vim
-highlight comment ctermfg=lightblue
-highlight constant ctermfg=red
-```
-```lua
-vim.cmd('highlight comment ctermfg=lightblue')
-vim.cmd('highlight constant ctermfg=red')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Fine_tuning_syntax_colors)
-***
-# Title: Ignore Whitespace in Diff Mode
-# Category: display
-# Tags: diff, whitespace, comparison
----
 Ignore whitespace changes when performing diff operations, reducing noise in comparisons
 
 ```vim
 set diffopt+=iwhite
 ```
+
 ```lua
 vim.opt.diffopt:append('iwhite')
 ```
@@ -435,6 +414,7 @@ function! ShortEcho(msg)
   let &shortmess=saved
 endfunction
 ```
+
 ```lua
 -- Enable message truncation
 vim.opt.shortmess:append('T')
@@ -472,6 +452,7 @@ while drawing
 endwhile
 let &ch=1
 ```
+
 ```lua
 -- Disable 'more' prompts
 vim.o.nomore = true
@@ -509,6 +490,7 @@ Dynamically highlight the current line and column to improve cursor visibility a
 :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 ```
+
 ```lua
 -- Highlight current line and column
 vim.api.nvim_set_hl(0, 'CursorLine', { bg = 'darkred', fg = 'white' })
@@ -546,6 +528,7 @@ endfunction
 autocmd CursorMoved,CursorMovedI * call s:Cursor_Moved()
 let g:last_pos = 0
 ```
+
 ```lua
 local function cursor_moved()
   local cur_pos = vim.fn.winline()
@@ -606,6 +589,7 @@ function! ClearCommentDefine()
   syn clear MyCommentOut2
 endfunction
 ```
+
 ```lua
 vim.cmd[[
   augroup DebugHighlight
@@ -654,6 +638,7 @@ Automatically highlight lines that exceed a specified character width, helping m
 :au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 ```
+
 ```lua
 -- Highlight lines exceeding 80 characters
 vim.api.nvim_create_autocmd('BufWinEnter', {
@@ -680,6 +665,7 @@ map <leader>m :call ToggleHighlight()<CR>
 " Highlight current word
 nnoremap <silent> <k1> :call HighlightWord(1)<CR>
 ```
+
 ```lua
 -- Lua equivalent for multiple word highlighting
 vim.keymap.set('n', '<leader>m', function()
@@ -697,79 +683,6 @@ end, { desc = 'Highlight current word' })
 # Category: display
 # Tags: whitespace, syntax-highlighting, code-quality
 ---
-Dynamically highlight various whitespace issues like trailing spaces, mixed indentation, and misplaced tabs to improve code cleanliness
-
-```vim
-function! ShowWhitespace(flags)
-  let bad = ''
-  let pat = []
-  for c in split(a:flags, '\zs')
-    if c == 'e'
-      call add(pat, '\s\+$')
-    elseif c == 'i'
-      call add(pat, '^\t*\zs \+')
-    elseif c == 's'
-      call add(pat, ' \+\ze\t')
-    elseif c == 't'
-      call add(pat, '[^\t]\zs\t\+')
-    else
-      let bad .= c
-    endif
-  endfor
-  if len(pat) > 0
-    let s = join(pat, '\|')
-    exec 'syntax match ExtraWhitespace "'.s.'" containedin=ALL'
-  else
-    syntax clear ExtraWhitespace
-  endif
-endfunction
-
-nnoremap <Leader>ws :call ToggleShowWhitespace()<CR>
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-```
-```lua
-local function show_whitespace(flags)
-  local pat = {}
-  local bad = ''
-  
-  for c in flags:gmatch('.') do
-    if c == 'e' then
-      table.insert(pat, '\s\+$')
-    elseif c == 'i' then
-      table.insert(pat, '^\t*\zs \+')
-    elseif c == 's' then
-      table.insert(pat, ' \+\ze\t')
-    elseif c == 't' then
-      table.insert(pat, '[^\t]\zs\t\+')
-    else
-      bad = bad .. c
-    end
-  end
-  
-  if #pat > 0 then
-    local s = table.concat(pat, '\|')
-    vim.cmd('syntax match ExtraWhitespace "' .. s .. '" containedin=ALL')
-  else
-    vim.cmd('syntax clear ExtraWhitespace')
-  end
-  
-  if #bad > 0 then
-    print('ShowWhitespace ignored: ' .. bad)
-  end
-end
-
-vim.keymap.set('n', '<Leader>ws', function()
-  vim.cmd('highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen')
-  show_whitespace('est')
-end)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_some_whitespace_characters)
-***
-# Title: Highlight Unwanted Whitespace
-# Category: display
-# Tags: whitespace, highlighting, code-cleanup
----
 Automatically highlight trailing spaces, spaces before tabs, and other problematic whitespace to maintain clean code
 
 ```vim
@@ -781,6 +694,7 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 ```
+
 ```lua
 -- Highlight unwanted whitespace in Neovim
 vim.api.nvim_create_augroup('WhitespaceHighlight', { clear = true })
@@ -811,29 +725,6 @@ vim.api.nvim_create_autocmd({'InsertEnter', 'InsertLeave'}, {
 # Category: display
 # Tags: whitespace, visualization
 ---
-Customize display of whitespace characters to make invisible characters visible
-
-```vim
-" Toggle list view and customize list characters
-:set list listchars=tab:»·,trail:·,extends:>,precedes:<
-```
-```lua
--- Configure list characters in Neovim
-vim.opt.list = true
-vim.opt.listchars:append({
-  tab = '»·',
-  trail = '·',
-  extends = '>',
-  precedes = '<'
-})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Highlight_unwanted_spaces)
-***
-# Title: Highlight Long Lines
-# Category: display
-# Tags: syntax-highlighting, code-style, visual-guide
----
 Visually highlight lines that exceed a specified length, helping maintain code readability and adherence to line length standards
 
 ```vim
@@ -842,6 +733,7 @@ highlight OverColLimit term=inverse,bold cterm=bold ctermbg=red ctermfg=white gu
 syntax match NearColLimit /\%<81v.\%>77v/
 syntax match OverColLimit /\%>80v.\+/
 ```
+
 ```lua
 vim.cmd('highlight NearColLimit term=italic,bold cterm=italic ctermbg=yellow ctermfg=darkblue gui=bold,italic guibg=yellow guifg=darkblue')
 vim.cmd('highlight OverColLimit term=inverse,bold cterm=bold ctermbg=red ctermfg=white gui=bold guibg=red guifg=white')
@@ -861,6 +753,7 @@ Add a simple mapping to highlight the current line, making it easier to track cu
 highlight LineTooLong cterm=bold ctermbg=red guibg=LightYellow
 match LineTooLong /\%>80v.\+/
 ```
+
 ```lua
 vim.cmd('highlight LineTooLong cterm=bold ctermbg=red guibg=LightYellow')
 vim.cmd('match LineTooLong /\%>80v.\+/')
@@ -883,6 +776,7 @@ match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 ```
+
 ```lua
 local function setup_whitespace_highlight()
   vim.api.nvim_create_augroup('WhitespaceHighlight', { clear = true })
@@ -921,6 +815,7 @@ Enable line numbers when printing without modifying the actual file
 ```vim
 :set printoptions=number:y
 ```
+
 ```lua
 vim.opt.printoptions = 'number:y'
 ```
@@ -944,6 +839,7 @@ augroup VCenterCursor
         \ let &scrolloff=winheight(win_getid())/2
 augroup END
 ```
+
 ```lua
 -- Toggle centered cursor
 vim.keymap.set('n', '<Leader>zz', function()
@@ -972,6 +868,7 @@ Use :redraw to ensure messages are displayed and not overwritten by postponed re
 ```vim
 :new | redraw | echo "there is a new window"
 ```
+
 ```lua
 vim.cmd('new')
 vim.cmd('redraw')
@@ -993,6 +890,7 @@ set scrolloff=5
 " Keep cursor always centered
 set scrolloff=999
 ```
+
 ```lua
 -- Set minimum context lines around cursor
 vim.opt.scrolloff = 5  -- 5 lines of context
@@ -1007,29 +905,13 @@ vim.opt.scrolloff = 999
 # Category: display
 # Tags: syntax-highlighting, regex, pattern-matching
 ---
-Automatically highlight valid IP addresses in a file using a sophisticated regex pattern
-
-```vim
-syn match ipaddr /\(\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)\.\)\{3\}\(25\_[0-5]\|2\_[0-4]\_[0-9]\|\_[01]\?\_[0-9]\_[0-9]\?\)/
-hi link ipaddr Identifier
-```
-```lua
-vim.cmd([[syn match ipaddr /\(\(25\[0-5]\|2\[0-4]\[0-9]\|\[01]?\[0-9]\[0-9]?\)\.\)\{3\}\(25\[0-5]\|2\[0-4]\[0-9]\|\[01]?\[0-9]\[0-9]?\)/]])
-vim.cmd('hi link ipaddr Identifier')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Match_valid_IP_address)
-***
-# Title: Highlight Matching Braces
-# Category: display
-# Tags: ui, editing, visual-cues
----
 Briefly highlight matching braces when typing to improve code readability and navigation
 
 ```vim
 set showmatch
 set matchtime=3  " Highlight for 300ms"
 ```
+
 ```lua
 vim.opt.showmatch = true
 vim.opt.matchtime = 3
@@ -1049,6 +931,7 @@ augroup InsertModeHighlight
     autocmd InsertLeave * highlight CursorLine ctermbg=none
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('InsertModeHighlight', { clear = true })
 
@@ -1080,6 +963,7 @@ setlocal linebreak
 setlocal nolist
 setlocal display+=lastline
 ```
+
 ```lua
 vim.opt.linebreak = true
 vim.opt.list = false
@@ -1101,6 +985,7 @@ map <leader>m :call ToggleHighlightMapping()<CR>
 " Highlight word under cursor
 " Use numeric keypad 1-9 to highlight with different colors
 ```
+
 ```lua
 -- Example implementation in Lua
 -- Note: Full conversion would require custom function
@@ -1128,6 +1013,7 @@ nnoremap <A-F8> :call NextColor(0)<CR>
 :SetColors my      " Use predefined color schemes
 :SetColors blue slate ron  " Use specific color schemes
 ```
+
 ```lua
 -- Lua equivalent for color scheme switching
 vim.keymap.set('n', '<F8>', function()
@@ -1156,6 +1042,7 @@ Create a mapping to print syntax-highlighted code in black and white, preserving
 ```vim
 map <C-p> :color print_bw<CR>:hardcopy<CR>:color sean<CR>:syn on<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-p>', function()
   vim.cmd('color print_bw')
@@ -1183,6 +1070,7 @@ function DoMyPrint(args)
   exec 'color '.colorsave
 endfunction
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Hardcopy', function(opts)
   local current_colorscheme = vim.g.colors_name
@@ -1205,6 +1093,7 @@ set list listchars=tab:»·,trail:·
 " Alternative style
 set list lcs=tab:·⁖,trail:¶
 ```
+
 ```lua
 vim.opt.list = true
 vim.opt.listchars:append({
@@ -1235,6 +1124,7 @@ set listchars=tab:\|\
 " Alternative for newer Vim versions
 set listchars=tab:>-
 ```
+
 ```lua
 -- Show tabs as vertical lines
 vim.opt.list = true
@@ -1266,6 +1156,7 @@ function! SeeTab()
 endfunction
 command! SeeTab call SeeTab()
 ```
+
 ```lua
 local function see_tab()
   if not vim.g.see_tab_enabled then
@@ -1298,6 +1189,7 @@ hi Comment guifg=Cyan
 hi Constant guifg=Magenta
 hi Statement guifg=Yellow
 ```
+
 ```lua
 vim.o.background = 'dark'
 
@@ -1315,23 +1207,6 @@ vim.api.nvim_set_hl(0, 'Statement', { fg = 'Yellow' })
 # Category: display
 # Tags: color-scheme, ui-customization, theme
 ---
-Easily switch between light and dark backgrounds with a single keymap
-
-```vim
-map <F11> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-```
-```lua
-vim.keymap.set('n', '<F11>', function()
-  vim.o.background = vim.o.background == 'dark' and 'light' or 'dark'
-end, { desc = 'Toggle background color' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip53)
-***
-# Title: Custom Syntax Highlighting Colors
-# Category: display
-# Tags: syntax-highlighting, color-customization
----
 Modify specific syntax highlighting colors for comments, search results, and error messages
 
 ```vim
@@ -1339,6 +1214,7 @@ hi Comment ctermfg=DarkGrey guifg=DarkGrey
 hi Search guibg=LightBlue
 highlight ErrorMsg guibg=White guifg=Red
 ```
+
 ```lua
 vim.cmd('hi Comment ctermfg=DarkGrey guifg=DarkGrey')
 vim.cmd('hi Search guibg=LightBlue')
@@ -1362,6 +1238,7 @@ setlocal buftype=nofile bufhidden=hide noswapfile
 silent execute 'v/'.find_color.'/d'
 silent g/grey/d
 ```
+
 ```lua
 -- Lua equivalent for color exploration
 local function show_colors()
@@ -1384,73 +1261,13 @@ end
 # Category: display
 # Tags: colors, testing, terminal
 ---
-Generate color test scripts for both console and GUI Vim, allowing comprehensive color visualization
-
-```vim
-function! VimColorTest(outfile, fgend, bgend)
-  let result = []
-  for fg in range(a:fgend)
-    for bg in range(a:bgend)
-      let kw = printf('%-7s', printf('c_%d_%d', fg, bg))
-      let h = printf('hi %s ctermfg=%d ctermbg=%d', kw, fg, bg)
-      let s = printf('syn keyword %s %s', kw, kw)
-      call add(result, printf('%-32s | %s', h, s))
-    endfor
-  endfor
-  call writefile(result, a:outfile)
-  execute 'edit '.a:outfile
-  source %
-endfunction
-```
-```lua
-function _G.color_test(outfile, fgend, bgend)
-  local result = {}
-  for fg = 0, fgend - 1 do
-    for bg = 0, bgend - 1 do
-      local kw = string.format('c_%d_%d', fg, bg)
-      local h = string.format('hi %s ctermfg=%d ctermbg=%d', kw, fg, bg)
-      local s = string.format('syn keyword %s %s', kw, kw)
-      table.insert(result, string.format('%-32s | %s', h, s))
-    end
-  end
-  
-  vim.fn.writefile(result, outfile)
-  vim.cmd('edit ' .. outfile)
-  vim.cmd('source %')
-end
-
--- Usage: :lua color_test('colortest.txt', 16, 16)
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip634)
-***
-# Title: Display Character ASCII/Unicode Value
-# Category: display
-# Tags: character-info, unicode, status-line
----
-Show the ASCII or Unicode value of the current character in the status line, which helps with encoding and character analysis
-
-```vim
-set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
-set laststatus=2
-```
-```lua
-vim.opt.statusline = '%<%f%h%m%r%=%b 0x%B  %l,%c%V %P'
-vim.opt.laststatus = 2
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip67)
-***
-# Title: Get Character Information Quickly
-# Category: display
-# Tags: character-info, unicode, command-mode
----
 Use built-in commands to quickly retrieve ASCII/Unicode values of the current character in decimal, hex, and octal formats
 
 ```vim
 " In command mode, press ga
 " Or use :ascii command
 ```
+
 ```lua
 -- In command mode, press ga
 -- Or use :ascii command
@@ -1463,31 +1280,13 @@ Use built-in commands to quickly retrieve ASCII/Unicode values of the current ch
 # Category: display
 # Tags: ui, startup-configuration
 ---
-Automatically increase command height to prevent 'Hit-Enter' prompts
-
-```vim
-if &cmdheight == 1
-  set cmdheight=2
-endif
-```
-```lua
-if vim.o.cmdheight == 1 then
-  vim.o.cmdheight = 2
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip680)
-***
-# Title: Quick Syntax Color Customization
-# Category: display
-# Tags: syntax-highlighting, color-scheme, customization
----
 Easily modify specific syntax highlight colors directly in your vimrc without editing full color scheme files
 
 ```vim
 highlight comment ctermfg=lightblue
 highlight constant ctermfg=red
 ```
+
 ```lua
 vim.cmd('highlight comment ctermfg=lightblue')
 vim.cmd('highlight constant ctermfg=red')
@@ -1506,6 +1305,7 @@ highlight ShowMatches guibg=darkgrey guifg=white
 au! Cursorhold * exe 'match ShowMatches /\v%(%#\{%(%(\....))/'
 set ut=30
 ```
+
 ```lua
 -- Lua equivalent for highlighting matching braces
 vim.api.nvim_create_autocmd('CursorHold', {
@@ -1533,6 +1333,7 @@ set linebreak
 set display+=lastline
 set scrolloff=99999
 ```
+
 ```lua
 -- Settings for better long line handling
 vim.opt.wrap = true

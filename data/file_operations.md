@@ -76,6 +76,7 @@ Use `:set readonly` to make read-only, `:set nomodifiable` to prevent changes, `
 :set fileformat=unix  " set Unix line endings
 :set fileformat=dos   " set DOS line endings
 ```
+
 ```lua
 -- Lua:
 vim.opt.readonly = true  -- make buffer read-only
@@ -182,32 +183,13 @@ Use this command to write file if the full path contains non-existent directorie
 # Category: file_operations
 # Tags: file-format, line-endings, conversion
 ---
-Quickly convert file line endings between unix, dos, and mac formats with simple Vim commands
-
-```vim
-:e ++ff=dos
-:setlocal ff=unix
-:w
-```
-```lua
--- Convert current file to unix line endings
-vim.cmd('e ++ff=dos')
-vim.cmd('setlocal ff=unix')
-vim.cmd('w')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/%5EM)
-***
-# Title: Batch Convert Line Endings Across Files
-# Category: file_operations
-# Tags: file-format, batch-processing, line-endings
----
 Convert line endings for multiple files in a single operation using argdo or bufdo
 
 ```vim
 :args *.c *.h
 :argdo set ff=unix|update
 ```
+
 ```lua
 -- Convert all .c and .h files to unix line endings
 vim.cmd('args *.c *.h')
@@ -226,6 +208,7 @@ Easily add or change file extensions using custom commands that leverage Vim's e
 command! -nargs=1 AddExt execute "saveas ".expand("%:p").<q-args>
 command! -nargs=1 ChgExt execute "saveas ".expand("%:p:r").<q-args>
 ```
+
 ```lua
 vim.api.nvim_create_user_command('AddExt', function(opts)
   vim.cmd('saveas ' .. vim.fn.expand('%:p') .. opts.args)
@@ -250,6 +233,7 @@ Easily add Vim to Windows Send To context menu for quick file opening with custo
 " e.g., gvim.exe -d (diff mode)
 " e.g., gvim.exe -R (read-only mode)
 ```
+
 ```lua
 -- In Neovim, this is more about file associations and keymaps
 -- Lua equivalent would be configuring file handlers
@@ -270,6 +254,7 @@ Create shortcuts to launch Vim with specific modes like diff or read-only
 " -R: Read-only mode
 " -p: Open files in tabs
 ```
+
 ```lua
 -- Lua approach to similar file launch configurations
 -- Can be done via autocmds or file type associations
@@ -292,6 +277,7 @@ Automatically open files in new tabs within the same Vim/Neovim instance using r
 ```vim
 gvim.exe --remote-tab-silent "%1"
 ```
+
 ```lua
 -- For Neovim, this would typically be handled by terminal or file manager integration
 -- Can be configured in init.lua with autocmds or external scripts
@@ -303,32 +289,13 @@ gvim.exe --remote-tab-silent "%1"
 # Category: file_operations
 # Tags: file-navigation, c-development, productivity
 ---
-Easily toggle between corresponding source and header files in C/C++ projects
-
-```vim
-" Map key combination to switch between .c/.cpp and .h files
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-```
-```lua
-vim.keymap.set('n', '<F4>', function()
-  local current_file = vim.fn.expand('%:p')
-  local new_file = current_file:gsub('\.h$', '.X123X'):gsub('\.cpp$', '.h'):gsub('\.X123X$', '.cpp')
-  vim.cmd.edit(new_file)
-end, { desc = 'Switch between source and header' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/All_tips_for_C_family_programming)
-***
-# Title: Open All Files in Tabs by Default
-# Category: file_operations
-# Tags: tab-management, autocmd, workflow
----
 Automatically open command-line arguments in separate tabs and create new tabs for each buffer
 
 ```vim
 autocmd VimEnter * tab all
 autocmd BufAdd * exe 'tablast | tabe "' . expand('<afile>') . '"'
 ```
+
 ```lua
 vim.api.nvim_create_augroup('TabManagement', { clear = true })
 
@@ -358,6 +325,7 @@ Automatically open files without extensions in Vim using Windows command prompt 
 ```vim
 assoc .=txtfile
 ```
+
 ```lua
 -- For Neovim, this is more of a Windows system configuration
 -- Typically handled through external system settings
@@ -375,6 +343,7 @@ Open the current file with its default system handler, similar to double-clickin
 ```vim
 nmap <Leader>x :silent ! start "1" "%:p"<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<Leader>x', function()
   vim.cmd('silent !start "1" "' .. vim.fn.expand('%:p') .. '"')
@@ -395,6 +364,7 @@ set autochdir
 " Alternative manual mapping
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 ```
+
 ```lua
 -- Set working directory automatically
 vim.opt.autochdir = true
@@ -456,6 +426,7 @@ function! InitBackupDir()
 endfunction
 call InitBackupDir()
 ```
+
 ```lua
 local function init_backup_dir()
   local separator = vim.fn.has('win32') == 1 and '_' or '.'
@@ -515,6 +486,7 @@ autocmd BufReadPost * nested
       \   e ++ff=dos |
       \ endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadPost', {
   nested = true,
@@ -544,6 +516,7 @@ alias vimenc='vim -c \'let $enc = &fileencoding | execute "!echo Encoding:  $enc
 
 # Usage: vimenc filename.xml
 ```
+
 ```lua
 -- In your shell config (e.g., .bashrc or .zshrc)
 -- Use the same alias as in Vimscript
@@ -572,6 +545,7 @@ Efficiently rename multiple files by generating rename commands in Vim and execu
 # Execute rename commands
 :w !sh
 ```
+
 ```lua
 -- Equivalent in Neovim can use vim.fn and vim.cmd
 -- Open file list
@@ -625,6 +599,7 @@ endfunction
 
 map <Leader>L :call ListTree('.')<CR>
 ```
+
 ```lua
 function _G.list_tree(dir)
   vim.cmd('new')
@@ -671,6 +646,7 @@ Set Netrw to display a tree-style directory listing, which provides a more compr
 ```vim
 let g:netrw_liststyle=3
 ```
+
 ```lua
 vim.g.netrw_liststyle = 3
 ```
@@ -690,6 +666,7 @@ Compress Vim documentation files to save disk space while maintaining readabilit
 # Uncompress help.txt separately
 :!gunzip help.txt
 ```
+
 ```lua
 -- Compress files using Lua system command
 vim.fn.system('gzip ' .. vim.o.runtimepath .. '/doc/*.txt')
@@ -707,6 +684,7 @@ Create a custom command to easily copy the current file to another location with
 ```vim
 command Cpage silent !cp '%:p' "c:/Progra~1/Tomcat/webapps/console/pages/%"
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Cpage', function()
   local current_file = vim.fn.expand('%:p')
@@ -730,6 +708,7 @@ Save and restore Vim editing sessions, including window layouts, open buffers, a
 " Restore session
 gvim -S projectname.vis
 ```
+
 ```lua
 -- Save session
 vim.cmd('mksession projectname.vis')
@@ -753,6 +732,7 @@ Efficiently manage a personal knowledge base using Vim's built-in file navigatio
 " Create lowercase files for consistent naming
 " Use directories for large topics
 ```
+
 ```lua
 -- Use vim.cmd('gf') to jump between files
 -- Recommended: Create a consistent file naming strategy
@@ -779,6 +759,7 @@ Create multiple directories from a list of names in a text file using a single V
 ```vim
 %g/\<\w\+\>/ y A | exe ' !mkdir '. shellescape(substitute(substitute(@a, '\n\+\s*', '', ''), '\s*\n\+', '', '')) | let @a = ""
 ```
+
 ```lua
 -- Lua equivalent for creating directories from a list
 local function create_dirs_from_list()
@@ -806,6 +787,7 @@ Automatically run sync command after each buffer write to reduce chances of file
 " disk sync after every write
 au BufWritePost * silent !sync
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufWritePost', {
   callback = function()
@@ -825,6 +807,7 @@ Create a custom command to delete files using Vim's delete() function, with file
 ```vim
 command! -complete=file -nargs=1 Remove :echo 'Remove: '.'<f-args>'.' '.(delete(<f-args>) == 0 ? 'SUCCEEDED' : 'FAILED')
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Remove', function(opts)
   local filename = opts.args
@@ -844,6 +827,7 @@ Quick command to delete the current file and close its buffer in one step
 ```vim
 call delete(expand('%')) | bdelete!
 ```
+
 ```lua
 vim.fn.delete(vim.fn.expand('%')) vim.cmd('bdelete!')
 ```
@@ -894,6 +878,7 @@ function! s:TempRestoreBinaryForNoeol()
   endif
 endfunction
 ```
+
 ```lua
 local function temp_set_binary_for_noeol()
   local save_binary = vim.o.binary
@@ -977,27 +962,13 @@ Easily insert file paths into Vim command line by drag and dropping from file ex
 # Category: file_operations
 # Tags: file-navigation, window-management, shortcuts
 ---
-Use modifier keys to control how files are opened when drag and dropped
-
-```lua
--- Drag and drop behaviors with modifier keys:
--- Ctrl: Open file in new split window
--- Shift: Change to file's directory
--- Default: Open file in current window
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Drag_and_drop_file_names_into_the_Vim_command_line)
-***
-# Title: Sync Vim Runtime Files with rsync
-# Category: file_operations
-# Tags: file-sync, runtime-files, system-management
----
 Efficiently synchronize Vim runtime files from a remote FTP server using rsync, keeping your local runtime environment up to date
 
 ```vim
 # Rsync command to sync Vim runtime files
 rsync -avzcP --delete --exclude='/dos/' ftp.nluug.nl::Vim/runtime/ ./runtime/
 ```
+
 ```lua
 -- While rsync is a shell command, you can trigger it in Lua using vim.fn.system()
 vim.fn.system('rsync -avzcP --delete --exclude="/dos/" ftp.nluug.nl::Vim/runtime/ ./runtime/')
@@ -1022,6 +993,7 @@ endfunction
 
 nmap ,s :call SwitchSourceHeader()<CR>
 ```
+
 ```lua
 function _G.switch_source_header()
   local ext = vim.fn.expand('%:e')
@@ -1049,6 +1021,7 @@ au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar set filetype=zip
 " Alternative method
 au BufReadCmd *.jar call zip#Browse(expand("<amatch>"))
 ```
+
 ```lua
 vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = {"*.jar", "*.war", "*.ear", "*.sar", "*.rar"},
@@ -1082,6 +1055,7 @@ Use :drop to edit a file or jump to its existing tab/window, with option to open
 " Custom command to simplify file opening
 command! -nargs=1 -complete=file O tab drop <args>
 ```
+
 ```lua
 -- Open file in new tab or jump to existing
 vim.cmd('tab drop ' .. vim.fn.expand('%:p'))
@@ -1098,27 +1072,6 @@ end, { nargs = 1, complete = 'file' })
 # Category: file_operations
 # Tags: file-management, backup, mapping
 ---
-Quickly create a timestamped copy of the current file in a temporary directory for safe editing
-
-```vim
-:map zs :exe "sav $TMP/" . expand("%:t") . strftime("-%Y-%m-%d_%H%M%S")<CR>
-```
-```lua
-vim.keymap.set('n', 'zs', function()
-  local filename = vim.fn.expand('%:t')
-  local timestamp = os.date('%Y-%m-%d_%H%M%S')
-  local tmp_dir = os.getenv('TMP') or '/tmp'
-  local new_filename = string.format('%s/%s-%s', tmp_dir, filename, timestamp)
-  vim.cmd('saveas ' .. new_filename)
-end, { desc = 'Save file with timestamp in temp directory' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_a_temporary_copy_of_the_current_file)
-***
-# Title: Edit Remote Files with SCP in Vim
-# Category: file_operations
-# Tags: remote-editing, ssh, networking
----
 Easily edit configuration files across multiple remote servers using Vim's netrw plugin and SCP protocol without multiple logins
 
 ```vim
@@ -1126,6 +1079,7 @@ Easily edit configuration files across multiple remote servers using Vim's netrw
 " Create a .project file with SCP paths
 " Edit files across multiple servers transparently
 ```
+
 ```lua
 -- Lua equivalent would use vim.fn.system() or a plugin like plenary.nvim for remote file handling
 -- Example remote file opening
@@ -1157,6 +1111,7 @@ augroup encrypted
     \ setlocal nobin
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('encrypted', { clear = true })
 
@@ -1212,6 +1167,7 @@ vim -s scriptin `cat file-containing-files`
 # In scriptin macro file:
 qq/pattern^Mdd:wn^M^M@qq@q
 ```
+
 ```lua
 -- Open multiple files from a list
 -- Lua equivalent would typically use vim.fn.argv() or a plugin like telescope
@@ -1227,32 +1183,12 @@ vim.cmd('argdo norm! @q')
 # Category: file_operations
 # Tags: remote-editing, network, scp, file-transfer
 ---
-Directly edit remote files using built-in Vim network protocols without manual file transfers
-
-```vim
-vim scp://username@host//path/to/file
-:Nread scp://username@host//path/to/file
-:Nwrite scp://username@host//path/to/file
-```
-```lua
--- Open remote file
-vim.cmd('edit scp://username@host//path/to/file')
-
--- Alternatively using Lua
-vim.api.nvim_cmd({cmd = 'edit', args = {'scp://username@host//path/to/file'}}, {})
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Edit_remote_files_locally_via_SCP/RCP/FTP)
-***
-# Title: Break Hard Links When Editing Files
-# Category: file_operations
-# Tags: hard-links, file-backup, unix
----
 Automatically break hard links when editing a file, creating a separate copy instead of modifying all linked files
 
 ```vim
 set backupcopy=auto,breakhardlink
 ```
+
 ```lua
 vim.opt.backupcopy = "auto,breakhardlink"
 ```
@@ -1263,22 +1199,6 @@ vim.opt.backupcopy = "auto,breakhardlink"
 # Category: file_operations
 # Tags: remote-editing, ftp, file-access
 ---
-Edit remote files on an FTP server using a non-standard port by escaping the port number
-
-```vim
-:e ftp://ftp.server\#2121/path/to/file/filename
-```
-```lua
--- Neovim uses the same syntax as Vim for remote file editing
-vim.cmd('e ftp://ftp.server\#2121/path/to/file/filename')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Editing_files_on_an_ftp_server_listening_on_a_non-standard_port)
-***
-# Title: Edit Remote Files via SCP
-# Category: file_operations
-# Tags: remote-editing, network, ssh
----
 Open and edit remote files directly through SCP using Vim's netrw plugin, specifying remote user and absolute path
 
 ```vim
@@ -1288,6 +1208,7 @@ vim scp://remoteuser@server.tld//absolute/path/to/document
 :e scp://remoteuser@server.tld//absolute/path/to/document
 :tabe scp://remoteuser@server.tld//absolute/path/to/document
 ```
+
 ```lua
 -- Neovim supports the same SCP syntax
 -- Open remote file in current window
@@ -1317,6 +1238,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 ```
+
 ```lua
 -- Encryption is initiated interactively via :X command
 
@@ -1340,6 +1262,7 @@ Encrypt files using built-in Vim encryption methods, with options for different 
 :X  " Prompt for encryption key
 :setlocal cm=blowfish2  " Set strongest encryption method
 ```
+
 ```lua
 -- Lua equivalent for encryption
 vim.cmd('X')  -- Prompt for encryption key
@@ -1352,37 +1275,13 @@ vim.opt.cryptmethod = 'blowfish2'  -- Set strongest encryption method
 # Category: file_operations
 # Tags: navigation, file-explorer, directory
 ---
-Easily explore directories and navigate file system directly from Vim using built-in commands
-
-```vim
-:Explore
-:e /home/user
-:e ..
-:e <dir_path>
-```
-```lua
--- Open file explorer
-vim.cmd('Explore')
-
--- Open specific directory
-vim.cmd('e /home/user')
-
--- Go to parent directory
-vim.cmd('e ..')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/File_explorer)
-***
-# Title: Batch Convert Line Endings in Multiple Files
-# Category: file_operations
-# Tags: file-format, batch-processing, line-endings
----
 Convert line endings for multiple files matching a pattern in one command
 
 ```vim
 :args *.c *.h
 :argdo set ff=unix|update
 ```
+
 ```lua
 -- Convert specified file types to unix line endings
 vim.cmd('args *.c *.h')
@@ -1405,6 +1304,7 @@ function! Find(name)
 endfunction
 command! -nargs=1 Find :call Find("<args>")
 ```
+
 ```lua
 function _G.flexible_file_find(name)
   local escaped_name = name:gsub('%s', '*')
@@ -1431,6 +1331,7 @@ set tags=c:\files.tags
 
 " Use :tj Foo<tab> to autocomplete and open files
 ```
+
 ```lua
 -- Equivalent in Neovim
 vim.opt.tags = 'c:\\files.tags'
@@ -1470,6 +1371,7 @@ function! Find(name)
 endfunction
 command! -nargs=1 Find :call Find("<args>")
 ```
+
 ```lua
 function _G.find_file(name)
   local list = vim.fn.system('find . -name "' .. name .. '" | perl -ne "print qq{$.\t$_}"')
@@ -1556,6 +1458,7 @@ endfunction
 
 command! -nargs=* Find :call Find(<f-args>)
 ```
+
 ```lua
 function _G.flexible_file_search(...)
     local path = './'
@@ -1603,25 +1506,6 @@ end, { nargs = '*' })
 # Category: file_operations
 # Tags: external-tools, workflow, integration
 ---
-Configure Visual Studio to open the current file in Vim with cursor position preserved
-
-```vim
-Tools > External Tools > Add:
-Title: &Vim
-Command: C:\Vim\vim73\gvim.exe
-Arguments: --servername gVimStudio --remote-silent +"execute 'normal! $(CurLine)G$(CurCol)|'" "$(ItemFileName)$(ItemExt)"
-```
-```lua
--- Lua equivalent would be to create a similar external tool configuration
--- This is mostly an IDE integration tip, so direct Lua translation isn't straightforward
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Have_Vim_open_a_file_in_Visual_Studio)
-***
-# Title: Hex Dump Binary Files
-# Category: file_operations
-# Tags: hex-editing, binary-files, file-inspection
----
 Convert binary files to hex dump for inspection and editing using xxd utility
 
 ```vim
@@ -1629,6 +1513,7 @@ Convert binary files to hex dump for inspection and editing using xxd utility
 :%!xxd
 :%!xxd -r
 ```
+
 ```lua
 -- Read binary file as hex dump
 vim.cmd('r !xxd sample.bin')
@@ -1651,6 +1536,7 @@ Convert binary files into C-compatible byte arrays using xxd
 ```vim
 :r !xxd -i sample.bin
 ```
+
 ```lua
 -- Generate C source array from binary file
 vim.cmd('r !xxd -i sample.bin')
@@ -1669,6 +1555,7 @@ vim -b myfile.bin
 :setlocal display=uhex
 :setlocal wrap
 ```
+
 ```lua
 -- Open in binary mode
 vim.o.binary = true
@@ -1682,59 +1569,13 @@ vim.o.wrap = true
 # Category: file_operations
 # Tags: hex-editing, binary-files, utilities
 ---
-Convert binary files to hex dump and back using Vim's built-in xxd utility, enabling hex editing of binary files
-
-```vim
-" Convert file to hex dump
-:%!xxd
-
-" Convert hex dump back to binary
-:%!xxd -r
-```
-```lua
--- Convert file to hex dump
-vim.cmd(':%!xxd')
-
--- Convert hex dump back to binary
-vim.cmd(':%!xxd -r')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hexdump2C)
-***
-# Title: Open Binary Files in Vim
-# Category: file_operations
-# Tags: binary-editing, file-modes
----
-Open binary files with specific settings to prevent formatting issues
-
-```vim
-" Open in binary mode
-vim -b myfile.bin
-
-" Display non-printable characters in hex
-:setlocal display=uhex
-:setlocal wrap
-```
-```lua
--- Open in binary mode
--- Use command line argument or set buffer options
-vim.opt.binary = true
-vim.opt.display = 'uhex'
-vim.opt.wrap = true
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Hexdump2C)
-***
-# Title: Create Vim Patches Easily
-# Category: file_operations
-# Tags: diff, patch-creation, development
----
 Technique for creating patches from source file modifications using diff command
 
 ```vim
 set patchmode=.orig
 :!diff -u src/file.orig src/file > /tmp/file.diff
 ```
+
 ```lua
 -- Set patch mode for automatic backups
 vim.opt.patchmode = '.orig'
@@ -1758,6 +1599,7 @@ augroup backup
     autocmd BufWritePre,FileWritePre * let &l:backupext = '~' . strftime('%F') . '~'
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('incremental_backup', { clear = true })
 vim.api.nvim_create_autocmd({'BufWritePre', 'FileWritePre'}, {
@@ -1784,6 +1626,7 @@ if !filewritable(g:root_backup_dir)
 endif
 set backupdir=g:root_backup_dir
 ```
+
 ```lua
 local root_backup_dir = vim.fn.expand('f:/vim_backups')
 
@@ -1809,6 +1652,7 @@ Quickly insert file contents or command output at cursor or specific buffer posi
 :r !ls        " Insert directory listing
 :$r !pwd      " Insert current working directory
 ```
+
 ```lua
 -- Insert file
 vim.cmd('r foo.txt')
@@ -1829,6 +1673,7 @@ Dynamically insert template files into the current buffer using a custom command
 ```vim
 command! -range=% Refile <line1>,<line2>g/^#refile=/exe ":r " . strpart(getline("."), 8) | normal! kdd
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Refile', function(opts)
   local current_line = vim.fn.line('.')
@@ -1871,6 +1716,7 @@ Launch Neovim and jump directly to a specific line number when opening a file
 ```vim
 vim file.txt +123
 ```
+
 ```lua
 -- Same CLI behavior works in Neovim
 -- Launch with: nvim file.txt +123
@@ -1890,6 +1736,7 @@ let myvar = strftime("(%y%m%d)[%Hh%M]")
 let myvar = "set backupext=_". myvar
 execute myvar
 ```
+
 ```lua
 vim.opt.backupdir = '/tmp/vim_backup'
 
@@ -1922,6 +1769,7 @@ function! BufWrite()
   endif
 endfunction
 ```
+
 ```lua
 local function buf_write()
   local file_name = vim.fn.expand('<afile>')
@@ -1951,30 +1799,12 @@ vim.api.nvim_create_autocmd('BufWriteCmd', {
 # Category: file_operations
 # Tags: desktop-integration, file-management, tab-handling
 ---
-Automatically open files in new tabs in the current Vim instance, even across different desktops
-
-```vim
-gvim -p --remote-tab-silent %F
-```
-```lua
--- Lua equivalent for shell script
-local function open_file_in_desktop_tab(file)
-  local desktop = vim.fn.system('xprop -root -notype _NET_CURRENT_DESKTOP | perl -pe "s/.*?= (\d+)/$1/"'):gsub('\n', '')
-  vim.cmd(string.format('edit ++tab +set\ servername=%s %s', desktop, file))
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Launch_files_in_new_tabs_under_Linux)
-***
-# Title: Open Files in New Tabs Across Desktop
-# Category: file_operations
-# Tags: file-handling, tabs, desktop-integration
----
 Automatically open files in new tabs instead of new Vim instances, works with file managers and across desktops
 
 ```vim
 vim -p --remote-tab-silent filename
 ```
+
 ```lua
 -- Equivalent in Neovim can be achieved via shell script or vim.cmd
 -- Example shell script approach:
@@ -1997,6 +1827,7 @@ if (&diff==0)
     :autocmd BufReadPost * tab ball
 endif
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
@@ -2018,6 +1849,7 @@ Use remote tab silent command to open files in tabs from command line or file as
 ```vim
 "C:\Program Files\Vim\vim72\gvim.exe" --remote-tab-silent "%1"
 ```
+
 ```lua
 -- Equivalent in Neovim terminal or external script
 vim.fn.system({'nvim', '--remote-tab-silent', vim.fn.expand('%')})
@@ -2040,6 +1872,7 @@ Redirect change list to a file for tracking editing history across sessions
 :set more
 :e changes.txt
 ```
+
 ```lua
 -- Export change list to file (Lua equivalent)
 vim.o.more = false
@@ -2067,6 +1900,7 @@ q0gf:rew<CR><DOWN-ARROW>q
 :setlocal efm=%f
 :execute 'cfile '.expand('%')
 ```
+
 ```lua
 -- Method 1: Using vim.cmd for macro
 vim.cmd('q0gf:rew<CR><DOWN-ARROW>q')
@@ -2099,6 +1933,7 @@ Automatically set the file open dialog to start in the current buffer's director
 ```vim
 set browsedir=buffer
 ```
+
 ```lua
 vim.opt.browsedir = 'buffer'
 ```
@@ -2114,6 +1949,7 @@ Quickly create a tar archive of all files currently open in Vim buffers, preserv
 ```vim
 :silent bufdo !tar -rvf archive.tar %:p
 ```
+
 ```lua
 vim.api.nvim_command('silent bufdo !tar -rvf archive.tar ' .. vim.fn.expand('%:p'))
 ```
@@ -2129,6 +1965,7 @@ Create a zip archive of all files currently open in Vim buffers
 ```vim
 :silent bufdo !zip proj.zip %
 ```
+
 ```lua
 vim.api.nvim_command('silent bufdo !zip proj.zip ' .. vim.fn.expand('%'))
 ```
@@ -2144,6 +1981,7 @@ Automatically create parent directories when opening a new file that doesn't exi
 ```vim
 au BufNewFile * :exe ': !mkdir -p ' . escape(fnamemodify(bufname('%'),':p:h'),'#% \')
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufNewFile', {
   callback = function()
@@ -2167,6 +2005,7 @@ Use Vim's built-in file explorer to rename/move files without leaving the editor
 :Sex!
 Press 'R' to rename file
 ```
+
 ```lua
 -- Open file explorer
 vim.cmd.Explore()
@@ -2195,6 +2034,7 @@ set path=.,,**
 " Use :tabfind to open files by searching path
 :tabfind myfile.txt
 ```
+
 ```lua
 -- Configure path for file searching
 vim.opt.path = '.,,**'
@@ -2215,6 +2055,7 @@ Easily convert text files from OEM (DOS) to ANSI charset in Windows, ensuring pr
 :set fileencoding=latin1
 :wq
 ```
+
 ```lua
 -- Convert OEM to ANSI encoding
 vim.opt.encoding = 'cp437'
@@ -2233,6 +2074,7 @@ Create a shell alias to open a notes file, go to the last line, add a blank line
 ```vim
 alias note="gvim -c $ +foldopen +put_ +startinsert ~/path-to-file/notes.md"
 ```
+
 ```lua
 -- Lua equivalent for Neovim
 -- In your shell configuration or init.lua
@@ -2256,6 +2098,7 @@ Create a custom command to read PDF contents into Vim buffer using pdftotext uti
 :command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> -
 :command! -complete=file -nargs=1 Rpdf :r !pdftotext -nopgbrk <q-args> - |fmt -csw78
 ```
+
 ```lua
 vim.api.nvim_create_user_command('Rpdf', function(opts)
   vim.cmd('read !pdftotext -nopgbrk ' .. opts.args .. ' -')
@@ -2278,6 +2121,7 @@ imap <F11> <Esc><F11>
 " Open Explorer and select current file
 nmap <F11> :!start explorer /select,%:p
 ```
+
 ```lua
 -- Open Explorer in current buffer's directory
 vim.keymap.set('n', '<F11>', function()
@@ -2296,28 +2140,12 @@ end, { desc = 'Open Explorer and select current file' })
 # Category: file_operations
 # Tags: file-navigation, macos, finder
 ---
-Quickly open Finder at the directory of the current buffer
-
-```vim
-nmap <Leader>f :!open %:p:h<CR>
-```
-```lua
-vim.keymap.set('n', '<leader>f', function()
-  vim.fn.system('open ' .. vim.fn.expand('%:p:h'))
-end, { desc = 'Open Finder in current directory' })
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_Windows_Explorer_showing_directory_of_current_buffer)
-***
-# Title: Open Files in Tabs from Command Line
-# Category: file_operations
-# Tags: cli, tabs, file-opening
----
 Use -p flag to open multiple files, each in its own tab when launching Vim
 
 ```vim
 # Command line usage: gvim -p *.py
 ```
+
 ```lua
 -- Use the same command-line flag when launching Neovim
 -- nvim -p *.py
@@ -2329,33 +2157,13 @@ Use -p flag to open multiple files, each in its own tab when launching Vim
 # Category: file_operations
 # Tags: remote-editing, multi-instance, cli-integration
 ---
-Quickly open files in an already running Vim instance without launching multiple windows
-
-```vim
-gvim --remote first_file
-gvim --remote +split first_file
-```
-```lua
--- Requires Vim with client-server enabled
--- Use shell command: nvim --remote first_file
--- Or create a function in init.lua
-function open_in_existing_nvim(file)
-  vim.fn.remote_send('<ESC>:e ' .. file .. '<CR>')
-end
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Open_file_in_already_running_vim_from_elsewhere)
-***
-# Title: Handle Filenames with Spaces in Path
-# Category: file_operations
-# Tags: file-navigation, path-handling
----
 Configure Vim to handle file paths with spaces by modifying isfname option
 
 ```vim
 " Allow spaces in filenames
 set isfname+=32
 ```
+
 ```lua
 -- Allow spaces in filenames
 vim.opt.isfname:append(32)
@@ -2372,6 +2180,7 @@ Automatically open files in new tabs when launched from Windows, using remote ta
 ```vim
 "C:\Program Files\Vim\vim72\gvim.exe" --remote-tab-silent "%1"
 ```
+
 ```lua
 -- Neovim equivalent (typically configured via file associations)
 -- Use :edit or :tabedit to open files in new tabs
@@ -2398,6 +2207,7 @@ on run argv
    end tell
 end run
 ```
+
 ```lua
 -- Lua equivalent would typically use Neovim's built-in commands
 -- For macOS file opening, you might use vim.cmd or external script
@@ -2417,6 +2227,7 @@ Configure Windows file associations to open specific file types in Vim/Neovim, w
 assoc .php=PHPFile
 ftype PHPFile="C:\Program Files\Vim\vim82\gvim.exe" --remote-silent "%1"
 ```
+
 ```lua
 -- Lua equivalent (conceptual, as this is a Windows registry operation)
 -- Can use vim.fn.system() to run system commands if needed
@@ -2436,6 +2247,7 @@ Quickly open the directory of the current file in Windows file explorer from Vim
 ```vim
 map <C-e> :silent !explorer %:p:h:gs?/?\\\?<CR>
 ```
+
 ```lua
 vim.keymap.set('n', '<C-e>', function()
   vim.fn.system('explorer ' .. vim.fn.expand('%:p:h'):gsub('/', '\\'))
@@ -2461,6 +2273,7 @@ func! OpenCWD()
   endif
 endfunc
 ```
+
 ```lua
 function _G.open_current_directory()
   local current_dir = vim.fn.expand('%:p:h')
@@ -2488,6 +2301,7 @@ Quickly open the directory of the current file using Netrw built-in commands
 :Sexplore  " Split horizontally
 :Vexplore  " Split vertically
 ```
+
 ```lua
 -- Using Neovim's built-in commands
 -- These are the same as Vim, but can be wrapped in Lua if needed
@@ -2507,6 +2321,7 @@ Efficiently open multiple files specified in a list file using Vim command-line 
 ```vim
 gvim "+gl/^/exec 'badd '.getline('.')" +bdel +nohls +"cd %:h" LISTFILE
 ```
+
 ```lua
 vim.cmd('args ' .. vim.fn.expand('mylist'))
 ```
@@ -2522,6 +2337,7 @@ Use wildcard patterns to open multiple files matching a specific pattern
 ```vim
 gvim *\2*\xx.txt
 ```
+
 ```lua
 vim.cmd('args *\2*\xx.txt')
 ```
@@ -2537,6 +2353,7 @@ Open a new file and immediately paste clipboard contents
 ```vim
 gvim.exe -c 'normal ggdG"*p' file.txt
 ```
+
 ```lua
 -- Equivalent approach in Neovim
 -- Can be implemented via command-line or lua function
@@ -2559,6 +2376,7 @@ nnoremap <F5> :update<Bar>silent !xdg-open %:p &<CR>
 " Open URL under cursor in browser
 nnoremap <F8> :silent !xdg-open <cfile> &<CR>
 ```
+
 ```lua
 -- Open current file in default browser
 vim.keymap.set('n', '<F5>', function()
@@ -2584,6 +2402,7 @@ Enable wildmenu to display multiple file matches when using :find, allowing easy
 set wildmenu
 set path=$PWD/**
 ```
+
 ```lua
 vim.opt.wildmenu = true
 vim.opt.path = vim.fn.getcwd() .. '/**'
@@ -2601,6 +2420,7 @@ Prevent accidental modifications to reference or comparison files by setting the
 :set nomodifiable
 :colorscheme peachpuff
 ```
+
 ```lua
 vim.opt.modifiable = false
 vim.cmd.colorscheme('peachpuff')
@@ -2617,6 +2437,7 @@ Use a modeline to make a file non-modifiable across editing sessions
 ```vim
 // vim:noma
 ```
+
 ```lua
 -- Add the following at the end of the file
 -- vim:noma
@@ -2634,6 +2455,7 @@ Easily create a backup of the current file with a single keypress, temporarily e
 " Quick backup mapping
 nnoremap <Leader>b :let x=&backup<Bar>set backup<Bar>write<Bar>let &backup=x<Bar>unlet x<Cr>
 ```
+
 ```lua
 -- Lua equivalent for quick file backup
 vim.keymap.set('n', '<Leader>b', function()
@@ -2655,6 +2477,7 @@ Quickly create a timestamped backup of the current file before making modificati
 ```vim
 map ;s :up | saveas! %:p:r-<C-R>=strftime("%y%m%d-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR> | 3sleep | e #<CR>
 ```
+
 ```lua
 vim.keymap.set('n', ';s', function()
   -- Update current file
@@ -2686,6 +2509,7 @@ Recover a file that was accidentally overwritten by using Vim's built-in recover
 ```vim
 :recover
 ```
+
 ```lua
 -- In Neovim, use the same command
 vim.cmd('recover')
@@ -2704,6 +2528,7 @@ vim -r <filename>  # Recover specific file
 vim -r ""  # Recover unnamed file
 vim -r  # List recoverable files
 ```
+
 ```lua
 -- In terminal/command mode
 -- Use same commands as Vimscript
@@ -2731,6 +2556,7 @@ function! ChangeFileencoding()
 endf
 nmap <F8> :call ChangeFileencoding()<CR>
 ```
+
 ```lua
 local M = {}
 M.enc_index = 0
@@ -2760,6 +2586,7 @@ Quickly reload a file using a specific character encoding when Vim fails to dete
 " Quick mapping to switch to UTF-8
 nnoremap <F12> :e ++enc=utf-8<CR>
 ```
+
 ```lua
 -- Reload file with specific encoding
 vim.cmd('e ++enc=utf-8')
@@ -2774,29 +2601,12 @@ vim.keymap.set('n', '<F12>', ':e ++enc=utf-8<CR>', { desc = 'Reload file as UTF-
 # Category: file_operations
 # Tags: batch-processing, file-format, line-endings
 ---
-Convert line endings for multiple files in a single directory using argument list commands
-
-```vim
-:args *.c *.h
-:argdo set ff=unix|update
-```
-```lua
--- Convert .c and .h files to Unix line endings
-vim.cmd('args *.c *.h')
-vim.cmd('argdo set ff=unix|update')
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/Removing_%5EM%27s_From_A_File)
-***
-# Title: Edit Files on FTP Server with Custom Port
-# Category: file_operations
-# Tags: remote-editing, ftp, file-access
----
 Open files on an FTP server using a non-standard port by escaping the # character
 
 ```vim
 :e ftp://ftp.server\#2121/path/to/file/filename
 ```
+
 ```lua
 -- Use netrw to open FTP files with custom port
 vim.cmd('e ftp://ftp.server\#2121/path/to/file/filename')
@@ -2820,6 +2630,7 @@ augroup class
   au bufreadpost,filereadpost *.class set nomodified
 augroup END
 ```
+
 ```lua
 vim.api.nvim_create_augroup('JavaClassDecompile', { clear = true })
 
@@ -2848,6 +2659,7 @@ Edit remote files locally using Vim's built-in network file transfer capabilitie
 " Open remote file via SCP
 :e scp://user@hostname//path/to/file
 ```
+
 ```lua
 -- Open remote file via SCP in Neovim
 vim.cmd('edit scp://user@hostname//path/to/file')
@@ -2865,6 +2677,7 @@ Automatically transfer and save remote files when editing, eliminating manual up
 " Write remote file back
 :Nwrite scp://user@hostname//path/to/file
 ```
+
 ```lua
 -- Write remote file back in Neovim
 vim.cmd('Nwrite scp://user@hostname//path/to/file')
@@ -2894,6 +2707,7 @@ function! LargeFile()
  autocmd VimEnter * echo "The file is larger than " . (g:LargeFile / 1024 / 1024) . " MB, so some options are changed"
 endfunction
 ```
+
 ```lua
 vim.g.LargeFile = 1024 * 1024 * 10
 
@@ -2938,6 +2752,7 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 ```
+
 ```lua
 -- Restore last edited file and cursor position
 vim.api.nvim_create_autocmd('VimEnter', {
@@ -2979,6 +2794,7 @@ autocmd VimLeave * nested if (!isdirectory($HOME . "/.vim")) |
 autocmd VimEnter * nested if argc() == 0 && filereadable($HOME . "/.vim/Session.vim") |
     \ execute "source " . $HOME . "/.vim/Session.vim"
 ```
+
 ```lua
 -- Save session on exit
 vim.api.nvim_create_autocmd('VimLeave', {
@@ -3010,21 +2826,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
 # Category: file_operations
 # Tags: version-control, contributing, diff
 ---
-Learn how to generate patches for Vim source files using diff and prepare them for submission to the vim-dev mailing list
-
-```vim
-:set patchmode=.orig
-```
-```lua
-vim.o.patchmode = '.orig'
-```
-
-**Source:** [vim.fandom.com](https://vim.fandom.com/wiki/VimTip618)
-***
-# Title: Compile LaTeX with Rubber and Make in Vim
-# Category: file_operations
-# Tags: latex, compilation, quickfix
----
 Easily compile LaTeX documents using Rubber and Make, with automatic error handling and quickfix integration
 
 ```vim
@@ -3036,6 +2837,7 @@ endif
 
 setlocal errorformat=%f:%l:\ %m,%f:%l-%\d%\+:\ %m
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = '*.tex',
@@ -3071,6 +2873,7 @@ if has("autocmd")
   augroup END
 endif
 ```
+
 ```lua
 vim.api.nvim_create_augroup('GPGEncryption', { clear = true })
 
@@ -3103,6 +2906,7 @@ Create a Vim shortcut that opens directly to root directory for quick file acces
 ```vim
 "C:\Program Files\gvim\vim62\gvim.exe" "c:/"
 ```
+
 ```lua
 -- Lua equivalent for launching Neovim in root directory
 vim.fn.system('nvim c:/')
@@ -3119,6 +2923,7 @@ Allows opening files from URLs, specifically file:/// URLs on Windows by using a
 ```vim
 au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
 ```
+
 ```lua
 vim.api.nvim_create_autocmd('BufReadCmd', {
   pattern = 'file:///*',
